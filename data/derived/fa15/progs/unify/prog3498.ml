@@ -1,3 +1,4 @@
 
-let pipe fs =
-  let f a x x y = x (a y) in let base m = m in List.fold_left f base fs;;
+let rec append l r = match l with | [] -> r | h::t -> h :: (append t r);;
+
+let rec digitsOfInt n = if n <= 0 then [n] else append digitsOfInt (n / 10);;

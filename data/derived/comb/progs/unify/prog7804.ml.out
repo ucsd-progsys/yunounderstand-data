@@ -1,8 +1,5 @@
-Characters 31-32:
-  let rec clone x n = x List.map x n;;
-                                 ^
-Error: This expression has type
-         (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd -> 'e
-       but an expression was expected of type 'c
-       The type variable 'c occurs inside
-       (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd -> 'e
+Characters 310-376:
+  | Thresh(a, b, c, d)  -> (eval(a, x, y) *. eval(b, x, y) *. eval(c, x, y) *. eval(d, x, y))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

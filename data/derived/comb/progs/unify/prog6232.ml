@@ -1,7 +1,3 @@
 
-let makeRand (seed1,seed2) =
-  let seed = Array.of_list [seed1; seed2] in
-  let s = Random.State.make seed in
-  fun (x,y)  -> x + (Random.State.int s (y - x));;
-
-let g1 () = ((makeRand 0.1), (makeRand 0.1), (makeRand 10.18));;
+let rec digitsOfInt n =
+  if n < 0 then print_int 0 else (print_int n) / 10; digitsOfInt (n / 10);;

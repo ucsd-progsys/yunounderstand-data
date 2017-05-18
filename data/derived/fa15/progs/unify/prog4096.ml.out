@@ -1,5 +1,5 @@
-Characters 87-94:
-  then ([clone 0 -n] @ l1,l2)
-         ^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 26-27:
+  let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         'a list

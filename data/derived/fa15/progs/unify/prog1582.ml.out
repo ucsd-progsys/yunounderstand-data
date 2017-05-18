@@ -1,5 +1,6 @@
-Characters 65-70:
-  then ( l1,clone 0 (l1.length - l2.length) l2)
-            ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 76-77:
+  else wwhile (f,result);;
+               ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a * bool

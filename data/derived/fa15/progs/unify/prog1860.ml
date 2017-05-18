@@ -1,37 +1,44 @@
 
-let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  let n = (List.length l1) - (List.length l2) in
-  if n > 0 then (l1, ((clone 0 n) @ l2)) else (((clone 0 (0 - n)) @ l1), l2);;
+let buildAverage (e1,e2) = Average (e1, e2);;
 
-let rec removeZero l =
-  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else h :: t;;
+let buildCosine e = Cosine e;;
 
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      let (carry,accList) = a in
-      let (x1,x2) = x in
-      ((((x1 + x2) + carry) / 10), ((((x1 + x2) + carry) mod 10) :: accList)) in
-    let base = (0, []) in
-    let args = List.rev (List.combine l1 l2) in
-    let (carry,res) = List.fold_left f base args in
-    if carry = 1 then 1 :: res else res in
-  removeZero (add (padZero l1 l2));;
+let buildSine e = Sine e;;
 
-let rec mulByDigit i l =
-  let f a x =
-    let (carry,accList) = a in
-    (((carry + (x * i)) / 10), (((carry + (x * i)) mod 10) :: accList)) in
-  let base = (0, []) in
-  let newlist = List.rev (0 :: l) in
-  let (_,res) = List.fold_left f base newlist in removeZero res;;
+let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
 
-let bigMul l1 l2 =
-  let f a x =
-    let (bit,l) = a in
-    let movedList = List.append l [0] in ((bit + 1), (bigAdd movedList x)) in
-  let base = (0, []) in
-  let args = List.map (mulByDigit l1) in
-  let (_,res) = List.fold_left f base args in res;;
+let buildTimes (e1,e2) = Times (e1, e2);;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  match depth with
+  | 0 -> (match rand (0, 1) with | 0 -> VarX | 1 -> VarY)
+  | n ->
+      (match rand (0, 6) with
+       | 0 -> buildX ()
+       | 1 -> buildY ()
+       | 2 -> buildSine (build (rand, (depth - 1)))
+       | 3 -> buildCosine (build (rand, (depth - 1)))
+       | 4 ->
+           buildAverage
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
+       | 5 ->
+           buildTimes
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
+       | 6 ->
+           buildThresh
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))),
+               (build (rand, (depth - 1))), (build (rand, (depth - 1))),
+               (build (rand, (depth - 1)))));;

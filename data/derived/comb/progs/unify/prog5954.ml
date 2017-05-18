@@ -1,8 +1,18 @@
 
-let rec assoc (d,k,l) =
-  match l with
-  | [] -> 0
-  | h::t -> (match h with | hd::tl -> if hd = k then assoc (d, k, t) else d);;
+let modulus ss = ss mod 10;;
 
-let _ =
-  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let rec digitsOfInt n =
+  if n <= 0
+  then []
+  else (match n with | x -> (digitsOfInt (n / 10)) @ [modulus x]);;
+
+let lt10 q = q < 10;;
+
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+
+let rec additivePersistence n =
+  if lt10 n
+  then n
+  else
+    (match n with
+     | n_ -> incr i additivePersistence (sumList (digitsOfInt n)));;

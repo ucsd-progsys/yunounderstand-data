@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type 'a list list list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 17-18:
+  let _ = isFPoint 1 = 1;;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int -> int

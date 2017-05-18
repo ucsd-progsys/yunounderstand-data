@@ -1,12 +1,4 @@
 
-let rec mulByDigit i l =
-  let f a xs =
-    let (a1,a2) = a in
-    let h::t = xs in
-    let val1 = (h * i) + a1 in
-    if val1 > 9
-    then ((val1 / 10), ((val1 mod 10) :: a2))
-    else (0, (val1 :: a2)) in
-  let base = (0, []) in
-  let args = List.rev (0 :: l) in
-  let (_,res) = List.fold_left f base args in res;;
+let pipe fs =
+  let f a x = List.fold_right a 0 x in
+  let base = 0 in List.fold_left f base fs;;

@@ -1,5 +1,5 @@
-Characters 45-55:
-  | (ki,vi)::t -> if k = ki then vi else assoc (d, k, t) 
-    ^^^^^^^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type 'b * 'c * 'd
+Characters 43-51:
+  let f a x = let h::t = x in (pipe t) (h a) in
+                              ^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

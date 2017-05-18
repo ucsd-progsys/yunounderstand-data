@@ -46,20 +46,17 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = if List.mem h seen
-            then seen
-            else h::seen
-          in
+          let seen' = seen::h in
           let rest' = t in 
             helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -90,10 +87,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((failwith "to be written"),b) ;;
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -124,23 +121,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine e' -> "sin (pi * " ^ exprToString e' ^ ")"
-  | Cosine e' -> "cos (pi * " ^ exprToString e' ^ ")"
-  | Average (a,b)-> "((" ^ (exprToString a) ^ " + " ^ (exprToString b) ^ ")/2)"
-  | Times (a,b) -> (exprToString a) ^ " * " ^ (exprToString b)
-  | Thresh (a,b,c,d) -> 
-      "(" ^ exprToString a ^ "<" ^ exprToString b ^ " ? " ^ exprToString c ^ " : " ^ exprToString d ^ ")" ;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -162,15 +151,8 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x
-  | VarY -> y
-  | Sine e' -> sin (pi *. eval (e',x,y))
-  | Cosine e' -> cos (pi *. eval (e',x,y))
-  | Average (e1, e2) -> (eval (e1,x,y) +. eval (e2,x,y))/2
-  | Times (e1,e2) -> eval (e1,x,y) *. eval (e2,x,y)
-  | Thresh (a,b,c,d) -> if eval (a,x,y) < eval (b,x,y)
-      then eval (c,x,y) else eval (d,x,y) ;;
+let rec eval (e,x,y) = failwith "to be written"
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

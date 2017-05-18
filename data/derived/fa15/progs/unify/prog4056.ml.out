@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -1341;;
-          ^^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 163-178:
+  |Average (e1, e2) -> (exprToString e1 +. exprToString e2)/2
+                        ^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         float

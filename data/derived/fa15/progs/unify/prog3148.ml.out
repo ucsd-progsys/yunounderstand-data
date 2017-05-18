@@ -1,5 +1,5 @@
-Characters 54-55:
-  let _ = eval(AverageCubes(VarX, VarY, VarY), 0.001, -.5);;
-                                                        ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 150-176:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

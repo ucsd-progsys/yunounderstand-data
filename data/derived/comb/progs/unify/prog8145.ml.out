@@ -1,5 +1,5 @@
-Characters 138-165:
-  |[] -> if i * h > 10 then [carry i h]@[remainder i h]
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type unit
+Characters 8-25:
+  let y = ["h", "d" , "c" ]
+          ^^^^^^^^^^^^^^^^^
+Error: This expression has type (string * string * string) list
+       This is not a function; it cannot be applied.

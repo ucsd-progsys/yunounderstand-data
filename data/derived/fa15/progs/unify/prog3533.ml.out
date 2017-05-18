@@ -1,5 +1,5 @@
-Characters 15-17:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                 ^^
+Characters 518-519:
+  | TowerInv(a, b, c) -> if(x < 1.0 && x > -1.0 || y < 1.0 && y > -1.0) then 0.5 else 1 /. (eval(a, x, y) ** eval(b, x, y) ** eval(c, x, y));;
+                                                                                      ^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         float

@@ -1,5 +1,6 @@
-Characters 36-47:
-  if explode w == listReverse explode w 
-                  ^^^^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 159-160:
+  let seen' = if (List.mem h seen) = true then seen else seen@h in
+                                                              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

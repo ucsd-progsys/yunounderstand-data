@@ -1,6 +1,5 @@
-Characters 58-70:
-  | hd::t -> removeZero l :: h;;
-             ^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 575-587:
+  | Volume (j, k, l)    -> exprToString e ^ "*" ^ exprToString e "*" exprToString e;;
+                                                  ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

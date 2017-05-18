@@ -1,6 +1,7 @@
 
-let rec add current next =
-  match current with | [] -> [next] | front::back -> front (add back next);;
-
 let rec digitsOfInt n =
-  if n <= 0 then [] else add (digitsOfInt (n / 10)) [n mod 10];;
+  match n < 0 with
+  | true  -> []
+  | false  ->
+      let quotient = n / 10 in
+      if quotient = 0 then n mod 10 else quotient :: (digitsOfInt quotient);;

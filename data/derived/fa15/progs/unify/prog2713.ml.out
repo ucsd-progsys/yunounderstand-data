@@ -1,5 +1,5 @@
-Characters 121-123:
-  | [] -> if a1 = 0 then [] else [(0.a1)]
-                                   ^^
-Error: This expression has type float
-       This is not a function; it cannot be applied.
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type (int -> int) list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

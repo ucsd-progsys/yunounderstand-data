@@ -1,5 +1,5 @@
-Characters 72-92:
-  | _ -> bigAdd l (mulByDigit (i-1) l);;
-                  ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 123-136:
+  match rand(makeRand(0,4),makeRand(0,4)) with
+             ^^^^^^^^^^^^^
+Error: This expression has type int * int -> int
+       but an expression was expected of type int

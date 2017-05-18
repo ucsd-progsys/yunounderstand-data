@@ -42,22 +42,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec revReppend(x,y) =
-  match y with
-    |[]->x
-    |h::t -> let z=h::x in revReppend(z,t);;
-
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
         [] -> seen
       | h::t -> let x=List.mem h seen in if x then helper(seen,t)
             else 
-              let seen' = revReppend(seen,h::[]) in
+              let seen' = seen::h::[] in
               let rest' = t in 
                 helper (seen',rest') 
-  in
-    List.rev (helper ([],l));;
+                (*XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+  in helper([],l)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -75,19 +71,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let rec wwhile (f,b) = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec wwhile (f,b) = 
-  let (x,y)=f b in
-    match y with
-      |false->x
-      |true->wwhile(f,x);;
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -97,14 +87,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let helper(f,b)=
-  let x=f b in
-    match x with
-      |b->false
-      |_->true;;
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((helper(f,b)),b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX

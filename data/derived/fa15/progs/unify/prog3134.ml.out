@@ -1,5 +1,5 @@
-Characters 228-229:
-  | Average (expr1, expr2) -> (((eval (expr1, x, y) +. eval(expr2, x, y))) /. 2)
-                                                                              ^
+Characters 20-21:
+  let _ = eval (VarX, 1,0);;
+                      ^
 Error: This expression has type int but an expression was expected of type
          float

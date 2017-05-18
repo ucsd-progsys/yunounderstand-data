@@ -1,5 +1,5 @@
-Characters 68-97:
-  else bigAdd l, mulByDigit( i-1, l);;
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 29-40:
+  let stringOfList f l = "[" ^ List.map(l) ^ sepConcat(";" l) ^ "]";;
+                               ^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string

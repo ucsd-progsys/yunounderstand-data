@@ -1,5 +1,5 @@
-Characters 84-85:
-  (b+1,bigAdd((mulByDigit x l2)@clone(0 b) c)) in
-                                      ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 155-181:
+  let args = List.combine (List.rev l1)@0 (List.rev l2)@0 in
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> ('b * 'a) list
+       but an expression was expected of type 'c list

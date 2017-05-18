@@ -68,11 +68,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-let rec wwhile (f, b) = 
+let rec wwhile (f,b) = 
   let res = f b in
     match res with
-      | (x, y) when y = true -> wwhile(f, x)
+      | (x, y) when y = true  -> wwhile (f, x)
       | (x, y) -> x
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -87,18 +86,16 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-
 let fixpoint (f,b) =
-  let gs = fun x -> 
-    let isFPoint s = ((f s) - s) < 0 in
-    let iterate (t, y) = t y in
-    let rec go r = 
-      if isFPoint r then r 
-      else go (iterate (x,r))
-    in (go x)
-  in wwhile(gs, b)
+  let funt = fun b -> if f b then (true, 1) else (true, 1) in
+    wwhile (funt, b);;
 
+let fs x = 
+  if x = 0 then 0
+  else if x > 1 then x - 1
+  else x + 1
 
+let _ = fixpoint (fs, 100)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 

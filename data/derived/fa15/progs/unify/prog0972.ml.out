@@ -1,5 +1,5 @@
-Characters 118-120:
-  | Cosine e1            -> cos e1
-                                ^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 26-27:
+  let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         'a list

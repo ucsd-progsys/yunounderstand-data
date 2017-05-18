@@ -1,5 +1,5 @@
-Characters 37-44:
-  if (sumList digits n) / 10 = 0 then (sumList digits n)
-      ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 113-114:
+  (place*10, (bigAdd (mulByDigit (place *l) l1) l))
+                                                ^
+Error: This expression has type int but an expression was expected of type
+         int list

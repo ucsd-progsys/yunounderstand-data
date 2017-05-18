@@ -1,0 +1,5 @@
+Characters 54-58:
+  |(h::t)->h@[];;
+           ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

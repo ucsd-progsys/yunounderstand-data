@@ -1,6 +1,5 @@
-Characters 58-71:
-  | h::t -> listReverse t::h;;
-            ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 21-24:
+  let _ = listReverse ["a"; "b"; "c"; "d"];;
+                       ^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

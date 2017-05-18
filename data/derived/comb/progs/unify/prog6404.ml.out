@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type
-         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)
+Characters 59-69:
+  | xf:: xb -> xf + sumList xb;;
+                    ^^^^^^^^^^
+Error: This expression has type int list -> int
+       but an expression was expected of type int

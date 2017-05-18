@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 14-31:
+  let _ = append([1;2;3],[4;5;6]);;
+                ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

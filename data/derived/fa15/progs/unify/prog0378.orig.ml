@@ -47,12 +47,14 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = h in
-          let rest' = 
-            if List.mem(seen', seen)
-            then  t
-            else seen' @ seen in
-            helper (seen',rest')
+          let seen' = 
+            if List.mem h seen
+            then seen
+            else h::seen
+          in
+          let rest' = t
+          in 
+            helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
@@ -121,7 +123,6 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | ThreshRev   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -133,11 +134,9 @@ let rec exprToString e =
     | Sine e1  -> "sin(pi*" ^ exprToString e1 ^ ")"
     | Cosine e1 ->"cos(pi*" ^ exprToString e1 ^ ")"
     | Average (e1,e2) -> "((" ^ exprToString e1 ^ "+" ^ exprToString e2 ^ ")/2)"
-    | Times (e1,e2) -> exprToString e1 ^ "*" ^ exprToString e2
-    | Thresh (e1,e2,e3,e4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^
-                              "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
-    | ThreshRev (e1,e2,e3,e4) -> "(" ^ exprToString e1 ^ ">" ^ exprToString e2 ^
-                                 "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
+    | Times (e1,e2) -> exprToString e1 ^ "*" exprToString e2
+    | Thresh (e1,e2,e3,4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^
+                             "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
 ;;
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
@@ -158,7 +157,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildThreshRev(a,b,a_less,b_less) = ThreshRev(a,b,a_less,b_less)
 
 
 let pi = 4.0 *. atan 1.0
@@ -166,33 +164,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with 
-    | VarX -> x
-    | VarY -> y
-    | Sine e1 -> sin(eval(e1,x,y) *. pi)
-    | Cosine e1 ->cos(eval(e1,x,y) *. pi)
-    | Average (e1,e2) -> ((eval (e1,x,y) +. eval (e2,x,y))/.2.0)
-    | Times (e1,e2) -> eval(e1,x,y) *. eval(e2,x,y)
-    | Thresh (e1,e2,e3,e4) -> 
-        if eval(e1,x,y) < eval(e2,x,y) 
-        then 
-          eval(e3,x,y)
-        else 
-          eval(e4,x,y)
-    | ThreshRev (e1,e2,e3,e4) -> 
-        if eval(e1,x,y) > eval(e2,x,y) 
-        then 
-          eval(e3,x,y)
-        else 
-          eval(e4,x,y)
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr1,0.5,0.2);;
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -222,34 +201,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
-let buildX()                       = VarX
-let buildY()                       = VarY
-let buildSine(e)                   = Sine(e)
-let buildCosine(e)                 = Cosine(e)
-let buildAverage(e1,e2)            = Average(e1,e2)
-let buildTimes(e1,e2)              = Times(e1,e2)
-let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildThreshRev(a,b,a_less,b_less) = ThreshRev(a,b,a_less,b_less)
 
+let rec build (rand, depth) = failwith "to be implemented"
 
-let rec build (rand, depth) =
-  if depth = 0 then
-    match rand(0,2) with
-      | 0 -> buildX()
-      | 1 -> buildY()
-
-  else 
-    match rand(0,6) with 
-      | 0 -> buildSine(build(rand, depth-1))
-      | 1 -> buildCosine(build(rand, depth-1))
-      | 2 -> buildAverage(build(rand, depth-1),build(rand, depth-1))
-      | 3 -> buildTimes(build(rand, depth-1),build(rand, depth-1))
-      | 4 -> buildThresh(build(rand, depth-1),build(rand, depth-1),
-                         build(rand, depth-1),build(rand, depth-1))
-
-      | 5 -> buildThreshRev(build(rand, depth-1),build(rand, depth-1),
-                            build(rand, depth-1),build(rand, depth-1))
-;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -257,13 +211,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (8, 3, 4)
-let g2 () = (9, 4, 5)
-let g3 () = (10, 3, 4)
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (11, 4, 2)
-let c2 () = (12, 5, 1)
-let c3 () = (10, 2, 4)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -613,7 +567,4 @@ let _ =
   let _      = List.iter print130 (report@([scoreMsg()])) in
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
-;;
-
-doRandomGray(g1)
 

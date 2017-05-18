@@ -1,5 +1,5 @@
-Characters 218-234:
-  | Cube e'		 -> (eval(e', x, y))^3
-                 ^^^^^^^^^^^^^^^^
+Characters 32-34:
+  let rec exprToString e = [Sine (pi * e)];;
+                                  ^^
 Error: This expression has type float but an expression was expected of type
-         string
+         int

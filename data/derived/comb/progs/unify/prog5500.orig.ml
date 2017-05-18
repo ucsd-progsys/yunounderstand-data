@@ -42,22 +42,20 @@ let _ = sqsum [-1]
 
 
 let pipe fs = 
-  let f a x = x (pipe List.hd fs) in
-  let base = (fun y -> y) in 
+  let f a x = fs in
+  let base = 0 in
     List.fold_left f base fs
 
-let fn = pipe [(fun x -> x+x)]
 
-let _ = fn 3
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
+XXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 let rec sepConcat sep sl = match sl with 
@@ -230,10 +228,10 @@ let testTest () =
 let runTest (f,arg,out,points,name) =
   let _ = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

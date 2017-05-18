@@ -1,5 +1,7 @@
-Characters 73-80:
-  if n/10 != 0 then 1+additivePersistence sumList (digitsOfInt n)
-                                          ^^^^^^^
-Error: This expression has type int list -> int
-       but an expression was expected of type int
+Characters 253-254:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int list -> int * int -> int * int list
+       but an expression was expected of type
+         int list -> int * int -> int list
+       Type int * int list is not compatible with type int list 

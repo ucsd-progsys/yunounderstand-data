@@ -1,5 +1,5 @@
-Characters 64-124:
-  then List.append (clone 0 (List.length(l1) - List.length(l2))) l2;;
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type unit
+Characters 66-76:
+  | h::t -> matchHeads (listReverse (explode w)) (listReverse (explode w));;
+            ^^^^^^^^^^
+Error: This function has type 'a list list * 'a list list -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

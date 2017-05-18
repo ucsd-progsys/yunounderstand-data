@@ -97,9 +97,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let fixpoint (f,b) = wwhile (
-                       (let func input = 
-                          ((f input),((f input) != input)) 
-                        in func) 
+                       (let func (output,result) = (f b,f b = b) in func) 
                      ,b)
 ;;
 
@@ -135,16 +133,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    | VarX                 -> "x"
-    | VarY                 -> "y"
-    | Sine e1              -> "sin (pi * "^^(exprToString e1)^^")"
-    | Cosine e1            -> "cos (pi * "^^(exprToString e1)^^")"
-    | Average (e1,e2)      -> "(("^^(exprToString e1)^^" + "^^(exprToString e2)^^"/2)"
-    | Times (e1,e2)        -> ""(exprToString e1)^^" * "^^(exprToString e2)""
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
-;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

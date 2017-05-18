@@ -1,6 +1,5 @@
-Characters 76-77:
-  |h::t -> [t] @ listReverse h;;
-                             ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 354-416:
+  | 4 -> buildThresh(build(rand, depth - 1),buildX(),buildY()),buildX();;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

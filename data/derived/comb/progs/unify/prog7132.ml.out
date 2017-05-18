@@ -1,5 +1,6 @@
-Characters 187-188:
-  else rest' = t
-               ^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 134-135:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int -> int list -> int * int list
+       but an expression was expected of type int -> int list -> int
+       Type int * int list is not compatible with type int 

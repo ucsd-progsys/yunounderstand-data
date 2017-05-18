@@ -1,5 +1,5 @@
-Characters 200-204:
-  |Average(s,p)-> "(("+exprToString s+"+"+exprToString p+")/2"
-                  ^^^^
-Error: This expression has type string but an expression was expected of type
-         int
+Characters 36-41:
+  let fixpoint (f,b) = wwhile ((helper(f,b)),b);;
+                                      ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'd

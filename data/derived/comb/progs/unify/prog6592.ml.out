@@ -1,5 +1,5 @@
-Characters 71-81:
-  let r=(mulByDigit o List.rev l2)+b in
-         ^^^^^^^^^^
-Error: This function has type int -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 90-96:
+  |x when x>=10->(x/10)@((x mod 10)+(mulByDigit i t))
+                 ^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

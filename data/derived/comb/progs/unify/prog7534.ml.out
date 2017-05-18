@@ -1,5 +1,7 @@
-Characters 48-56:
-  else n mod 10 @ digitofInt n/10;;
-       ^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 84-85:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'b -> 'b) -> 'b -> 'b
+       but an expression was expected of type
+         ('a -> 'b -> 'b) -> 'b -> 'a -> 'b -> 'b
+       The type variable 'b occurs inside 'a -> 'b -> 'b

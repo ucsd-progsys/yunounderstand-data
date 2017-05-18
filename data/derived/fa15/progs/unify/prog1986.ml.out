@@ -1,5 +1,5 @@
-Characters 87-88:
-  | Sine(e) -> sin(pi *. e)
-                         ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 161-174:
+  in makeString l';;
+     ^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

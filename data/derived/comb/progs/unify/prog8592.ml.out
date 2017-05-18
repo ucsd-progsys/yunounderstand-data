@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -299394;;
-          ^^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 415-435:
+  | Circ	(circ1,circ2)       -> eval(circ1,x,y)**2.0+eval(circ2,x,y)**2.0
+                                ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,6 @@
-Characters 92-106:
-  | h::t -> [mulByDigit i t + carry h i] @ [remainder i t];;
-             ^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 21-34:
+  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+                       ^^^^^^^^^^^^^
+Error: This expression has type int -> string
+       but an expression was expected of type ('a list -> 'b list) -> string
+       Type int is not compatible with type 'a list -> 'b list 

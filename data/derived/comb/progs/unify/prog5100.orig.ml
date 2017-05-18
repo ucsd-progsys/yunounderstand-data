@@ -52,28 +52,27 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-(*X
+(*XXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX*)
-
+XXX*)
 
 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = match n with
-  | x :: [] -> x
-  | h::t    -> digitalRoot(digits(sumList(n)))
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 let rec listReverse l = match l with 
@@ -99,7 +98,7 @@ let explode s =
     go 0
 
 let palindrome w = 
-  if (explode w = listReverse(explode w)) then
+  if (w = listReverse(w)) then
     true
   else 
     false 

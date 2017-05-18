@@ -1,6 +1,5 @@
-Characters 71-72:
-  let fixpoint (f,b) = wwhile (let n x = let ff = f  in (f , x = f x) in n,b);;
-                                                                         ^
-Error: This expression has type 'a -> ('a -> 'a) * bool
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a -> 'a
+Characters 14-28:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                ^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+(('a -> 'a) -> 'a -> 'a) list

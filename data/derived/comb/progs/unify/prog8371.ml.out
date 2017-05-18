@@ -1,5 +1,5 @@
-Characters 118-120:
-  l1 (pad@l2)
-  ^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 47-60:
+  let stringOfList f l = fun l -> sepConcat("; ")(List.map(f));;
+                                                 ^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string list

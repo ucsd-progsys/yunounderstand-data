@@ -1,5 +1,5 @@
-Characters 111-119:
-  if List.rev h seen then seen
-     ^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 37-38:
+  let f a x = [a]::0 in
+                   ^
+Error: This expression has type int but an expression was expected of type
+         'a list list

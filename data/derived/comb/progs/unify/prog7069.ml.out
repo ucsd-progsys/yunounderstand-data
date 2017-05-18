@@ -1,5 +1,5 @@
-Characters 195-199:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int list * int list
+Characters 24-29:
+  let _ = sepConcat ", " ["foo";"bar";"baz"];;
+                          ^^^^^
+Error: This expression has type string but an expression was expected of type
+         string -> string

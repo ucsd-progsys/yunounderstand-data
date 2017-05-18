@@ -1,174 +1,127 @@
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXXXX
-XXXXXXXXXXXXXX
-XXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
 *)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec sumList xs = 
+  match xs with
+      [] -> 0
+    | h::t -> h + sumList(t)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+let _ = sumList [1; 2; 3; 4]
+let _ = sumList [1; -2; 3; 5]
+let _ = sumList [1; 3; 5; 7; 9; 11]
+(*
+*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec append l r = 
+  match l with 
+    | [] -> r
+    | h::t -> h :: append t r
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec digitsOfInt n =
+  if(n <= 0) 
+  then  n
+  else append n mod 10 digitsOfInt(n/10)
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+let _ = digitsOfInt 3124
+let _ = digitsOfInt 352663
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let sqsum xs = 
-  let f a x = a + x*x in
-  let base = 0 in
-    List.fold_left f base xs
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let _ = sqsum []
-let _ = sqsum [1;2;3;4]
-let _ = sqsum [(-1); (-2); (-3); (-4)]
 (**)
 
-let identity a = a
-let pipe fs = 
-  let f a x = fun b -> x(a) in
-  let base = identity in 
-    List.fold_left f base fs
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-
-let rec sepConcat sep sl = match sl with 
-  | [] -> ""
-  | h :: t -> 
-      let f a x =  a ^ sepConcat sep x in
-      let base = h in
-      let l = t in
-        List.fold_left f base l
+let digits n = digitsOfInt (abs n)
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
-
-let stringOfList f l = failwith "to be implemented"
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
+let rec additivePersistence n = 
+  if n >= 0 && n < 10
+  then 0
+  else 1 + additivePersistence(sumList(digits(n)))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)  
 
-let rec clone x n = failwith "to be implemented" 
+let _ = additivePersistence 9876
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*X*)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let rec digitalRoot n = 
+  if n >= 0 && n < 10 
+  then n
+  else digitalRoot(sumList(digits(n)))
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+
+let _ = digitalRoot 9876
+
+(**)
+
+
+let rec listReverse l = 
+  match l with
+      [] -> []
+    | h::t -> listReverse(t) @ [h]
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = listReverse [1; 2; 3; 4]
+let _ = listReverse ["a"; "b"; "c"; "d"]
+
+(*X*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let explode s = 
+  let rec go i = 
+    if i >= String.length s 
+    then [] 
+    else (s.[i]) :: (go (i+1)) 
+  in
+    go 0
 
-let padZero l1 l2 = failwith "to be implemented"
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
-let rec removeZero l = failwith "to be implemented"
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
-let bigAdd l1 l2 = 
-  let add (l1, l2) = 
-    let f a x = failwith "to be implemented" in
-    let base = failwith "to be implemented" in
-    let args = failwith "to be implemented" in
-    let (_, res) = List.fold_left f base args in
-      res
-  in 
-    removeZero (add (padZero l1 l2))
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
+let palindrome w = explode(w) = listReverse(explode(w))
 
 
-let rec mulByDigit i l = failwith "to be implemented"
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
-let bigMul l1 l2 = 
-  let f a x = failwith "to be implemented" in
-  let base = failwith "to be implemented" in
-  let args = failwith "to be implemented" in
-  let (_, res) = List.fold_left f base args in
-    res
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
-
-
-
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let _ = palindrome "malayalam"
+let _ = palindrome "myxomatosis"
+(*X*)
 
 
 
@@ -190,16 +143,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+type test = unit -> string
 
+let key        = ""     (*XXXXXXXX*)
+let prefix130  = "130"  (*XXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let key = "" (*XXXXXXXX*)
-let prefix130 = "130" (*XXXXXXXX*)
 let print130 s = print_string (prefix130^">>"^s)
 
 exception ErrorCode of string
+
+exception TestException
 
 type result = Pass | Fail | ErrorCode of string
 
@@ -209,9 +166,8 @@ let timeout = 300
 
 let runWTimeout (f,arg,out,time) = 
   try if compare (f arg) out = 0 then Pass else Fail
-  with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)^"\n"); ErrorCode "exception") 
+  with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)); ErrorCode "exception") 
 
-exception TestException
 let testTest () =
   let testGood x = 1 in
   let testBad x = 0 in 
@@ -222,9 +178,8 @@ let testTest () =
     runWTimeout(testException,0,1,5) = ErrorCode "exception" && 
     runWTimeout(testTimeout,0,1,5) = ErrorCode "timeout"
 
-
-let runTest (f,arg,out,points,name) =
-  let _ = max := !max + points in
+let runTest ((f,arg,out),points,name) =
+  let _   = max := !max + points in
   let outs = 
     match runWTimeout(f,arg,out,timeout) with 
         Pass -> (score := !score + points; "[pass]")
@@ -232,67 +187,105 @@ let runTest (f,arg,out,points,name) =
       | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let explode s = 
-  let rec _exp i = 
-    if i >= String.length s then [] else (s.[i])::(_exp (i+1)) in
-    _exp 0
+let mkTest f x y name = runTest ((f, x, y), 1, name)
 
-let implode cs = 
-  String.concat "" (List.map (String.make 1) cs)
+let badTest () = "WARNING: Your tests are not valid!!\n"
 
-let drop_paren s = 
-  implode (List.filter (fun c -> not (List.mem c ['(';' ';')'])) (explode s))
+let scoreMsg () = 
+  Printf.sprintf "Results: Score/Max = %d / %d \n" !score !max 
 
-let eq_real p (r1,r2) = 
-  (r1 -. r2) < p || (r2 -. r1) < p
+let doTest f = 
+  try f () with ex -> 
+    Printf.sprintf "WARNING: INVALID TEST THROWS EXCEPTION!!: %s \n\n"
+      (Printexc.to_string ex)
 
-let wrap_curried_2 f (a,b) = f a b
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let runAllTests () =
-  let _ = (score := 0; max := 0) in
-  let report = 
-    [runTest (sqsum, [], 0, 1, "sqsum 1");
-     runTest (sqsum, [1;2;3;4], 30, 1, "sqsum 2");
-     runTest (sqsum, [-1;-2;-3;-4], 30, 1, "sqsum 3");
+let sampleTests =
+  [
+    (fun () -> mkTest
+                 sumList
+                 [1;2;3;4]
+                 10
+                 "sample: sumList 1"
+    );
+    (fun () -> mkTest 
+                 sumList 
+                 [1;-2;3;5] 
+                 7 
+                 "sample: sumList 2"
+    ); 
+    (fun () -> mkTest 
+                 sumList 
+                 [1;3;5;7;9;11]
+                 36 
+                 "sample: sumList 3"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 3124 
+                 [3;1;2;4] 
+                 "sample: digitsOfInt 1"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 352663 
+                 [3;5;2;6;6;3] 
+                 "sample: digitsOfInt 2"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 31243
+                 [3;1;2;4;3] 
+                 "sample: digits 1"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 (-23422)
+                 [2;3;4;2;2]
+                 "sample: digits 2"
+    ); 
+    (fun () -> mkTest 
+                 additivePersistence 
+                 9876 
+                 2 
+                 "sample: additivePersistence1"
+    ); 
+    (fun () -> mkTest 
+                 digitalRoot 
+                 9876 
+                 3 
+                 "sample: digitalRoot"
+    ); 
+    (fun () -> mkTest 
+                 listReverse
+                 [1;2;3;4] 
+                 [4;3;2;1]
+                 "sample: reverse 1"
+    ); 
+    (fun () -> mkTest 
+                 listReverse 
+                 ["a";"b";"c";"d"]
+                 ["d";"c";"b";"a"] 
+                 "sample: rev 2"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "malayalam" 
+                 true
+                 "sample: palindrome 1"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "myxomatosis" 
+                 false
+                 "sample: palindrome 2"
+    )] 
 
-     runTest (wrap_curried_2 pipe, ([], 3), 3, 1, "pipe 1");
-     runTest (wrap_curried_2 pipe, ([(fun x-> 2*x);(fun x -> x + 3)], 3), 9, 1, "pipe 2");
-     runTest (wrap_curried_2 pipe, ([(fun x -> x + 3); (fun x-> 2*x)], 3), 12, 1, "pipe 3");
-
-     runTest(wrap_curried_2 sepConcat, (", ",["foo";"bar";"baz"]), "foo, bar, baz", 1, "sepConcat 1");
-     runTest(wrap_curried_2 sepConcat, ("---",[]), "", 1, "sepConcat 2");
-     runTest(wrap_curried_2 sepConcat, ("",["a";"b";"c";"d";"e"]), "abcde", 1, "sepConcat 3");
-     runTest(wrap_curried_2 sepConcat, ("X",["hello"]), "hello", 1, "sepConcat 4");
-
-     runTest(wrap_curried_2 stringOfList, (string_of_int,[1;2;3;4;5;6]), "[1; 2; 3; 4; 5; 6]",1,"stringOfList 1");
-     runTest(wrap_curried_2 stringOfList, ((fun x -> x),["foo"]), "[foo]",1,"stringOfList 2");
-     runTest(wrap_curried_2 stringOfList, ((stringOfList string_of_int),[[1;2;3];[4;5];[6];[]]), "[[1; 2; 3]; [4; 5]; [6]; []]",1,"stringOfList 3");
-
-     runTest(wrap_curried_2 clone, (3,5), [3;3;3;3;3],1,"clone 1");
-     runTest(wrap_curried_2 clone, ("foo",2), ["foo";"foo"],1,"clone 2");
-     runTest(wrap_curried_2 clone, (clone,-3), [],1,"clone 3");
-
-     runTest(wrap_curried_2 padZero, ([9;9],[1;0;0;2]), ([0;0;9;9],[1;0;0;2]),1,"padzero 1");
-     runTest(wrap_curried_2 padZero, ([1;0;0;2],[9;9]), ([1;0;0;2],[0;0;9;9]),1,"padzero 2");
-
-     runTest(removeZero, [0;0;0;1;0;0;2], [1;0;0;2],1,"removeZero 1");
-     runTest(removeZero, [9;9], [9;9],1,"removeZero 2");
-
-     runTest(wrap_curried_2 bigAdd,  ([9;9],[1;0;0;2]), [1;1;0;1],1, "bigAdd 1");
-     runTest(wrap_curried_2 bigAdd,  ([9;9;9;9],[9;9;9]), [1;0;9;9;8],1, "bigAdd 2");
-
-     runTest(wrap_curried_2 mulByDigit,  (9,[9;9;9;9]), [8;9;9;9;1],1, "mulByDigit 1");
-
-     runTest(wrap_curried_2 bigMul,  ([9;9;9;9],[9;9;9;9]), [9;9;9;8;0;0;0;1],1, "bigMul 1");
-     runTest(wrap_curried_2 bigMul,  ([9;9;9;9;9],[9;9;9;9;9]), [9;9;9;9;8;0;0;0;0;1],1,"bigMul 2");
-    ] in
-  let s = Format.sprintf "Results: Score/Max = %d / %d \n" !score !max in
-  let _ = List.iter print130 (report@([s])) in
-    (!score,!max)
-
-let _ = runAllTests ()
-
-let _ = print130 ("Compiled"^key^"\n")
-
-
+let _ =
+  let report = List.map doTest (sampleTests) in
+  let _ = List.iter print130 (report@([scoreMsg()])) in
+  let _ = print130 ("Compiled\n") in
+    (!score, !max)

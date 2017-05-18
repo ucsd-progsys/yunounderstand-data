@@ -1,5 +1,5 @@
-Characters 95-101:
-  let base = ((0, 0) List.combine l1 l2) in 
-              ^^^^^^
-Error: This expression has type int * int
-       This is not a function; it cannot be applied.
+Characters 36-37:
+  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+                                      ^
+Error: This expression has type int but an expression was expected of type
+         string

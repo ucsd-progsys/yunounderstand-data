@@ -1,5 +1,5 @@
-Characters 298-300:
-  | Times (t1,t2)		    -> Printf.printf "%s*%s" t1 t2
-                                                ^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 111-119:
+  | [] -> [(b/10)]::[b mod 10]
+                     ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

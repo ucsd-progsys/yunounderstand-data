@@ -1,6 +1,5 @@
-Characters 91-95:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> ('a -> 'b) -> 'b
-       The type variable 'a occurs inside ('a -> 'b) -> 'b
+Characters 8-20:
+  let _ = exprToString Golden(VarX);;
+          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

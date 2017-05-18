@@ -1,5 +1,5 @@
-Characters 154-155:
-  let (toSum1, toSum2) = x in
-                         ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b * 'c
+Characters 24-25:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                          ^
+Error: This expression has type ('a -> 'b) -> 'a -> 'b
+       but an expression was expected of type int

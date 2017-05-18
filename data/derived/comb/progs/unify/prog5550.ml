@@ -1,10 +1,9 @@
 
-let rec wwhile (f,b) =
-  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | h::t ->
+      (match h with | (name,num) -> if name = d then num else assoc (d, k, t));;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) = wwhile (f, b);;
-
-let _ = fixpoint (collatz, 3);;
+let _ =
+  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;

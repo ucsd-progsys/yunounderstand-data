@@ -1,24 +1,30 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec clone x n = if n > 0 then [x] @ (clone x (n - 1)) else [];;
 
-let buildCosine e = Cosine e;;
+let rec addHelper (t,u) =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then (addHelper (t, t')) @ [(1 + h') + h]
+           else (addHelper (t, t')) @ [h' + h]);;
 
-let buildSine e = Sine e;;
+let padZero l1 l2 =
+  let len1 = List.length l1 in
+  let len2 = List.length l2 in
+  if len1 > len2
+  then (l1, ((clone 0 (len1 - len2)) @ l2))
+  else (((clone 0 (len2 - len1)) @ l1), l2);;
 
-let buildX () = VarX;;
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
 
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  match ((rand (243, 98723)), depth) with
-  | (x,0) when (x mod 2) = 0 -> buildY ()
-  | (x,0) when (x mod 2) = 1 -> buildX ()
-  | (x,n) when (n mod 5) = 0 -> buildSine (build (x, (n - 1)))
-  | (x,n) when (n mod 5) = 4 -> buildCosine (build (x, (n - 1)));;
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = addHelper (a, x) in
+    let base = ([], []) in
+    let args = (l1, l2) in let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

@@ -1,9 +1,25 @@
 
-let removeDuplicates l =
-  let rec helper (seen,rest) =
-    match rest with
-    | [] -> seen
-    | h::t ->
-        let seen' = if List.mem h seen then seen else [seen; h] in
-        let rest' = t in helper (seen', rest') in
-  List.rev (helper ([], l));;
+let getHead h = match h with | [] -> [] | h::t -> h;;
+
+let getTail t = match t with | [] -> [] | h::t -> t;;
+
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let rec listList xs = match xs with | [] -> [[]] | h::t -> [h] @ (listList t);;
+
+let rec matchHeads x =
+  match x with
+  | [] -> true
+  | h::t ->
+      if h = (getHead t) then matchHeads (getTail (listReverse t)) else false;;
+
+let palindrome w =
+  match explode w with
+  | [] -> true
+  | h::t -> matchHeads (listList (explode w));;

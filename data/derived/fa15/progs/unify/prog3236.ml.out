@@ -1,5 +1,5 @@
-Characters 76-86:
-  |Sine e -> "sin (pi*" exprToString e ")"
-             ^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 26-34:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                            ^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

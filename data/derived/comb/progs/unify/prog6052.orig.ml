@@ -132,62 +132,54 @@ let rec removeZero l = match l with
 let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
-
-
+(*
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 let bigAdd l1 l2 = 
-  let add(l1,l2) =
-    let f a x =  match a with 
-      |(hd::tl) -> ((fst x + snd x + hd )/10)::((fst x + snd x + hd )mod 10)::tl
-      |_ -> ((fst x + snd x )/10)::((fst x + snd x) mod 10):: a
+  let add (l1, l2) = 
+    let f a x = match a with 
+      | (h::t) -> match h with
+        |(b,c) -> match x with 
+          |(first,second) -> ((first + second + b)/10),((first + second + b) mod 10)::t
     in
-    let base = []
-    in
-    let args = List.rev (List.combine l1 l2)
-    in
-      List.fold_left f base args 
+    let base = [] in
+    let args = List.rev (List.combine l1 l2) in 
+    let (_, res)  = List.fold_left f base args in
+      res
   in 
-    removeZero(add(padZero l1 l2 ))
+    removeZero (add (padZero l1 l2))
 
-
-let bigAdd l1 l2 = 
-  let add(l1,l2) =
-    let f a x =  match a with 
-      |(c,d) ->  if(fst x + snd x + c) > 9 then (1,((fst x + snd x + c)mod 10))
-          else (0,((fst x + snd x + c)mod 10))
-      |(0,[]) -> if(fst x + snd x) > 9 then (1,((fst x + snd x)mod 10)::[])
-          else (0,((fst x + snd x )mod 10))
-    in
-    let base = (0,[])
-    in
-    let args = List.rev (List.combine l1 l2)
-    in
-    let (_,res) = 
-      List.fold_left f base args in res 
-  in 
-    removeZero(add(padZero l1 l2 ))
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
-
-
-
-
-let rec mulByDigit i l = 
-
-  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XX*)
+*)
 
-  let bigMul l1 l2 = 
-    let f a x = failwith "to be implemented" in
-    let base = failwith "to be implemented" in
-    let args = failwith "to be implemented" in
-    let (_, res) = List.fold_left f base args in
-      res
+
+let rec mulByDigit i l = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+let bigMul l1 l2 = 
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

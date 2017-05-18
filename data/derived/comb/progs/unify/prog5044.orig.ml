@@ -9,7 +9,9 @@ let rec sumList xs = match xs with
 
 
 
-let _ = sumList [1; 2; 3; 4]
+let _ = sumList [3; -3; -2]
+let _ = sumList [33; 6]
+let _ = sumList [-100]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
 
@@ -20,16 +22,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n = let x = n mod 10 in
-    if n > 9 then digitsOfInt (n/10)::x else n;;
+let rec digitsOfInt n =
+  if n<=0 then [] else 
+    let modded = n mod 10 in
+    let quotient = n/10 in
+    let head = digitsOfInt quotient in
+      head@[modded];;
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let _ = digitsOfInt -3124
+let _ = digitsOfInt 352663
+let _ = digitsOfInt 0
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX

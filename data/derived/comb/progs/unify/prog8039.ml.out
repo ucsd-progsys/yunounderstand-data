@@ -1,5 +1,5 @@
-Characters 183-184:
-  |Average(e1,e2)->(eval (e1,x,y) +. eval (e2,x,y)) /. 2
-                                                       ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 29-44:
+  let fixpoint (f,b) = wwhile ((wwhile(f,b),b),b);;
+                               ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

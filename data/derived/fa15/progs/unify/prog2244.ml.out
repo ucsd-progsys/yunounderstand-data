@@ -1,5 +1,5 @@
-Characters 78-84:
-  | (r, s) -> [r] in
-    ^^^^^^
-Error: This pattern matches values of type 'a * 'b
-       but a pattern was expected which matches values of type 'c list
+Characters 106-110:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

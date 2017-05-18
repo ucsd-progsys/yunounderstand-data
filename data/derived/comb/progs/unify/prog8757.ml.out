@@ -1,5 +1,5 @@
-Characters 76-78:
-  |Sine (e1) -> sin(pi * exprToString e1)
-                    ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 435-450:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int list * int list

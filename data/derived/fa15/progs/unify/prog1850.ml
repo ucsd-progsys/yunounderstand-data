@@ -1,6 +1,12 @@
 
-let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
+let rec wwhile (f,b) =
+  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
 
-let padZero l1 l2 =
-  let n = (List.length l1) - (List.length l2) in
-  if n > 0 then (clone 0 n) @ l2 else ((clone 0) - (1 * n)) @ l1;;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) =
+  let f1 f2 x = if (f2 x) = x then (false, x) else (true, (f2 x)) in
+  wwhile ((f1 f), b);;
+
+let _ = fixpoint (collatz, 48);;

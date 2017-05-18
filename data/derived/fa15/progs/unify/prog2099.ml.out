@@ -1,7 +1,7 @@
-Characters 60-64:
-  wwhile (b, funt);;
-             ^^^^
-Error: This expression has type (('a -> 'a * bool) -> 'a -> 'a * bool) * bool
-       but an expression was expected of type 'a
+Characters 87-88:
+  | h :: t -> assoc d k t
+                    ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * 'b * ('b * ('c -> 'd -> 'e)) list
        The type variable 'a occurs inside
-       (('a -> 'a * bool) -> 'a -> 'a * bool) * bool
+       'a * 'b * ('b * ('c -> 'd -> 'e)) list

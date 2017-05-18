@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 2);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type int -> int
-       Type int * bool is not compatible with type int 
+Characters 83-85:
+  if (sumList (digits n)) mod 10 not 0 then acc
+                              ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,8 +1,4 @@
 
-let retHead l = match l with | [] -> [] | h::t -> h;;
+let rec clone x n = List.combine n x;;
 
-let rec mulByDigit i l =
-  match l with
-  | [] -> []
-  | hd::tl ->
-      [((hd * i) mod 10) + (((retHead tl) * i) / 10)] @ (mulByDigit i tl);;
+let _ = clone 3 5;;

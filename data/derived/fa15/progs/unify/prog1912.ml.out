@@ -1,5 +1,5 @@
-Characters 44-53:
-  else (clone x n-1);;
-        ^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 116-118:
+  | Sine b            -> sin(pi*eval(b,x,y)) 
+                             ^^
+Error: This expression has type float but an expression was expected of type
+         int

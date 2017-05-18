@@ -1,7 +1,5 @@
-Characters 260-261:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 707-711:
+  | MultDivBy6 (e1,e2)    -> "(("(exprToString e1)^" * "^(exprToString e2)^") /6)";;
+                             ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

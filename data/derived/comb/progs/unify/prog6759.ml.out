@@ -1,5 +1,6 @@
-Characters 18-27:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                    ^^^^^^^^^
-Error: This expression has type string but an expression was expected of type
-         int
+Characters 53-62:
+  else x::(clone (x (n-1)));;
+                 ^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         int -> 'a
+       The type variable 'a occurs inside int -> 'a

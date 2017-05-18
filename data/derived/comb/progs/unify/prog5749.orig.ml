@@ -40,10 +40,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 let pipe fs = 
-  fun x -> 
-    let f a x = x a in
-    let base = x in
-      List.fold_left f base fs
+  let f a x = [x + a] in
+  let base = [] in
+    List.fold_left f base fs
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -60,11 +59,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = a ^ sep ^ x in
-      let base = h in
-      let l = t in
+      let f a x = failwith "to be implemented" in
+      let base = failwith "to be implemented" in
+      let l = failwith "to be implemented" in
         List.fold_left f base l
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -76,12 +74,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-(*XXXXXXXXXXXXXXX*)
-let stringOfList f l = 
-  "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
-;;
-
+let stringOfList f l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -96,17 +90,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXX*)
-let rec clone x n = 
-  if n = 0 then []
-  else match x with 
-    | h::t -> [h] @ clone t (n - 1)
 
-;;
-
-let _ = clone 3 5;;
-
-
+let rec clone x n = failwith "to be implemented" 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

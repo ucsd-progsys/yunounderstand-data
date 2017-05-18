@@ -1,5 +1,5 @@
-Characters 156-172:
-  in wwhile((go, isFPoint b), b);;
-            ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 91-97:
+  wwhile (funt b, b);;
+          ^^^^^^
+Error: This expression has type 'a * 'a
+       but an expression was expected of type 'b -> 'b * bool

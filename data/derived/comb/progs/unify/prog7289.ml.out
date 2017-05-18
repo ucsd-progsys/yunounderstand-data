@@ -1,5 +1,5 @@
-Characters 116-117:
-  | _  -> [h*i/10]@
-           ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 15-19:
+  let _ = sqsum [(-1); (-2); (-3); (-4)];;
+                 ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

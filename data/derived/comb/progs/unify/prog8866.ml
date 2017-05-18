@@ -1,5 +1,13 @@
 
-let pipe fs =
-  let f a x f' a = x a in let base c = c in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let rec mulByDigit i l =
+  if i = 0
+  then []
+  else
+    (match 0 :: (List.rev l) with
+     | [] -> []
+     | h::t ->
+         (match t with
+          | [] -> [h]
+          | x::y ->
+              ((mulByDigit i (((i * x) + h) / 10)) :: y) @
+                [((i * x) + h) % 10]));;

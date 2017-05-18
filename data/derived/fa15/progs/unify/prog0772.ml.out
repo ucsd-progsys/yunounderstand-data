@@ -1,5 +1,5 @@
-Characters 56-57:
-  if len == 1 then
-            ^
-Error: This expression has type int but an expression was expected of type
-         'a array -> int
+Characters 203-217:
+  |Times (e,f) -> (eval (e,x,y)) * (eval (f,x,y))
+                  ^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

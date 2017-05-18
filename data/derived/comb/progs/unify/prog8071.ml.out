@@ -1,6 +1,4 @@
-Characters 70-74:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type 'c
-       The type variable 'c occurs inside 'a -> 'b -> 'c
+Characters 127-131:
+  |Average (expr, expr) -> "Average"
+                  ^^^^
+Error: Variable expr is bound several times in this matching

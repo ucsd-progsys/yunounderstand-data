@@ -1,6 +1,5 @@
-Characters 76-91:
-  | h :: t -> t @ listReverse [h];;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list
+Characters 161-187:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

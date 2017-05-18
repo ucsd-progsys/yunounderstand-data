@@ -1,5 +1,5 @@
-Characters 134-135:
-  | [] -> if((n+a+b)<10) then (0, n::[n+a+b]) else (n+1, (n+1)::[(n+a+b) mod 10])
-                ^
-Error: This expression has type int * 'a list
-       but an expression was expected of type int
+Characters 26-34:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                            ^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

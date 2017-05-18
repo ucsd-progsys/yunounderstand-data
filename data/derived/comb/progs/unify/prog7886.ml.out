@@ -1,5 +1,5 @@
-Characters 161-187:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b * 'c
+Characters 49-50:
+  | 0 -> hd::t removeZero t
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type 'a list

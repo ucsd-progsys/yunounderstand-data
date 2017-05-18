@@ -1,6 +1,5 @@
-Characters 78-79:
-  | (f, (h1, h2)) -> if h2 then wwhile f h1 else h1;;
-                                       ^
-Error: This expression has type 'a but an expression was expected of type
-         'a * ('b * bool)
-       The type variable 'a occurs inside 'a * ('b * bool)
+Characters 8-15:
+  let _ = sumList digits 8888888888888888;;
+          ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

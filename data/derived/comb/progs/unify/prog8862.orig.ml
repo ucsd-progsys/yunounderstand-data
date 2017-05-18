@@ -28,30 +28,28 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = a + x*x in
+  let f a x = a+(x*x)
+  in
   let base = 0 in
     List.fold_left f base xs
-
 
 let _ = sqsum []
 let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
-
 let pipe fs = 
-  let f a x = (fun f' d -> x a) in
-  let base = (fun c -> c) in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
     List.fold_left f base fs
 
 
 
+(*XXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
-
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
 
@@ -59,31 +57,30 @@ let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = failwith "to be implemented" in
-      let base = failwith "to be implemented" in
-      let l = failwith "to be implemented" in
+      let f a x = a ^ sep ^ x in
+      let base = h in
+      let l = t in
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
+let _ = sepConcat ", " ["foo";"bar";"baz"]
+let _ = sepConcat "---" []
+let _ = sepConcat "" ["a";"b";"c";"d";"e"]
+let _ = sepConcat "X" ["hello"]
 
 
-let stringOfList f l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let stringOfList f l = "["^ sepConcat ("; ")  (List.map f l) ^ "]"
 
-*)
+
+
+let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+let _ = stringOfList (fun x -> x) ["foo"];;
+let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+
+
 
 
 
@@ -91,40 +88,45 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = failwith "to be implemented" 
+let rec clone x n = 
+  if n <= 0 
+  then []
+  else x::clone (x) (n-1)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = clone 3 5;;
+let _ = clone "foo" 2;; 
+let _ = clone clone (-3);;
 
-XXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let padZero l1 l2 = if List.length (l1) > List.length (l2)
+  then (l1,((clone 0 (List.length(l1) - List.length(l2))) @ l2)) 
+  else (((clone 0 (List.length(l2) - List.length(l1))) @ l1),l2) 
 
-let padZero l1 l2 = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = padZero [9;9] [1;0;0;2]
+let _ = padZero [1;0;0;2] [9;9] 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let rec removeZero l = match l with
+  |[] -> []
+  |h::t -> if h = 0 
+      then removeZero t
+      else l 
 
-let rec removeZero l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = removeZero [0;0;0;1;0;0;2]
+let _ = removeZero [9;9]
+let _ = removeZero [0;0;0;0]
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = failwith "to be implemented" in
-    let base = failwith "to be implemented" in
-    let args = failwith "to be implemented" in
+    let f a x = match x with 
+      |(x, y) -> (0, x + y)
+    in
+    let base = [] in
+    let args = List.combine (List.rev l1) (List.rev l2) in
     let (_, res) = List.fold_left f base args in
       res
   in 
@@ -226,10 +228,10 @@ let testTest () =
 let runTest (f,arg,out,points,name) =
   let _ = max := !max + points in
   let outs = 
-    	match runWTimeout(f,arg,out,timeout) with 
-        	    Pass -> (score := !score + points; "[pass]")
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      	  | ErrorCode e -> "[error: "^e^"]"  in
+      | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

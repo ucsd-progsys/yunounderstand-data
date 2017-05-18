@@ -1,5 +1,5 @@
-Characters 312-317:
-  del x (Union (f1 f2))
-         ^^^^^
-Error: This variant expression is expected to have type string set
-       The constructor Union does not belong to type set
+Characters 73-77:
+  | [] -> if( y = []) then True;;
+                           ^^^^
+Error: This variant expression is expected to have type unit
+       The constructor True does not belong to type unit

@@ -1,5 +1,5 @@
-Characters 101-102:
-  if a = k then b else assoc t;;
-                             ^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type 'b * 'a * ('a * 'b) list
+Characters 84-91:
+  in (g x,x), b);;
+     ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

@@ -1,5 +1,5 @@
-Characters 344-398:
-  | SquareAv(a,b) -> (eval(a,x,y)*.eval(a,x,y) +. eval(b,x,y)*.eval(b,x,y)) / 2.0
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 156-186:
+  | Average(a,b) -> (eval (a,x,y) +. eval (b,x,y))/2
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type float but an expression was expected of type
          int

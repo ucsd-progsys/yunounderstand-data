@@ -1,5 +1,5 @@
-Characters 64-65:
-  (h::t) -> if t then wwhile(f, h) else h;;
-               ^
-Error: This expression has type 'a list
-       but an expression was expected of type bool
+Characters 77-83:
+  let revstr = listReverse (explode w) in if checkSame (w, revstr) then true else false 
+                                                           ^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type string

@@ -1,5 +1,5 @@
-Characters 213-219:
-  | 3 -> buildTimes (build(rand,depth-1), buildY)
-                                          ^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 53-59:
+  let rec digitsOfInt n = if n < 0 then Printf.fprintf "%d\n" 0 else Print.fprintf "%d " digitsOfInt (n / 10);;
+                                                       ^^^^^^
+Error: This expression has type string but an expression was expected of type
+         out_channel

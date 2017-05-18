@@ -1,5 +1,5 @@
-Characters 66-67:
-  let summed = sumList n in
-                       ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 63-75:
+  | x -> mulByDigit i-1 (bigAdd l l);;
+         ^^^^^^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

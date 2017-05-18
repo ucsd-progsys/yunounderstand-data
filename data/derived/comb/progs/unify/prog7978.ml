@@ -1,4 +1,5 @@
 
-let kx = [(1, 2, 3)];;
+let rec wwhile (f,b) = let (b',c') = f b in if c' then wwhile (f, b') else b';;
 
-let xy = if List.mem kx 1 then kx else kx @ [1];;
+let fixpoint (f,b) =
+  let helper b = if (f b) = b then false else true in wwhile (helper, b);;

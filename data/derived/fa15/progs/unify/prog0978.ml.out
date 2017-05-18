@@ -1,5 +1,6 @@
-Characters 230-231:
-  | Average (e1,e2)      -> (((exprToString e1) +. (exprToString e2)) /. (exprToString 2))
-                                                                                       ^
-Error: This expression has type int but an expression was expected of type
-         expr
+Characters 157-158:
+  else ([seen @ h])) in
+                ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

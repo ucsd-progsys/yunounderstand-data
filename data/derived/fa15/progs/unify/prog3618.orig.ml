@@ -1,5 +1,4 @@
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -18,14 +17,14 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = match l with
+let rec assoc (d,k,l) = match l with 
   | [] -> d
-  | (name, number)::tail ->
-      if name = k then number
-      else assoc (d,k,tail)
+  | (s, i)::tl -> if s = k then i
+      else assoc(d,k,tl)
+;;
 
 
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
@@ -47,17 +46,20 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | []   -> seen
       | h::t -> 
-          let seen' = if List.mem h seen then seen else h::seen in
-          let rest' = t in 
+          let seen' = if List.mem h seen then seen 
+            else h::seen in
+          let rest' = t in
             helper (seen',rest') 
   in
-    List.rev (helper ([],l))
+    List.rev (helper ([], l))
+;;
 
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -70,14 +72,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) =
-  match f b with (b', c') ->
-    if c' then wwhile (f, b') else b'
+let rec wwhile (f,b) = let (b',c') = f(b) in 
+    if c' = true then wwhile(f, b') else b'
 
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -88,11 +90,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile (
-                       fun input -> let b = (f input) in (b, b!=input)
-                                                       ,b)
+let fixpoint (f,b) = wwhile ((fun x -> (wwhile(f,b)), (b=f(b)))),b)
 
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
@@ -102,6 +103,7 @@ let _ = fixpoint (collatz, 3) ;;
 let _ = fixpoint (collatz, 48) ;;
 let _ = fixpoint (collatz, 107) ;;
 let _ = fixpoint (collatz, 9001) ;;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

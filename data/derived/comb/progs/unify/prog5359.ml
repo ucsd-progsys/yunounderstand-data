@@ -32,10 +32,6 @@ let rec mulByDigit i l =
 
 let bigMul l1 l2 =
   let f a x =
-    match a with
-    | (o,l) ->
-        let prod = o * x in ((10 * o), (bigAdd (mulByDigit prod l1) l)) in
+    match a with | (o,l) -> ((10 * o), (bigAdd (mulByDigit (o * (x l1))) l)) in
   let base = (1, []) in
   let args = l2 in let (_,res) = List.fold_left f base args in res;;
-
-let _ = bigMul [9] [(1, 1, 1)];;

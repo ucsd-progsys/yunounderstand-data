@@ -1,4 +1,5 @@
 
-let pipe fs =
-  let f a x = let rec a c y = c a x in (a :: x) = fs in
-  let base = x in List.fold_left f base fs;;
+let padZero l1 l2 =
+  let difference1 = (List.length l1) - (List.length l2) in
+  let difference2 = (List.length l2) - (List.length l1) in
+  if difference1 > 0 then (l1, l2);;

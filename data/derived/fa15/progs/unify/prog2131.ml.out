@@ -1,5 +1,5 @@
-Characters 78-86:
-  if (isFPoint x) then (x, true)
-      ^^^^^^^^
-Error: This expression has type bool
+Characters 22-32:
+  let dupe f = fun x -> (f x, f x)
+                        ^^^^^^^^^^
+Error: This expression has type 'a * 'a
        This is not a function; it cannot be applied.

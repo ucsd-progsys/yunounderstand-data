@@ -1,5 +1,9 @@
-Characters 64-65:
-  if c' then wwhile f b' else b';;
-                    ^
-Error: This expression has type 'a -> 'b * bool
-       but an expression was expected of type ('a -> 'b * bool) * 'a
+Characters 268-269:
+  let (_, res) = List.fold_left f base args in res
+                                ^
+Error: This expression has type
+         (int list -> int) * int list -> int * int -> int list * int list
+       but an expression was expected of type
+         (int list -> int) * int list ->
+         int * int -> (int list -> int) * int list
+       Type int list is not compatible with type int list -> int 

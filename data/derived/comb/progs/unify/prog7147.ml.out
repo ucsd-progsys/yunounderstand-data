@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 3);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type int -> bool
-       Type int * bool is not compatible with type bool 
+Characters 84-90:
+  else (n mod 10) :: return
+                     ^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

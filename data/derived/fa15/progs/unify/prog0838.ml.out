@@ -1,5 +1,5 @@
-Characters 84-89:
-  | Sine(e1) -> sin ("x")
-                    ^^^^^
-Error: This expression has type string but an expression was expected of type
-         float
+Characters 29-31:
+  let f x = let xx = x*x*x in (xx xx<100) in 
+                               ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

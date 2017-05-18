@@ -1,6 +1,8 @@
-Characters 63-64:
-  let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);;
-                                                                 ^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 290-291:
+  let (duh, res) = List.fold_left f base args in
+                                  ^
+Error: This expression has type
+         int list * int list list -> int * int -> int list * int list
+       but an expression was expected of type
+         int list * int list list -> int * int -> int list * int list list
+       Type int is not compatible with type int list 

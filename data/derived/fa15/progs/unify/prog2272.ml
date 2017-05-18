@@ -1,4 +1,4 @@
 
-let rec digitsOfInt n =
-  let returnList = [] in
-  if n < 0 then [] else returnList @ ((n mod 10) digitsOfInt (n /. 10));;
+let stringOfList f l =
+  let fx a b = match b with | [] -> "" | h::t -> List.append a (f b) in
+  let base = [""] in List.fold_left fx base l;;

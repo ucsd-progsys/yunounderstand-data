@@ -1,6 +1,10 @@
 
-let rec digitsOfInt n =
-  match n < 0 with
-  | true  -> []
-  | false  ->
-      if (n / 10) = 0 then n mod 10 else (digitsOfInt (n / 10)) :: (n mod 10);;
+let stringOfList f l =
+  match l with
+  | [] -> "]"
+  | h::t ->
+      let f a x = a ^ (";" ^ x) in
+      let base = h in let l = t in "[" ^ (List.fold_left f base l);;
+
+let _ =
+  stringOfList (stringOfList string_of_int) [[1; 2; 3]; [4; 5]; [6]; []];;

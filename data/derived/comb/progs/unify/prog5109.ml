@@ -1,5 +1,8 @@
 
-let rec assoc (d,k,l) =
-  match k with | [] -> d | h::t -> if k = l then l else assoc (d, k, t);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
 
-let _ = assoc ((-1), "bob", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let digits n = digitsOfInt (abs n);;
+
+let rec digitalRoot n =
+  match digits n with | x::[] -> x | h::t -> h + (digitalRoot (digits t));;

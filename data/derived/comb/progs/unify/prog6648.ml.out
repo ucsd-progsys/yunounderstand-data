@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 48);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type bool -> bool
-       Type int is not compatible with type bool 
+Characters 134-135:
+  let rest' = h::filter(t h) in 
+                        ^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

@@ -1,5 +1,5 @@
-Characters 65-82:
-  | (h::t) -> listReverseHelper (h::l) t in listReverseHelper [] listReverse;;
-              ^^^^^^^^^^^^^^^^^
-Error: This function has type 'a list -> 'a list
+Characters 482-485:
+  | NatLog   nlog		    -> log eval(nlog,x,y);;
+                          ^^^
+Error: This function has type float -> float
        It is applied to too many arguments; maybe you forgot a `;'.

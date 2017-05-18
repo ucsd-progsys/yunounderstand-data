@@ -87,7 +87,7 @@ XX*)
 
 let rec clone x n = match n with
   | 0 -> []
-  | n -> if (n < 0) then [] else x::clone x (n-1)
+  | n -> x::clone (x (n-1))
 
 
 let _ = clone 3 5;;
@@ -96,14 +96,14 @@ let _ = clone clone (-3);;
 
 
 
-let padZero l1 l2 = match (List.length l1 - List.length l2) with
-  | 0 -> (l1, l2)
-  | n -> if( n < 0 ) then (clone 0 abs(n) @ l1, l2)  else (clone 0 n @ l2, l1)
+let padZero l1 l2 = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = padZero [9;9] [1;0;0;2]
-let _ = padZero [1;0;0;2] [9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 let rec removeZero l = failwith "to be implemented"
 

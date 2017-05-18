@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type int list -> int
+Characters 101-113:
+  | Sine e    -> "sin(pi*"^exprToString e")"
+                           ^^^^^^^^^^^^
+Error: This function has type expr -> string
        It is applied to too many arguments; maybe you forgot a `;'.

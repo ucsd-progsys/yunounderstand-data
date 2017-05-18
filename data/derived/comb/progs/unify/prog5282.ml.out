@@ -1,5 +1,5 @@
-Characters 578-590:
-  | Square (e1) -> "(" ^ exprToString ^ ")^2";;
-                         ^^^^^^^^^^^^
-Error: This expression has type expr -> string
-       but an expression was expected of type string
+Characters 244-257:
+  | Times	(e',e1)	      -> eval (e',x,y) * eval (e2,x,y)
+                           ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

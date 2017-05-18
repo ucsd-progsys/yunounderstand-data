@@ -1,5 +1,5 @@
-Characters 83-85:
-  if (sumList (digits n)) mod 10 not 0 then acc
-                              ^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 113-114:
+  (place*10, (bigAdd (mulByDigit (place *l) l1) l))
+                                                ^
+Error: This expression has type int but an expression was expected of type
+         int list

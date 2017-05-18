@@ -1,6 +1,5 @@
-Characters 148-149:
-  let seen' = if (List.mem seen h) = false then seen@[h] else seen in
-                                                      ^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list list
+Characters 49-54:
+  if lt10 n then count;;
+                 ^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

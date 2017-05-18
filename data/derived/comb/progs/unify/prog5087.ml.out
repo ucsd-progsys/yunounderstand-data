@@ -1,5 +1,5 @@
-Characters 33-73:
-  n = n mod 10 + additivePersistence(n/10);;
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         int
+Characters 69-80:
+  | x -> [0]@ [listZeros n-1];;
+               ^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

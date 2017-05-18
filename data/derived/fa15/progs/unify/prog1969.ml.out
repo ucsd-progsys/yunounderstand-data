@@ -1,5 +1,5 @@
-Characters 66-79:
-  | false -> digitsOfInt n / 10 :: n mod 10;;
-             ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 270-296:
+  | Thresh (x7,x8,x9,x0) -> eval(buildThresh(x7,x8,x9,x0));;
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

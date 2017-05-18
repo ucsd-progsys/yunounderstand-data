@@ -1,5 +1,5 @@
-Characters 51-52:
-  | 0 -> []
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type 'a list
+Characters 29-41:
+  let stringOfList f l = "[" ^ List.map f l ^ "]";;
+                               ^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

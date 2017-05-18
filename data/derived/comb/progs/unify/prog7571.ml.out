@@ -1,6 +1,6 @@
-Characters 54-55:
-  let fixpoint (f,b) = wwhile (let g x=  (f,x = f x) in g,b);;
-                                                        ^
-Error: This expression has type 'a -> ('a -> 'a) * bool
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a -> 'a
+Characters 185-201:
+  if value > 9 then [(1,value-10)]@a
+                    ^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type int list
+       Type int * int is not compatible with type int 

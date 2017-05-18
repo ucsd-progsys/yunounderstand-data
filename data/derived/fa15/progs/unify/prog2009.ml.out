@@ -1,5 +1,5 @@
-Characters 164-190:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a * 'b
+Characters 29-35:
+  let fixpoint (f,b) = wwhile ((true),b);;
+                               ^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

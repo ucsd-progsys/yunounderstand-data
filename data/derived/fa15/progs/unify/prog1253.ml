@@ -1,9 +1,8 @@
 
-type 'a set =
-  | Set of 'a list;;
+let rec digitsOfInt n =
+  if n > 0 then (digitsOfInt (n / 10)) @ [n mod 10] else [];;
 
-let empty = Set [];;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let s0 = empty;;
-
-let (_,_) = ((List.mem 1 s0), (List.mem 2 s0));;
+let rec additivePersistence n =
+  if (sumList (digitsOfInt n)) > 10 then 1 + additivePersistence else 0;;

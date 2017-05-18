@@ -1,5 +1,5 @@
-Characters 305-313:
-  |AveThree(e1,e2,e3) -> "(("^exprToString e1^"+"^exprToString e2^"+"^exprToString e3^")/3"
-   ^^^^^^^^
-Error: This variant pattern is expected to have type expr
-       The constructor AveThree does not belong to type expr
+Characters 40-46:
+  |VarX s -> printf "%s" s;;
+   ^^^^^^
+Error: The constructor VarX expects 0 argument(s),
+       but is applied here to 1 argument(s)

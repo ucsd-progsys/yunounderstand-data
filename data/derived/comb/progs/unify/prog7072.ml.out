@@ -1,6 +1,6 @@
-Characters 155-159:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type 'c list list
-       Type 'a * 'b is not compatible with type 'c list 
+Characters 184-185:
+  else h in
+       ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

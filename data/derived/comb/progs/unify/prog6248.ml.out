@@ -1,5 +1,6 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b -> 'b
+Characters 94-95:
+  | 1 -> buildSine build(rand,depth-1)
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type
+         int * int -> 'a

@@ -1,8 +1,5 @@
-Characters 175-204:
-  | Sine f'                -> Printf.sprintf("sin(%s)", exprToString(f'))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 49-59:
+  then (b, false)
+       ^^^^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type
-         ('c, unit, string) format =
-           ('c, unit, string, string, string, string)
-           CamlinternalFormatBasics.format6
+       but an expression was expected of type 'c -> 'c * bool

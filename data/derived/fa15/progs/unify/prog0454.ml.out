@@ -1,5 +1,5 @@
-Characters 20-23:
-  let _ = bigMul [9] [1,0];;
-                      ^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 84-89:
+  (10*o, bigAdd(mulByDigit ((o*x) l1)) l)
+                            ^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

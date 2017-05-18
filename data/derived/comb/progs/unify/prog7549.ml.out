@@ -1,6 +1,5 @@
-Characters 135-136:
-  let seen' = if List.mem h t then h else t in
-                                          ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 41-56:
+  let rec clone x n = fun n -> List.append (clone x (n-1)) [x];;
+                                           ^^^^^^^^^^^^^^^
+Error: This expression has type int -> 'a
+       but an expression was expected of type 'b list

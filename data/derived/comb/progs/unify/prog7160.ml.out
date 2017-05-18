@@ -1,5 +1,5 @@
-Characters 446-463:
-  | _ -> buildThresh(build(rand, depth - 1),build(rand, depth - 1),buildY(rand, depth - 1),buildX(rand, depth - 1));;
-                                                                         ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type unit
+Characters 118-129:
+  print_int n end
+  ^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         'a list

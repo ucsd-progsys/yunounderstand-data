@@ -1,5 +1,6 @@
-Characters 38-59:
-  let stringOfList f l = "[" ^ sepConcat(";", List.map(f l) )^ "]";;
-                                        ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 137-141:
+  | true -> seen@[h]
+    ^^^^
+Error: This pattern matches values of type bool
+       but a pattern was expected which matches values of type
+         ('a * 'b) list -> bool

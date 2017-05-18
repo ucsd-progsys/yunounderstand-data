@@ -8,38 +8,33 @@ type expr =
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let buildAverage (e1,e2) = Average (e1, e2);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine v -> "sin(pi*" ^ ((exprToString v) ^ ")")
+  | Cosine v -> "sin(pi*" ^ ((exprToString v) ^ ")")
+  | Average (v,w) ->
+      "(" ^ ((exprToString v) ^ ("+" ^ ((exprToString w) ^ ")/2")))
+  | Times (v,w) -> (exprToString v) ^ ("*" ^ (exprToString w))
+  | Thresh (v,w,x,y) ->
+      (exprToString v) ^
+        ("<" ^
+           ((exprToString w) ^
+              ("?" ^ ((exprToString x) ^ (":" ^ (exprToString y))))));;
 
-let buildCosine e = Cosine e;;
+let pi = 4.0 *. (atan 1.0);;
 
-let buildSine e = Sine e;;
-
-let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
-
-let buildTimes (e1,e2) = Times (e1, e2);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  if depth = 0
-  then let r = rand (0, 2) in match r with | 0 -> buildX () | 1 -> buildY ()
-  else
-    (let r = rand (0, 11) in
-     let d = depth - 1 in
-     match r with
-     | 0 -> buildAverage ((build (rand, d)), (build (rand, d)))
-     | 1 -> buildCosine (build (rand, d))
-     | 2 -> buildSine (build (rand, d))
-     | 3 -> buildTimes ((build (rand, d)), (build (rand, d)))
-     | 4 ->
-         buildThresh
-           ((build (rand, d)), (build (rand, d)), (build (rand, d)),
-             (build (rand, d)))
-     | 5 -> buildTimes ((build (rand, d)), (build (rand, d)))
-     | 6 -> buildSine (build (rand, d))
-     | 7 -> buildCosine (build (rand, d))
-     | 8 -> buildX (build (rand, d))
-     | 9 -> buildSine (build (rand, d))
-     | 10 -> buildCosine (build (rand, d)));;
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine v -> sin (pi * (eval (v, x, y)))
+  | Cosine v -> cos (pi * (eval (v, x, y)))
+  | Average (v,w) -> ((eval (v, x, y)) + (eval (w, x, y))) / 2
+  | Times (v,w) -> (eval (v, x, y)) * (eval (w, x, y))
+  | Thresh (v,w,x,y) ->
+      (exprToString v) ^
+        ("<" ^
+           ((exprToString w) ^
+              ("?" ^ ((exprToString x) ^ (":" ^ (exprToString y))))));;

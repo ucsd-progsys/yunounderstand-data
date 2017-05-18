@@ -1,5 +1,5 @@
-Characters 529-530:
-  | Oscillate   m4	    -> let x = eval(m4,x,y) in x/.sqrt(eval(m4,x,y)**2+.x**2);;
-                                                                        ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 112-130:
+  let seen' = if (List.mem(h seen)) then 
+                 ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> bool
+       but an expression was expected of type bool

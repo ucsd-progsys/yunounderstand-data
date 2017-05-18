@@ -1,5 +1,5 @@
-Characters 66-70:
-  let funt = fun b -> if f b then (1, 1) else (true, 1) in
-                                               ^^^^
-Error: This expression has type bool but an expression was expected of type
-         int
+Characters 44-48:
+  in wwhile ((fx),b);;
+             ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'a * bool

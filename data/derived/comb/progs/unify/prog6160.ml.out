@@ -1,6 +1,5 @@
-Characters 91-92:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> ('a -> 'd) -> 'd
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> ('a -> 'd) -> 'd
+Characters 107-130:
+  | Sine e -> Printf.printf "sin(pi*" ^ exprToString e ^ ")"
+              ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         string

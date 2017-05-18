@@ -1,5 +1,5 @@
-Characters 57-58:
-  wwhile (f, 2);;
-             ^
+Characters 100-116:
+  if (x1+x2+carry)/10 then (1, (x1+x2+carry)mod 10::accList) 
+     ^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         'a * bool
+         bool

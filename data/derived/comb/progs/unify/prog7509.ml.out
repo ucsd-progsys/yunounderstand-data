@@ -1,9 +1,6 @@
-Characters 304-305:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type
-         ('a -> (int * int list) list) -> 'a -> (int * int list) list
-       but an expression was expected of type
-         ('a -> (int * int list) list) -> 'a -> 'a -> (int * int list) list
-       Type (int * int list) list is not compatible with type
-         'a -> (int * int list) list 
+Characters 67-69:
+  let fixpoint (f,b) = wwhile((let f' b = ( (f b), (f b) not = b) in f'), b);;
+                                                                     ^^
+Error: This expression has type 'a -> ((bool -> bool) -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside (bool -> bool) -> 'a

@@ -1,6 +1,5 @@
-Characters 115-126:
-  if( h = (endChar t) ) then
-          ^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 113-114:
+  (x, clone 0 (x-y));;
+   ^
+Error: This expression has type int but an expression was expected of type
+         int list

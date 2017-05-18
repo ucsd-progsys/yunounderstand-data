@@ -41,7 +41,7 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x =fun z -> x(a(z)) in
+  let f a x = x*a in
   let base = fun x->x in
     List.fold_left f base fs
 
@@ -96,10 +96,12 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+let helper(x,m)=
+  x::m
 
 let rec clone x n = 
   match n with
-    |n when n <=0->[]
+    |<0->[]
     |_-> x::clone x (n-1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -110,46 +112,30 @@ let _ = clone clone (-3);;
 
 
 
-let padZero l1 l2 = 
-  let x = List.length l1 in
-  let y = List.length l2 in
-    if x > y then let z=x-y in
-        (l1,(clone 0 z)@l2)
-    else let z=y-x in
-        ((clone 0 z)@l1,l2)
+let padZero l1 l2 = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = padZero [9;9] [1;0;0;2]
-let _ = padZero [1;0;0;2] [9;9] 
+*)
 
+let rec removeZero l = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec removeZero l = 
-  match l with
-    |[]->[]
-    |h::t->
-        match h with
-          |0->removeZero t
-          |_->h::t
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
-
+*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (y,z)=x in 
-      let (r,s)=a in
-      let m=r+s+y in
-        (m/10,(m mod 10)::z) in
-    let base = (0,[]) in
-    let args = List.combine l1 l2 in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
@@ -162,22 +148,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec multHelper i l =
-  match l with
-    |[]->[]
-    |h::t->
-        match t with
-          |[]->(i*t) mod 10@[]
-          |
 
-            let rec mulByDigit i l = 
-;;
+let rec mulByDigit i l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = mulByDigit 9 [9;9;9;9]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

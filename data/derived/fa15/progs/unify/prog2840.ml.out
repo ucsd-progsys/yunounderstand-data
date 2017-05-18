@@ -1,5 +1,5 @@
-Characters 62-67:
-  (clone "0" List.length l2 - List.length l1) :: l1
-   ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 44-48:
+  | VarX  -> x
+    ^^^^
+Error: This pattern matches values of type expr
+       but a pattern was expected which matches values of type 'a * 'b * 'c

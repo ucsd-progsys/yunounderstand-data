@@ -1,3 +1,14 @@
 
-let rec wwhile (f,b) =
-  let x = f b in match x with | h::t -> if t then wwhile (f, h) else h;;
+let checkSame (x,y) = x == y;;
+
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let palindrome w =
+  let revstr = listReverse (explode w) in
+  if checkSame (w, revstr) then true else false c;;

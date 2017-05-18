@@ -1,5 +1,6 @@
-Characters 103-104:
-  | Sine t       -> sin(pi*.t)
-                            ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 37-43:
+  let rec fs x = ((fs b), (f b) = b)
+                  ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

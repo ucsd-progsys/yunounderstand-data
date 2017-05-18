@@ -1,5 +1,5 @@
-Characters 121-132:
-  if (j+k>10) then (1, j+k-10) else (0, j+k) in 
-                   ^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 191-192:
+  let args = List.rev(List.combine 0::l1 0::l2) in
+                                   ^
+Error: This expression has type int but an expression was expected of type
+         'a list

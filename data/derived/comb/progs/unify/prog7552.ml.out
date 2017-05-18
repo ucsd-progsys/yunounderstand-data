@@ -1,5 +1,5 @@
-Characters 29-43:
-  let fixpoint (f,b) = wwhile ((f, (f b) = b),b);;
-                               ^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 102-104:
+  if t1+t2 > 9 then (1,[(t1+t2)-10])
+     ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

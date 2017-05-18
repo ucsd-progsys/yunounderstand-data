@@ -1,7 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type
-         int -> (int -> int * bool) * int
-       Type int is not compatible with type (int -> int * bool) * int 
+Characters 85-94:
+  if checkSame(listReverse (explode (w)),explode w) then true else explode w;;
+                                                                   ^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type bool

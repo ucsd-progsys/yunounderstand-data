@@ -1,7 +1,9 @@
 
-let rec assoc (d,k,l) =
-  match l with
-  | [] -> d
-  | (s,i)::t -> (match k with | (s,i) -> i | _ -> assoc (d, k, t));;
+let rec helper l1 l2 =
+  match l1 with | [] -> [] | h::t -> (h, l2) :: (helper t l2);;
 
-let _ = assoc ((-1), "bob", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let bigMul l1 l2 =
+  let f a x = let (x1,x2) = x in let (carry,res) = a in carry @ res in
+  let base = [] in
+  let args = List.rev (helper l1 l2) in
+  let (carry,res) = List.fold_left f base args in res;;

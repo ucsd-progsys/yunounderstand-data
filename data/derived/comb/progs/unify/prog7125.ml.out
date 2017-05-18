@@ -1,5 +1,5 @@
-Characters 94-101:
-  additivePersistence(sumList digits n) + 1
-                      ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 246-272:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

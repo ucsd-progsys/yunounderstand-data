@@ -23,6 +23,7 @@ let rec assoc (d,k,l) =
         else assoc(d,k,l')
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
+
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
 let _ = assoc([1,1],"a",[("ca",[1,2]);("aa",[2,2])])
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -35,25 +36,26 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-let rec filter l h=
+let rec filter l a=
   match l with
-      []->[]
-    |hd::tl -> if hd=h then (filter tl h)
-        else hd::(filter tl h)
+    |[]->[]
+    |hd::tl->if hd=a then
+          filter tl a 
+        else hd::(filter tl a)
 ;;
+
 
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      |[] -> seen
       | h::t -> 
           let seen' = h::seen in
-          let rest' = (filter t h) in 
-            helper (seen',rest') 
+          let rest' = filter t h in 
+            helper (seen',rest')
   in
-    List.rev (helper ([],l))
-
+    List.rev(helper([], l))
+;;
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
@@ -68,12 +70,10 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = 
-  let (b',c')=f b in 
-    if c'=true then wwhile(f,b')
+  let (b',c')=(f b)
+  in if c'= false then wwhile f b' 
     else b'
 ;;
-
-
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
 
@@ -85,20 +85,22 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let fixpoint (f,b) = let f1 f2 x= if (f2 x)=x then (x,false) else (f2 x,true) in wwhile ((f1 f),b)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ =collatz 2;;
-
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -118,22 +120,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    |Thresh(a,b,c,d)->"("^exprToString a^"<"^exprToString b^"?"^exprToString c^":"^(exprToString d)^")"
-    |VarX		->"x"
-    |VarY		->"y"
-    |Sine(x)	->"sin(pi*"^(exprToString x)^")"
-    |Cosine(x)      ->"cos(pi*"^(exprToString x)^")"
-    |Average(e1,e2) -> "("^(exprToString e1) ^"+"^(exprToString e2)^")/2"
-    |Times(e1,e2)   ->(exprToString e1)^"*"^(exprToString e2)
-;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -155,20 +150,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with 
-    |VarX ->x
-    |VarY ->y
-    |Sine(a)->sin(pi*.eval(a,x,y))
-    |Cosine(a)->cos(pi*.eval(a,x,y))
-    |Average(a,b)->(eval(a,x,y)+.eval(b,x,y))*.(0.5)
-    |Times(a,b)->eval(a,x,y)/.eval(b,x,y)
-    |Thresh(a,b,a_less,b_less)->let x1=eval(a,x,y) in let x2=eval(b,x,y)  in  if(x1<x2) then eval a_less,x,y else eval b_less,x,y
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -208,8 +197,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = 
-  let g2 () = failwith "to be implemented"  
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
 let g3 () = failwith "to be implemented"  
 
 let c1 () = failwith "to be implemented"

@@ -1,5 +1,5 @@
-Characters 102-104:
-  if t1+t2 > 9 then (1,[(t1+t2)-10])
-     ^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 46-47:
+  | VarX -> 1 *. x
+            ^
+Error: This expression has type int but an expression was expected of type
+         float

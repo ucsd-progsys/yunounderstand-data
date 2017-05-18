@@ -1,5 +1,6 @@
-Characters 47-56:
-  let rec clone x n = if n <= 0 then [] else x::(clone x n-1);;
-                                                 ^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 44-51:
+  let rec clone x n = if n = 1 then []@x else clone x::x n-1;;
+                                              ^^^^^^^
+Error: This expression has type int -> 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside int -> 'a list

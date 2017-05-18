@@ -1,6 +1,6 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 3);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 122-123:
+  let seen' = if List.mem (h t)
+                             ^
+Error: This expression has type ('a -> 'b) list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b) list

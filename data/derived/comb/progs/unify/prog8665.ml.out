@@ -1,6 +1,5 @@
-Characters 94-96:
-  List.fold_left f base fs;;
-                        ^^
-Error: This expression has type 'a but an expression was expected of type
-         ('b -> 'a) list
-       The type variable 'a occurs inside ('b -> 'a) list
+Characters 81-98:
+  else digitsOfIntHelper (num/10) ((num mod 10)::numList) 
+       ^^^^^^^^^^^^^^^^^
+Error: This function has type int * int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

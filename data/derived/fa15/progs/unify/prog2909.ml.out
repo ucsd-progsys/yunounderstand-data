@@ -1,5 +1,5 @@
-Characters 114-124:
-  digitsOfIntHelper (n - (n mod 10)/10)  @ (n mod 10) 
-                                           ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 229-244:
+  removeZero (add (padZero l1 l2) (if l1 > l2 then l1 else l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list * 'b list

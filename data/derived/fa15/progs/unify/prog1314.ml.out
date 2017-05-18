@@ -1,5 +1,5 @@
-Characters 98-105:
-  let args = List.combine(l1,l2) in
-                         ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 437-444:
+  | Square(e) -> "%s*%s" exprToString e exprToString e;;
+                 ^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

@@ -1,5 +1,5 @@
-Characters 28-44:
-  let fixpoint (f,b) = wwhile ( fun x -> f, b);;
-                              ^^^^^^^^^^^^^^^^
-Error: This expression should not be a function, the expected type is
-('a -> 'a * bool) * 'a
+Characters 111-114:
+  let seen' = if( not List.mem h l ) then
+                  ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

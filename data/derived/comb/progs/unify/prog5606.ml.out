@@ -1,5 +1,5 @@
-Characters 28-66:
-  let fixpoint (f,b) = wwhile (fun x -> let b = f x in (b, b!=x) ,b);;
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression should not be a function, the expected type is
-('a -> 'a * bool) * 'a
+Characters 52-62:
+  if n < 0 then [] else []::[(n mod 10)];;
+                             ^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

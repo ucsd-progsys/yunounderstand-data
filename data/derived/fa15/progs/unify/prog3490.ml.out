@@ -1,6 +1,5 @@
-Characters 154-155:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a list list
-       The type variable 'a occurs inside 'a list
+Characters 56-57:
+  else append n mod 10 digitsOfInt(n/10);;
+              ^
+Error: This expression has type int but an expression was expected of type
+         'a list

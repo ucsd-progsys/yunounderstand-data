@@ -1,6 +1,5 @@
-Characters 54-57:
-  | b -> if (f b = (f b, true)) then 
-                    ^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b
+Characters 24-67:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string * int

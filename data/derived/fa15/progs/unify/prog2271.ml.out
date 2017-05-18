@@ -1,5 +1,5 @@
-Characters 16-17:
-  let x = sumList 2 4;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 131-135:
+  List.fold_left fx base l;;
+                    ^^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

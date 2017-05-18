@@ -1,3 +1,6 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else ((digitsOfInt n) mod 10) @ [n mod 10];;
+let pipe fs =
+  let rec f a x = let h::t = x in f (h a) t in
+  let base = [] in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

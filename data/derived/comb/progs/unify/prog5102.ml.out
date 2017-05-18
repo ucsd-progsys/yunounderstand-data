@@ -1,5 +1,5 @@
-Characters 93-96:
-  | h::t -> h + digitalRoot (digits(t));;
-                                   ^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 90-93:
+  | h::t  -> digitalRoot(sumList(n));;
+                                ^^^
+Error: This expression has type int but an expression was expected of type
+         int list

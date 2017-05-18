@@ -1,2 +1,4 @@
 
-let rec wwhile (f,b) = if f b then f (f, b) else 1;;
+let rec digitsOfInt n =
+  let return = [] in
+  if n < 0 then return else (digitsOfInt (-1) (n mod 10)) :: return;;

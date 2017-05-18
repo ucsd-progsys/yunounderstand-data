@@ -1,5 +1,4 @@
 
-let pipe fs =
-  let f a x a y = a (x y) in let base m = m in List.fold_left f base fs;;
+let rec append l r = match l with | [] -> r | h::t -> h :: (append t r);;
 
-let _ = pipe [] 3;;
+let _ = append ([1; 2; 3], [4; 5; 6]);;

@@ -1,5 +1,5 @@
-Characters 29-113:
-  buildThresh(buildX(),buildY(),buildSine(buildX()),buildTangent(buildX()),buildCosine(buildY()));;
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd * 'e
-       but an expression was expected of type expr * expr * expr * expr
+Characters 109-112:
+  | Sine sin		    -> "sin(pi*"^ (eval sin) ^")" 
+                                      ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

@@ -1,6 +1,10 @@
-Characters 91-92:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> ('a -> 'd) -> 'd
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> ('a -> 'd) -> 'd
+Characters 93-105:
+  | Sine e -> Printf.printf "sin(pi*%s)" exprToString e
+                            ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

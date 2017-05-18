@@ -1,5 +1,5 @@
-Characters 84-85:
-  let f a x = a^sep^t in
-                    ^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 14-38:
+  let _ = helper("4",makeRand(10,50), 3);;
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type (int * int -> int) * int

@@ -1,5 +1,7 @@
-Characters 141-152:
-  |h::t->(h,(List.hd t)::c)) in
-            ^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 207-208:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int * int -> int * int list -> int * int list
+       but an expression was expected of type
+         int * int -> int * int list -> int * int
+       Type int list is not compatible with type int 

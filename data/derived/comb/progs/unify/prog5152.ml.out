@@ -1,6 +1,0 @@
-Characters 78-84:
-  | (b',c') -> if c' = false then b' else (f b');;
-                                          ^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * bool

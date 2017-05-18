@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-          ^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 177-227:
+  else (clone 0 ((List.length l1) - (List.length l2))@l2);;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int list * int list

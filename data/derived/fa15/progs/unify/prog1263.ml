@@ -1,10 +1,5 @@
 
-type 'a set =
-  | Set of 'a list;;
+let rec equiv x y =
+  match x with | [] -> (List.hd y) = [] | h::tl -> (List.hd y) = h;;
 
-let del x s =
-  match s with | Set l -> Set (List.filter (fun z  -> z != "z") l);;
-
-let testee = Set [2131; 123123; 4];;
-
-let _ = del 4 testee;;
+let test = equiv [1; 2; 3; 4];;

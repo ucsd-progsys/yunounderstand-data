@@ -1,5 +1,6 @@
-Characters 490-504:
-  | GoldTimes   m4	    -> (eval(m4,x,y))*(1+.sqrt(5))/.2.0;;
-                          ^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 70-71:
+  | (h::t)  ->  t@h;;
+                  ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

@@ -1,2 +1,4 @@
 
-let rec assoc (d,k,l) = match l with | h::t -> assoc d k t;;
+let bigMul l1 l2 =
+  let f a x = [[a]; 0] in
+  let base = [] in let args = l2 in List.fold_left f base args;;

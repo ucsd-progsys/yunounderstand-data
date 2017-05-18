@@ -1,12 +1,11 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
 let rec sumList xs = match xs with
   | [] -> 0
-  | head::tail -> head + sumList tail
+  | headElement::tailList -> headElement + sumList tailList
 ;;
 
 let _ = sumList [1; 2; 3; 4]
@@ -17,30 +16,18 @@ let _ = sumList [1; 3; 5; 7; 9; 11]
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec intToReverseList n =
-  if n <= 0 then []
-  else (n mod 10)::intToReverseList(n / 10)
-;;
-
-let rec listReverseHelper l = 
-  let rec go i = function
-    | [] -> i
-    | headElement::tailList -> go (headElement::i) tailList in
-    go [] l
-;;
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let rec digitsOfInt n = 
-  listReverseHelper (intToReverseList n)
+  if n < 0 then []
+  else digitsOfInt n / 10 :: []
 ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
-let _ = digitsOfInt 0
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX
@@ -67,48 +54,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n =
-  let rec count acc n =
-    if n < 10 then acc
-    else if (sumList (digits n)) < 10 then acc + 1
-    else acc + 1 in
-    count 0 n
-;;
+let rec additivePersistence n = failwith "TBD"
 
-let _ = additivePersistence 9876
-let _ = additivePersistence 6790
-let _ = additivePersistence 4925294
-let _ = additivePersistence 10
-let _ = additivePersistence 9
-let _ = additivePersistence 990
-let _ = additivePersistence 8888888888888888
-let _ = sumList digits 8888888888888888
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = 
-  if (sumList (digits n)) / 10 = 0 then (sumList (digits n))
-  else digitalRoot (sumList (digits n))
-;;
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
-let _ = digitalRoot 6790
-let _ = digitalRoot 4925294
-let _ = digitalRoot 10
-let _ = digitalRoot 9
-let _ = digitalRoot 990
-let _ = digitalRoot 8888888888888888
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
-let rec listReverse l = 
-  let rec go i = function
-    | [] -> i
-    | headElement::tailList -> go (headElement::i) tailList in
-    go [] l
-;;
+let rec listReverse l = failwith "TBD"
 
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -123,13 +95,15 @@ let explode s =
   in
     go 0
 
-let palindrome w = 
-  if explode w = listReverse (explode w) then true
-  else false
-;;
+let palindrome w = failwith "TBD"
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 

@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
+Characters 148-164:
+  |x::y -> (mulByDigit i ((i * x + h)/10)::y)@(((i * x + h) % 10)::[]);;
+                         ^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+         int list

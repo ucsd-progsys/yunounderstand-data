@@ -1,5 +1,5 @@
-Characters 154-157:
-  | Sine sin -> Printf.printf ("sin(pi*%s)" ^ sin);
-                                              ^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 62-67:
+  if b=b' then false
+               ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

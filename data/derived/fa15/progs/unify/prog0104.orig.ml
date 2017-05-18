@@ -103,7 +103,7 @@ let _ = clone clone (-3);;
 
 let padZero l1 l2 = 
   let d = List.length l1 - List.length l2 in
-    if d < 0 then ((clone 0 (0-d))@l1, l2) else (l1, (clone 0 d)@l2)
+    if d < 0 then (clone 0 (0-d))@l1 * l2 else l1 * (clone 0 d)@l2
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -112,26 +112,21 @@ let _ = padZero [1;0;0;2] [9;9]
 
 
 
-let rec removeZero l = match l with
-  | []  -> []
-  | h::t  -> if h = 0 then removeZero t else l
+let rec removeZero l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match a with
-      | [] -> []
-      | h::t -> let (j,k) = x in
-            if j+k > 9 then 1::(h + j + k - 10)::t else 0::(h + j + k)::t in
-    let base = [0] in
-    let args = List.combine List.rev l1 List.rev l2 in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 

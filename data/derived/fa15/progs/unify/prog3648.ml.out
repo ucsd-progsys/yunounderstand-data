@@ -1,5 +1,5 @@
-Characters 34-44:
-  bigAdd ([List.map l*i l] []);;
-           ^^^^^^^^^^
-Error: This expression has type 'a list -> 'b list
+Characters 165-172:
+  clone 0 -(sizDif)::l1::l2;;
+  ^^^^^^^
+Error: This expression has type int -> int list
        but an expression was expected of type int

@@ -1,9 +1,9 @@
 
-let fpHelper (f,x,y) =
-  let n = f x in match n with | y -> (n, false) | _ -> (n, false);;
+let rec cloneHelper x n l =
+  if n <= 0 then l else cloneHelper x (n - 1) (x :: l);;
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in
-  match c' with | false  -> (b', c') | true  -> wwhile (f, b');;
-
-let fixpoint (f,b) = wwhile ((fpHelper (f, b)), b);;
+let padZero l1 l2 =
+  let diff = (List.length l1) - (List.length l2) in
+  if diff < 0
+  then cloneHelper 0 (((-1) * diff) - 1) l1
+  else if diff > 0 then (cloneHelper 0 diff) @ l2;;

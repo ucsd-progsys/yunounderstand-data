@@ -17,12 +17,12 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = match l with 
-  | []-> d
-  | (h::t) -> let (a,b) = h in (
-        if k = a then b 
-        else assoc (d, k, t))
-;;
+let rec assoc (d,k,l) = match l with
+  | []        ->  d
+  | ((ki,vi)::t)   ->  if ki = k 
+      then vi
+      else
+        assoc(d,k,t);;
 
 
 
@@ -31,6 +31,7 @@ let rec assoc (d,k,l) = match l with
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -45,23 +46,24 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let removeDuplicates l = 
-  let rec helper (seen, rest) = 
+  let rec helper (seen,rest) = 
     match rest with 
       | [] -> seen
-      | h::t -> if(List.mem h seen) then
-            helper(seen, t)
-          else 
-            helper(h::seen, t) 
+      | h::t -> 
+          let seen' = if (List.mem h seen) then 
+              seen
+            else h::seen
+          in 
+          let rest' = t in 
+            helper (seen',rest') 
   in
     List.rev (helper ([],l))
-;;
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
-(*XXXXXXXXXXXXXXXXXXXXXX*)
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -73,10 +75,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = if f == b then b else 0
-(*XXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-;;
+let rec wwhile (f,b) = 
+  let (b', c') = f b in
+    if c' then wwhile(f, b') 
+    else b'
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -93,21 +96,21 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
+let fixpoint (f,b) = wwhile (let fin bt = (f bt, f bt <> bt) in fin ,b);;
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
 
-*)
+let _ = fixpoint (collatz, 1) ;;
+let _ = fixpoint (collatz, 3) ;;
+let _ = fixpoint (collatz, 48) ;;
+let _ = fixpoint (collatz, 107) ;;
+let _ = fixpoint (collatz, 9001) ;;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -122,20 +125,31 @@ type expr =
     | Cosine   of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr	
+    | Thresh   of expr * expr * expr * expr
+    | Circ     of expr 
+    | Oscillate     of expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = failwith "to be written"
+let rec exprToString e = match e with 
+  | VarX			    -> "x"
+  | VarY			    -> "y"
+  | Sine sine		    -> "sin(pi*"^ (exprToString(sine)) ^")" 
+  | Cosine cosine		    -> "cos(pi*"^ (exprToString(cosine)) ^")" 
+  | Average (e1,e2)           -> "(("^exprToString(e1)^"+"^exprToString(e2)^")/2)"
+  | Times (t1,t2)		    -> exprToString(t1)^"*"^exprToString(t2)
+  | Thresh (th1,th2,th3,th4)  -> "("^exprToString(th1)^"<"^exprToString(th2)^"?"^
+                                 exprToString(th3)^":"^exprToString(th4)^")"
+  | Circ	(circ1)       -> "sqrt(|1-"^exprToString(circ1)^"^2|)"
+  | Oscillate   m4		    -> "("^exprToString(m4)^"/((1-"^exprToString(m4)^")^2+"^exprToString(m4)^"^2))"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = exprToString sampleExpr1 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -150,21 +164,30 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
+let buildCirc(c1)		   = Circ(c1)
+let buildOscillate(n)		   = Oscillate(n)
+
 
 
 let pi = 4.0 *. atan 1.0
+let phi = (1.0+.sqrt(5.0))/.2.0
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = failwith "to be written"
+let rec eval (e,x,y) = match e with 
+  | VarX			    -> x
+  | VarY			    -> y
+  | Sine sine		    -> sin(pi*.eval(sine,x,y))
+  | Cosine cosine		    -> cos(pi*.eval(cosine,x,y)) 
+  | Average (e1,e2)           -> (eval(e1,x,y)+.eval(e2,x,y))/.2.0
+  | Times (t1,t2)		    -> eval(t1,x,y)*.eval(t2,x,y)
+  | Thresh (th1,th2,th3,th4)  -> if(eval(th1,x,y)<eval(th2,x,y))
+      then eval(th3,x,y)
+      else eval(th4,x,y)
+  | Circ	(circ1)       -> sqrt(abs_float (1.0-.eval(circ1,x,y)**2.0))
+  | Oscillate   m4	    -> let x = eval(m4,x,y) in x/.sqrt(((1.0-.x)**2.0)+.(x**2.0))
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
 
 
 let eval_fn e (x,y) = 
@@ -184,6 +207,15 @@ let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
 
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
+let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
+let _ = eval (sampleExpr,0.5,0.2);;
+
+
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -195,7 +227,28 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = failwith "to be implemented"
+let rec build (rand, depth) = if depth = 0 
+  then match rand(0,2) with
+    | 0 -> buildX()
+    | 1 -> buildY()
+    | _ -> buildX()
+  else
+    match rand(0,25) with
+      | 0 -> if(depth<5) 
+          then buildX()
+          else buildCirc(build(rand, depth-1),build(rand, depth-1))
+      | 1 -> if(depth<5) 
+          then buildY()
+          else buildCirc(build(rand, depth-1),build(rand, depth-1))
+      | 2 | 7   | 8   -> buildSine(build(rand, (depth-1)))
+      | 3 | 9   | 13  -> buildCosine(build(rand, depth-1))
+      | 4 | 10  | 14  -> buildAverage(build(rand, depth-1),build(rand, depth-1))
+      | 5 | 11  | 15  -> buildTimes(build(rand, depth-1),build(rand, depth-1)) 
+      | 6 | 12  -> buildThresh(build(rand, depth-1),build(rand, depth-1)
+                              ,build(rand, depth-1),build(rand, depth-1))
+      | 17| 18  |19 | 23 | 25  -> buildCirc(build(rand, depth-1))
+      | 20| 21  |22 | 16   -> buildOscillate(build(rand, depth-1))
+      | _ -> buildX();;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -204,12 +257,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = failwith "to be implemented"  
+
+let g1 () = (11,11,12) 
 let g2 () = failwith "to be implemented"  
 let g3 () = failwith "to be implemented"  
 
-let c1 () = failwith "to be implemented"
-let c2 () = failwith "to be implemented" 
+let c1 () = (11,100,400)
+let c2 () = (11,41,94) 
 let c3 () = failwith "to be implemented" 
 
 
@@ -313,11 +367,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -561,3 +615,5 @@ let _ =
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
 
+let _= doRandomGray (11,44,444);;
+let _= doRandomColor (11,44,444);;

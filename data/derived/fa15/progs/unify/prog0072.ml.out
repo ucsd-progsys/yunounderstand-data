@@ -1,5 +1,5 @@
-Characters 188-189:
-  | Average(a,b) -> (eval (a,x,y) +. eval (b,x,y))/.2
-                                                    ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 78-80:
+  | Sine(a) -> sin (pi * eval (a,x,y))
+                    ^^
+Error: This expression has type float but an expression was expected of type
+         int

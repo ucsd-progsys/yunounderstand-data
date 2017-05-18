@@ -1,5 +1,5 @@
-Characters 368-372:
-  | Ceiling e' -> ceil(eval (e'))
-                            ^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 29-40:
+  let fixpoint (f,b) = wwhile (((f b) = b),b);;
+                               ^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

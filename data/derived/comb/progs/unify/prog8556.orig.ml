@@ -18,13 +18,21 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let rec assoc (d,k,l) = match l with
-  | [] -> d
-  | (ki,vi)::t -> if ki = k then vi
-      else assoc (d,k,t);;
+  | []        ->  d
+  | ((ki,vi)::t)   ->  if ki = k 
+      then vi
+      else
+        assoc(d,k,t);;
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -40,17 +48,22 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | [] -> seen
       | h::t -> 
-          let seen' = if (List.mem h seen) then seen
-            else (h::seen) in
-          let rest' = t in
+          let seen' = if (List.mem h seen) then 
+              seen
+            else h::seen
+          in 
+          let rest' = t in 
             helper (seen',rest') 
   in
-    List.rev (helper ([],l));;
+    List.rev (helper ([],l))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -63,13 +76,17 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = 
-  let (b',c') = f b in
-    if c' then wwhile (f,b')
-    else b';;
+  let (b', c') = f b in
+    if c' then wwhile(f, b') 
+    else b'
 
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -79,8 +96,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((fun n -> let b = (f n) in (b,b!=n)),b)
+let fixpoint (f,b) = wwhile (let fin bt = (f bt, f bt <> bt) in fin ,b);;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
@@ -91,6 +109,8 @@ let _ = fixpoint (collatz, 3) ;;
 let _ = fixpoint (collatz, 48) ;;
 let _ = fixpoint (collatz, 107) ;;
 let _ = fixpoint (collatz, 9001) ;;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -103,31 +123,23 @@ type expr =
     | VarY
     | Sine     of expr
     | Cosine   of expr
-    | Tangent  of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Divide   of expr * expr
     | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  let exp = exprToString in
-    match e with
-      |VarX -> "x"
-      |VarY -> "y"
-      |Sine(a) -> ("sin(pi*"^(exp a)^")")
-      |Cosine(a) -> ("cos(pi*"^(exp a)^")")
-      |Average(a,b) -> ("(("^(exp a)^"+"^(exp b)^")/2)")
-      |Times(a,b) -> ((exp a)^"*"^(exp b))
-      |Thresh(a,b,c,d) -> ("("^(exp a)^"<"^(exp b)^"?"^(exp c)^":"^(exp d)^")")
-      |Tangent(a) -> ("sin(pi*"^(exp a)^")/(cos(pi*"^(exp a)^")")
-      |Divide(a,b) -> ((exp a)^"/"^(exp b))
+let rec exprToString e = failwith "to be written"
 
-let sampleExpr1 = Divide(Thresh(VarX,VarY,VarX,(Times(Sine(VarX)),Cosine(Average(VarX,VarY)))),VarY);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
 
 (*XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -138,9 +150,7 @@ let buildX()                       = VarX
 let buildY()                       = VarY
 let buildSine(e)                   = Sine(e)
 let buildCosine(e)                 = Cosine(e)
-let buildTangent(e)                = Tangent(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
-let buildDivide(e1,e2)             = Divide(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
 
@@ -150,31 +160,15 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with
-    |VarX -> x
-    |VarY -> y
-    |Sine(a) -> sin(pi *. eval(a,x,y))
-    |Cosine(a) -> cos(pi *. eval(a,x,y))
-    |Tangent(a) -> (sin(pi *. eval(a,x,y))) /. (cos(pi *. eval(a,x,y)))
-    |Average(a,b) -> ((eval(a,x,y)) +. (eval(b,x,y)))/. 2.0
-    |Times(a,b) -> eval(a,x,y) *. eval(b,x,y)
-    |Divide(a,b) -> eval(a,x,y) /. eval(b,x,y)
-    |Thresh(a,b,c,d) -> 
-        if eval(a,x,y) < eval(b,x,y) then eval(c,x,y)
-        else eval(d,x,y)
+let rec eval (e,x,y) = match e with 
+  | VarX			    -> x
+  | VarY			    -> y
+  | Sine sin		    -> "sin(pi*"^ (eval sin) ^")" 
+  | Cosine cos		    -> Printf.printf "cos(pi*%s)" cos
+  | Average (e1,e2)           -> Printf.printf "((%s+%s)/2)" e1 e2
+  | Times (t1,t2)		    -> Printf.printf "%s*%s" t1 t2
+  | Thresh (th1,th2,th3,th4)  -> Printf.printf "(%s<*%s?%s:%s)" th1 th2 th3 th4 	
 
-let sampleExpr =
-  buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
-                                                  buildX()),buildTimes(buildCosine (buildCosine (buildAverage
-                                                                                                   (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
-                                                                       buildCosine (buildTimes (buildSine (buildCosine
-                                                                                                             (buildY())),buildAverage (buildSine (buildX()), buildTimes
-                                                                                                                                                               (buildX(),buildX()))))))),buildY()))
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
 
 
 let eval_fn e (x,y) = 
@@ -182,9 +176,25 @@ let eval_fn e (x,y) =
     assert (-1.0 <= rv && rv <= 1.0);
     rv
 
+let sampleExpr =
+  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
+                                                              buildX()),buildTimes(buildCosine (buildCosine (buildAverage
+                                                                                                               (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
+                                                                                   buildCosine (buildTimes (buildSine (buildCosine
+                                                                                                                         (buildY())),buildAverage (buildSine (buildX()), buildTimes
+                                                                                                                                                                           (buildX(),buildX()))))))),buildY())))
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
+
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
+let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
+let _ = eval (sampleExpr,0.5,0.2);;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -198,61 +208,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  if depth > 0 then
-    let r = (rand(0, 36)) in
-    let d = (depth - 1) in
-      match r with
-        | 0 -> buildSine((build(rand, d)))
-        | 1 -> buildSine((build(rand, d)))
-        | 2 -> buildSine((build(rand, d)))
-        | 3 -> buildSine((build(rand, d)))
-        | 4 -> buildSine((build(rand, d)))
-        | 5 -> buildSine((build(rand, d)))
-
-        | 6 -> buildCosine((build(rand, d)))
-        | 7 -> buildCosine((build(rand, d)))
-        | 8 -> buildCosine((build(rand, d)))
-        | 9 -> buildCosine((build(rand, d)))
-        | 10 -> buildCosine((build(rand, d)))
-
-        | 11 -> buildTimes((buildX()), (build(rand, d)))
-        | 12 -> buildTimes((buildX()), (build(rand, d)))
-        | 13 -> buildTimes((buildX()), (build(rand, d)))
-        | 14 -> buildTimes((buildX()), (build(rand, d)))
-        | 15 -> buildTimes((buildX()), (build(rand, d)))
-
-        | 16 -> buildAverage((build(rand,d)), (build(rand, d)))
-        | 17 -> buildAverage((build(rand,d)), (build(rand, d)))
-        | 18 -> buildAverage((build(rand,d)), (build(rand, d)))
-        | 19 -> buildAverage((build(rand,d)), (build(rand, d)))
-        | 20 -> buildAverage((build(rand,d)), (build(rand, d)))
-
-        | 21 -> buildThresh((build(rand, d)), (buildX()), (buildY()), (buildX()))
-        | 22 -> buildThresh((build(rand, d)), (buildX()), (buildY()), (buildX()))
-        | 23 -> buildThresh((build(rand, d)), (buildX()), (buildY()), (buildX()))
-        | 24 -> buildThresh((build(rand, d)), (buildX()), (buildY()), (buildX()))
-        | 25 -> buildThresh((build(rand, d)), (buildX()), (buildY()), (buildX()))
-        | 26 -> buildTangent((build(rand, d)))
-        | 27 -> buildTangent((build(rand, d)))
-        | 28 -> buildTangent((build(rand, d)))
-        | 29 -> buildTangent((build(rand, d)))
-        | 30 -> buildTangent((build(rand, d)))
-
-        | 31 -> buildDivide((buildX()), (build(rand, d)))
-        | 32 -> buildDivide((buildX()), (build(rand, d)))
-        | 33 -> buildDivide((buildX()), (build(rand, d)))
-        | 34 -> buildDivide((buildX()), (build(rand, d)))
-        | 35 -> buildDivide((buildX()), (build(rand, d)))
-
-        | _ -> buildTangent((build(rand, d)))
-
-  else
-    let r = (rand(0, 1)) in 
-      match r with
-        |0 -> buildX()
-        |_ -> buildY()
-;;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -261,13 +217,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (21, 13, 2)
-let g2 () = (12, 31, 20)
-let g3 () = (9, 11, 9)  
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (11, 24, 7)
-let c2 () = (1, 2, 33)
-let c3 () = (10, 12, 28) 
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -370,7 +326,12 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

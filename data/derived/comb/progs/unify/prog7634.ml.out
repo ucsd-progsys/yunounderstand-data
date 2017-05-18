@@ -1,5 +1,6 @@
-Characters 82-85:
-  sepConcat ";" (List.map f (List.map (fun f -> "[" :: f ::"]") l));;
-                                                           ^^^
-Error: This expression has type string but an expression was expected of type
-         string list
+Characters 71-72:
+  let fixpoint (f,b) = wwhile (let n x = let ff = f  in (f , x = f x) in n,b);;
+                                                                         ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

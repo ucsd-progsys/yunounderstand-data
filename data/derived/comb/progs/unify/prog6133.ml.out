@@ -1,5 +1,5 @@
-Characters 107-149:
-  | Sine e -> Printf.printf "sin(pi*%s)", exprToString e
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type unit
+Characters 13-15:
+  (List.mem 1 s0, List.mem 2 s0);;
+              ^^
+Error: This expression has type (bool * bool) set
+       but an expression was expected of type int list

@@ -1,5 +1,5 @@
-Characters 199-204:
-  let args = (List.combine (List.rev l1) (List.rev l2))::(0,0) in
-                                                         ^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type ('c * 'd) list list
+Characters 113-114:
+  (clone 0 z)::y
+               ^
+Error: This expression has type int but an expression was expected of type
+         int list list

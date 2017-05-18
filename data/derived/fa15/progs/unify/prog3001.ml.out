@@ -1,6 +1,5 @@
-Characters 86-87:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'd -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'd -> 'a
+Characters 119-146:
+  | Cosine e	  -> Cosine(pi *. eval(e, x, y))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

@@ -1,5 +1,6 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         int -> int
+Characters 83-84:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'b) -> 'c -> 'a -> 'a -> 'b
+       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
+       The type variable 'b occurs inside 'a -> 'b

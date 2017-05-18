@@ -1,5 +1,5 @@
-Characters 69-82:
-  | h::t -> listReverse t :: h;;
-            ^^^^^^^^^^^^^
-Error: This expression has type int list
+Characters 59-67:
+  else [n % 10] :: digitsOfInt n / 10;;
+       ^^^^^^^^
+Error: This expression has type 'a list
        but an expression was expected of type int

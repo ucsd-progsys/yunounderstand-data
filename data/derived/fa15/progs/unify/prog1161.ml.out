@@ -1,5 +1,5 @@
-Characters 186-193:
-  else (l1,l2);;
-       ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list list
+Characters 128-129:
+  let l = sepConcat t in
+                    ^
+Error: This expression has type string list
+       but an expression was expected of type string

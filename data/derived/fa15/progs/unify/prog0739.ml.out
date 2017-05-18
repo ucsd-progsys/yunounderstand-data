@@ -1,5 +1,6 @@
-Characters 271-275:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * 'a list
-       but an expression was expected of type int list
+Characters 159-160:
+  let seen' = if (List.mem h seen) = true then seen else seen@h in
+                                                              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

@@ -1,5 +1,5 @@
-Characters 87-89:
-  | Sine e1 -> sin(pi*.(eval e1 x y))
-                             ^^
-Error: This expression has type expr but an expression was expected of type
-         expr * ('a -> 'b -> 'c) * ('a -> 'b -> 'c)
+Characters 101-104:
+  cloneHelper 0 abs(diff) @ l1
+                ^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

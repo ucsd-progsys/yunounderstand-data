@@ -1,7 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type
-         int -> (int -> int * bool) * int
-       Type int is not compatible with type (int -> int * bool) * int 
+Characters 82-83:
+  x:: l -> if n <= 0 then x else assoc (n-1) l;;
+                                             ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c * 'a list

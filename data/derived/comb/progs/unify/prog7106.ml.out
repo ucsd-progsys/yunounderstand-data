@@ -1,5 +1,5 @@
-Characters 59-69:
-  if n <> 0 then (n mod 10)
-                 ^^^^^^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 194-198:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

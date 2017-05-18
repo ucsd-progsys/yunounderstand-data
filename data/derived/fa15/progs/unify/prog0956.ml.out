@@ -1,5 +1,5 @@
-Characters 111-128:
-  let seen' = (if List.mem (h seen) then [] else (seen) @ h) in
-                  ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list -> bool
-       but an expression was expected of type bool
+Characters 39-40:
+  if n < 0 then 7;;
+                ^
+Error: This expression has type int but an expression was expected of type
+         unit

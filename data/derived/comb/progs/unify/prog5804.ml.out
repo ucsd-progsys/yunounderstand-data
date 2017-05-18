@@ -1,5 +1,6 @@
-Characters 75-82:
-  | h::t -> (h, t2) :: helper(t, t2);;
-                             ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 68-69:
+  | h::t -> tenEx (x + 1) h @ [(helper x) * h];;
+                          ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

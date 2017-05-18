@@ -1,6 +1,5 @@
-Characters 55-61:
-  in helper
-     ^^^^^^
-Error: This expression has type bool -> bool
-       but an expression was expected of type bool -> bool * bool
-       Type bool is not compatible with type bool * bool 
+Characters 162-196:
+  |Average (e1, e2) -> (eval(e1, x, y) +. eval(e2, x, y))/2
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

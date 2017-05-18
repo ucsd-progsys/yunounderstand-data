@@ -1,6 +1,5 @@
-Characters 285-289:
-  let (_, res)  = List.fold_left f base args in
-                                        ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type (int * int) list list
-       Type 'a * 'b is not compatible with type (int * int) list 
+Characters 16-19:
+  let _ = clone 3 5.5;;
+                  ^^^
+Error: This expression has type float but an expression was expected of type
+         int

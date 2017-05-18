@@ -1,5 +1,5 @@
-Characters 435-437:
-  | Op2 (e1, e2, e3) -> 1.0 /. (eval e1 +. eval e2 +. eval e3);;
-                                     ^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 84-86:
+  | Sine(v) -> sin(pi*eval (v,x,y))
+                   ^^
+Error: This expression has type float but an expression was expected of type
+         int

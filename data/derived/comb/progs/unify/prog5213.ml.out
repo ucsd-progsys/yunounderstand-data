@@ -1,5 +1,5 @@
-Characters 71-85:
-  | l   -> sepConcat  (List.map f l);;
-                      ^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 97-101:
+  | l   -> sepConcat ( ", " List.map(f l));;
+                       ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

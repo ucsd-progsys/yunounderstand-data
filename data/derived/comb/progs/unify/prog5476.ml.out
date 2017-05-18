@@ -1,5 +1,6 @@
-Characters 396-397:
-  | Power (m, n) -> let d = eval(n, x, y) in if d < 0 then eval(m, x, y) ** (d *. -1.0) else (eval(m, x, y) ** d)
-                                                    ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 15-23:
+  let _ = build (makeRand, 2);;
+                 ^^^^^^^^
+Error: This expression has type int * int -> int * int -> int
+       but an expression was expected of type int * int -> int
+       Type int * int -> int is not compatible with type int 

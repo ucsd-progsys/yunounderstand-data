@@ -1,5 +1,6 @@
-Characters 201-208:
-  else (clone (List.length l1) (0::l2));;
-                               ^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 146-150:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type int list
+       Type 'a * 'b is not compatible with type int 

@@ -1,5 +1,6 @@
-Characters 66-79:
-  | false -> digitsOfInt n / 10 :: n mod 10;;
-             ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 62-64:
+  let fixpoint (f,b) = wwhile ((let f' x = (f x,f x not = x) in f'),b);;
+                                                                ^^
+Error: This expression has type 'a -> ((bool -> bool) -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside (bool -> bool) -> 'a

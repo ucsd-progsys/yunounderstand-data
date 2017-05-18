@@ -1,6 +1,7 @@
 
-let pipe fs =
-  let f a x = match x with | [] -> a | h::t -> h a in
-  let base = 0 in List.fold_left f base fs;;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
 
-let _ = pipe [] 3;;
+let isFPoint s = (collatz s) = s;;
+
+let _ = (isFPoint 1) = 1;;

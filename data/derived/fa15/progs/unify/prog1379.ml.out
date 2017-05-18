@@ -1,5 +1,6 @@
-Characters 213-219:
-  | 3 -> buildTimes (build(rand,depth-1), buildY)
-                                          ^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 117-130:
+  | _ when n > 0 -> digitsOfInt r :: digit;;
+                    ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

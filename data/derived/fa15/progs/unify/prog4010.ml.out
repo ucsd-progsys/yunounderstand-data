@@ -1,5 +1,5 @@
-Characters 148-164:
-  |x::y -> (mulByDigit i ((i * x + h)/10)::y)@(((i * x + h) % 10)::[]);;
-                         ^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 66-76:
+  | h::t -> matchHeads explode w;;
+            ^^^^^^^^^^
+Error: This function has type 'a list list -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

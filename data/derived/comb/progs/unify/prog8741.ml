@@ -1,5 +1,9 @@
 
-let rec wwhile (f,b) =
-  match f b with | (x,false ) -> x | (y,true ) -> wwhile (f, y);;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = (failwith a) ^ x in
+      let base = h in let l = sep in List.fold_left f base l;;
 
-let fixpoint (f,b) = wwhile (((f b), ((not f b) = b)), b);;
+let _ = sepConcat "---" [];;

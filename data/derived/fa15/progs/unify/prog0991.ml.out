@@ -1,5 +1,5 @@
-Characters 267-268:
-  | Average (e1,e2)      -> ((eval (e1,x,y)) +. (eval (e2,x,y))) /. 2
-                                                                    ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 66-69:
+  | Sine e1              -> sin expr e1
+                            ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

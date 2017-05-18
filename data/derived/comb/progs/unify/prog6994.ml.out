@@ -1,5 +1,5 @@
-Characters 210-221:
-  | 2 -> buildCosine build (rand, d-1)
-         ^^^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 175-176:
+  in (x, isFPoint x)
+                  ^
+Error: This expression has type int -> int
+       but an expression was expected of type int

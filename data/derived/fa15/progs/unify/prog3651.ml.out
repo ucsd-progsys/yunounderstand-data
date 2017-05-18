@@ -1,5 +1,5 @@
-Characters 73-88:
-  ((fst a)+1, bigAdd ((mulByDigit x l1) @ [clone 0 (fst a)]) (snd a)) in
-                                           ^^^^^^^^^^^^^^^
-Error: This expression has type int list list
-       but an expression was expected of type int
+Characters 23-24:
+  let _ = padZero [9;9] [1;0;0;2];;
+                         ^
+Error: This expression has type int but an expression was expected of type
+         int list

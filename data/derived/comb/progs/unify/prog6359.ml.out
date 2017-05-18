@@ -1,5 +1,5 @@
-Characters 145-157:
-  (sum / 10, acc@(sum mod 10))
-                 ^^^^^^^^^^^^
+Characters 16-17:
+  let _ = pipe [] 3;;
+                  ^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         int -> int

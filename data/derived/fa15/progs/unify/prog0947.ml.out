@@ -1,5 +1,5 @@
-Characters 58-77:
-  else 1 + additivePersistence sumList( digits (n) );;
-           ^^^^^^^^^^^^^^^^^^^
-Error: This function has type int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 75-82:
+  | h::t -> (h, t2) :: helper(t, t2);;
+                             ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

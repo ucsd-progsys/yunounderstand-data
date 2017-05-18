@@ -1,5 +1,5 @@
-Characters 13-45:
-  let _ = eval (ThreeAverage(VarX, VarY, VarZ)), 0.5, 0.3, 0.5;;
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 28-30:
+  sin 45;;
+      ^^
+Error: This expression has type int but an expression was expected of type
+         float

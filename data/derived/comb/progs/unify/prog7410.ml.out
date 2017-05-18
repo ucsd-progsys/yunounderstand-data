@@ -1,6 +1,5 @@
-Characters 60-61:
-  let fixpoint (f,b) = wwhile ((let inc f' = f(f b) in inc f),b);;
-                                                              ^
-Error: This expression has type 'a -> 'a * bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'a * bool
+Characters 263-284:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int * int list
+       but an expression was expected of type int list

@@ -1,5 +1,5 @@
-Characters 48-52:
-  |VarX -> "%s" VarX;;
-           ^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 140-149:
+  if numZeros > 0 then [l1, listZeros@l2]
+                            ^^^^^^^^^
+Error: This expression has type int -> (int * int) list
+       but an expression was expected of type 'a list

@@ -1,5 +1,6 @@
-Characters 386-398:
-  | Uncreative (e1, e2, e3) -> eval(e1,x,y)/2* eval(e2,x,y)/3*eval(e3,x,y)/4
-                               ^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 64-82:
+  | front::back -> ((listReverse back) ::[front]);;
+                    ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

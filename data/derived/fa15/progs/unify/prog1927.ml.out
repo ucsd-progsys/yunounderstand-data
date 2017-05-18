@@ -1,5 +1,5 @@
-Characters 75-76:
-  else bigAdd l (mulByDigit(i-1, l));;
-              ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 41-44:
+  let stringOfList f l = "[" ^ (sepConcat (";" List.map(f l) ) )^ "]";;
+                                           ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

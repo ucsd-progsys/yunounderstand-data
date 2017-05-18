@@ -7,4 +7,10 @@ let explode s =
 let rec listReverse l =
   match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let palindrome w = if w = (listReverse (explode w)) then true else false;;
+let palindrome w =
+  match w with
+  | [] -> true
+  | h::t ->
+      let separated = explode w in
+      let reversed = listReverse separated in
+      if w == reversed then true else false;;

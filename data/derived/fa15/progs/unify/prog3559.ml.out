@@ -1,6 +1,6 @@
-Characters 158-159:
-  | 0 -> buildSine(build (rand, depth-1))
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type
-         int * int -> int
+Characters 91-94:
+  let f a x =  a^sepConcat(sep, x) in
+                           ^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

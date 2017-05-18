@@ -1,6 +1,5 @@
-Characters 98-102:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a -> 'b
-       The type variable 'a occurs inside 'a -> 'b
+Characters 86-99:
+  else additivePersistence (sumList (digitsOfInt n + 1));;
+                                     ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

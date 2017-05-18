@@ -1,5 +1,15 @@
 
-let rec wwhile (f,b) =
-  match f b with | (b',c') -> if c' then wwhile (f, b') else b';;
+let x = [1; 2];;
 
-let fixpoint (f,b) = wwhile ((f, (f < 100)), b);;
+let y = [2; 2];;
+
+let rec addHelper t u =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then (addHelper t t') @ [(1 + h') + h]
+           else (addHelper t t') @ ([h' + h] aaddHelper x y));;

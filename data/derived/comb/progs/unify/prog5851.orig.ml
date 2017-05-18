@@ -97,12 +97,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let fixpoint (f,b) = wwhile (
-                       (let func input = ((f input),((f input) != input)) in func) 
+                       (let func (output,result) = (f b,f b = b) in func) 
                      ,b)
 ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
+*
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
@@ -133,16 +133,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-    | Sine e1              -> sin (3.142 *. (exprToString e1))
-    | Cosine e1            -> cos (3.142 *. (exprToString e1))
-    | Average (e1,e2)      -> (((exprToString e1) +. (exprToString e2)) /. (2))
-    | Times (e1,e2)        -> (exprToString e1) *. (exprToString e2)
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
-;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

@@ -1,5 +1,6 @@
-Characters 29-113:
-  buildThresh(buildX(),buildY(),buildSine(buildX()),buildTangent(buildX()),buildCosine(buildY()));;
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd * 'e
-       but an expression was expected of type expr * expr * expr * expr
+Characters 145-148:
+  | Sine sin -> Printf.printf ("sin(pi*%s"^^ sin ^^")" );
+                                             ^^^
+Error: This expression has type expr but an expression was expected of type
+         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
+           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6

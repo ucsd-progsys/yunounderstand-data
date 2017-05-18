@@ -1,5 +1,5 @@
-Characters 423-468:
-  | Op (m, n, o) -> sqrt(abs(eval(m, x, y)+.eval(n, x, y)+.eval(o, x, y)))/.3.0;;
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 199-200:
+  | Average (m, n) -> ((eval(m, x, y) +. eval(n, x, y)) /. 2)
+                                                           ^
+Error: This expression has type int but an expression was expected of type
+         float

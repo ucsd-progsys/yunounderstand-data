@@ -1,5 +1,10 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 121-125:
+  | Sine e -> Printf.printf "%s" exprToString e
+                            ^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

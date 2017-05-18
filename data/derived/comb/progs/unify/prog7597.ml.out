@@ -1,5 +1,5 @@
-Characters 298-302:
-  | Thresh(e1, e2, e3, e4) -> (eval(e1,x,y) < eval(e2,x,y) ? eval(e3,x,y));;
-                                              ^^^^
-Error: This function has type expr * float * float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 45-58:
+  | (str, num)::t -> if str = k then num else assoc (d, k, t) 
+    ^^^^^^^^^^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type 'b * 'c * 'd

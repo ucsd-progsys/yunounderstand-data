@@ -1,5 +1,5 @@
-Characters 30-33:
-  let _ = lift1  string_of_int Non;;
-                               ^^^
-Error: This variant expression is expected to have type int option
-       The constructor Non does not belong to type option
+Characters 49-51:
+  if (n > 0) then n mod 10::[];;
+                          ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

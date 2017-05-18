@@ -1,5 +1,6 @@
-Characters 17-18:
-  let _ = padZero [9;9] [1;0;0;2];;
-                   ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 66-67:
+  | h :: t -> if k = h then h else assoc d k t;;
+                     ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

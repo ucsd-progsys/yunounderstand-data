@@ -1,5 +1,5 @@
-Characters 546-561:
-  | 8 -> buildX(build(rand,d))
-               ^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         unit
+Characters 178-208:
+  | Average(v, w) -> (eval (v,x,y) +. eval (w,x,y))/2
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

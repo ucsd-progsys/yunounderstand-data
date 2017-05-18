@@ -1,6 +1,6 @@
-Characters 46-47:
-  let f a x = fun y c -> x (a) = x in
-                                 ^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 40-41:
+  let f a x = fun x a -> x x a in
+                           ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b -> 'c

@@ -1,7 +1,5 @@
-Characters 253-254:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 553-587:
+  | SqXPlusY (e1,e2)      -> ((eval (e1,x,y)) *. (eval (e1,x,y)) + eval (e2,x,y));;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

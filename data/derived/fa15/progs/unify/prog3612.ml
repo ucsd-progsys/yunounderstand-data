@@ -1,3 +1,10 @@
 
-let rec digitsOfInt n =
-  if n < 0 then [] else ((digitsOfInt n) / 10) @ (n mod 10);;
+let rec wwhile (f,b) =
+  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
+
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) = wwhile ((f b), b);;
+
+let _ = fixpoint (collatz, 3);;

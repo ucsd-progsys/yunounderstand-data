@@ -17,14 +17,14 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = match l with 
-  | []         -> d
-  | (k',d')::t -> if k=k' then d' else assoc (d,k,t)
+let rec assoc (d,k,l) = match [(k, d)] with 
+  | []    -> d
+  | h::t  -> if [(k,d)] = h then d else assoc (d,k,t)
 
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
-let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -41,18 +41,19 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-      | []   -> seen
-      | h::t ->
-          let seen' = if (List.mem h seen) then seen else (h :: seen) in 
-          let rest' = t in 
+        [] -> seen
+      | h::t -> 
+          let seen' = failwith "to be written" in
+          let rest' = failwith "to be written" in 
             helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -64,12 +65,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = match b with
-  | b -> wwhile(f b,b) 
+let rec wwhile (f,b) = failwith "to be written"
 
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

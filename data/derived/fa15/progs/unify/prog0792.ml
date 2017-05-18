@@ -1,3 +1,3 @@
 
-let rec digitsOfInt n =
-  (if n > 10 then n else (n % 10) :: ((digitsOfInt n) / 10) : int list);;
+let rec sumList n =
+  let len = Array.length n in if len == 1 then 1 else 1 + (sumList (n - 1));;

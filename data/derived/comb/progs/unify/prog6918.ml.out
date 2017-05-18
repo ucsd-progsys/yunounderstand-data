@@ -1,5 +1,5 @@
-Characters 29-39:
-  wwhile ((f, (f b)), b);;
-          ^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 111-119:
+  if List.rev h seen then seen
+     ^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,5 +1,5 @@
-Characters 86-94:
-  | _ -> buildSine(buildX)
-                  ^^^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 90-94:
+  else (f x, false) in f' b), b);;
+                       ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

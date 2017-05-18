@@ -1,11 +1,18 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec removeZero l =
+  match l with
+  | [] -> []
+  | _ -> let h::t = l in (match h with | 0 -> removeZero t | _ -> l);;
 
-let rec eval (e,x,y) = match (e, x, y) with | VarX  -> x | VarY  -> y;;
+let rec mulByDigit i l =
+  let mul (i,l) =
+    let f a x =
+      let (a1,a2) = a in
+      let val1 = (x * i) + a1 in
+      if val1 > 9
+      then ((val1 / 10), ((val1 mod 10) :: a2))
+      else (0, (val1 :: a2)) in
+    let base = (0, []) in
+    let args = List.rev (0 :: l) in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (mul i l);;

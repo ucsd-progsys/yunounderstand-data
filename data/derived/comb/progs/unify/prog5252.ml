@@ -1,11 +1,9 @@
 
-let rec wwhile (f,b) =
-  let i = b in
-  match f i with | (v_n,false ) -> v_n | (v_n,true ) -> wwhile (f, v_n);;
-
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) = wwhile (f, b);;
-
-let _ = fixpoint (collatz, 9001);;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = if List.mem (h, seen) then h :: seen else seen in
+        let rest' = t in helper (seen', rest') in
+  List.rev (helper ([], l));;

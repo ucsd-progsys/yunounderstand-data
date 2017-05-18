@@ -1,7 +1,5 @@
 Characters 84-85:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type (('a -> 'b) -> 'c) -> ('a -> 'b) -> 'c
-       but an expression was expected of type
-         (('a -> 'b) -> 'c) -> ('a -> 'b) -> ('a -> 'b) -> 'c
-       The type variable 'c occurs inside ('a -> 'b) -> 'c
+  let f a x = a^sep^t in
+                    ^
+Error: This expression has type 'a list
+       but an expression was expected of type string

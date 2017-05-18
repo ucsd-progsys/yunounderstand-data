@@ -15,14 +15,10 @@ let rec removeZero l =
 
 let bigAdd l1 l2 =
   let add (l1,l2) =
-    let f a x =
-      match a with
-      | (o,l) ->
-          let sum = x + o in
-          if sum < 10 then (0, (sum :: l)) else (1, ((sum - 10) :: l)) in
+    let f a x = if x < 10 then a @ (0, x) in
     let base = (0, []) in
     let args =
       let combine (a,b) = a + b in
-      (List.map combine (List.rev (List.combine l1 l2))) @ (-1) in
+      List.map combine (List.rev (List.combine l1 l2)) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;

@@ -1,5 +1,5 @@
-Characters 54-72:
-  | h::t -> ((10.0 ** x) *. h) @ tenEx (x +. 1.0) t;;
-            ^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         'a list
+Characters 95-101:
+  let base = ([0, 0] List.combine l1 l2) in 
+              ^^^^^^
+Error: This expression has type (int * int) list
+       This is not a function; it cannot be applied.

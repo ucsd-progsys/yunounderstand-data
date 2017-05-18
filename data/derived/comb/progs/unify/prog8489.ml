@@ -1,26 +1,51 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let padZero l1 l2 = failwith "to be implemented";;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> e
-  | VarY  -> e
-  | Sine sin -> "sin(pi*" ^ ((exprToString sin) ^ ")")
-  | Cosine cos -> "cos(pi*" ^ ((exprToString cos) ^ ")")
-  | Average (e1,e2) ->
-      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
-  | Times (t1,t2) -> (exprToString t1) ^ ("*" ^ (exprToString t2))
-  | Thresh (th1,th2,th3,th4) ->
-      "(" ^
-        ((exprToString th1) ^
-           ("<*" ^
-              ((exprToString th2) ^
-                 ("?" ^
-                    ((exprToString th3) ^ (":" ^ ((exprToString th4) ^ ")")))))));;
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let rec removeZero l =
+  match l with | h::t -> if h = 0 then removeZero t else l | [] -> [];;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      let b = (fst x) + (snd x) in
+      match a with
+      | h::t -> ((h + b) / 10) :: ((h + b) mod 10) :: t
+      | [] -> [b / 10; b mod 10] in
+    let base = [] in
+    let args = List.rev (List.combine l1 l2) in List.fold_left f base args in
+  removeZero (add (padZero l1 l2));;
+
+let rec mulByDigit i l =
+  match i with | 0 -> 0 | 1 -> 1 | _ -> bigAdd l (mulByDigit (i - 1) l);;

@@ -1,5 +1,5 @@
-Characters 176-177:
-  incr i;
-       ^
-Error: This expression has type int but an expression was expected of type
-         int ref
+Characters 78-84:
+  | (r, s) -> [r] in
+    ^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c list

@@ -1,5 +1,0 @@
-Characters 0-3:
-  abs -10;;
-  ^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int

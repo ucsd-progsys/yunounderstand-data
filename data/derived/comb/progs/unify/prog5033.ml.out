@@ -1,5 +1,5 @@
-Characters 93-95:
-  if x = () then (0, l::m) else
-         ^^
-Error: This expression has type unit but an expression was expected of type
-         'a * 'b
+Characters 256-291:
+  let (_, res) = List.fold_left f base [(1,2);(2,2)] in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

@@ -1,11 +1,30 @@
 
-let rec cloneHelper x n l =
-  if n <= 0 then l else cloneHelper x (n - 1) (x :: l);;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr
+  | Squares of expr
+  | Substract of expr* expr;;
 
-let rec clone x n = if n < 1 then [] else cloneHelper x n [];;
-
-let padZero l1 l2 =
-  let diff = (List.length l1) - (List.length l2) in
-  if diff < 0
-  then l1 @ (clone 0 (((-1) * diff) - 1))
-  else if diff > 0 then l2 @ ((clone 0 diff) - 1) else (l1, l2);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine e -> "sin(pi*" ^ ((exprToString e) ^ ")")
+  | Cosine e -> "cos(pi*" ^ ((exprToString e) ^ ")")
+  | Average (x,y) ->
+      "((" ^ ((exprToString y) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
+  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
+  | Thresh (w,x,y,z) ->
+      "(" ^
+        ((exprToString w) ^
+           ("<" ^
+              ((exprToString x) ^
+                 ("?" ^ ((exprToString y) ^ (":" ^ (exprToString z)))))))
+  | Squares e -> (exprToString e) ^ ("*" ^ (exprToString e))
+  | Substract (j,k) ->
+      "(" ^ ((exprToString e) ^ ("-" ^ (exprToString e ")")));;

@@ -1,3 +1,3 @@
 
-let rec listReverse l =
-  match l with | [] -> 0 | h::t -> (listReverse t) @ [h];;
+let rec clone x n =
+  if n < 1 then [] else if n = 1 then [x] else x :: ((clone x n) - 1);;

@@ -65,7 +65,7 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = match f b with
-  | (b',c') -> if (c' = true) then wwhile(f,b') else b'
+  | (b',c') -> if c' = false then b' else (f b')
 
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -110,8 +110,6 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | Funny    of expr * expr * expr 
-    | Funny1   of expr 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -124,8 +122,6 @@ let rec exprToString e = match e with
   | Average(c, d)       -> "(("^exprToString c^"+"^exprToString d^")/2)"
   | Times(e, f)         -> exprToString e^"*"^exprToString f
   | Thresh(g, h, i, j)  -> "("^exprToString g^"<"^exprToString h^"?"^exprToString i^":"^exprToString j^")"
-  | Funny(k,l,m)        -> "(("^exprToString k^"+"^exprToString l^"+"^exprToString m^")/10)"
-  | Funny1(n)           -> "sqrt(abs_float"^exprToString n^")"
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
@@ -146,8 +142,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildFunny(c,d,e)              = Funny(c,d,e)
-let buildFunny1(f)		   = Funny1(f)
 
 
 let pi = 4.0 *. atan 1.0
@@ -155,19 +149,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX                 -> x 
-  | VarY                 -> y
-  | Sine(a)              -> (sin(pi *. eval(a,x,y)))
-  | Cosine(b)            -> (cos(pi *. eval(b,x,y)))
-  | Average(c,d)         -> ((eval(c,x,y) +. eval(d,x,y))/.(2.0))
-  | Times(e,f)           -> (eval(e,x,y) *. eval(f,x,y))
-  | Thresh(g, h, i, j)   -> if (eval(g,x,y) < eval(h,x,y)) then eval(i,x,y) else eval(j,x,y)
-  | Funny(k, l, m)       -> ((eval(k,x,y) +. eval(l,x,y) +. eval(m,x,y)))
-  | Funny1(n)            -> (sqrt(abs_float(eval(n,x,y))))
+let rec eval (e,x,y) = failwith "to be written"
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -185,7 +174,7 @@ let sampleExpr =
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
-let _ = eval (sampleExpr,0.5,0.2);;
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -198,27 +187,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-(*
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-
-let rec build (rand, depth) = match rand(0,8) with
-  | 0 -> if (rand(0,2) = 0) then buildX() else buildY()
-  | 1 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildSine(build(rand,depth-1)) 
-  | 2 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildCosine(build(rand,depth-1))
-  | 3 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildAverage(build(rand,depth-1),build(rand,depth-1)) 
-  | 4 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildTimes(build(rand,depth-1),build(rand,depth-1)) 
-  | 5 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildThresh(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-  | 6 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildFunny(build(rand,depth-1)) 
-  | 7 -> if (depth = 0) then (if (rand(0,2) = 0) then buildX() else buildY()) else buildFunny1(build(rand,depth-1)) 
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -227,15 +196,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (1,3,6)  
-let g2 () = (2,5,7) 
-let g3 () = (3,8,8) 
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (5,5,10) 
-let c2 () = (4,3,11) 
-let c3 () = (1,5,8)
-
-
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

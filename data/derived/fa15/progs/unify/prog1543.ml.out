@@ -1,6 +1,5 @@
-Characters 49-86:
-  if n <= 0 then [] else  add (digitsOfInt (n/10)) ([n mod 10]);;
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list list
-       but an expression was expected of type
-         (int list list -> int list list) list
+Characters 110-118:
+  | false ->  let quotient = n/10 in if quotient = 0 then n mod 10 else quotient::digitsOfInt quotient;;
+                                                          ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

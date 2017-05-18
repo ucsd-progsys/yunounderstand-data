@@ -1,5 +1,5 @@
-Characters 129-131:
-  | Sine(t) -> "sin(pi*" ^ exprToString ex ^ ")"
-                                        ^^
-Error: This expression has type expr -> string
-       but an expression was expected of type expr
+Characters 59-69:
+  if n <> 0 then (n mod 10)
+                 ^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,6 +1,5 @@
-Characters 75-86:
-  | h::t -> matchHeads (explode w);;
-                       ^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type 'a list list
-       Type char is not compatible with type 'a list 
+Characters 29-32:
+  let fixpoint (f,b) = wwhile ((0),b);;
+                               ^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'a * bool

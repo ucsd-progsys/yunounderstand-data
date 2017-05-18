@@ -1,5 +1,5 @@
-Characters 462-474:
-  |Square (i1,i2)		  -> exprToString i1 "*" exprToString i2
-                        ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 70-77:
+  let fixpoint (f,b) = let newFunc = (f b, b = f b = false ) in wwhile (newFunc, b);;
+                                                                        ^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

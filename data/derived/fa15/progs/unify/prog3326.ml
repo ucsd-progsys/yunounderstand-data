@@ -1,4 +1,12 @@
 
-let pipe fs = let f a x x a = a in let base f = f in List.fold_left f base fs;;
+let rec wwhile (f,b) = if b = true then wwhile (f, b) else b;;
 
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) =
+  wwhile
+    ((let g b = let t = f b in if b = t then (b, false) else (t, true) in g),
+      b);;
+
+let _ = fixpoint (collatz, 107);;

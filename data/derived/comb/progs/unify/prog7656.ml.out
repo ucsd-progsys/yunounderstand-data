@@ -1,6 +1,5 @@
-Characters 214-215:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int -> int * int -> int * int list
-       but an expression was expected of type int -> int * int -> int
-       Type int * int list is not compatible with type int 
+Characters 381-404:
+  | NewOp1(e1, e2, e3) ->  (1/ sin(pi *. eval(e1,x,y))) * (cos(pi *. eval (e1,x,y))) * sin(pi *. eval(e1,x,y))
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

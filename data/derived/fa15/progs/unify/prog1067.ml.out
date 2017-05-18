@@ -1,5 +1,5 @@
-Characters 76-80:
-  n_ -> incr i 
-        ^^^^
-Error: This function has type int ref -> unit
+Characters 480-492:
+  exprToString e1^"+"^exprToString e2")"
+                      ^^^^^^^^^^^^
+Error: This function has type expr -> string
        It is applied to too many arguments; maybe you forgot a `;'.

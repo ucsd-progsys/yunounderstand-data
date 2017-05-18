@@ -1,5 +1,5 @@
-Characters 63-73:
-  | h::t -> h n + sumList(n);;
-                  ^^^^^^^^^^
-Error: This expression has type ('a -> int) list -> int
-       but an expression was expected of type int
+Characters 187-203:
+  |(h1::t1, h2::t2) -> ( match x with
+   ^^^^^^^^^^^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c list

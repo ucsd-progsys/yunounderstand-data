@@ -81,20 +81,15 @@ let rec digitalRoot n =
 
 let _ = digitalRoot 9876
 
-
-
-
 let rec listReverse l = 
-  match l with
-    | [] -> []
-    | head :: [] -> [head]
-    | head :: tail -> ((listReverse [tail]) @ [head])
+  let newList = [] in
+    match l with
+      | [] -> newList
+      | head :: tail -> listReverse tail @ newList :: head
 ;;
-
 
 let _ = listReverse [1; 2; 3; 4]
 let _ = listReverse ["a"; "b"; "c"; "d"]
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

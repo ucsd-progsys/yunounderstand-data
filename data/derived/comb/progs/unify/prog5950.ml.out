@@ -1,5 +1,6 @@
-Characters 28-71:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string * int
+Characters 51-60:
+  (h::t) -> helperR t :: h;;
+            ^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a list -> 'b list

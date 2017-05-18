@@ -1,5 +1,5 @@
-Characters 13-58:
-  let _ = eval (Neg(Half(Sine(Average(VarX,VarY))),0.3,0.3));;
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 54-57:
+  let fixpoint (f,b) = wwhile(if f b = true then b else f b, b);;
+                                                        ^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

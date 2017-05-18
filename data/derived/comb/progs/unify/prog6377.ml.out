@@ -1,5 +1,6 @@
-Characters 670-682:
-  | Mix (ex1, ex2, ex3)           ->   exprToString Average(Times(ex1,ex2),Times(ex2,ex3));;
-                                       ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 239-243:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list * 'b list
+       but an expression was expected of type int * int
+       Type 'a list is not compatible with type int 

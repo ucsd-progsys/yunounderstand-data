@@ -1,5 +1,6 @@
-Characters 57-60:
-  2+2;;
-  ^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 15-28:
+  let _ = helper int_of_string [9;9;9;9;];;
+                 ^^^^^^^^^^^^^
+Error: This expression has type string -> int
+       but an expression was expected of type string -> string
+       Type int is not compatible with type string 

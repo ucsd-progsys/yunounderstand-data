@@ -1,5 +1,5 @@
 
-let rec wwhile (f,b) =
-  match f b with | (x,false ) -> x | (y,true ) -> wwhile (f, y);;
+let stringOfList f l = List.map (f l);;
 
-let fixpoint (f,b) = wwhile (fun x  -> ((x, ((f x) = x)), b));;
+let _ =
+  stringOfList (stringOfList string_of_int) [[1; 2; 3]; [4; 5]; [6]; []];;

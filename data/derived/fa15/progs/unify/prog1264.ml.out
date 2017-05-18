@@ -1,5 +1,5 @@
-Characters 115-130:
-  | (h1::tl1,h2::tl2) -> if (h1 < h2) then h1::(merge tl1,tl2)
-                                               ^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 28-31:
+  let neg = fun f -> fun x -> not f x;;
+                              ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

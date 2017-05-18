@@ -1,5 +1,5 @@
-Characters 51-56:
-  let fixpoint (f,b) = wwhile(if f b = b then b else false, b);;
-                                                     ^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a -> 'a * bool
+Characters 29-38:
+  let stringOfList f l = "[" ^ sepConcat"; " List.map (f, l) ^ "]";;
+                               ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

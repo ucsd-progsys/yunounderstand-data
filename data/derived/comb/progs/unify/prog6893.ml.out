@@ -1,5 +1,4 @@
-Characters 96-102:
-  in wwhile ((fx b), b);;
-             ^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'a * bool
+Characters 38-45:
+  ..............ys
+  | []......
+Error: Variable ys must occur on both sides of this | pattern

@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b list
+Characters 299-311:
+  else ((carry+1),[(h+b+c)/10]::[(h+b+c) mod 10]::t) in
+                  ^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

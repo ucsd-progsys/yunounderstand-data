@@ -1,6 +1,5 @@
-Characters 67-87:
-  | false -> [digitsOfInt (n / 10)] :: n mod 10 :: [];;
-              ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list list
+Characters 29-55:
+  let fixpoint (f,b) = wwhile ((fun f' x -> (f, f x = x)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This function expects too many arguments, it should have type
+'a -> 'a * bool

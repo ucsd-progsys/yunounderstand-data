@@ -1,5 +1,3 @@
 
-let rec filter l a =
-  match l with
-  | [] -> []
-  | hd::tl -> if hd = a then filter (tl, a) else h :: (filter (t, a));;
+let rec digitsOfInt n =
+  match n with | 0 -> [] | x::xs' -> ((digitsOfInt n) / 10) @ [n mod 10];;

@@ -1,5 +1,5 @@
-Characters 72-76:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> int
-       but an expression was expected of type int
+Characters 331-336:
+  |Hoi(a,b) -> ("sin(pi*"^(exp a)^")/("("cos(pi*"^(exp b)^")")")");;
+      ^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type expr

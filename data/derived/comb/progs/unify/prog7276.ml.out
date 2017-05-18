@@ -1,5 +1,6 @@
-Characters 20-21:
-  let _ = removeZero [0;0;0;1;0;0;2];;
-                      ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 43-44:
+  let fixpoint (f,b) = wwhile ((wwhile(f,b)),b);;
+                                             ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

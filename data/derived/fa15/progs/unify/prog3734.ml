@@ -1,29 +1,10 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Circ of expr* expr
-  | NatLog of expr;;
+let rec clone x n = if n <= 0 then [] else [x] :: (clone x (n - 1));;
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine sine -> sin (pi *. (eval (sine, x, y)))
-  | Cosine cosine -> cos (pi *. (eval (cosine, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (t1,t2) -> (eval (t1, x, y)) *. (eval (t2, x, y))
-  | Thresh (th1,th2,th3,th4) ->
-      if (eval (th1, x, y)) < (eval (th2, x, y))
-      then eval (th3, x, y)
-      else eval (th4, x, y)
-  | Circ (circ1,circ2) ->
-      (exp eval (circ1, x, y) 2.0) + (exp eval (circ2, x, y) 2.0)
-  | NatLog nlog -> log eval (nlog, x, y);;
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then (((clone 0 ((List.length l2) - (List.length l1))) :: l1), l2)
+    else clone (List.length l1) (0 :: l2);;

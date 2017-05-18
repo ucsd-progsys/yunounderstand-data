@@ -1,18 +1,23 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+let getHead h = match h with | [] -> [] | h::t -> h;;
 
-let padZero l1 l2 =
-  if (List.length l1) > (List.length l2)
-  then (l1, ((clone 0 ((List.length l1) - (List.length l2))) @ l2))
-  else (((clone 0 ((List.length l2) - (List.length l1))) @ l1), l2);;
+let getTail t = match t with | [] -> [] | h::t -> t;;
 
-let rec removeZero l =
-  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x = match x with | (x,y) -> (0, (x + y)) in
-    let base = [] in
-    let args = List.combine (List.rev l1) (List.rev l2) in
-    let (_,res) = List.fold_left f base args in res in
-  removeZero (add (padZero l1 l2));;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let rec matchHeads x =
+  match x with
+  | [] -> true
+  | h::t ->
+      if (getHead x) = (getHead (listReverse x))
+      then matchHeads (getTail (listReverse t))
+      else false;;
+
+let palindrome w =
+  match explode w with | [] -> true | h::t -> matchHeads (h :: t);;

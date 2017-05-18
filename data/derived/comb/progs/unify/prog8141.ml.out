@@ -1,5 +1,5 @@
-Characters 148-159:
-  |h'::t' -> [h'*i] @ [remainder h * i];;
-                       ^^^^^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 36-48:
+  let stringOfList f l = f (sepConcat (List.map l));;
+                                      ^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string

@@ -1,5 +1,5 @@
-Characters 28-58:
-  let stringOfList f l = "["^ (sepConcat ";" (List.map f l)) "]";;
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 8-20:
+  let _ = exprToString Trip(Varx, Varx, VarY);;
+          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

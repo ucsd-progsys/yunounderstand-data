@@ -1,5 +1,5 @@
-Characters 173-181:
-  (l1, l2);;
-  ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+Characters 580-592:
+  | Substract (j, k)    -> "("^ exprToString j ^ "-" ^ exprToString k ")";;
+                                                       ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

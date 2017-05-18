@@ -1,5 +1,6 @@
-Characters 70-76:
-  (let func output = ((f b),(f b) = b) in func b) 
-                                          ^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 61-83:
+  | h :: t -> [listReverse(t)] @ [h];;
+              ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside 'a list

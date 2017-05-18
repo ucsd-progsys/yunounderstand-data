@@ -1,5 +1,5 @@
-Characters 26-38:
-  let rec clone x n = "[" ^ (fun a -> b) ^ (List.combine x n) ^ "]";;
-                            ^^^^^^^^^^^^
-Error: This expression should not be a function, the expected type is
-string
+Characters 359-363:
+  | Thresh(a, b, c, d)  -> eval(a, x, y) *. eval(b, x, y) *. eval(c, x, y) *. eval(d, x, y)
+                                                                              ^^^^
+Error: This function has type expr * float * float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,6 +1,5 @@
-Characters 91-95:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> ('a -> 'b) -> 'b
-       The type variable 'a occurs inside ('a -> 'b) -> 'b
+Characters 463-481:
+  | Golden e'              -> cos(eval (e',x,y) *. x * y)
+                                  ^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

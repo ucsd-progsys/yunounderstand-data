@@ -1,5 +1,5 @@
-Characters 57-70:
-  (digitsOfInt n mod 10) :: numL
-   ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 77-85:
+  | 0 -> buildX()
+         ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

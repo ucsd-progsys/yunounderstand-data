@@ -1,5 +1,5 @@
-Characters 502-503:
-  | Golden e'              -> cos(eval (e',x,y)**2.0 -. eval (e',x,y) -. 1)
-                                                                         ^
+Characters 133-138:
+  | _ when n > 0 -> digitsOfInt r @ digit;;
+                                    ^^^^^
 Error: This expression has type int but an expression was expected of type
-         float
+         'a list

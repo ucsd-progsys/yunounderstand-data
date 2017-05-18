@@ -1,34 +1,30 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Power of expr* expr
-  | TowerInv of expr* expr* expr;;
+let rec clone x n = if n > 0 then [x] @ (clone x (n - 1)) else [];;
 
-let pi = 4.0 *. (atan 1.0);;
+let rec addHelper (t,u) =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then (addHelper (t, t')) @ [(1 + h') + h]
+           else (addHelper (t, t')) @ [h' + h]);;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine a -> sin (pi *. (eval (a, x, y)))
-  | Cosine a -> cos (pi *. (eval (a, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
-  | Thresh (a,b,c,d) ->
-      if (eval (a, x, y)) < (eval (b, x, y))
-      then eval (c, x, y)
-      else eval (d, x, y)
-  | Power (a,b) ->
-      if ((a < 1.0) && (a > (-1.0))) || ((b < 1.0) && (b > (-1.0)))
-      then 0.5
-      else a **. b
-  | TowerInv (a,b,c) ->
-      if ((a < 1.0) && (a > (-1.0))) || ((b < 1.0) && (b > (-1.0)))
-      then 0.5
-      else 1 /. ((eval (a, x, y)) ** ((eval (b, x, y)) ** (eval (c, x, y))));;
+let padZero l1 l2 =
+  let len1 = List.length l1 in
+  let len2 = List.length l2 in
+  if len1 > len2
+  then (l1, ((clone 0 (len1 - len2)) @ l2))
+  else (((clone 0 (len2 - len1)) @ l1), l2);;
+
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = addHelper (a, x) in
+    let base = [] in
+    let args = List.combine l1 l2 in List.fold_left f base args in
+  removeZero (add (padZero l1 l2));;

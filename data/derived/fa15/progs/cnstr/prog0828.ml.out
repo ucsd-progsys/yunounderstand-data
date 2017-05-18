@@ -1,5 +1,5 @@
-Characters 74-78:
-  | Sine -> sin(e1);;
-    ^^^^
-Error: The constructor Sine expects 1 argument(s),
-       but is applied here to 0 argument(s)
+Characters 24-28:
+  let rec listReverse l : list = match l with
+                          ^^^^
+Error: The type constructor list expects 1 argument(s),
+       but is here applied to 0 argument(s)

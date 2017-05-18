@@ -1,5 +1,5 @@
-Characters 14-15:
-  let _ = build(1, 0);;
-                ^
+Characters 20-21:
+  let _ = eval (VarX, 1,0);;
+                      ^
 Error: This expression has type int but an expression was expected of type
-         int * int -> int
+         float

@@ -1,5 +1,5 @@
-Characters 87-94:
-  then ([clone 0 -n] @ l1,l2)
-         ^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 56-75:
+  else additivePersistence sumList digitsOfInt n + 1;;
+       ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,5 +1,5 @@
-Characters 171-172:
-  | _  -> (a1 @ 3, a2 @ 5)
-                ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 93-108:
+  | x::x' -> [(x*i)/10]@[((x*i) mod 10) + mulByDigit i x'];;
+                                          ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

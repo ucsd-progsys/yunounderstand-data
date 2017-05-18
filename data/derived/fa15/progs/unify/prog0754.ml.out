@@ -1,5 +1,5 @@
-Characters 203-217:
-  |Times (e,f) -> (eval (e,x,y)) * (eval (f,x,y))
-                  ^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 33-47:
+  let stringOfList f l = sepConcat (List.map f l);;
+                                   ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

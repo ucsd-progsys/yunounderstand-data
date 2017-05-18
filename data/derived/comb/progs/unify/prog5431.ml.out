@@ -1,6 +1,5 @@
-Characters 70-89:
-  | h::t -> catLists t ((lastListElement x) :: y);;
-                        ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 8-17:
+  let _ = (pipe []) 3;;
+          ^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

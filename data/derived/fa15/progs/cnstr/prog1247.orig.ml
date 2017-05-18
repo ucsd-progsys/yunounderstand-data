@@ -1,60 +1,270 @@
-type 'a tree = Leaf | Node of 'a * 'a tree * 'a tree
-let ans0 = Node (2, Node (1, Leaf, Leaf)
-                , Node (3, Leaf, Leaf))
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
+*)
 
-let rec flerb xs = match xs with
-  | [] -> Leaf
-  | x::xs' -> Node (x, Leaf, flerb xs')
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec sumList xs = 
+  match xs with
+    | [] -> 0
+    | h::t ->
+        h + sumList t;;
 
-
-let rec glub f t = match t with
-  | Leaf -> Leaf
-  | Node (x,l,r) -> Node (f x, glub f l, glub f r)
-let ans = glub (fun x -> 2 * x) ans0
-
-
-
-type 'a option = None | Some of 'a
-
-let safeDiv num den = match den with
-  | 0 -> None
-  | _ -> Some (num / den)
-
-let rec lookup k kvs = match kvs with
-  | [] -> None
-  | (c,v)::tl -> if (c = k) then Some v else lookup k tl
+let _ = sumList [1; 2; 3; 4]
+let _ = sumList [1; -2; 3; 5]
+let _ = sumList [1; 3; 5; 7; 9; 11]
 
 
-let _ = lookup "a" [("a", 1); ("b", 2); ("a", 10)]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-          let _ = lookup "z" [("a", 1); ("b", 2); ("a", 10)]
-
-  let lift1 f xo = match xo with
-  | None -> None
-                | Some x -> Some (f x)
-
-          let _ = lift1  string_of_int None
-
-  let lift2 f xo yo = match (xo,yo) with
-  | (Some x, Some y) -> Some (f x y)
-    | (_,_) -> None
-
-          let _ = lift2 (+) (Some 1) (Some 10)
-
-let _ = lift2 (+) (Some 1) (None);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec digitsOfInt n = 
+  if (n > 0) then n mod 10::[];;
 
 
+let _ = digitsOfInt 3124
+let _ = digitsOfInt 352663
 
-          let _ = lift2 (-) (Some 0) (Some 2)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
+let digits n = digitsOfInt (abs n)
 
 
-          type expr = Var of string (*XXXXXXXXXX*)
-          | Con of int (*XXXXXXXXXX*)
-          | Neg of expr (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                    | Plus of expr * expr (*XXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
-  let rec eval env e =  match e with
-  | Var x -> lookup x env
-  | Con i -> Some i
-| Neg e' -> lift2 (-) (Some 0) (eval env e')
-| Plus (e1,e2) -> lift2 (+) (eval env e1) (eval env e2)
+
+let rec additivePersistence n = failwith "TBD"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let rec digitalRoot n = failwith "TBD"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+
+let rec listReverse l = failwith "TBD"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+let explode s = 
+  let rec go i = 
+    if i >= String.length s 
+    then [] 
+    else (s.[i]) :: (go (i+1)) 
+  in
+    go 0
+
+let palindrome w = failwith "TBD"
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+type test = unit -> string
+
+let key        = ""     (*XXXXXXXX*)
+let prefix130  = "130"  (*XXXXXXXX*)
+
+let print130 s = print_string (prefix130^">>"^s)
+
+exception ErrorCode of string
+
+exception TestException
+
+type result = Pass | Fail | ErrorCode of string
+
+let score = ref 0
+let max = ref 0
+let timeout = 300
+
+let runWTimeout (f,arg,out,time) = 
+  try if compare (f arg) out = 0 then Pass else Fail
+  with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)); ErrorCode "exception") 
+
+let testTest () =
+  let testGood x = 1 in
+  let testBad x = 0 in 
+  let testException x = raise TestException in
+  let rec testTimeout x = testTimeout x in
+    runWTimeout(testGood,0,1,5) = Pass &&  
+    runWTimeout(testBad,0,1,5) = Fail &&  
+    runWTimeout(testException,0,1,5) = ErrorCode "exception" && 
+    runWTimeout(testTimeout,0,1,5) = ErrorCode "timeout"
+
+let runTest ((f,arg,out),points,name) =
+  let _   = max := !max + points in
+  let outs = 
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
+      | Fail -> "[fail]"
+      | ErrorCode e -> "[error: "^e^"]"  in
+    name^" "^outs^" ("^(string_of_int points)^")\n"
+
+let mkTest f x y name = runTest ((f, x, y), 1, name)
+
+let badTest () = "WARNING: Your tests are not valid!!\n"
+
+let scoreMsg () = 
+  Printf.sprintf "Results: Score/Max = %d / %d \n" !score !max 
+
+let doTest f = 
+  try f () with ex -> 
+    Printf.sprintf "WARNING: INVALID TEST THROWS EXCEPTION!!: %s \n\n"
+      (Printexc.to_string ex)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let sampleTests =
+  [
+    (fun () -> mkTest
+                 sumList
+                 [1;2;3;4]
+                 10
+                 "sample: sumList 1"
+    );
+    (fun () -> mkTest 
+                 sumList 
+                 [1;-2;3;5] 
+                 7 
+                 "sample: sumList 2"
+    ); 
+    (fun () -> mkTest 
+                 sumList 
+                 [1;3;5;7;9;11]
+                 36 
+                 "sample: sumList 3"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 3124 
+                 [3;1;2;4] 
+                 "sample: digitsOfInt 1"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 352663 
+                 [3;5;2;6;6;3] 
+                 "sample: digitsOfInt 2"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 31243
+                 [3;1;2;4;3] 
+                 "sample: digits 1"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 (-23422)
+                 [2;3;4;2;2]
+                 "sample: digits 2"
+    ); 
+    (fun () -> mkTest 
+                 additivePersistence 
+                 9876 
+                 2 
+                 "sample: additivePersistence1"
+    ); 
+    (fun () -> mkTest 
+                 digitalRoot 
+                 9876 
+                 3 
+                 "sample: digitalRoot"
+    ); 
+    (fun () -> mkTest 
+                 listReverse
+                 [1;2;3;4] 
+                 [4;3;2;1]
+                 "sample: reverse 1"
+    ); 
+    (fun () -> mkTest 
+                 listReverse 
+                 ["a";"b";"c";"d"]
+                 ["d";"c";"b";"a"] 
+                 "sample: rev 2"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "malayalam" 
+                 true
+                 "sample: palindrome 1"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "myxomatosis" 
+                 false
+                 "sample: palindrome 2"
+    )] 
+
+let _ =
+  let report = List.map doTest (sampleTests) in
+  let _ = List.iter print130 (report@([scoreMsg()])) in
+  let _ = print130 ("Compiled\n") in
+    (!score, !max)

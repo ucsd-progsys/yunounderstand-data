@@ -7,4 +7,7 @@ let rec sepConcat sep sl =
       let base = h in let l = t in List.fold_left f base l;;
 
 let stringOfList f l =
-  match l with | [] -> "[]" | l -> sepConcat (List.map f l);;
+  match l with
+  | [] -> "[]"
+  | x::[] -> "[" ^ (x ^ "]")
+  | l -> sepConcat (", " List.map (f l));;

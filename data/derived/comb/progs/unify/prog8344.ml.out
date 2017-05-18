@@ -1,6 +1,5 @@
-Characters 139-140:
-  | 0 -> buildSine(build (rand, depth-1))
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type
-         int * int -> int
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

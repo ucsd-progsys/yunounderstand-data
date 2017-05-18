@@ -1,5 +1,5 @@
-Characters 56-68:
-  0 -> if(rand mod 2) then buildX() else buildY()
-         ^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         bool
+Characters 0-7:
+  padZero x y
+  ^^^^^^^
+Error: This function has type int list -> int list -> int list * int list
+       It is applied to too many arguments; maybe you forgot a `;'.

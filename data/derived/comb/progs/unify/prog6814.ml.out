@@ -1,5 +1,6 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'a
+Characters 66-86:
+  | false -> digitsOfInt (n / 10) :: n mod 10;;
+             ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,6 +1,5 @@
-Characters 49-66:
-  digitsOfInt(n/10) :: n mod 10;;
-  ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 65-77:
+  (pow+ 1, bigAdd total + (mulByDigit x l2)@listZeros pow) in
+           ^^^^^^^^^^^^
+Error: This expression has type int list -> int list
+       but an expression was expected of type int

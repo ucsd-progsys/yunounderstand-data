@@ -1,5 +1,6 @@
-Characters 66-67:
-  | (h,t) -> if t = true then t;;
-                              ^
-Error: This expression has type bool but an expression was expected of type
-         unit
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int -> (bool -> unit) * bool
+       Type int is not compatible with type bool -> unit 

@@ -1,5 +1,5 @@
-Characters 68-76:
-  let fixpoint (f,b) = wwhile (let fin (f', b') = (b', f' b' = b') in fin(f,b),b);;
-                                                                      ^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 110-114:
+  List.fold_left f base args;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

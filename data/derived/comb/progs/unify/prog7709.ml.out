@@ -1,5 +1,6 @@
-Characters 130-131:
-  else n;;
-       ^
-Error: This expression has type int but an expression was expected of type
-         int list list
+Characters 212-213:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int -> int * int -> int * int
+       but an expression was expected of type int -> int * int -> int
+       Type int * int is not compatible with type int 

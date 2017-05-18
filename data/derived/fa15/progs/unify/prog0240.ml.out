@@ -1,10 +1,6 @@
-Characters 178-185:
-  | Sine(a)             -> Printf.sprintf "%expr" "(pi*" a ")"
-                                          ^^^^^^^
-Error: This expression has type
-         ('a -> 'b -> 'c, unit, string, string, string, 'a -> 'b -> 'c)
-         CamlinternalFormatBasics.fmt
-       but an expression was expected of type
-         ('a -> 'b -> 'c, unit, string, string, string, string)
-         CamlinternalFormatBasics.fmt
-       Type 'a -> 'b -> 'c is not compatible with type string 
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type bool -> bool * bool
+       Type int is not compatible with type bool 

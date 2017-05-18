@@ -1,8 +1,5 @@
 
-let rec digitsOfIntHelper n =
-  if n < 1
-  then []
-  else
-    if n > 10
-    then [n mod 10] @ (digitsOfIntHelper (n - ((n mod 10) / 10)))
-    else n;;
+let rec removeZero l =
+  let f a x =
+    if (List.length a) = 0 then (if x = 0 then [] else [x]) else a :: x in
+  let base = [] in List.fold_left f base l;;

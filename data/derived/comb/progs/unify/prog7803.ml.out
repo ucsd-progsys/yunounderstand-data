@@ -1,5 +1,5 @@
-Characters 20-32:
-  let rec clone x n = stringOfList x n List.map x n;;
-                      ^^^^^^^^^^^^
-Error: This function has type ('a -> string) -> 'a list -> string
+Characters 359-363:
+  | Thresh(a, b, c, d)  -> eval(a, x, y) *. eval(b, x, y) *. eval(c, x, y) *. eval(d, x, y)
+                                                                              ^^^^
+Error: This function has type expr * float * float -> float
        It is applied to too many arguments; maybe you forgot a `;'.

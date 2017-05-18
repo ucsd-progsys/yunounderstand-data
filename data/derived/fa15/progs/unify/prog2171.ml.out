@@ -1,5 +1,6 @@
-Characters 147-158:
-  if r = 0 then eval(buildCosine build(rand, d-1), 1, 2)
-                     ^^^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 131-139:
+  in wwhile(isFPoint, b);;
+            ^^^^^^^^
+Error: This expression has type int -> bool
+       but an expression was expected of type int -> int * bool
+       Type bool is not compatible with type int * bool 

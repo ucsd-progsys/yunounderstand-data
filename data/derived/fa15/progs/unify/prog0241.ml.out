@@ -1,5 +1,5 @@
-Characters 245-248:
-  | Average(c, d)       -> "(("^exprToString c^"+"+exprToString d")""/2)"
-                                               ^^^
-Error: This expression has type string but an expression was expected of type
-         int
+Characters 66-67:
+  | (_,t) -> if t = true then 5;;
+                              ^
+Error: This expression has type int but an expression was expected of type
+         unit

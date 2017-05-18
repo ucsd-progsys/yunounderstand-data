@@ -1,6 +1,5 @@
-Characters 91-94:
-  let f a x =  a^sepConcat(sep, x) in
-                           ^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b
+Characters 8-19:
+  let _ = listReverse(explode(w))
+          ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

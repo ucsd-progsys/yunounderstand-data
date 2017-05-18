@@ -1,2 +1,3 @@
 
-let rec wwhile (f,b) = match f b with | (h,t) -> if t = true then f h;;
+let rec wwhile (f,b) =
+  match b with | b -> if (f b) = ((f b), true) then wwhile (f, b);;

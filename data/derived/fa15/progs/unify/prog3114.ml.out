@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 85-98:
+  | hd::tl -> [cout(hd, i)] + mulByDigit i tl in
+              ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

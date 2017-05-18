@@ -1,5 +1,6 @@
-Characters 106-111:
-  | n -> if( n < 0 ) then (clone 0 abs(n) @ l1, l2)  else (clone 0 n @ l2, l1);;
-                           ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 59-68:
+  | n -> x::clone (x (n-1));;
+                  ^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         int -> 'a
+       The type variable 'a occurs inside int -> 'a

@@ -1,5 +1,5 @@
-Characters 144-180:
-  (if num1 + num2 + carry >= 10 then 1 else 0, (num1 + num2 + carry) mod 10::sum) in
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 164-166:
+  | Average (e1, e2) -> (e1 +. e2) /. 2
+                         ^^
+Error: This expression has type expr but an expression was expected of type
+         float

@@ -1,5 +1,5 @@
-Characters 151-155:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 99-113:
+  | h::t -> if!(List.mem h t) then h::rest in (
+               ^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a ref

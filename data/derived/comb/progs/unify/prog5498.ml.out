@@ -1,5 +1,5 @@
-Characters 25-26:
-  let fn = pipe [(fun x -> x+x)];;
-                           ^
-Error: This expression has type 'a -> 'a
+Characters 8-11:
+  let _ = abs -1.0;;
+          ^^^
+Error: This expression has type float -> float
        but an expression was expected of type int

@@ -1,12 +1,11 @@
 
-let helper (f,a,y) =
-  let x = f a in if x = y then ((f, x, y), false) else ((f, x, y), true);;
+let rec cloneHelper x n l =
+  if n <= 0 then l else cloneHelper x (n - 1) (x :: l);;
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in
-  match c' with | false  -> (b', c') | true  -> wwhile (f, b');;
+let rec clone x n = if n < 1 then [] else cloneHelper x n [];;
 
-let fixpoint (f,b) = wwhile (helper, b);;
-
-let _ =
-  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0.0);;
+let padZero l1 l2 =
+  let diff = (List.length l1) - (List.length l2) in
+  if diff < 0
+  then l2 @ (clone 0 (((-1) * diff) - 1))
+  else if diff > 0 then clone 0 diff else (l1, l2);;

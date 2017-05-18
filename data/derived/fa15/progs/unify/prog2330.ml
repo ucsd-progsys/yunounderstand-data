@@ -1,12 +1,3 @@
 
-let _ =
-  let removeDuplicates l =
-    let rec helper (seen,rest) =
-      match rest with
-      | [] -> seen
-      | h::t ->
-          let r = List.rev t in
-          let seen' = seen in
-          if (List.mem h r) = false then seen' := (h :: seen) in
-    let rest' = t in helper (seen', rest') in
-  List.rev (helper ([], l));;
+let rec digitsOfInt n =
+  let returnList = [] in if n < 0 then returnList else returnList :: 1;;

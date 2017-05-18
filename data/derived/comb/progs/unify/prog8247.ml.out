@@ -1,5 +1,5 @@
-Characters 188-189:
-  | (x, n) when n mod 5 = 0 -> buildSine(build(x, n - 1))
-                                               ^
-Error: This expression has type int but an expression was expected of type
-         int * int -> int
+Characters 147-151:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list * 'b list
+       but an expression was expected of type int list

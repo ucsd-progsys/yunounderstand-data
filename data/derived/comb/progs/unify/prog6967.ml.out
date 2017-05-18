@@ -1,5 +1,6 @@
-Characters 79-85:
-  | Sine x-> "sin("@ exprToString x@")";;
-             ^^^^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 70-71:
+  wwhile (funt,b);;
+               ^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

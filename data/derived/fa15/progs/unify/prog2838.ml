@@ -1,12 +1,10 @@
 
-let sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ (sep ^ x) in
-      let base = h in let l = t in List.fold_left f base l;;
+let rec wwhile (f,b) =
+  let temp = f b in
+  match temp with | (a,boolean) -> if boolean then wwhile (f, a) else a;;
 
-let stringOfList f l =
-  sepConcat ";" (List.map f (List.map (fun g  -> "[" ^ (g ^ "]")) l));;
+let fixpoint (f,b) =
+  wwhile (let n x = let ff = f x in (ff, ((not x) = ff)) in (n, b));;
 
-let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

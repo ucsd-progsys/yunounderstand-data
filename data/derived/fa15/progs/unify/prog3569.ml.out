@@ -1,6 +1,5 @@
-Characters 95-99:
-  List.fold_left f base xs;;
-                   ^^^^
-Error: This expression has type int -> int -> int
-       but an expression was expected of type int -> int
-       Type int -> int is not compatible with type int 
+Characters 93-100:
+  let f a x = a^sep^sepConcat(sep,x) in
+                             ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

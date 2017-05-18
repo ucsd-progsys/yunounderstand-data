@@ -1,5 +1,5 @@
-Characters 241-267:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 122-137:
+  match rand(makeRand(0,4)) with
+            ^^^^^^^^^^^^^^^
+Error: This expression has type int * int -> int
+       but an expression was expected of type int * int

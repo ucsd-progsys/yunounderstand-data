@@ -1,5 +1,7 @@
-Characters 8-20:
-  let _ = exprToString Trip(VarX, VarX, VarY);;
-          ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 181-183:
+  in wwhile(gs, b);;
+            ^^
+Error: This expression has type (int -> int) -> int -> int
+       but an expression was expected of type
+         (int -> int) -> (int -> int) * bool
+       Type int -> int is not compatible with type (int -> int) * bool 

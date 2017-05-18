@@ -1,35 +1,29 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Power of expr* expr
-  | TowerNeg of expr* expr* expr;;
+let rec clone x n = if n > 0 then [x] @ (clone x (n - 1)) else [];;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine x -> "sin(pi*" ^ ((exprToString x) ^ ")")
-  | Cosine x -> "cos(pi*" ^ ((exprToString x) ^ ")")
-  | Average (x,y) ->
-      "((" ^ ((exprToString x) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
-  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
-  | Thresh (w,x,y,z) ->
-      "(" ^
-        ((exprToString w) ^
-           ("<" ^
-              ((exprToString x) ^
-                 ("?" ^ ((exprToString y) ^ (":" ^ ((exprToString z) ^ ")")))))))
-  | Power (x,y) -> (exprToString x) ^ ("^" ^ (exprToString y))
-  | TowerNeg (x,y,z) ->
-      (exprToString x) ^
-        ("^" ^ ((exprToString y) ^ ("^" ^ ((exprToString z) ^ "^(-1)"))));;
+let rec addHelper (t,u) =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then (addHelper (t, t')) @ [(1 + h') + h]
+           else (addHelper (t, t')) @ [h' + h]);;
 
-let sampleExpr5 = TowerNeg (VarX, VarY, VarY);;
+let padZero l1 l2 =
+  let len1 = List.length l1 in
+  let len2 = List.length l2 in
+  if len1 > len2
+  then (l1, ((clone 0 (len1 - len2)) @ l2))
+  else (((clone 0 (len2 - len1)) @ l1), l2);;
 
-let _ = exprToString Power (sampleExpr5, sampleExpr5);;
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = addHelper (a, x) in
+    let base = [] in let args = l1 l2 in List.fold_left f base args in
+  removeZero (add (padZero l1 l2));;

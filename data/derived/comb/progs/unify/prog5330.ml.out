@@ -1,6 +1,5 @@
-Characters 59-69:
-  else bigAdd (l mulByDigit ((i-1) l));;
-                 ^^^^^^^^^^
-Error: This expression has type int -> ('a -> 'b -> 'c) -> int list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside int -> ('a -> 'b -> 'c) -> int list
+Characters 19-20:
+  let _ = mulByDigit 9 [9;9;9;9];;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'b * int list

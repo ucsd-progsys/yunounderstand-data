@@ -1,4 +1,4 @@
 
-let rec listReverse l = match l with | [] -> [] | h::t -> (listReverse t) @ h;;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let _ = listReverse [1; 2; 3; 4];;
+let _ = sumList [(33, 6)];;

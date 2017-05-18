@@ -1,5 +1,5 @@
-Characters 277-298:
-  removeZero (add (padZero l1 l2));;
-             ^^^^^^^^^^^^^^^^^^^^^
+Characters 15-17:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                 ^^
 Error: This expression has type int but an expression was expected of type
-         int list
+         'a list

@@ -1,3 +1,5 @@
 
-let sqsum xs =
-  let f a x = (a + x) ^ 2 in let base = 0 in List.fold_left f base xs;;
+let rec digitsOfInt n =
+  match n <= 0 with
+  | true  -> []
+  | false  -> (digitsOfInt (n / 10)) :: (n mod 10);;

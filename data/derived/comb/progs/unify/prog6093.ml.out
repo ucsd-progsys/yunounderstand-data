@@ -1,5 +1,5 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 385-391:
+  let (x, res) = List.fold_left f base args in helper x res ((List.length res) *2);;
+                                               ^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

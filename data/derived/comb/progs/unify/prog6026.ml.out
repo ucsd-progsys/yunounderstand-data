@@ -1,5 +1,5 @@
-Characters 77-78:
-  then padZero 0::l1 l2
-               ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 88-89:
+  let f a x = a ^ sep ^ t in
+                        ^
+Error: This expression has type 'a list
+       but an expression was expected of type string

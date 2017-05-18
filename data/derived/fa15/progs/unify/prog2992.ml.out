@@ -1,5 +1,5 @@
-Characters 14-15:
-  let _ = clone 3 5;;
-                ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 27-33:
+  let fixpoint (f,b) = if not(f, b) then
+                             ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type bool

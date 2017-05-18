@@ -1,5 +1,5 @@
-Characters 12-24:
-  let c3 () = (11, 15, 43)
-              ^^^^^^^^^^^^
-Error: This expression has type int * int * int
-       This is not a function; it cannot be applied.
+Characters 187-188:
+  | Average (e',e1)      -> (eval e + eval e1)/2
+                                  ^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,5 +1,5 @@
-Characters 112-121:
-  |Average e -> "Average"
-   ^^^^^^^^^
-Error: The constructor Average expects 2 argument(s),
-       but is applied here to 1 argument(s)
+Characters 62-69:
+  if List.length l1 = List.length l2 then [l1, l2];;
+                                           ^^^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

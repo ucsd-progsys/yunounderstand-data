@@ -1,5 +1,6 @@
-Characters 170-202:
-  |Average(i1, i2)	  -> (eval (i1,x,y) +. eval (i2,x,y))  / 2.0
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 148-149:
+  let seen' = if (List.mem seen h) = false then seen@[h] else seen in
+                                                      ^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list list

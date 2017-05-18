@@ -1,5 +1,2 @@
 
-let is10gte n = n >= 10;;
-
-let rec additivePersistence n =
-  if is10gte then 1 + (additivePersistence (sumList (digitsOfInt n))) else 0;;
+let pipe fs = let f a x = a x in let base p = p in List.fold_left f base fs;;

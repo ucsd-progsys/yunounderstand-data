@@ -70,12 +70,11 @@ let _ = sepConcat "X" ["hello"];;
 
 let stringOfList f l = match l with 
   | []  -> "[]"
-  | l   -> "[" ^ sepConcat "; " (List.map f l) ^ "]";;
+  | l   -> "[" ^ sepConcat ";" (List.map f l) ^ "]";;
 
 let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
 let _ = stringOfList (fun x -> x) ["foo"];;
 let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
-let _ = stringOfList (string_of_int) [1;2;3;4;5;6];;
 
 
 
@@ -98,14 +97,11 @@ let _ = clone clone (-3);;
 
 let padZero l1 l2 = match (List.length l1 - List.length l2) with
   | 0 -> (l1, l2)
-  | n -> 
-      if( n < 0 ) then (clone 0 (n * -1) @ l1, l2)  
-      else List.rev(clone 0 n @ l2, l1);;
+  | n -> if( n < 0 ) then (clone 0 (n * -1) @ l1, l2)  else (clone 0 n @ l2, l1);;
 
 
 let _ = padZero [9;9] [1;0;0;2];;
 let _ = padZero [1;0;0;2] [9;9];;
-let _ = padZero [1;0;0;2] [9;9];; (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
 let rec removeZero l = match l with 
@@ -125,25 +121,31 @@ let bigAdd l1 l2 =
       let (fst, sec) = x in
       let (fst', sec') = if (fst + sec > 9) then (fst + sec - 10, 1) else (fst + sec, 0) in 
       let (carry, digits) = a in
-      let (carry', digits') = 
-        if (carry + fst' > 9) then (1, digits @ [(fst' - 9)])
-        else if (sec' = 1) then (1, digits @ [(fst' + carry)])  
-        else (0, digits @ [(fst') + carry]) in 
+      let (carry', digits') = if (sec' = 1) then (1, digits @ (fst, sec)) else (0, digits @ (fst, sec)) in 
         (carry', digits') in
     let base = (0,[]) in
     let args = List.rev(List.combine l1 l2) @ [(0,0)]  in
     let (_, res) = List.fold_left f base args in
-      removeZero(List.rev(res))
+      res
   in 
-    removeZero (add(padZero l1 l2));;
+    removeZero (add (padZero l1 l2))
 
 
 let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
-let _ = bigAdd [1;3] [1;3];; 
-let _ = bigAdd [0] [0];; 
-let _ = bigAdd [2;0] [2;0];;
-let _ = bigAdd [9;9] [1];; 
+
+
+(*X
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXX
+XXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX*)
 
 
 let rec mulByDigit i l = failwith "to be implemented"

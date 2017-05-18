@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 48);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int -> int * bool
-       Type int is not compatible with type int -> int * bool 
+Characters 209-232:
+  ( a1 @ [(x1+x2+c) / 10], a2 @ [(x1+x2+c) mod 10] )
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

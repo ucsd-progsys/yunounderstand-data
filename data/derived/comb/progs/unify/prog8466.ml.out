@@ -1,5 +1,5 @@
-Characters 61-66:
-  let fixpoint (f,b) = wwhile (let fin bt = (bt, f bt = bt) in fin b ,b);;
-                                                               ^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 82-84:
+  bigAdd a2 (mulByDigit (x l1) 10**a1) 
+                               ^^
+Error: This expression has type int but an expression was expected of type
+         int list

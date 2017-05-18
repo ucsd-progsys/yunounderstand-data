@@ -126,18 +126,11 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = let (l1x,l2x) = x in let (a1,a2) = a in
-      let test = match a1 with 
-        | [] -> 0
-        | h::t -> h in
-      let sum = l1x+l2x+test in
-      let terms = match a2 with
-        | []-> (sum/10)::(sum mod 10)
-        | h::t -> sum mod 10 in
-        ((sum/10)::a1,terms::a2) in
-    let base = ([],[])  in
-    let args = List.rev (List.combine l1 l2) in
-    let (_, res) = List.fold_left f base args in res
+    let f a x = x::a in
+    let base = []  in
+    let args = l1 in
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
 

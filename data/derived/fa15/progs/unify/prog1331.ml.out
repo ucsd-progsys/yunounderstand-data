@@ -1,6 +1,5 @@
-Characters 156-160:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type 'c list list
-       Type 'a * 'b is not compatible with type 'c list 
+Characters 34-50:
+  let stringOfList f l = List.map f (sepConcat "" l);;
+                                    ^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

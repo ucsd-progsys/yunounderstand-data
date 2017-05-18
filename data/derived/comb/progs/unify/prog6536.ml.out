@@ -1,5 +1,5 @@
-Characters 68-72:
-  List.fold_left f base xs;;
-                   ^^^^
-Error: This expression has type int -> 'a -> int
-       but an expression was expected of type int
+Characters 248-249:
+  |Thresh(a,b,a_less,b_less)->0;;
+                              ^
+Error: This expression has type int but an expression was expected of type
+         float

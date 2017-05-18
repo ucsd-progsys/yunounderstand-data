@@ -1,5 +1,5 @@
-Characters 66-69:
-  | Sine e1              -> sin expr e1
-                            ^^^
-Error: This function has type float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 18-23:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                    ^^^^^
+Error: This expression has type string but an expression was expected of type
+         'a * int

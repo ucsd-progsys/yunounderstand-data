@@ -1,5 +1,5 @@
-Characters 72-84:
-  | h::t -> (i * h) / 10 in
-            ^^^^^^^^^^^^
+Characters 14-15:
+  let _ = clone 3 5;;
+                ^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd

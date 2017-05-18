@@ -1,6 +1,11 @@
 
-let rec removeZero l =
-  let h::t = l in
-  if h = [] then [] else (match h with | 0::[] -> removeZero t | _ -> t);;
+let rec wwhile (f,b) =
+  let (x,y) = f b in if y = false then x else wwhile (f, x);;
 
-let _ = removeZero [0; 0; 0; 0];;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) =
+  ((wwhile (if (f b) = b then (b, false) else ((f b), true))), b);;
+
+let _ = fixpoint (collatz, 1);;

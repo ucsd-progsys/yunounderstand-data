@@ -1,6 +1,5 @@
-Characters 122-125:
-  wwhile (foo, b);;
-          ^^^
-Error: This expression has type ('a -> 'a) -> 'a -> 'a * bool
-       but an expression was expected of type ('a -> 'a) -> ('a -> 'a) * bool
-       Type 'a -> 'a * bool is not compatible with type ('a -> 'a) * bool 
+Characters 49-69:
+  if n <= 0 then [] else  (digitsOfInt (n/10)) add ([n mod 10]);;
+                          ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

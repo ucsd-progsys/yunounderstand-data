@@ -1,4 +1,2 @@
 
-let rec wwhile (f,b) = let (b',c') = f b in if c' then wwhile (f, b') else b';;
-
-let fixpoint (f,b) = let f' b = (f b) = b in wwhile (f', b);;
+let pipe fs = let f a x = a x in let base b = b in List.fold_left f base fs;;

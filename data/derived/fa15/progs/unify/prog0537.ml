@@ -1,2 +1,3 @@
 
-let rec catLists x y = match x with | [] -> [] | h::t -> catLists t;;
+let pipe fs =
+  let f a x = x a in let base = List.hd fs in List.fold_left f base fs;;

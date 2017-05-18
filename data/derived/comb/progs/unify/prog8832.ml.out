@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -1341;;
-          ^^^^^^^^^^^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type int
+Characters 82-97:
+  |Sine (e1) -> sin(pi *. exprToString e1)
+                          ^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         float

@@ -1,5 +1,5 @@
-Characters 11-24:
-  let _ =eval(sampleExpr1);;
-             ^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 30-42:
+  let fixpoint (f,b) = wwhile ( (helper f b),b);;
+                                ^^^^^^^^^^^^
+Error: This expression has type bool * 'a
+       but an expression was expected of type 'b -> 'b * bool

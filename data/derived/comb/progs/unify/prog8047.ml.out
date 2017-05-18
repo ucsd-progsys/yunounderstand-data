@@ -1,5 +1,6 @@
-Characters 77-108:
-  |0 -> buildSine(build(rand, depth-1))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         unit
+Characters 28-33:
+  let fixpoint (f,b) = wwhile(fix b, b);;
+                              ^^^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a * bool

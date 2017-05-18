@@ -171,8 +171,7 @@ let bigMul l1 l2 =
   let f a x = 
     match a with
       | (o, l) ->
-          let prod = o*x in
-            (10*o, bigAdd(mulByDigit prod l1 l))
+          (10*o, bigAdd(mulByDigit o*x l1) l)
 
   in
   let base = (1, []) in

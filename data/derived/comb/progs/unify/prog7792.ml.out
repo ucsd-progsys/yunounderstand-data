@@ -1,6 +1,6 @@
-Characters 89-90:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type int -> int -> 'a -> int
-       but an expression was expected of type int -> int -> int
-       Type 'a -> int is not compatible with type int 
+Characters 53-56:
+  fixpoint (f,f(b))
+               ^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a

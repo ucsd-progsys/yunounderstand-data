@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 2);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type int -> unit
-       Type int * bool is not compatible with type unit 
+Characters 105-108:
+  | h::t  -> if (k,d) = l then d else assoc (d,k,[t]);;
+                                                 ^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

@@ -1,5 +1,5 @@
-Characters 49-55:
-  bigAdd l  mulByDigit (i-1 l);;
-  ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 82-90:
+  let f a x = x ^ sep :: a in
+                  ^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

@@ -162,29 +162,26 @@ let rec mulByDigit i l =
   then [0]
   else if i = 1
   then l
-  else bigAdd l (mulByDigit (i-1) l)
+  else mulByDigit (i-1 bigAdd l l))
+
 ;;
 
-let _ = mulByDigit 1 [1;1;1;1]
+let _ = mulByDigit 0 [9;9;9;9]
 
 let bigMul l1 l2 = 
-  let f a x = 
-    match a with
-      | (o, l) ->
-          bigAdd (mulByDigit o l1) a
-
-  in
-  let base = (1, []) in
-  let args = l2 in 
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

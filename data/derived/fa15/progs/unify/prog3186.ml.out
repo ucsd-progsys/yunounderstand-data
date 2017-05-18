@@ -1,5 +1,10 @@
-Characters 24-25:
-  let xy = if List.mem kx 1 then kx else kx @ [1];;
-                          ^
-Error: This expression has type int but an expression was expected of type
-         int list list
+Characters 127-135:
+  | Sine expr -> Printf.sprintf "sin %s" exprToString expr
+                                ^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, unit, string, string, string, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, unit, string, string, string, string)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type string 

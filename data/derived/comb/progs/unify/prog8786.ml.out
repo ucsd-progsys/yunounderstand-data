@@ -1,5 +1,6 @@
-Characters 63-121:
-  then(l1, ((clone 0 (List.length(l1) - List.length(l2)) )@ l2));;
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type unit
+Characters 77-88:
+  | h::t -> matchHeads (explode w);;
+                       ^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type 'a list list
+       Type char is not compatible with type 'a list 

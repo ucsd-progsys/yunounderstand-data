@@ -1,6 +1,5 @@
-Characters 147-148:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string list list
-       but an expression was expected of type string list
-       Type string list is not compatible with type string 
+Characters 51-52:
+  let fixpoint (f,b) = wwhile (let g= (f,b = f b) in g,b);;
+                                                     ^
+Error: This expression has type ('a -> 'a) * bool
+       but an expression was expected of type 'b -> 'b * bool

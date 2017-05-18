@@ -1,5 +1,6 @@
-Characters 12-16:
-  let _ = add test hmm;;
-              ^^^^
-Error: This expression has type int set
-       but an expression was expected of type 'a list
+Characters 41-58:
+  if (n > 0) then digitsOfInt(n/10)::[n mod 10] 
+                  ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

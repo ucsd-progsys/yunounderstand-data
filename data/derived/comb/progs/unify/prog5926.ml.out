@@ -1,5 +1,7 @@
-Characters 61-67:
-  (h::t) -> h digistsOfInt t;;
-  ^^^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 101-106:
+  assoc (d,k,l');;
+  ^^^^^
+Error: This expression has type 'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside
+       'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a

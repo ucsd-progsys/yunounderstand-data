@@ -17,11 +17,14 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = 
-  match l with
-    |[] -> d
-    |(k',d')::t -> if k = k' then d'  else assoc(d,k,t)
+let rec assoc (d,k,l) = match l with | 
+  [] -> d | 
+  (sameTypeAsK, sameTypeAsD)::t -> 
+    if k = sameTypeAsK then sameTypeAsD
+    else assoc(d, k, t)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXX*)
 
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
@@ -46,17 +49,17 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = if List.mem seen h then seen else seen @ [h] in
+          let seen' = if not (List.mem h seen) then h::seen else seen in 
           let rest' = t in 
             helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = removeDuplicates [1];;
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
-*)
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -65,10 +68,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = failwith "to be written"
+let rec wwhile (f,b) = 
+  let (b', c') = f b in 
+    if c' then wwhile b' c'
+    else b'
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -552,4 +558,5 @@ let _ =
   let _      = List.iter print130 (report@([scoreMsg()])) in
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
+
 

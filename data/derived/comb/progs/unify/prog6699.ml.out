@@ -1,5 +1,5 @@
-Characters 87-88:
-  print_int h;;
-            ^
+Characters 232-239:
+  let args = List.rev(List.combine(l1,l2)) in
+                                  ^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+       but an expression was expected of type 'c list

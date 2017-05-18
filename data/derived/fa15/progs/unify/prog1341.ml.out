@@ -1,5 +1,5 @@
-Characters 127-129:
-  ((sum/10)::a1,(sum mod 10)::a2) in
-             ^^
+Characters 175-196:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
          int list

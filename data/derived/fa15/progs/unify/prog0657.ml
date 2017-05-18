@@ -1,5 +1,3 @@
 
-let rec wwhile (f,b) =
-  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
-
-let fixpoint (f,b) = wwhile (let func x = f in ((f, (f x not b)), b));;
+let rec digitsOfInt n =
+  if n <= 0 then [] else n mod (10 append digitsOfInt (n / 10));;

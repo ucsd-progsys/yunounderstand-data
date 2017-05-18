@@ -1,6 +1,5 @@
-Characters 46-50:
-  let rec funt = fun x -> (funt, f b = b) 
-                           ^^^^
-Error: This expression has type 'a -> 'b * 'c
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside 'a -> 'b * 'c
+Characters 100-116:
+  wwhile ((fs b), true,b);;
+         ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type ('d -> 'd * bool) * 'd

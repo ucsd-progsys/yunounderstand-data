@@ -1,5 +1,5 @@
-Characters 187-188:
-  else rest' = t
-               ^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 69-70:
+  let f a x = let (0, res) = a in (0,(mulByDigit x a)) in
+                                                   ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

@@ -1,5 +1,5 @@
-Characters 14-15:
-  let _ = clone 3 5;;
-                ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 190-194:
+  | Average (x, y) -> "(("exprToString e ^ "+" ^ exprToString e ")"/2")"
+                      ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

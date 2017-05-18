@@ -1,5 +1,5 @@
-Characters 254-275:
-  removeZero (add (padZero l1 l2));;
-             ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 21-30:
+  let _ = mulByDigit 9 [9;9;9;9];;
+                       ^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

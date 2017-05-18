@@ -8,32 +8,14 @@ type expr =
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let buildAverage (e1,e2) = Average (e1, e2);;
+let pi = 4.0 *. (atan 1.0);;
 
-let buildCosine e = Cosine e;;
-
-let buildSine e = Sine e;;
-
-let buildTimes (e1,e2) = Times (e1, e2);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  if depth = 0
-  then match rand (0, 1) with | 0 -> buildX () | 1 -> buildY ()
-  else
-    (match rand (2, 6) with
-     | 2 -> buildSine (build (rand, (depth - 1)))
-     | 3 -> buildCosine (build (rand, (depth - 1)))
-     | 4 ->
-         buildAverage
-           ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
-     | 5 ->
-         buildTimes
-           ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
-     | 6 ->
-         buildTimes
-           ((build (rand, (depth - 1))), (build (rand, (depth - 1))),
-             (build (rand, (depth - 1))), (build (rand, (depth - 1)))));;
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine e' -> sin (eval (e', x, y))
+  | Cosine e -> cos (pi * (eval e))
+  | Average (e,e1) -> ((eval e) + (eval e1)) / 2
+  | Times (e,e1) -> (eval e) * (eval e2)
+  | Thresh (e,e2,e3,e4) -> (e < (e2 ?e3) : e4);;

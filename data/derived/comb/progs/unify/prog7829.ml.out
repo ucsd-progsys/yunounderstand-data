@@ -1,5 +1,5 @@
-Characters 49-50:
-  | 0 -> hd::t removeZero t
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type 'a list
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

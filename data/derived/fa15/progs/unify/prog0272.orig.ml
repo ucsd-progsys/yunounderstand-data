@@ -70,13 +70,11 @@ let _ = sepConcat "" ["a";"b";"c";"d";"e"]
 let _ = sepConcat "X" ["hello"]
 
 
-let _ = List.map((+), [1;2;3;4;4])
 
 
+let stringOfList f l = List.map(f, l)
 
-let stringOfList f l = sepConcat("", List.map(f, l))
-
-let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
+let _ = stringOfList string_of_int [1;2;3;4;5;6];;
 let _ = stringOfList (fun x -> x) ["foo"];;
 let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 

@@ -178,11 +178,11 @@ let _ = helper 6;;
 
 let rec tenEx x y = match y with
   | [] -> []
-  | h::t -> tenEx (x + 1) t @ [(helper x) * h]
+  | h::t -> tenEx (x + 1) t @ ((helper x) * h)
 
 ;;
 
-let _ = tenEx 0 (List.rev([4; 5; 6]));;
+let _ = tenEx 0 [4; 5; 6];;
 
 
 
@@ -207,24 +207,16 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec bigMul l1 l2 = 
-  match l1 with
-    | [] -> []
-    | h::t -> bigMul((mulByDigit h l2), (bigMul(t, l2)))
+let bigMul l1 l2 = 
+  let f a x = let (x1, x2) = x in
+    let (carry, res) = a in
+
+    let base = (0, []) in
+    let args = (List.rev (List.combine l1 l2)) in
+    let (carry, res) = List.fold_left f base args in
+      [carry] @ res
 
 ;;
-
-(*XXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXX
-
-XXXX*)
 
 
 

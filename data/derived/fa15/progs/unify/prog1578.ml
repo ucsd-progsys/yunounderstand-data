@@ -1,5 +1,2 @@
 
-let pipe fs =
-  let f a x = x a in let base x = x + 0 in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let rec wwhile (f,b) = let (b',c') = f b in if c' then wwhile (f b') else b';;

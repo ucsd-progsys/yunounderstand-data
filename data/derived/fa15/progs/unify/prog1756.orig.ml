@@ -41,7 +41,7 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x =fun z -> x(a(z)) in
+  let f a x =x(f(a)) in
   let base = fun x->x in
     List.fold_left f base fs
 
@@ -140,58 +140,50 @@ let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
+let pairHelper x =
+  let (r,s)=x in
+    r+s
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (y,z)=a in 
-      let (r,s)=x in
-      let m=r+s+y in
-        (m/10,(m mod 10)::z) in
-    let base = (0,[]) in
-    let args = List.combine (List.rev (0::l1)) (List.rev (0::l2)) in
+    let f a x = (pairHelper x)::a in
+    let base = [] in
+    let args = List.combine l1 l2 in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-
-
-let rec mulByDigit i l = 
-  match i with
-    |0->[0]
-    |_->bigAdd l (mulByDigit (i-1) l)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = mulByDigit 9 [9;9;9;9]
+*)
 
 
+let rec mulByDigit i l = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 let bigMul l1 l2 = 
-  let f a x = 
-    let (m,n)=a in
-    let (c,d)=x in
-    let z = (c*d)+m in
-      (z/10,(z mod 10)::n) in
-  let base = (0,[]) in
-  let args = List.combine (List.rev ([0;0;0;0]::l1)) (List.rev ([0;0;0;0]::l2)) in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

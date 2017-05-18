@@ -1,6 +1,5 @@
-Characters 47-48:
-  |_ -> x::clone x (n-1);;
-        ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 107-110:
+  |Cosine(e) -> cos*(pi*. eval (e,x,y))
+                ^^^
+Error: This expression has type float -> float
+       but an expression was expected of type int

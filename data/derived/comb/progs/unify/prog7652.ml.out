@@ -1,5 +1,5 @@
-Characters 229-244:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a list * 'b list
+Characters 67-68:
+  | 1-> buildSine(build (rand,depth-1))
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type 'a * int

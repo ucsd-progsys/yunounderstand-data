@@ -1,5 +1,6 @@
-Characters 149-175:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)

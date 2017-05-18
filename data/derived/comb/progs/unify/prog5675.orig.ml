@@ -14,40 +14,35 @@ fact(4);;
 (*XXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXX*)
 
-
-let rec sumList xs : int = match xs with
-  | [] -> 0
-  | h::t -> h + sumList t
+let rec sumList n xs = match xs with
+  | [] -> n
+  | h::t -> h n + sumList(0) t
 ;;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
 
 let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n: int list = 
-  if n < 10 then [n]
-  else digitsOfInt (n / 10) :: (n mod 10)
-
-;;
+let rec digitsOfInt n = failwith "TBD:digitsOfInt"
 
 
-uncomment and run AFTER you have implemented digitsOfInt 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX

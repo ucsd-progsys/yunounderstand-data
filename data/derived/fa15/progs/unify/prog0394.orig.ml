@@ -39,9 +39,9 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = let x' = x a in
-    let base = fun x -> x in
-      List.fold_left f base fs
+  let f a x = fun x' ->  a x in
+  let base = fun x -> x in
+    List.fold_left f base fs
 
 
 

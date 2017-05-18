@@ -1,6 +1,5 @@
-Characters 83-84:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'c) -> 'c
+Characters 43-50:
+  let rec sumList xs = List.hd(xs) + sumList List.tl x;;
+                                             ^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type int list

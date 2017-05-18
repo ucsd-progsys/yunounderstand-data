@@ -1,5 +1,5 @@
-Characters 83-87:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b -> 'c
+Characters 53-54:
+  | VarX -> "" ^ e
+                 ^
+Error: This expression has type expr but an expression was expected of type
+         string

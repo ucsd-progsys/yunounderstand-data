@@ -1,5 +1,5 @@
-Characters 76-77:
-  | h::t -> (h, l2) :: helper(t l2);;
-                              ^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 119-143:
+  | h::t -> bigAdd((mulByDigit h l1), res)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

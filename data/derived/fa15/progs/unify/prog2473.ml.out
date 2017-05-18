@@ -1,5 +1,8 @@
-Characters 100-101:
-  | _  -> [h*i/10];;
-           ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 66-67:
+  List.fold_left f base xs
+                 ^
+Error: This expression has type int -> 'a -> int
+       but an expression was expected of type
+         ('b -> 'c -> 'd -> 'e -> 'f -> 'g) ->
+         'h -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g
+       Type int is not compatible with type 'b -> 'c -> 'd -> 'e -> 'f -> 'g 

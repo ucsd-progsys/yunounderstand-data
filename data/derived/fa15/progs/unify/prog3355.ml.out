@@ -1,5 +1,5 @@
-Characters 138-165:
-  |[] -> if i * h > 10 then [carry i h]@[remainder i h]
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type unit
+Characters 24-29:
+  List.map string_of_int [1,2,3];;
+                          ^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type int

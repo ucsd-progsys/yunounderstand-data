@@ -60,11 +60,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = a ^ sep ^ x in
-      let base = h in
-      let l = t in
+      let f a x = h ^ sep ^ sepConcat sep t in
+      let base = t in
+      let l = failwith "to be implemented" in
         List.fold_left f base l
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -76,12 +75,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-(*XXXXXXXXXXXXXXX*)
-let stringOfList f l = 
-  "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
-;;
-
+let stringOfList f l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -96,13 +91,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXX*)
-let rec clone x n = 
-  if n <= 0 then []
-  else x :: clone x (n - 1)
 
-;;
-
+let rec clone x n = failwith "to be implemented" 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -112,18 +102,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let padZero l1 l2 = 
-  if List.length l1 > List.length l2 then l1 @ [clone 0 ((List.length l1) - (List.length l2)) @ l2]
-  else if  List.length l1 < List.length l2 then clone 0 ((List.length l2) - (List.length l1)) @ l1 @ l2
-  else []
-
-;;
-
-let _ = padZero [9;9] [1;0;0;2];;
-
-
-let _ = padZero [1;0;0;2] [9;9];;
-
+let padZero l1 l2 = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

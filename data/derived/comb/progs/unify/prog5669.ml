@@ -1,4 +1,3 @@
 
-let rec digitsOfInt xs n =
-  (match n with | 0 -> xs | h::t -> xs :: ((n % (10 digitsOfInt n)) / 10) : 
-  int list);;
+let rec sumList n =
+  let len = Array.length in if len == 1 then 1 else (hd n) + (sumList (tl n));;

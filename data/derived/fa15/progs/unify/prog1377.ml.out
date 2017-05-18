@@ -1,5 +1,5 @@
-Characters 117-122:
-  | 1 -> buildSine (build(rand',depth-1))
-                          ^^^^^
-Error: This expression has type int but an expression was expected of type
-         int * int -> int
+Characters 55-64:
+  let rec digitsOfInt n = if n < 0 then print_int 0 else print_int digitsOfInt (n / 10);;
+                                                         ^^^^^^^^^
+Error: This function has type int -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

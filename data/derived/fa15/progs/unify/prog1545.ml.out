@@ -1,5 +1,6 @@
-Characters 41-48:
-  let x = sumList digits n in
-          ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 67-85:
+  | false ->  [digitsOfInt (n/10)]::[];;
+               ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list list

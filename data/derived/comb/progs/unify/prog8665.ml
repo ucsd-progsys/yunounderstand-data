@@ -1,3 +1,7 @@
 
-let pipe fs =
-  let f a x a = x a in let base a = fs in List.fold_left f base fs;;
+let _ =
+  let rec digitsOfIntHelper (num,numList) =
+    if num < 10
+    then num :: numList
+    else digitsOfIntHelper (num / 10) ((num mod 10) :: numList) in
+  digitsOfIntHelper (num, []);;

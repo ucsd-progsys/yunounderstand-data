@@ -153,7 +153,7 @@ let bigAdd l1 l2 =
   in 
     removeZero (add (padZero l1 l2))
 
-let _ = bigAdd [] [1];;
+let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 
@@ -171,17 +171,20 @@ let bigMul l1 l2 =
   let f a x = 
     match a with
       | (o, l) ->
-          (10*o, bigAdd(mulByDigit o*x l1) l)
-
+          let prod = (mulByDigit l x) + o in
+            if prod < 10 
+            then (0, prod::l)
+            else (prod/10, (prod mod 10)::l)
   in
-  let base = (1, []) in
-  let args = l2 in 
+  let base = (0, []) in
+  let args = let combine (a,b) = a + b in
+      List.map combine (List.rev(List.combine l1 l2)) @ [0] in 
   let (_, res) = List.fold_left f base args in
     res
 
 
 
-let _ = bigMul [1;2] [1;2]
+let _ = bigMul [9;9;9;9] [9;9;9;9]
 let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
 
 

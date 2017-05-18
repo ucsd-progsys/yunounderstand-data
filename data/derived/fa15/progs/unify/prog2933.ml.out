@@ -1,5 +1,5 @@
-Characters 219-231:
-  | Average (x, y) -> "(("^ exprToString e ^ "+" ^ exprToString e ")"/2")"
-                                                   ^^^^^^^^^^^^
-Error: This function has type expr -> string
+Characters 49-55:
+  bigAdd l  mulByDigit (i-1 l);;
+  ^^^^^^
+Error: This function has type int list -> int list -> int list
        It is applied to too many arguments; maybe you forgot a `;'.

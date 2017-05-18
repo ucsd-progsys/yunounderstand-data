@@ -1,5 +1,6 @@
-Characters 55-65:
-  (n mod 10) @ digitsOfIntHelper (n - (n  mod 10)/10);;
-  ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 116-159:
+  else clone "0" (List.length l1 - List.length l2) :: l2;;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       but an expression was expected of type int list
+       Type string is not compatible with type int 

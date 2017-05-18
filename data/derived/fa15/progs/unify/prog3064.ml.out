@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -1;;
-          ^^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 25-37:
+  let rec clone x n = pipe stringOfList x n;;
+                           ^^^^^^^^^^^^
+Error: This expression has type ('a -> string) -> 'a list -> string
+       but an expression was expected of type (('b -> 'c) -> 'b -> 'c) list

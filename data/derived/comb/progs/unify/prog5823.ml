@@ -1,3 +1,3 @@
 
-let rec assoc (d,k,l) =
-  match l with | [] -> d | h::t -> if (k, x) then x else assoc (d, k, t);;
+let rec helper l1 l2 =
+  match l1 with | [] -> [] | h::t -> (h, l2) :: (helper (t, l2));;

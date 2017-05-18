@@ -127,27 +127,25 @@ let _ = removeZero [0;0;0;0]
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
     let f a x = let (j,k) = x in
-      let (l,m) = a in
-        if j+k+l > 9 then (1, (j+k+l-10)::m) else (0,(j+k+l)::m) in
-    let base = (0,[]) in
+        match a with
+          | [] -> []
+          | h::t -> if j+k > 9 then 1::(h + j + k - 10)::t else 0::(h + j + k)::t in
+    let base = (0,0) in
     let args = List.combine (List.rev l1) (List.rev l2) in
-    let (c, res) = List.fold_left f base args in
-      c::res
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
-
-
-let rec mulByDigit i l = match i with
-  | 0 -> 0
-  | 1 -> l
-  | x -> mulByDigit i-1 (bigAdd l l)
+let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

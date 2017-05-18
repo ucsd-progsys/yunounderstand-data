@@ -1,5 +1,5 @@
-Characters 97-100:
-  | h::t  -> digitalRoot(digits(sumList(n)));;
-                                       ^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 33-66:
+  n = additivePersistence(n mod 10);;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

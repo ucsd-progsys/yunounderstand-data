@@ -64,12 +64,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = match f b with
-  | (h,t) -> if t = true then f h else f h
-
+let rec wwhile (f,b) = match (f b) with
+  | (h,t) -> if t = true then (f h) else (f t)
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -114,24 +114,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with 
-  | VarX                -> Printf.sprintf "%s" "x"
-  | VarY                -> Printf.sprintf "%s" "y"
+let rec exprToString e = failwith "to be written"
 
-  | Sine(a)             -> Printf.sprintf "%expr" "(pi*" a ")"
-  | Cosine(b)           -> Printf.sprintf "%expr" "(pi*" b ")"
-  | Average(c, d)       -> Printf.sprintf "%expr%expr" c "+" d"/2"
-  | Times(e, f)         -> Printf.sprintf "%expr%expr" e "*" f
-  | Thresh(g, h, i, j)  -> Printf.sprintf "%expr%expr%expr" "("g"<"h "?" i ":" j")"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
-
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX

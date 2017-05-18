@@ -1,6 +1,5 @@
-Characters 65-66:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'a -> 'a -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 68-74:
+  else bigAdd l mulByDigit( i-1, l);;
+       ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

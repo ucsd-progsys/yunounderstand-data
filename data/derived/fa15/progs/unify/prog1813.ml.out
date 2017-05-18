@@ -1,5 +1,5 @@
-Characters 30-42:
-  let fixpoint (f,b) = wwhile ( (helper f b),b);;
-                                ^^^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a -> 'a * bool
+Characters 25-36:
+  let _ = assoc([1,1],"a",[([1,2],"c"),([1,1,1],"a")]);;
+                           ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

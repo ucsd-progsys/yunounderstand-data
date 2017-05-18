@@ -1,5 +1,5 @@
-Characters 139-141:
-  | Cosine e	      -> cos(pi * eval e)
-                          ^^
+Characters 114-116:
+  | Sine e	      -> (int_of_float) (sin(pi * eval e))
+                                        ^^
 Error: This expression has type float but an expression was expected of type
          int

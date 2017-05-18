@@ -1,6 +1,5 @@
-Characters 256-260:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * int
-       but an expression was expected of type int * int list list
-       Type int is not compatible with type int list list 
+Characters 87-88:
+  | Sine(e) -> sin(pi *. e)
+                         ^
+Error: This expression has type expr but an expression was expected of type
+         float

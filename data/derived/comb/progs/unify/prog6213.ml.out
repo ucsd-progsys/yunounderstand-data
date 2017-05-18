@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = sumOfDigits digits 9876;;
-          ^^^^^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 173-199:
+  let (_, res) = List.fold_left f base args in res
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

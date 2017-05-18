@@ -1,6 +1,5 @@
-Characters 73-74:
-  let fixpoint (f,b) = wwhile (let n x = let ff = f  in (ff , x = ff x) in n,b);;
-                                                                           ^
-Error: This expression has type 'a -> ('a -> 'a) * bool
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a -> 'a
+Characters 212-228:
+  let args = List.rev(List.combine [0]@l1 [0]@l2) in
+                      ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> (int * 'a) list
+       but an expression was expected of type 'b list

@@ -1,5 +1,5 @@
-Characters 36-48:
-  let stringOfList f l = f (sepConcat (List.map l));;
-                                      ^^^^^^^^^^^^
-Error: This expression has type 'a list -> 'b list
-       but an expression was expected of type string
+Characters 76-86:
+  |Sine e -> "sin (pi*" exprToString e ")"
+             ^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

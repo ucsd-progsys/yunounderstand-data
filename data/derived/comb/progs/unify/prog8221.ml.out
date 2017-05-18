@@ -1,5 +1,5 @@
-Characters 61-62:
-  | h::t -> h :: t append r;;
-                 ^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 132-136:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a -> int list -> string list
+       but an expression was expected of type int

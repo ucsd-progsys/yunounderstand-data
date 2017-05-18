@@ -28,11 +28,11 @@ let bigAdd l1 l2 =
   removeZero (add (padZero l1 l2));;
 
 let rec mulByDigit i l =
-  if i = 0 then [] else if i = 1 then l else bigAdd l (mulByDigit (i - 1) l);;
+  if i = 0 then [0] else if i = 1 then l else bigAdd l (mulByDigit (i - 1) l);;
 
 let bigMul l1 l2 =
-  let f a digit =
+  let f a x =
     match a with
-    | (place,l) -> ((place * 10), (bigAdd (mulByDigit (place * l) l1) l)) in
+    | (o,l) -> ((10 * o), (bigAdd (((mulByDigit o) * m), (l1 l)))) in
   let base = (1, []) in
-  let args = List.rev l2 in let (_,res) = List.fold_left f base args in res;;
+  let args = l2 in let (_,res) = List.fold_left f base args in res;;

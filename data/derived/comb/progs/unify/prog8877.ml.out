@@ -1,5 +1,6 @@
-Characters 76-87:
-  let f a x = match x with (x1,x2) -> (0,x1 + x2) @ a in
-                                      ^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 105-106:
+  if k = f then s else assoc d k t;;
+                             ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type
+         ('a -> 'b -> 'c) * 'd * ('d * ('a -> 'b -> 'c)) list

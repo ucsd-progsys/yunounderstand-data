@@ -1,5 +1,5 @@
-Characters 77-79:
-  | Sine e' -> sin(pi * eval e')
-                   ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 90-94:
+  let fixpoint (f,b) = wwhile ((let f' b = if (f b) = b then (b, true) else (f b, false) in f' b),b);;
+                                                                                            ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

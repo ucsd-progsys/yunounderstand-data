@@ -1,5 +1,5 @@
-Characters 68-77:
-  n'  -> n' mod 10 @ digitsOfInt(n/10);;
-         ^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 156-168:
+  | Average (e1,e2) -> ((eval(e1,x,y)+eval(e2,x,y))/.2)
+                         ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

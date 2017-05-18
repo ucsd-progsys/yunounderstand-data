@@ -1,8 +1,5 @@
-Characters 175-204:
-  | Sine e'                -> Printf.sprintf("sin(%s)", exprToString(e'))
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 29-51:
+  let fixpoint (f,b) = wwhile ((f b, not ((f b) = b)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type
-         ('c, unit, string) format =
-           ('c, unit, string, string, string, string)
-           CamlinternalFormatBasics.format6
+       but an expression was expected of type 'c -> 'c * bool

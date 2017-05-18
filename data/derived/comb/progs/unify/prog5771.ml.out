@@ -1,5 +1,5 @@
-Characters 71-85:
-  | h::t -> [h*i] @ 0 * mulByDigit i t;;
-                        ^^^^^^^^^^^^^^
+Characters 212-214:
+  else if  List.length l1 < List.length l2 then clone 0 ((List.length l2) - (List.length l1)) @ l1 @ [l2]
+                                                                                                      ^^
 Error: This expression has type 'a list
        but an expression was expected of type int

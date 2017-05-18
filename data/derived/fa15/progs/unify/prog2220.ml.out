@@ -1,5 +1,5 @@
-Characters 131-135:
-  List.fold_left fx base l;;
-                    ^^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 142-151:
+  if r = 0 then buildSine build (rand, d-1)
+                ^^^^^^^^^
+Error: This function has type expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

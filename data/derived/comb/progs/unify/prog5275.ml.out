@@ -1,5 +1,5 @@
-Characters 244-257:
-  | Times	(e',e1)	      -> eval (e',x,y) * eval (e2,x,y)
-                           ^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 95-98:
+  | Sine e'	      -> sin eval e' x y
+                     ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

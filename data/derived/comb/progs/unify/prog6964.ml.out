@@ -1,5 +1,6 @@
-Characters 72-73:
-  if b = true then wwhile (f, x)
-                              ^
-Error: This expression has type 'a -> 'b * bool
-       but an expression was expected of type bool
+Characters 45-46:
+  let funt x = let xx = f f (f (f b)) in (xx, f b = b)
+                          ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b -> 'c

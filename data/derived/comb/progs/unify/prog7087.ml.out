@@ -1,5 +1,5 @@
-Characters 85-96:
-  else returnList @ ( n mod 10)
-                    ^^^^^^^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 131-135:
+  List.fold_left fx base l;;
+                    ^^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

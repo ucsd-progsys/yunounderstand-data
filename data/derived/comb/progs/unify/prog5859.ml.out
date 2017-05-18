@@ -1,6 +1,5 @@
-Characters 139-156:
-  | Sine e1              -> "sin (pi * "^^(exprToString e1)^^")"
-                                          ^^^^^^^^^^^^^^^^^
-Error: This expression has type string but an expression was expected of type
-         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
-           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6
+Characters 79-85:
+  (let func input = ((f input),((f input) = b)) in func b) 
+                                                   ^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

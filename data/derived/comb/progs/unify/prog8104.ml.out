@@ -1,6 +1,5 @@
-Characters 72-74:
-  List.fold_left f base fs;;
-                        ^^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 77-108:
+  |0 -> buildSine(build(rand, depth-1))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

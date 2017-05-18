@@ -1,6 +1,6 @@
-Characters 67-85:
-  n_ -> digitsOfInt (n/10):: n_ mod 10;;
-        ^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 57-58:
+  let fixpoint (f,b) = wwhile (let h x = (f, (f x) = x) in h,b);;
+                                                           ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

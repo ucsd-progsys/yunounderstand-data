@@ -1,5 +1,5 @@
-Characters 86-106:
-  bigAdd total  (mulByDigit (i-1) l);;
-                ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 39-48:
+  let fixpoint (f,b) = wwhile ((fun y -> (b = f b)),b);;
+                                         ^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a * bool

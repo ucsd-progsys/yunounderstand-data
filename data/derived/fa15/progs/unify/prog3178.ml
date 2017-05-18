@@ -1,8 +1,12 @@
 
-let rec assoc (d,k,l) =
-  match l with
-  | [] -> d
-  | (d',k')::t -> if k = k' then d' else assoc (d, k, t);;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let _ =
-  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let palindrome w = (explode w) = (listReverse (explode w));;
+
+let _ = palindrome 1;;

@@ -1,5 +1,5 @@
-Characters 282-309:
-  | Thresh(e1, e2, e3, e4) -> buildThresh(e1, e2, e3, e4);;
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 45-50:
+  | (k,_) -> d
+    ^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c * 'd * 'e

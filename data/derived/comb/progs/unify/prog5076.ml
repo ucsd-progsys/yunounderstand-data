@@ -25,4 +25,7 @@ let bigAdd l1 l2 =
     let (car,res) = List.fold_left f base args in [car] @ res in
   removeZero (add (padZero l1 l2));;
 
-let rec mulByDigit i l = if i = 0 then [] else bigAdd l mulByDigit (i - 1) l;;
+let rec mulByDigit i l =
+  if i < 2
+  then l
+  else (let total = bigAdd l l in (total + (mulByDigit i)) - (1 l));;

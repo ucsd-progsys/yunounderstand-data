@@ -1,0 +1,5 @@
+Characters 74-94:
+  else (mulByDigit (i-1) l) + (bigAdd l l);;
+       ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

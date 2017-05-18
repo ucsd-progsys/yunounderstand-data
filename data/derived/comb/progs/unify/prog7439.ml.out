@@ -1,5 +1,5 @@
-Characters 53-54:
-  | VarX -> "" ^ e
-                 ^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 186-192:
+  | y' -> itt y';;
+          ^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

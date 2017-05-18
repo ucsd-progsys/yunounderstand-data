@@ -1,5 +1,5 @@
-Characters 65-70:
-  then ( l1,clone 0 (l1.length - l2.length) l2)
-            ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 71-72:
+  then (wwhile f b')
+               ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type ('a -> 'b * bool) * 'a

@@ -1,5 +1,6 @@
-Characters 23-28:
-  let _ =bigAdd [0;1] [1;2,7,8];;
-                         ^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type int
+Characters 76-80:
+  let fixpoint (f,b) = let f1 f2 x= if f2 x=x then false else true in wwhile (f1 f,b);;
+                                                                              ^^^^
+Error: This expression has type 'a -> bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type bool is not compatible with type 'a * bool 

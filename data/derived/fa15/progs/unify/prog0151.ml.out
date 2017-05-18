@@ -1,6 +1,5 @@
-Characters 101-102:
-  if a = k then b else assoc d k t;;
-                             ^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type
-         ('a -> 'b -> 'c) * 'd * ('d * ('a -> 'b -> 'c)) list
+Characters 77-86:
+  | Sine a -> "sin(pi*" exprToString a ")"
+              ^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

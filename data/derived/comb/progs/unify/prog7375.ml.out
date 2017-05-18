@@ -1,5 +1,5 @@
-Characters 94-95:
-  else dig ((d mod 10)::acc) (d div 10) in
-                              ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 17-18:
+  let _ = padZero [9;9] [1;0;0;2];;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int list

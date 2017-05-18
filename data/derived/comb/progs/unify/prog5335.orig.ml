@@ -158,9 +158,9 @@ let _ = bigAdd [9;9;9;9] [9;9;9];;
 
 
 let rec mulByDigit i l = 
-  if i >= 0
-  then bigAdd l l
-  else mulByDigit ((i-1) l)
+  if i = 0
+  then [0]
+  else bigAdd (l, l)
 ;;
 
 

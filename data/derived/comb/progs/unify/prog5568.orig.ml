@@ -97,7 +97,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ( (fun x -> ((f x), not ((f x) = x))), b)
+let fixpoint (f,b) = wwhile ( f, b)
 ;;
 
 
@@ -119,8 +119,6 @@ let _ = fixpoint (collatz, 9001) ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
 
-let _ = abs_float(-3)
-
 type expr = 
       VarX
     | VarY
@@ -128,27 +126,20 @@ type expr =
     | Cosine   of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr
-;;
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-    VarX      -> "x"
-  | VarY      -> "y"
-  | Sine e    -> "sin(pi*" ^ exprToString e ^ ")"
-  | Cosine e  -> "cos(pi*" ^ exprToString e ^ ")"
-  | Average (e1, e2) -> "((" ^ exprToString e1 ^ "+" ^ exprToString e2 ^ ")/2)"
-  | Times (e1, e2)   -> exprToString e1 ^ "" ^ exprToString e2
-  | Thresh (e1, e2, e3, e4)  -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^ "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
-;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -170,27 +161,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-    VarX			-> x
-  | VarY		          -> y
-  | Sine e		  -> sin(pi *. eval (e, x, y))
-  | Cosine e		  -> cos(pi *. eval (e, x, y))
-  | Average (e1, e2)	  -> ((eval (e1, x, y) +. eval (e2, x, y)) /. 2.)
-  | Times (e1, e2)	  -> eval (e1, x, y) *. eval (e2, x, y)
-  | Thresh (e1, e2, e3, e4) -> 
-      if( eval (e1, x, y) < eval (e2, x, y) ) 
-      then 
-        (eval (e3, x, y))
-      else
-        (eval (e4, x, y))
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -205,8 +183,6 @@ let sampleExpr =
                                                                                    buildCosine (buildTimes (buildSine (buildCosine
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
-
-let _ = eval (sampleExpr,0.5,0.2);;
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
@@ -223,17 +199,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = match ((rand (2, 6)), depth) with
-  | ( c, 0 ) -> if ( c > 3 ) 
-      then buildX()
-      else
-        buildY()
-  | ( 2, _ ) -> buildSine( build(rand, depth-1 ) )
-  | ( 3, _ ) -> buildCosine( build(rand, depth-1 ) )
-  | ( 4, _ ) -> buildAverage( build(rand, depth-1 ), build(rand, depth-1 ) )
-  | ( 5, _ ) -> buildTimes( build(rand, depth-1 ), build(rand, depth-1 ) )
-  | ( 6, _ ) -> buildThresh(build(rand, depth-1 ), build(rand, depth-1 ), build(rand, depth-1 ), build(rand, depth-1 ) )
-;;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -352,9 +318,10 @@ let doRandomGray (depth,seed1,seed2) =
     emitGrayscale (f,n,name)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

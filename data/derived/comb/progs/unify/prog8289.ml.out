@@ -1,5 +1,5 @@
-Characters 23-32:
-  let stringOfList f l = sepConcat "; " l map f;;
-                         ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 58-69:
+  else append digitsOfInt(n/10);;
+              ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type 'a list

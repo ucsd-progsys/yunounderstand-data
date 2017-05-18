@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type 'a * 'b -> 'a * 'b
-       Type int is not compatible with type 'a * 'b 
+Characters 72-73:
+  (if (n mod 10) = 0 then n
+                          ^
+Error: This expression has type int but an expression was expected of type
+         'a list

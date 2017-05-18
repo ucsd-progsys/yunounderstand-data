@@ -1,5 +1,6 @@
-Characters 57-58:
-  wwhile (f, 2);;
-             ^
-Error: This expression has type int but an expression was expected of type
-         bool
+Characters 59-60:
+  let fixpoint (f,b) = wwhile(match f b with false -> wwhile(f,b) |b -> b, b);;
+                                                             ^
+Error: This expression has type 'a -> bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type bool is not compatible with type 'a * bool 

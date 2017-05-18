@@ -1,5 +1,5 @@
-Characters 90-95:
-  else assoc d k t;;
-       ^^^^^
-Error: This function has type 'a list * 'a * 'a list list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 49-72:
+  if List.length xs > 0 then List.hd xs + sumList xs;;
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

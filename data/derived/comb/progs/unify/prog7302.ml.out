@@ -1,5 +1,5 @@
-Characters 53-54:
-  if List.length l = 1 then [l*i] else
-                             ^
-Error: This expression has type 'a list
+Characters 24-25:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'b -> 'b
        but an expression was expected of type int

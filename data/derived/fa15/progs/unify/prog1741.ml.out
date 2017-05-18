@@ -1,6 +1,5 @@
-Characters 94-110:
-  |x when x>=10->(multHelper i t)::((x/10),(x mod 10))
-                 ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 17-18:
+  let _ = padZero [9;9] [1;0;0;2];;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int list

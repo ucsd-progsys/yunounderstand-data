@@ -1,3 +1,11 @@
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in match c' with | false  -> b' | true  -> wwhile (f b');;
+let rec lastListElement n =
+  match n with
+  | [] -> []
+  | x::[] -> x :: (lastListElement [])
+  | x::y -> lastListElement y;;
+
+let rec catLists x y =
+  match x with | [] -> [] | h::t -> catLists t ((lastListElement x) :: y);;
+
+let _ = catLists [1] [2; 3; 4];;

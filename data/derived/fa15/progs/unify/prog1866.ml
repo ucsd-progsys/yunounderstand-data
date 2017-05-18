@@ -1,7 +1,4 @@
 
-let isNotPos n = n <= 0;;
+let pipe fs = let f a x = x a in let base = 1 in List.fold_left f base fs;;
 
-let rec digitsOfInt n =
-  if isNotPos n then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
-
-let _ = digitsOfInt - 10;;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

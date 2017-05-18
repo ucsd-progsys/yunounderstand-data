@@ -1,10 +1,6 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+let pipe fs =
+  let f a x b = x + b in let base b = b in List.fold_left f base fs;;
 
-let padZero l1 l2 =
-  if (List.length l1) > (List.length l2)
-  then (clone 0 ((List.length l1) - (List.length l2))) @ l1
-  else
-    if (List.length l1) < (List.length l2)
-    then (clone 0 ((List.length l2) - (List.length l1))) @ (l1 @ [l2])
-    else [];;
+let pipe fs =
+  let f a x b = pipe b in let base b = b in List.fold_left f base fs;;

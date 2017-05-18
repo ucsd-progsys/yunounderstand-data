@@ -1,3 +1,12 @@
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse l) :: h;;
+let pipe fs =
+  let rec f a x = let h::t = x in h a in
+  let base = [] in List.fold_left f base fs;;
+
+let pipe fs =
+  let f a x = let h::t = x in pipe t in
+  let base = [] in List.fold_left f base fs;;
+
+let pipe fs =
+  let f a x = let h::t = x in (pipe t) (h a) in
+  let base = [] in List.fold_left f base fs;;

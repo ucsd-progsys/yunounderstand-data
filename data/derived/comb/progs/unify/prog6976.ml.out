@@ -1,5 +1,5 @@
-Characters 109-110:
-  | Sine t       -> sin(pi*. eval t x y)
-                                  ^
-Error: This expression has type expr but an expression was expected of type
-         expr * ('a -> 'b -> 'c) * ('a -> 'b -> 'c)
+Characters 67-69:
+  in wwhile (f gs, b);;
+               ^^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int

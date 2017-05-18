@@ -140,32 +140,39 @@ let bigAdd l1 l2 =
     let f a x = 
       match a with
         | (o, l) ->
-            let sum = x + o in
-              if sum < 10 
-              then (0, sum::l)
-              else (1, (sum - 10)::l)
+            if o = 0 then 
+              if x < 10 
+              then (0, x::l)
+              else (1, (x mod 10)::l)
+            else if o = 1 then
+              if (x+1) < 10 
+              then (0, x::l)
+              else (1, ((x+1) mod 10)::l)
+
     in
     let base =(0,[]) in
-    let args =  let combine (a,b) = a + b in
-        List.map combine (List.rev(List.combine l1 l2)) @ [0] in
+    let args = let combine (a,b) = a + b in
+        List.map combine (List.rev(List.combine l1 l2)) in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
+
+
 let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 
-let rec mulByDigit i l = 
-  if i = 0
-  then [0]
-  else mulByDigit (i-1) bigAdd l l
-;;
 
 
+let rec mulByDigit i l = failwith "to be implemented"
 
-let _ = mulByDigit 9 [9;9;9;9]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

@@ -1,6 +1,6 @@
-Characters 153-154:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string list
-       but an expression was expected of type string list list
-       Type string is not compatible with type string list 
+Characters 50-67:
+  else digitsOfInt(n/10) :: n;;
+       ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

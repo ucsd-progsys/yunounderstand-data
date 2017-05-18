@@ -1,5 +1,0 @@
-Characters 87-92:
-  clone 0 abs(diff) @ l1
-  ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.

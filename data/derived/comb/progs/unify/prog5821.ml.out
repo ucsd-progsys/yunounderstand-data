@@ -1,6 +1,5 @@
-Characters 61-83:
-  | h :: t -> [listReverse(t)] @ [h];;
-              ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list
+Characters 65-101:
+  | h::t -> bigMul((mulByDigit h l2), (bigMul(t, l2)));;
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

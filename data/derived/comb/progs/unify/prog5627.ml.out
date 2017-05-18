@@ -1,5 +1,5 @@
-Characters 92-100:
-  |x -> (x,true) in (func b) ,b);;
-                    ^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 236-248:
+  | Average (e1, e2)  -> "((" ^ exprToString e1 ^ "+"^ exprToString e2")/2)"
+                                                       ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

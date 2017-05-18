@@ -1,4 +1,6 @@
 
-let pipe fs = let f a x = x a in let base g y = y in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let padZero l1 l2 =
+  let difference1 = (List.length l1) - (List.length l2) in
+  let difference2 = (List.length l2) - (List.length l1) in
+  let retTuple = (l1, l2) in
+  if difference1 > 0 then (l1, l2) else if difference2 > 0 then (l1, l2);;

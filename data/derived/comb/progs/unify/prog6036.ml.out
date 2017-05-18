@@ -1,5 +1,5 @@
-Characters 170-194:
-  | _ -> ((fst x + snd x)/10)::((fst x + snd x) mod 10)
-                               ^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 100-112:
+  let f a x = let sum = fst x + snd x + fst a in ((sum / 10)::(sum mod 10)) in
+                                                              ^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
          int list

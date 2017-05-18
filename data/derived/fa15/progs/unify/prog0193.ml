@@ -1,8 +1,7 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let digits n = digitsOfInt (abs n);;
+let palindrome w = if w = (listReverse w) then true else false;;
 
-let rec digitalRoot n =
-  match digits n with | x::[] -> x | h::t -> h + (digitalRoot t);;
+let _ = palindrome "myxomatosis";;

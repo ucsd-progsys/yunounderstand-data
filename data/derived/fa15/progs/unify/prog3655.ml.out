@@ -1,5 +1,5 @@
-Characters 28-29:
-  let _ = bigMul [9;9;9;9;9] [9;9;9;9;9];;
-                              ^
-Error: This expression has type int but an expression was expected of type
-         int * 'a list
+Characters 118-120:
+  l1^(pad^l2)
+  ^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

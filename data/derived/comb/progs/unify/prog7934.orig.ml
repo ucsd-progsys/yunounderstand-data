@@ -4,6 +4,11 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec append l1 l2 = match l1 with
+  | [] -> l2
+  | h::t -> h::(append t l2);;
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -16,20 +21,19 @@ XXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let getKey (x, y) = x
+let getValue (x, y) = y
 
-let rec assoc (d,k,l) = match l with | 
-  [] -> d | 
-  (sameTypeAsK, sameTypeAsD)::t -> 
-    if k = sameTypeAsK then sameTypeAsD
-    else assoc(d, k, t)
+let rec assoc (d,k,l) = match l with
+  | [] -> d
+  | h::t -> (if (getKey h) = k then getValue(h) else assoc (d,k,t))
 
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
 
-let _ = assoc (2, 'a', [('b', 3); ('c', 86); ('d', 90); ('a', 33)]);;
-
+let _ = assoc (0, "",[])
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -46,20 +50,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | [] -> seen
       | h::t -> 
-          let seen' = if not (List.mem h seen) then h::seen else seen in 
+          let seen' = (if (List.mem h seen) then seen else h::seen) in
           let rest' = t in 
-            helper (seen',rest') 
+            	  helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
-let _ = removeDuplicates [1];;
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
-let _ = removeDuplicates [];;
-
+let _ = removeDuplicates [0;0;0;-1;-1;-1;0;0];;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -69,12 +70,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = 
-  let (b', c') = f b in 
-    if c' then wwhile(f, b')
-    else b'
+let rec wwhile (f,b) = let (b', c') = (f b) in match c' with
+    | false -> (b', c')
+    | true -> wwhile (f, b')
 
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -89,22 +90,32 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = 
-  wwhile (let helper c = 
-            if f c = c then (c, false)
-            else (f c, true) in helper, b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+let helper (f,a,y) = let x = f a in if x = y 
+    then ((f,x,y), false) 
+    else ((f,x,y), true)
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
+let fixpoint (f,b) = wwhile ((helper), b)
 
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
+let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0.0);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -120,39 +131,27 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | SumInts  of expr
-    | Power    of expr * expr * expr
-
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with 
-  | VarX -> Printf.sprintf "x"
-  | VarY -> Printf.sprintf "y"
-  | Sine expr -> Printf.sprintf "sin(pi*%s)" (exprToString expr)
-  | Cosine expr -> Printf.sprintf "cos(pi*%s)" (exprToString expr)
-  | Average (expr1, expr2) -> Printf.sprintf "((%s+%s)/2)" 
-                                (exprToString expr1) (exprToString expr2)
-  | Times (expr1, expr2) -> Printf.sprintf "%s*%s" 
-                              (exprToString expr1) (exprToString expr2)
-  | Thresh (expr1, expr2, expr3, expr4) -> Printf.sprintf"(%s<%s?%s:%s)"
-                                             (exprToString expr1)(exprToString expr2)
-                                             (exprToString expr3)(exprToString expr4)
-  | SumInts expr1 -> Printf.sprintf"(%s*(%s+1)/2)" 
-                       (exprToString expr1) (exprToString expr1)
-  | Power (expr1, expr2, expr3) -> Printf.sprintf"(%s^|%s+%s|)"
-                                     (exprToString expr1)(exprToString expr2)
-                                     (exprToString expr3)
-
+let rec exprToString e = match e with
+  | VarX -> "x"
+  | VarY -> "y"
+  | Sine e1 -> "sin(pi*" ^ (exprToString e1) ^ ")"
+  | Cosine e1 -> "cos(pi*" ^ (exprToString e1) ^ ")"
+  | Average (e1, e2) -> "((" ^ (exprToString e1) 
+                        ^ "+" ^ (exprToString e2) ^ ")/2)"
+  | Times (e1, e2) -> (exprToString e1) ^ "*" ^ (exprToString e2)
+  | Thresh (e1, e2, e3, e4) -> "(" ^ (exprToString e1) 
+                               ^ "<" ^ (exprToString e2) 
+                               ^ "?" ^ (exprToString e3) 
+                               ^ ":" ^ (exprToString e4) ^ ")"
 
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
 let _ = exprToString sampleExpr1 
-
-let myFunction1 = SumInts(Power(VarX, VarY, VarX));;
-let _ = exprToString myFunction1
 
 
 
@@ -168,12 +167,29 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildSumInts(e)                = SumInts(e)
-let buildPower(e1, e2, e3)         = Power(e1, e2, e3)
 
 
 let pi = 4.0 *. atan 1.0
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let rec eval (e,x,y) = match e with
+  | VarX -> x
+  | VarY -> y
+  | Sine e1 -> sin(pi*.(eval (e1, x, y)))
+  | Cosine e1 -> cos(pi*.(eval (e1, x, y)))
+  | Average (e1, e2) -> ((((eval (e1, x, y) +. (eval (e2, x, y)))/.2.0)))
+  | Times (e1, e2) -> (eval (e1, x, y))*.(eval (e2, x, y))
+  | Thresh (e1, e2, e3, e4) -> if eval (e1, x, y) < eval (e2, x, y)
+      then eval (e3, x, y)
+      else eval (e4, x, y)
+
+let _ = eval (VarX, 1.0, 0.0);;
+let _ = eval (Average(VarX,VarY), 5.0, 4.0);;
+
+let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
+let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -183,40 +199,17 @@ let sampleExpr =
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
 
-let sampleExpr2 =
-  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let rec eval (e,x,y) =  match e with 
-  | VarX -> x
-  | VarY -> y
-  | Sine expr -> sin(pi *. eval (expr, x, y))
-  | Cosine expr -> cos(pi *. eval (expr, x, y))
-  | Average (expr1, expr2) -> (((eval (expr1, x, y) +. eval(expr2, x, y))) /. 2.0)
-  | Times (expr1, expr2) -> (eval(expr1, x, y) *. eval(expr2, x, y))
-  | Thresh (expr1, expr2, expr3, expr4) -> 
-      if eval(expr1, x, y) < eval(expr2, x, y) then eval(expr3, x, y)
-      else eval(expr4, x, y)
-  | SumInts expr -> (eval(expr, x, y) *. (eval(expr, x, y) +. 1.0) /. 2)
-  | Power (expr1, expr2, expr3) -> 
-      (eval(expr1) ** (abs(eval(expr1, x, y) +. eval(expr2, x, y))))
-
-let _ = eval(VarX, 0.5, 0.5);;
-let _ = eval(Times(VarX, VarY), 2.0, 3.0);;
-let _ = eval(Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval(Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval(sampleExpr,0.5,0.2);;
-let _ = eval(Power(VarX, VarY, VarY), 2.0, 1.0);; 
-
+let _ = eval (sampleExpr,0.5,0.2);;
 
 
 let eval_fn e (x,y) = 
   let rv = eval (e,x,y) in
     assert (-1.0 <= rv && rv <= 1.0);
     rv
+
+
+let sampleExpr2 =
+  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -228,45 +221,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) =
-  if depth <= 0 then let x = rand(1, 2) in
-      if x = 1 then buildX()
-      else buildY() (*XXXXXXXXXXX*)
-  else 
-    let subtreeSize1 = 
-      if depth = 1 then 0 
-      else if depth = 2 then 1
-      else rand(1, (depth - 1)) in
-    let subtreeSize2 = 
-      if depth = 1 then 0 
-      else if depth = 2 then 1
-      else rand(1, (depth - 1)) in
-    let subtreeSize3 = 
-      if depth = 1 then 0 
-      else if depth = 2 then 1
-      else rand(1, (depth - 1)) in
-    let subtreeSize4 = 
-      if depth = 1 then 0 
-      else if depth = 2 then 1
-      else rand(1, (depth - 1)) in
-    let x = rand(1, 11) in
-      match x with 
-        | 1 | 2 | 3 -> buildSine(build(rand, subtreeSize1))
-        | 5 | 6  -> buildCosine(build(rand, subtreeSize1))
-        | 7  -> buildAverage(build(rand, subtreeSize1), 
-                             build(rand, subtreeSize2))
-        | 8 | 9 | 4 -> buildTimes(build(rand, subtreeSize1),
-                                  build(rand, subtreeSize2))
-        | 10 | 11-> buildThresh(build(rand, subtreeSize1),
-                                build(rand, subtreeSize2),
-                                build(rand, subtreeSize3),
-                                build(rand, subtreeSize4))
-        | _ -> buildSine(build(rand, subtreeSize1))
+let rec build (rand, depth) = failwith "to be implemented"
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -274,14 +232,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let g1 () = (16, 4, 17) 
-let g2 () = (6, 12, 30)  
-let g3 () = (11, 15, 29)  
-
-let c1 () = (25, 38, 42)
-let c2 () = (9, 46, 10)
-let c3 () = (17, 13, 52)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -303,11 +260,6 @@ let makeRand (seed1, seed2) =
   let s = Random.State.make seed in
     (fun (x,y) -> (x + (Random.State.int s (y-x))))
 
-let rand = makeRand(10, 39);;
-let _ = rand(1, 4);;
-
-
-let _ = build(rand, 0);;
 
 let rec rseq g r n =
   if n <= 0 then [] else (g r)::(rseq g r (n-1))
@@ -389,9 +341,12 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -504,10 +459,10 @@ let testTest () =
 let runTest ((f,arg,out),points,name) =
   let _   = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -566,7 +521,7 @@ let sampleTests =
                  "sample: wwhile 1"
     ); 
     (fun () -> mkTest 
-                 fixpoint
+                 	fixpoint
                  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
                  739085
                  "sample: fixpoint 1"
@@ -633,5 +588,4 @@ let _ =
   let _      = List.iter print130 (report@([scoreMsg()])) in
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
-
 

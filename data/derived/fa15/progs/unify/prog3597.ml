@@ -1,5 +1,4 @@
 
-let rec mulByDigit i l =
-  match List.rev l with
-  | [] -> []
-  | h::t -> ((10 * h) * i) + (mulByDigit i t);;
+let rec mulByDigit i l = if i > 0 then l + (mulByDigit (i - 1) l) else l;;
+
+let _ = mulByDigit 9 [9; 9; 9; 9];;

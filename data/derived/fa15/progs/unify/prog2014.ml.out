@@ -1,5 +1,5 @@
-Characters 197-223:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type (int * int) list
-       but an expression was expected of type 'a * 'b
+Characters 87-88:
+  | Sine(e) -> sin(pi *. e)
+                         ^
+Error: This expression has type expr but an expression was expected of type
+         float

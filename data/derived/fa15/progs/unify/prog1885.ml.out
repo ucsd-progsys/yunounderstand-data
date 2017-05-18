@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 107);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int -> int * bool
-       Type int is not compatible with type int -> int * bool 
+Characters 214-218:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type int list list -> int list list
+       but an expression was expected of type int list list

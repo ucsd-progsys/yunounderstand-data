@@ -1,5 +1,5 @@
-Characters 65-66:
-  let base = 0 "to be implemented" in
-             ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 478-479:
+  | Golden e'              -> cos(eval (e',x,y)**2 -. eval (e',x,y) -. 1)
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -152,12 +152,13 @@ let _ = bigAdd [9;9;9;9] [9;9;9];;
 
 
 
-let rec mulByDigit i l = if i = 0 then [] else
-    bigAdd l mulByDigit(i-1) l;;
+let rec mulByDigit i l = if i < 2 then l else
+    let total = bigAdd l l in
+      total + mulByDigit i-1 l;;
 
 
 
-let _ = mulByDigit 3[2;2]
+let_ = mulByDigit 4[2;2]
 
 let _ = mulByDigit 9 [9;9;9;9]
 

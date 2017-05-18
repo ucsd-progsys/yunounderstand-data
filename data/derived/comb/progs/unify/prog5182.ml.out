@@ -1,5 +1,5 @@
-Characters 22-23:
-  let _ = sepConcat "" [1;2;3;4];;
-                        ^
-Error: This expression has type int but an expression was expected of type
-         string
+Characters 31-47:
+  let stringOfList f l = List.map(sepConcat, f l);;
+                                 ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'd

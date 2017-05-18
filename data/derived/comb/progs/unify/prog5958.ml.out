@@ -1,6 +1,5 @@
-Characters 97-98:
-  | (x,y) :: l -> if k = x then y else assoc (d,k,y);;
-                                                  ^
-Error: This expression has type 'a but an expression was expected of type
-         ('b * 'a) list
-       The type variable 'a occurs inside ('b * 'a) list
+Characters 100-119:
+  n -> let x_ = digitsOfInt n in sumList x_, incre i;;
+                                 ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

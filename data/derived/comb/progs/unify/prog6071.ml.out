@@ -1,5 +1,5 @@
-Characters 385-391:
-  let (x, res) = List.fold_left f base args in helper x res ((List.length res) *2);;
-                                               ^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 211-238:
+  |_ -> if(fst x + snd x) > 9 then (1,((fst x + snd x)mod 10)::[])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

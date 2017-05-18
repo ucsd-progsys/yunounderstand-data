@@ -1,4 +1,4 @@
 
-let padZero l1 l2 =
-  let numZeros = (List.length l1) - (List.length l2) in
-  if numZeros = 0 then (l1, l2);;
+let pipe fs = let f a x = x a in let base x' = x' in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

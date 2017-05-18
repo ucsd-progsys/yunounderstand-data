@@ -1,9 +1,5 @@
-Characters 304-305:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type
-         ('a -> (int * int list) list) -> 'a -> (int * int list) list
-       but an expression was expected of type
-         ('a -> (int * int list) list) -> 'a -> 'a -> (int * int list) list
-       Type (int * int list) list is not compatible with type
-         'a -> (int * int list) list 
+Characters 127-128:
+  | 0 -> buildSine(build (rand, depth-1)) 
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type unit -> int

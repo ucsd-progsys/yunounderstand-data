@@ -1,5 +1,5 @@
-Characters 114-115:
-  clone(0 n)
-        ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 418-421:
+  | Logx (a)	    -> (log(eval(a)))
+                             ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

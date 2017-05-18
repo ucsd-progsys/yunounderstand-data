@@ -1,5 +1,6 @@
-Characters 161-187:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 114-115:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type 'a -> ('b -> 'a) list -> 'b -> 'a
+       but an expression was expected of type 'a -> ('b -> 'a) list -> 'a
+       The type variable 'a occurs inside 'b -> 'a

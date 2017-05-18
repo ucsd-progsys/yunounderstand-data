@@ -48,14 +48,11 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = if not (List.mem h seen) then [h]@seen else seen in
+          let seen' = if List.mem h seen then seen@[h] in
           let rest' = t in 
             helper (seen',rest') 
   in
     List.rev (helper ([],l))
-
-let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -73,18 +70,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-
-let rec wwhile (f,b) = 
-  let (b',c') = f b in
-    if c' then
-      wwhile(f, b')
-    else b';;
-
-let f x = let xx = x*x*x in (xx, xx<100) in 
-  wwhile (f, 2);;
-
-
+let rec wwhile (f,b) = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -101,16 +87,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = 
-  let rec fixpointhelper (f, b) =
-    let a = f b in
-      if a = b then
-        b
-      else
-        fixpointhelper (f, a)
-  in fixpointhelper(f, b)
-
-;;
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -144,17 +121,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine(e1) -> sin (1.0000)
-  | Cosine(e1) -> "cos" + exprToString (e1)
-  | Average(e1, e2) -> "avg"
-  | Times(e1, e2) -> exprToSring e1 + "*" 
-
-;;
-
-let sampleExpr1 = VarX;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

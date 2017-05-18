@@ -1,6 +1,6 @@
-Characters 73-77:
-  wwhile (funt, b);;
-          ^^^^
-Error: This expression has type 'a -> int
-       but an expression was expected of type 'a -> 'a * bool
-       Type int is not compatible with type 'a * bool 
+Characters 96-100:
+  in wwhile ((fx), f);;
+             ^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

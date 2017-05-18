@@ -4,23 +4,23 @@ type expr =
   | VarY
   | Sine of expr
   | Cosine of expr
-  | Hoi of expr* expr
   | Average of expr* expr
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
 let rec exprToString e =
-  let exp = exprToString in
   match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine a -> "sin(pi*" ^ ((exp a) ^ ")")
-  | Cosine a -> "cos(pi*" ^ ((exp a) ^ ")")
-  | Average (a,b) -> "((" ^ ((exp a) ^ ("+" ^ ((exp b) ^ ")/2)")))
-  | Times (a,b) -> (exp a) ^ ("*" ^ (exp b))
-  | Thresh (a,b,c,d) ->
+  | VarX  -> e
+  | VarY  -> e
+  | Sine sin -> "sin(pi*" ^ ((exprToString sin) ^ ")")
+  | Cosine cos -> "cos(pi*" ^ ((exprToString cos) ^ ")")
+  | Average (e1,e2) ->
+      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
+  | Times (t1,t2) -> (exprToString t1) ^ ("*" ^ (exprToString t2))
+  | Thresh (th1,th2,th3,th4) ->
       "(" ^
-        ((exp a) ^
-           ("<" ^ ((exp b) ^ ("?" ^ ((exp c) ^ (":" ^ ((exp d) ^ ")")))))))
-  | Hoi (a,b) ->
-      "sin(pi*" ^ ((exp a) ^ (")" / ("(" ("cos(pi*" ^ ((exp b) ^ ")")) ")")));;
+        ((exprToString th1) ^
+           ("<*" ^
+              ((exprToString th2) ^
+                 ("?" ^
+                    ((exprToString th3) ^ (":" ^ ((exprToString th4) ^ ")")))))));;

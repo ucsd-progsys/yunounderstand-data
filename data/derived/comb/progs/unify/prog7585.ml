@@ -1,23 +1,12 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
-
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine e1 -> "sin pi*" ^ (exprToString e1)
-  | Cosine e1 -> "cos pi*" ^ (exprToString e1)
-  | Average (e1,e2) -> (exprToString e1) ^ ("+" ^ (exprToString e2 "/2"))
-  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
-  | Thresh (e1,e2,e3,e4) ->
-      (exprToString e1) ^
-        ("<" ^
-           ((exprToString e2) ^
-              ("?" ^ ((exprToString e3) ^ (":" ^ (exprToString e4))))));;
+let rec mulByDigit i l =
+  let f a xs =
+    let (a1,a2) = a in
+    let h::t = xs in
+    let val1 = (h * i) + a1 in
+    if val1 > 9
+    then ((val1 / 10), ((val1 mod 10) :: a2))
+    else (0, (val1 :: a2)) in
+  let base = (0, []) in
+  let args = List.rev (0 :: l) in
+  let (_,res) = List.fold_left f base args in res;;

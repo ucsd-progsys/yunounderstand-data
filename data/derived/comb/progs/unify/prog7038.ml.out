@@ -1,5 +1,5 @@
-Characters 73-90:
-  | h :: t -> List.append a (b) in
-              ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 147-158:
+  if r = 0 then eval(buildCosine build(rand, d-1), 1, 2)
+                     ^^^^^^^^^^^
+Error: This function has type expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

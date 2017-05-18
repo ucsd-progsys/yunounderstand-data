@@ -1,5 +1,6 @@
-Characters 147-163:
-  if r = 0 then eval(build(rand, d-1), 1, 2)
-                     ^^^^^^^^^^^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 92-94:
+  in wwhile(gs, b);;
+            ^^
+Error: This expression has type 'a -> int
+       but an expression was expected of type 'a -> 'a * bool
+       Type int is not compatible with type 'a * bool 

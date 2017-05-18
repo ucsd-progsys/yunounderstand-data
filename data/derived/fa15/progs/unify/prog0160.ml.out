@@ -1,5 +1,5 @@
-Characters 47-53:
-  bigAdd mulByDigit( (i-1) l) l;;
-  ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 29-56:
+  let fixpoint (f,b) = wwhile ((fun y x -> (f x, x = f x)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This function expects too many arguments, it should have type
+'a -> 'a * bool

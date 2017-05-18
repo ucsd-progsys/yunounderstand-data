@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 107-133:
+  | Sine e -> Printf.printf "sin(pi*%s)" 
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string -> unit
+       but an expression was expected of type unit

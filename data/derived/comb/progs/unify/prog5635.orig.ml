@@ -28,36 +28,40 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = (x * x) + a in
+  let f a x = a + (x*x) in
   let base = 0 in
     List.fold_left f base xs
 
-let _ = sqsum []
-let _ = sqsum [1;2;3;4]
-let _ = sqsum [(-1); (-2); (-3); (-4)]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let pipe fs = 
-  let f a x = fun y -> ((x a) y) in
-  let base = (fun x' -> x') in
+  let f a x = fun next -> (x (a next)) in
+  let base = fun b -> b in
     List.fold_left f base fs
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
+XXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = failwith "to be implemented" in
-      let base = failwith "to be implemented" in
-      let l = failwith "to be implemented" in
+      let f a x = a ^ sep ^ x in
+      let base = h in
+      let l = t in
         List.fold_left f base l
 
 
@@ -71,7 +75,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let stringOfList f l = failwith "to be implemented"
+let stringOfList f l = "[" ^ sepConcat "; "(List.map f l) ^ "]"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -87,7 +91,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = failwith "to be implemented" 
+let rec clone x n = if n <= 0 then [] else x::(clone x (n-1)) 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -97,7 +101,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let padZero l1 l2 = failwith "to be implemented"
+let padZero l1 l2 = 
+  if List.length l1 < List.length l2 
+  then clone l1 (List.length l2 - List.length l1)
+  else clone l2 (List.length l1 - List.length l2)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

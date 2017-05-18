@@ -1,23 +1,30 @@
 
-let rec padZero l1 l2 =
-  if (List.length l1) < (List.length l2)
-  then padZero (0 :: l1) l2
-  else
-    if (List.length l1) > (List.length l2)
-    then padZero l1 (0 :: l2)
-    else (l1, l2);;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr
+  | Square of expr* expr
+  | Exponential of expr* expr;;
 
-let rec removeZero l =
-  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
-
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      match a with
-      | h::t ->
-          let sum = ((fst x) + (snd x)) + (fst h) in (sum / 10) ::
-            (sum mod 10) :: t in
-    let base = [a :: b] in
-    let args = List.rev (List.combine l1 l2) in
-    let (_,res) = List.fold_left f base args in res in
-  removeZero (add (padZero l1 l2));;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine i -> "sin(pi*" ^ ((exprToString i) ^ ")")
+  | Cosine i -> "cos(pi*" ^ ((exprToString i) ^ ")")
+  | Average (i1,i2) ->
+      "((" ^ ((exprToString i1) ^ (" + " ^ ((exprToString i2) ^ ")/2)")))
+  | Times (i1,i2) -> (exprToString i1) ^ ("*" ^ (exprToString i2))
+  | Thresh (i1,i2,i3,i4) ->
+      "(" ^
+        ((exprToString i1) ^
+           ("<" ^
+              ((exprToString i2) ^
+                 (" ? " ^
+                    ((exprToString i3) ^ (":" ^ ((exprToString i4) ^ ")")))))))
+  | Square (i1,i2) -> exprToString i1 "*" exprToString i2
+  | Exponential (i1,i2) -> exprToString i1 "^" exprToString i2;;

@@ -1,5 +1,5 @@
-Characters 84-85:
-  |Sine i -> "sin" ^ i;;
-                     ^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 29-44:
+  let _ = assoc (-1,"william",[("ranjit",[85]);("william",23);("moose",44)]);;
+                               ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string list

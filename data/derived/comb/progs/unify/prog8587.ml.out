@@ -1,5 +1,0 @@
-Characters 68-72:
-  n mod 10 :: numL
-              ^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.

@@ -1,4 +1,5 @@
 
-let rec clone x n = if n = 0 then x else (clone x n) - 1;;
+let rec wwhile (f,b) =
+  let (b',c') = f b in match c' with | true  -> wwhile (f, b') | false  -> b';;
 
-let _ = clone "foo" 2;;
+let fixpoint (f,b) = wwhile ((let func (x,y) = (f x) = y in func), b);;

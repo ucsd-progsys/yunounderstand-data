@@ -1,5 +1,0 @@
-Characters 43-59:
-  List.fold_left n;;
-  ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a -> 'b list -> 'a
-       but an expression was expected of type 'c list

@@ -1,5 +1,5 @@
-Characters 47-59:
-  else digits n / 1;;
-       ^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 89-112:
+  (10*o, bigAdd(mulByDigit prod, l1 l))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

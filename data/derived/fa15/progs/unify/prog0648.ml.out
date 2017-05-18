@@ -1,5 +1,5 @@
-Characters 110-126:
-  let seen' = if (List.mem(h, l)) then
-                 ^^^^^^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list -> bool
-       but an expression was expected of type bool
+Characters 216-237:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

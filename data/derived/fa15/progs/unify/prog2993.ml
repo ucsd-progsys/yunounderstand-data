@@ -1,4 +1,4 @@
 
-let rec clone x n = List.combine n x;;
+let rec fixpoint (f,b) = if not (b = (f b)) then fixpoint (f, (f b)) else f b;;
 
-let _ = clone 3 5;;
+let fixpoint (f,b) = if not (f = b) then fixpoint f f b else f b;;

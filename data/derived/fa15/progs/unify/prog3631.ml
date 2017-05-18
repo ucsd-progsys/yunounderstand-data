@@ -1,51 +1,41 @@
 
-let padZero l1 l2 = failwith "to be implemented";;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
+let buildAverage (e1,e2) = Average (e1, e2);;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
+let buildCosine e = Cosine e;;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
+let buildSine e = Sine e;;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
+let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
 
-let rec removeZero l =
-  match l with | h::t -> if h = 0 then removeZero t else l | [] -> [];;
+let buildTimes (e1,e2) = Times (e1, e2);;
 
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      let b = (fst x) + (snd x) in
-      match a with
-      | h::t -> ((h + b) / 10) :: ((h + b) mod 10) :: t
-      | [] -> [b / 10; b mod 10] in
-    let base = [] in
-    let args = List.rev (List.combine l1 l2) in List.fold_left f base args in
-  removeZero (add (padZero l1 l2));;
+let buildX () = VarX;;
 
-let rec mulByDigit i l =
-  match i with | 0 -> [0] | 1 -> [l] | _ -> [bigAdd l (mulByDigit (i - 1) l)];;
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  match depth with
+  | 0 -> if (rand (0, 1)) = 1 then buildX () else buildY ()
+  | depth ->
+      (match rand with
+       | 0 -> buildSine (build (rand, (depth - 1)))
+       | 1 -> buildCosine (build (rand, (depth - 1)))
+       | 2 ->
+           buildAverage
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
+       | 3 ->
+           buildTimes
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
+       | 4 ->
+           buildThresh
+             ((build (rand, (depth - 1))), (build (rand, (depth - 1))),
+               (build (rand, (depth - 1))), (build (rand, (depth - 1)))));;

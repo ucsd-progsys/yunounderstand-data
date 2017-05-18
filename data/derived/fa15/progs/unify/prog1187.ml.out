@@ -1,5 +1,6 @@
-Characters 211-238:
-  |_ -> if(fst x + snd x) > 9 then (1,((fst x + snd x)mod 10)::[])
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 77-89:
+  then padZero (clone l1 1) l2
+               ^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside 'a list

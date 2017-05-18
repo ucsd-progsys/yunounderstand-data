@@ -1,5 +1,6 @@
-Characters 29-42:
-  let fixpoint (f,b) = wwhile ((helper(f,b)),b);;
-                               ^^^^^^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 168-169:
+  let seen' = seen::h in
+                    ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list list
+       The type variable 'a occurs inside 'a list list

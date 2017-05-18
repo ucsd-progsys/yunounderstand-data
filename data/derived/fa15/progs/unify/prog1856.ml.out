@@ -1,6 +1,5 @@
-Characters 160-161:
-  List.fold_left f base List.rev(combined);;
-                 ^
-Error: This expression has type int * int list -> int * int -> int * int list
-       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
-       Type int * int list is not compatible with type 'a -> 'b 
+Characters 298-313:
+  |Thresh(a,b,a_less,b_less)->let x1=eval(a,x,y) in let x2=eval(b,x,y)  in  if(x1<x2) then eval a_less,x,y else eval b_less,x,y;;
+                                                                                           ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type float

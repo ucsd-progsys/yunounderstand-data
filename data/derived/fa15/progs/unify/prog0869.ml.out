@@ -1,5 +1,5 @@
-Characters 45-49:
-  | h::t -> 
-    ^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 71-75:
+  List.fold_left f base xs;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,5 +1,5 @@
-Characters 149-164:
-  | Cosine cos		    -> "cos(pi*"^ (eval(cos,x,y)) ^")" 
-                                  ^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         string
+Characters 42-47:
+  let x = List.map (l*i) l in
+                   ^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'b

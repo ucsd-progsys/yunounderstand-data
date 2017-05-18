@@ -1,5 +1,5 @@
-Characters 8-14:
-  let _ = digits -54;;
-          ^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 8-12:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+          ^^^^
+Error: This function has type ('a list -> 'a list) list list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

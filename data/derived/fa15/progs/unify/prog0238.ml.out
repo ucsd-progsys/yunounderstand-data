@@ -1,5 +1,5 @@
-Characters 71-75:
-  | VarX   -> Printf.sprintf "%s" VarX
-                                  ^^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 69-70:
+  | (h,t) -> if t = false then t;;
+                               ^
+Error: This expression has type bool but an expression was expected of type
+         unit

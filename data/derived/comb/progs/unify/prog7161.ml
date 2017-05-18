@@ -1,39 +1,10 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | SinCos of expr;;
+let rec digitsOfInt n =
+  let return = [n mod 10] in
+  if (n / 10) <> 0
+  then ((n mod 10) :: return; (digitsOfInt (n / 10)) @ return)
+  else return;;
 
-let buildAverage (e1,e2) = Average (e1, e2);;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let buildCosine e = Cosine e;;
-
-let buildSine e = Sine e;;
-
-let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
-
-let buildTimes (e1,e2) = Times (e1, e2);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  if depth = 0
-  then let r = rand (0, 2) in match r with | 0 -> buildY () | _ -> buildX ()
-  else
-    (let r = rand (0, 6) in
-     match r with
-     | 0 -> buildSine (build (rand, (depth - 1)))
-     | 1 -> buildCosine (build (rand, (depth - 1)))
-     | 2 -> buildAverage ((build (rand, (depth - 1))), (buildY ()))
-     | 3 -> buildTimes ((build (rand, (depth - 1))), (buildX ()))
-     | 4 ->
-         ((buildThresh
-             ((build (rand, (depth - 1))), (buildX ()), (buildY ()))),
-           (buildX ())));;
+let rec additivePersistence n = sumList digitsOfInt n;;

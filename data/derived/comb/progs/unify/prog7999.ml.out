@@ -1,5 +1,5 @@
-Characters 59-60:
-  let fixpoint (f,b) = wwhile(if f = true then b else wwhile(f b,b), b);;
-                                                             ^
-Error: This expression has type bool
-       This is not a function; it cannot be applied.
+Characters 32-41:
+  let f a x = a + (x ** 2.) in
+                  ^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

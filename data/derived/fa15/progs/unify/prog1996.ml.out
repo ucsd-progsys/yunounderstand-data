@@ -1,5 +1,6 @@
-Characters 28-33:
-  let f a x = a + x^2 in
-              ^^^^^
-Error: This expression has type int but an expression was expected of type
-         string
+Characters 66-86:
+  | false -> digitsOfInt (n / 10) :: n mod 10;;
+             ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

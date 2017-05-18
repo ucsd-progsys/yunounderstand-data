@@ -1,6 +1,5 @@
-Characters 149-150:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int -> int -> int * int
-       but an expression was expected of type int -> int -> int
-       Type int * int is not compatible with type int 
+Characters 50-55:
+  let fixpoint (f,b) = wwhile ((let (i, t) = f b in i = b),b);;
+                                                    ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

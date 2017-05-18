@@ -1,7 +1,7 @@
 
-let helper f b = if (f b) = b then true else false;;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | (name,age)::l' -> if k = name then age else assoc (d, k, l');;
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
-
-let fixpoint (f,b) = wwhile ((helper (f, b)), b);;
+let _ = assoc ([(1, 1)], "a", [(([(1, 2)], "cc"), ([(1, 1, 1)], "a"))]);;

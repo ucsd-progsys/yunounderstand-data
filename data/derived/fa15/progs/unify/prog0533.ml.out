@@ -1,6 +1,6 @@
-Characters 56-92:
-  | h::t -> catLists t ((lastListElement x)::[]) :: y;;
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 65-66:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'b) -> 'a -> 'b
+       but an expression was expected of type ('a -> 'b) -> 'a -> 'a -> 'b
+       The type variable 'b occurs inside 'a -> 'b

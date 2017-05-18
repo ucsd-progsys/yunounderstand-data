@@ -1,12 +1,7 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let digits n = digitsOfInt (abs n);;
+let palindrome w = if w = (listReverse w) then true else false;;
 
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
-
-let rec digitalRoot n =
-  match n with | x::[] -> x | h::t -> digitalRoot (digits (sumList n));;
-
-let _ = digitalRoot 9876;;
+let _ = palindrome "malayalam";;

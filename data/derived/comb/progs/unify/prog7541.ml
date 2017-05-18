@@ -1,3 +1,6 @@
 
-let rec assoc (d,k,l) =
-  match (d, k, l) with | (k,_) -> k | h::t -> assoc (d, k, t) | _ -> d;;
+let pipe fs =
+  let rec f a x = let h::t = x in h a in
+  let base = [] in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

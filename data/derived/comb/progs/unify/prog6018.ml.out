@@ -1,6 +1,5 @@
-Characters 137-138:
-  (h::t) -> let sum = fst x + snd x + fst h in (sum / 10)::(sum mod 10)::t in
-                                                                         ^
-Error: This expression has type (int * 'a) list
-       but an expression was expected of type int list
-       Type int * 'a is not compatible with type int 
+Characters 462-474:
+  |Square (i1,i2)		  -> exprToString i1 "*" exprToString i2
+                        ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

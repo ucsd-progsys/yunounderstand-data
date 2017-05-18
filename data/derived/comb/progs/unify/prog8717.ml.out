@@ -1,5 +1,5 @@
-Characters 120-123:
-  then matchHeads (["b"])
-                    ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 99-103:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type ('b -> 'b) list -> 'b

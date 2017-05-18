@@ -38,17 +38,20 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = (fun n -> n a(a x)) in
-  let base = (fun f -> f) in
+  let f a x = (fun result x -> a + x) 0 in
+  let base = 1 in
     List.fold_left f base fs
 
-let _ = pipe [] 3
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 let rec sepConcat sep sl = match sl with 

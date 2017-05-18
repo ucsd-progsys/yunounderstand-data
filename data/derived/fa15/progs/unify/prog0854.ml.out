@@ -1,6 +1,5 @@
-Characters 69-70:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'a list -> 'a list
-       but an expression was expected of type 'a -> 'a list -> 'a
-       The type variable 'a occurs inside 'a list
+Characters 84-88:
+  | Sine(e1) -> sin (e1)
+                    ^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

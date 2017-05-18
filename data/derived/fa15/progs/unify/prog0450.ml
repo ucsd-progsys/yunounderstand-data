@@ -31,7 +31,6 @@ let rec mulByDigit i l =
   if i = 0 then [0] else if i = 1 then l else bigAdd l (mulByDigit (i - 1) l);;
 
 let bigMul l1 l2 =
-  let f a x =
-    match a with | (o,l) -> ((10 * o), (bigAdd (((mulByDigit o) * m), l1) l)) in
+  let f a x = match a with | (o,l) -> bigAdd (mulByDigit o l1) a in
   let base = (1, []) in
   let args = l2 in let (_,res) = List.fold_left f base args in res;;

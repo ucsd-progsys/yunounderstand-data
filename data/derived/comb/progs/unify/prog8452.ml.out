@@ -1,6 +1,5 @@
-Characters 70-71:
-  | (h::t)  ->  t@h;;
-                  ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 121-132:
+  if (j+k>10) then (1, j+k-10) else (0, j+k-10) in 
+                   ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

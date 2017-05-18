@@ -1,6 +1,5 @@
-Characters 14-20:
-  let _ = del 4 testee;;
-                ^^^^^^
-Error: This expression has type int set
-       but an expression was expected of type string set
-       Type int is not compatible with type string 
+Characters 18-19:
+  let test = equiv [1; 2; 3; 4];;
+                    ^
+Error: This expression has type int but an expression was expected of type
+         'a list

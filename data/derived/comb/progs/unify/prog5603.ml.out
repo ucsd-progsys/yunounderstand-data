@@ -1,6 +1,5 @@
-Characters 159-160:
-  let seen' = if (List.mem h seen) = true then seen else seen@h in
-                                                              ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 47-60:
+  if n < 0 then [] else digitsOfInt n/10 @[]@[(n mod 10)];;
+                        ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

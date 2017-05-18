@@ -1,5 +1,5 @@
-Characters 87-104:
-  [n mod 10] :: digitsOfIntHelper [((n mod 10)/10)];;
-                                  ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 94-95:
+  else x in 
+       ^
+Error: This expression has type int but an expression was expected of type
+         int list

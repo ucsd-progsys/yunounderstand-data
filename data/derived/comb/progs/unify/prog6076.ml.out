@@ -1,6 +1,5 @@
-Characters 423-426:
-  let (x, res) = List.fold_left f base args in [(helper ((List.length l2)*2) (x))] @ res;;
-                                                                                     ^^^
-Error: This expression has type int list
-       but an expression was expected of type unit list
-       Type int is not compatible with type unit 
+Characters 223-246:
+  |_ -> if( fst x + snd x ) > 9 then (1, (fst x + snd x ) mod 10) else (0, (fst x + snd x ) mod 10)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

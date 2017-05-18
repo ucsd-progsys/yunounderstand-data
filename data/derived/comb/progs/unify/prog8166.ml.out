@@ -1,5 +1,5 @@
-Characters 178-185:
-  |h'::t' -> if h+h' > 10 then addHelper t t' @ [1 + h' + h] else addHelper t t' @ [h'+ h]
-                                                                                   ^^^^^^^
-Error: This expression has type int list
-       This is not a function; it cannot be applied.
+Characters 24-25:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

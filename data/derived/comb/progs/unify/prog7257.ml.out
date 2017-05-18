@@ -1,6 +1,6 @@
-Characters 46-47:
-  let f a x = fun y c -> x (a) = x in
-                                 ^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 153-154:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int -> int -> int * int
+       but an expression was expected of type int -> int -> int
+       Type int * int is not compatible with type int 

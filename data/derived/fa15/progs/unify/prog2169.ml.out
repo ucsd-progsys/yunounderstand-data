@@ -1,5 +1,5 @@
-Characters 142-151:
-  if r = 0 then buildSine build (rand, d-1)
-                ^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 111-121:
+  else (test (f b), false)
+        ^^^^^^^^^^
+Error: This expression has type int * bool
+       but an expression was expected of type int

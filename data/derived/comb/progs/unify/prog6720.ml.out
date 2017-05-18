@@ -1,5 +1,8 @@
-Characters 29-40:
-  let stringOfList f l = "[" ^ List.map(f) ^ sepConcat(";" l) ^ "]";;
-                               ^^^^^^^^^^^
-Error: This expression has type 'a list -> 'b list
-       but an expression was expected of type string
+Characters 91-96:
+  Printf.printf (x,h);;
+                ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type
+         ('c, out_channel, unit) format =
+           ('c, out_channel, unit, unit, unit, unit)
+           CamlinternalFormatBasics.format6

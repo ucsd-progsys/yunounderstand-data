@@ -1,5 +1,5 @@
-Characters 107-115:
-  let f a x = match (a, x) with ((w, b), (y, z)) ->  b @ w mod 10 :: (w / 10) in
-                                                                     ^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 126-150:
+  | n when n > 0 -> buildSine(build(rand, depth - 1));;
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

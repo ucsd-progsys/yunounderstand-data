@@ -1,5 +1,8 @@
-Characters 154-180:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type (int * int) list
-       but an expression was expected of type 'a * 'b
+Characters 175-204:
+  | Sine e'                -> Printf.sprintf("sin(%s)", exprToString(e'))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type
+         ('c, unit, string) format =
+           ('c, unit, string, string, string, string)
+           CamlinternalFormatBasics.format6

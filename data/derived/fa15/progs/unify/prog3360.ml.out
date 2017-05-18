@@ -1,5 +1,6 @@
-Characters 138-142:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list list
+Characters 47-48:
+  |_ -> x::clone x (n-1);;
+        ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

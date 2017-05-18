@@ -1,6 +1,5 @@
-Characters 56-58:
-  (f b) = b in f'),b);;
-               ^^
-Error: This expression has type ('a -> 'a) -> 'a -> bool
-       but an expression was expected of type ('a -> 'a) -> ('a -> 'a) * bool
-       Type 'a -> bool is not compatible with type ('a -> 'a) * bool 
+Characters 29-40:
+  let fixpoint (f,b) = wwhile ((f' (f, b)),b);;
+                               ^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

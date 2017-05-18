@@ -1,5 +1,5 @@
-Characters 49-50:
-  let fixpoint (f,b) = wwhile(if f = b then b else f b, b);;
-                                                   ^
-Error: This expression has type ('a -> 'a * bool) * 'a
-       This is not a function; it cannot be applied.
+Characters 497-498:
+  | SumInts expr -> (eval(expr, x, y) *. (eval(expr, x, y) +. 1.0) /. 2)
+                                                                      ^
+Error: This expression has type int but an expression was expected of type
+         float

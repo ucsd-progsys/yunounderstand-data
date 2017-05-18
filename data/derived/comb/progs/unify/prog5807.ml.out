@@ -1,5 +1,5 @@
-Characters 70-81:
-  | h::t -> (h, l2) :: [helper t l2];;
-                        ^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type 'a * 'b
+Characters 177-179:
+  let args = l1 (tenEx 0 l2) in
+             ^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

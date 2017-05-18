@@ -1,6 +1,6 @@
-Characters 56-58:
-  let fixpoint (f,b) = let f' x = (f, f x = x) in wwhile (f',b);;
-                                                          ^^
-Error: This expression has type 'a -> ('a -> 'a) * bool
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a -> 'a
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

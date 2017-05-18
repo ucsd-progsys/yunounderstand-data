@@ -1,5 +1,0 @@
-Characters 76-85:
-  |Sine e -> "sin(pi*" exprToString e ")"
-             ^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.

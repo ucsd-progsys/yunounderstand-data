@@ -1,5 +1,5 @@
-Characters 94-95:
-  |false->h
-          ^
-Error: This expression has type bool but an expression was expected of type
-         bool list
+Characters 54-67:
+  |(h::t)->listReverse t@h::[];;
+           ^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

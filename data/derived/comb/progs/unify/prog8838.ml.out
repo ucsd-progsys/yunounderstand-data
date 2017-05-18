@@ -1,6 +1,5 @@
-Characters 57-63:
-  in helper
-     ^^^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 163-178:
+  |Average (e1, e2) -> (exprToString e1 +. exprToString e2)/2
+                        ^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         float

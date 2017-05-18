@@ -1,5 +1,5 @@
-Characters 84-86:
-  List.fold_left f base fs;;
-                        ^^
-Error: This expression has type ('a -> 'b) -> 'b
-       but an expression was expected of type 'a list
+Characters 55-64:
+  |h::t -> (h*.h)::t;;
+           ^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

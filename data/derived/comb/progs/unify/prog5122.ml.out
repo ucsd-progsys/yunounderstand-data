@@ -1,6 +1,5 @@
-Characters 47-53:
-  | b -> f b wwhile(f b,b);;
-             ^^^^^^
-Error: This expression has type ('a -> 'b -> 'c -> 'd) * 'a -> 'e
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside ('a -> 'b -> 'c -> 'd) * 'a -> 'e
+Characters 105-109:
+  | h::t  -> if (k,d) = l then d else assoc (d,k,t::l);;
+                                                 ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

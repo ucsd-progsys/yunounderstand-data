@@ -1,6 +1,5 @@
-Characters 196-201:
-  helper (seen',rest') 
-          ^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a list list
-       The type variable 'a occurs inside 'a list
+Characters 78-79:
+  else let x= n mod 10 in digitsOfInt n@x;;
+                                        ^
+Error: This expression has type int but an expression was expected of type
+         'a list

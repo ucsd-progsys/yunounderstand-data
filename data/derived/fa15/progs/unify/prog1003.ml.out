@@ -1,5 +1,6 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         int -> int
+Characters 139-156:
+  | Sine e1              -> "sin (pi * "^^(exprToString e1)^^")"
+                                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
+           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6

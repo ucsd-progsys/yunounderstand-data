@@ -1,5 +1,5 @@
-Characters 46-47:
-  in wwhile (2,b);;
-             ^
+Characters 76-77:
+  else digits (sumList n);;
+                       ^
 Error: This expression has type int but an expression was expected of type
-         'a -> 'a * bool
+         int list

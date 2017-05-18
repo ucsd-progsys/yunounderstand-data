@@ -1,10 +1,5 @@
 
-let getHead h = match h with | [] -> [] | h::t -> h;;
+let pipe fs n =
+  let f a x = a + (n x) in let base = 0 in List.fold_left f base fs;;
 
-let getTail t = match t with | [] -> [] | h::t -> t;;
-
-let rec matchHeads (x,y) =
-  match x with
-  | [] -> true
-  | h::t ->
-      if (getHead x) = (getHead y) then matchHeads t (getTail y) else false;;
+let _ = pipe [] 3;;

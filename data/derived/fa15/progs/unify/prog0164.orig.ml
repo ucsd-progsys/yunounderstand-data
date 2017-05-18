@@ -145,30 +145,29 @@ let bigAdd l1 l2 =
     removeZero (add (padZero l1 l2))
 
 
+
 let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 
 
 
-let rec mulByDigit i l = match i with
-  | 0 -> []
-  | 1 -> l
-  | n -> bigAdd l (mulByDigit(i-1) (l));;
+let rec mulByDigit i l = if i < 2 then l else
+    let total = bigAdd l l in
+      bigAdd total  (mulByDigit i-1 l);;
 
 
 
-let _ = mulByDigit 4 [2;2]
+let_ = mulByDigit 4[2;2]
 
 let _ = mulByDigit 9 [9;9;9;9]
 
 
 
 let bigMul l1 l2 = 
-  let f a x = let (pow, total) = a in
-      (pow+ 1, total + mulByDigit( x l2) * 10 ** pow) in
-  let base = (0,[]) in
-  let args = List.rev l1 in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 

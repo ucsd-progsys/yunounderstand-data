@@ -1,6 +1,22 @@
 
-let pipe fs =
-  let f a x = let y = x a in y in
-  let base g x = x in List.fold_left f base fs;;
+let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
 
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let padZero l1 l2 =
+  let difference1 = (List.length l1) - (List.length l2) in
+  let difference2 = (List.length l2) - (List.length l1) in
+  if difference2 > 0
+  then (((clone 0 difference2) @ l1), l2)
+  else
+    if difference1 > 0 then (l1, ((clone 0 difference1) @ l2)) else (l1, l2);;
+
+let rec removeZero l =
+  match l with
+  | [] -> []
+  | h::t -> if h = 0 then removeZero t else h :: (removeZero t);;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = ((a + x), (a + x)) in
+    let base = (0, 0) in
+    let args = (l1, l2) in let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

@@ -1,5 +1,5 @@
-Characters 249-250:
-  | Times (e1, e2)	  -> eval e *. eval e
-                             ^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 50-71:
+  let fixpoint (f,b) = wwhile ( let func x = f x in (f, not (f b = b), b));;
+                                                    ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type ('d -> 'd * bool) * 'd

@@ -1,5 +1,5 @@
-Characters 110-127:
-  let seen' = if List.mem(seen, h) then seen else h::seen in
-                 ^^^^^^^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list -> bool
-       but an expression was expected of type bool
+Characters 128-137:
+  |h'::t' -> if h+h' > 10 then addHelper t t' @ [1 + h' + h] else addHelper t t' @ [h'+ h];;
+                               ^^^^^^^^^
+Error: This function has type int list * int list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

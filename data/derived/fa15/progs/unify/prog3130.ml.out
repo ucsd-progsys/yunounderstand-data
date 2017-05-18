@@ -1,10 +1,5 @@
-Characters 127-135:
-  | Sine expr -> Printf.sprintf "sin %s" exprToString expr
-                                ^^^^^^^^
-Error: This expression has type
-         ('a -> 'b, unit, string, string, string, 'a -> 'b)
-         CamlinternalFormatBasics.fmt
-       but an expression was expected of type
-         ('a -> 'b, unit, string, string, string, string)
-         CamlinternalFormatBasics.fmt
-       Type 'a -> 'b is not compatible with type string 
+Characters 129-131:
+  | Cosine e1 -> cos(pi*.(eval e1))
+                               ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

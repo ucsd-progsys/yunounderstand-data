@@ -1,7 +1,5 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let stringOfList f l = "[" ^ ((List.fold_left f "" l) ^ "]");;
 
-let palindrome w = if String.length = 0 then true else explode w;;
+let _ =
+  stringOfList (stringOfList string_of_int) [[1; 2; 3]; [4; 5]; [6]; []];;

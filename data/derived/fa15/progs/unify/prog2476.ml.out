@@ -1,5 +1,6 @@
-Characters 146-159:
-  [mulByDigit i [h2+(h mod 10)]@t2];;
-                 ^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 61-62:
+  let f a x = let a::x = x in (a * a) + (sqsum x) in
+                                               ^
+Error: This expression has type int list
+       but an expression was expected of type int list list
+       Type int is not compatible with type int list 

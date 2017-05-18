@@ -1,5 +1,6 @@
-Characters 186-190:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 154-155:
+  List.fold_left f base l;;
+                        ^
+Error: This expression has type string list
+       but an expression was expected of type (string -> string) list
+       Type string is not compatible with type string -> string 

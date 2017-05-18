@@ -64,8 +64,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = match f b with
-  | (_,t) -> if t = true then 5
+let rec wwhile (f,b) = match (f b) with
+  | (h,t) -> if t = false then f b
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;

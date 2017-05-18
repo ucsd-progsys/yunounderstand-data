@@ -1,6 +1,5 @@
-Characters 41-58:
-  if (n > 0) then digitsOfInt(n/10)::[n mod 10] 
-                  ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 168-175:
+  if (sum + r) > 9 then (carryFunc (sum+r),((sum+r) mod 10)::v) 
+                                   ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

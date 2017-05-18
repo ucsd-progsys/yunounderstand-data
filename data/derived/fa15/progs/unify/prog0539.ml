@@ -1,9 +1,5 @@
 
-let rec lastListElement n =
-  match n with
-  | [] -> failwith "ERROR: List must be of size 1 or greater"
-  | x::[] -> x
-  | x::y -> lastListElement y;;
+let pipe fs =
+  let f a x a = x + a in let base x = x in List.fold_left f base fs;;
 
-let rec catLists x y =
-  match x with | [] -> x :: y | h::t -> catLists t ((lastListElement x) :: y);;
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

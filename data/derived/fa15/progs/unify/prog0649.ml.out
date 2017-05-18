@@ -1,5 +1,7 @@
-Characters 18-19:
-  let _ = List.mem( 3 test);;
-                    ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 132-134:
+  let (_, addList) = List.fold_left fn (0, []) List.rev l2 in
+                                    ^^
+Error: This expression has type
+         int * int list list -> int -> int * int list list
+       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
+       Type int * int list list is not compatible with type 'a -> 'b 

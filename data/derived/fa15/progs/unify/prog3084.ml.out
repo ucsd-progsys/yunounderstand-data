@@ -1,5 +1,5 @@
-Characters 29-45:
-  let fixpoint (f,b) = wwhile ((helper (f,b,b)), b);;
-                               ^^^^^^^^^^^^^^^^
-Error: This expression has type (('a -> 'a) * 'a * 'a) * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 92-97:
+  l1 @ clone 0  (-1*(diff)-1) 
+       ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

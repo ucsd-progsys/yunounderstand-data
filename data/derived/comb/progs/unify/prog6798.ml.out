@@ -1,5 +1,7 @@
-Characters 29-38:
-  let fixpoint (f,b) = wwhile ((f, true),b);;
-                               ^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 107-111:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type
+         'a -> ('b -> 'a -> 'c) -> 'b -> 'c
+       The type variable 'a occurs inside ('b -> 'a -> 'c) -> 'b -> 'c

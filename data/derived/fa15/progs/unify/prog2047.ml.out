@@ -1,5 +1,5 @@
-Characters 35-36:
-  let f a x = a::0 in
-                 ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 40-44:
+  let f a x = bigAdd [a::0] (mulByDigit x l1) in
+                      ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

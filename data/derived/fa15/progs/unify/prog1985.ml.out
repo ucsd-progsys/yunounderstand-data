@@ -1,5 +1,5 @@
-Characters 87-88:
-  | Sine(q) -> sin(pi *. q)
-                         ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 199-201:
+  else if List.length res = l' then
+                            ^^
+Error: This expression has type int list
+       but an expression was expected of type int

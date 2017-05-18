@@ -1,5 +1,5 @@
-Characters 68-78:
-  if n < 0 then [] else [digitsOfInt (n/10) @ (n mod 10)];;
-                                              ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 141-146:
+  let zeros = clone 0 abs(diff) in
+              ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

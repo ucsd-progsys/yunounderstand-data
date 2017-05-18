@@ -1,5 +1,0 @@
-Characters 13-38:
-  let _ = eval (Thresh(0.0,4.0,1.0,2.0));;
-               ^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float

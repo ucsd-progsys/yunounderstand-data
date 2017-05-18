@@ -1,6 +1,5 @@
-Characters 43-44:
-  if ( f b ) then f (f,b)
-                     ^
-Error: This expression has type 'a * 'b -> bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b -> bool
+Characters 70-81:
+  else digitsOfInt (-1)  (n mod 10) :: return;;
+       ^^^^^^^^^^^
+Error: This function has type int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

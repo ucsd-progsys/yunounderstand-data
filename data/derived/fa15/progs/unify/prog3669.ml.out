@@ -1,5 +1,5 @@
-Characters 112-129:
-  let seen' = if List.mem(h, seen) then 
-                 ^^^^^^^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list -> bool
-       but an expression was expected of type bool
+Characters 121-132:
+  if (j+k>10) then (1, j+k-10) else (0, j+k) in 
+                   ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

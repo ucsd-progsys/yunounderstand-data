@@ -1,5 +1,6 @@
-Characters 159-184:
-  then (1, 1::(((i+j+m)-10)::t))
-       ^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 77-97:
+  | h::t -> matchHeads (getTail(explode w));;
+                       ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type 'a list list
+       Type char is not compatible with type 'a list 

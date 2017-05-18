@@ -1,5 +1,5 @@
-Characters 49-69:
-  if n <= 0 then [] else  (digitsOfInt (n/10)) add ([n mod 10]);;
-                          ^^^^^^^^^^^^^^^^^^^^
+Characters 62-73:
+  | (x::xs') -> x+sumList xs';;
+                  ^^^^^^^^^^^
 Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+       but an expression was expected of type int

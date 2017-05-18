@@ -1,6 +1,5 @@
 
-let count = 0;;
+let pipe fs =
+  let f a x = x a in let base x = 0 + x in List.fold_left f base fs;;
 
-let lt10 q = q < 10;;
-
-let rec additivePersistence n = if lt10 n then count;;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

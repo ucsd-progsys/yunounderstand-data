@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 32-43:
+  explode w = listReverse explode w;;
+              ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

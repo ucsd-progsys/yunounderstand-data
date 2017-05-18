@@ -8,14 +8,19 @@ type expr =
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
+let rec exprToString e =
   match e with
-  | buildX -> x
-  | buildY -> y
-  | Sine e -> sin (pi *. (eval (e, x, y)))
-  | Cosine e -> cos (pi *. (eval (e, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
-  | Thresh (a,b,a_less,b_less) -> 0;;
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine s -> String.concat ("sin(pi*", (exprToString s), ")")
+  | Cosine s -> ("cos(pi*" + (exprToString s)) + ")"
+  | Average (s,p) ->
+      ((("((" + (exprToString s)) + "+") + (exprToString p)) + ")/2"
+  | Times (s,p) -> ((exprToString s) + "*") + (exprToString p)
+  | Thresh (s,p,r,d) ->
+      ((((((("(" + (exprToString s)) + "<") + (exprToString p)) + "?") +
+           (exprToString r))
+          + ":")
+         + (exprToString d))
+        + ")"
+  | _ -> 0;;

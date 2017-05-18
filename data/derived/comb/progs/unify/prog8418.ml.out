@@ -1,5 +1,6 @@
-Characters 80-100:
-  | _ -> [bigAdd [l] [(mulByDigit (i-1) l)]];;
-                      ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 158-159:
+  | 0 -> buildSine(build (rand, depth-1))
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type
+         int * int -> int

@@ -1,5 +1,10 @@
-Characters 437-444:
-  | Square(e) -> "%s*%s" exprToString e exprToString e;;
-                 ^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 121-133:
+  | Sine e -> Printf.printf "sin(pi*%s)" exprToString e
+                            ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

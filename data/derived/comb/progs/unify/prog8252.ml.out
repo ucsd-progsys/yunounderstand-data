@@ -1,5 +1,5 @@
-Characters 518-519:
-  | TowerInv(a, b, c) -> if(x < 1.0 && x > -1.0 || y < 1.0 && y > -1.0) then 0.5 else 1 /. (eval(a, x, y) ** eval(b, x, y) ** eval(c, x, y));;
-                                                                                      ^
+Characters 138-142:
+  List.fold_left f base args 
+                   ^^^^
 Error: This expression has type int but an expression was expected of type
-         float
+         int list

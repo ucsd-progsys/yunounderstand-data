@@ -1,7 +1,6 @@
-Characters 389-390:
-  List.fold_left f base args in res 
-                 ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 247-268:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type int list
+       Type int * int is not compatible with type int 

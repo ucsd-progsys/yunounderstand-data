@@ -1,5 +1,5 @@
-Characters 178-182:
-  let (carry, res) = List.fold_left f base args in
-                                      ^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 55-58:
+  | h::t -> (exp 10 x) * h;;
+             ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

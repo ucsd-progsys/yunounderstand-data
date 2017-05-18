@@ -1,5 +1,6 @@
-Characters 113-114:
-  (clone 0 z)::y
-               ^
-Error: This expression has type int but an expression was expected of type
-         int list list
+Characters 108-110:
+  List.fold_left f base xs;;
+                        ^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list list
+       Type int is not compatible with type 'a list 

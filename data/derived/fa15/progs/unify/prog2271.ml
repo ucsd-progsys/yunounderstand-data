@@ -1,4 +1,4 @@
 
-let rec sumList a b = (a +. b) /. 2.0;;
-
-let x = sumList 2 4;;
+let stringOfList f l =
+  let fx a b = match b with | [] -> [] | h::t -> List.append a (f b) in
+  let base = "" in List.fold_left fx base l;;

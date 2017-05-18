@@ -1,5 +1,5 @@
-Characters 100-103:
-  | _ -> f x
-         ^^^
-Error: This expression has type int but an expression was expected of type
-         int * 'a
+Characters 29-39:
+  wwhile ((f, (f b)), b);;
+          ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

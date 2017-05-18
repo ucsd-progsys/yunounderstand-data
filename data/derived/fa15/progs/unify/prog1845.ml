@@ -1,4 +1,14 @@
 
-let stringOfList f l = "[" ^ ((List.fold_left f "" l) ^ "]");;
+let rec filter (l,a) =
+  match l with
+  | [] -> []
+  | hd::tl -> if hd = a then filter (tl, a) else hd :: (filter (tl, a));;
 
-let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = h :: seen in
+        let rest' = filter t h in helper (seen', rest') in
+  List.rev (helper ([], l));;

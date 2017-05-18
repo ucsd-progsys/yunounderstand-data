@@ -10,18 +10,13 @@ type expr =
 
 let rec exprToString e =
   match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine e -> "sin(pi*" ^ ((exprToString e) ^ ")")
-  | Cosine e -> "cos(pi*" ^ ((exprToString e) ^ ")")
+  | VarX e -> Printf.printf "x" exprToString e
+  | VarY e -> Printf.printf "y" exprToString e
+  | Sine e -> Printf.printf "sin(pi*%s)" exprToString e
+  | Cosine e -> Printf.printf "cos(pi*%s)" exprToString e
   | Average (e1,e2) ->
-      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
-  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
+      Printf.printf "((%s + %s)/2)" exprToString e1 exprToString e2
+  | Times (e1,e2) -> Printf.printf "%s * %s" exprToString e1 exprToString e2
   | Thresh (e1,e2,e3,e4) ->
-      "(" ^
-        ((exprToString e1) ^
-           ("<" ^
-              ((exprToString e2) ^
-                 ("?" ^
-                    ((exprToString e3) ^ (":" ^ ((exprToString e4) ^ ")")))))))
-  | Square e -> "%s*%s" exprToString e exprToString e;;
+      Printf.printf "(%s<%s ? %s : %s)" exprToString e1 exprToString e2
+        exprToString e3 exprToString e4;;

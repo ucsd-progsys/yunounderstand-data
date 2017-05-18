@@ -117,14 +117,11 @@ let _ = removeZero [0;0;0;0];;
 
 let bigAdd l1 l2 =  
   let add (l1, l2) = 
-    let f a x = 
-      let (fst, sec) = x in
-      let (fst', sec') = if (fst + sec > 9) then (fst + sec - 10, 1) else (fst + sec, 0) in 
-      let (carry, digits) = a in
-      let (carry', digits') = if (sec' = 1) then (1, digits @ [(fst',sec')]) else (0, digits @ [(fst',sec')]) in 
-        (carry', digits') in
+    let f a x = match x, a with
+      | (fst, sec),_ -> if (fst + sec > 9) then (fst + sec - 10, 1) else (fst + sec, 0) 
+      | (fst,sec) ,(carry, digits) -> if (sec = 1) then (1, digits @ (fst, sec)) else (0, digits @ (fst, sec)) in
     let base = (0,[]) in
-    let args = List.rev(List.combine l1 l2) @ [(0,0)]  in
+    let args = [(0,0)] @ List.rev(List.combine l1 l2) in
     let (_, res) = List.fold_left f base args in
       res
   in 

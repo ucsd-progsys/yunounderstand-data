@@ -1,6 +1,5 @@
-Characters 246-250:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * 'a list
-       but an expression was expected of type int * int
-       Type 'a list is not compatible with type int 
+Characters 76-77:
+  let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit(i - 1)(l)) else 0;;
+                                                                              ^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,5 +1,5 @@
-Characters 112-138:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a * 'b
+Characters 183-187:
+  if (List.mem h r = false) then seen' := h :: seen in
+                                               ^^^^
+Error: This expression has type 'a list ref
+       but an expression was expected of type 'a list

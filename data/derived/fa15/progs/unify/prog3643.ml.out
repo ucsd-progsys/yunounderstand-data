@@ -1,5 +1,5 @@
-Characters 42-49:
-  bigAdd (List.map (l*i l)) [];;
-                   ^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 76-78:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type int -> 'a -> int
+       but an expression was expected of type 'a list

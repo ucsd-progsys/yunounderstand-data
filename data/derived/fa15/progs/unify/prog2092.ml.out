@@ -1,6 +1,5 @@
-Characters 101-103:
-  wwhile (fs,b);;
-          ^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 98-100:
+  go 0
+  ^^
+Error: This function has type int -> char list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,18 +1,14 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec lastListElement n =
+  match n with
+  | [] -> failwith "ERROR: List must be of size 1 or greater"
+  | x::[] -> x
+  | x::y -> lastListElement y;;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine n -> sin (3.14 *. (eval (n, x, y)))
-  | Consine n -> cos (3.14 *. (eval (n, x, y)))
-  | Average (m,n) -> ((eval (m, x, y)) +. (eval (n, x, y))) /. 2
-  | Times (m,n) -> (eval (m, x, y)) *. (eval (n, x, y));;
+let rec catLists x y =
+  if (not x) = []
+  then
+    match x with
+    | x::[] -> x :: y
+    | h::t -> catLists t ((lastListElement x) :: y)
+  else if x = [] then y else if y = [] then x;;

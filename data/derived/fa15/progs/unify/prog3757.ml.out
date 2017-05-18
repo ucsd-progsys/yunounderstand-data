@@ -1,6 +1,5 @@
-Characters 8-12:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-          ^^^^
-Error: This function has type
-         (('a -> 'a) -> 'a -> 'a) list -> ('a -> 'a) list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 68-72:
+  | VarX			    -> Printf.printf ("%s" x);
+                                 ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

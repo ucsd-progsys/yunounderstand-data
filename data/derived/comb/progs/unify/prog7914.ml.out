@@ -1,6 +1,5 @@
-Characters 62-63:
-  h::t -> t::[h];;
-              ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 38-58:
+  if n > 0 then digitsOfInt(n/10)@[]
+                ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

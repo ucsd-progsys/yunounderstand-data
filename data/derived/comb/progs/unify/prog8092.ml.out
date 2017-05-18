@@ -1,5 +1,5 @@
-Characters 23-26:
-  let stringOfList f l = "[" sepConcat "" (List.map f l) ^ "]";;
-                         ^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 84-85:
+  |Sine(e) -> sin(pi*.eval e)
+                           ^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

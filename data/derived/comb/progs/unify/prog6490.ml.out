@@ -1,5 +1,5 @@
-Characters 89-119:
-  |Sine s -> String.concat("sin(pi*",exprToString s,")")
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type string
+Characters 94-95:
+  |false->h
+          ^
+Error: This expression has type bool but an expression was expected of type
+         bool list

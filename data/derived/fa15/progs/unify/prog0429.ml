@@ -28,4 +28,4 @@ let bigAdd l1 l2 =
   removeZero (add (padZero l1 l2));;
 
 let rec mulByDigit i l =
-  if i >= 0 then bigAdd l l else (mulByDigit i) - (1 l);;
+  if i = 0 then [0] else mulByDigit ((i - 1) bigAdd l l);;

@@ -1,7 +1,6 @@
-Characters 180-181:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 141-145:
+  else seen :: [h] in
+       ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

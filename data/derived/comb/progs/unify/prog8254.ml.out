@@ -1,5 +1,5 @@
-Characters 403-416:
-  | Power(a, b) -> if(x < 1.0 && x > -1.0 || y < 1.0 && y > -1.0) then 0.5 else eval(a, x, y) mod eval(b, x, y)
-                                                                                ^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 0-12:
+  List.combine x y
+  ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

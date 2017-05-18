@@ -1,5 +1,6 @@
-Characters 52-63:
-  (h::t) -> reverseLt t @ [h];;
-            ^^^^^^^^^^^
-Error: This expression has type 'a list -> 'b
-       but an expression was expected of type 'c list
+Characters 57-58:
+  let fixpoint (f,b) = wwhile (let h x = (f, (f x) = x) in h,b);;
+                                                           ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

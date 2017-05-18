@@ -1,4 +1,4 @@
 
-let pipe fs = let f a x y = x a in let base y = y in List.fold_left f base fs;;
+let abs x = if x < 0.0 then x *. (-1.0) else x;;
 
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let _ = abs - 1.0;;

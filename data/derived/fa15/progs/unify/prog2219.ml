@@ -1,6 +1,19 @@
 
-let stringOfList f l =
-  let fx a b = match b with | [] -> [] | h::t -> List.append a (f b) in
-  let base = [] in List.fold_left fx base l;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  let r = rand (0. depth) in
+  match depth with
+  | 0 -> if (r mod 2) = 0 then buildX else buildY
+  | d -> if r = 0 then build (rand, (d - 1)) else build (rand, (d - 1));;

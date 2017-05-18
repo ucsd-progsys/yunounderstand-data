@@ -1,5 +1,7 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
@@ -9,7 +11,9 @@ let rec sumList xs = match xs with
 
 
 
-let _ = sumList [1; 2; 3; 4]
+let _ = sumList [3; -3; -2]
+let _ = sumList [33; 6]
+let _ = sumList [-100]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
 
@@ -20,16 +24,19 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n = let x = n mod 10 in
-    if n > 9 then digitsOfInt (n/10)@[x] else [n];;
+let rec digitsOfInt n =
+  if n<=0 then [] else 
+    let modded = n mod 10 in
+    let quotient = n/10 in
+    let head = digitsOfInt quotient in
+      head@[modded];;
 
 
 
 
-let _ = digitsOfInt 30124
-let _ = digitsOfInt 03520663
+let _ = digitsOfInt (-3124)
+let _ = digitsOfInt 352663
 let _ = digitsOfInt 0
-
 
 
 
@@ -57,38 +64,39 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = if n < 9 
-  then 0 
-  else
-    let x = digitsOfInt n in
-    let y = sumList x in
-      1 + additivePersistence y
-;;
+let rec additivePersistence n = 
+  if n<10 then 0 else
+    let intList = digits n in
+    let sum = sumList intList in
+      additivePersistence sum + 1;;
+
 
 
 let _ = additivePersistence 9876
+let _ = additivePersistence 9
+let _ = additivePersistence 10
+let _ = additivePersistence 99
 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = if n < 9 
-  then n 
-  else
-    let x = digitsOfInt n in
-    let y = sumList x in
-      digitalRoot y
-;;
+let rec digitalRoot n = 
+  if n<10 then n else
+    let intList = digits n in
+    let sum = sumList intList in
+      digitalRoot sum;;
 
 
+let _ = digitalRoot 10
+let _ = digitalRoot 02911
 let _ = digitalRoot 9876
-
 
 
 
 let rec listReverse l = match l with
   | [] -> []
-  | h::t -> listReverse t@[h];;
+  | h::t -> [listReverse t]@h;;
 
 
 
@@ -110,7 +118,7 @@ let explode s =
   in
     go 0
 
-let palindrome w = if w = listReverse(explode w) then true else false;;
+let palindrome w = failwith "TBD"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

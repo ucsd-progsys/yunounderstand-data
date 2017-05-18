@@ -1,6 +1,6 @@
-Characters 151-155:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type (int list -> int) list
-       Type 'a * 'b is not compatible with type int list -> int 
+Characters 90-92:
+  List.fold_left f base xs;;
+                        ^^
+Error: This expression has type int list
+       but an expression was expected of type int list list
+       Type int is not compatible with type int list 

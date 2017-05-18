@@ -1,12 +1,16 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else h :: t;;
 
-let digits n = digitsOfInt (abs n);;
+let rec mulByDigit i l =
+  let f a x =
+    let carry = i * x in
+    match a with
+    | h::t -> ((h + carry) / 10) :: ((h + carry) mod 10) :: t
+    | _ -> [carry / 10; carry mod 10] in
+  let base = [] in removeZero (List.fold_left f base (List.rev l));;
 
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
-
-let rec additivePersistence n =
-  if n <= 0
-  then []
-  else if n < 10 then 0 else 1 + (additivePersistence sumList (digits n));;
+let rec bigMul l1 l2 =
+  match l1 with
+  | [] -> []
+  | h::t -> bigMul ((mulByDigit h l2), (bigMul (t, l2)));;

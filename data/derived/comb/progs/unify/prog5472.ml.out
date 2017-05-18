@@ -1,5 +1,5 @@
-Characters 36-41:
-  let buildSqrt(a,b)	           = Sqrt(a,b);;
-                                      ^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 430-434:
+  | Power (x, y) -> (exprToString x)^"**"(exprToString y)
+                                     ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

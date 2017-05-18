@@ -1,8 +1,17 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let getHead h = match h with | [] -> [] | h::t -> h;;
 
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+let getTail t = match t with | [] -> [] | h::t -> t;;
 
-let rec additivePersistence n =
-  if n < 10 then 1 else additivePersistence (sumList ((digitsOfInt n) + 1));;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let rec matchHeads x =
+  match x with
+  | [] -> true
+  | h::t ->
+      if (getHead x) = (getHead (listReverse x))
+      then matchHeads (getTail (listReverse t))
+      else false;;
+
+let _ = matchHeads ["b"; "o"; "b"];;

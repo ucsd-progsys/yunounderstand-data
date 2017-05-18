@@ -1,4 +1,3 @@
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -141,63 +140,60 @@ let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
+let pairHelper x =
+  let (r,s)=x in
+    r+s
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (y,z)=a in 
-      let (r,s)=x in
-      let m=r+s+y in
-        (m/10,(m mod 10)::z) in
-    let base = (0,[]) in
-    let args = List.combine (List.rev (0::l1)) (List.rev (0::l2)) in
-    let (_, res) = List.fold_left f base args in
-      res
-  in 
-    removeZero (add (padZero l1 l2))
+    let f a x = let y = pairHelper x in 
+      let z=y/10 in
+      (*XXXXXXXXXXXXXX*)
+      let base = [] in
+      let args = List.combine l1 l2 in
+      let (_, res) = List.fold_left f base args in
+        res
+    in 
+      removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
-
+let rec multHelper i l =
+  match l with
+    |[]->[]
+    |h::t->let x=h*i in
+          match x with
+            |x when x>=10->(multHelper i t)::((x/10),(x mod 10))@(multiHelper i t)@[]
+            |_-> (0,x)@(multiHelper i t)
 
 let rec mulByDigit i l = 
-  match i with
-    |0->[0]
-    |_->bigAdd l (mulByDigit (i-1) l)
+;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = mulByDigit 9 [9;9;9;9]
 
 
-let rec multHelper l3 l4 x=
-  match l3 with
-    |[]->[0]
-    |h::t->mulByDigit h l4 
-
 
 let bigMul l1 l2 = 
-  let f a x =  
-    let (b,c)=a in
-    let (o,p)=x in
-    let r=(mulByDigit o (List.rev l2))+b::[] in
-      (r/10,(r mod 10)::b) in
-  let base = (0,[]) in
-  let args = List.combine (List.rev l1) (List.rev l2) in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

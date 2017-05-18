@@ -1,5 +1,5 @@
-Characters 229-255:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 672-673:
+  | MultDivBy6 (e1,e2)    -> ((eval (e1,x,y)) *. (eval (e2,x,y))) /.6;;
+                                                                    ^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,0 +1,5 @@
+Characters 154-157:
+  | Sine sin -> Printf.printf ("sin(pi*%s)" ^ sin);
+                                              ^^^
+Error: This expression has type expr but an expression was expected of type
+         string

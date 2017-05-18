@@ -1,0 +1,5 @@
+Characters 8-19:
+  let _ = digitsOfInt -1341;;
+          ^^^^^^^^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type int

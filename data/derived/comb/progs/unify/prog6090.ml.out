@@ -1,5 +1,5 @@
-Characters 33-40:
-  sumList digitsOfInt (n);;
-  ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 168-175:
+  if (sum + r) > 9 then (carryFunc (sum+r),((sum+r) mod 10)::v) 
+                                   ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

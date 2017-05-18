@@ -1,6 +1,5 @@
-Characters 258-262:
-  List.fold_left f base args in
-                        ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type (int * int) list list
-       Type 'a * 'b is not compatible with type (int * int) list 
+Characters 122-140:
+  then padZero [0]::l1 l2
+       ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b list * 'c list

@@ -1,5 +1,5 @@
-Characters 91-99:
-  | false -> [digitsOfInt (n / 10)] @ n mod 10;;
-                                      ^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list list
+Characters 66-77:
+  | (a::l') -> listReverse@a;;
+               ^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type 'c list

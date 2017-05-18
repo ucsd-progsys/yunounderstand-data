@@ -1,5 +1,5 @@
-Characters 105-107:
-  | Sine e'	      -> sin(eval (e' x y))
-                               ^^
-Error: This expression has type expr
-       This is not a function; it cannot be applied.
+Characters 92-94:
+  | Sine e	    -> sin(pi * eval e)
+                      ^^
+Error: This expression has type float but an expression was expected of type
+         int

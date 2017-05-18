@@ -1,5 +1,6 @@
-Characters 15-17:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                 ^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 179-180:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int list -> int -> int * int list
+       but an expression was expected of type int list -> int -> int list
+       Type int * int list is not compatible with type int list 

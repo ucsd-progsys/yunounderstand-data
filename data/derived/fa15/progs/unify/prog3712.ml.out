@@ -1,5 +1,5 @@
-Characters 145-160:
-  | Cosine cos		    -> "cos(pi*"^ (eval(cos,x,y)) ^")" 
-                                  ^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         string
+Characters 60-83:
+  let f a x = [mulByDigit x l1]@[clone 0 (List.length a)]::a in
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int

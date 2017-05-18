@@ -1,5 +1,5 @@
-Characters 95-111:
-  (l1,clone(0,ll1-ll2) @ l2)
-      ^^^^^^^^^^^^^^^^
-Error: This expression has type int -> (int * int) list
-       but an expression was expected of type 'a list
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type (unit -> unit) list -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

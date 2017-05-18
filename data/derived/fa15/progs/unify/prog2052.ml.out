@@ -1,5 +1,5 @@
-Characters 66-77:
-  else let n2 = n / 10 in digitsOfInt n2 append [n2];;
-                          ^^^^^^^^^^^
-Error: This function has type int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 42-43:
+  let f a x = bigAdd a::0 (mulByDigit x l1) in
+                        ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

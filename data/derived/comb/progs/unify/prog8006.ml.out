@@ -1,5 +1,5 @@
-Characters 47-51:
-  |VarX ->"%s" s;;
-          ^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 87-92:
+  let listZeros = clone 0 abs(numZeros) in
+                  ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

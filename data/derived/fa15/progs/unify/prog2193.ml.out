@@ -1,5 +1,5 @@
-Characters 106-110:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 152-156:
+  in wwhile(gs b, b);;
+            ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

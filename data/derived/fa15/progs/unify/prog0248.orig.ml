@@ -65,7 +65,7 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = match f b with
-  | (b',c') -> if (c' = true) then wwhile(f,b') else b'
+  | (h,t) -> if t = true then f h else f h
 
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -117,11 +117,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec exprToString e = match e with 
   | VarX                -> "x"
   | VarY                -> "y"
-  | Sine(a)             -> "sin(pi*"^exprToString a^")"
-  | Cosine(b)           -> "cos(pi*"^exprToString b^")"
-  | Average(c, d)       -> "(("^exprToString c^"+"^exprToString d^")/2)"
-  | Times(e, f)         -> exprToString e^"*"^exprToString f
-  | Thresh(g, h, i, j)  -> "("^exprToString g^"<"^exprToString h^"?"^exprToString i^":"^exprToString j^")"
+
+  | Sine(a)             -> "(pi*"^exprToString a^")"
+  | Cosine(b)           -> "(pi*"^exprToString b^")"
+  | Average(c, d)       -> "(("^exprToString c^"+"+exprToString d")""/2)"
+  | Times(e, f)         ->  exprToString e "*" exprToString f
+  | Thresh(g, h, i, j)  -> "("exprToString g"<"exprToString h "?" exprToString i ":" exprToString j")"
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
@@ -149,19 +150,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x 
-  | VarY -> y
-  | Sine(a) -> sin(pi *. eval(a,x,y))
-  | Cosine(b) -> cos(pi *. eval(b,x,y))
-  | Average(c,d) -> eval(c,x,y) +. eval(d,x,y)/.2
-  | Times(e,f) -> eval(e,x,y) *. eval(f,x,y)
-  | Thresh(g, h, i, j) -> if (eval(g,x,y) < eval(h,x,y)) then eval(i,x,y) else eval(j,x,y))
+let rec eval (e,x,y) = failwith "to be written"
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 

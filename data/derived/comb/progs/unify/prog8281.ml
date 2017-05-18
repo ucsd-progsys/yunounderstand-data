@@ -1,7 +1,5 @@
 
-let identity a = a;;
+let rec append l r = match l with | [] -> r | h::t -> h :: (append t r);;
 
-let pipe fs =
-  let f a x a y = x (a y) in let base = identity in List.fold_left f base fs;;
-
-let _ = pipe [] 3;;
+let rec digitsOfInt n =
+  if n <= 0 then n else append (n mod 10) (digitsOfInt (n / 10));;

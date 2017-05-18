@@ -1,16 +1,8 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec wwhile (f,b) =
+  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
 
-let buildSine e = Sine e;;
+let fixpoint (f,b) = wwhile (f, b);;
 
-let rec build (rand,depth) =
-  match (((rand 2), 6), depth) with
-  | (c,0) -> if c > 3 then BuildX () else BuildY ()
-  | (2,_) -> buildSine (build (rand, (depth - 1)));;
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

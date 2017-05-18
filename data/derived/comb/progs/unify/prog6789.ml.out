@@ -1,5 +1,5 @@
-Characters 29-42:
-  let fixpoint (f,b) = wwhile ((f, b != f b),b);;
-                               ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 270-296:
+  | Thresh (x7,x8,x9,x0) -> eval(buildThresh(x7,x8,x9,x0));;
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

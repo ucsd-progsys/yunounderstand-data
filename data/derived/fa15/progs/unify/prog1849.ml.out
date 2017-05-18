@@ -1,5 +1,6 @@
-Characters 96-103:
-  else (clone 0 -n) @l1;;
-        ^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 18-25:
+  let _ = fixpoint (collatz, 3);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type bool -> bool
+       Type int is not compatible with type bool 

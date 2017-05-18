@@ -1,6 +1,5 @@
-Characters 58-69:
-  if(x = 0) then rmzhelp xs' else xs';;
-                 ^^^^^^^^^^^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 30-38:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                                ^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

@@ -97,28 +97,28 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ( (fun x -> ((f x), not ((f x) = x))), b)
+let fixpoint (f,b) = wwhile ( (let f2 x = f x in (f x, 3 < 4)), b)
 ;;
 
 
+(*
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
-
 
 type expr = 
       VarX
@@ -127,31 +127,20 @@ type expr =
     | Cosine   of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr
-    | Mirana   of expr
-    | Darius   of expr * expr * expr
-;;
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-    VarX      -> "x"
-  | VarY      -> "y"
-  | Sine e    -> "sin(pi*" ^ exprToString e ^ ")"
-  | Cosine e  -> "cos(pi*" ^ exprToString e ^ ")"
-  | Average (e1, e2) -> "((" ^ exprToString e1 ^ "+" ^ exprToString e2 ^ ")/2)"
-  | Times (e1, e2)   -> exprToString e1 ^ "" ^ exprToString e2
-  | Thresh (e1, e2, e3, e4)  -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^ "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
-  | Mirana e -> "Abs(" ^ exprToString e ^ ")"
-  | Darius (e1, e2, e3) -> exprToString e1 ^ "+" ^ exprToString e2 ^ "MOD" ^ exprToString e3 
-;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -166,8 +155,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildMirana(e)		   = Mirana(e)
-let buildThresh(e1, e2, e3)	   = Darius(e1, e2, e3)
 
 
 let pi = 4.0 *. atan 1.0
@@ -175,29 +162,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-    VarX			-> x
-  | VarY		          -> y
-  | Sine e		  -> sin(pi *. eval (e, x, y))
-  | Cosine e		  -> cos(pi *. eval (e, x, y))
-  | Average (e1, e2)	  -> ((eval (e1, x, y) +. eval (e2, x, y)) /. 2.)
-  | Times (e1, e2)	  -> eval (e1, x, y) *. eval (e2, x, y)
-  | Thresh (e1, e2, e3, e4) -> 
-      if( eval (e1, x, y) < eval (e2, x, y) ) 
-      then 
-        (eval (e3, x, y))
-      else
-        (eval (e4, x, y))
-  | Mirana( e )		  -> abs_float( eval (e, x, y) )
-  | Darius( e1, e2, e3 )     -> (let comb = (eval (e1, x, y) +. eval (e2, x, y)) in mod_float comb (eval (e3, x, y)))
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -212,8 +184,6 @@ let sampleExpr =
                                                                                    buildCosine (buildTimes (buildSine (buildCosine
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
-
-let _ = eval (sampleExpr,0.5,0.2);;
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
@@ -230,17 +200,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = match ((rand (2, 6)), depth) with
-  | ( c, 0 ) -> if ( c > 3 ) 
-      then buildX()
-      else
-        buildY()
-  | ( 2, _ ) -> buildSine( build(rand, depth-1 ) )
-  | ( 3, _ ) -> buildCosine( build(rand, depth-1 ) )
-  | ( 4, _ ) -> buildAverage( build(rand, depth-1 ), build(rand, depth-1 ) )
-  | ( 5, _ ) -> buildTimes( build(rand, depth-1 ), build(rand, depth-1 ) )
-  | ( 6, _ ) -> buildThresh(build(rand, depth-1 ), build(rand, depth-1 ), build(rand, depth-1 ), build(rand, depth-1 ) )
-;;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -359,9 +319,10 @@ let doRandomGray (depth,seed1,seed2) =
     emitGrayscale (f,n,name)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

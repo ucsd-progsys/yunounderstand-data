@@ -1,5 +1,5 @@
-Characters 148-165:
-  (clone 0 (s2-s1));;
-  ^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a list * int list
+Characters 63-74:
+  let fixpoint (f,b) = wwhile (if (f b = b) then (b, false) else (f b, true),b);;
+                                                                 ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type bool -> bool * bool

@@ -1,7 +1,5 @@
-Characters 192-193:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 110-127:
+  let seen' = if List.mem(seen, h) then seen else h::seen in
+                 ^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

@@ -1,5 +1,11 @@
 
-let rec wwhile (f,b) =
-  match f b with | (b',c') -> if c' then wwhile (f, b') else b';;
-
-let fixpoint (f,b) = wwhile (fun b  -> (((f b), ((f b) != b)), b));;
+let rec addHelper (t,u) =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then [[addHelper (t, t')]; (1 + h') + h]
+           else [addHelper (t, t'); h' + h]);;

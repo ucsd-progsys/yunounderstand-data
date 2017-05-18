@@ -1,5 +1,5 @@
-Characters 129-130:
-  else (1, l::x mod 10)
-           ^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 207-233:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

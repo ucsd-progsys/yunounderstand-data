@@ -1,5 +1,5 @@
-Characters 231-232:
-  let args = List.combine (List.rev 0::l1) (List.rev 0::l2) in
-                                    ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 38-58:
+  if n > 0 then digitsOfInt(n/10)@[]
+                ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

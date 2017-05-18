@@ -1,6 +1,5 @@
-Characters 76-77:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'a -> 'a -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 13-58:
+  let _ = eval (Neg(Half(Sine(Average(VarX,VarY))),0.3,0.3));;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

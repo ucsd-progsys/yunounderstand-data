@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 54-55:
+  let base = 0 "to be implemented" in
+             ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

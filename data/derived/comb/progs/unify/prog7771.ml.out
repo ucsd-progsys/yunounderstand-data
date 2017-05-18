@@ -1,5 +1,5 @@
-Characters 75-79:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 47-48:
+  let palindrome w = if (explode w = listReverse w)
+                                                 ^
+Error: This expression has type string but an expression was expected of type
+         'a list

@@ -1,5 +1,5 @@
-Characters 56-62:
-  else bigAdd (l, l);;
-              ^^^^^^
+Characters 267-270:
+  List.map combine (List.rev(List.combine l1 l2)) @ [0,0] in
+                                                     ^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+       but an expression was expected of type int

@@ -1,5 +1,3 @@
 
-let pipe fs =
-  let f a x x a = x a in let base fs = fs in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let rec digitsOfInt n =
+  let numL = [] in if n > 0 then ((digitsOfInt n) mod 10) :: numL else numL;;

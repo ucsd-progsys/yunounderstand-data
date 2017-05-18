@@ -1,5 +1,5 @@
-Characters 71-91:
-  (10*o, bigAdd(mulByDigit o*m, l1) l)
-               ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
+Characters 83-84:
+  bigAdd (mulByDigit o l1) a
+                           ^
+Error: This expression has type int * 'a
        but an expression was expected of type int list

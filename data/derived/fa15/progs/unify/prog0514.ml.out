@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-          ^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 91-93:
+  in f'), b;;
+     ^^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type ('b -> 'b * bool) * 'b

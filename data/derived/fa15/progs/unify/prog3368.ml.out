@@ -1,5 +1,5 @@
-Characters 188-214:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 116-118:
+  in if len1 > len2 then  clone 0 (len1-l2) @ l2 else clone 0 (len2-len1) @ l1;;
+                                        ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

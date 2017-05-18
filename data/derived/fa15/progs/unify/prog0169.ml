@@ -25,15 +25,4 @@ let bigAdd l1 l2 =
     let (car,res) = List.fold_left f base args in [car] @ res in
   removeZero (add (padZero l1 l2));;
 
-let rec listZeros n =
-  match n with | 0 -> [] | 1 -> [0] | x -> [0] @ (listZeros (n - 1));;
-
-let rec mulByDigit i l =
-  match i with | 0 -> [] | 1 -> l | n -> bigAdd l (mulByDigit (i - 1) l);;
-
-let bigMul l1 l2 =
-  let f a x =
-    let (pow,total) = a in
-    ((pow + 1), (((bigAdd total) + (mulByDigit x l2)) @ (listZeros pow))) in
-  let base = (0, []) in
-  let args = List.rev l1 in let (_,res) = List.fold_left f base args in res;;
+let rec mulByDigit i l = if i = 0 then [] else bigAdd l mulByDigit (i - 1) l;;

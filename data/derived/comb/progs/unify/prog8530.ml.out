@@ -1,5 +1,5 @@
-Characters 487-489:
-  | Oscillate   m4	    -> sin(pi*1.0/.eval(m4,x,y));;
-                              ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 112-128:
+  let seen' = if (List.mem(h, t)) then 
+                 ^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'a list) list -> bool
+       but an expression was expected of type bool

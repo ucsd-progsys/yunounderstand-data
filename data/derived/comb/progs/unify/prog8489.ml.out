@@ -1,5 +1,5 @@
-Characters 105-124:
-  | Sine sin		    -> "sin(pi*"^ (exprToString(sin)) ^")" 
-                                ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 72-92:
+  | _ -> bigAdd l (mulByDigit (i-1) l);;
+                  ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

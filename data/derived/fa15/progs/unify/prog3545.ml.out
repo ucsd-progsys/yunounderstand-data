@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 9001);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int -> int * bool
-       Type int is not compatible with type int -> int * bool 
+Characters 391-393:
+  | SqDist(x,y)     -> "("^ex(x)^")"^"^2+"^"("^ex(y)")"^"^2";;
+                                               ^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

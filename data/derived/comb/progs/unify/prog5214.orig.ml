@@ -73,7 +73,8 @@ let _ = sepConcat "X" ["hello"]
 
 let stringOfList f l = match l with 
   | []  -> "[]"
-  | l   -> "[" ^ sepConcat ";" (List.map f l) "]"
+  | [x] -> "[" ^ x ^ "]"  
+  | l   -> sepConcat ( ", " List.map(f l))
 
 let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
 let _ = stringOfList (fun x -> x) ["foo"];;

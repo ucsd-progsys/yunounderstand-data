@@ -1,6 +1,5 @@
-Characters 164-165:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string list list
-       but an expression was expected of type string list
-       Type string list is not compatible with type string 
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

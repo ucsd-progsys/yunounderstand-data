@@ -1,5 +1,5 @@
-Characters 59-81:
-  else [digitsOfInt (n / 10)] :: (n mod 10);;
-       ^^^^^^^^^^^^^^^^^^^^^^
+Characters 16-29:
+  let _ = sumList [1; -2; 3; 5];;
+                  ^^^^^^^^^^^^^
 Error: This expression has type 'a list
        but an expression was expected of type int

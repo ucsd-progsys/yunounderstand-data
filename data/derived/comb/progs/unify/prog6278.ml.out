@@ -1,5 +1,5 @@
-Characters 86-102:
-  | h :: t -> let (cin, res) = (mulByDigit i t) in 
-                               ^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 81-85:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'b -> ('b -> 'c) -> 'c

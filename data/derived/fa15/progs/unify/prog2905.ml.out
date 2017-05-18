@@ -1,5 +1,5 @@
-Characters 128-129:
-  else n;;
+Characters 94-95:
+  else a :: x in
        ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 29-42:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                               ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
+Characters 58-70:
+  else bigAdd l (mulByDigit i-1 l);;
+                 ^^^^^^^^^^^^
+Error: This expression has type int list -> int list
        but an expression was expected of type int

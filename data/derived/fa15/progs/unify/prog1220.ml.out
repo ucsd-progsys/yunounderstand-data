@@ -1,5 +1,6 @@
-Characters 424-429:
-  in List.rev( [(x/10000) mod 10]@[(x/1000) mod 10]@[(x/100) mod 10]@[(x/10) mod 10]@[(x/1) x mod 10])@res;;
-                                                                                      ^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 15-28:
+  let _ = helper int_of_string [9;9;9;9;];;
+                 ^^^^^^^^^^^^^
+Error: This expression has type string -> int
+       but an expression was expected of type string -> string
+       Type int is not compatible with type string 

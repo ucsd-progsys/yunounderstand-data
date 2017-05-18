@@ -1,6 +1,6 @@
 
-let pipe fs =
-  let f a x = let g u = x a in g in
-  let base f x = x in List.fold_left f base fs;;
+let abs x = if x < 0 then x * (-1) else x;;
 
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + 3)] 3;;
+let y = [1; 2; 3];;
+
+let _ = abs y;;

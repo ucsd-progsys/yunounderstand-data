@@ -67,13 +67,15 @@ XX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = match digits(n) with
-  | x :: [] -> x
-  | h::t -> h + digitalRoot (digits(t));;
+let rec digitalRoot n = match digits (n) with 
+  | []    -> 0
+  | h::t  -> digitalRoot(sumList(n))
 
-let _ = digitalRoot 9876
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 let rec listReverse l = match l with 

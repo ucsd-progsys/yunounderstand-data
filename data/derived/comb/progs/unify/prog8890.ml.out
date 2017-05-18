@@ -1,5 +1,8 @@
-Characters 124-140:
-  (if (a1+x1+x2 >= 10) then 1 else 0,a1+x1+x2 :: a2) in
-                                   ^^^^^^^^^^^^^^^^
+Characters 175-204:
+  | Sine f'                -> Printf.sprintf("sin(%s)", exprToString(f'))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+       but an expression was expected of type
+         ('c, unit, string) format =
+           ('c, unit, string, string, string, string)
+           CamlinternalFormatBasics.format6

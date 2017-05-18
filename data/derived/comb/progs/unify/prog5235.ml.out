@@ -1,5 +1,5 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 149-169:
+  else List.rev(clone 0 n @ l2, l1);;
+               ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

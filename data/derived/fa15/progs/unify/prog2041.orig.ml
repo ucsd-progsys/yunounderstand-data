@@ -103,34 +103,37 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (num1, num2) = x in 
-      let (carry, sum) = a in
-        ((num1 + num2 + carry) / 10,(num1 + num2 + carry) mod 10::sum) in
-    let base = (0, []) in
-    let args = List.rev (List.combine l1 l2) in
-    let (c, res) = List.fold_left f base args in
-      c::res
+    let f a x = let (num1, num2) = x in 
+        ((num1 + num2) / 10, (num1 + num2) mod 10) :: a in
+    let base = (0, 0) in
+    let args = List.combine l1 l2 in
+    let (_, res) = List.fold_left f base args in
+      res
   in 
-    removeZero (add (padZero l1 l2));;
+    removeZero (add (padZero l1 l2))
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let rec mulByDigit i l = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec mulByDigit i l = if i <= 0 then [] else bigAdd l (mulByDigit (i - 1) l)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let _ = mulByDigit 9 [9;9;9;9]
-
+*)
 
 let bigMul l1 l2 = 
-  let f a x = bigAdd ([a]^[0]) (mulByDigit x l1) in
-  let base = [] in
-  let args = l2 in
-    List.fold_left f base args;;
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

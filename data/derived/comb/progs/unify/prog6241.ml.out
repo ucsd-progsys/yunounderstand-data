@@ -1,5 +1,5 @@
-Characters 542-546:
-  sin(eval (e1,x,y)eval + (e2,x,y) + eval (e3,x,y)/.pi);;
-      ^^^^
-Error: This function has type expr * float * float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 64-65:
+  if c' then wwhile f b else b';;
+                    ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type ('a -> 'b * bool) * 'a

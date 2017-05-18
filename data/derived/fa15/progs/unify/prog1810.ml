@@ -1,5 +1,5 @@
 
-let rec filter (l,a) =
-  match l with
-  | [] -> []
-  | hd::tl -> if hd = a then filter tl a else hd :: (filter tl a);;
+let rec listReverse l =
+  match l with | [] -> [] | x::xs -> (listReverse xs) @ x;;
+
+let _ = listReverse ["a"; "b"; "c"; "d"];;

@@ -1,5 +1,6 @@
-Characters 90-127:
-  then ((1,(let (y,z) = x in [(y+z) mod 10])) @ a )
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 84-85:
+  List.fold_left f base xs;;
+                 ^
+Error: This expression has type int -> 'a -> int -> int
+       but an expression was expected of type int -> 'a -> int
+       Type int -> int is not compatible with type int 

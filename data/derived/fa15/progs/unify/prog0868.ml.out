@@ -1,6 +1,5 @@
-Characters 146-147:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type int list
-       but an expression was expected of type string list
-       Type int is not compatible with type string 
+Characters 483-495:
+  | Volume (e1, e2, e3) -> "(" ^ exprToString (e1) "*" ^ exprToString (e2) "*" ^ exprToString (e3) ^ ")"
+                                 ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

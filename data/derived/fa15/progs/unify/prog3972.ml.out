@@ -1,5 +1,5 @@
-Characters 28-30:
-  sin 45;;
-      ^^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 432-447:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int list * int list

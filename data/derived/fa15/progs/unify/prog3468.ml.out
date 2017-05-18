@@ -1,5 +1,6 @@
-Characters 356-359:
-  | Power(a, b) -> if(-1.0 < x < 1.0 && x > -1.0 && y < 1.0 && y > -1.0) then x *. y else eval(a, x, y) ** eval(b, x, y);;
-                                 ^^^
-Error: This expression has type float but an expression was expected of type
-         bool
+Characters 306-328:
+  else (car+1, [carry (h+x1+x2)]@[(h+x1+x2) mod 10] @ t) in
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type (int -> int) list
+       Type int is not compatible with type int -> int 

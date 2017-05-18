@@ -1,5 +1,5 @@
-Characters 17-18:
-  let _ = padZero [1;0;0;2] [9;9];;
-                   ^
+Characters 413-416:
+  | Logx (a)	    -> (log(0))
+                        ^^^
 Error: This expression has type int but an expression was expected of type
-         int list
+         float

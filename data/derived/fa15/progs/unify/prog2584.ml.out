@@ -1,6 +1,5 @@
-Characters 144-149:
-  helper (seen',rest') 
-          ^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 116-133:
+  ([(x1+x2+a1)/10],[a2 :: (x1+x2+a1) mod 10]) in 
+                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

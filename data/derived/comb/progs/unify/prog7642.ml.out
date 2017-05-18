@@ -1,6 +1,5 @@
-Characters 116-159:
-  else clone "0" (List.length l1 - List.length l2) :: l2;;
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type string list
-       but an expression was expected of type int list
-       Type string is not compatible with type int 
+Characters 92-94:
+  | Sine(e1)  -> buildSine(eval e1)
+                                ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

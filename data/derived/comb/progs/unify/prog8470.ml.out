@@ -1,5 +1,5 @@
-Characters 153-156:
-  | Sine sin		    -> Printf.printf "sin(%s)" sin
-                                             ^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 97-121:
+  else recCounter((sumList(digitsOfInt n)) (count+1))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

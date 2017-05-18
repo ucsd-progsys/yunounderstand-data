@@ -1,6 +1,5 @@
-Characters 111-113:
-  List.fold_left f base xs;;
-                        ^^
-Error: This expression has type int list
-       but an expression was expected of type 'a list list
-       Type int is not compatible with type 'a list 
+Characters 64-66:
+  assert (-1.0 <= rv && rv <= 1.0);
+                  ^^
+Error: This expression has type expr but an expression was expected of type
+         float

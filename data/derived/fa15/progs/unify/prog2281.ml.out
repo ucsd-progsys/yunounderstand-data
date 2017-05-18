@@ -1,5 +1,5 @@
-Characters 84-90:
-  else (n mod 10) :: return
-                     ^^^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 52-53:
+  let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+                                                      ^
+Error: This expression has type int but an expression was expected of type
+         string

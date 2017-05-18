@@ -1,12 +1,18 @@
 
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+
 let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-let padZero l1 l2 =
-  let numZeros = (List.length l1) - (List.length l2) in
-  if numZeros = 0
-  then [(l1, l2)]
-  else
-    (let listZeros = clone (0, (abs numZeros)) in
-     if numZeros > 0
-     then let list1 = l1 in let list2 = listZeros @ l2 in [(list1, list2)]
-     else (let list1 = listZeros @ l1 in let list2 = l2 in [(list1, list2)]));;
+let rec mulByDigit i l =
+  let f a x =
+    let y = i * x in
+    match a with
+    | h::t -> ((h + y) / 10) :: ((h + y) mod 10) :: t
+    | _ -> [y / 10; y mod 10] in
+  let base = [] in removeZero (List.fold_left f base (List.rev l));;
+
+let bigMul l1 l2 =
+  let f a x = ((mulByDigit x l1) @ (clone 0 (List.length a))) :: a in
+  let base = (0, []) in
+  let args = List.rev l2 in let (_,res) = List.fold_left f base args in res;;

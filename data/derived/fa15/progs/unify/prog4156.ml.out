@@ -1,0 +1,5 @@
+Characters 8-9:
+  let _ = 1 & 1;;
+          ^
+Error: This expression has type int but an expression was expected of type
+         bool

@@ -1,5 +1,6 @@
-Characters 15-17:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                 ^^
-Error: This expression has type int but an expression was expected of type
-         unit
+Characters 67-85:
+  n_ -> digitsOfInt (n/10):: n_ mod 10;;
+        ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

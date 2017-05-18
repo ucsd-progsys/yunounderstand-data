@@ -1,5 +1,5 @@
-Characters 512-513:
-  let d = (eval(n, x, y)) in if not(d = 1) then log (eval(n, x, y)) else log(1.0);;
-                                        ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 92-98:
+  | true -> wwhile (f b');;
+                   ^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type ('a -> 'a * bool) * 'a

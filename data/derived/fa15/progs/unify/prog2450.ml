@@ -1,4 +1,12 @@
 
-let pipe fs = let f a x a = x in let base y = y in List.fold_left f base fs;;
+let rec digitsOfInt n =
+  if n < 0
+  then []
+  else
+    (let a = n mod 10 in
+     let b = n / 10 in
+     match b with
+     | 0 -> if a = 0 then [] else (digitsOfInt b) @ [a]
+     | x -> (digitsOfInt b) @ [a]);;
 
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let _ = digitsOfInt - 34;;

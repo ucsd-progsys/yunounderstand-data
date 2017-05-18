@@ -1,5 +1,5 @@
-Characters 49-61:
-  let fixpoint (f,b) = wwhile ( (let f2 x = f x in (f x, 3 < 4)), b);;
-                                                   ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 18-19:
+  let _ = List.mem( 4 test);;
+                    ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

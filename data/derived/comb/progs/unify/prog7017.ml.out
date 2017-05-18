@@ -1,5 +1,6 @@
-Characters 24-29:
-  let _ = sepConcat ", " ["foo";"bar";"baz"];;
-                          ^^^^^
-Error: This expression has type string but an expression was expected of type
-         string -> string
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type unit -> unit
+       Type int is not compatible with type unit 

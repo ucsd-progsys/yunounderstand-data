@@ -1,11 +1,9 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+let sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
 
-let padZero l1 l2 =
-  if (List.length l1) <= (List.length l2)
-  then (((clone 0 ((List.length l2) - (List.length l1))) @ l1), l2)
-  else (((clone 0 ((List.length l1) - (List.length l2))) @ l2), l1);;
-
-let makeTuple l1 l2 =
-  let (x,y) = padZero l1 l2 in
-  List.combine ((List.rev x), (clone y (List.length y)));;
+let stringOfList f l = List.map (sepConcat ";" l);;

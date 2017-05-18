@@ -1,6 +1,11 @@
-Characters 152-156:
-  seen in
-  ^^^^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 124-126:
+  List.fold_left fn (0, []) (List.rev l2);;
+                 ^^
+Error: This expression has type
+         'a * (int * (int * (int * int list)) list) ->
+         int -> (int * (int * int list)) list
+       but an expression was expected of type
+         'a * (int * (int * (int * int list)) list) ->
+         int -> 'a * (int * (int * (int * int list)) list)
+       Type (int * (int * int list)) list is not compatible with type
+         'a * (int * (int * (int * int list)) list) 

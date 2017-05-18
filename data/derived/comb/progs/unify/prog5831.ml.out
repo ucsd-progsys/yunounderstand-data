@@ -1,6 +1,5 @@
-Characters 157-160:
-  else [seen] @ (h)) in
-                ^^^
-Error: This expression has type 'a but an expression was expected of type
-         'a list list
-       The type variable 'a occurs inside 'a list list
+Characters 39-40:
+  if n < 0 then 7;;
+                ^
+Error: This expression has type int but an expression was expected of type
+         unit

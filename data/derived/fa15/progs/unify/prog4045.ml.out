@@ -1,5 +1,5 @@
-Characters 236-237:
-  | Cube e'		 -> (eval(e', x, y))**3
-                                   ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 150-165:
+  |Average (e1, e2) -> ((exprToString e1 + exprToString e2)/2)
+                         ^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

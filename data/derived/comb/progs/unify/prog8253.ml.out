@@ -1,5 +1,6 @@
-Characters 515-528:
-  | Tower(a, b, c) -> if(x < 1.0 && x > -1.0 || y < 1.0 && y > -1.0) then 0.5 else eval(a, x, y) + eval(b, x, y) + eval(c, x, y);;
-                                                                                   ^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 155-159:
+  List.fold_left f base args 
+                        ^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type int list list
+       Type 'a * 'b is not compatible with type int list 

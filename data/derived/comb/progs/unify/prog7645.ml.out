@@ -1,5 +1,5 @@
-Characters 84-85:
-  List.fold_left (fun l -> match l with h::t -> if h = 0 then t else l) [] l;;
-                                                              ^
-Error: This expression has type int list
-       but an expression was expected of type 'a -> int list
+Characters 92-94:
+  | Sine(e1)  -> sin(pi *. eval e1 x y)
+                                ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * ('a -> 'b -> 'c) * ('a -> 'b -> 'c)

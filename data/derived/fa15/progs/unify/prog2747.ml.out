@@ -1,6 +1,5 @@
-Characters 137-138:
-  let seen' = if List.mem h t then h else h@t in
-                                            ^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list
+Characters 102-104:
+  if t1+t2 > 9 then (1,[(t1+t2)-10])
+     ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 239-254:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'b * 'c
+Characters 71-81:
+  if n < 0 then [] else []::digitsOfInt (n/10) @ (n mod 10);;
+                                                 ^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list list

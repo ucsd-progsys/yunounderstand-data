@@ -1,5 +1,5 @@
-Characters 38-59:
-  let stringOfList f l = "[" ^ sepConcat(";", List.map(f l) )^ "]";;
-                                        ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 77-88:
+  print_int y;;
+  ^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         int

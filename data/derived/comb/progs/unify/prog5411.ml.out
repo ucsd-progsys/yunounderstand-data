@@ -1,5 +1,5 @@
-Characters 12-13:
-  let _ = tan 1;;
-              ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 90-94:
+  else (f x, false) in f' 1), b);;
+                       ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -1,7 +1,6 @@
 
-let fixpointHelper (f,b) = if (f b) = b then (b, true) else (b, false);;
+let pipe fs =
+  let f a x = List.map x a in
+  let base = [(fun x  -> x)] in List.fold_left f base fs;;
 
-let rec wwhile (f,b) =
-  match f b with | (num,expr) -> if expr then wwhile (f, num) else num;;
-
-let fixpoint (f,b) = wwhile ((fixpointHelper (f, b)), b);;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

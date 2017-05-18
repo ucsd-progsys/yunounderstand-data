@@ -10,4 +10,4 @@ let stringOfList f l =
   match l with
   | [] -> "[]"
   | x::[] -> "[" ^ (x ^ "]")
-  | l -> sepConcat "" List.map f l;;
+  | l -> sepConcat "@" List.map (f, l);;

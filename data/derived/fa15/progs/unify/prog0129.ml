@@ -1,16 +1,5 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
-
-let palindrome w =
-  match w with
-  | [] -> true
-  | h::t ->
-      let separated = explode w in
-      let reversed = listReverse separated in
-      if separated == reversed then true else false;;
+let rec digitalRoot n =
+  if n < 10 then n else (let summed = sumList n in digitalRoot summed);;

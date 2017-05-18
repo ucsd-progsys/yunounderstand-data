@@ -1,2 +1,2 @@
 
-let _ = List.map ((+), [1; 2; 3; 4; 4]);;
+let stringOfList f l = List.map (f, l);;

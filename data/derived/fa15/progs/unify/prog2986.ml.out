@@ -1,5 +1,5 @@
-Characters 86-88:
-  let f a x = a ^ x ^ sl in
-                      ^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 190-194:
+  | Average (x, y) -> "(("exprToString e ^ "+" ^ exprToString e ")"/2")"
+                      ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

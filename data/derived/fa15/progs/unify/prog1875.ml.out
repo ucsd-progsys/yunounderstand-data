@@ -1,8 +1,5 @@
-Characters 92-93:
-  Printf.sprintf h;;
-                 ^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type
-         ('c, unit, string) format =
-           ('c, unit, string, string, string, string)
-           CamlinternalFormatBasics.format6
+Characters 96-103:
+  else (clone 0 -1*n) @l1;;
+        ^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

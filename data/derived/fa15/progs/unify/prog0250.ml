@@ -8,26 +8,18 @@ type expr =
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let rec build (rand,depth) =
-  match rand (0.0, 6.0) with
-  | 0 -> if (rand (0.0, 2.0)) = 0.0 then Varx else Vary
-  | 1 ->
-      if depth = 0
-      then (if (rand (0.0, 2.0)) = 0.0 then Varx else Vary)
-      else Sine a
-  | 2 ->
-      if depth = 0
-      then (if (rand (0.0, 2.0)) = 0.0 then Varx else Vary)
-      else Cosine b
-  | 3 ->
-      if depth = 0
-      then (if (rand (0.0, 2.0)) = 0.0 then Varx else Vary)
-      else Average (c, d)
-  | 4 ->
-      if depth = 0
-      then (if (rand (0.0, 2.0)) = 0.0 then Varx else Vary)
-      else Times (e, f)
-  | 5 ->
-      if depth = 0
-      then (if (rand (0.0, 2.0)) = 0.0 then Varx else Vary)
-      else Thresh (g, h, i, j);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine a -> "(pi*" ^ ((exprToString a) ^ ")")
+  | Cosine b -> "(pi*" ^ ((exprToString b) ^ ")")
+  | Average (c,d) ->
+      "((" ^ ((exprToString c) ^ ("+" ^ ((exprToString d) ^ (")" "/2)"))))
+  | Times (e,f) -> (exprToString e) ^ ("*" ^ (exprToString f))
+  | Thresh (g,h,i,j) ->
+      "(" ^
+        ((exprToString g) ^
+           ("<" ^
+              ((exprToString h) ^
+                 ("?" ^ ((exprToString i) ^ (":" ^ ((exprToString j) ^ ")")))))));;

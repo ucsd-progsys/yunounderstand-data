@@ -1,5 +1,5 @@
-Characters 67-86:
-  additivePersistence sumList digitsOfInt(n);;
-  ^^^^^^^^^^^^^^^^^^^
-Error: This function has type int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + x)];;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

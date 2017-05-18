@@ -1,5 +1,6 @@
-Characters 41-44:
-  let stringOfList f l = "[" ^ (sepConcat (";" List.map f l  ))^ "]";;
-                                           ^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 76-78:
+  | true -> wwhile(f,b')
+                     ^^
+Error: This expression has type 'a but an expression was expected of type
+         'a * bool
+       The type variable 'a occurs inside 'a * bool

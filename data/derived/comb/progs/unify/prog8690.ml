@@ -1,12 +1,8 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let rec wwhile (f,b) =
+  match f b with | (num,expr) -> if expr then wwhile (f, num) else num;;
 
-let rec addNumbs n = match n with | [] -> 0 | h::t -> h + (addNumbs t);;
+let fixpoint (f,b) = ((wwhile f), b);;
 
-let digits n = digitsOfInt (abs n);;
-
-let rec additivePersistence n =
-  match digits n with
-  | [] -> 0
-  | h::t -> if (addNumbs (h :: t)) >= 10 then false else true;;
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

@@ -1,5 +1,5 @@
-Characters 138-149:
-  |Average(a,b)->(eval(a,x,y)+eval(b,x,y))/.2
-                  ^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 63-75:
+  filter tl, a 
+  ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

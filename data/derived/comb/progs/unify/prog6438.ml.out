@@ -1,5 +1,5 @@
-Characters 47-54:
-  if n>=10 then sumList digitsOfInt n;;
-                ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 386-398:
+  | Uncreative (e1, e2, e3) -> eval(e1,x,y)/2* eval(e2,x,y)/3*eval(e3,x,y)/4
+                               ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

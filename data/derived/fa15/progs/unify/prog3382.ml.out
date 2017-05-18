@@ -1,6 +1,6 @@
-Characters 129-145:
-  |h'::t' -> if h+h' > 10 then [addHelper (t,t')]:: [1 + h' + h] 
-                                ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list list
+Characters 76-80:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a -> ('a -> 'b) -> 'b
+       The type variable 'a occurs inside ('a -> 'b) -> 'b

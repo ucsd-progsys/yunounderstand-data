@@ -1,5 +1,6 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 29-30:
+  let f a x = x x in
+                ^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

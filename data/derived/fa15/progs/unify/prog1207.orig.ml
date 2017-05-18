@@ -75,8 +75,7 @@ let _ = sepConcat "X" ["hello"]
 
 
 
-let stringOfList f l = "["^(sepConcat ";" List.map f l)^"]"
-
+let stringOfList f l = "[" ^ (sepConcat ";" (List.map f l)) ^ "]"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -135,17 +134,32 @@ let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
 
+let bigAdd l1 l2 = 
+  let add(l1,l2) =
+    let f a x =  match a with 
+      |(hd::tl) -> ((fst x + snd x + hd )/10)::((fst x + snd x + hd )mod 10)::tl
+      |_ -> ((fst x + snd x )/10)::((fst x + snd x) mod 10):: a
+    in
+    let base = []
+    in
+    let args = List.rev (List.combine l1 l2)
+    in
+      List.fold_left f base args 
+  in 
+    removeZero(add(padZero l1 l2 ))
 
 
 let bigAdd l1 l2 = 
   let add(l1,l2) =
-    let f a x =  let (i,j) = x in match a with 
-        |(c,d) ->  if(i + j + c) > 9 then (1,((i + j + c)mod 10)::d)
-            else (0,((i + j + c)mod 10)::d)
+    let f a x =  match a with 
+      |(a,h::t) -> if(fst x + snd x + a) > 9 then (1,a::((fst x + snd x + a) mod 10)@t) 
+          else (0,a::((fst x + snd x + a) mod 10)@t)
+      |_ -> if(fst x + snd x) > 9 then (1,((fst x + snd x)mod 10)::[])
+          else (0,((fst x + snd x)mod 10)::[])
     in
     let base = (0,[])
     in
-    let args = ( List.rev (List.combine l1 l2)) @ [(0,0)]
+    let args = List.rev (List.combine l1 l2)
     in
     let (_,res) = 
       List.fold_left f base args in res 
@@ -156,40 +170,32 @@ let bigAdd l1 l2 =
 
 let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
-let _ = bigAdd [9;9] [1;0] 
 
 
 
 
-let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit (i-1) l) else []
+let rec mulByDigit i l = 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = mulByDigit 9 [9;9;9;9]
-let _ = mulByDigit 3 [9;9]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let intListToInt l = int_of_string (sepConcat "" (List.map string_of_int l))
+XX*)
 
-let carryFunc p= let z = List.rev(p) in match z with
-    |(h::t) -> List.rev t 
-
-let bigMul l1 l2 = 
-  let f a x = let (s,t) = x in match a with 
-      |(r,v) -> let sum = intListToInt (mulByDigit (intListToInt l1) [s]) in 
-            if (sum + r) > 9 then (intListToInt(carryFunc (mulByDigit (intListToInt l1) [s])),((sum+r) mod 10)::v) 
-            else  (0, ((sum+r) mod 10)::v)
-  in
-  let base = (0,[]) in
-  let args = List.rev (List.combine l2 l2)  in
-  let (_, res) = List.fold_left f base args in res
+  let bigMul l1 l2 = 
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
+      res
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

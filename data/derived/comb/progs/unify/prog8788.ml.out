@@ -1,5 +1,5 @@
-Characters 195-199:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int * int
+Characters 78-79:
+  | h::t -> matchHeads (h::t);;
+                        ^
+Error: This expression has type char but an expression was expected of type
+         'a list

@@ -23,6 +23,7 @@ let rec assoc (d,k,l) =
         else assoc(d,k,l')
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
+
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
 let _ = assoc([1,1],"a",[("ca",[1,2]);("aa",[2,2])])
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -35,25 +36,26 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-let rec filter l h=
+let rec filter (l, a)=
   match l with
-      []->[]
-    |hd::tl -> if hd=h then (filter tl h)
-        else hd::(filter tl h)
+    |[]->[]
+    |hd::tl->if hd=a then
+          filter (tl, a )
+        else hd::filter (tl, a)
 ;;
+
 
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      |[] -> seen
       | h::t -> 
           let seen' = h::seen in
-          let rest' = (filter t h) in 
-            helper (seen',rest') 
+          let rest' = filter (t, h) in 
+            helper (seen',rest')
   in
-    List.rev (helper ([],l))
-
+    List.rev(helper([], l))
+;;
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
@@ -68,12 +70,10 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = 
-  let (b',c')=f b in 
-    if c'=true then wwhile(f,b')
+  let (b' ,c')=(f b)in
+    if c'= true then wwhile (f, b')
     else b'
 ;;
-
-
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
 
@@ -84,15 +84,16 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let helper f b=
+  if f b=b then (true,b)
+  else (false,f b)
+;;
 
-let fixpoint (f,b) = let f1 f2 x= if (f2 x)=x then (x,false) else (f2 x,true) in wwhile ((f1 f),b)
-
+let fixpoint (f,b) = wwhile ( (helper f b),b)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
-
-let _ =collatz 2;;
 
 let _ = fixpoint (collatz, 1) ;;
 let _ = fixpoint (collatz, 3) ;;
@@ -114,29 +115,19 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | Cube     of expr
-    | Square   of expr
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXX*)
-let rec exprToString e = 
-  match e with
-    |Thresh(a,b,c,d) ->"("^exprToString a^"<"^exprToString b^"?"^exprToString c^":"^(exprToString d)^")"
-    |VarX		 ->"x"
-    |VarY		 ->"y"
-    |Sine(x)	 ->"sin(pi*"^(exprToString x)^")"
-    |Cosine(x)       ->"cos(pi*"^(exprToString x)^")"
-    |Average(e1,e2)  -> "("^(exprToString e1) ^"+"^(exprToString e2)^")/2"
-    |Times(e1,e2)    ->(exprToString e1)^"*"^(exprToString e2)
-    |Cube(e)     ->"("^(exprToString e)^")^3"
-    |Square(e)	 ->"("^(exprToString e)^")^2"
-;;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(Cube(VarX)),Cosine(Average(Square(VarX),VarY)))))
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -151,30 +142,22 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildCube(e)		   = Cube(e)
-let buildSquare(e)		   = Square(e)
+
 
 let pi = 4.0 *. atan 1.0
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with 
-    |VarX ->x
-    |VarY ->y
-    |Sine(a)->sin(pi*.eval(a,x,y))
-    |Cosine(a)->cos(pi*.eval(a,x,y))
-    |Average(a,b)->(eval(a,x,y)+.eval(b,x,y))/.2.0
-    |Times(a,b)->eval(a,x,y)*.eval(b,x,y)
-    |Thresh(a,b,a_less,b_less)->let x1=eval(a,x,y) in let x2=eval(b,x,y)  in  if(x1<x2) then eval(a_less,x,y) else eval( b_less,x,y)
-    | Cube(a)->let temp=eval(a,x,y) in temp*.temp*.temp
-    |Square(a)->let tempp=eval(a,x,y) in tempp*.tempp
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
-let _ = eval (Sine(Average(VarX,VarY)),0.0,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ =eval(sampleExpr1)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
 
 let eval_fn e (x,y) = 
   let rv = eval (e,x,y) in
@@ -188,7 +171,7 @@ let sampleExpr =
                                                                                    buildCosine (buildTimes (buildSine (buildCosine
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
-let _=eval(sampleExpr,0.5,0.2)
+
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
@@ -204,19 +187,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  match depth with
-    |0->(match rand(0,1) with
-          |0->VarX
-          |1->VarY)
-    |n-> match rand(0,8) with
-      |0->buildSine(build(rand,depth-1))
-      |1->buildCosine(build(rand,depth-1))
-      |2->buildAverage(build(rand,depth-1),build(rand,depth-1))
-      |3->buildTimes(build(rand,depth-1),build(rand,depth-1))
-      |4->buildThresh(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-      |5->build
-;;
+let rec build (rand, depth) = failwith "to be implemented"
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -224,13 +196,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (5,91,13)
-let g2 () = (3,66,12)  
-let g3 () = (10,88,9) 
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (8,90,10)
-let c2 () = (11,100,11)
-let c3 () = (2,222,12)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 

@@ -1,5 +1,0 @@
-Characters 84-85:
-  | Sine(e1) -> sin (eval x y);;
-                          ^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type expr * ('a -> 'b) * ('a -> 'b)

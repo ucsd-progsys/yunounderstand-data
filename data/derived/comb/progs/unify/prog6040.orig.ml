@@ -99,27 +99,21 @@ let _ = clone 3 5;;
 let _ = clone "foo" 2;; 
 let _ = clone clone (-3);;
 
-(*
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-*)
 
-let padZero l1 l2 = if (List.length l1) < (List.length l2) 
-  then ((clone 0 (List.length l2 - List.length l1))@l1, l2)
+let rec padZero l1 l2 = if (List.length l1) < (List.length l2) 
+  then padZero (0::l1) l2 
   else if (List.length l1) > (List.length l2) 
-  then (l1, (clone 0 (List.length l1 - List.length l2))@l2)
+  then padZero l1 (0::l2)
   else (l1,l2)
+
+
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = padZero [9;9] [1;0;0;2]
 let _ = padZero [1;0;0;2] [9;9] 
-let _ = padZero [1;0] [0;1]
 
 
 
@@ -133,40 +127,25 @@ let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
-(*
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
+
 
 let bigAdd l1 l2 = 
-  let add(l1,l2) =
-    let f a x =  match a with 
-      |(hd::tl) -> ((fst x + snd x + hd )/10)::((fst x + snd x + hd )mod 10)::tl
-      |_ -> ((fst x + snd x )/10)::((fst x + snd x) mod 10) 
-    in
-    let base = []
-    in
-    let args = List.combine l1 l2
-    in
-      List.fold_left f base args
+  let add (l1, l2) = 
+    let f a x = match a with 
+        (h::t) -> let sum = fst x + snd x + fst h in (sum / 10)::(sum mod 10)::t in
+    let base = [(a::b)] in
+    let args = List.rev (List.combine l1 l2) in 
+    let (_, res) = List.fold_left f base args in
+      res
   in 
-    removeZero(add(padZero l1 l2 ))
+    removeZero (add (padZero l1 l2))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
-
-
+*)
 
 
 let rec mulByDigit i l = failwith "to be implemented"

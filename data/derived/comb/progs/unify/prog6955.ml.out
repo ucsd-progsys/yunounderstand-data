@@ -1,5 +1,6 @@
-Characters 169-170:
-  in go (go x)
-            ^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 83-87:
+  wwhile (funt, b);;
+          ^^^^
+Error: This expression has type 'a -> 'a * int
+       but an expression was expected of type 'a -> 'a * bool
+       Type int is not compatible with type bool 

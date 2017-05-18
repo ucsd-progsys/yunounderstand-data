@@ -1,5 +1,5 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 65-66:
+  let base = 0 "to be implemented" in
+             ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

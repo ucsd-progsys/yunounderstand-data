@@ -1,5 +1,9 @@
 
-let pipe fs =
-  let f a x y b = x a b in let base x' = x' in List.fold_left f base fs;;
+let cout (x,y) = (x * y) mod 10;;
 
-let _ = pipe [] 3;;
+let rec mulByDigit i l =
+  let f a x =
+    let c = cout (i, x) in
+    match x with | [] -> [] | h::t -> (((h * i) + c) mod 10) :: t in
+  let base = [] in
+  let args = List.rev l in let res = List.fold_left f base args in res;;

@@ -1,5 +1,5 @@
-Characters 48-62:
-  let fixpoint (f,b) = wwhile ( let func x = f in (f, f x not b), b);;
-                                                  ^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 185-187:
+  let (_, res) = List.fold_left fn base (List.rev 12) in 
+                                                  ^^
+Error: This expression has type int but an expression was expected of type
+         'a list

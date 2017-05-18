@@ -1,5 +1,5 @@
-Characters 100-116:
-  n -> let x_ = digitsOfInt n in sumList x_ :: [];;
-                                 ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type int -> int
        but an expression was expected of type int

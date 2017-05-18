@@ -1,30 +1,9 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | SumInts of expr
-  | Power of expr* expr* expr;;
+let fpHelper (f,x,y) =
+  let n = f x in match n with | y -> (n, false) | _ -> (n, false);;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> Printf.sprintf "x"
-  | VarY  -> Printf.sprintf "y"
-  | Sine expr -> Printf.sprintf "sin(pi*%s)" (exprToString expr)
-  | Cosine expr -> Printf.sprintf "cos(pi*%s)" (exprToString expr)
-  | Average (expr1,expr2) ->
-      Printf.sprintf "((%s+%s)/2)" (exprToString expr1) (exprToString expr2)
-  | Times (expr1,expr2) ->
-      Printf.sprintf "%s*%s" (exprToString expr1) (exprToString expr2)
-  | Thresh (expr1,expr2,expr3,expr4) ->
-      Printf.sprintf "(%s<%s?%s:%s)" (exprToString expr1)
-        (exprToString expr2) (exprToString expr3) (exprToString expr4)
-  | SumInts (expr1,expr2) ->
-      Printf.sprintf "(%s*(%s+1)/2)" (exprToString expr1)
-  | Power (expr1,expr2,expr3) ->
-      Printf.sprintf "(%s^|%s+%s|)" (exprToString expr1) (exprToString expr2)
-        (exprToString expr3);;
+let rec wwhile (f,b) =
+  let (b',c') = f b in
+  match c' with | false  -> (b', c') | true  -> wwhile (f, b');;
+
+let fixpoint (f,b) = wwhile ((fpHelper (f, b)), b);;

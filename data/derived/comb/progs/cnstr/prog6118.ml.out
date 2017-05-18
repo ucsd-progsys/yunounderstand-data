@@ -1,6 +1,5 @@
-Characters 9-84:
-  .........Let ("x", Const 10,
-  App (Fun ("y", Bin (Var "x", Plus, Var "y")))
-  ,Var "x")..
-Error: The constructor Let expects 3 argument(s),
-       but is applied here to 4 argument(s)
+Characters 73-77:
+  | [] -> if( y = []) then true;;
+                           ^^^^
+Error: This variant expression is expected to have type unit
+       The constructor true does not belong to type unit

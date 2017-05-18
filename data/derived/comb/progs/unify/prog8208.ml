@@ -1,7 +1,13 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let remainder x y = if (x * y) > 10 then (x * y) mod 10 else 0;;
 
-let palindrome w = Printf.sprintf explode w;;
+let rec mulByDigit i l =
+  if i <= 0
+  then []
+  else
+    (match List.rev l with
+     | [] -> []
+     | h::t ->
+         (match t with
+          | [] -> [remainder i h]
+          | h'::t' -> (h' * i) @ (mulByDigit i t')));;

@@ -1,5 +1,5 @@
-Characters 17-18:
-  let _ = padZero [1;0;0;2] [9;9];;
-                   ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 47-58:
+  (b', b'!=b)), b);;
+  ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

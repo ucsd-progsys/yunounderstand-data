@@ -1,6 +1,25 @@
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
+let rec filter l a =
+  match l with
+  | [] -> []
+  | h::t -> if a = h then filter t a else h :: (filter t a);;
 
-let fixpoint (f,b) =
-  let f1 f2 x = if (f2 x) = x then false else true in wwhile ((f1 f), b);;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = h in
+        let rest' = h :: (filter t h) in helper (seen', rest') in
+  List.rev (helper ([], l));;
+
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = h in
+        let rest' = h :: (filter t h) in helper (seen', rest') in
+  removeDuplicates (helper ([], l));;
+
+let _ = removeDuplicates [1; 6; 2; 4; 12; 2; 13; 6; 9];;

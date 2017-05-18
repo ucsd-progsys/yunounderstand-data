@@ -1,5 +1,5 @@
-Characters 317-318:
-  | Thresh (e1,e2,e3,4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^
-                     ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type expr
+Characters 187-189:
+  | Average (e',e1)      -> (eval e' + eval e1)/2
+                                  ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

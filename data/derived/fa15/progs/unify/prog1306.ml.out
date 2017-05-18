@@ -1,6 +1,10 @@
-Characters 95-99:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a -> 'b
-       The type variable 'a occurs inside 'a -> 'b
+Characters 134-146:
+  | Cosine e -> Printf.printf "cos(pi*%s)" !exprToString e
+                              ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

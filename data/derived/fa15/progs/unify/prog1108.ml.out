@@ -1,6 +1,5 @@
-Characters 77-78:
-  if x = b then b else fixpoint (f,x);;
-                                 ^
-Error: This expression has type 'a -> 'a * bool
-       but an expression was expected of type 'a -> ('a -> 'a * bool) * 'a
-       The type variable 'a occurs inside 'a -> 'a * bool
+Characters 29-42:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                               ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

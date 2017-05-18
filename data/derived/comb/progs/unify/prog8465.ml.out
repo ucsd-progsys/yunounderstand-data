@@ -1,5 +1,9 @@
-Characters 61-66:
-  let fixpoint (f,b) = wwhile (let fin b' = (b', f b' = b') in fin b ,b);;
-                                                               ^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 39-66:
+  let rec mulByDigit i l = if i > 0 then mulByDigit (i-1) bigAdd l l 
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         (int list -> int list -> int list) ->
+         (int list -> int list -> int list) -> 'a
+       The type variable 'a occurs inside
+       (int list -> int list -> int list) ->
+       (int list -> int list -> int list) -> 'a

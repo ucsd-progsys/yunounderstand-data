@@ -1,5 +1,6 @@
-Characters 75-77:
-  |Sine(e) -> sin(pi*eval e)
-                  ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 149-150:
+  let seen' = if List.mem seen h then seen else seen @ [h] in
+                                                        ^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list list

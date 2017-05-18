@@ -1,19 +1,8 @@
 
-let rec endChar l =
-  match l with | [] -> [] | h::[] -> [h] | h::t -> endChar t;;
-
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
-
-let rec removeLast l =
-  match l with | [] -> [] | h::[] -> [] | h::t -> h :: (removeLast t);;
-
-let palindrome w =
-  let rec palin ls =
-    match ls with
-    | [] -> true
-    | h::[] -> true
-    | h::t -> if h = (endChar t) then palin (removeLast t) else false in
-  palin (explode w);;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = match h with | h::[] -> h in
+      let l = t in List.fold_left f base l;;

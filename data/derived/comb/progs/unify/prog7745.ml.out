@@ -1,5 +1,6 @@
-Characters 119-146:
-  | Cosine e	  -> Cosine(pi *. eval(e, x, y))
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 62-78:
+  | hd:: tail -> listReverse tail :: hd;;
+                 ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

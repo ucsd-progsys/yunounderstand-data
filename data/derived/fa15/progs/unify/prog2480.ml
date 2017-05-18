@@ -1,5 +1,4 @@
 
-let rec mulByDigit i l =
-  match l with
-  | [] -> []
-  | x::x' -> [[(x * i) / 10]; ((x * i) mod 10) + (mulByDigit i x')];;
+let pipe fs =
+  let f a x = let rec a c y = a a x in (a :: x) = fs in
+  let base = x in List.fold_left f base fs;;

@@ -1,18 +1,4 @@
 
-let modulus ss = ss mod 10;;
+let pipe fs = let f a x = x a in let base i = i in List.fold_left f base fs;;
 
-let rec digitsOfInt n =
-  if n <= 0
-  then []
-  else (match n with | x -> (digitsOfInt (n / 10)) @ [modulus x]);;
-
-let lt10 q = q < 10;;
-
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
-
-let rec additivePersistence n =
-  if lt10 n
-  then n
-  else
-    (match n with
-     | n -> let x_ = digitsOfInt n in sumList x_ additivePersistence n);;
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

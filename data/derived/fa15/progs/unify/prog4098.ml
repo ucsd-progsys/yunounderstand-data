@@ -1,9 +1,6 @@
 
-let rec clone x n =
-  if n <= 0 then [] else if n = 1 then [x] else [x] @ (clone x (n - 1));;
+let rec wwhile (f,b) =
+  let (b',c') = f b in if c' = false then b' else wwhile (f, b');;
 
-let padZero l1 l2 =
-  let n = (List.length l1) - (List.length l2) in
-  if n < 0 then (((clone 0 (- n)) :: l1), l2) else (l1, ((clone 0 n) :: l2));;
-
-let _ = padZero [9; 9] [1; 0; 0; 2];;
+let fixpoint (f,b) =
+  wwhile ((let b' = f b in if b != b' then true else false), b);;

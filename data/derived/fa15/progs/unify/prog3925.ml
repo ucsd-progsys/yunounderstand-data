@@ -1,23 +1,5 @@
 
-let getHead h = match h with | [] -> [] | h::t -> h;;
+let pipe fs n =
+  let f a x = a + (n x) in let base = 0 in List.fold_left f base fs;;
 
-let getTail t = match t with | [] -> [] | h::t -> t;;
-
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
-
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
-
-let rec matchHeads x y =
-  match x with
-  | [] -> true
-  | h::t ->
-      if (getHead x) = (getHead y) then matchHeads t (getTail y) else false;;
-
-let palindrome w =
-  match explode w with
-  | [] -> true
-  | h::t -> matchHeads ["b"; "o"; "b"] (listReverse (explode w));;
+let _ = pipe [] 3;;

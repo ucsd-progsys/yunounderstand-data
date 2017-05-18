@@ -1,5 +1,5 @@
-Characters 26-27:
-  let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-                            ^
-Error: This expression has type int but an expression was expected of type
-         bool
+Characters 28-66:
+  let fixpoint (f,b) = wwhile (fun x -> let b = f b in (b, b!=b) ,b);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

@@ -1,5 +1,6 @@
-Characters 118-133:
-  let toSum = intermediateSum * (10 ** padCount) in
-              ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 62-63:
+  h::t -> t::[h];;
+              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

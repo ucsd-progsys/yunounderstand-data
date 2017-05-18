@@ -1,5 +1,5 @@
-Characters 18-19:
-  1@x;;
-  ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 65-70:
+  then ( l1,clone 0 (l1.length - l2.length) l2)
+            ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

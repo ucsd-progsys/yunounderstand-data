@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 3);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 102-110:
+  if (j+k>10) then (1, a::(j+k-10)) else (0, a::(j+k)) in 
+                          ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

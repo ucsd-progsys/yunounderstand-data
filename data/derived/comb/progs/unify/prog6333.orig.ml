@@ -28,9 +28,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = a + (x * x) in
-  let base = 0 in
-    List.fold_left f base xs
+  let f a x = x * x
+  in
+  let base = [] in
+    List.fold_right f base xs
 
 let _ = sqsum []
 let _ = sqsum [1;2;3;4]
@@ -38,17 +39,20 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = (fun n -> n (a x)) in
-  let base = (fun n-> 0) in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
     List.fold_left f base fs
 
-let _ = pipe [] 3
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 let rec sepConcat sep sl = match sl with 

@@ -1,5 +1,5 @@
-Characters 121-132:
-  if (j+k>10) then (1, j+k-10) else (0, j+k-10) in 
-                   ^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 107-115:
+  let f a x = match (a, x) with ((w, b), (y, z)) ->  b @ w mod 10 :: (w / 10) in
+                                                                     ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

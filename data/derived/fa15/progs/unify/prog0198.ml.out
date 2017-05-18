@@ -1,5 +1,5 @@
-Characters 65-66:
-  | h::t  -> if k h then v else assoc (d,k,t);;
-                ^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 96-99:
+  | h::t -> digitalRoot(digits(sumList(n)));;
+                                      ^^^
+Error: This expression has type int but an expression was expected of type
+         int list

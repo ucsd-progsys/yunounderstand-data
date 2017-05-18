@@ -1,13 +1,8 @@
 
-let checkSame (x,y) = x == y;;
+let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
-
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
-
-let palindrome w =
-  if checkSame ((listReverse (explode w)), w) then true else false c;;
+let padZero l1 l2 =
+  let len = (List.length l1) - (List.length l2) in
+  if len <= 0
+  then ((((clone 0 (-1)) * len) @ l1), l2)
+  else (l1, ((clone 0 len) @ l2));;

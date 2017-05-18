@@ -1,5 +1,5 @@
-Characters 66-69:
-  | Sine e1              -> sin expr e1
-                            ^^^
-Error: This function has type float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 26-27:
+  let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         'a list

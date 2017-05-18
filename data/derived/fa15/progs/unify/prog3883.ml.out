@@ -1,5 +1,5 @@
-Characters 18-22:
-  let _ = sepConcat ", " ["foo";"bar";"baz"];;
-                    ^^^^
-Error: This expression has type string but an expression was expected of type
-         string list
+Characters 94-101:
+  else additivePersistenceHelper(sumList digitsOfInt n, nc+1);;
+                                 ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

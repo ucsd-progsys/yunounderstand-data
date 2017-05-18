@@ -1,6 +1,5 @@
-Characters 73-77:
-  wwhile (funt, b);;
-          ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 90-91:
+  else b + 1 
+           ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

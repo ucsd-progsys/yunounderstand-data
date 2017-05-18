@@ -1,0 +1,5 @@
+Characters 69-70:
+  | (h,t) -> if t = false then f;;
+                               ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type unit

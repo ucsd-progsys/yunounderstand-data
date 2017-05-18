@@ -1,10 +1,9 @@
 
-let remainder x y = if (x * y) > 10 then (x * y) mod 10 else 0;;
-
-let rec mulByDigit i l =
-  match List.rev l with
-  | [] -> []
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
   | h::t ->
-      if (List.length t) = 0
-      then [h * i] @ (mulByDigit i t)
-      else (remainder i h) @ (mulByDigit i t);;
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
+
+let stringOfList f l = sepConcat " " List.map l;;

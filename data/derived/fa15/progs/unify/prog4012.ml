@@ -1,6 +1,15 @@
 
-let pipe fs =
-  let f a x = (fun m  -> fun n  -> n m) a x in
-  let base y = y in List.fold_left f base fs;;
+let getHead h = match h with | [] -> [] | h::t -> h;;
 
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let getTail t = match t with | [] -> [] | h::t -> t;;
+
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let rec matchHeads x =
+  match ["b"] with
+  | [] -> true
+  | h::t ->
+      if (getHead x) = (getHead (listReverse x))
+      then matchHeads (getTail (listReverse t))
+      else false;;

@@ -1,6 +1,5 @@
-Characters 326-330:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type (int * int) list
-       but an expression was expected of type (int * int) list list
-       Type int * int is not compatible with type (int * int) list 
+Characters 199-227:
+  | Average (e1,e2)           -> (eval(e1,x,y)+.eval(e2,x,y))/2
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

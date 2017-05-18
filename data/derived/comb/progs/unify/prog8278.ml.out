@@ -1,6 +1,8 @@
-Characters 91-94:
-  let f a x =  a^sepConcat(sep, x) in
-                           ^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b
+Characters 35-42:
+  Printf.sprintf explode(w);;
+                 ^^^^^^^
+Error: This expression has type string -> char list
+       but an expression was expected of type
+         ('a -> 'b, unit, string) format =
+           ('a -> 'b, unit, string, string, string, string)
+           CamlinternalFormatBasics.format6

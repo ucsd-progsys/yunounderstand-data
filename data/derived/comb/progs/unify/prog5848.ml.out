@@ -1,5 +1,6 @@
-Characters 71-73:
-  | Sine e1              -> sin (pi*(exprToString e1))
-                                 ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 156-157:
+  let seen' = (if (List.mem h seen) then [seen] else [seen] @ [h]) in
+                                                               ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

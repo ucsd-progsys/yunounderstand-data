@@ -1,5 +1,5 @@
-Characters 14-28:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                ^^^^^^^^^^^^^^
-Error: This expression should not be a function, the expected type is
-int
+Characters 73-77:
+  let fixpoint (f,b) = wwhile ((let f' x = let b' = f b in (b', b' = b) in f' b), b);;
+                                                                           ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

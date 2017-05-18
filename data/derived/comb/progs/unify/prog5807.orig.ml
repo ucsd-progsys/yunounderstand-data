@@ -168,9 +168,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec tenExhelper x =
+let rec helper x =
   if x = 0 then 1
-  else 10 * tenExhelper (x - 1)
+  else 10 * helper (x - 1)
 
 ;;
 
@@ -178,11 +178,13 @@ let _ = helper 6;;
 
 let rec tenEx x y = match y with
   | [] -> []
-  | h::t -> tenEx (x + 1) t @ [(tenExhelper x) * h]
+  | h::t -> tenEx (x + 1) t @ [(helper x) * h]
 
 ;;
 
 let _ = tenEx 0 (List.rev([4; 5; 6]));;
+
+
 
 let rec mulByDigit i l =
   let f a x = let carry = i * x in
@@ -192,7 +194,9 @@ let rec mulByDigit i l =
   in
   let base = [] in
     removeZero(List.fold_left f base (List.rev l))
+
 ;;
+
 
 let _ = mulByDigit 9 [6;7;8;9]
 
@@ -203,21 +207,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec helper l1 l2 = match l1 with
-  | [] -> []
-  | h::t -> (h, l2) :: [helper t l2]
-
-;;
-
 let bigMul l1 l2 = 
-  let f a x = 
-    match x with 
-      | [] -> []
-      | h::t -> (bigAdd(mulByDigit h l1) t) in
-  let base = [] in
-  let args =  in
-  let (res) = List.fold_left f base args in
-    res
+  let f a x = let (x1, x2) = x in 
+    let (carry, res) = a in
+      match x2 with 
+        | [] -> []
+        | h::t -> bigAdd(mulByDigit h l1) res
+  in
+  let base = (0, []) in
+  let args = l1 (tenEx 0 l2) in
+  let (carry, res) = List.fold_left f base args in
+    [carry] @ res
 
 ;;
 

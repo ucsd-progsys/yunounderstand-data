@@ -1,5 +1,5 @@
-Characters 106-115:
-  else count acc + 1 n in
-       ^^^^^^^^^
-Error: This expression has type int -> int
+Characters 47-60:
+  else digitsOfInt n / 1;;
+       ^^^^^^^^^^^^^
+Error: This expression has type 'a list
        but an expression was expected of type int

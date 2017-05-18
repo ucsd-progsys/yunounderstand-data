@@ -1,5 +1,5 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         int -> int
+Characters 311-384:
+  ...................(build(rand, depth - 1), build(rand, depth - 1), 
+  build(rand, depth - 1))
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type expr * expr * expr * expr

@@ -1,5 +1,6 @@
-Characters 30-36:
-  let fixpoint (f,b) = wwhile ((helper f b),b);;
-                                ^^^^^^
-Error: This function has type ('a -> 'b) * 'a -> 'b * bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 167-168:
+  let seen' = seen@h in
+                   ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

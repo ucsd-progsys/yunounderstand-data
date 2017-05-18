@@ -1,5 +1,5 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> int
+Characters 14-31:
+  let _ = append([1;2;3],[4;5;6]);;
+                ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

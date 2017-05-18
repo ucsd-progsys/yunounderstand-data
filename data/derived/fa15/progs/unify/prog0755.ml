@@ -1,38 +1,17 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-let buildAverage (e1,e2) = Average (e1, e2);;
+let padZero l1 l2 =
+  if (List.length l1) < (List.length l2)
+  then clone l1 ((List.length l2) - (List.length l1))
+  else clone l2 ((List.length l1) - (List.length l2));;
 
-let buildCosine e = Cosine e;;
+let rec removeZero l = failwith "to be implemented";;
 
-let buildSine e = Sine e;;
-
-let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
-
-let buildTimes (e1,e2) = Times (e1, e2);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  match rand (1, 7) with
-  | 1 -> buildX
-  | 2 -> buildY
-  | 3 -> buildSine (build (rand, (depth - 1)))
-  | 4 -> buildCosine (build (rand, (depth - 1)))
-  | 5 ->
-      buildAverage ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
-  | 6 ->
-      buildTimes ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
-  | 7 ->
-      buildThresh
-        ((build (rand, (depth - 1))), (build (rand, (depth - 1))),
-          (build (rand, (depth - 1))), (build (rand, (depth - 1))));;
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

@@ -1,11 +1,4 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
-
-let rec exprToString e = if e = VarX then "x";;
+let rec digitsOfInt n =
+  let return = [] in
+  if n <> 0 then (n mod 10) :: (return digitsOfInt 0) else return;;

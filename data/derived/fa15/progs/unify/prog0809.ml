@@ -1,3 +1,4 @@
 
-let rec additiveDestructor n =
-  (if n < 10 then n else (n / 10) additiveDestructor (n / 10) : int);;
+let rec digitsOfInt xs n =
+  (match n with | 0 -> xs | h::t -> xs :: ((n % (10 digitsOfInt n)) / 10) : 
+  int list);;

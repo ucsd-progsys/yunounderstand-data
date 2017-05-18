@@ -1,6 +1,5 @@
-Characters 50-51:
-  | b -> wwhile f b;;
-                ^
-Error: This expression has type 'a but an expression was expected of type
-         'a * 'b
-       The type variable 'a occurs inside 'a * 'b
+Characters 28-71:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string * int

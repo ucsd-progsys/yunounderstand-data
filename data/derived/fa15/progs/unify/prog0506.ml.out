@@ -1,5 +1,5 @@
-Characters 311-384:
-  ...................(build(rand, depth - 1), build(rand, depth - 1), 
-  build(rand, depth - 1))
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type expr * expr * expr * expr
+Characters 93-97:
+  else (f b', false) in f' b),b);;
+                        ^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -1,5 +1,5 @@
-Characters 462-465:
-  else 1.0/3.0;
-       ^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 47-60:
+  if n < 0 then [] else [digitsOfInt n/10 :: n mod 10];;
+                         ^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type int

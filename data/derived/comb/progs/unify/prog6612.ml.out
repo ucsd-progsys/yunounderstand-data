@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -1229;;
-          ^^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 81-104:
+  |h::t->bigAdd (mulByDigit h l4) (multHelper t l4 (x+1));;
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

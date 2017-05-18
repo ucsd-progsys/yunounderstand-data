@@ -1,7 +1,5 @@
 
-type 'a set =
-  | Set of 'a list;;
+let rec listReverse l =
+  match l with | [] -> [] | h::tl -> (listReverse l) @ h;;
 
-let del x s =
-  match s with
-  | Set l -> let meh = Set (List.filter (fun z  -> z = x) l) in Set meh;;
+let _ = listReverse [1; 2; 3; 4];;

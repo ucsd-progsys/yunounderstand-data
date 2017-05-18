@@ -1,5 +1,5 @@
-Characters 49-69:
-  if n <= 0 then [] else  (digitsOfInt (n/10)) add ([n mod 10]);;
-                          ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 190-194:
+  List.fold_left f base args;;
+                        ^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type int list

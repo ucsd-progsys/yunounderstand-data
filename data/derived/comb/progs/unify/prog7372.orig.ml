@@ -91,7 +91,7 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 
 let rec clone x n = if ( n < 1 ) then [] else
     match n with
-      | _ -> x :: clone x (n-1)
+      | _ -> [x] @ clone x (n-1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -131,48 +131,35 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (x1,x2) = x in 
-      let (c,a1::a2) = a in
-      let v = x1+x2+c in
-        ( v / 10, [v / 10] @ [v mod 10] @ a2 )
-    in 
-    let base  = (0,[0]) in
-    let args = List.rev (List.combine l1 l2) in
+    let f a x = let (y,z) = x in let b::b' = y in let c::c' = z in
+        [b+c] @ a in 
+    let base  = ([],[]) in
+    let args  = ([l1],[l2]) in
     let (_, res) = List.fold_left f base args in
       res
   in 
-    (removeZero (add (padZero l1 l2)))
+    removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let rec mulByDigit i l = failwith "to be implemented"
 
-let rec mulByDigit i l = 
-  if i < 1 then [] else 
-    match i with
-      | 1 -> l
-      | 10-> l @ [0]
-      | _ -> bigAdd l (mulByDigit (i-1) l)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = mulByDigit 9 [9;9;9;9];;
-let _ = mulByDigit 10 [9;9;9;9];;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
 
 let bigMul l1 l2 = 
-  let f a x = 
-    let (c,a') = a in
-    let m = mulByDigit x l2 in
-    let s = bigAdd( m a' ) in
-      ( c+1, s ) in
-  let base = (0,[0] ) in
-  let args = l1 in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 

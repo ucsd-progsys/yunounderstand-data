@@ -1,4 +1,21 @@
 
-let rec wwhile (f,b) = let (x,y) = f b in if y then wwhile (f, x) else x;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let fixpoint (f,b) = wwhile ((fun f  -> fun x  -> x = (f x)), b);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine a -> "sin(pi*" ^ ((exprToString a) ^ ")")
+  | Cosine a -> "cos(pi*" exprToString a ")"
+  | Average (a,b) -> "((" exprToString a "+" exprToString b ")/2)"
+  | Times (a,b) -> exprToString a "*" exprToString b
+  | Thresh (a,b,c,d) ->
+      "(" exprToString a "<" exprToString b "?" exprToString c ":"
+        exprToString d ")";;

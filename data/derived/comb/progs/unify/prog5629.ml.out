@@ -1,5 +1,5 @@
-Characters 140-154:
-  |Average (e,f) -> (((eval (e,x,y)) + (eval (f,x,y)))/2)
-                      ^^^^^^^^^^^^^^
+Characters 177-189:
+  | Average (e1,e2) -> (eval(e1,x,y) + eval(e2,x,y)) /. 2.0
+                        ^^^^^^^^^^^^
 Error: This expression has type float but an expression was expected of type
          int

@@ -1,5 +1,2 @@
 
-let rec assoc (d,k,l) =
-  match (d, k, l) with
-  | (str,num)::t -> if str = k then num else assoc (d, k, t)
-  | [] -> d;;
+let rec clone x n = match n with | 1 -> [x] | n' -> [clone x (n - 1)];;

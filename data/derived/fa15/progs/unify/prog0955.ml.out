@@ -1,5 +1,5 @@
-Characters 111-128:
-  let seen' = (if List.mem (h,seen) then [] else (seen) @ h) in
-                  ^^^^^^^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list -> bool
-       but an expression was expected of type bool
+Characters 59-73:
+  | (h :: t) -> h :: sumList t;;
+                ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

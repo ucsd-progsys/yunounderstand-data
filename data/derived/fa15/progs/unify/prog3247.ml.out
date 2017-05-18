@@ -1,5 +1,5 @@
-Characters 213-214:
-  |Times(e1,e2)->buildTimes(x, y)
-                            ^
-Error: This expression has type float but an expression was expected of type
-         expr
+Characters 60-71:
+  let fixpoint (f,b) = wwhile (if wwhile(f,b) = b then b else wwhile(f,b),b);;
+                                                              ^^^^^^^^^^^
+Error: This expression has type ('a -> 'a * bool) * 'a
+       but an expression was expected of type 'a -> 'a * bool

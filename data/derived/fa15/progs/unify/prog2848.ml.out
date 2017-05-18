@@ -1,5 +1,5 @@
-Characters 85-86:
-  if x = 0 then [] else x
-                        ^
+Characters 197-198:
+  | Average(e1, e2) -> (eval (e1,x,y) +. eval (e2,x,y))/.2
+                                                         ^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         float

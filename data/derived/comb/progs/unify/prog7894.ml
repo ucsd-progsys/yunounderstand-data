@@ -1,19 +1,28 @@
 
+let rec cloneHelper x n l =
+  if n <= 0 then l else cloneHelper x (n - 1) (x :: l);;
+
+let rec clone x n = if n < 1 then [] else cloneHelper x n [];;
+
+let addition (x,y) = x + y;;
+
+let padZero l1 l2 =
+  let diff = (List.length l1) - (List.length l2) in
+  if diff < 0
+  then (((clone 0 ((-1) * diff)) @ l1), l2)
+  else if diff > 0 then (l1, ((clone 0 diff) @ l2)) else (l1, l2);;
+
 let rec removeZero l =
-  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+  match l with | [] -> [] | hd::tl -> if hd = 0 then removeZero tl else l;;
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
-
-let rec mulByDigit i l =
-  let f a x =
-    let y = i * x in
-    match a with
-    | h::t -> ((h + y) / 10) :: ((h + y) mod 10) :: t
-    | _ -> [y / 10; y mod 10] in
-  let base = [] in removeZero (List.fold_left f base (List.rev l));;
-
-let bigMul l1 l2 =
-  let f a x = ((mulByDigit x l1) @ (clone 0 (List.length a))) :: a in
-  let base = (0, []) in
-  let args = List.rev l2 in
-  let (carry,res) = List.fold_left f base args in carry :: res;;
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      let (m,n) = x in
+      let (y,z) = a in
+      (((((addition (m, n)) + y) / 10) :: z),
+        ([((addition (m, n)) + y) mod 10] @ z)) in
+    let base = (0, []) in
+    let args = List.rev (List.combine l1 l2) in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

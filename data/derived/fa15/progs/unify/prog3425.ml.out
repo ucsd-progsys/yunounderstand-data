@@ -1,5 +1,5 @@
-Characters 56-67:
-  else append(digitsOfInt(n/10) [(n mod 10)]);;
-              ^^^^^^^^^^^
-Error: This function has type int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 333-338:
+  if i * h > 10 then mulByDigit i t' @ [carry i h' + remainder h' i] @ [remainder h i] else i * h;;
+                                                                                            ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

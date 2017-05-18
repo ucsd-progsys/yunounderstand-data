@@ -1,0 +1,5 @@
+Characters 383-390:
+  | Squares e           -> eval(e, x, y) *. eval(e, x, y)
+    ^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Squares does not belong to type expr

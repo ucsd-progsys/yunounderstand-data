@@ -1,5 +1,5 @@
-Characters 69-88:
-  then padZero (clone 0 1)@l1 l2
-       ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list -> 'b
-       but an expression was expected of type 'c list
+Characters 14-15:
+  let _ = clone 3 5;;
+                ^
+Error: This expression has type int but an expression was expected of type
+         string list

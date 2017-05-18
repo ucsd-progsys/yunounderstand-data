@@ -1,4 +1,5 @@
-Characters 38-45:
-  ..............ys
-  | []......
-Error: Variable ys must occur on both sides of this | pattern
+Characters 42-43:
+  let f a x = bigAdd a::0 (mulByDigit x l1) in
+                        ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

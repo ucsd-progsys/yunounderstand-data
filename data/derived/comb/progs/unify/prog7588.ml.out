@@ -1,5 +1,5 @@
-Characters 92-94:
-  | Sine(e1)  -> buildSine(eval e1)
-                                ^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 48-56:
+  else n mod 10 @ digitofInt n/10;;
+       ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

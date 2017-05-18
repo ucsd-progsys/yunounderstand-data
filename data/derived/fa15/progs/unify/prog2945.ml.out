@@ -1,5 +1,5 @@
-Characters 91-104:
-  | Sine e	  -> Sine(pi *. eval(e, x, y))
-                           ^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 8-27:
+  let _ = additivePersistence -1;;
+          ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

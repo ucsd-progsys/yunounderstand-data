@@ -1,6 +1,6 @@
-Characters 28-81:
-  ............................(
-  fun input -> let b = (f input) in (b, b!=input)
-  ,b)..
-Error: This expression should not be a function, the expected type is
-('a -> 'a * bool) * 'a
+Characters 46-49:
+  let fixpoint (f,b) = wwhile ((fun x -> if b  f(b) then b else f(b)),b);;
+                                                ^^^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a -> 'b -> 'c

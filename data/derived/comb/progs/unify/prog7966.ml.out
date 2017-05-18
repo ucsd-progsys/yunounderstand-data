@@ -1,5 +1,5 @@
-Characters 333-341:
-  let args = List.rev List.combine l1 l2 in
-             ^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type ('a -> 'b) -> 'a -> 'b
+       but an expression was expected of type int

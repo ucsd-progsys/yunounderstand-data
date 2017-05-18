@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 9001);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type
-         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)
+Characters 62-68:
+  if n <= 0 then [] else  digitsOfInt ((n/10) add ([n mod 10]));;
+                                       ^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

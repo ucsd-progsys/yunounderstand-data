@@ -1,9 +1,10 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ (sep ^ x) in
-      let base = h in let l = t in List.fold_left f base l;;
+let rec wwhile (f,b) =
+  let (b',c') = f b in match c' with | true  -> wwhile (f, b') | false  -> b';;
 
-let rec clone x n = sepConcat ";" ((clone x n) - 1);;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) = wwhile ((f b), b);;
+
+let _ = fixpoint (collatz, 3);;

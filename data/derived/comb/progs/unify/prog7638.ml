@@ -1,7 +1,10 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+let rec wwhile (f,b) =
+  let temp = f b in
+  match temp with | (a,boolean) -> if boolean then wwhile (f, a) else a;;
 
-let padZero l1 l2 =
-  if (List.length l1) < (List.length l2)
-  then ((clone "0" List.length l2) - (List.length l1)) :: l1
-  else ((clone "0" List.length l1) - (List.length l2)) :: l2;;
+let fixpoint (f,b) =
+  wwhile (let n x = let ff = f x in (ff, ((not x) = ff)) in (n, b));;
+
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

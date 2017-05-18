@@ -27,5 +27,4 @@ let bigAdd l1 l2 =
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
 
-let rec mulByDigit i l =
-  if i = 0 then [0] else bigAdd (l (mulByDigit (i - 1) l));;
+let rec mulByDigit i l = if i = 0 then [0] else mulByDigit (i - 1) bigAdd l l;;

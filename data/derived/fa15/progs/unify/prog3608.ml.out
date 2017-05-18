@@ -1,9 +1,6 @@
-Characters 39-66:
-  let rec mulByDigit i l = if i > 0 then mulByDigit (i-1) bigAdd l l 
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 49-53:
+  let rec wwhile (f,b) = let temp = f b in wwhile (temp, b);;
+                                                   ^^^^
 Error: This expression has type 'a but an expression was expected of type
-         (int list -> int list -> int list) ->
-         (int list -> int list -> int list) -> 'a
-       The type variable 'a occurs inside
-       (int list -> int list -> int list) ->
-       (int list -> int list -> int list) -> 'a
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

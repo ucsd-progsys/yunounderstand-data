@@ -28,34 +28,34 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = a + (x*x) in
-  let base =  0 in 
+  let f a x = a + x*x in
+  let base = 0 in
     List.fold_left f base xs
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let _ = sqsum []
 let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
+(**)
+
+let pipe fs = 
+  let f a x = fun j -> x(a j) in
+  let base = fun i -> i in 
+    List.fold_left f base fs
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = pipe [] 3
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
-  let _ = pipe [] 3
+let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
-
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+(**)
 
 
-*)
-
-let sepConcat sep sl = match sl with 
+let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
       let f a x = a^sep^x in
@@ -64,25 +64,25 @@ let sepConcat sep sl = match sl with
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = sepConcat ", " ["foo";"bar";"baz"]
 let _ = sepConcat "---" []
 let _ = sepConcat "" ["a";"b";"c";"d";"e"]
 let _ = sepConcat "X" ["hello"]
 
+(**)
 
 
+let stringOfList f l = sepConcat(";", List.map(f, l))
 
-let stringOfList f l = "[" ^ sepConcat ";" (List.map f l) ^ "]"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-let _ = stringOfList (fun x -> x) ["foo"];;
-let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
-
-
+*)
 
 
 
@@ -90,22 +90,17 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = if n <= 0 then [] 
-  else x::clone x (n-1)
+let rec clone x n = failwith "to be implemented" 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = clone 3 5;;
-let _ = clone "foo" 2;; 
-let _ = clone clone (-3);;
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
-
-let padZero l1 l2 = let length1 = List.length l1 in
-  let length2 = List.length l2 in
-  let sizDif = length1 - length2 in
-    if sizDif > 0 then l1::(clone 0 sizDif::l2) else
-      (clone 0 -(sizDif)::l1)::l2
+let padZero l1 l2 = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

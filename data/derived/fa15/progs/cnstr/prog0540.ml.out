@@ -1,5 +1,0 @@
-Characters 35-37:
-  if not x = [] then
-             ^^
-Error: This variant expression is expected to have type bool
-       The constructor [] does not belong to type bool

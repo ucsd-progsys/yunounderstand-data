@@ -1,22 +1,4 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec wwhile (f,b) = match f b with | (h,t) -> if t = true then h;;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine a -> "(pi*" ^ ((exprToString a) ^ ")")
-  | Cosine b -> "(pi*" ^ ((exprToString b) ^ ")")
-  | Average (c,d) ->
-      "((" ^ ((exprToString c) ^ ("+" ^ (exprToString d ")" "/2)")))
-  | Times (e,f) -> exprToString e "*" exprToString f
-  | Thresh (g,h,i,j) ->
-      "(" exprToString g "<" exprToString h "?" exprToString i ":"
-        exprToString j ")";;
+let _ = let f x = let xx = (x * x) * x in (xx, (xx < 100)) in wwhile (f, 2);;

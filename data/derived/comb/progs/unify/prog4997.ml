@@ -6,23 +6,18 @@ type expr =
   | Cosine of expr
   | Average of expr* expr
   | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | SquareAv of expr* expr
-  | MultHalf of expr* expr* expr;;
-
-let pi = 4.0 *. (atan 1.0);;
+  | Thresh of expr* expr* expr* expr;;
 
 let rec eval (e,x,y) =
+  let pi = 3.142 in
   match e with
   | VarX  -> x
   | VarY  -> y
-  | Sine a -> sin (pi *. (eval (a, x, y)))
-  | Cosine a -> cos (pi *. (eval (a, x, y)))
-  | Average (a,b) -> ((eval (a, x, y)) +. (eval (b, x, y))) /. 2.0
-  | Times (a,b) -> (eval (a, x, y)) *. (eval (b, x, y))
+  | Sine a -> sin (pi * (eval (a, x, y)))
+  | Cosine a -> cos (pi * (eval (a, x, y)))
+  | Average (a,b) -> ((eval (a, x, y)) + (eval (b, x, y))) / 2
+  | Times (a,b) -> (eval (a, x, y)) * (eval (b, x, y))
   | Thresh (a,b,c,d) ->
       if (eval (a, x, y)) < (eval (b, x, y))
       then eval (c, x, y)
-      else eval (d, x, y)
-  | SquareAv (a,b) -> ((a *. a) +. (b *. b)) / 2.0
-  | MultHalf (a,b,c) -> ((a *. b) *. c) / 2.0;;
+      else eval (d, x, y);;

@@ -1,5 +1,5 @@
-Characters 49-50:
-  | x:: 1 -> x + sumList (xs);;
-        ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type 'a list
+Characters 121-147:
+  ( (x1 + x2) / 10, sum @ ((x1 + x2 + carry) mod 10) ) in
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

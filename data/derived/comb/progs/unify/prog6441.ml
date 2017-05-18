@@ -1,4 +1,3 @@
 
-let rec listReverse l = match l with | [] -> [] | h::t -> h @ [];;
-
-let _ = listReverse ["a"; "b"; "c"; "d"];;
+let sqsum xs =
+  let f a x = a + (x * x) in let base x = x in List.fold_left f base xs;;

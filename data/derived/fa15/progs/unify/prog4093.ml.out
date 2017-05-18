@@ -1,5 +1,6 @@
-Characters 74-83:
-  else x::clone x n-1;;
-          ^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 66-67:
+  | h :: t -> if k = h then h else assoc d k t;;
+                     ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

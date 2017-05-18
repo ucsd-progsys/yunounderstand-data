@@ -1,3 +1,3 @@
 
-let sqsum xs =
-  let f a x = a + (x * x) in let base x = x in List.fold_left f base xs;;
+let rec listReverse l =
+  match l with | [] -> [1] | front::back -> [listReverse back; front];;

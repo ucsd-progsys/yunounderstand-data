@@ -1,5 +1,6 @@
-Characters 89-103:
-  | h::t -> (h * i) mod 10 in
-            ^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 89-90:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type int -> int -> 'a -> int
+       but an expression was expected of type int -> int -> int
+       Type 'a -> int is not compatible with type int 

@@ -1,5 +1,5 @@
-Characters 319-321:
-  del x (union (f1 f2))
-                ^^
-Error: This expression has type string set
-       This is not a function; it cannot be applied.
+Characters 84-85:
+  | h::tl -> if ( List.hd y = h) then 1;;
+                                      ^
+Error: This expression has type int but an expression was expected of type
+         unit

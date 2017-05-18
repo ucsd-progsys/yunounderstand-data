@@ -1,5 +1,7 @@
 
-let stringOfList f l = List.map (f l);;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | h::t -> let (a,b) = h in if k = a then a else assoc (d, k, t);;
 
-let _ =
-  stringOfList (stringOfList string_of_int) [[1; 2; 3]; [4; 5]; [6]; []];;
+let _ = assoc ((-1), "bob", [("ranjit", 85); ("william", 23); ("moose", 44)]);;

@@ -1,16 +1,11 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
-
-let buildSine e = Sine e;;
-
-let buildX () = VarX;;
-
-let rec build (rand,depth) =
-  match depth with | 0 -> buildX | n -> buildSine (build (rand, (depth - 1)));;
+let rec addHelper (t,u) =
+  match List.rev t with
+  | [] -> []
+  | h::t ->
+      (match List.rev u with
+       | [] -> []
+       | h'::t' ->
+           if (h + h') > 10
+           then [addHelper (t, t'); (1 + h') + h]
+           else [addHelper (t, t'); h' + h]);;

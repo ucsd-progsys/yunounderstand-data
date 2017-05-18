@@ -1,40 +1,33 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
-let rec sumList xs = match xs with |
-  [] -> 0 | 
-  h::t -> h + sumList t
+let rec sumList xs = match xs with
+  | [] -> 0
+  | h::t -> h + (sumList t)
 
 let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
-let _ = sumList []
-let _ = sumList [-1; -3]
-let _ = sumList [0]
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n = 
-  if n < 0 then []
-  else if n < 10 then [n]
-  else digitsOfInt(n/10)@[n mod 10]
+let rec digitsOfInt n =
+  let rec helper n l =
+    if n = 0 then l
+    else helper (n/10) (n mod 10::l) in
+    match n with
+      | 0 -> [0]
+      | _ -> helper n []
 
 
 let _ = digitsOfInt 3124
 let _ = digitsOfInt 352663
-let _ = digitsOfInt(-5)
-let _ = digitsOfInt 10000
-let _ = digitsOfInt 05
-let _ = digitsOfInt 50
-let _ = digitsOfInt 999
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX
@@ -45,8 +38,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let digits n = digitsOfInt (abs n)
-
-let _ = digits (-23422)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -63,37 +54,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = 
-  if n < 10 then 0
-  else 1 + additivePersistence(sumList(digits(n)))
+let rec additivePersistence n =
+  if List.length(digits n) = 1 then List.hd(digits n)
+  else additivePersistence (digits n)
+
 
 let _ = additivePersistence 9876
-let _ = additivePersistence 10242 
-let _ = additivePersistence 994325323
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = 
-  if n < 10 then n
-  else digitalRoot(sumList(digits(n)))
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
-let _ = digitalRoot 10242
-let _ = digitalRoot 994325323
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let rec listReverse l = match l with |
-  [] -> [] |
-  h::t -> listReverse(t)@[h]
+*)
 
 
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
-let _ = listReverse ["ab"; "bc"; "cd"; "de"]
-let _ = listReverse [1]
-let _ = listReverse []
+let rec listReverse l = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -108,13 +95,15 @@ let explode s =
   in
     go 0
 
-let palindrome w = explode w = listReverse(explode(w))
+let palindrome w = failwith "TBD"
 
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
-let _ = palindrome "a"
-let _ = palindrome 1
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 
@@ -282,4 +271,3 @@ let _ =
   let _ = List.iter print130 (report@([scoreMsg()])) in
   let _ = print130 ("Compiled\n") in
     (!score, !max)
-

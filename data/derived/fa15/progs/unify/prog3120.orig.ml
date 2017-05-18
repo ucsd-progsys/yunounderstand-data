@@ -3,23 +3,27 @@ XXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
-let rec sumList xs = match xs with |
-  [] -> 0 | 
-  h::t -> h + sumList t
+let rec sumList xs = match xs with
+  | [] -> 0
+  | h::t -> h + (sumList t)
 
 let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n = 
-  if n < 0 then []
-  else if n < 10 then [n]
-  else digitsOfInt(n/10)@[n mod 10]
+let rec digitsOfInt n =
+  let rec helper n l =
+    if n = 0 then l
+    else helper (n/10) (n mod 10::l) in
+    match n with
+      | 0 -> [0]
+      | _ -> helper n []
 
 
 let _ = digitsOfInt 3124
@@ -34,8 +38,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let digits n = digitsOfInt (abs n)
-
-let _ = digits (-23422)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -52,30 +54,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = 
-  if n < 10 then 0
-  else 1 + additivePersistence(sumList(digits(n)))
+let rec additivePersistence n =
+  if List.length(digits n) = 1 then List.hd(digits n)
+  else additivePersistence (digits n)
+
 
 let _ = additivePersistence 9876
 
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = 
-  if n < 10 then n
-  else digitalRoot(sumList(digits(n)))
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let rec listReverse l = match l with |
-  [] -> [] |
-  h::t -> t::[h]
+*)
 
 
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
+let rec listReverse l = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -266,4 +271,3 @@ let _ =
   let _ = List.iter print130 (report@([scoreMsg()])) in
   let _ = print130 ("Compiled\n") in
     (!score, !max)
-

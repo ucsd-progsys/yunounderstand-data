@@ -1,5 +1,5 @@
-Characters 201-221:
-  	  helper (seen',rest') 
-     ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type unit
+Characters 107-108:
+  if place <= 0 then (place+1, res + (mulByDigit l2 a))
+                                                    ^
+Error: This expression has type int * int
+       but an expression was expected of type int list

@@ -1,5 +1,5 @@
-Characters 24-29:
-  List.map string_of_int [1,2,3];;
-                          ^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type int
+Characters 168-170:
+  |Average(e1,e2)->buildAverage(eval e1, eval e2)
+                                     ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr * expr

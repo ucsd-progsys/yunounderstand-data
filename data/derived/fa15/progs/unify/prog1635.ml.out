@@ -1,5 +1,5 @@
-Characters 29-31:
-  let fixpoint (f,b) = wwhile ((),b);;
-                               ^^
-Error: This expression has type unit but an expression was expected of type
-         'a -> 'a * bool
+Characters 90-95:
+  else assoc d k t;;
+       ^^^^^
+Error: This function has type 'a list * 'a * 'a list list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

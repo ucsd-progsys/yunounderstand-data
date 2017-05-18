@@ -1,16 +1,10 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let rec digitsOfInt n =
+  if n <= 0
+  then []
+  else
+    (let modded = n mod 10 in
+     let quotient = n / 10 in
+     let head = digitsOfInt quotient in head @ [modded]);;
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
-
-let palindrome w =
-  match w with
-  | [] -> true
-  | h::t ->
-      let separated = explode w in
-      let reversed = listReverse separated in
-      if separated == reversed then true else false;;
+let _ = digitsOfInt 1.5;;

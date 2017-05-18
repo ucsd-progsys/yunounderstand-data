@@ -1,8 +1,4 @@
 
-let rec digitsOfInt n =
-  (if n < 0
-   then []
-   else if n < 10 then [n] else (digitsOfInt (n / 10)) @ [n mod 10] : 
+let rec digitsOfInt n xs =
+  (match n with | 0 -> xs | h::t -> xs :: ((n % (10 digitsOfInt n)) / 10) : 
   int list);;
-
-let _ = digitsOfInt - 3124;;

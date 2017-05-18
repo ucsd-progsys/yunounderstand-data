@@ -1,5 +1,6 @@
-Characters 33-73:
-  n = n mod 10 + additivePersistence(n/10);;
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         int
+Characters 49-66:
+  digitsOfInt(n/10) :: n mod 10;;
+  ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

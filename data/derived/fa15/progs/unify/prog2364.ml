@@ -1,7 +1,12 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ x in
-      let base = "" in let l = h ^ (sep :: t) in List.fold_left f base l;;
+let rec digitsOfInt n =
+  let return = [n mod 10] in
+  if (n / 10) <> 0
+  then ((n mod 10) :: return; (digitsOfInt (n / 10)) @ return)
+  else return;;
+
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+
+let rec digitalRoot n =
+  let digits = digitsOfInt n in
+  let s = sumList digits in if (n / 10) <> 0 then digitalRoot else digits;;

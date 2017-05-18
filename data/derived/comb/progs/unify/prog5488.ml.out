@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-          ^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 423-468:
+  | Op (m, n, o) -> sqrt(abs(eval(m, x, y)+.eval(n, x, y)+.eval(o, x, y)))/.3.0;;
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

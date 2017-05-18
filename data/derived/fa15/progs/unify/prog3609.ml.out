@@ -1,5 +1,6 @@
-Characters 82-84:
-  bigAdd a2 (mulByDigit (x l1) 10**a1) 
-                               ^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 31-34:
+  let rec wwhile (f,b) = wwhile (f b, b);;
+                                 ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

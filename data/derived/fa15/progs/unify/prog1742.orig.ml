@@ -41,7 +41,7 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x =fun z -> x(a(z)) in
+  let f a x = x in
   let base = fun x->x in
     List.fold_left f base fs
 
@@ -132,29 +132,25 @@ let rec removeZero l =
     |h::t->
         match h with
           |0->removeZero t
-          |_->h::t
+          |_->h@t
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let pairHelper x =
-  let (r,s)=x in
-    r+s
+*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = let y = pairHelper x in 
-      let z=y/10 in
-      (*XXXXXXXXXXXXXX*)
-      let base = [] in
-      let args = List.combine l1 l2 in
-      let (_, res) = List.fold_left f base args in
-        res
-    in 
-      removeZero (add (padZero l1 l2))
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
+      res
+  in 
+    removeZero (add (padZero l1 l2))
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -163,22 +159,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec multHelper i l =
-  match l with
-    |[]->[]
-    |h::t->let x=h*i in
-          match x with
-            |x when x>=10->(multHelper i t)@((x/10),(x mod 10))
-            |_-> (0,x)@(multiHelper i t)
 
-let rec mulByDigit i l = 
-;;
+let rec mulByDigit i l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = mulByDigit 9 [9;9;9;9]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

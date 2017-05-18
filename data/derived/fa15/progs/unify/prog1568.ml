@@ -1,19 +1,14 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec add current next =
+  match current with | [] -> [next] | front::back -> front :: (add back next);;
 
-let pi = 4.0 *. (atan 1.0);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else add (digitsOfInt (n / 10)) (n mod 10);;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine e -> sin (pi *. (eval e))
-  | Cosine e -> cos (pi *. (eval e))
-  | Average (e1,e2) -> ((eval e1) +. (eval e2)) /. 2;;
+let digits n = digitsOfInt (abs n);;
+
+let rec sumList xs = match xs with | [] -> 0 | xf::xb -> xf + (sumList xb);;
+
+let rec additivePersistence n =
+  let x = sumList digits n in
+  if x > 9 then 1 + (additivePersistence x) else 1;;

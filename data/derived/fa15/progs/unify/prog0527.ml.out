@@ -1,5 +1,5 @@
-Characters 71-84:
-  digitsOfInt n/10;;
-  ^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 387-402:
+  | Tan e1 -> 1 * eval (e1, x, y)
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

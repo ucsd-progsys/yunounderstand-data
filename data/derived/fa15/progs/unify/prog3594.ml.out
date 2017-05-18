@@ -1,5 +1,8 @@
-Characters 123-124:
-  if (j+k>10) then j=1 k=j+k-10 else j=0 k=j+k-10 in 
-                     ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 194-195:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type
+         'a list * 'a list -> int * int -> int * 'a list
+       but an expression was expected of type
+         'a list * 'a list -> int * int -> 'a list * 'a list
+       Type int is not compatible with type 'a list 

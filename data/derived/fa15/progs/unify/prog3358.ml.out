@@ -1,5 +1,5 @@
-Characters 253-260:
-  |h'::t' -> mulByDigit i t' @ [carry i h + remainder h' i] @ [remainder h i + carry i ];;
-                                                                               ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 23-26:
+  let stringOfList f l = "[" sepConcat "" (List.map f l) ^ "]";;
+                         ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

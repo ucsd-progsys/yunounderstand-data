@@ -1,5 +1,5 @@
-Characters 524-540:
-  | 5 -> buildArctan(build1, build2)
-                    ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 17-20:
+  let _ = sumList ['a'];;
+                   ^^^
+Error: This expression has type char but an expression was expected of type
+         int

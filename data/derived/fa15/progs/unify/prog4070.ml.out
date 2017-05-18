@@ -1,5 +1,5 @@
-Characters 77-79:
-  | Sine e' -> sin(pi * eval(e', x, y))
-                   ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 72-74:
+  |Neg (e1) -> (e1 *. (-1.0))
+                ^^
+Error: This expression has type expr but an expression was expected of type
+         float

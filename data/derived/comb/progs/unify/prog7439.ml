@@ -1,19 +1,16 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec digitsOfInt n =
+  let rec loop x listX =
+    if x = 0 then listX else loop (x / 10) ((x mod 10) :: listX) in
+  match n with | 0 -> [0] | x' -> loop x' [];;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "" ^ e
-  | VarY  -> "" ^ e
-  | Sine e' -> "sin (pi * " ^ ((exprToString e') ^ ")")
-  | Cosine e' -> cos (3.142 *. (exprToString e'))
-  | Average (a,b) -> ((exprToString a) + (exprToString b)) / 2
-  | Times (a,b) -> (exprToString a) * (exprToString b)
-  | Thresh (a,b,c,d) -> (a < (b ?c) : d);;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+
+let rec additivePersistence n =
+  let rec itt x i =
+    if x < 10
+    then i
+    else
+      (let x' = sumList (digitsOfInt x) in
+       if x' > 9 then 1 + (itt x' i) else 1) in
+  match n with | 0 -> 0 | y' -> itt y';;

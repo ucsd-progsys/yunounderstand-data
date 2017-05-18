@@ -1,5 +1,5 @@
-Characters 77-91:
-  | h::t -> 10*h*i + mulByDigit i t;;
-                     ^^^^^^^^^^^^^^
+Characters 21-30:
+  let _ = mulByDigit 9 [9;9;9;9];;
+                       ^^^^^^^^^
 Error: This expression has type 'a list
        but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 92-100:
-  |x -> (x,true) in (func b) ,b);;
-                    ^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 462-465:
+  else 1.0/3.0;
+       ^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 118-123:
-  else clone "0" List.length l1 - List.length l2 :: l2;;
-       ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 92-94:
+  | Sine(e1)  -> buildSine(eval e1)
+                                ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

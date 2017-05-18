@@ -119,7 +119,7 @@ type expr =
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
     | Power    of expr * expr
-    | Op	   of expr * expr * expr
+    | Log      of expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -133,9 +133,7 @@ let rec exprToString e = match e with
   | Times (x, y) -> (exprToString x)^"*"^(exprToString y)
   | Thresh (x, y, z, w) -> "("^(exprToString x)^"<"^(exprToString y)^"?"^(exprToString z)^":"^(exprToString w)^")"
   | Power (x, y) -> (exprToString x)^"**"^(exprToString y)
-  | Op (x, y, z) -> "("^(exprToString x)^"*"^(exprToString y)^"*"^(exprToString z)^")/("^(exprToString x)^"+"^(exprToString y)^"+"^(exprToString z)^")"
-
-
+  | Log n -> "log("^(exprToString n)^")"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -143,8 +141,9 @@ let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,Va
 
 let _ = exprToString sampleExpr1 
 
-let _ = exprToString (Power(VarX, VarY))
+let _ = exprToString (Log(VarX))
 
+let _ = exprToString (Power(VarX, VarY))
 
 
 
@@ -161,8 +160,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildPower(a,b)	           = Power(a,b)
-let buildOp(a,b,c)	           = Op(a,b,c)
 
 
 let pi = 4.0 *. atan 1.0
@@ -175,16 +172,14 @@ let rec eval (e,x,y) = match e with
   | VarY -> y
   | Sine n -> sin (pi *. eval(n, x, y))
   | Cosine n -> cos (pi *. eval(n, x, y))
-  | Average (m, n) -> (eval(m, x, y) +. eval(n, x, y)) /. 2.0
+  | Average (m, n) -> ((eval(m, x, y) +. eval(n, x, y)) /. 2.0)
   | Times (m, n) -> (eval(m, x, y) *. eval(n, x, y))
   | Thresh (m, n, o, p) -> 
       if eval(m, x, y) < eval(n, x, y)
       then eval(o, x, y)
       else eval(p, x, y)
-  | Power (m, n) -> let d = eval(n, x, y) in if d < 0 then eval(m, x, y) ** (d *. -1.0) else (eval(m, x, y) ** d)
-  | Op (m, n, o) -> sqrt(eval(m,x,y) +. eval(n,x,y) +. eval(o,x,y)) /. 3.0
-
-
+  | Power (m, n) -> (eval(m, x, y)**eval(n, x, y))
+  | Log n -> log (eval(n, x, y))
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -200,9 +195,6 @@ let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
 let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
 let _ = eval (sampleExpr,0.5,0.2);;
 
-let _ = eval (Op(VarX, VarY, VarY), 0.3, 0.4)
-let _ = eval (Thresh(VarX, VarX, VarY, VarY), 0.3, 0.2);;
-let _ = eval (Power(VarX, VarY), 0.5, -0.5);;
 
 
 let eval_fn e (x,y) = 
@@ -228,22 +220,20 @@ XXXXXXXXXXXXXXXXXX
 
 
 
-let rec build (rand, depth) =
+let rec build (rand, depth) = 
   if depth = 0 
   then
     let g = rand(0,1) in match g with
-      | 0 -> buildX()
-      | _ -> buildY()
-  else let g = rand(0, 8) in match g with
-      | 0 -> buildX()
-      | 1 -> buildY()
-      | 2 -> buildSine(build(rand, depth-1))
-      | 3 -> buildCosine(build(rand, depth-1))
-      | 4 -> buildAverage(build(rand, depth-1), build(rand, depth-1))
-      | 5 -> buildTimes(build(rand, depth-1), build(rand, depth-1))
-      | 6 -> buildThresh(build(rand, depth-1), build(rand, depth-1), build(rand, depth-1), build(rand, depth-1))
-      | 7 -> buildPower(build(rand, depth-1), build(rand, depth-1))
-      | _ -> buildOp(build(rand, depth-1), build(rand, depth-1), build(rand, depth-1))
+      | 0 -> VarX
+      | 1 -> VarY
+  else let g = rand(0, 6) in match g with
+      | 0 -> buildSine(build(rand, depth-1))
+      | 1 -> buildCosine(build(rand, depth-1))
+      | 2 -> Average(build(rand, depth-1), build(rand, depth-1))
+      | 3 -> Times(build(rand, depth-1), build(rand, depth-1))
+      | 4 -> Thresh(build(rand, depth-1), build(rand, depth-1), build(rand, depth-1), build(rand, depth-1))
+      | 5 -> Power(build(rand, depth-1), build(rand, depth-1))
+      | 6 -> Log(build(rand, depth-1))
 
 
 
@@ -252,13 +242,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let g1 () = (2, 12, 43)
-let g2 () = (2, -14, 4)
-let g3 () = (2, 63, 234)  
+let g1 () = (9, -1, 1)
+let g2 () = (12, -1, 1)
+let g3 () = (10, -1, 1)  
 
-let c1 () = (2, 2, 24)
-let c2 () = (2, 54, 98)
-let c3 () = (2, 100, 102)
+let c1 () = (8, -1, 1)
+let c2 () = (11, -1, 1)
+let c3 () = (9, -1, 1)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -279,6 +269,8 @@ let makeRand (seed1, seed2) =
   let seed = (Array.of_list [seed1;seed2]) in
   let s = Random.State.make seed in
     (fun (x,y) -> (x + (Random.State.int s (y-x))))
+
+let _ = build (makeRand, 2)
 
 let rec rseq g r n =
   if n <= 0 then [] else (g r)::(rseq g r (n-1))

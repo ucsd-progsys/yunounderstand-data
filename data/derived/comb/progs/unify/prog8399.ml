@@ -1,12 +1,10 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let rec wwhile (f,b) =
+  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
 
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
 
-let rec additivePersistence n =
-  let rec recCounter n count =
-    if n < 10
-    then count
-    else recCounter ((sumList (digitsOfInt n)) (count + 1)) in
-  recCounter n 0;;
+let fixpoint (f,b) = wwhile ((f b), b);;
+
+let _ = fixpoint (collatz, 1);;

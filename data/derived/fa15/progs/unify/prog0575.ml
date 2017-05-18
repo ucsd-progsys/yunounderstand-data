@@ -6,35 +6,21 @@ type expr =
   | Cosine of expr
   | Average of expr* expr
   | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Power of expr* expr
-  | Op of expr* expr* expr;;
+  | Thresh of expr* expr* expr* expr;;
 
 let rec exprToString e =
   match e with
   | VarX  -> "x"
   | VarY  -> "y"
-  | Sine n -> "sin(pi*" ^ ((exprToString n) ^ ")")
-  | Cosine n -> "cos(pi*" ^ ((exprToString n) ^ ")")
+  | Sine n -> "sin(" ^ ((exprToString Times (pi, x)) ^ ")")
+  | Cosine n -> "cos(" ^ ((exprToString Times (pi, x)) ^ ")")
   | Average (x,y) ->
       "((" ^ ((exprToString x) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
-  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
+  | Times (x,y) ->
+      "(" ^ ((exprToString x) ^ ("*" ^ ((exprToString y) ^ ")")))
   | Thresh (x,y,z,w) ->
       "(" ^
         ((exprToString x) ^
            ("<" ^
               ((exprToString y) ^
-                 ("?" ^ ((exprToString z) ^ (":" ^ ((exprToString w) ^ ")")))))))
-  | Power (x,y) -> (exprToString x) ^ ("**" ^ (exprToString y))
-  | Op (x,y,z) ->
-      "(" ^
-        ((exprToString x) ^
-           ("*" ^
-              ((exprToString y) ^
-                 ("*" ^
-                    ((exprToString z) ^
-                       (")/(" ^
-                          ((exprToString x) ^
-                             ("+" ^
-                                ((exprToString y) ^
-                                   (("+" (exprToString z)) ^ ")"))))))))));;
+                 ("?" ^ ((exprToString z) ^ (":" ^ ((exprToString w) ^ ")")))))));;

@@ -1,5 +1,6 @@
-Characters 28-54:
-  let fixpoint (f,b) = wwhile (fun x -> (x, f x = x), b);;
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression should not be a function, the expected type is
-('a -> 'a * bool) * 'a
+Characters 35-48:
+  let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+                                     ^^^^^^^^^^^^^
+Error: This expression has type int -> string
+       but an expression was expected of type int -> 'a -> 'b
+       Type string is not compatible with type 'a -> 'b 

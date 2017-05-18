@@ -1,8 +1,9 @@
 
-let rec wwhile (f,b) =
-  let i = b in
-  match f i with | (v_n,false ) -> v_n | (v_n,true ) -> wwhile (f, v_n);;
-
-let fixpoint (f,b) =
-  let f' fo b' = if (fo b') = b' then (b', true) else ((fo b'), false) in
-  wwhile (f', b);;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = if List.mem (h; seen) then h :: seen else seen in
+        let rest' = t in helper (seen', rest') in
+  List.rev (helper ([], l));;

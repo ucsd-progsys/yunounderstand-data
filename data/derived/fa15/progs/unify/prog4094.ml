@@ -1,3 +1,5 @@
 
-let rec clone x n =
-  if n <= 0 then [] else if n = 1 then [x] else [x] @ ((clone x n) - 1);;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | h::t -> let (f,s) = h in if k = f then s h else assoc d k t;;

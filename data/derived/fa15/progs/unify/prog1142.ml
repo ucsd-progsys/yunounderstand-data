@@ -1,11 +1,54 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ (sep ^ x) in
-      let base = h in let l = t in List.fold_left f base l;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let stringOfList f l = List.map sepConcat l;;
+let buildAverage (e1,e2) = Average (e1, e2);;
 
-let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;
+let buildCosine e = Cosine e;;
+
+let buildSine e = Sine e;;
+
+let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
+
+let buildTimes (e1,e2) = Times (e1, e2);;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  let r = rand (0, 10) in
+  let d = depth - 1 in
+  if d > 0
+  then
+    match r with
+    | 0 -> buildSine (build (rand, d))
+    | 1 -> buildSine (build (rand, d))
+    | 2 -> buildCosine (build (rand, d))
+    | 3 -> buildCosine (build (rand, d))
+    | 4 -> buildAverage ((build (rand, d)), (build (rand, d)))
+    | 5 -> buildAverage ((build (rand, d)), (build (rand, d)))
+    | 6 -> buildTimes ((build (rand, d)), (build (rand, d)))
+    | 7 -> buildTimes ((build (rand, d)), (build (rand, d)))
+    | 8 ->
+        buildThresh
+          ((build (rand, d)), (build (rand, d)), (build (rand, d)),
+            (build (rand, d)))
+    | 9 ->
+        buildThresh
+          ((build (rand, d)), (build (rand, d)), (build (rand, d)),
+            (build (rand, d)))
+    | 10 ->
+        buildThresh
+          ((build (rand, d)), (build (rand, d)), (build (rand, d)),
+            (build (rand, d)))
+  else
+    (let rr = rand (1, 2) in match rr with | 1 -> buildX () | 2 -> buildY ());;
+
+let g1 () = build (11, 0, 1);;

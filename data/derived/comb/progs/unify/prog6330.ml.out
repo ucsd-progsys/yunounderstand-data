@@ -1,6 +1,5 @@
-Characters 92-96:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type ('a -> 'a) -> 'a -> 'a
-       but an expression was expected of type ('a -> 'a) -> 'a
-       The type variable 'a occurs inside 'a -> 'a
+Characters 524-540:
+  | 5 -> buildArctan(build1, build2)
+                    ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

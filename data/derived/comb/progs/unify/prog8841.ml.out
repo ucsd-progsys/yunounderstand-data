@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 3);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 163-177:
+  |Average (e1, e2) -> (eval(e1, x, y) + eval(e2, x, y))/2
+                        ^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

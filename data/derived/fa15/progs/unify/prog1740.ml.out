@@ -1,5 +1,5 @@
-Characters 112-131:
-  |x when x>=10->(multHelper i t)::((x/10),(x mod 10))@[]
-                                   ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list list
+Characters 113-114:
+  (clone 0 z)::y
+               ^
+Error: This expression has type int but an expression was expected of type
+         int list list

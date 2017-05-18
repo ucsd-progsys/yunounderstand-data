@@ -1,6 +1,6 @@
-Characters 21-34:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                       ^^^^^^^^^^^^^
-Error: This expression has type int -> string
-       but an expression was expected of type string list -> string
-       Type int is not compatible with type string list 
+Characters 57-58:
+  let fixpoint (f,b) = wwhile (let n x =  (f , x = f x) in n,b);;
+                                                           ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

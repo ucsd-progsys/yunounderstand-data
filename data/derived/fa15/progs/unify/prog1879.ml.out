@@ -1,6 +1,6 @@
-Characters 76-78:
-  | true -> wwhile(f,b')
-                     ^^
-Error: This expression has type 'a but an expression was expected of type
-         'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 24-26:
+  let _=let (b,a)=padZero l1 l2 in List.combine b a;;
+                          ^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type int list
+       Type int * int is not compatible with type int 

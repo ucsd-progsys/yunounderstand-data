@@ -1,5 +1,5 @@
-Characters 181-193:
-  if value > 9 then (1,value-10)::a 
-                    ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 127-128:
+  | 0 -> buildSine(build (rand, depth-1)) 
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type unit -> int

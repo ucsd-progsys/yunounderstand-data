@@ -1,5 +1,13 @@
 
-let rec wwhile (f,b) =
-  match f b with | (h,t) -> if t = true then wwhile (f, h) else h;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let fixpoint (f,b) = wwhile ((wwhile (f, b)), b);;
+let rec eval (e,x,y) = match e with | VarX  -> x | VarY  -> y;;
+
+let _ = eval (VarX, 0.5, 0);;

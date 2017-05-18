@@ -1,5 +1,5 @@
-Characters 79-103:
-  | n -> buildSine(build(rand, depth - 1));;
-                  ^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 20-21:
+  addHelper (padZero (x y));;
+                      ^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

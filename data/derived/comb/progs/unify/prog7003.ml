@@ -1,27 +1,10 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Trip of expr* expr* expr;;
+let rec wwhile (f,b) =
+  let res = f b in
+  match res with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine t -> sin (pi *. (eval (t, x, y)))
-  | Cosine t -> cos (pi *. (eval (t, x, y)))
-  | Average (t,s) -> ((eval (t, x, y)) +. (eval (s, x, y))) /. 2.0
-  | Times (t,s) -> (eval (t, x, y)) *. (eval (s, x, y))
-  | Thresh (t,r,s,q) ->
-      if (eval (t, x, y)) < (eval (r, x, y))
-      then eval (s, x, y)
-      else eval (q, x, y)
-  | Trip (t,r,s) ->
-      ((eval (t, x, y)) mod 30) +. ((eval (r, x, y)) mod (eval (s, x, y)));;
+let fixpoint (f,b) =
+  let isFPoint s = ((f s) - s) < 0 in
+  let iterate (t,y) = t y in
+  let rec go r = if isFPoint r then r else go (iterate (f, r)) in
+  wwhile (go, (isFPoint b), b);;

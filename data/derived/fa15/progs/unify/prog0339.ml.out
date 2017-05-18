@@ -1,5 +1,6 @@
-Characters 112-129:
-  let seen' = if List.mem (h;seen)
-                 ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list -> bool
-       but an expression was expected of type bool
+Characters 111-127:
+  | head :: tail -> listReverse tail :: head;;
+                    ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

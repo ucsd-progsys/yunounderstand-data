@@ -1,6 +1,5 @@
-Characters 38-56:
-  if n > 0 then digitsOfInt (n/10)::[m mod 10] else [];;
-                ^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 141-146:
+  let zeros = clone 0 abs(diff) in
+              ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

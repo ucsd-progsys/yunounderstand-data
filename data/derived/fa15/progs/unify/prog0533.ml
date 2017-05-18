@@ -1,9 +1,2 @@
 
-let rec lastListElement n =
-  match n with
-  | [] -> []
-  | x::[] -> x :: (lastListElement [])
-  | x::y -> lastListElement y;;
-
-let rec catLists x y =
-  match x with | [] -> [] | h::t -> (catLists t [lastListElement x]) :: y;;
+let pipe fs = let f a x = a x in let base = 0 in List.fold_left f base fs;;

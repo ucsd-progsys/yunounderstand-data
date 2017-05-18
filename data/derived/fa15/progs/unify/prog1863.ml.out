@@ -1,6 +1,0 @@
-Characters 237-242:
-  let args = List.fold_left f' base' l2 in
-                               ^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type int list
-       Type 'a list is not compatible with type int 

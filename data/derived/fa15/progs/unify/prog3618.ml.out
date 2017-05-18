@@ -1,6 +1,5 @@
-Characters 28-81:
-  ............................(
-  fun input -> let b = (f input) in (b, b!=input)
-  ,b)..
+Characters 28-64:
+  let fixpoint (f,b) = wwhile ((fun x -> (wwhile(f,b)), (b=f(b)))),b;;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression should not be a function, the expected type is
 ('a -> 'a * bool) * 'a

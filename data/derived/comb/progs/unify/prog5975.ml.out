@@ -1,5 +1,5 @@
-Characters 43-51:
-  let fixpoint (f,b) = let newFunc b = (f b, notEqual b f b ) in wwhile (newFunc, b);;
-                                             ^^^^^^^^
-Error: This function has type 'a -> 'a -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 29-42:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                               ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string list

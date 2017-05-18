@@ -1,3 +1,10 @@
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in if c' = false then wwhile (f b') else b';;
+let rec digitsOfInt n =
+  if n != 0
+  then
+    (if n > 0
+     then (digitsOfInt (n / 10)) @ [n mod 10]
+     else digitsOfInt (n * (-1)))
+  else [];;
+
+let _ = digitsOfInt - 1229;;

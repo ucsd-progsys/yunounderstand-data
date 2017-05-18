@@ -97,26 +97,28 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let helper(f,b)=
-  let f b = let x = f b in (x,x!=b) in f ;;
+let rec helper(f,b)=
+  let x = f b in 
+    match x with
+      |b->(x,false)
+      |_->helper(f,x);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile (helper(f,b),b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 *)
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
-
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
-
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
-
-
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -132,8 +134,6 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | AllMult  of expr * expr * expr
-    | AvgThree of expr * expr * expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -142,19 +142,15 @@ let rec exprToString e =
   match e with
     |VarX -> "x"
     |VarY -> "y"
-    |Sine s -> "sin(pi*"^exprToString s^")"
-    |Cosine s-> "cos(pi*"^exprToString s^")"
-    |Average(s,p)-> "(("^exprToString s^"+"^exprToString p^")/2)"
-    |Times(s,p)-> exprToString s^"*"^exprToString p
-    |Thresh(s,p,r,d)-> "("^exprToString s^"<"^exprToString p^"?"^exprToString r^":"^exprToString d^")"
-    |AllMult(s,p,r)->exprToString s^"*"^exprToString p^"*"^exprToString r
-    |AvgThree(s,p,r)->"(("^exprToString s^"+"^exprToString p^"+"^exprToString r^")/3)"
+    |Sine s -> String.concat "" ["sin(pi*";exprToString s;")"]
+    |Cosine s-> String.concat "" ["cos(pi*";exprToString s;")"]
+    |Average(s,p)-> String.concat "" ["((";exprToString s;"+";exprToString p;")/2"]
+    |Times(s,p)-> String.concat "" [exprToString s;"*";exprToString p]
+    |Thresh(s,p,r,d)-> String.concat "" ["(";exprToString s;"<";exprToString p;"?";exprToString r;":";exprToString d;")"]
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
-
-let sampleExpr1=AllMult(VarX,AvgThree(Sine(VarX),VarY,VarX),Average(VarX,VarY));;
 
 let _ = exprToString sampleExpr1 
 
@@ -173,8 +169,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildAllMult(e1,e2,e3)         = AllMult(e1,e2,e3)
-let buildAvgThree(e1,e2,e3)        = AvgThree(e1,e2,e3)
 
 
 let pi = 4.0 *. atan 1.0
@@ -186,23 +180,11 @@ let rec eval (e,x,y) =
   match e with
     |VarX->x
     |VarY->y
-    |Sine(e)->sin(pi*.eval(e,x,y))
-    |Cosine(e)->cos(pi*.eval(e,x,y))
-    |Average(e1,e2)->((eval(e1,x,y)+.eval(e2,x,y))/.2.0)
-    |Times(e1,e2)->eval(e1,x,y)*.eval(e2,x,y)  
-    |Thresh(a,b,a_less,b_less)->(if (eval(a,x,y)<eval(b,x,y)) then (eval(a_less,x,y)) else eval(b_less,x,y))
-    |AllMult(e1,e2,e3)->eval(e1,x,y)*.eval(e2,x,y) *.eval(e3,x,y)
-    |AvgThree(e1,e2,e3)->((eval(e1,x,y)+.eval(e2,x,y)+.eval(e3,x,y))/.3.0)
-
-
-let sampleExpr =
-  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
-                                                              buildX()),buildTimes(buildCosine (buildCosine (buildAverage
-                                                                                                               (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
-                                                                                   buildCosine (buildTimes (buildSine (buildCosine
-                                                                                                                         (buildY())),buildAverage (buildSine (buildX()), buildTimes
-                                                                                                                                                                           (buildX(),buildX()))))))),buildY())))
-
+    |Sine(e)->sin(pi*e)
+    |Cosine(e)->cos(pi*e)
+    |Average(e1,e2)->((e1+e2)/2)
+    |Times(e1,e2)->e1*e2
+    |Thresh(a,b,a_less,b_less)->(a<b?a_less:b_less)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -216,6 +198,14 @@ let eval_fn e (x,y) =
   let rv = eval (e,x,y) in
     assert (-1.0 <= rv && rv <= 1.0);
     rv
+
+let sampleExpr =
+  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
+                                                              buildX()),buildTimes(buildCosine (buildCosine (buildAverage
+                                                                                                               (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
+                                                                                   buildCosine (buildTimes (buildSine (buildCosine
+                                                                                                                         (buildY())),buildAverage (buildSine (buildX()), buildTimes
+                                                                                                                                                                           (buildX(),buildX()))))))),buildY())))
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
@@ -231,40 +221,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
-let rec helper(rand,depth) =
-  match depth with
-    |0->let x=rand(0,1) in
-          (match x with
-            |0->"0"
-            |_->"1")
-    |_->let y=rand(0,6) in
-          match y with
-            |0->"0"^helper(rand,depth-1)
-            |1->"1"^helper(rand,depth-1)
-            |2->"2"^helper(rand,depth-1)
-            |3->"3"^helper(rand,depth-1)
-            |4->"4"^helper(rand,depth-1)
-            |5->"5"^helper(rand,depth-1)
-            |_->"6"^helper(rand,depth-1);;
 
-let _ = helper("4",makeRand(10,50), 3);;
-
-
-let rec build (rand, depth) = 
-  match depth with
-    |0->let x=rand(0,1) in
-          (match x with
-            |0->buildX()
-            |_->buildY())
-    |_->let y=rand(0,6) in
-          match y with
-            |0->buildAllMult(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-            |1->buildAvgThree(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-            |2->buildSine(build(rand,depth-1))
-            |3->buildCosine(build(rand,depth-1))
-            |4->buildAverage(build(rand,depth-1),build(rand,depth-1))
-            |5->buildTimes(build(rand,depth-1),build(rand,depth-1))
-            |_->buildThresh(build(rand,depth-1),build(rand,depth-1),(build(rand,depth-1)),build(rand,depth-1));;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -273,7 +231,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (8,3,6594)
+let g1 () = failwith "to be implemented"  
 let g2 () = failwith "to be implemented"  
 let g3 () = failwith "to be implemented"  
 
@@ -382,11 +340,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

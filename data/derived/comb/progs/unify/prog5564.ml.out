@@ -1,5 +1,5 @@
-Characters 186-187:
-  | Average (e1, e2)	  -> ((eval e +. eval e) /. 2)((eval e +. eval e) /. 2)
-                                 ^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 30-49:
+  let fixpoint (f,b) = wwhile ( (f, not (f b = b )) b);;
+                                ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a -> 'a) * bool
+       This is not a function; it cannot be applied.

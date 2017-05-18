@@ -1,5 +1,5 @@
-Characters 163-165:
-  clone 0 2 :: [];;
-            ^^
+Characters 175-177:
+  if List.mem h rest' = false then h::seen'  
+                                    ^^
 Error: This variant expression is expected to have type unit
        The constructor :: does not belong to type unit

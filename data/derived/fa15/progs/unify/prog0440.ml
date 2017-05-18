@@ -28,18 +28,4 @@ let bigAdd l1 l2 =
   removeZero (add (padZero l1 l2));;
 
 let rec mulByDigit i l =
-  if i = 0 then [0] else if i = 1 then l else bigAdd l (mulByDigit (i - 1) l);;
-
-let bigMul l1 l2 =
-  let f a x =
-    match a with
-    | (o,l) ->
-        let prod = (mulByDigit x l) + o in
-        if prod < 10
-        then (0, (prod :: l))
-        else ((prod / 10), ((prod mod 10) :: l)) in
-  let base = (0, []) in
-  let args =
-    let combine (a,b) = a + b in
-    (List.map combine (List.rev (List.combine l1 l2))) @ [0] in
-  let (_,res) = List.fold_left f base args in res;;
+  if i = 0 then [0] else if i = 1 then l else mulByDigit (i - 1) bigAdd l l;;

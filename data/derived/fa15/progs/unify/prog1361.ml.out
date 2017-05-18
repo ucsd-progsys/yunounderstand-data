@@ -1,5 +1,5 @@
-Characters 81-82:
-  | (ki,vi) :: t -> Printf.fprintf 1 "%s, %d\n" ki vi; if ki == k then vi else assoc(d,k,t);;
-                                   ^
-Error: This expression has type int but an expression was expected of type
-         out_channel
+Characters 121-123:
+  (0.(sum % 10)::a2) in
+   ^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

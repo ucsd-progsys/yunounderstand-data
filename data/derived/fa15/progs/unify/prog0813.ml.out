@@ -1,6 +1,5 @@
-Characters 69-88:
-  | h::t -> [listReverse t] @ h;;
-            ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list list
-       but an expression was expected of type int list
-       Type int list is not compatible with type int 
+Characters 59-69:
+  else [n mod 10] :: digitsOfInt n / 10;;
+       ^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

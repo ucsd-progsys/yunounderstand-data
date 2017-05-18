@@ -1,5 +1,5 @@
-Characters 17-20:
-  let _ = sumList ['a'];;
-                   ^^^
-Error: This expression has type char but an expression was expected of type
-         int
+Characters 24-27:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^^^
+Error: This expression has type int but an expression was expected of type
+         (int -> 'a) -> 'a

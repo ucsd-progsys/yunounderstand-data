@@ -1,5 +1,5 @@
-Characters 70-77:
-  filter (tl, a)
-         ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 47-60:
+  else (digitsOfInt n/10)@[n mod 10];;
+        ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

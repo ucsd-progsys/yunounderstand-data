@@ -1,9 +1,4 @@
 
-let is10gte n = n >= 10;;
+let stringOfList f l = "[" ^ ((List.fold_left f "" l) ^ "]");;
 
-let rec digitalRoot n =
-  if is10gte
-  then
-    let digitList = digitsOfInt n in
-    let digitSum = sumList digitList in digitalRoot n
-  else n;;
+let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;

@@ -1,6 +1,10 @@
 
-let f a x = (a * a) + x;;
+let helper (f,b) = let f b = let x = f in (x, (x != b)) in f;;
 
-let pipe fs = let f a x = f x a in let base = 0 in List.fold_left f base fs;;
+let rec wwhile (f,b) =
+  let (x,y) = f b in match y with | false  -> x | true  -> wwhile (f, x);;
 
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let fixpoint (f,b) = wwhile ((helper (f, b)), b);;
+
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

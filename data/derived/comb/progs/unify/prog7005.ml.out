@@ -1,5 +1,5 @@
-Characters 397-399:
-  | Trip(t,r,s)     -> (eval(t,x,y) /. 30) +. eval(r,x,y) /. eval(s,x,y);;
-                                       ^^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 156-166:
+  in wwhile((go, true), b);;
+            ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

@@ -1,4 +1,5 @@
 
-let pipe fs = let f a x = x a in let base = () in List.fold_left f base fs;;
+let rec assoc (d,k,l) = match l with | [] -> d | h::t -> h;;
 
-let _ = pipe [] 2;;
+let _ =
+  assoc ((-1), "william", [("ranjit", 84); ("william", 23); ("moose", 44)]);;

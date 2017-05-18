@@ -1,24 +1,50 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let padZero l1 l2 = failwith "to be implemented";;
 
-let pi = 4.0 *. (atan 1.0);;
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine sine -> sin (pi *. (eval (sine, x, y)))
-  | Cosine cosine -> cos (pi *. (eval (cosine, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2
-  | Times (t1,t2) -> (eval (t1, x, y)) *. (eval (t2, x, y))
-  | Thresh (th1,th2,th3,th4) ->
-      if (eval (th1, x, y)) < (eval (th2, x, y))
-      then eval (th3, x, y)
-      else eval (th4, x, y);;
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then (l1, l2)
+  else
+    if (List.length l1) < (List.length l2)
+    then padZero (0 :: l1) l2
+    else padZero l1 (0 :: l2);;
+
+let rec removeZero l =
+  match l with | h::t -> if h = 0 then removeZero t else l | [] -> [];;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      let b = (fst x) + (snd x) in
+      match a with
+      | h::t -> ((h + b) / 10) :: ((h + b) mod 10) :: t
+      | [] -> [b / 10; b mod 10] in
+    let base = [] in
+    let args = List.rev (List.combine l1 l2) in List.fold_left f base args in
+  removeZero (add (padZero l1 l2));;
+
+let rec mulByDigit i l = bigAdd ((List.map l) * (i l)) [];;

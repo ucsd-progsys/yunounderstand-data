@@ -1,7 +1,5 @@
-Characters 245-249:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type
-         ((int * int * int * int) list * (int * int * int * int) list) list
-       but an expression was expected of type (int * int) list
-       Type (int * int * int * int) list is not compatible with type int 
+Characters 38-39:
+  let f a x = (fun a x-> f x f a) in
+                         ^
+Error: This function has type 'a -> int * int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

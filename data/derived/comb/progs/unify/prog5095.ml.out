@@ -1,5 +1,6 @@
-Characters 90-93:
-  | h::t  -> digitalRoot(sumList(n));;
-                                ^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 42-71:
+  fun n -> additivePersistence(n mod 10);;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside int -> 'a

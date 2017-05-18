@@ -1,5 +1,5 @@
-Characters 29-37:
-  let fixpoint (f,b) = wwhile ((f, f b),b);;
-                               ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 218-248:
+  | Average (x3,x4)      -> (eval(x3,x,y) +. eval(x4,x,y))/2
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 180-181:
-  | Average(e1,e2) -> (eval(e1,x,y)+.eval(e2,x,y))/.2
-                                                    ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 29-113:
+  buildThresh(buildX(),buildY(),buildSine(buildX()),buildTangent(buildX()),buildCosine(buildY()));;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd * 'e
+       but an expression was expected of type expr * expr * expr * expr

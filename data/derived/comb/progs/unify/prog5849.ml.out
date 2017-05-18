@@ -1,5 +1,6 @@
-Characters 71-76:
-  | Sine e1              -> sin (3.142*(exprToString e1))
-                                 ^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 157-160:
+  else [seen] @ (h)) in
+                ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list list
+       The type variable 'a occurs inside 'a list list

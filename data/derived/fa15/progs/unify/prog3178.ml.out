@@ -1,5 +1,5 @@
-Characters 30-38:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                                ^^^^^^^^
-Error: This expression has type string but an expression was expected of type
-         int
+Characters 19-20:
+  let _ = palindrome 1;;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         string

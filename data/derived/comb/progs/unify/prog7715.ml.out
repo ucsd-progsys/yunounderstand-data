@@ -1,6 +1,5 @@
-Characters 76-80:
-  | [h ::tail ]-> listReverse tail;;
-                              ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a list list
-       The type variable 'a occurs inside 'a list
+Characters 159-160:
+  let num = (l1e + l2e + carry) in (num mod 9, 7 @ list) in
+                                               ^
+Error: This expression has type int but an expression was expected of type
+         'a list

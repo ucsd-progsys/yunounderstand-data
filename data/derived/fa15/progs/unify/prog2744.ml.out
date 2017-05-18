@@ -1,5 +1,5 @@
-Characters 45-53:
-  | ki,vi::t -> if k = ki then vi else assoc (d, k, t) 
-    ^^^^^^^^
-Error: This pattern matches values of type 'a * 'b
-       but a pattern was expected which matches values of type 'c * 'd * 'e
+Characters 41-56:
+  let rec clone x n = fun n -> List.append (clone x (n-1)) [x];;
+                                           ^^^^^^^^^^^^^^^
+Error: This expression has type int -> 'a
+       but an expression was expected of type 'b list

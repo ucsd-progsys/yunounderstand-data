@@ -1,5 +1,5 @@
-Characters 68-73:
-  | Sine e' -> sin (3.142 * e')
-                    ^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 94-95:
+  let s = bigAdd( m a' ) in
+                  ^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

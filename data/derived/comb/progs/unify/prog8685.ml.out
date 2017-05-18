@@ -1,5 +1,5 @@
-Characters 71-85:
-  let rec mulDigHelp i j l = if(i=0) then [0] else if(i = j) then l else mulDigHelp i j+1 (bigAdd l l);;
-                                                                         ^^^^^^^^^^^^^^
-Error: This expression has type int list -> int list
-       but an expression was expected of type int
+Characters 29-47:
+  let fixpoint (f,b) = wwhile ((fixpointHelper f),b);;
+                               ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

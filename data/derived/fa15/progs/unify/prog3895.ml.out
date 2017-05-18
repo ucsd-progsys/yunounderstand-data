@@ -1,5 +1,5 @@
-Characters 134-135:
-  | [] -> if((n+a+b)<10) then (0, n::[n+a+b]) else (n+1, (n+1)::[(n+a+b) mod 10])
-                ^
-Error: This expression has type int * 'a list
-       but an expression was expected of type int
+Characters 33-34:
+  let rec wwhile (f,b) = if f then f(f,b) else b;;
+                                   ^
+Error: This expression has type bool
+       This is not a function; it cannot be applied.

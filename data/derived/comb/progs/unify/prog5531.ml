@@ -1,9 +1,8 @@
 
-let rec assoc (d,k,l) =
-  match l with
-  | [] -> d
-  | h::t ->
-      (match h with | (name,num) -> if name = d then num else assoc (d, k, t));;
+let rec clone x n =
+  if n <= 0 then [] else (let y = clone x (n - 1) in x :: y);;
 
-let _ =
-  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let padZero l1 l2 =
+  let x = List.length l1 in
+  let y = List.length l2 in
+  if x < y then ((clone 0 (y - x)), y) else (x, (clone 0 (x - y)));;

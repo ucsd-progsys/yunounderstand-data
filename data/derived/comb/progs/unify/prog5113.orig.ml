@@ -17,14 +17,17 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = match [(k, d)] with 
+let rec assoc (d,k,l) = match k with 
   | []    -> d
-  | h::t  -> if (k,d) = l then d else assoc (d,k,l);;  
+  | h::t  -> if k h then v else assoc (d,k,t);;  
 
-let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

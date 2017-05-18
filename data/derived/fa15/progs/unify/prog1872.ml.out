@@ -1,5 +1,6 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 35-48:
+  let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+                                     ^^^^^^^^^^^^^
+Error: This expression has type int -> string
+       but an expression was expected of type string -> 'a -> string
+       Type int is not compatible with type string 

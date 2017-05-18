@@ -1,5 +1,6 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+3); (fun x -> x + x)] 3;;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 29-33:
+  let fixpoint (f,b) = wwhile (fu f ,b);;
+                               ^^^^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

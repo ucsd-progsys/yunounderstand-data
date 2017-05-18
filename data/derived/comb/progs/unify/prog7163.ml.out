@@ -1,5 +1,6 @@
-Characters 611-623:
-  | Three(ex1,ex2,ex3) -> exprToString ex1 ^ "*cos(pi*" ^ exprToString ex2 ^ ")*sin(pi*" ^ exprToString ex3 ")";;
-                                                                                           ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 70-71:
+  | h :: t -> t :: listReverse [h];;
+              ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

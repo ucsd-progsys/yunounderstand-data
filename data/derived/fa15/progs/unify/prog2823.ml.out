@@ -1,5 +1,6 @@
-Characters 130-133:
-  let l = sepConcat(sep t) in
-                    ^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 68-69:
+  let fixpoint (f,b) = wwhile (let g x= let x = f in (x,b = f b) in g,b);;
+                                                                      ^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

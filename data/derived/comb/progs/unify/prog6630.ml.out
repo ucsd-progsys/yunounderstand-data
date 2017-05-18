@@ -1,5 +1,5 @@
-Characters 136-141:
-  let rest' = filter(t,h) in 
-                    ^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 124-126:
+  let l6=bigAdd(l3 c) in
+                ^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

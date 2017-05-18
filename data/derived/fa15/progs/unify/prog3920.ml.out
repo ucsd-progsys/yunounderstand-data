@@ -1,5 +1,5 @@
-Characters 143-155:
-  then matchHeads(loseTail t)
-                 ^^^^^^^^^^^^
-Error: This expression has type char list
+Characters 21-28:
+  let c3 () = failwith (7,2,2);;
+                       ^^^^^^^
+Error: This expression has type 'a * 'b * 'c
        but an expression was expected of type string

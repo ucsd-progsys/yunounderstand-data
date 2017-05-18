@@ -1,4 +1,13 @@
 
-let rec build (rand,depth) = match rand with | _ -> rand (0, 1);;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let _ = build (10, 0);;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let getHeads y = match listReverse y with | [] -> [] | h::t -> [h];;
+
+let rec matchHeads x =
+  match explode x with | h::t -> if (getHeads x) = [] then true else false;;

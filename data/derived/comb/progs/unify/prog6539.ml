@@ -1,6 +1,7 @@
 
-let f a x = (a * a) + x;;
+let helper (f,b) = let f b = let x = f in (x, (x != b)) in f b;;
 
-let pipe fs = let f a x = f x a in let base = 0 in List.fold_left f base fs;;
+let rec wwhile (f,b) =
+  let (x,y) = f b in match y with | false  -> x | true  -> wwhile (f, x);;
 
-let _ = pipe [] 3;;
+let fixpoint (f,b) = wwhile ((helper (f, b)), b);;

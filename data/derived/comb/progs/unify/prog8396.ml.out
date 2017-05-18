@@ -1,5 +1,6 @@
-Characters 38-39:
-  let rec appZero x l = if x > 0 then l@0 else appZero x-1 l;;
-                                        ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 143-147:
+  else seen::h in
+       ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

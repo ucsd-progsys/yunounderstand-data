@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type 'a -> 'b -> 'b
-       but an expression was expected of type int
+Characters 136-140:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

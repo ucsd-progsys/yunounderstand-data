@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                          ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type int
+Characters 344-398:
+  | SquareAv(a,b) -> (eval(a,x,y)*.eval(a,x,y) +. eval(b,x,y)*.eval(b,x,y)) / 2.0
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

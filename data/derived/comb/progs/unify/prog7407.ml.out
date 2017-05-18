@@ -1,6 +1,5 @@
-Characters 70-71:
-  | _ -> wwhile(f, b)
-                ^
-Error: This expression has type 'a -> 'b -> 'b * bool
-       but an expression was expected of type 'a -> 'a * bool
-       Type 'b -> 'b * bool is not compatible with type 'a * bool 
+Characters 130-131:
+  ( (x1+x2+a1)/10, [s+c] @ s' @ [(x1+x2+c) mod 10] ) 
+                      ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

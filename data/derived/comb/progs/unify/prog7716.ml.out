@@ -1,5 +1,5 @@
-Characters 27-43:
-  let palindrome w = explode (listReverse(w));;
-                             ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 298-313:
+  removeZero (add ((padZero l1 l2) (if l1 > l2 then l1 else l2)));;
+                   ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

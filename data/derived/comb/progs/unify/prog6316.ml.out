@@ -1,6 +1,5 @@
-Characters 83-84:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'c -> 'a -> 'a -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 69-79:
+  wwhile (helper f b,b);;
+          ^^^^^^^^^^
+Error: This expression has type bool * 'a
+       but an expression was expected of type 'b -> 'b * bool

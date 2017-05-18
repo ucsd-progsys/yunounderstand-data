@@ -1,6 +1,5 @@
-Characters 57-58:
-  fixpoint(f b, b)
-                ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'a
+Characters 50-73:
+  sumList (digitsOfInt n);;
+  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

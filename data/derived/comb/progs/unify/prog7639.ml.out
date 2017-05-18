@@ -1,5 +1,5 @@
-Characters 62-67:
-  (clone "[0]" List.length l2 - List.length l1) :: l1
-   ^^^^^
-Error: This function has type 'a -> int -> 'a list
+Characters 218-230:
+  | Average(e1, e2)        -> exprToString e1 ^ "+" ^ exprToString e2 "/2"
+                                                      ^^^^^^^^^^^^
+Error: This function has type expr -> string
        It is applied to too many arguments; maybe you forgot a `;'.

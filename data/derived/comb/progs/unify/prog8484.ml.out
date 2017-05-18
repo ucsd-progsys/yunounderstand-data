@@ -1,5 +1,5 @@
-Characters 168-171:
-  | Cosine cos		    -> Printf.printf "cos(pi*%s)" cos
-                                                  ^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 53-60:
+  else [x]::clone(x n-1);;
+                 ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int -> int

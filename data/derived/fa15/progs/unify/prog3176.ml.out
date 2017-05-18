@@ -1,5 +1,5 @@
-Characters 48-54:
-  else bigAdd l mulByDigit (i - 1) l;;
-       ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 231-232:
+  let args = List.combine (List.rev 0::l1) (List.rev 0::l2) in
+                                    ^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,5 +1,26 @@
 
-let stringOfList f l =
-  let fx a b = List.append b [f a] in
-  let base = [] in
-  List.fold_left f base l f (f (f (f (f (f (f base 1) 2) 3) 4) 5) 6);;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
+
+let buildCosine e = Cosine e;;
+
+let buildSine e = Sine e;;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  let r = rand 0.4 in
+  match depth with
+  | 0 -> if (r mod 2) = 0 then buildX else buildY
+  | d ->
+      if r = 0
+      then buildSine build (r, (d - 1))
+      else buildCosine build (r, (d - 1));;

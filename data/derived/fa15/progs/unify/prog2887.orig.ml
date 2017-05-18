@@ -47,15 +47,15 @@ let pipe fs   =
     List.fold_left f base fs;;
 let _ = pipe [] 3
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = pipe [] 3
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
-*)
+let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+
+
 
 
 let sepConcat sep sl = match sl with 
@@ -73,11 +73,8 @@ let _ = sepConcat "X" ["hello"]
 
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let stringOfList f l =  
-  "[" ^ sepConcat ";" (List.map f l) ^ "]"  
+
+let stringOfList f l =  sepConcat ";" (List.map (fun t -> let g = f t in g::"]") l)
 let _ = stringOfList string_of_int [1;2;3;4;5;6];;
 let _ = stringOfList (fun x -> x) ["foo"];;
 let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
@@ -96,10 +93,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = 
-  if n <= 0 then []
-  else x :: clone x (n-1);;
-let _ = clone [2;2;] 5;;
+let rec clone x n = failwith "to be implemented" 
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXX
@@ -108,11 +103,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let padZero l1 l2 = 
-  if List.length l1 <= List.length l2 then
-    ((clone 0 (List.length l2 - List.length l1)) @ l1, l2)
-  else ((clone 0 (List.length l1 - List.length l2)) @ l2, l1);;
-let _ = padZero [9;9;9;9] [1;0;0;2]
+let padZero l1 l2 = failwith "to be implemented"
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -120,14 +112,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec removeZero l =
-  let f a x = 
-    if List.length a = 0 then 
-      if x = 0 then [] else [x]
-    else a @ [x] in
-  let base = [] in 
-    List.fold_left f base l;;
-let _ = removeZero [0;0;0;]
+let rec removeZero l = failwith "to be implemented"
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -138,55 +124,37 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match x with
-      | (l1e, l2e) -> match a with 
-        |(carry, list) -> 
-            let num = l1e + l2e + carry in
-              if num < 10 then (0,   [num] @ list) 
-              else if num = 10 then (1,  [0] @ list ) 
-              else (num/10, [num mod 10] @list) in
-    let base = (0,[]) in
-    let args = List.combine (List.rev ( [0] @ l1)) (List.rev ( [0] @ l2)) in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
-    removeZero (add (padZero l1 l2  ));;
-let _ = bigAdd [1;0] [3;0];;
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+    removeZero (add (padZero l1 l2))
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
 
-let rec mulByDigit i l = 
-  if i < 1 then []
-  else 
-    bigAdd l (mulByDigit (i-1) l);;
-
-let _ = mulByDigit 9 [9;9;9;9]
+let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
-let makeTuple l1 l2 = 
-  let (x,y) = padZero l1 l2 in ((List.rev x), (clone y (List.length y))) ;;
-let _ = makeTuple [1;2;3] [1;2];;
 
 let bigMul l1 l2 = 
-  let f a x = match x with |
-    (aNum, wholeNum) -> match a with 
-    | (zeros, total) -> ((zeros @ [0]), (bigAdd total ((mulByDigit aNum wholeNum) @ zeros))) in
-  let base = ([], []) in
-  let args =  let (x, y) = makeTuple l1 l2 in (List.combine x y )in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
-let _ = [1;3;2] [1]
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

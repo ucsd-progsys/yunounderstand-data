@@ -1,5 +1,5 @@
-Characters 118-120:
-  l1^ "],[" ^ (pad@l2)
-  ^^
+Characters 67-76:
+  | false -> x :: clone x n-1;;
+                  ^^^^^^^^^
 Error: This expression has type 'a list
-       but an expression was expected of type string
+       but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 22-23:
-  let _ = mulByDigit 9 [9;9;9;9];;
-                        ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 123-137:
+  let seen' = if List.rev (List.mem h t) then seen 
+                          ^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

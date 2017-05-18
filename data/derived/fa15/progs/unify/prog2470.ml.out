@@ -1,5 +1,5 @@
-Characters 124-125:
-  | _  -> [(h*i)/10]@mulByDigit i ([t.hd+((i*t.hd) mod 10)]@t.tl);;
-            ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 48-58:
+  let fixpoint (f,b) = wwhile ((if (f b = b) then (b, false) else (f b, true)),b);;
+                                                  ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

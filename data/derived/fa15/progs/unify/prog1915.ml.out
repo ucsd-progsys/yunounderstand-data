@@ -1,6 +1,5 @@
-Characters 53-62:
-  else x::(clone (x (n-1)));;
-                 ^^^^^^^^^
-Error: This expression has type 'a but an expression was expected of type
-         int -> 'a
-       The type variable 'a occurs inside int -> 'a
+Characters 13-28:
+  let _ = eval (Expn(2.0,2.0));;
+               ^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

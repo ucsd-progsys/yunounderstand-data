@@ -1,5 +1,5 @@
-Characters 43-51:
-  let f a x = let h::t = x in (pipe t) (h a) in
-                              ^^^^^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 84-99:
+  | Sine e' -> sin (3 * exprToString e')
+                        ^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

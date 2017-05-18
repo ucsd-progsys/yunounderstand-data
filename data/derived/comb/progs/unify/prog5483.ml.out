@@ -1,6 +1,5 @@
-Characters 89-93:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type 'c
-       The type variable 'c occurs inside 'a -> 'b -> 'c
+Characters 495-509:
+  | Op (x, y, z) -> "("^(exprToString x)^"*"^(exprToString)^"*"^(exprToString)")/("^(exprToString x)^"+"^(exprToString y)^"+"(exprToString)^")";;
+                                             ^^^^^^^^^^^^^^
+Error: This expression has type expr -> string
+       but an expression was expected of type string

@@ -1,5 +1,5 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                                                  ^
+Characters 168-179:
+  | [] -> if ((carry+b+c) < 10) then (0, carry::(carry+b+c))
+                                                ^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         'a -> int -> int
+         int list

@@ -1,5 +1,5 @@
-Characters 70-81:
-  else digitsOfInt (-1)  (n mod 10) :: return;;
-       ^^^^^^^^^^^
-Error: This function has type int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 28-58:
+  let stringOfList f l = "["^ (sepConcat ";" (List.map f l)) "]";;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

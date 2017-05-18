@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 76-77:
+  let (x,y) = h in if(x = k) then y else assoc(d,k,t);;
+              ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

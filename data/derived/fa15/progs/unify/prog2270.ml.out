@@ -1,5 +1,6 @@
-Characters 106-109:
-  if place <= 0 then (place+1, res + (mulByDigit x res))
-                                                   ^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 21-34:
+  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+                       ^^^^^^^^^^^^^
+Error: This expression has type int -> string
+       but an expression was expected of type 'a list -> 'b list
+       Type int is not compatible with type 'a list 

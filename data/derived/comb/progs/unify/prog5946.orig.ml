@@ -7,29 +7,26 @@ let rec sumList xs = match xs with
   |[] -> 0
   |(h::t) -> h + sumList(t);;
 
-(*
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let _ = sumList [1; 2; 3; 4]
+let _ = sumList [1; -2; 3; 5]
+let _ = sumList [1; 3; 5; 7; 9; 11]
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec digitsOfInt n = if n < 0 then [] else 
+    match n with 
+      |(h::t) -> (h:: digitsOfInt t);;
 
-let modulus ss = ss mod 10
 
-let rec digitsOfInt n = 
-  if n <=0 then [] 
-  else match n with
-      x->  digitsOfInt(n/10) @ [modulus x]
 
 let _ = digitsOfInt 3124
 let _ = digitsOfInt 352663
-let _ = digitsOfInt 33333
 
 
 
@@ -57,50 +54,34 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let incre i = i + 1 
-let lt10 q = q < 10
 
+let rec additivePersistence n = failwith "TBD"
 
-let rec additivePersistence n =  
-  if lt10 n then 0
-  else additivePersistence(sumList(digitsOfInt(n))) + 1;;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-
-let _ = additivePersistence 9
-let _ = additivePersistence 9876
-let _ = additivePersistence 591
-
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+let rec digitalRoot n = failwith "TBD"
 
-let rec digitalRoot n = 
-  if lt10 n then n
-  else match n with
-      n -> let n1 = (let x0 = digitsOfInt n in sumList x0) in digitalRoot n1
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = digitalRoot 9876
-
+*)
 
 
+let rec listReverse l = failwith "TBD"
 
-let rec listReverse l = match l with
-  |[] -> []
-  |(h::t) -> listReverse t @ [h]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -115,15 +96,15 @@ let explode s =
   in
     go 0
 
-let checkSame (x,y) = x == y 
-let palindrome w = 
-  if checkSame(listReverse (explode (w)),explode w) then true else explode w 
+let palindrome w = failwith "TBD"
 
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 

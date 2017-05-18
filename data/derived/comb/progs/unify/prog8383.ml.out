@@ -1,5 +1,8 @@
-Characters 77-91:
-  | h::t -> 10*h*i + mulByDigit i t;;
-                     ^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 194-195:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type
+         'a list * 'a list -> int * int -> int * 'a list
+       but an expression was expected of type
+         'a list * 'a list -> int * int -> 'a list * 'a list
+       Type int is not compatible with type 'a list 

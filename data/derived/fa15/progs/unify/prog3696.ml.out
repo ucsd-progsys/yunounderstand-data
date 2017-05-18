@@ -1,6 +1,5 @@
-Characters 145-148:
-  | Sine sin -> Printf.printf ("sin(pi*%s"^^ sin ^^")" );
-                                             ^^^
-Error: This expression has type expr but an expression was expected of type
-         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
-           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6
+Characters 434-491:
+  | 5 -> buildOp2(build(rand,d),build(rand,d),build(rand,d),build(rand,d))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * expr * expr

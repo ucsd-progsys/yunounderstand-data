@@ -1,5 +1,5 @@
-Characters 45-55:
-  | (ki,vi)::t -> if k = ki then vi else assoc (d, k, t) 
-    ^^^^^^^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type 'b * 'c * 'd
+Characters 52-63:
+  | n' -> List.append clone x (n-1) [];;
+          ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

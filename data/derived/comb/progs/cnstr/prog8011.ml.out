@@ -1,5 +1,5 @@
-Characters 72-76:
-  |Sine -> "Sine"
-   ^^^^
-Error: The constructor Sine expects 1 argument(s),
-       but is applied here to 0 argument(s)
+Characters 148-155:
+  if numZeros = 0 then [l1, l2];;
+                        ^^^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

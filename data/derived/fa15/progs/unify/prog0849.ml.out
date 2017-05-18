@@ -1,5 +1,0 @@
-Characters 37-42:
-  let rec build (rand, depth) = rand + build;;
-                                       ^^^^^
-Error: This expression has type int * 'a -> 'b
-       but an expression was expected of type int

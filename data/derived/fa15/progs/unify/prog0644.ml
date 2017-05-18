@@ -1,19 +1,8 @@
 
-let rec endChar l =
-  match l with | [] -> [] | h::[] -> [h] | h::t -> endChar t;;
+let rec clone x n =
+  if n <= 0 then [] else (let y = clone x (n - 1) in x :: y);;
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
-
-let rec removeLast l =
-  match l with | [] -> [] | h::[] -> [] | h::t -> h :: (removeLast t);;
-
-let palindrome w =
-  let rec palin ls =
-    match ls with
-    | [] -> true
-    | h::[] -> true
-    | h::t -> if h = (endChar t) then palin (removeLast t) else false in
-  palin (explode w);;
+let padZero l1 l2 =
+  let x = List.length l1 in
+  let y = List.length l2 in
+  if x < y then ((clone 0 (y - x)), y) else (x, (clone 0 (x - y)));;

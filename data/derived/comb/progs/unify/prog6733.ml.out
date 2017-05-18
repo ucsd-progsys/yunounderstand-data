@@ -1,5 +1,6 @@
-Characters 53-60:
-  else x::(clone (x n-1));;
-                 ^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int -> int
+Characters 59-63:
+  let fixpoint (f,b) = wwhile ((let func (x,y) = f(x) = y in func),b);;
+                                                             ^^^^
+Error: This expression has type 'a * 'b -> bool
+       but an expression was expected of type 'a * 'b -> ('a * 'b) * bool
+       Type bool is not compatible with type ('a * 'b) * bool 

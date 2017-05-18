@@ -1,5 +1,6 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type (int -> int) list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type bool -> bool
+       Type int is not compatible with type bool 

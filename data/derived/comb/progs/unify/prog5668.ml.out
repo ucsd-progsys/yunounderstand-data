@@ -1,5 +1,5 @@
-Characters 62-66:
-  | h::t -> xs::n%10 digitsOfInt n / 10;;
-    ^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 56-57:
+  if len == 1 then
+            ^
+Error: This expression has type int but an expression was expected of type
+         'a array -> int

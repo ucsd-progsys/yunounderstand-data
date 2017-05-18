@@ -1,19 +1,7 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
-
-let rec exprToString e =
-  match e with
-  | VarX  -> "VarX"
-  | VarY  -> "VarY"
-  | Sine  -> "Sine"
-  | Cosine  -> "Cosine"
-  | Average  -> "Average"
-  | Times  -> "Times"
-  | Thresh  -> "Thresh";;
+let padZero l1 l2 =
+  if (List.length l1) = (List.length l2)
+  then [(l1, l2)]
+  else
+    (let numZeros = (List.length l1) - (List.length l2) in
+     if numZeros = 0 then [(l1, l2)]);;

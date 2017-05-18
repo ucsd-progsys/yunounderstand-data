@@ -1,5 +1,5 @@
-Characters 350-351:
-  | Boring (e1,e2) -> 3*.(eval(e1,x,y)+.4*.eval(e2,x,y))
-                      ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 248-274:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

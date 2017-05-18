@@ -1,5 +1,5 @@
-Characters 96-102:
-  | Sine sine		    -> sin(sine)
-                         ^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 80-100:
+  | _ -> (bigAdd [l] [(mulByDigit (i-1) l)]);;
+                      ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

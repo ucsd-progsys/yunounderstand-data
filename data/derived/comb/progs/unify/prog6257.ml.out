@@ -1,6 +1,5 @@
-Characters 88-92:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> ('a -> 'b) -> 'b
-       The type variable 'a occurs inside ('a -> 'b) -> 'b
+Characters 21-26:
+  let g2 () = (makeRand(0.1),makeRand(0.1),makeRand(10.18));;
+                       ^^^^^
+Error: This expression has type float but an expression was expected of type
+         int * int

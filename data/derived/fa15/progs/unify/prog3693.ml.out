@@ -1,5 +1,4 @@
-Characters 152-155:
-  | Sine sin -> Printf.printf ("sin(pi*%s"^ sin ^")" );
-                                            ^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 183-187:
+  | Average (expr, expr) -> "(("^exprToString expr^" + "^exprToString expr^")/2)"
+                   ^^^^
+Error: Variable expr is bound several times in this matching

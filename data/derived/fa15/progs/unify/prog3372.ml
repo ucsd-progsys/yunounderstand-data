@@ -1,4 +1,4 @@
 
-let pipe fs = let f a x g = a x in let base f = f in List.fold_left f base fs;;
+let x l = List.map string_of_int;;
 
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let pipe fs = let f a x = a x in let base f = x in List.fold_left f base fs;;

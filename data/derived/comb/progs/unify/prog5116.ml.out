@@ -1,5 +1,5 @@
-Characters 82-83:
-  | h::t  -> if [(k,d)] = h then d else assoc (d,k,t);;
-                          ^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type ('a * 'b) list
+Characters 15-17:
+  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+                 ^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,6 +1,5 @@
-Characters 133-137:
-  |true -> seen
-   ^^^^
-Error: This pattern matches values of type bool
-       but a pattern was expected which matches values of type
-         'a list -> bool
+Characters 44-53:
+  let fixpoint (f,b) = wwhile (let b = f b in (b, b!=b) ,b);;
+                                              ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

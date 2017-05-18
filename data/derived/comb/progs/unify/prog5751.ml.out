@@ -1,5 +1,6 @@
-Characters 239-254:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 83-84:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
+       but an expression was expected of type 'a -> 'b -> 'a
+       The type variable 'a occurs inside ('a -> 'c) -> 'c

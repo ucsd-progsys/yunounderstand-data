@@ -1,5 +1,5 @@
-Characters 55-64:
-  let rec digitsOfInt n = if n < 0 then print_int 0 else print_int digitsOfInt (n / 10);;
-                                                         ^^^^^^^^^
-Error: This function has type int -> unit
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 168-194:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

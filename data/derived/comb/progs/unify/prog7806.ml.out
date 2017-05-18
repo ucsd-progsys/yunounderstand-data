@@ -1,5 +1,0 @@
-Characters 58-59:
-  List.fold_left x;;
-                 ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b -> 'a

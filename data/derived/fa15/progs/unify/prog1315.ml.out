@@ -1,5 +1,5 @@
-Characters 116-123:
-  let args = List.combine(l1,l2) in
-                         ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 344-345:
+  | Square(e) -> e*.e
+                 ^
+Error: This expression has type expr but an expression was expected of type
+         float

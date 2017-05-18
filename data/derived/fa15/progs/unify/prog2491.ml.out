@@ -1,5 +1,5 @@
-Characters 106-108:
-  | z::x::x' -> [x*i/10] @ mulByDigit i [(x*i) mod 10 + z;x'];;
-                                                          ^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         int -> int

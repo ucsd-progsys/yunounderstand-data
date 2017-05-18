@@ -1,0 +1,5 @@
+Characters 13-51:
+  let _ = eval (ThreeAverage(VarX, VarY, Cube(VarY))), 0.5, 0.3;;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

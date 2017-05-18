@@ -1,14 +1,7 @@
 
-let rec removeZero l =
-  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else h :: t;;
+let rec helper x = if x = 0 then 1 else 10 * (helper (x - 1));;
 
-let rec mulByDigit i l =
-  let f a x =
-    let carry = i * x in
-    match a with
-    | h::t -> ((h + carry) / 10) :: ((h + carry) mod 10) :: t
-    | _ -> [carry / 10; carry mod 10] in
-  let base = [] in removeZero (List.fold_left f base (List.rev l));;
-
-let rec bigMul l1 l2 =
-  match l1 with | [] -> [] | h::t -> [mulByDigit h l2; bigMul (t, l2)];;
+let rec tenEx x y =
+  match y with
+  | [] -> []
+  | h::t -> ((helper x) * h) :: (tenEx helper (x + 1) t);;
