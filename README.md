@@ -15,7 +15,7 @@ on the first three homework assignments.
 Raw Data
 --------
 
-Each JSON file in `data/raw/{sp14/fa15}` contains an object of the
+Each JSON file in `data/raw/{sp14,fa15}/` contains an object of the
 following form on each line. Note that this means the file as a whole is
 NOT valid JSON, each line must be parsed individually as a JSON object.
 
