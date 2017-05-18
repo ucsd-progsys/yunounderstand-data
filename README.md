@@ -19,7 +19,7 @@ Each JSON file in `data/raw/{sp14/fa15}` contains an object of the
 following form on each line. Note that this means the file as a whole is
 NOT valid JSON, each line must be parsed individually as a JSON object.
 
-``` JSON
+```
 {
     "file": "hw1.ml" | "hw2.ml" | "hw3.ml",
     "time": number,
@@ -95,7 +95,7 @@ We include two derived datasets.
    files are again a sequence of JSON objects on each line, with the
    following structure:
    
-   ```JSON
+   ```
    {
        "index": number,
        "hw": "hw1" | "hw2" | "hw3",
