@@ -1,0 +1,5 @@
+Characters 19-20:
+  let _ = mulByDigit 9 [9;9;9;9];;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         'a -> int * int list

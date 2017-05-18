@@ -1,0 +1,5 @@
+Characters 62-63:
+  | h :: t -> if (k, d) = l
+                          ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

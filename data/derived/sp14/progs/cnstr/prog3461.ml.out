@@ -1,0 +1,5 @@
+Characters 27-31:
+  let _ = eval (Sine(Average(Varx,VarY)), 0.5, -0.5);;
+                             ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Varx does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 37-42:
+  let buildOp2()                     = Op2();;
+                                       ^^^^^
+Error: The constructor Op2 expects 3 argument(s),
+       but is applied here to 1 argument(s)

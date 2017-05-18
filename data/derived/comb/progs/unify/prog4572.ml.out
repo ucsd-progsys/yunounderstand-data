@@ -1,0 +1,5 @@
+Characters 32-39:
+  let rec additivePersistence n = sumList digitOfInt n;;
+                                  ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

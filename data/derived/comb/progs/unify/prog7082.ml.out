@@ -1,0 +1,5 @@
+Characters 69-70:
+  let f a x = let (0, res) = a in (0,(mulByDigit x a)) in
+                                                   ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

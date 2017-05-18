@@ -1,0 +1,5 @@
+Characters 37-50:
+  let buildSixtyNine(e1)             = SixtyNine(e1);;
+                                       ^^^^^^^^^^^^^
+Error: The constructor SixtyNine expects 2 argument(s),
+       but is applied here to 1 argument(s)

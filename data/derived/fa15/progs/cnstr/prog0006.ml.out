@@ -1,0 +1,5 @@
+Characters 360-365:
+  | Stuff(t)           -> ("cos(pi*"^"(sin(pi*"^(e t)^")))");;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Stuff does not belong to type expr

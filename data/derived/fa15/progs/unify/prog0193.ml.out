@@ -1,0 +1,5 @@
+Characters 86-89:
+  | h::t -> h + digitalRoot (t);;
+                            ^^^
+Error: This expression has type int list
+       but an expression was expected of type int

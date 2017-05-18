@@ -1,0 +1,6 @@
+Characters 49-50:
+  let rec clone x n = if n < 0 then [] else clone (x,n-1);;
+                                                   ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

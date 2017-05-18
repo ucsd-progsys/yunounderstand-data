@@ -1,0 +1,5 @@
+Characters 46-59:
+  else digitsOfInt n mod 10;;
+       ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

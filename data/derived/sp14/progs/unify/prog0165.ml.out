@@ -1,0 +1,5 @@
+Characters 11-21:
+  List.split ([1], [2]);;
+             ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type ('c * 'd) list

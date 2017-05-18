@@ -1,0 +1,6 @@
+Characters 105-122:
+  | hd :: tl -> (helper tl xs2  hd :: result) in
+                 ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

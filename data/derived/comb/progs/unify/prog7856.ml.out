@@ -1,0 +1,5 @@
+Characters 38-62:
+  if n > 0 then digitsOfInt(n mod 10)@[]
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

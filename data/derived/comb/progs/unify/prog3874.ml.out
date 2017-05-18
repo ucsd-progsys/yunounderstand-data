@@ -1,0 +1,5 @@
+Characters 23-28:
+  log10 float_of_int xs + 1;;
+  ^^^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

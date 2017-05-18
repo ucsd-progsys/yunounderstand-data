@@ -1,0 +1,5 @@
+Characters 84-85:
+  |Sine i -> "sin" ^ i;;
+                     ^
+Error: This expression has type expr but an expression was expected of type
+         string

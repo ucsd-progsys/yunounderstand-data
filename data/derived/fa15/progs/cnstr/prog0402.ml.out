@@ -1,0 +1,5 @@
+Characters 115-117:
+  x::a
+   ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

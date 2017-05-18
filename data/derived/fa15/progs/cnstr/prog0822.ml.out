@@ -1,0 +1,5 @@
+Characters 40-47:
+  | VarX(X) -> X
+    ^^^^^^^
+Error: The constructor VarX expects 0 argument(s),
+       but is applied here to 1 argument(s)

@@ -1,0 +1,5 @@
+Characters 141-145:
+  | Average (a,b) -> (eval (a,x,y) ( *.) eval (b, x, y))/2
+                      ^^^^
+Error: This function has type expr * 'a * 'b -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

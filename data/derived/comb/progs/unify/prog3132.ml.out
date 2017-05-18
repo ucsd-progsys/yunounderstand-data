@@ -1,0 +1,5 @@
+Characters 29-42:
+  wwhile (not ((f b)=b),b);;
+          ^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

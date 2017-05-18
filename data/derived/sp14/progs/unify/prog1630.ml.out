@@ -1,0 +1,11 @@
+Characters 96-106:
+  | Sine(x) -> Printf.sprintf "Sine(%s)" (exprToString x)
+                              ^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b -> 'c -> 'd, unit, string, string, string,
+          'a -> 'b -> 'c -> 'd)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b -> 'c -> 'd, unit, string, string, string, string)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b -> 'c -> 'd is not compatible with type string 

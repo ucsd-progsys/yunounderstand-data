@@ -1,0 +1,7 @@
+Characters 100-101:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'b list) list -> 'a -> 'b list
+       but an expression was expected of type
+         ('a -> 'b list) list -> 'a -> ('a -> 'b list) list
+       Type 'b list is not compatible with type ('a -> 'b list) list 

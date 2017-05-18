@@ -1,0 +1,6 @@
+Characters 77-89:
+  then padZero (clone l1 1) l2
+               ^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside 'a list

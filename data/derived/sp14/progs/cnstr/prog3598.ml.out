@@ -1,0 +1,5 @@
+Characters 144-146:
+  if List.mem h seen = false then h::seen
+                                   ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

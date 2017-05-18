@@ -1,0 +1,5 @@
+Characters 144-187:
+  if (randNum = 1 && randNum2 = 3) then buildSine(buildOp1(build(rand, depth - 1))) else
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

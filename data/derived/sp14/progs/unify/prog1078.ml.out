@@ -1,0 +1,5 @@
+Characters 12-14:
+  let _ = sin(pi*0.3);;
+              ^^
+Error: This expression has type float but an expression was expected of type
+         int

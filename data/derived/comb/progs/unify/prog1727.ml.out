@@ -1,0 +1,5 @@
+Characters 164-167:
+  (Printf.printf "%8d%8d%8d\n"; l1' l2' carry; ((if addit >= 10 then 1 else 0), num @ [addit mod 10])) in
+                                ^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

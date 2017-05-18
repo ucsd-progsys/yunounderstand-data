@@ -1,0 +1,5 @@
+Characters 707-718:
+  (atan2(res1) + atan(res2) - atan(res3)) *. 2 / (3.0 *. pi)
+   ^^^^^^^^^^^
+Error: This expression has type float -> float
+       but an expression was expected of type int

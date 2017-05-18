@@ -1,0 +1,5 @@
+Characters 125-126:
+  | ([h1::t1],[h2::t2]) -> if h1 + h2 > 9 then 9
+                                               ^
+Error: This expression has type int but an expression was expected of type
+         unit

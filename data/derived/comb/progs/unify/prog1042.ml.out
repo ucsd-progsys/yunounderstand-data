@@ -1,0 +1,5 @@
+Characters 76-88:
+  | hd::tl -> hd + (sumList tl)
+                   ^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

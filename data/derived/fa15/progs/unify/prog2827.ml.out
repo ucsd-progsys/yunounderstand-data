@@ -1,0 +1,6 @@
+Characters 141-142:
+  List.fold_left f base l;;
+                        ^
+Error: This expression has type string list list
+       but an expression was expected of type string list
+       Type string list is not compatible with type string 

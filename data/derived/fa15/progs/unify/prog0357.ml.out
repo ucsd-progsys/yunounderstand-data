@@ -1,0 +1,5 @@
+Characters 97-109:
+  | Sine e	      -> sin(eval e,x,y)
+                       ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type float

@@ -1,0 +1,5 @@
+Characters 120-129:
+  | Cosine a -> "cos(pi*" exprToString a ")"
+                ^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

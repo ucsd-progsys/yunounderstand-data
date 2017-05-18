@@ -1,0 +1,7 @@
+Characters 178-182:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type (('a list -> ('b * 'a) list) * 'c) list
+       but an expression was expected of type 'd list list
+       Type ('a list -> ('b * 'a) list) * 'c is not compatible with type
+         'd list 

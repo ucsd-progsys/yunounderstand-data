@@ -1,0 +1,5 @@
+Characters 0-5:
+  plus1 plus1 2;;
+  ^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 422-442:
+  | Thresh  (a,b,c,d) -> "("^exprToString(a)^"<"^exprToString(b)^"?"^exprToString(c)^":"^exprToString(d)::")"
+                                                                                         ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

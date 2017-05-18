@@ -1,0 +1,5 @@
+Characters 59-62:
+  | h::t -> cat listReverse (t) h;;
+            ^^^
+Error: This function has type 'a list -> 'a -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

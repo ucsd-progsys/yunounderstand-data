@@ -1,0 +1,5 @@
+Characters 14-18:
+  let _ = eval (Time(VarX,VarY), 1.0, 2.0);;
+                ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Time does not belong to type expr

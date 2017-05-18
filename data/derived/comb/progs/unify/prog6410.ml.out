@@ -1,0 +1,5 @@
+Characters 88-95:
+  | Sine(e) 		-> "sine(" + eval(e) + ")"
+                 ^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

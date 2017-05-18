@@ -1,0 +1,5 @@
+Characters 74-75:
+  wwhile f a;;
+         ^
+Error: This expression has type 'a -> ('b -> 'c) * bool
+       but an expression was expected of type ('a -> ('b -> 'c) * bool) * 'a

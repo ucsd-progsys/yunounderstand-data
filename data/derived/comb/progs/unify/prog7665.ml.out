@@ -1,0 +1,6 @@
+Characters 318-320:
+  removeZero (add (l1 (if l1 > l2 then l1 else l2)));;
+                                       ^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

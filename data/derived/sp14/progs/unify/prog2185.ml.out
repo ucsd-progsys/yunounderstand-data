@@ -1,0 +1,5 @@
+Characters 204-208:
+  | h::t -> (carry2, dig :: t) in
+    ^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int * 'b

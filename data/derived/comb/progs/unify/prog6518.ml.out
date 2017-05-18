@@ -1,0 +1,6 @@
+Characters 66-70:
+  |_->rand;;
+      ^^^^
+Error: This expression has type int * int -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside int * int -> 'a

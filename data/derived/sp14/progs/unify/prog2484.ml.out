@@ -1,0 +1,5 @@
+Characters 61-77:
+  | n -> ((n mod 10)::ns)
+         ^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

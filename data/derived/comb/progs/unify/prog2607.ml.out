@@ -1,0 +1,5 @@
+Characters 148-149:
+  let base =  0 [0] in
+              ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

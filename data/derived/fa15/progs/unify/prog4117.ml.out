@@ -1,0 +1,5 @@
+Characters 222-223:
+  let args = List.combine (List.rev 0::l1) (List.rev 0::l2) in
+                                    ^
+Error: This expression has type int but an expression was expected of type
+         'a list

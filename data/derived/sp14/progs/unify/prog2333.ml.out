@@ -1,0 +1,8 @@
+Characters 75-81:
+  | h :: t ->  (f h) fold_l f base t;;
+                     ^^^^^^
+Error: This expression has type
+         ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'g -> 'a list -> 'g
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside
+       ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'g -> 'a list -> 'g

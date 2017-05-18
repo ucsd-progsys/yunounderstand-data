@@ -1,0 +1,5 @@
+Characters 99-124:
+  if (diff < 0) then (List.append ((clone 0 (abs diff)),l1),l2)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

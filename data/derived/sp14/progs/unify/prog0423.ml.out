@@ -1,0 +1,5 @@
+Characters 61-93:
+  | h::t -> foo (List.append [(t1,h)] acc) t;;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> ('a list * 'a) list
+       but an expression was expected of type ('a list * 'a) list

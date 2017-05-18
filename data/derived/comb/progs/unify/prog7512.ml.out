@@ -1,0 +1,5 @@
+Characters 193-194:
+  if value > 9 then (value-10)::a 
+                                ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

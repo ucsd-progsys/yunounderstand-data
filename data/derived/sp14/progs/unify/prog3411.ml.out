@@ -1,0 +1,5 @@
+Characters 49-53:
+  let fixpoint (f,b) = wwhile (if ((f b) = b) then b, b);;
+                                                   ^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

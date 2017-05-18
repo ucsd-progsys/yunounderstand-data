@@ -1,0 +1,6 @@
+Characters 187-188:
+  | (f,g)::t -> if (f + g + carry) > 9 then (1,(f + g + carry mod 10)::t) else (0, (f+g+carry mod 10)::t)
+                                                                       ^
+Error: This expression has type (int * int) list
+       but an expression was expected of type int list
+       Type int * int is not compatible with type int 

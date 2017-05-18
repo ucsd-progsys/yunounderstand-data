@@ -1,0 +1,5 @@
+Characters 536-550:
+  | _ -> failwith Printf.sprintf "Expression %s" e;;
+                  ^^^^^^^^^^^^^^
+Error: This expression has type ('a, unit, string) format -> 'a
+       but an expression was expected of type string

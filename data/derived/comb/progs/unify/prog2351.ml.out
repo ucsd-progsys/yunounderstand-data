@@ -1,0 +1,6 @@
+Characters 10-16:
+  g secondF firstF;;
+            ^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type (int -> int) -> 'a
+       Type int is not compatible with type int -> int 

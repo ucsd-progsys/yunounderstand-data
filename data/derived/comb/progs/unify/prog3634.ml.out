@@ -1,0 +1,5 @@
+Characters 30-43:
+  "[" ^ sepConcat ";" ^ List.map(f l) ^ "]";;
+        ^^^^^^^^^^^^^
+Error: This expression has type string list -> string
+       but an expression was expected of type string

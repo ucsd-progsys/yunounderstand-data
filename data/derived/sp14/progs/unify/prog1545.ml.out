@@ -1,0 +1,5 @@
+Characters 220-232:
+  | Sigmoid a        -> 1./.(1. -. exp (-eval (a,x,y)))
+                                         ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

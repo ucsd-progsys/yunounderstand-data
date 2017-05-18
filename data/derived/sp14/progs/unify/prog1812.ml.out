@@ -1,0 +1,5 @@
+Characters 459-476:
+  -> factorial( eval( e' ), 1 )
+              ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type float

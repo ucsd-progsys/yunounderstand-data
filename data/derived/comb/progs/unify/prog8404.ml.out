@@ -1,0 +1,6 @@
+Characters 28-81:
+  ............................(
+  fun input -> let b = (f input) in (b, b!=input)
+  ,b)..
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

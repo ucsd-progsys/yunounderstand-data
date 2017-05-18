@@ -1,0 +1,5 @@
+Characters 468-477:
+  | Squares e         -> exprToString e ^ "*" ^ exprToString e
+    ^^^^^^^^^
+Error: The constructor Squares expects 2 argument(s),
+       but is applied here to 1 argument(s)

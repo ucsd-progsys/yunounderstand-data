@@ -1,0 +1,6 @@
+Characters 54-56:
+  (f b) = b in f'),b);;
+               ^^
+Error: This expression has type 'a -> bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type bool is not compatible with type 'a * bool 

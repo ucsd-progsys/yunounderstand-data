@@ -1,0 +1,5 @@
+Characters 343-346:
+  |Inverse a -> let result  = eval(a) in
+                                  ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

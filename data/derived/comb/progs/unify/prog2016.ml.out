@@ -1,0 +1,6 @@
+Characters 87-88:
+  let rec cloneHelper x n acc = if n < 0 then acc else cloneHelper (x,n-1,x::acc) in
+                                                                    ^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b * 'c

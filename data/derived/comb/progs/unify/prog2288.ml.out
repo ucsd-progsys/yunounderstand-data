@@ -1,0 +1,5 @@
+Characters 111-136:
+  | Sine(e1) -> let ans = sin(pi *. eval(e1,x,y)) in Printf.sprintf "sine is "
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         float

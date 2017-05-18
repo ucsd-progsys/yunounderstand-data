@@ -1,0 +1,5 @@
+Characters 503-504:
+  | NatLog   m4	    -> ((eval(m4,x,y))**4);;
+                                        ^
+Error: This expression has type int but an expression was expected of type
+         float

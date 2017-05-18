@@ -1,0 +1,5 @@
+Characters 570-572:
+  else if (n-9) mod 10 = 0 then 9::digitsOfInt ((n-9)/10);;
+                                 ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

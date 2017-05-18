@@ -1,0 +1,5 @@
+Characters 70-71:
+  let stringOfList f l = let y = fun x -> List.map f l in sepConcat "[" y;;
+                                                                        ^
+Error: This expression has type 'a -> 'b list
+       but an expression was expected of type string list

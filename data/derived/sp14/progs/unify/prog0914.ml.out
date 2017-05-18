@@ -1,0 +1,6 @@
+Characters 66-69:
+  let fixpoint (f,b) = wwhile ((fun (f,b) -> match f b with | b -> (f b, false) | _ -> (f b, true)),b);;
+                                                                    ^^^
+Error: This expression has type 'a but an expression was expected of type
+         ('a -> 'a) * 'a
+       The type variable 'a occurs inside ('a -> 'a) * 'a

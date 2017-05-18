@@ -1,0 +1,5 @@
+Characters 370-373:
+  "(" ^ exprToString(a) ^ "<" exprToString(y) ^ "?" ^ 
+                          ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

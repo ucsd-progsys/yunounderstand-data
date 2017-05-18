@@ -1,0 +1,5 @@
+Characters 36-43:
+  if sumList digitsOfInt n < 9 then 0
+     ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

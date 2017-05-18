@@ -1,0 +1,6 @@
+Characters 126-127:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type 'a -> 'b -> 'a * 'a
+       but an expression was expected of type 'a -> 'b -> 'a
+       The type variable 'a occurs inside 'a * 'a

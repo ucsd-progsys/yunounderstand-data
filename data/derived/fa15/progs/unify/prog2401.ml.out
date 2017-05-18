@@ -1,0 +1,5 @@
+Characters 24-32:
+  let _ = assoc (-1,"doe",("no",2));;
+                          ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type (string * int) list

@@ -1,0 +1,5 @@
+Characters 13-48:
+  let _ = eval (AddThree(VarX,VarY,VarX),1.,2.,3.);;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * float * float

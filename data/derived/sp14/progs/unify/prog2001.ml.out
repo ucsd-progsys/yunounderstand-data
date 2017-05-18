@@ -1,0 +1,5 @@
+Characters 441-454:
+  | Comp (e1,e2,e3) -> -1 * eval (e1,x,y) * eval (e2,x,y) * eval (e3,x,y);;
+                            ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

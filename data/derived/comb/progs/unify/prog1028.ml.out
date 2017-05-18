@@ -1,0 +1,5 @@
+Characters 18-34:
+  ((fun a -> a + 1) (fun b -> b + 3)) 4;;
+                    ^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+int

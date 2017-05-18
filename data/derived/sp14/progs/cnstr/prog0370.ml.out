@@ -1,0 +1,5 @@
+Characters 478-488:
+  | FunckyCube (e1,e2,e3)   -> 
+    ^^^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor FunckyCube does not belong to type expr

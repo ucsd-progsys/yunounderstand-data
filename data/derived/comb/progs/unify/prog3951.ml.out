@@ -1,0 +1,5 @@
+Characters 126-127:
+  | ([h1::t1],[h2::t2]) -> if h1 + h2 > 9 then x a
+                                               ^
+Error: This expression has type int list list * int list list
+       This is not a function; it cannot be applied.

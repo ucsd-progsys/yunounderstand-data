@@ -1,0 +1,5 @@
+Characters 35-40:
+  let sampleExpr3 = Half(Divadd(VarX,VaryX,VarY));;
+                                     ^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor VaryX does not belong to type expr

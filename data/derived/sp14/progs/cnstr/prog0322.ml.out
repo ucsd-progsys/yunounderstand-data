@@ -1,0 +1,5 @@
+Characters 26-36:
+  let buildCustom1(e)		   = Custom1(e);;
+                            ^^^^^^^^^^
+Error: The constructor Custom1 expects 3 argument(s),
+       but is applied here to 1 argument(s)

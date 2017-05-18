@@ -1,0 +1,5 @@
+Characters 255-259:
+  | Time (e1, e2) -> (exprToString e1) ^ "*" ^ (exprToString e2);;
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Time does not belong to type expr

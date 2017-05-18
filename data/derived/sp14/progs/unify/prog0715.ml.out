@@ -1,0 +1,5 @@
+Characters 18-25:
+  let g2 () = build (3,4,5);;
+                    ^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type (int * int -> int) * int

@@ -1,0 +1,5 @@
+Characters 78-87:
+  else (acc + 1) (sumList (digits n)) in
+       ^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

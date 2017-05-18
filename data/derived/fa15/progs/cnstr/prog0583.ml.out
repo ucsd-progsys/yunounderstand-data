@@ -1,0 +1,5 @@
+Characters 13-43:
+  let _ = eval (Power(VarX, VarY, 0.5, -0.5));;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Power expects 2 argument(s),
+       but is applied here to 4 argument(s)

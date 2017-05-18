@@ -1,0 +1,5 @@
+Characters 163-164:
+  | Square m -> eval(m,x,y)**2
+                             ^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,0 +1,5 @@
+Characters 284-289:
+  res :: [carry]
+          ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,0 +1,5 @@
+Characters 79-85:
+  0 -> if(rand mod 2 == 0) then buildX()() else buildY()();
+                                ^^^^^^
+Error: This function has type unit -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

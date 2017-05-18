@@ -1,0 +1,5 @@
+Characters 468-476:
+  | Cotanget e          -> "(" ^ 1.0 /. "("^ tan ^"(" exprToString e ^")))";;
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Cotanget does not belong to type expr

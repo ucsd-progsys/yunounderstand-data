@@ -1,0 +1,5 @@
+Characters 55-57:
+  | h::t -> (10 exp x) * h;;
+             ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

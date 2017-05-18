@@ -1,0 +1,6 @@
+Characters 48-65:
+  else digitsOfInt(n/10) :: [];;
+       ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,0 +1,5 @@
+Characters 27-65:
+  let stringOfList f l = "["^List.map (fun t -> sepConcat "; " l) l^"]";;
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       but an expression was expected of type string

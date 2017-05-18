@@ -1,0 +1,5 @@
+Characters 96-97:
+  in digitsOfInt x @ y;;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         'a list

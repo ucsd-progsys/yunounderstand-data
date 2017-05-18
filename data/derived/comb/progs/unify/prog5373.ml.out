@@ -1,0 +1,5 @@
+Characters 85-88:
+  else count (acc + 1) sumList (digits n) in
+              ^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 100-110:
+  h = getHeads t
+      ^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type char

@@ -1,0 +1,5 @@
+Characters 42-60:
+  let buildMyExpr(a,b,a_less)             = MyExpr(a,b,a_less);;
+                                            ^^^^^^^^^^^^^^^^^^
+Error: The constructor MyExpr expects 4 argument(s),
+       but is applied here to 3 argument(s)

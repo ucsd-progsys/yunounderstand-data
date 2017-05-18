@@ -1,0 +1,5 @@
+Characters 55-57:
+  | Set h::tl -> if(h = x) then true else member x (Set tl);;
+         ^^
+Error: This variant pattern is expected to have type 'a set
+       The constructor :: does not belong to type set

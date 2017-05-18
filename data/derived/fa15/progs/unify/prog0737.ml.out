@@ -1,0 +1,5 @@
+Characters 63-113:
+  ((clone 0 (List.length l2 - List.length l1)) @ l1) l2
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

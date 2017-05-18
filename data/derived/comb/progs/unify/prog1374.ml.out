@@ -1,0 +1,5 @@
+Characters 9-19:
+  append 0 [2;2;21;1];;
+           ^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

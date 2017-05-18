@@ -1,0 +1,5 @@
+Characters 88-89:
+  else 1 + additivePersistence (sumList n);;
+                                        ^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,0 +1,5 @@
+Characters 230-232:
+  clone 0 difference2 :: l2;;
+                      ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

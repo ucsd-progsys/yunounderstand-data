@@ -1,0 +1,5 @@
+Characters 66-72:
+  |(b,c) -> b @ [0] , bigAdd bigMul x l2 @ c a in 
+                      ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

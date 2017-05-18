@@ -1,0 +1,5 @@
+Characters 166-176:
+  removeZero List.fold_left f base args;;
+  ^^^^^^^^^^
+Error: This function has type int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

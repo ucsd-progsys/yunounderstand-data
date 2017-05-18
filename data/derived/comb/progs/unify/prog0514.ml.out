@@ -1,0 +1,5 @@
+Characters 17-20:
+  let _ = sumList [1.1];;
+                   ^^^
+Error: This expression has type float but an expression was expected of type
+         int

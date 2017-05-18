@@ -1,0 +1,5 @@
+Characters 14-15:
+  let _ = clone 3 5;;
+                ^
+Error: This expression has type int but an expression was expected of type
+         'a -> string

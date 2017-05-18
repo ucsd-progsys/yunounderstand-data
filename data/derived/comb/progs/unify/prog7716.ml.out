@@ -1,0 +1,5 @@
+Characters 27-43:
+  let palindrome w = explode (listReverse(w));;
+                             ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

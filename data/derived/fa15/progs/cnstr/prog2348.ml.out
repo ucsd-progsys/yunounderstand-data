@@ -1,0 +1,5 @@
+Characters 432-437:
+  | Three(ex1,ex2,ex3) -> eval(ex1,x,y) *.cos(pi*.eval(ex2,x,y))*.sin(pi*.eval(ex3,x,y));;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Three does not belong to type expr

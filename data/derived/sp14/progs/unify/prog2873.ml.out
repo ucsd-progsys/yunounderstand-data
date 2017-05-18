@@ -1,0 +1,5 @@
+Characters 61-62:
+  listReverse n mod 10 :: listReverse(digitsOfInt(n/10));;
+              ^
+Error: This expression has type int but an expression was expected of type
+         'a list

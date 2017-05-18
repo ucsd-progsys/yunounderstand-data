@@ -1,0 +1,5 @@
+Characters 0-16:
+  (fun a -> a + 1) (fun b -> b + 3) 4;;
+  ^^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

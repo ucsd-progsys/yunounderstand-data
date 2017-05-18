@@ -1,0 +1,5 @@
+Characters 580-592:
+  | Substract (j, k)    -> "("^ exprToString j ^ "-" ^ exprToString k ")";;
+                                                       ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

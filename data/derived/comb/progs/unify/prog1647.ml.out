@@ -1,0 +1,4 @@
+Characters 622-624:
+  | Quad (e1, e2, e2) -> Printf.springf "(%s + %s)^2 + %s"
+                  ^^
+Error: Variable e2 is bound several times in this matching

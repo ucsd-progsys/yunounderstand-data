@@ -1,0 +1,5 @@
+Characters 22-25:
+  let _ = exprToString (Log(VarX));;
+                        ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Log does not belong to type expr

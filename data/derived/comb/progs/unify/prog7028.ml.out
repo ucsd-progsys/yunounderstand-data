@@ -1,0 +1,6 @@
+Characters 123-146:
+  f base l
+  
+  foo, bar, baz..
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type string

@@ -1,0 +1,5 @@
+Characters 8-12:
+  let _ = tanh -0.5;;
+          ^^^^
+Error: This expression has type float -> float
+       but an expression was expected of type int

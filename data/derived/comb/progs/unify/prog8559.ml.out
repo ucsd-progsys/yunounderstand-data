@@ -1,0 +1,5 @@
+Characters 361-366:
+  |Tangent(a) -> ("sin(pi*"^(exp a)^")/("("cos(pi*"^(exp a)^")")")");;
+                                    ^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

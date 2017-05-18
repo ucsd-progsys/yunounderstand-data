@@ -1,0 +1,5 @@
+Characters 147-151:
+  List.fold_left f base l;;
+                   ^^^^
+Error: This expression has type string -> string
+       but an expression was expected of type string

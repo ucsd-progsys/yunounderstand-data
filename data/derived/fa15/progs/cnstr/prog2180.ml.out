@@ -1,0 +1,5 @@
+Characters 458-462:
+  | Trip(x,y,z)      -> "(("^ exprToString x ^ "%30.0)" ^ exprToString ^
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Trip does not belong to type expr

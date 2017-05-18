@@ -1,0 +1,5 @@
+Characters 10-11:
+  let h = g f;;
+            ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type ('a -> 'a) * 'a

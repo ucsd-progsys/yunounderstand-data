@@ -1,0 +1,5 @@
+Characters 47-49:
+  let f a x = (fst a, bigAdd () ()) 
+                             ^^
+Error: This variant expression is expected to have type int list
+       The constructor () does not belong to type list

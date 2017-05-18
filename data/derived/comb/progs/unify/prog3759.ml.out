@@ -1,0 +1,9 @@
+Characters 41-68:
+  if i <> 0 then mulByDigit (i-1) bigAdd l l
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         (int list -> int list -> int list) ->
+         (int list -> int list -> int list) -> 'a
+       The type variable 'a occurs inside
+       (int list -> int list -> int list) ->
+       (int list -> int list -> int list) -> 'a

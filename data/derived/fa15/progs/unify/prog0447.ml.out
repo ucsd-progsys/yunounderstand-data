@@ -1,0 +1,5 @@
+Characters 84-89:
+  (10*o, bigAdd(mulByDigit ((o*x) l1)) l)
+                            ^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

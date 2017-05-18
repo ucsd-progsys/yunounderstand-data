@@ -1,0 +1,10 @@
+Characters 273-274:
+  let (_, res) = List.fold_left f base args in res
+                                ^
+Error: This expression has type
+         ((int -> unit) -> int -> int) * int list ->
+         int * int -> int * int list
+       but an expression was expected of type
+         ((int -> unit) -> int -> int) * int list ->
+         int * int -> ((int -> unit) -> int -> int) * int list
+       Type int is not compatible with type (int -> unit) -> int -> int 

@@ -1,0 +1,5 @@
+Characters 91-116:
+  | _ -> additivePersistence((sumList(digitsOfInt(n))) (count+1));;
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

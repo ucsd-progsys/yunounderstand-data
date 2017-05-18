@@ -1,0 +1,5 @@
+Characters 408-416:
+  else (0, norm_sum@acc)
+           ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

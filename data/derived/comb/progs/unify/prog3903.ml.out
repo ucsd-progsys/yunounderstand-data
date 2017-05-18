@@ -1,0 +1,5 @@
+Characters 185-197:
+  | Cosine (a) -> int_of_float cos ( pi * float_of_int (eval (a,x,y)) )
+                  ^^^^^^^^^^^^
+Error: This function has type float -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

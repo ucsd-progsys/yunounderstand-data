@@ -1,0 +1,5 @@
+Characters 85-94:
+  then clone 0 1;;
+       ^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

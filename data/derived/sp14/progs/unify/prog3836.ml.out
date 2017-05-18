@@ -1,0 +1,5 @@
+Characters 550-551:
+  | ArcSin(x1,x2)		-> asin(( eval (x1,x,y )) **2 ) /. 1.6;;
+                                               ^
+Error: This expression has type int but an expression was expected of type
+         float

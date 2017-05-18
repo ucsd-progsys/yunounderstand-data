@@ -1,0 +1,5 @@
+Characters 115-131:
+  let seen' = if( not (List.mem(h, l))) then
+                      ^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

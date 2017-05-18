@@ -1,0 +1,5 @@
+Characters 62-68:
+  listReverse (append [n mod 10] digitsOfInt (n/10) );;
+               ^^^^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

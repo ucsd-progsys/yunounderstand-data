@@ -1,0 +1,5 @@
+Characters 55-86:
+  else append(digitsOfInt(n/10), [n mod 10]);;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

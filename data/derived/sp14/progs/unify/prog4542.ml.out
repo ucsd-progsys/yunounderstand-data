@@ -1,0 +1,5 @@
+Characters 67-73:
+  0, bigAdd value snd a in 
+     ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

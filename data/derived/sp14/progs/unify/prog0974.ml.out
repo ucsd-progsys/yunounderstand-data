@@ -1,0 +1,5 @@
+Characters 88-90:
+  | (w,y) -> ( w, bigAdd y (mulByDigit (x * (10 ** (List.length y))) l1)) in 
+                                             ^^
+Error: This expression has type int but an expression was expected of type
+         float

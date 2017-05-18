@@ -1,0 +1,6 @@
+Characters 29-37:
+  let _ = exprToString (build (makeRand,5));;
+                               ^^^^^^^^
+Error: This expression has type int * int -> int * int -> int
+       but an expression was expected of type int * int -> int
+       Type int * int -> int is not compatible with type int 

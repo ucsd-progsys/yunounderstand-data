@@ -1,0 +1,5 @@
+Characters 83-100:
+  | Sine ex -> sin (exprToString ex);;
+                   ^^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         float

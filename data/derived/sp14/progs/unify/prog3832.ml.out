@@ -1,0 +1,5 @@
+Characters 173-194:
+  | 1 -> buildSine(pi *. build (rand, depth-1) )
+                         ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

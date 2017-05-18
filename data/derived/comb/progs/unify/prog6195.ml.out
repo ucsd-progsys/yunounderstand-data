@@ -1,0 +1,5 @@
+Characters 127-129:
+  ((sum/10)::a1,(sum mod 10)::a2) in
+             ^^
+Error: This expression has type int but an expression was expected of type
+         int list

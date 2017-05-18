@@ -1,0 +1,5 @@
+Characters 13-17:
+  let _ = eval(Sine,0.5,0.);;
+               ^^^^
+Error: The constructor Sine expects 1 argument(s),
+       but is applied here to 0 argument(s)

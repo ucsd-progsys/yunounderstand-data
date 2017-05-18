@@ -1,0 +1,5 @@
+Characters 117-122:
+  | 1 -> buildSine (build(rand',depth-1))
+                          ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

@@ -1,0 +1,5 @@
+Characters 94-95:
+  else dig ((d mod 10)::acc) (d div 10) in
+                              ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

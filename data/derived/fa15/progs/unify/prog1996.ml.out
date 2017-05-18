@@ -1,0 +1,5 @@
+Characters 28-33:
+  let f a x = a + x^2 in
+              ^^^^^
+Error: This expression has type int but an expression was expected of type
+         string

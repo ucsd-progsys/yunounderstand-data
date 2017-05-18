@@ -1,0 +1,5 @@
+Characters 56-69:
+  let x = int_of_string reverse (string_of_int n) 
+          ^^^^^^^^^^^^^
+Error: This function has type string -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

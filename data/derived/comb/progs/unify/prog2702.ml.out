@@ -1,0 +1,5 @@
+Characters 216-218:
+  let _ = Format.printf "red   = %s \n" (exprToString e1) in
+                                                      ^^
+Error: This expression has type int but an expression was expected of type
+         expr

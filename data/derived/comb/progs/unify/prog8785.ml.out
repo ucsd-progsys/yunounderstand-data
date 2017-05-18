@@ -1,0 +1,5 @@
+Characters 64-112:
+  then (clone 0 (List.length(l1) - List.length(l2)))@l2;;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

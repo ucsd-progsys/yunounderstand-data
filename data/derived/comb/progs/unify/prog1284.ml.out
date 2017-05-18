@@ -1,0 +1,5 @@
+Characters 169-180:
+  | Times(v,w) -> eval(v,x,y) * eval(v,x,y)
+                  ^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

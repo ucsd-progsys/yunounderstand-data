@@ -1,0 +1,5 @@
+Characters 119-124:
+  else ((clone 0 abs diff) @ l1, l2);;
+         ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

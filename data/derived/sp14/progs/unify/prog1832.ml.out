@@ -1,0 +1,5 @@
+Characters 45-63:
+  ......................( f , b' = b
+  , b )..
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type ('d -> 'd * bool) * 'd

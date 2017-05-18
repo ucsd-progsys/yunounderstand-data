@@ -1,0 +1,6 @@
+Characters 70-71:
+  | h::t -> (cat t h)::l;;
+                       ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a list list
+       The type variable 'a occurs inside 'a list

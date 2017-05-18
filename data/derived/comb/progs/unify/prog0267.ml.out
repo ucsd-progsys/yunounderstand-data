@@ -1,0 +1,5 @@
+Characters 0-8:
+  List.map (fun x -> x*10 ) [1;2;3]
+  ^^^^^^^^
+Error: This function has type ('a -> 'b) -> 'a list -> 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

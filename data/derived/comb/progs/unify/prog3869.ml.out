@@ -1,0 +1,5 @@
+Characters 76-94:
+  | hd::tl -> helper (hd::xs) tl
+              ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type 'a list

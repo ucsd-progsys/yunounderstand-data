@@ -1,0 +1,5 @@
+Characters 30-38:
+  let stringOfList f l = "[" ^ (List.map f "; " l) ^ "]";;
+                                ^^^^^^^^
+Error: This function has type ('a -> 'b) -> 'a list -> 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 164-166:
+  | Average (e1,e2)      -> ((e1+e2)/2)
+                              ^^
+Error: This expression has type expr but an expression was expected of type
+         int

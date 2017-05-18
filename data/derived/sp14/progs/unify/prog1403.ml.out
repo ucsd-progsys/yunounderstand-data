@@ -1,0 +1,5 @@
+Characters 26-27:
+  let _ = eval (buildThresh(1,2,0,1),0.5,0.2);;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         expr

@@ -1,0 +1,5 @@
+Characters 79-86:
+  else 1 + additivePersistence (sumList digits n);;
+                                ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

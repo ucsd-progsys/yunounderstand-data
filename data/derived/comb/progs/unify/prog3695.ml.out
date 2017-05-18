@@ -1,0 +1,5 @@
+Characters 78-85:
+  total + if num mod 10 <> 0 then digitalRoot2(sumList(digits(num)) total) else 0;;
+                                               ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

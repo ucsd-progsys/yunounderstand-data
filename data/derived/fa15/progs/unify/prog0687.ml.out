@@ -1,0 +1,5 @@
+Characters 488-524:
+  | Darius( e1, e2, e3 )     -> mod_float ((eval (e1, x, y) +. eval (e2, x, y)) eval (e3, x, y));;
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

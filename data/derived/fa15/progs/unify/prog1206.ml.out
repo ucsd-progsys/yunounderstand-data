@@ -1,0 +1,5 @@
+Characters 168-175:
+  if (sum + r) > 9 then (carryFunc (sum+r),((sum+r) mod 10)::v) 
+                                   ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

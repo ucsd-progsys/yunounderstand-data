@@ -1,0 +1,5 @@
+Characters 119-121:
+  List.append(l1 clone(0  l1G) )
+              ^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

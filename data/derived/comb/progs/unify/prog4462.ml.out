@@ -1,0 +1,5 @@
+Characters 85-86:
+  | Sine u -> pi *. (eval u) * 1 * 1
+                          ^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

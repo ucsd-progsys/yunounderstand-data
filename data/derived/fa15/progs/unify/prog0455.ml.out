@@ -1,0 +1,5 @@
+Characters 20-25:
+  let _ = bigMul [9] [1,1,1];;
+                      ^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type int

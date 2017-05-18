@@ -1,0 +1,5 @@
+Characters 71-126:
+  | h::t -> ((List.rev (List.map (fun x->x*10) t ) ) ) @ h*i  :: [];;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

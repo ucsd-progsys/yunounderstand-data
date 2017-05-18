@@ -1,0 +1,6 @@
+Characters 91-119:
+  | hd::tl -> concat (listReverse tl) [hd];;
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside 'a list

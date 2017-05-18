@@ -1,0 +1,5 @@
+Characters 30-59:
+  "[" ^ (List.map (sepConcat "; ") l) ^ "]";;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       but an expression was expected of type string

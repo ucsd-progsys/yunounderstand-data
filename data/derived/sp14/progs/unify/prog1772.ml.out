@@ -1,0 +1,5 @@
+Characters 295-360:
+  | _ when r < 30 && r > 20 -> buildThresh((build(rand, depth - 1)), (buildCosine(build(rand, depth - 1))))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr * expr * expr * expr

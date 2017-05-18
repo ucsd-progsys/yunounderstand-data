@@ -1,0 +1,5 @@
+Characters 64-69:
+  if (k,x) then x
+     ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type bool

@@ -1,0 +1,5 @@
+Characters 110-132:
+  ((addition(m,n)/10), (addition(m,n) mod 10) @ [res]) 
+                       ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

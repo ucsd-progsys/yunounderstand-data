@@ -1,0 +1,5 @@
+Characters 126-150:
+  | n when n > 0 -> buildSine(build(rand, depth - 1));;
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

@@ -1,0 +1,5 @@
+Characters 17-18:
+  let rec sumList (1 : int list): int =
+                   ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type int list

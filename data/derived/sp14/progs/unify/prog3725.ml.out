@@ -1,0 +1,5 @@
+Characters 49-58:
+  else n :: clone x n-1;;
+            ^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

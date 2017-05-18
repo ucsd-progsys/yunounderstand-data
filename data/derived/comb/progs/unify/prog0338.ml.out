@@ -1,0 +1,5 @@
+Characters 2-10:
+  g 0.739085;;
+    ^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

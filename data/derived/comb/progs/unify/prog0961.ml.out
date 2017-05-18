@@ -1,0 +1,6 @@
+Characters 133-134:
+  | h::t -> (((h+z)/10), ((h+z) mod 10)):: t 
+                                           ^
+Error: This expression has type int list
+       but an expression was expected of type (int * int) list
+       Type int is not compatible with type int * int 

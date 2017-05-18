@@ -1,0 +1,5 @@
+Characters 512-520:
+  | Tan a		      -> "sin(pi*"^(expr a)^")/cos(pi*"^(expr a)")";;
+                                                   ^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

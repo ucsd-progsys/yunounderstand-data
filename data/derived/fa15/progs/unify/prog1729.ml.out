@@ -1,0 +1,5 @@
+Characters 38-39:
+  let f a x = (fun a x-> f x f a) in
+                         ^
+Error: This function has type 'a -> int * int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

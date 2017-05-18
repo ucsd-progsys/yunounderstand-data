@@ -1,0 +1,5 @@
+Characters 470-482:
+  | Circ	(circ1)       -> "sqrt(|1-"^exprToString(circ1)^"^2|)"
+    ^^^^^^^^^^^^
+Error: The constructor Circ expects 2 argument(s),
+       but is applied here to 1 argument(s)

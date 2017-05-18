@@ -1,0 +1,5 @@
+Characters 382-393:
+  | Trip(t,r,s)     -> (eval(t,x,y) / 30) +. eval(r,x,y) / eval(s,x,y);;
+                        ^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

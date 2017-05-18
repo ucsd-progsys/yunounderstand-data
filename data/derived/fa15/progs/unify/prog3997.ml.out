@@ -1,0 +1,5 @@
+Characters 13-21:
+  let _ = eval (Neg(1));;
+               ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,10 @@
+Characters 121-132:
+  | Sine e -> Printf.printf "sin(pi*%s" Printf.printf exprToString e
+                            ^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b -> 'c, out_channel, unit, unit, unit, 'a -> 'b -> 'c)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b -> 'c, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b -> 'c is not compatible with type unit 

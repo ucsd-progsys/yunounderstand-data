@@ -1,0 +1,6 @@
+Characters 51-52:
+  let rec clone x n = if n = 1 then []@x else clone [x]@x n-1;;
+                                                     ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,0 +1,5 @@
+Characters 400-404:
+  | Acossin(e1, e2) -> (acos(eval(e1)) *. asin(eval(e2))) *. 2.0 /. (pi *. pi);;
+                                 ^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

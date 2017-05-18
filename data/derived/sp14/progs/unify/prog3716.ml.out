@@ -1,0 +1,5 @@
+Characters 73-76:
+  let f x = let xx = f b in (xx, xx <> b) in wwhile (f b, b);;
+                                                     ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -1,0 +1,6 @@
+Characters 27-36:
+  let _ = assoc(-1, "99999", long_list);;
+                             ^^^^^^^^^
+Error: This expression has type (int * string) list
+       but an expression was expected of type (string * int) list
+       Type int is not compatible with type string 

@@ -1,0 +1,5 @@
+Characters 122-134:
+  | (add1, add2) -> 
+    ^^^^^^^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type unit

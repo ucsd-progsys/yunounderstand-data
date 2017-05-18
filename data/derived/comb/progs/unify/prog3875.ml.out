@@ -1,0 +1,5 @@
+Characters 23-46:
+  log10 (float_of_int xs) + 1;;
+  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

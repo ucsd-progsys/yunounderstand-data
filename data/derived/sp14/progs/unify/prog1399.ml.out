@@ -1,0 +1,5 @@
+Characters 86-88:
+  | Sine a -> sin(eval(a,x,y)*2.)
+                              ^^
+Error: This expression has type float but an expression was expected of type
+         int

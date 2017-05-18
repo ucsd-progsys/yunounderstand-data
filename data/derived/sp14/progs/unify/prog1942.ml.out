@@ -1,0 +1,5 @@
+Characters 72-80:
+  if rand (0,1) = 0 then buildX() else buildY();;
+                         ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

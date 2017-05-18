@@ -1,0 +1,5 @@
+Characters 21-27:
+  let _ = exprToString(MyExpr(VarX,VarY,VarX));;
+                       ^^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor MyExpr does not belong to type expr

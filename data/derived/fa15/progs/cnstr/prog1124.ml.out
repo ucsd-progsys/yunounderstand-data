@@ -1,0 +1,5 @@
+Characters 26-35:
+  let buildSquare (e)		   = Square(e);;
+                            ^^^^^^^^^
+Error: The constructor Square expects 2 argument(s),
+       but is applied here to 1 argument(s)

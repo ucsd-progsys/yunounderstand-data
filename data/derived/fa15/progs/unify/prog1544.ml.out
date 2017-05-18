@@ -1,0 +1,5 @@
+Characters 49-84:
+  if n <= 0 then [] else  add (digitsOfInt (n/10)) (n mod 10);;
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type (int list -> int list) list

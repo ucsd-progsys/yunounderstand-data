@@ -1,0 +1,5 @@
+Characters 132-134:
+  | h :: t -> t, bigAdd( (mulByDigit h l') l') in
+                                       ^^
+Error: This expression has type int list * 'a
+       but an expression was expected of type int list

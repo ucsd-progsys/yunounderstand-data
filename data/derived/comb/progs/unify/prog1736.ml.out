@@ -1,0 +1,7 @@
+Characters 156-177:
+  let _ = Printf.printf (string_of_int addit) in
+                        ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         ('a, out_channel, unit) format =
+           ('a, out_channel, unit, unit, unit, unit)
+           CamlinternalFormatBasics.format6

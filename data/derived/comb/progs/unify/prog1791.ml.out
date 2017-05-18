@@ -1,0 +1,8 @@
+Characters 96-105:
+  | Sine s -> Format.printf buildSine( s );;
+                            ^^^^^^^^^
+Error: This expression has type expr -> expr
+       but an expression was expected of type
+         ('a -> 'b, Format.formatter, unit) format =
+           ('a -> 'b, Format.formatter, unit, unit, unit, unit)
+           CamlinternalFormatBasics.format6

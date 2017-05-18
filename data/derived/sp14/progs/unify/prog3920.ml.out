@@ -1,0 +1,5 @@
+Characters 379-380:
+  | Abs (a) -> if eval (a,x,y) < 0 then eval (a,x,y) *. (-1.0) else eval (a,x,y);;
+                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

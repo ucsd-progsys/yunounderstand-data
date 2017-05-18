@@ -1,0 +1,5 @@
+Characters 23-24:
+  let _ = sepConcat "X" [1];;
+                         ^
+Error: This expression has type int but an expression was expected of type
+         string

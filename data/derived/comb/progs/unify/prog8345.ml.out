@@ -1,0 +1,5 @@
+Characters 122-137:
+  match rand(makeRand(0,4)) with
+            ^^^^^^^^^^^^^^^
+Error: This expression has type int * int -> int
+       but an expression was expected of type int * int

@@ -1,0 +1,5 @@
+Characters 161-194:
+  | 2 -> buildSine(buildHelper(rand, max_depth, curr_depth + 1))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type int * int -> int

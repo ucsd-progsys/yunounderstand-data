@@ -1,0 +1,5 @@
+Characters 371-379:
+  | Accossin(e1, e2) -> (acos(eval(e1)) *. asin(eval(e2))) *. 2.0 /. (pi *. pi);;
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Accossin does not belong to type expr

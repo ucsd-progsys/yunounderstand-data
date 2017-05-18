@@ -1,0 +1,5 @@
+Characters 145-159:
+  and rest = float_of_int n - 1.*(10.** float_of_int s) in
+             ^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,0 +1,5 @@
+Characters 8-25:
+  let y = ["h", "d" , "c" ]
+          ^^^^^^^^^^^^^^^^^
+Error: This expression has type (string * string * string) list
+       This is not a function; it cannot be applied.

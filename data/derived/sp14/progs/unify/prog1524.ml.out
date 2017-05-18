@@ -1,0 +1,5 @@
+Characters 47-56:
+  (fb,fb=b) ,b);;
+  ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

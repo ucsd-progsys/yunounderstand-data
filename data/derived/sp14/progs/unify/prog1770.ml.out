@@ -1,0 +1,5 @@
+Characters 120-150:
+  | 2 -> buildTimes(build (rand, depth-(depth -2)), build(rand, depth-(depth -2)));;
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

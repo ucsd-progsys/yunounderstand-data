@@ -1,0 +1,6 @@
+Characters 204-226:
+  let args = [0,0]::( List.combine l1 l2 ) in
+                    ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type (int * int) list list
+       Type 'a * 'b is not compatible with type (int * int) list 

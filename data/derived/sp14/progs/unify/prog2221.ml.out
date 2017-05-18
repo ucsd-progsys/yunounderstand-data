@@ -1,0 +1,5 @@
+Characters 394-397:
+  | FiboPlus (ex1,ex2,ex3,ex4,ex5) -> ((eval ex1)*.(eval ex1+eval ex2)*(eval ex1+eval ex2+eval ex3)*(eval ex1+eval ex2+eval ex3+eval ex4)*(eval ex1+eval ex2+eval ex3+eval ex4+eval ex5));;
+                                             ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

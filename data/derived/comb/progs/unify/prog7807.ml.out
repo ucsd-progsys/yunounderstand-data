@@ -1,0 +1,6 @@
+Characters 51-74:
+  cloneHelper x (n - 1) x::l;;
+  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

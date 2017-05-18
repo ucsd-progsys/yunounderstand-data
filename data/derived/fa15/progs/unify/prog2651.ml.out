@@ -1,0 +1,5 @@
+Characters 362-366:
+  | Ceiling e' -> ceil(e')
+                      ^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

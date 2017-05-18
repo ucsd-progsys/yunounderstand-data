@@ -1,0 +1,5 @@
+Characters 106-107:
+  | (d1,d2) -> ( (d1+d2+a)/10, ((d1+d2+o) mod 10) ::p) in
+                        ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

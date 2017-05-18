@@ -1,0 +1,6 @@
+Characters 54-57:
+  | b -> if (f b = (f b, true)) then 
+                    ^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

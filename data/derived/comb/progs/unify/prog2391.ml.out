@@ -1,0 +1,5 @@
+Characters 171-178:
+  else if length2 length1 then (
+          ^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 107-118:
+  | x::xs -> if x = List.hd reverse then palinHelper xs List.tl reverse else false;;
+                                         ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 177-183:
+  let (_, result) = List.fold_right f ((0, 0) :: l) base in
+                                       ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

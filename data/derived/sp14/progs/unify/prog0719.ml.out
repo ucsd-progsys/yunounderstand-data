@@ -1,0 +1,5 @@
+Characters 381-390:
+  eval ((a, x, y) *. (a, x, y)) + ((b, x, y) *. (c, x, y));;
+        ^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type float

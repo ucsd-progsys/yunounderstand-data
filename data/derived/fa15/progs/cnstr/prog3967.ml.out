@@ -1,0 +1,5 @@
+Characters 26-45:
+  let rec exprToString e = [Thresh (e<e ? e: e)];;
+                            ^^^^^^^^^^^^^^^^^^^
+Error: The constructor Thresh expects 4 argument(s),
+       but is applied here to 1 argument(s)

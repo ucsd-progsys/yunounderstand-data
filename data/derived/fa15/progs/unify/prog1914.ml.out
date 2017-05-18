@@ -1,0 +1,6 @@
+Characters 54-55:
+  else x::(clone (x, n-1));;
+                  ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

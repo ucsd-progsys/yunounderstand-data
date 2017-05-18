@@ -1,0 +1,5 @@
+Characters 269-293:
+  else if (rand mod 5) = 2 then buildAverage(build(rand, depth - 1))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

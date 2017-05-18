@@ -1,0 +1,4 @@
+Characters 121-123:
+  | Average (e', e')-> (e' + e' )/2
+                 ^^
+Error: Variable e' is bound several times in this matching

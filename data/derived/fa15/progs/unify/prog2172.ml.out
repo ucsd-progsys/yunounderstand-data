@@ -1,0 +1,5 @@
+Characters 147-163:
+  if r = 0 then eval(build(rand, d-1), 1, 2)
+                     ^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

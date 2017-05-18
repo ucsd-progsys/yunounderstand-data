@@ -1,0 +1,5 @@
+Characters 146-177:
+  if (randNum = 1 && randNum2 = 3) then buildCosine(buildOp1(buildX())) else
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

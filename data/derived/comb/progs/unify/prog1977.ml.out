@@ -1,0 +1,6 @@
+Characters 93-94:
+  | (s,i)::t -> if s = k then i else assoc (d k t);;
+                                                ^
+Error: This expression has type ('a * ('a -> 'b -> 'c)) list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside ('a * ('a -> 'b -> 'c)) list

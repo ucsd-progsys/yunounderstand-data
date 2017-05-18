@@ -1,0 +1,5 @@
+Characters 190-207:
+  | r when r < 5 -> buildAverage((buildCosine(rand, depth - 1)), (buildSine(build(rand, depth - 1))))
+                                             ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

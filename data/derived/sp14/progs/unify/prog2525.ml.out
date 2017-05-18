@@ -1,0 +1,5 @@
+Characters 43-56:
+  let fixpoint (f,b) = wwhile ((let g = f in (g b, b = gb)), b);;
+                                             ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

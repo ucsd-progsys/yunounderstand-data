@@ -1,0 +1,5 @@
+Characters 93-95:
+  if List.length() = 0
+                ^^
+Error: This variant expression is expected to have type 'a list
+       The constructor () does not belong to type list

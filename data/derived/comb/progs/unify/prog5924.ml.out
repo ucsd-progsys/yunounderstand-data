@@ -1,0 +1,5 @@
+Characters 65-71:
+  | _ -> bigAdd l mulByDigit (i-1) l;;
+         ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

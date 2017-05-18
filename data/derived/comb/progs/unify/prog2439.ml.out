@@ -1,0 +1,5 @@
+Characters 28-86:
+  let fixpoint (f,b) = wwhile (fun x -> if x = (f x) then (x, false) else (f x, true),b);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

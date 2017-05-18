@@ -1,0 +1,7 @@
+Characters 68-70:
+  let f' = ( f, b = ( f b ) ) in f b , f' );;
+                                       ^^
+Error: This expression has type (('a -> 'a * bool) -> 'a -> 'a * bool) * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside
+       (('a -> 'a * bool) -> 'a -> 'a * bool) * bool

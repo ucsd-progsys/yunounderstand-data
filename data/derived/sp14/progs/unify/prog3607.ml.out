@@ -1,0 +1,5 @@
+Characters 136-138:
+  | Average (n1, n2) ->  "(" ^ n1 ^ n2 ^ "/ 2 )"
+                               ^^
+Error: This expression has type expr but an expression was expected of type
+         string

@@ -1,0 +1,5 @@
+Characters 32-33:
+  let _ = eval (Divide(VarX,VarY),1,0.5);;
+                                  ^
+Error: This expression has type int but an expression was expected of type
+         float

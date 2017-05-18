@@ -1,0 +1,5 @@
+Characters 30-62:
+  "[" ^ (List.map (fun x -> x ^ "; ") l) "]";;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       This is not a function; it cannot be applied.

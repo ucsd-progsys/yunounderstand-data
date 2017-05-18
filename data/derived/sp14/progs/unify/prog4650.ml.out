@@ -1,0 +1,5 @@
+Characters 139-143:
+  let seen' = if (List.mem h seen)=false then seen[] @ [h] in
+                                              ^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

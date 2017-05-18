@@ -1,0 +1,5 @@
+Characters 253-260:
+  |h'::t' -> mulByDigit i t' @ [carry i h + remainder h' i] @ [remainder h i + carry i ];;
+                                                                               ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

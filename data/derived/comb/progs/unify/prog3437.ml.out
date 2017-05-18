@@ -1,0 +1,5 @@
+Characters 90-91:
+  | Sine s -> "sin(pi*" ^ s ^ ")";;
+                          ^
+Error: This expression has type expr but an expression was expected of type
+         string

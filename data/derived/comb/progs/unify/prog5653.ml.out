@@ -1,0 +1,5 @@
+Characters 71-72:
+  | h::t -> h n + sumList(t n);;
+                          ^
+Error: This expression has type ('a -> int) list
+       This is not a function; it cannot be applied.

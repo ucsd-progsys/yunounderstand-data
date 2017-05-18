@@ -1,0 +1,5 @@
+Characters 44-45:
+  let _  = eval (Logistic (VarX, VarY, VarX), 1, 0.5);;
+                                              ^
+Error: This expression has type int but an expression was expected of type
+         float

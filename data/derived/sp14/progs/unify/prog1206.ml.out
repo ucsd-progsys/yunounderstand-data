@@ -1,0 +1,5 @@
+Characters 113-115:
+  l1::((clone 0 (List.length l1 - List.length l2)) @ [l2])
+                                                      ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,0 +1,6 @@
+Characters 18-22:
+  let _ = pipe fun1 fun2 3;;
+                    ^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type (int -> int) -> 'a -> 'b
+       Type int is not compatible with type int -> int 

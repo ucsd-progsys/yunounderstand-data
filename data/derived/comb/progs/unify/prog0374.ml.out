@@ -1,0 +1,5 @@
+Characters 444-465:
+  | FunckyRoot (e1,e2,e3) -> sqrt ((sqrt (eval(e1,x,x))) (sqrt (eval(e2,x,y))) (sqrt (eval(e3,y,y))));;
+                                   ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

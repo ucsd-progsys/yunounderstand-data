@@ -1,0 +1,5 @@
+Characters 372-460:
+  ..........(build(rand, depth-1), build(rand, depth-1),
+  build(rand, depth-1), build(rand, depth-1))..
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * expr

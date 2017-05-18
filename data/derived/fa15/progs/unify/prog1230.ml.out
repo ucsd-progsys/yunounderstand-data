@@ -1,0 +1,5 @@
+Characters 33-40:
+  sumList digitsOfInt (n);;
+  ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

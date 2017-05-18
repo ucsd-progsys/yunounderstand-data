@@ -1,0 +1,5 @@
+Characters 30-38:
+  let _ = lookup "a" [("a", 1); ("b", 2), ("a", 10)];;
+                                ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

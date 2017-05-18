@@ -1,0 +1,5 @@
+Characters 269-304:
+  |Thresh (e1, e2, e3, e4) -> (exprToString e1 < exprToString e2);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

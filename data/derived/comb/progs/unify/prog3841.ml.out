@@ -1,0 +1,5 @@
+Characters 123-124:
+  let l = sepConcat t in
+                    ^
+Error: This expression has type string list
+       but an expression was expected of type string

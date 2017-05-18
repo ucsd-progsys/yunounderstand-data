@@ -1,0 +1,5 @@
+Characters 88-100:
+  | Sine n -> "sin("^(exprToString Times(pi,x))^")"
+                      ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

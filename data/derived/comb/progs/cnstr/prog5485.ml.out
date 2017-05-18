@@ -1,0 +1,5 @@
+Characters 67-71:
+  let base = [] x in
+             ^^^^
+Error: The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)

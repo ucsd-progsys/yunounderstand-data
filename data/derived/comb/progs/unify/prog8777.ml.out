@@ -1,0 +1,5 @@
+Characters 17-19:
+  let g3 () = (10, 10 10);;
+                   ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

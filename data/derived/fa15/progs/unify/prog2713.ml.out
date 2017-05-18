@@ -1,0 +1,5 @@
+Characters 121-123:
+  | [] -> if a1 = 0 then [] else [(0.a1)]
+                                   ^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

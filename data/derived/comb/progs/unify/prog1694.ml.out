@@ -1,0 +1,5 @@
+Characters 92-99:
+  clone 0 -diff @  l2);;
+  ^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

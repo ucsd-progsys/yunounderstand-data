@@ -1,0 +1,5 @@
+Characters 355-362:
+  |AllMult(s,p,r)->exprToString s^"*"^exprToString p^"*"^exprToString p
+   ^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor AllMult does not belong to type expr

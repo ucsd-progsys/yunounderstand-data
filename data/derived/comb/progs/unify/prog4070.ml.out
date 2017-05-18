@@ -1,0 +1,5 @@
+Characters 72-75:
+  (xx, xx != x) in y x, b);;
+                   ^^^
+Error: This expression has type float * bool
+       but an expression was expected of type 'a -> 'a * bool

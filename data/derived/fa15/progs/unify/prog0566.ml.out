@@ -1,0 +1,6 @@
+Characters 15-23:
+  let _ = build (makeRand, 2);;
+                 ^^^^^^^^
+Error: This expression has type int * int -> int * int -> int
+       but an expression was expected of type int * int -> int
+       Type int * int -> int is not compatible with type int 

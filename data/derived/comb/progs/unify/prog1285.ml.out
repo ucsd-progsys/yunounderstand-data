@@ -1,0 +1,5 @@
+Characters 390-393:
+  | Thresh(v,w,x,y) -> exprToString(v)^"<"^exprToString(w)^"?"^exprToString(x)^"^"exprToString(y)^")";;
+                                                                               ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

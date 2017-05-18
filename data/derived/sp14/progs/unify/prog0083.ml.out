@@ -1,0 +1,5 @@
+Characters 19-30:
+  let rec digits n = digitsOfInt (abs n)
+                     ^^^^^^^^^^^
+Error: This function has type int -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

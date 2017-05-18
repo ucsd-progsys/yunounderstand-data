@@ -1,0 +1,5 @@
+Characters 3-4:
+  (x<y?::sin(pi*x)*cos(pi*((x+y)/2)));;
+     ^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

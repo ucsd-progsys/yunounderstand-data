@@ -1,0 +1,5 @@
+Characters 204-231:
+  let (_, ans) = mulHelper 0::(List.rev (l)) in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

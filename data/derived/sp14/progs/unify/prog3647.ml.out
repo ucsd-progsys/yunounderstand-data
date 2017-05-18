@@ -1,0 +1,5 @@
+Characters 115-123:
+  else if List.length l1 < List.length l2 then (l1, l2);;
+                                               ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

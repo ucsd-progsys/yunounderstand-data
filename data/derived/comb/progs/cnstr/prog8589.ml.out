@@ -1,0 +1,5 @@
+Characters 70-72:
+  n mod 10 :: sumL;;
+           ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

@@ -1,0 +1,5 @@
+Characters 18-19:
+  let test = equiv [1;2];;
+                    ^
+Error: This expression has type int but an expression was expected of type
+         'a list

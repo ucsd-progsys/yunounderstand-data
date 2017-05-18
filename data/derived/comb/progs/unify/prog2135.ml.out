@@ -1,0 +1,5 @@
+Characters 8-20:
+  let _ = List.combine [1;3] [2;4]
+          ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

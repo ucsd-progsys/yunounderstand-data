@@ -1,0 +1,5 @@
+Characters 108-109:
+  if (List.length a = 5)
+                  ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

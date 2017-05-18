@@ -1,0 +1,5 @@
+Characters 149-157:
+  | 0 -> buildSine(buildX)
+                  ^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

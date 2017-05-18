@@ -1,0 +1,5 @@
+Characters 20-24:
+  let _ = digitalRoot 9876;;
+                      ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

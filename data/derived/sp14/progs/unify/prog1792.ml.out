@@ -1,0 +1,6 @@
+Characters 82-91:
+  | Sine s -> buildSine;;
+              ^^^^^^^^^
+Error: This expression has type expr -> expr
+       but an expression was expected of type unit -> expr
+       Type expr is not compatible with type unit 

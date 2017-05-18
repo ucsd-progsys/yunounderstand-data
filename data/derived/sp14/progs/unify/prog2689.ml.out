@@ -1,0 +1,5 @@
+Characters 86-92:
+  if boo then wwhile (func)
+                     ^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type ('b -> 'a * bool) * 'b

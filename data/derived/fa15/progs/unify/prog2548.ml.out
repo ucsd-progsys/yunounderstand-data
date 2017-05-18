@@ -1,0 +1,5 @@
+Characters 117-118:
+  ( a1 @ [c+1], a2 @ [c+1] )
+          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

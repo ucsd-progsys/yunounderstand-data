@@ -1,0 +1,5 @@
+Characters 45-46:
+  let concatL = fold_l (fun temp h-> h ^ temp) 0 list2;;
+                                               ^
+Error: This expression has type int but an expression was expected of type
+         string

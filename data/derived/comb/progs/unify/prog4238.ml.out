@@ -1,0 +1,7 @@
+Characters 15-16:
+  let _ =wwhile (f,2) should return 512;;
+                 ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type
+         ('a -> 'b -> 'c -> 'd) -> ('a -> 'b -> 'c -> 'd) * bool
+       Type int is not compatible with type 'a -> 'b -> 'c -> 'd 

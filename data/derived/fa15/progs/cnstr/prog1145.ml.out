@@ -1,0 +1,5 @@
+Characters 35-37:
+  let rec clone x n = if n > 1 then x::(clone x (n-1));;
+                                     ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

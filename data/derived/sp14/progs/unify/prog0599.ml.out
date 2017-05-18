@@ -1,0 +1,5 @@
+Characters 489-493:
+  | Crazy(e1, e2, e3) -> if (eval(e1) > eval(e2)) then eval(e3) else (-eval(e3));;
+                                 ^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,6 @@
+Characters 100-101:
+  else assoc(d,k,t)
+                 ^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'c list list
+       Type 'a * 'b is not compatible with type 'c list 

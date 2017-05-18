@@ -1,0 +1,5 @@
+Characters 19-23:
+  let _ = eval (Sine(Varx),1,1);;
+                     ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Varx does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 8-11:
+  let _ = 5.4 * 4;;
+          ^^^
+Error: This expression has type float but an expression was expected of type
+         int

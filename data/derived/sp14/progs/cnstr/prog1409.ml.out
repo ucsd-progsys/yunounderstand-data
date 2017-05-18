@@ -1,0 +1,5 @@
+Characters 16-20:
+  eval(Clamp(Sine(Varx),VarX,VarY),1,2);;
+                  ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Varx does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 129-136:
+  | ArcSine e -> 1/.sin(pi*.eval(e,x,y))
+    ^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor ArcSine does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 191-197:
+  (t,x+h::b)
+     ^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int list * int list

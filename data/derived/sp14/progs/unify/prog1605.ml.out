@@ -1,0 +1,5 @@
+Characters 96-98:
+  | hd :: tl ->  tl  (hd :: result)
+                 ^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

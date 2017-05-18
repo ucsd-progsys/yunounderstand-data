@@ -1,0 +1,5 @@
+Characters 183-206:
+  List.append l1 ((clone 0 (first - sec))::l2)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

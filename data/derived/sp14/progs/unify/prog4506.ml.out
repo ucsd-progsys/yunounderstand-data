@@ -1,0 +1,5 @@
+Characters 102-124:
+  | h::t -> t, ((fst h + snd h) mod 10 :: snd a) in
+                ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int * int

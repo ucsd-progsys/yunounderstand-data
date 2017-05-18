@@ -1,0 +1,5 @@
+Characters 60-62:
+  else n - (n/10) * 10 append digitsOfInt (n/10);;
+                    ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

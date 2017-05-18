@@ -1,0 +1,5 @@
+Characters 71-72:
+  else mulByDigit (i-1 l);;
+                     ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,0 +1,6 @@
+Characters 62-64:
+  let fixpoint (f,b) = wwhile ((let f' x = (f x,f x not = x) in f'),b);;
+                                                                ^^
+Error: This expression has type 'a -> ((bool -> bool) -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside (bool -> bool) -> 'a

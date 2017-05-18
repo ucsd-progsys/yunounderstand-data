@@ -1,0 +1,5 @@
+Characters 36-39:
+  if (f, b) > 100 then (f, b) else f(f,b);;
+              ^^^
+Error: This expression has type int but an expression was expected of type
+         'a * 'b

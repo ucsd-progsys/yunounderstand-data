@@ -1,0 +1,5 @@
+Characters 86-106:
+  bigAdd total  (mulByDigit (i-1) l);;
+                ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

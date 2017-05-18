@@ -1,0 +1,5 @@
+Characters 15-26:
+  let _ = foo [] [1;2;3;4;5] [1;0;1;0];;
+                 ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b -> 'c

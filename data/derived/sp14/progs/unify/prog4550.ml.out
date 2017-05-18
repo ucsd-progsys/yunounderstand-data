@@ -1,0 +1,5 @@
+Characters 82-92:
+  | Sine var1 -> "sin (pi*" + exprToString var1 + ")"
+                 ^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

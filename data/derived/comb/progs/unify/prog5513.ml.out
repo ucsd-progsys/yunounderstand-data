@@ -1,0 +1,5 @@
+Characters 62-69:
+  | 0 -> removeZero List.tl l 
+                    ^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type int list

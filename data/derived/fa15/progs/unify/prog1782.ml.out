@@ -1,0 +1,5 @@
+Characters 93-106:
+  else digitsOfInt n*(-1)
+       ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

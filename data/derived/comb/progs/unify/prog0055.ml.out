@@ -1,0 +1,5 @@
+Characters 8-14:
+  let b = to_int Succ(Zero);;
+          ^^^^^^
+Error: This function has type nat -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

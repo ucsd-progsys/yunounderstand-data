@@ -1,0 +1,5 @@
+Characters 117-140:
+  | h::t -> ( (pos + 1),  (total) ) in
+            ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

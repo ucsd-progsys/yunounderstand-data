@@ -1,0 +1,5 @@
+Characters 68-69:
+  Printf.sprintf"%d" e
+                     ^
+Error: This expression has type expr but an expression was expected of type
+         int

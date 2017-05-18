@@ -1,0 +1,5 @@
+Characters 73-74:
+  | _ -> d;;
+         ^
+Error: This expression has type unit list
+       but an expression was expected of type unit

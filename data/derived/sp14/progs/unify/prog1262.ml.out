@@ -1,0 +1,5 @@
+Characters 44-52:
+  if n >0 then n/10::n mod 10
+                     ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

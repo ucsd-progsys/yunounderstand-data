@@ -1,0 +1,5 @@
+Characters 79-87:
+  List.fold_left f base List.rev fs;;
+                        ^^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type ('b -> 'b) list

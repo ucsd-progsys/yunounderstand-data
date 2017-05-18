@@ -1,0 +1,6 @@
+Characters 498-500:
+  emitColor (f1,f2,f3,n,name);;
+             ^^
+Error: This expression has type float * float -> unit
+       but an expression was expected of type float * float -> float
+       Type unit is not compatible with type float 

@@ -1,0 +1,5 @@
+Characters 183-187:
+  if (List.mem h r = false) then seen' := h :: seen in
+                                               ^^^^
+Error: This expression has type 'a list ref
+       but an expression was expected of type 'a list

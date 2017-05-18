@@ -1,0 +1,5 @@
+Characters 32-35:
+  let stringOfList f l = List.map "[" ^ sepConcat l ^ "]";;
+                                  ^^^
+Error: This expression has type string but an expression was expected of type
+         'a -> 'b

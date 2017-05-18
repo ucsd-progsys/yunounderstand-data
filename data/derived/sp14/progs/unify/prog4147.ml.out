@@ -1,0 +1,5 @@
+Characters 684-690:
+  "sin^2(pi*" ^ exprToString e1 ^")*"^"(cos^2(pi*" ^ exprToString e2 ^")*"^"cos("exprToString e3^"))";;
+                                                                           ^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

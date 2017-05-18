@@ -1,0 +1,5 @@
+Characters 482-485:
+  | Arc (a,b,c) -> "sin(pi*(" ^ (exprToString  a) ^ "+" ^ (exprToString  b) ^ (exprToString c) ^ ")";;
+    ^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Arc does not belong to type expr

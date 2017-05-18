@@ -1,0 +1,5 @@
+Characters 75-77:
+  | Sine ex -> sin(pi* exprToString ex )
+                   ^^
+Error: This expression has type float but an expression was expected of type
+         int

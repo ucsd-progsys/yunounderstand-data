@@ -1,0 +1,5 @@
+Characters 29-33:
+  let _ = eval (NewExprA(VarX, Vary), 1., -1.);;
+                               ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Vary does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 53-66:
+  | hd::tl -> last tl :: hd;;
+              ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

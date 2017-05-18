@@ -1,0 +1,6 @@
+Characters 58-59:
+  let fixpoint (f,b) = wwhile (let n x = (f , b < f b) in n,b);;
+                                                            ^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

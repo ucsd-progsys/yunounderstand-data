@@ -1,0 +1,5 @@
+Characters 57-61:
+  let rec digitsOfInt n = if n<0 then [] else match n with f::b -> f;;
+                                                           ^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

@@ -1,0 +1,5 @@
+Characters 68-72:
+  (h::t) -> if t = true then wwhile(f, h) else h;;
+                   ^^^^
+Error: This variant expression is expected to have type 'a list
+       The constructor true does not belong to type list

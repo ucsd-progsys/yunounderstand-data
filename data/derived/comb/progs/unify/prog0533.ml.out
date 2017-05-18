@@ -1,0 +1,5 @@
+Characters 46-67:
+  let (l, r) = additivePersAndRoot n in
+               ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int -> int * int
+       but an expression was expected of type 'a * 'b

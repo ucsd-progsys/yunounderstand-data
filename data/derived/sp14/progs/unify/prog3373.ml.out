@@ -1,0 +1,5 @@
+Characters 13-22:
+  a = a + 1;;
+  ^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

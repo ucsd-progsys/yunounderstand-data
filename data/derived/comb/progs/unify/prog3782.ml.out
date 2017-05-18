@@ -1,0 +1,5 @@
+Characters 97-98:
+  |(b,c) -> b @ [0] , bigAdd ((mulByDigit x l2) @ b) a in 
+                                                     ^
+Error: This expression has type int list * 'a
+       but an expression was expected of type int list

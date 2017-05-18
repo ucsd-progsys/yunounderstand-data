@@ -1,0 +1,5 @@
+Characters 169-174:
+  if (1 = 2) then seen' := h :: seen' ;
+                                ^^^^^
+Error: This expression has type 'a list ref
+       but an expression was expected of type 'a list

@@ -1,0 +1,5 @@
+Characters 362-383:
+  |MyExpr1(e1,e2,e3) -> Cosine(eval (e1,x,y))*.Sine(eval (e2,x,y))*.eval(e3,x,y)
+                        ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

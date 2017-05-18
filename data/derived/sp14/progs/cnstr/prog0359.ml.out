@@ -1,0 +1,5 @@
+Characters 13-63:
+  let _ = eval (Thresh(VarX,VarY,Sine(VarX),Cos(VarY), 1.0, 2.0));;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Thresh expects 4 argument(s),
+       but is applied here to 6 argument(s)

@@ -1,0 +1,5 @@
+Characters 124-133:
+  |Average e  -> "(%s + %s)/2" e p
+   ^^^^^^^^^
+Error: The constructor Average expects 2 argument(s),
+       but is applied here to 1 argument(s)

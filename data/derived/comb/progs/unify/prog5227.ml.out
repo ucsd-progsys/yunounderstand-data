@@ -1,0 +1,5 @@
+Characters 540-555:
+  removeZero (add (List.rev(padZero l1 l2)));;
+                           ^^^^^^^^^^^^^^^
+Error: This expression has type int list * int list
+       but an expression was expected of type 'a list

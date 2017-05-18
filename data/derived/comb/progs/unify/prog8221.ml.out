@@ -1,0 +1,5 @@
+Characters 61-62:
+  | h::t -> h :: t append r;;
+                 ^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

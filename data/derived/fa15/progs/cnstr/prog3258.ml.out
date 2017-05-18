@@ -1,0 +1,5 @@
+Characters 22-31:
+  let sampleExpr3 = Neg(AddDivide(VarX,VaryX,VarY));;
+                        ^^^^^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor AddDivide does not belong to type expr

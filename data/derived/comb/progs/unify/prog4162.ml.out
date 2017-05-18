@@ -1,0 +1,5 @@
+Characters 46-50:
+  | h::t ->  x::clone x (n-1);;
+    ^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

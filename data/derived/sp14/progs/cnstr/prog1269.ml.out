@@ -1,0 +1,5 @@
+Characters 40-42:
+  if n >0 then n::[n mod 10];;
+                ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

@@ -1,0 +1,5 @@
+Characters 89-91:
+  ((List.length l1) -1,(mulByDigit (x*(10**i)) l2)::j)in
+                                       ^^
+Error: This expression has type int but an expression was expected of type
+         float

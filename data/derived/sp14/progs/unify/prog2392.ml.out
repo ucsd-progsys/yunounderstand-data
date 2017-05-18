@@ -1,0 +1,5 @@
+Characters 200-207:
+  | (h1::t1, h2::t2) -> (h1,h2)::pair(t1,t2)
+                                     ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

@@ -1,0 +1,5 @@
+Characters 170-190:
+  if (l_diff < 0) then (to_append @ l1), l2;;
+                       ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

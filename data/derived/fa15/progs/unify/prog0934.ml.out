@@ -1,0 +1,7 @@
+Characters 181-182:
+  let (carry, res) = List.fold_left f base args in
+                                    ^
+Error: This expression has type 'a list * 'a list -> 'b * 'c -> 'a list
+       but an expression was expected of type
+         'a list * 'a list -> 'b * 'c -> 'a list * 'a list
+       Type 'a list is not compatible with type 'a list * 'a list 

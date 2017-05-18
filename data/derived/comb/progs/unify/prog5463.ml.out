@@ -1,0 +1,5 @@
+Characters 538-539:
+  let d = (eval(m, x, y)*.eval(n, x, y)) in if d > 0.0 then 1 else (d /. eval(o, x, y));;
+                                                            ^
+Error: This expression has type int but an expression was expected of type
+         float

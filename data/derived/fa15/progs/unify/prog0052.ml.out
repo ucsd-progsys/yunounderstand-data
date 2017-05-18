@@ -1,0 +1,5 @@
+Characters 102-103:
+  d::(n mod 10);;
+  ^
+Error: This expression has type int list
+       but an expression was expected of type int

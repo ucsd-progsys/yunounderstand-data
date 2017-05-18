@@ -1,0 +1,5 @@
+Characters 330-336:
+  | Square e -> eval(e ** 2)
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Square does not belong to type expr

@@ -1,0 +1,6 @@
+Characters 23-31:
+  | (s,i)::t -> s;;
+    ^^^^^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type
+         int list * int list

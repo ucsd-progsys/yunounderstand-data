@@ -1,0 +1,5 @@
+Characters 44-61:
+  let f a x = List.append((mulByDigit x l1) (clone 0 (List.length b)))::b in
+                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

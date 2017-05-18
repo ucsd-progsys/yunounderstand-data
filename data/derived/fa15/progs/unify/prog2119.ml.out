@@ -1,0 +1,5 @@
+Characters 90-93:
+  | (x, y) when y = true -> wwhile (f b, x)
+                                    ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'a * bool

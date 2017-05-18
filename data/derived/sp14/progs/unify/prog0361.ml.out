@@ -1,0 +1,5 @@
+Characters 13-56:
+  let _ = eval (Thresh(VarX,VarY,Sine(VarX),Cosine(VarX))), 1.0, 0.5;;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

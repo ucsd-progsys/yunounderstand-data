@@ -1,0 +1,5 @@
+Characters 96-98:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type ('b -> 'b) list

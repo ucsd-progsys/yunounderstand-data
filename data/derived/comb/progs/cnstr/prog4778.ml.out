@@ -1,0 +1,5 @@
+Characters 37-47:
+  let buildFlatten(e)                = Flatten(e);;
+                                       ^^^^^^^^^^
+Error: The constructor Flatten expects 3 argument(s),
+       but is applied here to 1 argument(s)

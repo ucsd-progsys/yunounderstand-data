@@ -1,0 +1,5 @@
+Characters 83-96:
+  | Sine e1-> buildSine(e1);;
+              ^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit -> expr

@@ -1,0 +1,6 @@
+Characters 50-63:
+  | 1 -> clone x (n-1) :: [x];;
+         ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

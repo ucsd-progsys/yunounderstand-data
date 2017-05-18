@@ -1,0 +1,5 @@
+Characters 70-81:
+  else digitsOfInt (-1)  (n mod 10) :: return;;
+       ^^^^^^^^^^^
+Error: This function has type int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 50-57:
+  clone (x::[]) (n-1);;
+        ^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

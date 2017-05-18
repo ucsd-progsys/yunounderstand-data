@@ -1,0 +1,5 @@
+Characters 53-63:
+  | h::t -> h::(append t);;
+               ^^^^^^^^^^
+Error: This expression has type 'a list list -> 'a list list
+       but an expression was expected of type 'a list

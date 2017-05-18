@@ -1,0 +1,6 @@
+Characters 52-53:
+  fixpoint f f b
+           ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type
+         (('b -> 'c -> 'd) -> 'b -> 'c -> 'd) * ('b -> 'c -> 'd)

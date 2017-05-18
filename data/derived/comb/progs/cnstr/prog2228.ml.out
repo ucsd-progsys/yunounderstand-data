@@ -1,0 +1,5 @@
+Characters 353-383:
+  | FiboPlus (ex1,ex2,ex3,ex4,ex5) -> ((eval (ex1,x,y))*.(eval (ex1,x,y)+.eval (ex2,x,y)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor FiboPlus expects 2 argument(s),
+       but is applied here to 5 argument(s)

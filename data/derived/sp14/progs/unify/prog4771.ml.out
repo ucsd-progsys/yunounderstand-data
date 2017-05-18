@@ -1,0 +1,5 @@
+Characters 348-351:
+  | Squared e -> (eval(e) ** 2)
+                      ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

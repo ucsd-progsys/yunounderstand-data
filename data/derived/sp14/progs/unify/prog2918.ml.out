@@ -1,0 +1,5 @@
+Characters 77-90:
+  | Sine(a) -> sin(eval(e,x,a))
+                  ^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

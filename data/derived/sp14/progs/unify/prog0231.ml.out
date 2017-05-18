@@ -1,0 +1,5 @@
+Characters 170-203:
+  in helper (mulByDigit i (List.rev t) * 10 ) + h*i;;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

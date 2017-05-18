@@ -1,0 +1,5 @@
+Characters 135-186:
+  | _ -> ((c + x' + x'') / 10), ((c + x' + x'') mod 10) :: s
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

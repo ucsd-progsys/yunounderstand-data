@@ -1,0 +1,5 @@
+Characters 166-181:
+  | _ -> r_digitalRoot n -1;;
+         ^^^^^^^^^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

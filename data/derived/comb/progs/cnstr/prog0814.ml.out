@@ -1,0 +1,5 @@
+Characters 355-363:
+  | NewExprA (e1,e2) -> if eval(e1,x,y) > eval(e2,x,y) then eval (e1,x,y) else eval(e2,x,y)
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor NewExprA does not belong to type expr

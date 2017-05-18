@@ -1,0 +1,5 @@
+Characters 437-456:
+  | KellysOp (e1,e2,e3) -> "("^exprToString e1^">"^exprToString e2^"?"^exprToString e3^":0.0";;
+    ^^^^^^^^^^^^^^^^^^^
+Error: The constructor KellysOp expects 4 argument(s),
+       but is applied here to 3 argument(s)

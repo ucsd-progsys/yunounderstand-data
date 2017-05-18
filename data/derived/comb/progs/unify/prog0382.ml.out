@@ -1,0 +1,5 @@
+Characters 474-483:
+  | SquareSinCos (e1,e2,e3) -> sqrt(abs_float sin(cos(pi*.(eval(e1,x,y)))*.cos(pi*.(eval(e2,x,y)))*.cos(pi*.(eval(e3,x,y)))));;
+                                    ^^^^^^^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 13-32:
+  let (l, r) = additivePersAndRoot abs(-2) 0;;
+               ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int -> int -> int * int
+       It is applied to too many arguments; maybe you forgot a `;'.

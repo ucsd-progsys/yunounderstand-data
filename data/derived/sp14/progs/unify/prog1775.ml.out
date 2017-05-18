@@ -1,0 +1,5 @@
+Characters 474-522:
+  | r when r > 25 && r < 35 -> buildTimes(buildCosine(buildSine(build(rand, depth - 1))))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

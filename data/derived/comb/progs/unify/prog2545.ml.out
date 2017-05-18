@@ -1,0 +1,5 @@
+Characters 9-13:
+  let hi = pipe [] 3;;
+           ^^^^
+Error: This function has type (int -> int) list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

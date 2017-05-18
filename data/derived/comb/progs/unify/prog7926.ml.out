@@ -1,0 +1,5 @@
+Characters 183-201:
+  | Average (expr1, expr2) -> (((eval (expr1, x, y) + eval(expr2, x, y))) /. 2)
+                                 ^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

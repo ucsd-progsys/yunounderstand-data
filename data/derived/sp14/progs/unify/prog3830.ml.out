@@ -1,0 +1,5 @@
+Characters 194-196:
+  | Average(x1,x2)	-> ( (eval x1) +. (eval x2) ) /. 2.;;
+                              ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

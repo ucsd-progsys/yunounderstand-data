@@ -1,0 +1,5 @@
+Characters 70-73:
+  | h::t -> rev (h::x) t in
+            ^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

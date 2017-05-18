@@ -1,0 +1,5 @@
+Characters 57-65:
+  | h :: t -> sqsumL t @ h*h;;
+              ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

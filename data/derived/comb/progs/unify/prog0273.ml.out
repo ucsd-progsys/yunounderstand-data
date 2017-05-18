@@ -1,0 +1,5 @@
+Characters 200-294:
+  in helper [] ([List.fold_left f base ((mulByDigit i (List.rev (List.map (fun x -> x*10) t))) @ h*i :: [])]);;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

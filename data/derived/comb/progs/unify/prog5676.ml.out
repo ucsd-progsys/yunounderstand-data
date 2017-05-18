@@ -1,0 +1,5 @@
+Characters 59-81:
+  else [digitsOfInt (n / 10)] :: (n mod 10);;
+       ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

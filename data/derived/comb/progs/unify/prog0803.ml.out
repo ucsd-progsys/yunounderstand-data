@@ -1,0 +1,5 @@
+Characters 564-567:
+  | NewExprA (e1,e2) -> "(" ^ exprToString e1 ^ ">" exprToString e2 ^ "?" exprToString e1 ^ ":" exprToString e2
+                                                ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

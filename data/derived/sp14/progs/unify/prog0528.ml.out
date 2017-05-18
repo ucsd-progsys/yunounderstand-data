@@ -1,0 +1,5 @@
+Characters 29-33:
+  let _ = additivePersAndRoot [1, 1] 0;;
+                               ^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

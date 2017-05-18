@@ -1,0 +1,5 @@
+Characters 108-109:
+  ([], []) -> (v1 :: a, v2::a)
+                     ^
+Error: This expression has type 'a list * 'b list
+       but an expression was expected of type 'c list

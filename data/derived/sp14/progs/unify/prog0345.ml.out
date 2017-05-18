@@ -1,0 +1,5 @@
+Characters 93-95:
+  | Average (x', y') -> (eval x' y + eval x y')/2;;
+                              ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * ('a -> 'b) * ('a -> 'b)

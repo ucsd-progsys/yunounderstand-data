@@ -1,0 +1,5 @@
+Characters 16-17:
+  append [2,3,4] [1];;
+                  ^
+Error: This expression has type int but an expression was expected of type
+         int * int * int

@@ -1,0 +1,5 @@
+Characters 111-125:
+  digitsOfInt n2;;
+  ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

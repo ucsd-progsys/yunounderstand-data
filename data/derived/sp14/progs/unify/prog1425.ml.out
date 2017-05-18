@@ -1,0 +1,5 @@
+Characters 123-124:
+  let base =  if t=[] then "A" else t in
+                                    ^
+Error: This expression has type 'a list
+       but an expression was expected of type string

@@ -1,0 +1,5 @@
+Characters 246-256:
+  let (carry', digits') = if (sec' = 1) then (1, digits @ (fst, sec)) else (0, digits @ (fst, sec)) in 
+                                                          ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

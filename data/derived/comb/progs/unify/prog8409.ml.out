@@ -1,0 +1,5 @@
+Characters 546-561:
+  | 8 -> buildX(build(rand,d))
+               ^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

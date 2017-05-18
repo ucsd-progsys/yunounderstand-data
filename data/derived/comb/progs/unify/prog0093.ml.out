@@ -1,0 +1,5 @@
+Characters 575-596:
+  | _ -> buildAddition ( build(rand,depth) );;
+                       ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

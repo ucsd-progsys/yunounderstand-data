@@ -1,0 +1,5 @@
+Characters 24-30:
+  buildX(2)
+  ^^^^^^
+Error: This function has type unit -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

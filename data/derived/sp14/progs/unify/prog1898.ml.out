@@ -1,0 +1,6 @@
+Characters 43-44:
+  let rec mulByDigit i l = bigAdd (bigAdd (l l)) (mulByDigit (i - 1) l);;
+                                             ^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

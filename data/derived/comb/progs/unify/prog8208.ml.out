@@ -1,0 +1,8 @@
+Characters 35-42:
+  Printf.sprintf explode(w);;
+                 ^^^^^^^
+Error: This expression has type string -> char list
+       but an expression was expected of type
+         ('a -> 'b, unit, string) format =
+           ('a -> 'b, unit, string, string, string, string)
+           CamlinternalFormatBasics.format6

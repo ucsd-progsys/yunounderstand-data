@@ -1,0 +1,5 @@
+Characters 405-413:
+  | SquareAv(a,b) -> "(" ^ exprToString a ^ "^2 + " ^ exprToString b ^ "^2)/2"
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor SquareAv does not belong to type expr

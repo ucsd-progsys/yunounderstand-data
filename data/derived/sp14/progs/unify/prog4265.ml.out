@@ -1,0 +1,5 @@
+Characters 179-183:
+  | Average (expr,expr1)->((eval (expr x y)) +. (eval (expr1 x y)))/.2
+                                  ^^^^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

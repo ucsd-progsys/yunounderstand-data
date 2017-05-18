@@ -1,0 +1,5 @@
+Characters 54-72:
+  | h::t -> ((10.0 ** x) *. h) @ tenEx (x +. 1.0) t;;
+            ^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         'a list

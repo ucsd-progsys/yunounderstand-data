@@ -1,0 +1,5 @@
+Characters 105-108:
+  else ((n mod 10) :: ( xxx (n / 10)))
+                        ^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

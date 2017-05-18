@@ -1,0 +1,5 @@
+Characters 35-47:
+  let rec digitalRoot n = digitalRoot(sumList(n));;
+                                     ^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

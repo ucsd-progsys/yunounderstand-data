@@ -1,0 +1,5 @@
+Characters 42-49:
+  then inc (i+1) sumList (digitsOfInt n)
+                 ^^^^^^^
+Error: This expression has type int list -> int
+       but an expression was expected of type int

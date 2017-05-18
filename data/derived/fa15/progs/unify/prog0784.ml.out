@@ -1,0 +1,5 @@
+Characters 75-76:
+  | h::t -> h n + sumList(n + h) xs;;
+                              ^
+Error: This expression has type int -> int
+       but an expression was expected of type int

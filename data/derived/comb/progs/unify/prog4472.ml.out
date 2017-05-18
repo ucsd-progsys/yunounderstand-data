@@ -1,0 +1,6 @@
+Characters 7-13:
+  wwhile fptest (0, false);;
+         ^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)

@@ -1,0 +1,5 @@
+Characters 92-100:
+  |x -> (x,true) in (func b) ,b);;
+                    ^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

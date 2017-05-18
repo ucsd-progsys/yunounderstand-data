@@ -1,0 +1,5 @@
+Characters 60-77:
+  (b+1,bigAdd((mulByDigit x l2)::(clone 0 b) c)) in
+              ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

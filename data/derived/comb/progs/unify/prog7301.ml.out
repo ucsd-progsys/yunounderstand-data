@@ -1,0 +1,5 @@
+Characters 106-108:
+  | z::x::x' -> [x*i/10] @ mulByDigit i [(x*i) mod 10 + z;x'];;
+                                                          ^^
+Error: This expression has type int list
+       but an expression was expected of type int

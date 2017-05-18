@@ -1,0 +1,5 @@
+Characters 7-9:
+  51 mod 10
+         ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

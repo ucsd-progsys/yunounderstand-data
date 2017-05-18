@@ -1,0 +1,5 @@
+Characters 131-132:
+  | (add1, add2) -> ((add1 + add2 + a)/ 10, ((add1 + add2 + a) mod 10)::reest)  in
+                                    ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

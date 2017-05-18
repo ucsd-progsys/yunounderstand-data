@@ -1,0 +1,6 @@
+Characters 61-74:
+  | a :: b -> [listReverse b ; [a]];;
+               ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

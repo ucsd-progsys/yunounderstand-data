@@ -1,0 +1,5 @@
+Characters 23-25:
+  let _ = fixpoint (exp, -1);;
+                         ^^
+Error: This expression has type int but an expression was expected of type
+         float

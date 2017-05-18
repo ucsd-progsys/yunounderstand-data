@@ -1,0 +1,5 @@
+Characters 554-560:
+  | Arcsin   m4		    -> "asin("^exprToString(m4)^")";;
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Arcsin does not belong to type expr

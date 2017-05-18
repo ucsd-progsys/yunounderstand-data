@@ -1,0 +1,5 @@
+Characters 127-128:
+  | 0 -> buildSine(build (rand, depth-1)) 
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type unit -> int

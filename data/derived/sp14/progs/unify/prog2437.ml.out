@@ -1,0 +1,5 @@
+Characters 92-93:
+  if depth > 1 then match rand (0 4) with
+                                ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

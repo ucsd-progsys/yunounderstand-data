@@ -1,0 +1,5 @@
+Characters 74-79:
+  then h = 0
+       ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

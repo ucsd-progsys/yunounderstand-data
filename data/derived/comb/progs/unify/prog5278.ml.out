@@ -1,0 +1,5 @@
+Characters 317-318:
+  | Thresh (e1,e2,e3,4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^
+                     ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type expr

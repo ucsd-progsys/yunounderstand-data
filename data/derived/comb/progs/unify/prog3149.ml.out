@@ -1,0 +1,6 @@
+Characters 116-124:
+  in func f b);;
+     ^^^^^^^^
+Error: This expression has type (('a -> 'a) * bool) * 'a
+       but an expression was expected of type ('b -> 'b * bool) * 'b
+       Type ('a -> 'a) * bool is not compatible with type 'b -> 'b * bool 

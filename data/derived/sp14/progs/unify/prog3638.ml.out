@@ -1,0 +1,5 @@
+Characters 61-79:
+  if List.length l1 = List.length l2 then List.combine l1 l2;;
+                                          ^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type unit

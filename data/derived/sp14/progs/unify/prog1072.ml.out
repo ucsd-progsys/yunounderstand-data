@@ -1,0 +1,5 @@
+Characters 168-181:
+  | Cosine(p1) -> cos(pi *. evalhelper p1)
+                            ^^^^^^^^^^^^^
+Error: This expression has type int -> int -> float
+       but an expression was expected of type float

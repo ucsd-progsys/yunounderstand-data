@@ -1,0 +1,5 @@
+Characters 8-20:
+  let _ = exprToString Power(2.4, 5.3);;
+          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

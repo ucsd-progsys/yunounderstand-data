@@ -1,0 +1,5 @@
+Characters 41-49:
+  let buildTan(e)		           = (mod_float (Tan(e)) 1.0);;
+                                           ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

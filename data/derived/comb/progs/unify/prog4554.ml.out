@@ -1,0 +1,5 @@
+Characters 217-218:
+  | Average (var3, var4) -> ((eval(var3, x, y)) +.eval(var4, x, y))/.2
+                                                                     ^
+Error: This expression has type int but an expression was expected of type
+         float

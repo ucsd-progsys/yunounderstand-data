@@ -1,0 +1,5 @@
+Characters 105-108:
+  | h::t  -> if (k,d) = l then d else assoc (d,k,[t]);;
+                                                 ^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

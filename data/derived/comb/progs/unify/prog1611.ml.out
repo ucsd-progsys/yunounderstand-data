@@ -1,0 +1,5 @@
+Characters 74-89:
+  | hd :: tl -> hd :: (append tl xs2)
+                      ^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

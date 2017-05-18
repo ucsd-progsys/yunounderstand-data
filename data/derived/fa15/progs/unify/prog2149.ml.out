@@ -1,0 +1,4 @@
+Characters 49-60:
+  .........................(a, b) 
+  | _............
+Error: Variable a must occur on both sides of this | pattern

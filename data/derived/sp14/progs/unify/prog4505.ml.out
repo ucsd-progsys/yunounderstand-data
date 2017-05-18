@@ -1,0 +1,5 @@
+Characters 82-85:
+  | []  -> [], snd snd a
+                   ^^^
+Error: This expression has type 'a * 'b -> 'b
+       but an expression was expected of type 'c * ('d -> 'e)

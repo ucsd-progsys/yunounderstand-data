@@ -1,0 +1,6 @@
+Characters 56-57:
+  fixpoint (f, 1);;
+            ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int -> int
+       Type int * bool is not compatible with type int 

@@ -1,0 +1,5 @@
+Characters 105-115:
+  | h :: t -> bigAdd (mulByDigit h (l1') a') in
+                      ^^^^^^^^^^
+Error: This function has type int -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

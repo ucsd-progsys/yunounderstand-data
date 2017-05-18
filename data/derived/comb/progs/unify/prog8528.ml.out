@@ -1,0 +1,5 @@
+Characters 486-488:
+  | NatLog   m4	    -> -1*.((eval(m4,x,y)));;
+                       ^^
+Error: This expression has type int but an expression was expected of type
+         float

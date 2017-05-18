@@ -1,0 +1,5 @@
+Characters 27-38:
+  let buildCirc(c1,c2)		   = Circ(c1,c2);;
+                             ^^^^^^^^^^^
+Error: The constructor Circ expects 3 argument(s),
+       but is applied here to 2 argument(s)

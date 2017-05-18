@@ -1,0 +1,7 @@
+Characters 10-11:
+  fixpoint (g,0) should return 739085;;
+            ^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         ('a -> 'b -> 'c -> 'd) -> 'a -> 'b -> 'c -> 'd
+       Type int is not compatible with type 'a -> 'b -> 'c -> 'd 

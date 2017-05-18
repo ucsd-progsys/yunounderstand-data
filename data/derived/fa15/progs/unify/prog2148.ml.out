@@ -1,0 +1,5 @@
+Characters 72-73:
+  if b = true then wwhile (f, x)
+                              ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type bool

@@ -1,0 +1,5 @@
+Characters 18-21:
+  let _ = eval(Sine(Cos(Varx)), 0.5, -0.5);;
+                    ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Cos does not belong to type expr

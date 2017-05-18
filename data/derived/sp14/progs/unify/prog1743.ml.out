@@ -1,0 +1,5 @@
+Characters 42-45:
+  let _ = List.fold_left (fun a x -> x / a) 1.0 [1.0;4.0];;
+                                            ^^^
+Error: This expression has type float but an expression was expected of type
+         int

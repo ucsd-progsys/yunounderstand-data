@@ -1,0 +1,5 @@
+Characters 527-535:
+  | SqXPlusY (e1,e2)      -> ((eval (e1,x,y)) *. (eval (e1,x,y)) +. (eval (e2,x,y) /. 2.0));;
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor SqXPlusY does not belong to type expr

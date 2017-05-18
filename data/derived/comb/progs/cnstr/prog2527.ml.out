@@ -1,0 +1,5 @@
+Characters 0-4:
+  Sine;;
+  ^^^^
+Error: The constructor Sine expects 1 argument(s),
+       but is applied here to 0 argument(s)

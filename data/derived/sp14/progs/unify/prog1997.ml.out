@@ -1,0 +1,5 @@
+Characters 397-407:
+  in  if (depth < 1) then expChooser rand (0,2) else expChooser rand (2,7);;
+                          ^^^^^^^^^^
+Error: This function has type int * int -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,6 @@
+Characters 38-56:
+  if n > 0 then digitsOfInt (n/10)::[m mod 10] else [];;
+                ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,0 +1,5 @@
+Characters 33-64:
+  let ans = chain[ fun x -> x * x; fun x -> 16 * x; fun x -> x + 1] 1;;
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+int

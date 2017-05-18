@@ -1,0 +1,5 @@
+Characters 18-30:
+  let _ = eval (Sine(VarX, VarY), 0.5,0.5);;
+                    ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

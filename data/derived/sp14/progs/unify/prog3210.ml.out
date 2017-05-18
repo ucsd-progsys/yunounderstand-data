@@ -1,0 +1,5 @@
+Characters 132-134:
+  (List.rev t2, (h2+x)/10::((h2+x) mod 10)::[])
+                 ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

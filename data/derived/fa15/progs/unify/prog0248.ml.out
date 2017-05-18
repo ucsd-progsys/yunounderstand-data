@@ -1,0 +1,5 @@
+Characters 181-182:
+  | Average(c,d) -> eval(c,x,y) +. eval(d,x,y)/.2
+                                                ^
+Error: This expression has type int but an expression was expected of type
+         float

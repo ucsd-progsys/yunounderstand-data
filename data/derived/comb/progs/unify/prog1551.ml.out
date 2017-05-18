@@ -1,0 +1,5 @@
+Characters 30-34:
+  let f a x = a^2::x  in
+                ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

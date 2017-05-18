@@ -1,0 +1,5 @@
+Characters 54-55:
+  let _ = eval(AverageCubes(VarX, VarY, VarY), 0.001, -.5);;
+                                                        ^
+Error: This expression has type int but an expression was expected of type
+         float

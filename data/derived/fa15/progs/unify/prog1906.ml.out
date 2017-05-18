@@ -1,0 +1,5 @@
+Characters 40-43:
+  let stringOfList f l = "[" ^ sepConcat( ";" (List.map f l) )^ "]";;
+                                          ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

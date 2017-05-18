@@ -1,0 +1,5 @@
+Characters 468-477:
+  | Cotangent e         -> "cot("^  exprToString e ^ ")";;
+    ^^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Cotangent does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 113-115:
+  | Cosine a -> cos(pi * eval(a,x,y))
+                    ^^
+Error: This expression has type float but an expression was expected of type
+         int

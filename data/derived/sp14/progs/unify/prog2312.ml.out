@@ -1,0 +1,5 @@
+Characters 483-497:
+  | SumSquared(e1, e2, e3) -> eval(e1, x, y) * eval(e1, x, y) 
+                              ^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,0 +1,5 @@
+Characters 240-241:
+  (eval (expr0,x,y) +. eval (expr1,x,y)) /. 2
+                                            ^
+Error: This expression has type int but an expression was expected of type
+         float

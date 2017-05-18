@@ -1,0 +1,8 @@
+Characters 114-115:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type
+         'a -> 'b -> 'c -> ('a -> 'd) -> 'e list -> 'd -> 'd
+       but an expression was expected of type 'a -> 'b -> 'a
+       The type variable 'a occurs inside
+       'c -> ('a -> 'd) -> 'e list -> 'd -> 'd

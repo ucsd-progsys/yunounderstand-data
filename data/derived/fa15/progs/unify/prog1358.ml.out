@@ -1,0 +1,5 @@
+Characters 22-26:
+  let _ = sumOfDigits = 9876;;
+                        ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list -> int

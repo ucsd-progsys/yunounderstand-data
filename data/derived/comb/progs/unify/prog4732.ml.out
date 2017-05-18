@@ -1,0 +1,6 @@
+Characters 40-45:
+  wwhile (f, if b = (f b) then b else b);;
+                    ^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * bool

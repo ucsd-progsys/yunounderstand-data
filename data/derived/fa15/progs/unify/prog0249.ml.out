@@ -1,0 +1,5 @@
+Characters 66-71:
+  | 0 -> if (rand(0,2) = 0) then Varx else Vary
+                 ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type float

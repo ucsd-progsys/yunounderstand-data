@@ -1,0 +1,5 @@
+Characters 175-176:
+  in (x, isFPoint x)
+                  ^
+Error: This expression has type int -> int
+       but an expression was expected of type int

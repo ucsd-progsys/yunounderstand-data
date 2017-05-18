@@ -1,0 +1,5 @@
+Characters 172-176:
+  (asd3,padZero asd3 asd2::b)
+                     ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

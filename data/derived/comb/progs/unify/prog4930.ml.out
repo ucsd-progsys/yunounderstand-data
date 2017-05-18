@@ -1,0 +1,6 @@
+Characters 50-66:
+  mulByDigit (h*i);;
+  ^^^^^^^^^^^^^^^^
+Error: This expression has type int list -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside int list -> 'a

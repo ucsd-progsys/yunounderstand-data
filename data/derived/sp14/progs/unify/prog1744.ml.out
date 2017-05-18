@@ -1,0 +1,5 @@
+Characters 115-116:
+  else if (i mod 2 = 0) then mulByDigit (i/2) (bigAdd l l)
+                                                      ^
+Error: This expression has type int but an expression was expected of type
+         int list

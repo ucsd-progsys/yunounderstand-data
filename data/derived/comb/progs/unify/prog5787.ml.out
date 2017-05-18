@@ -1,0 +1,5 @@
+Characters 8-13:
+  let _ = tenEx 0 List.rev([4; 5; 6]);;
+          ^^^^^
+Error: This function has type int -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

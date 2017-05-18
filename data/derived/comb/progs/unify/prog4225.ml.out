@@ -1,0 +1,5 @@
+Characters 44-50:
+  app ([n/10] [n mod 10]) 
+       ^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 64-74:
+  | head::tail -> append_new listReverse tail [head];;
+                  ^^^^^^^^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

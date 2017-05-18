@@ -1,0 +1,5 @@
+Characters 154-166:
+  let args = List.combine List.reverse l1 List.reverse l2 in
+             ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

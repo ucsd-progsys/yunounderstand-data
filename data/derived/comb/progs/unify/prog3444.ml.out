@@ -1,0 +1,5 @@
+Characters 112-113:
+  | Sine s -> "sin(pi*" ^ Format.printf "%expr" s  ^ ")";;
+                                                ^
+Error: This expression has type expr but an expression was expected of type
+         float

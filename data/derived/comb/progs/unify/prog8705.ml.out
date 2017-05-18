@@ -1,0 +1,5 @@
+Characters 95-120:
+  then matchHeads (t)(getTail y);;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         unit

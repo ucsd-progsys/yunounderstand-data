@@ -1,0 +1,5 @@
+Characters 272-273:
+  |Thresh(e1, e2, e3, e4)->buildThresh(x, y, x, y);;
+                                       ^
+Error: This expression has type float but an expression was expected of type
+         expr

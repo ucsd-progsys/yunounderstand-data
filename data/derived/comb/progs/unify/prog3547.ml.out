@@ -1,0 +1,5 @@
+Characters 14-17:
+  let b = build(rnd,5);;
+                ^^^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

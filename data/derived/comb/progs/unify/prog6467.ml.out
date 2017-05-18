@@ -1,0 +1,5 @@
+Characters 94-95:
+  |false->h
+          ^
+Error: This expression has type bool but an expression was expected of type
+         bool list

@@ -1,0 +1,5 @@
+Characters 62-74:
+  | _ -> bigAdd (mulByDigit i-1) l;;
+                 ^^^^^^^^^^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 541-548:
+  (eval(expr1) ** (abs(eval(expr1, x, y) +. eval(expr2, x, y))));;
+       ^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

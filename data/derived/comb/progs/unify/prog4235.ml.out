@@ -1,0 +1,5 @@
+Characters 18-32:
+  removeDuplicates [1,6,2,13,2,6,9];;
+                    ^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd * 'e * 'f * 'g
+       but an expression was expected of type int

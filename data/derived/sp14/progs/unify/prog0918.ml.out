@@ -1,0 +1,5 @@
+Characters 66-69:
+  | Thresh (w,t,u,z) -> if eval(w) < eval(t) then eval(u) else eval(z)
+                               ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'b

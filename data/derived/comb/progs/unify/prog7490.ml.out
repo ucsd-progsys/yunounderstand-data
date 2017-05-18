@@ -1,0 +1,5 @@
+Characters 43-51:
+  let f a x = let h::t = x in (pipe t) (h a) in
+                              ^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

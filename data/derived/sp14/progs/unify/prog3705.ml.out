@@ -1,0 +1,5 @@
+Characters 427-439:
+  | Thresh(expr, expr2, expr3, expr4) -> "("^exprToString(expr)^"<"^exprToString(expr2)^"?"^exprToString(expr3)^":"^exprToString(expr4)")";;
+                                                                                                                    ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

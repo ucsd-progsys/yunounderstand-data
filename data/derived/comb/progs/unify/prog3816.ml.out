@@ -1,0 +1,5 @@
+Characters 132-144:
+  addPerHelper 0 digitsOfInt n;;
+  ^^^^^^^^^^^^
+Error: This function has type int -> 'a list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

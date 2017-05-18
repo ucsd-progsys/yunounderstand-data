@@ -1,0 +1,5 @@
+Characters 472-478:
+  ignore(Sys.command ("rm "^fname^".pgm"))
+  ^^^^^^
+Error: This function has type 'a -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

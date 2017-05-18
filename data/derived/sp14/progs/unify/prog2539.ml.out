@@ -1,0 +1,5 @@
+Characters 6-10:
+  eval (VarX * VarY, 1, 2);;
+        ^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

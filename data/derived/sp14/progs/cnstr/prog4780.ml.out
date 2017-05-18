@@ -1,0 +1,5 @@
+Characters 14-18:
+  let _ = eval (Root(VarX),0.5,1.);;
+                ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Root does not belong to type expr

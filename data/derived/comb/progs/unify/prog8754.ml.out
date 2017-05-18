@@ -1,0 +1,5 @@
+Characters 28-30:
+  sin 45;;
+      ^^
+Error: This expression has type int but an expression was expected of type
+         float

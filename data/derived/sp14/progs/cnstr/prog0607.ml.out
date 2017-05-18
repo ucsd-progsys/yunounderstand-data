@@ -1,0 +1,5 @@
+Characters 18-83:
+  let sampleExpr1 = Thresh(VarXarY,VarX,(Times(Sine(VarX),Cosine(erage(VarX,VarY)))));;
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Thresh expects 4 argument(s),
+       but is applied here to 3 argument(s)

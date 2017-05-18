@@ -1,0 +1,5 @@
+Characters 44-50:
+  let f a x = ((fst a)+1, bigAdd snd x (mulByDigit (fst a) x )) 
+                          ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

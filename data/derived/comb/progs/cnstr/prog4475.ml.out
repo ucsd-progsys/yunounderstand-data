@@ -1,0 +1,5 @@
+Characters 348-353:
+  | Halve (u) -> eval(u,x,y) /. 2
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Halve does not belong to type expr

@@ -1,0 +1,6 @@
+Characters 63-66:
+  | _::tl2::tl -> last tl2;;
+                       ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

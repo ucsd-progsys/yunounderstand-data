@@ -1,0 +1,5 @@
+Characters 77-80:
+  (m-1.0, (mulByDigit (x*(int_of_float(m**10.0))) l2)::n) in
+     ^^^
+Error: This expression has type float but an expression was expected of type
+         int

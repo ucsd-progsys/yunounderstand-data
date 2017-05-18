@@ -1,0 +1,5 @@
+Characters 682-692:
+  | MultDivBy6            -> "(("(exprToString e1)^" * "^(exprToString e2)^") /6)";;
+    ^^^^^^^^^^
+Error: The constructor MultDivBy6 expects 2 argument(s),
+       but is applied here to 0 argument(s)

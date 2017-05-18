@@ -1,0 +1,5 @@
+Characters 16-18:
+  let _ = f [9;2] [];;
+                  ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int * int

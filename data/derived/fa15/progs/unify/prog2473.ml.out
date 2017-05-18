@@ -1,0 +1,5 @@
+Characters 100-101:
+  | _  -> [h*i/10];;
+           ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

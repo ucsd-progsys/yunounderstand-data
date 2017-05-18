@@ -1,0 +1,5 @@
+Characters 151-188:
+  (hd*i/10)::(comb (hd*i mod 10) (mBDhelper i tl))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

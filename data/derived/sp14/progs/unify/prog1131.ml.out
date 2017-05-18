@@ -1,0 +1,5 @@
+Characters 62-70:
+  wwhile(let helper x = (f x != (f b)) in helper b), b;;
+                                          ^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         ('a -> 'a * bool) * 'a

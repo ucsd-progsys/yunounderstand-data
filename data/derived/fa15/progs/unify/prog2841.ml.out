@@ -1,0 +1,5 @@
+Characters 62-67:
+  (clone "[0]" List.length l2 - List.length l1) :: l1
+   ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

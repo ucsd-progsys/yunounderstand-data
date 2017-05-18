@@ -1,0 +1,5 @@
+Characters 142-163:
+  | 2 -> buildSine(build(rand,depth-1))
+                  ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

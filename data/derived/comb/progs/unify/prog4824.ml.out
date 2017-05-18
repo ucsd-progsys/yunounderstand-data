@@ -1,0 +1,5 @@
+Characters 0-11:
+  List.length([0;0;0;9])
+  ^^^^^^^^^^^
+Error: This function has type 'a list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

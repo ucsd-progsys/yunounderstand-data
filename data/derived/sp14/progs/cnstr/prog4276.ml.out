@@ -1,0 +1,5 @@
+Characters 30-33:
+  let sampleExpr2=Nom(VarX,VarY,Sin(VarX));;
+                                ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Sin does not belong to type expr

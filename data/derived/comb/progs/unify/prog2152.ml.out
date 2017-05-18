@@ -1,0 +1,5 @@
+Characters 46-54:
+  else n mod 10;;
+       ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

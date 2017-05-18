@@ -1,0 +1,5 @@
+Characters 45-47:
+  n mod 10 :: if n <> [] then digitsOfInt (n / 10);;
+                      ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

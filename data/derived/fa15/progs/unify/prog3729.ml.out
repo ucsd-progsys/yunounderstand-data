@@ -1,0 +1,5 @@
+Characters 582-586:
+  | NatLog   nlog		    -> "ln("^nlog^")";;
+                                ^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

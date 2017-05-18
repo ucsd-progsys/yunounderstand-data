@@ -1,0 +1,5 @@
+Characters 115-117:
+  then (0, (c + x1 + x2) / 10 :: (c + x1 + x2) mod 10 :: ds)
+                ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

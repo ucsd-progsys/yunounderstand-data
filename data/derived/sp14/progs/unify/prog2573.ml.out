@@ -1,0 +1,4 @@
+Characters 35-36:
+  let f a x = fun (a, a) -> x a in
+                      ^
+Error: Variable a is bound several times in this matching

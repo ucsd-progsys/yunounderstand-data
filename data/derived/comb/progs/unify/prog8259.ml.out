@@ -1,0 +1,5 @@
+Characters 387-400:
+  | Power(a, b)     -> eval(a, x, y) + eval(b, x, y);;
+                       ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

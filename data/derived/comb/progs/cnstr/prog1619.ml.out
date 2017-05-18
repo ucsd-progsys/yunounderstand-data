@@ -1,0 +1,5 @@
+Characters 68-74:
+  | VarX x -> sprintf x
+    ^^^^^^
+Error: The constructor VarX expects 0 argument(s),
+       but is applied here to 1 argument(s)

@@ -1,0 +1,5 @@
+Characters 29-55:
+  let fixpoint (f,b) = wwhile ((fun f' x -> (f, f x = x)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This function expects too many arguments, it should have type
+'a -> 'a * bool

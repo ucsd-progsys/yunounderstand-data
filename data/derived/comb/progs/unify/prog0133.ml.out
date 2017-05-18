@@ -1,0 +1,5 @@
+Characters 63-86:
+  | h::t -> (a h) + myFunc f (fun x -> x) t;;
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

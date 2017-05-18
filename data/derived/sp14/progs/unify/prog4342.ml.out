@@ -1,0 +1,5 @@
+Characters 131-148:
+  | Sine (e1)          -> Printf.sprintf"%s" (exprToString e1) 
+                                             ^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

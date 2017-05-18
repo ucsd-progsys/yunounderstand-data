@@ -1,0 +1,5 @@
+Characters 71-104:
+  | h::t -> (mulByDigit i (List.rev t) * 10 )  h*i;;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

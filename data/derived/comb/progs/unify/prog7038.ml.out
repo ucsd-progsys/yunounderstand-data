@@ -1,0 +1,5 @@
+Characters 73-90:
+  | h :: t -> List.append a (b) in
+              ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

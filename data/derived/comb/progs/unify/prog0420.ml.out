@@ -1,0 +1,5 @@
+Characters 222-247:
+  | h::t -> (cout, List.append [r] l) in
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

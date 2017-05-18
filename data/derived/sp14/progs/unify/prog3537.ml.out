@@ -1,0 +1,5 @@
+Characters 8-18:
+  let _ = mulByDigit 3 [1;7]
+          ^^^^^^^^^^
+Error: This function has type int -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

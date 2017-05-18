@@ -1,0 +1,5 @@
+Characters 218-234:
+  | Cube e'		 -> (eval(e', x, y))^3
+                 ^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         string

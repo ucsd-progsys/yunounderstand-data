@@ -1,0 +1,5 @@
+Characters 66-82:
+  else let n2 = n / 10 in (digitsOfInt n2) append [n2];;
+                          ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

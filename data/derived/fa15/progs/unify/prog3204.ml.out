@@ -1,0 +1,5 @@
+Characters 52-53:
+  let fixpoint (f,b) = wwhile(if f = true then b else f b, b);;
+                                                      ^
+Error: This expression has type bool
+       This is not a function; it cannot be applied.

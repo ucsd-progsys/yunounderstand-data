@@ -1,0 +1,5 @@
+Characters 80-88:
+  else append (digitsOfInt (n / 10) ) (n mod 10 ::[]);;
+                                       ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 72-73:
+  else b + 1
+           ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

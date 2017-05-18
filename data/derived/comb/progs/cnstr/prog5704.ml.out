@@ -1,0 +1,5 @@
+Characters 61-62:
+  | VarX -> exprToString X
+                         ^
+Error: This variant expression is expected to have type expr
+       The constructor X does not belong to type expr

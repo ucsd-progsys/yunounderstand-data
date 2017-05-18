@@ -1,0 +1,5 @@
+Characters 129-172:
+  then ((mulByDigit i t)+(prod/10))::[prod mod 10]
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

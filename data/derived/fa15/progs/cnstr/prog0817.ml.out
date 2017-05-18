@@ -1,0 +1,5 @@
+Characters 135-137:
+  let seen' = if List.mem h seen then seen::h in
+                                          ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

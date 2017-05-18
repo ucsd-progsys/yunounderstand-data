@@ -1,0 +1,5 @@
+Characters 186-194:
+  let args = List.combine( List.rev l1 List.rev l2) in
+                           ^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

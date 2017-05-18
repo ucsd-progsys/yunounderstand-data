@@ -1,0 +1,5 @@
+Characters 85-87:
+  | front::back -> ((listReverse back) ::[front]);;
+                                       ^^
+Error: This variant expression is expected to have type 'a option
+       The constructor :: does not belong to type option

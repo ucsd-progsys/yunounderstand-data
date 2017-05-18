@@ -1,0 +1,5 @@
+Characters 532-547:
+  | 5      -> buildCotanget(rand, depth-1)
+                           ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

@@ -1,0 +1,5 @@
+Characters 552-589:
+  else if (eval(da1, x, y)) > (eval(da2, x, y)) then (eval(da3, x, y)) < (eval(da4, x, y))
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         unit

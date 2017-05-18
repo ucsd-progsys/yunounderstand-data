@@ -1,0 +1,5 @@
+Characters 119-142:
+  num + additivePersistence num;;
+        ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

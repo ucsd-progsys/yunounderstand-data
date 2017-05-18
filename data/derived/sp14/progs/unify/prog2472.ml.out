@@ -1,0 +1,5 @@
+Characters 75-82:
+  | _ -> List.hd xs + List.tl sumList;;
+                              ^^^^^^^
+Error: This expression has type int list -> 'a list
+       but an expression was expected of type 'b list

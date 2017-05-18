@@ -1,0 +1,5 @@
+Characters 22-25:
+  let a = int_of_string '3';;
+                        ^^^
+Error: This expression has type char but an expression was expected of type
+         string

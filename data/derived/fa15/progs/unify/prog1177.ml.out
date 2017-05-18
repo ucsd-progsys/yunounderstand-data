@@ -1,0 +1,5 @@
+Characters 94-95:
+  (hd::tl) -> ((a + b + hd )/10)::((a + b + hd )mod 10)::tl
+                ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

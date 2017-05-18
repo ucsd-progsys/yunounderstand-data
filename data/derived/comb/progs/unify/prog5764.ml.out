@@ -1,0 +1,5 @@
+Characters 95-101:
+  let base = ([0, 0] List.combine l1 l2) in 
+              ^^^^^^
+Error: This expression has type (int * int) list
+       This is not a function; it cannot be applied.

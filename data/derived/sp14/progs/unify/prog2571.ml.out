@@ -1,0 +1,6 @@
+Characters 28-31:
+  let f a x = x(x) in
+               ^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

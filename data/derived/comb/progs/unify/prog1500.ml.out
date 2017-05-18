@@ -1,0 +1,5 @@
+Characters 166-177:
+  (asd3,padZero(asd3,asd2))
+               ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

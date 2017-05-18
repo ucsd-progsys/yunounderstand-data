@@ -1,0 +1,5 @@
+Characters 114-133:
+  let seen' = if not (List.mem(h, seen)) then h::seen else seen in 
+                     ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

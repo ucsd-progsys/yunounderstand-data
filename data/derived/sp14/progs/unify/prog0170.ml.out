@@ -1,0 +1,6 @@
+Characters 73-89:
+  | h::t -> (mulByDigit i t) :: (h*i mod 10) :: [];;
+            ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

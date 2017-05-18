@@ -1,0 +1,5 @@
+Characters 55-58:
+  | h::t -> (exp 10 x) * h;;
+             ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

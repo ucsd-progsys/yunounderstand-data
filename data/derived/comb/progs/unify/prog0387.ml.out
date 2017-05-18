@@ -1,0 +1,5 @@
+Characters 20-24:
+  let _ = sqsum [(-1);(-2)e];;
+                      ^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

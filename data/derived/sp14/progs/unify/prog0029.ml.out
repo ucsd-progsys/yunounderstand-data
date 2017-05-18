@@ -1,0 +1,5 @@
+Characters 95-96:
+  then x::x
+          ^
+Error: This expression has type int but an expression was expected of type
+         int list

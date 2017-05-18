@@ -1,0 +1,5 @@
+Characters 26-27:
+  let cat = pipe [(fun x -> x + x )] 3;;
+                            ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

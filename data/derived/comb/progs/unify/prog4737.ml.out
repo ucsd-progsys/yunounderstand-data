@@ -1,0 +1,6 @@
+Characters 64-67:
+  let f x = b, (f b) in (b = f b) in 
+                             ^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

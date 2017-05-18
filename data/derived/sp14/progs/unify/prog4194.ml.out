@@ -1,0 +1,5 @@
+Characters 78-79:
+  let f a x = ((fst a)+1, bigAdd x (mulByDigit (fst a) (snd x) )) 
+                                                            ^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

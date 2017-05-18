@@ -1,0 +1,5 @@
+Characters 153-156:
+  | Sine sin		    -> Printf.printf "sin(%s)" sin
+                                             ^^^
+Error: This expression has type expr but an expression was expected of type
+         string

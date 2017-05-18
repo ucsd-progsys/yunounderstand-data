@@ -1,0 +1,5 @@
+Characters 27-30:
+  if not f b then b 
+     ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

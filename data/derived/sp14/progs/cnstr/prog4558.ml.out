@@ -1,0 +1,5 @@
+Characters 31-46:
+  let buildSpecial1(e1, e2)	   = Special1(e1,e2);;
+                                 ^^^^^^^^^^^^^^^
+Error: The constructor Special1 expects 3 argument(s),
+       but is applied here to 2 argument(s)

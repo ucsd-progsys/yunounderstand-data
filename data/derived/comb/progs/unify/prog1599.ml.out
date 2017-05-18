@@ -1,0 +1,5 @@
+Characters 18-27:
+  digits (-23422) =[2,3,4,2,2];;
+                    ^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd * 'e
+       but an expression was expected of type int

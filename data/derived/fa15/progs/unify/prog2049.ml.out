@@ -1,0 +1,4 @@
+Characters 38-45:
+  ..............ys
+  | []......
+Error: Variable ys must occur on both sides of this | pattern

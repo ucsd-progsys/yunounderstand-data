@@ -1,0 +1,5 @@
+Characters 56-61:
+  h b f
+  ^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

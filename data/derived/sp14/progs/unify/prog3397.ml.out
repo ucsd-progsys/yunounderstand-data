@@ -1,0 +1,5 @@
+Characters 8-20:
+  extract ("bobby", 2);;
+          ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 16-17:
+  eval(Sine(VarX),0,0);;
+                  ^
+Error: This expression has type int but an expression was expected of type
+         float

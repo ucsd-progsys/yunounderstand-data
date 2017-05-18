@@ -1,0 +1,5 @@
+Characters 107-108:
+  | h::t -> f h t in
+                ^
+Error: This expression has type ('a -> 'b) list
+       but an expression was expected of type 'c -> 'a

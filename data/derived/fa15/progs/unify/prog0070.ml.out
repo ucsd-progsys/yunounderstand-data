@@ -1,0 +1,5 @@
+Characters 93-95:
+  | Sine(a) -> sin (eval (a,x,y) * pi)
+                                   ^^
+Error: This expression has type float but an expression was expected of type
+         int

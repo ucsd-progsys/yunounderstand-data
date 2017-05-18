@@ -1,0 +1,6 @@
+Characters 191-192:
+  |(first,second) -> ((first + second + b)/10),((first + second + b) mod 10)::t
+                                                                              ^
+Error: This expression has type (int * 'a) list
+       but an expression was expected of type int list
+       Type int * 'a is not compatible with type int 

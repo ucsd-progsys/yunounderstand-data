@@ -1,0 +1,5 @@
+Characters 111-130:
+  |x when x>=10->(multHelper i t)@((x/10),(x mod 10))
+                                  ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

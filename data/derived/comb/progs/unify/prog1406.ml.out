@@ -1,0 +1,5 @@
+Characters 466-471:
+  let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
+                                       ^^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

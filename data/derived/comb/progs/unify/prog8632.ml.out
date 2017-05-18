@@ -1,0 +1,5 @@
+Characters 14-30:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                ^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+int

@@ -1,0 +1,6 @@
+Characters 29-32:
+  let fixpoint (f,b) = wwhile ((g),b);;
+                               ^^^
+Error: This expression has type ('a -> 'a) -> 'a -> 'a * bool
+       but an expression was expected of type ('a -> 'a) -> ('a -> 'a) * bool
+       Type 'a -> 'a * bool is not compatible with type ('a -> 'a) * bool 

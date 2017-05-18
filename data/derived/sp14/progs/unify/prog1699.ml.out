@@ -1,0 +1,5 @@
+Characters 303-304:
+  else 0) , (addit / 10) :: x)
+                            ^
+Error: This expression has type int * int list
+       but an expression was expected of type int list

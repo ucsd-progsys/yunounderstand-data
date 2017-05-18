@@ -1,0 +1,5 @@
+Characters 357-362:
+  | Third(a) -> 0.33*.(eal(a,x,y));;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Third does not belong to type expr

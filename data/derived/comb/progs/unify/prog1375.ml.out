@@ -1,0 +1,5 @@
+Characters 65-66:
+  | h::t -> h::(append x t);;
+                         ^
+Error: This expression has type int list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 328-334:
+  |Tan(a) -> ("sin(pi*"^(exp a)^")/(cos(pi*"^(exp a)^")");;
+   ^^^^^^
+Error: The constructor Tan expects 2 argument(s),
+       but is applied here to 1 argument(s)

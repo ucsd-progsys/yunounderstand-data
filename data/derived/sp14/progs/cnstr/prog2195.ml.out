@@ -1,0 +1,5 @@
+Characters 75-79:
+  let palindrome w = let x = listReverse (explode w) in if(x=explode w) then true;;
+                                                                             ^^^^
+Error: This variant expression is expected to have type unit
+       The constructor true does not belong to type unit

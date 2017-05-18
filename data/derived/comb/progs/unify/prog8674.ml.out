@@ -1,0 +1,6 @@
+Characters 58-69:
+  if(x = 0) then rmzhelp xs' else xs';;
+                 ^^^^^^^^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a -> 'b

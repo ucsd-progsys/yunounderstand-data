@@ -1,0 +1,5 @@
+Characters 39-43:
+  let sampleExpr5 = TowerNeg(VarX, VarY, VarZ);;
+                                         ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor VarZ does not belong to type expr

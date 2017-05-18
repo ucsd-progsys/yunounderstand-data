@@ -1,0 +1,5 @@
+Characters 84-91:
+  in (g x,x), b);;
+     ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

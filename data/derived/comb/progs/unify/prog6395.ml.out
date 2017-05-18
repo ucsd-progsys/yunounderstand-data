@@ -1,0 +1,5 @@
+Characters 65-83:
+  | front::back -> ((listReverse back) ::[front]);;
+                    ^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

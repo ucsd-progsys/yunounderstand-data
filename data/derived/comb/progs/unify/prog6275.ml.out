@@ -1,0 +1,5 @@
+Characters 133-134:
+  (clone(0 (ll2-ll1)) @ l1, l2);;
+         ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

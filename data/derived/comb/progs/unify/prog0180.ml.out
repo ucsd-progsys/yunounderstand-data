@@ -1,0 +1,5 @@
+Characters 223-233:
+  removeZero (add (padZero l1 l2))
+  ^^^^^^^^^^
+Error: This function has type int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,16 @@
+Characters 85-89:
+  pipe [] 3;;
+  ^^^^
+Error: This expression has type
+         (((((int -> int) -> int -> int) list -> int -> int) ->
+           ((int -> int) -> int -> int) list -> int -> int) ->
+          (((int -> int) -> int -> int) list -> int -> int) ->
+          ((int -> int) -> int -> int) list -> int -> int)
+         list -> int
+       but an expression was expected of type
+         (((((int -> int) -> int -> int) list -> int -> int) ->
+           ((int -> int) -> int -> int) list -> int -> int) ->
+          (((int -> int) -> int -> int) list -> int -> int) ->
+          ((int -> int) -> int -> int) list -> int -> int)
+         list -> 'a -> 'b
+       Type int is not compatible with type 'a -> 'b 

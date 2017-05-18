@@ -1,0 +1,5 @@
+Characters 21-24:
+  let phi = (1. +. sqrt(5))/. 2.;;
+                       ^^^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,0 +1,6 @@
+Characters 40-44:
+  let rec recu r = if rand(0,4) != 4 then recu else r;;
+                                          ^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a -> 'b

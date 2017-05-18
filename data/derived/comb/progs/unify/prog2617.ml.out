@@ -1,0 +1,5 @@
+Characters 114-151:
+  List.split ( ((sum / 10), ((sum mod 10)) :: a) )
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type ('c * 'd) list

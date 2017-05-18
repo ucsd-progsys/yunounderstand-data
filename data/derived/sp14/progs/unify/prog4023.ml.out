@@ -1,0 +1,5 @@
+Characters 99-106:
+  else if z = 0 then let n2 = reverse (string_of_int n) in z = z+1;;
+                                                           ^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         unit

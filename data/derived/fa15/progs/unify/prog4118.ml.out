@@ -1,0 +1,5 @@
+Characters 72-82:
+  else mulByDigit (i-1) bigAdd l l;;
+       ^^^^^^^^^^
+Error: This function has type int -> int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

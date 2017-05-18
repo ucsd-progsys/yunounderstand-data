@@ -1,0 +1,5 @@
+Characters 137-146:
+  if r = 0 then buildSine build(r, d-1)
+                ^^^^^^^^^
+Error: This function has type expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

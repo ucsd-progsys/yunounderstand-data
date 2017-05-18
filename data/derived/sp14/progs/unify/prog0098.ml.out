@@ -1,0 +1,5 @@
+Characters 22-23:
+  exprToString (Sin_Avg(1,2,3));;
+                        ^
+Error: This expression has type int but an expression was expected of type
+         expr

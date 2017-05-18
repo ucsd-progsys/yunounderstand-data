@@ -1,0 +1,5 @@
+Characters 103-104:
+  | Sine t       -> sin(pi*.t)
+                            ^
+Error: This expression has type expr but an expression was expected of type
+         float

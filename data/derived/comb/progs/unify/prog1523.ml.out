@@ -1,0 +1,5 @@
+Characters 62-70:
+  |  h::t -> h ^ concat t;;
+                 ^^^^^^^^
+Error: This expression has type char but an expression was expected of type
+         string

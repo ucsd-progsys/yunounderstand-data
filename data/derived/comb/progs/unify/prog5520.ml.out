@@ -1,0 +1,11 @@
+Characters 119-121:
+  List.fold_left fn (0, []) (List.rev l2);;
+                 ^^
+Error: This expression has type
+         int * (int * (int * int list)) list ->
+         int -> (int * (int * int list)) list
+       but an expression was expected of type
+         int * (int * (int * int list)) list ->
+         int -> int * (int * (int * int list)) list
+       Type (int * (int * int list)) list is not compatible with type
+         int * (int * (int * int list)) list 

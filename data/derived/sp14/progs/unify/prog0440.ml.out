@@ -1,0 +1,5 @@
+Characters 114-122:
+  if randNum = 1 then buildSine(buildY()) else buildCosine(buildY);;
+                                                          ^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

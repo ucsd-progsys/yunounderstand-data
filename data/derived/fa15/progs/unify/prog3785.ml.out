@@ -1,0 +1,5 @@
+Characters 180-209:
+  |Square(a) -> (("("^(exp a)^"*"^(exp a)^")")"/2")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

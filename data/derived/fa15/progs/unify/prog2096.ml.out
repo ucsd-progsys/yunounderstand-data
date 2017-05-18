@@ -1,0 +1,5 @@
+Characters 100-116:
+  wwhile ((fs b), true,b);;
+         ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type ('d -> 'd * bool) * 'd

@@ -1,0 +1,6 @@
+Characters 86-100:
+  | h::t -> listHelper t h::l2
+            ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

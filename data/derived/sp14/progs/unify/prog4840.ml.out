@@ -1,0 +1,5 @@
+Characters 21-26:
+  let _ = stringOfList [9;9];;
+                       ^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b -> string

@@ -1,0 +1,9 @@
+Characters 25-52:
+  let rec mulByDigit i l = mulByDigit (i-1) bigAdd l l;;
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         (int list -> int list -> int list) ->
+         (int list -> int list -> int list) -> 'a
+       The type variable 'a occurs inside
+       (int list -> int list -> int list) ->
+       (int list -> int list -> int list) -> 'a

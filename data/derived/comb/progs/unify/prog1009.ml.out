@@ -1,0 +1,5 @@
+Characters 13-16:
+  let _ = log (0.5-1.0);;
+               ^^^
+Error: This expression has type float but an expression was expected of type
+         int

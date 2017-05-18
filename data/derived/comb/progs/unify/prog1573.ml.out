@@ -1,0 +1,5 @@
+Characters 117-118:
+  let shift= mulByDigit ac a in 
+                           ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

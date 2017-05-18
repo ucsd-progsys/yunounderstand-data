@@ -1,0 +1,5 @@
+Characters 8-12:
+  let _ = pipe [] 2;;
+          ^^^^
+Error: This function has type (unit -> unit) list -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

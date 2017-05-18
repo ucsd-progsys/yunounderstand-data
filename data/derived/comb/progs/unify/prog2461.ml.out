@@ -1,0 +1,5 @@
+Characters 114-128:
+  | ((h::i,j::k),(d::e,f::g)) -> ((f+d) / 10)::((h+j) mod 10)
+                                               ^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

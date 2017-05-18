@@ -1,0 +1,5 @@
+Characters 100-103:
+  else if n == '-' then n::acc
+               ^^^
+Error: This expression has type char but an expression was expected of type
+         int

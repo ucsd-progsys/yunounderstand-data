@@ -1,0 +1,6 @@
+Characters 62-66:
+  | VarX -> Format.printf VarX;;
+                          ^^^^
+Error: This variant expression is expected to have type
+         ('a, Format.formatter, unit) format
+       The constructor VarX does not belong to type CamlinternalFormatBasics.format6

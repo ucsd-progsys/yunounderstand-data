@@ -1,0 +1,5 @@
+Characters 36-41:
+  let buildSqrt(a,b)	           = Sqrt(a,b);;
+                                      ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

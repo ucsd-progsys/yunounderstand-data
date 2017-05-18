@@ -1,0 +1,5 @@
+Characters 441-446:
+  |Cubic (i1,i2,i3)	  -> exprToString i1 ^ "*" ^ exprToString i2 ^ "*" ^ exprToString i3
+   ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Cubic does not belong to type expr

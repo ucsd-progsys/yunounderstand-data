@@ -1,0 +1,5 @@
+Characters 16-21:
+  sepConcat "; " [[1;0];[2];[3]];;
+                  ^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

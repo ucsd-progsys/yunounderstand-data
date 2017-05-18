@@ -1,0 +1,5 @@
+Characters 100-116:
+  | hd::tl -> changehelper (acc ^ int_of_string hd) tl
+                                  ^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         string

@@ -1,0 +1,5 @@
+Characters 94-95:
+  if halff = 0 then  buildY()
+             ^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

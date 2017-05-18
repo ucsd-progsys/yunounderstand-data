@@ -1,0 +1,5 @@
+Characters 87-100:
+  | h::t -> reverseHelper (h::acc) t in
+            ^^^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

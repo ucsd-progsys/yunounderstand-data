@@ -1,0 +1,5 @@
+Characters 13-42:
+  let _ = eval (Neg(Divadd(VarX,VarY,VarY))),0.1,0.2;;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

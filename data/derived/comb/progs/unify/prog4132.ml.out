@@ -1,0 +1,5 @@
+Characters 52-61:
+  1  -> buildSine build(rand, depth) 
+        ^^^^^^^^^
+Error: This function has type expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 8-17:
+  let _ = (pipe []) 3;;
+          ^^^^^^^^^
+Error: This expression has type ('a -> 'a) list
+       This is not a function; it cannot be applied.

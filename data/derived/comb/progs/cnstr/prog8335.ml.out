@@ -1,0 +1,5 @@
+Characters 47-50:
+  let fixpoint (f,b) = wwhile ((fun x -> (f(b),  NOT(b=f(b)))),b);;
+                                                 ^^^
+Error: This variant expression is expected to have type bool
+       The constructor NOT does not belong to type bool

@@ -1,0 +1,5 @@
+Characters 50-85:
+  if List.length xs != 0 then List.nth xs 0 + sumList(List.tl xs);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

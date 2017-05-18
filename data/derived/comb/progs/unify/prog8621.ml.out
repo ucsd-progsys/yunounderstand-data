@@ -1,0 +1,6 @@
+Characters 72-91:
+  let fixpointHelper f b = let c = f b in ( if c = b then (c, true) else (fixpointHelper(f c), false));;
+                                                                          ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a -> 'a
+       The type variable 'a occurs inside 'a * bool

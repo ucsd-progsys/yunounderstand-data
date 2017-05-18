@@ -1,0 +1,5 @@
+Characters 463-465:
+  | Sin_Avg (a,b,c) -> eval( eval (a, sin(pi*x), sin(pi*y)) , eval (b, sin(pi*x), sin(pi*y)), eval (c, sin(pi*x), sin(pi*y)) );;
+                                          ^^
+Error: This expression has type float but an expression was expected of type
+         int

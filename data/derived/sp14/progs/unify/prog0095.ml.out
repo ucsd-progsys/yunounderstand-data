@@ -1,0 +1,5 @@
+Characters 524-525:
+  | Arc (a,b,c) -> "sin(pi*" ^ (exprToString (a (b,c)) ) ^ ")";;
+                                              ^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

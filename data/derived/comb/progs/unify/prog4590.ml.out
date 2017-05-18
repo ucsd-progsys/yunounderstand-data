@@ -1,0 +1,5 @@
+Characters 72-80:
+  if x<>b && y=true then (x,true)
+                         ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

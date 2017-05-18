@@ -1,0 +1,5 @@
+Characters 177-186:
+  | TimesMod (w,t,u) -> (eval(w,x,y) *. eval(t,x,y)) /. (mod_float (eval(w,x,y) *. eval(t,x,y)) eval(u,x,y) )
+                                                         ^^^^^^^^^
+Error: This function has type float -> float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

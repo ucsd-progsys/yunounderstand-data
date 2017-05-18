@@ -1,0 +1,5 @@
+Characters 81-106:
+  | h::t -> match ( (mulByDigit i (List.rev t) * 10 ) + h*i ) with
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

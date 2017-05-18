@@ -1,0 +1,5 @@
+Characters 39-42:
+  app digitsOfInt (n/10) [n mod 10] 
+  ^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

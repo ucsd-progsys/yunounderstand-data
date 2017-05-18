@@ -1,0 +1,5 @@
+Characters 135-136:
+  match a with ((d1,d2),sum) -> let c' = (c + d1 + d2)/10 in
+                                          ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

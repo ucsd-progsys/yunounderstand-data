@@ -1,0 +1,5 @@
+Characters 34-47:
+  let stringOfList f l = List.map f (sepConcat l);;
+                                    ^^^^^^^^^^^^^
+Error: This expression has type string list -> string
+       but an expression was expected of type 'a list

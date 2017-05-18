@@ -1,0 +1,5 @@
+Characters 60-72:
+  | Thresh (a,b,c,d) -> exprToString Thresh a,b,c,d
+                        ^^^^^^^^^^^^
+Error: This function has type expr -> 'a * 'b * 'c * 'd
+       It is applied to too many arguments; maybe you forgot a `;'.

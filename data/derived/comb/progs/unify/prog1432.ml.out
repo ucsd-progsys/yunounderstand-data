@@ -1,0 +1,5 @@
+Characters 32-40:
+  let stringOfList f l = failwith List.map (sepConcat "") l;;
+                                  ^^^^^^^^
+Error: This expression has type ('a -> 'b) -> 'a list -> 'b list
+       but an expression was expected of type string

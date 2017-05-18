@@ -1,0 +1,5 @@
+Characters 41-56:
+  let rec clone x n = fun n -> List.append (clone x (n-1)) [x];;
+                                           ^^^^^^^^^^^^^^^
+Error: This expression has type int -> 'a
+       but an expression was expected of type 'b list

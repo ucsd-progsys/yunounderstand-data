@@ -1,0 +1,5 @@
+Characters 128-129:
+  | Sine(t)            -> ( "sin(pi*"^(e t)^")" )
+                                       ^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

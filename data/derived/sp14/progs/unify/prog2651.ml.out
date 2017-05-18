@@ -1,0 +1,5 @@
+Characters 114-131:
+  | h :: t -> bigAdd( (mulByDigit h l') l') in
+                      ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 20-29:
+  let _ = eval (Cosine(Average),0.5,0.2);;
+                      ^^^^^^^^^
+Error: The constructor Average expects 2 argument(s),
+       but is applied here to 0 argument(s)

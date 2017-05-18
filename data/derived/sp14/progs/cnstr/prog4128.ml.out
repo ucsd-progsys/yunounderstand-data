@@ -1,0 +1,5 @@
+Characters 122-131:
+  | Average e    -> (x +. y)/.2.0
+    ^^^^^^^^^
+Error: The constructor Average expects 2 argument(s),
+       but is applied here to 1 argument(s)

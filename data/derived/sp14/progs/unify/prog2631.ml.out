@@ -1,0 +1,5 @@
+Characters 109-110:
+  if ((List.length x) = (List.length s))
+                   ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

@@ -1,0 +1,5 @@
+Characters 132-133:
+  match x with (d1,d2) -> let new_carry = (a + d1 + d2)/10 in
+                                           ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

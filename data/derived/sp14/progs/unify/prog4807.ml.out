@@ -1,0 +1,5 @@
+Characters 94-97:
+  let f a x = h^sep^sepConcat(sep t) in
+                              ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

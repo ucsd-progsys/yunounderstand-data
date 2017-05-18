@@ -1,0 +1,5 @@
+Characters 111-119:
+  let seen' = if !List.mem h seen then [h]@seen' in
+                  ^^^^^^^^
+Error: This expression has type 'a -> 'a list -> bool
+       but an expression was expected of type 'b ref

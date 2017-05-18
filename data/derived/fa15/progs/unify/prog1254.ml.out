@@ -1,0 +1,5 @@
+Characters 89-94:
+  Set(meh);;
+     ^^^^^
+Error: This expression has type 'a set but an expression was expected of type
+         'b list

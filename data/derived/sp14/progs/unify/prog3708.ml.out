@@ -1,0 +1,6 @@
+Characters 105-106:
+  | 2 -> buildSine(build(rand, depth - 1))
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type
+         int * int -> int

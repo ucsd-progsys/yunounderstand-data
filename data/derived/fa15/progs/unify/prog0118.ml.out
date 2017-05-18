@@ -1,0 +1,5 @@
+Characters 93-95:
+  if x = [] then (0, l::m) else
+         ^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

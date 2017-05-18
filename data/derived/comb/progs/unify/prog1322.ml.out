@@ -1,0 +1,5 @@
+Characters 154-157:
+  then palindrome tlr
+                  ^^^
+Error: This expression has type char list
+       but an expression was expected of type string

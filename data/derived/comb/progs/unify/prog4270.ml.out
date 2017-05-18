@@ -1,0 +1,5 @@
+Characters 26-52:
+  let sampleExpr2=Times(Squa(VarX,Nom(VarX,VarY,VarX)),Sine(Varx));;
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

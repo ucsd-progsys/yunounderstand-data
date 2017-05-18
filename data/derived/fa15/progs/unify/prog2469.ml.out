@@ -1,0 +1,5 @@
+Characters 148-165:
+  (clone 0 (s2-s1));;
+  ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list * int list

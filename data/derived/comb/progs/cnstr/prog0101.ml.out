@@ -1,0 +1,5 @@
+Characters 18-24:
+  let x = (Sin_Avg (VarX(), VarY(), VarX()));;
+                    ^^^^^^
+Error: The constructor VarX expects 0 argument(s),
+       but is applied here to 1 argument(s)

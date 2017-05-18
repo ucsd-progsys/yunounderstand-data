@@ -1,0 +1,5 @@
+Characters 458-461:
+  "("^res1^"+"^res2^"+"^res3^")"/"(abs("^res1^")+abs("^res2^")+abs("
+                             ^^^
+Error: This expression has type string but an expression was expected of type
+         int

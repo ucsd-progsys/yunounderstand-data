@@ -1,0 +1,5 @@
+Characters 103-107:
+  | 0 -> buildSine(build(rand(0,6), depth - 1))
+                         ^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

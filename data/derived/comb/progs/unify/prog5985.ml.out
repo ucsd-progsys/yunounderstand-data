@@ -1,0 +1,5 @@
+Characters 241-281:
+  |4 -> buildAverage build(rand,d),build(rand,d)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

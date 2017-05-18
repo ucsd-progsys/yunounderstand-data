@@ -1,0 +1,5 @@
+Characters 92-110:
+  | h::m::t -> (h*i) mod 10 :: ( (h*i)/10 ) + m*i;;
+                               ^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

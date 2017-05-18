@@ -1,0 +1,5 @@
+Characters 267-269:
+  | Times(p1, p2) -> p1 *. p2
+                     ^^
+Error: This expression has type expr but an expression was expected of type
+         float

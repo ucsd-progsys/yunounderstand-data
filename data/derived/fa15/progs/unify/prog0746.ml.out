@@ -1,0 +1,6 @@
+Characters 133-137:
+  |true -> seen
+   ^^^^
+Error: This pattern matches values of type bool
+       but a pattern was expected which matches values of type
+         'a list -> bool

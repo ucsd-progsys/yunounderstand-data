@@ -1,0 +1,5 @@
+Characters 589-597:
+  | SqXPlusY (e1,e2)      -> "("^(exprToString e1)^" * "^(exprToString e1)^") + ("^(exprToString e2)^"/2";;
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor SqXPlusY does not belong to type expr

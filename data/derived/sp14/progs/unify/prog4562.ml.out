@@ -1,0 +1,5 @@
+Characters 107-194:
+  if (lenl1 < lenl2) then ((List.append(clone 0 (lenl1 - lenl2)) l1), (List.append (clone 0 (lenl1 - lenl2)) l2));;
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

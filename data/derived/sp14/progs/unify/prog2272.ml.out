@@ -1,0 +1,5 @@
+Characters 155-170:
+  | Average (e1, e2) -> exprToString e1 ^ exprToString e2
+                        ^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

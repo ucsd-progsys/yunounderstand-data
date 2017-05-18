@@ -1,0 +1,5 @@
+Characters 78-79:
+  else let x= n mod 10 in digitsOfInt n@x;;
+                                        ^
+Error: This expression has type int but an expression was expected of type
+         'a list

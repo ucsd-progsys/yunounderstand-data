@@ -1,0 +1,5 @@
+Characters 304-309:
+  | Power(x,y) -> ex(x)^"^"^ex(y);;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Power does not belong to type expr

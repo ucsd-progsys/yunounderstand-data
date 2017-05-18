@@ -1,0 +1,5 @@
+Characters 8-12:
+  let _ = 12.0 div 10;;
+          ^^^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

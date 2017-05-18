@@ -1,0 +1,5 @@
+Characters 56-57:
+  let temp = List.fold_left (fun x y-> y x) [] [(fun x -> x +1)];;
+                                                          ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

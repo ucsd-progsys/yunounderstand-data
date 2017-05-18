@@ -1,0 +1,5 @@
+Characters 7-19:
+  let _= exprToString build(makeRand(3,4),2);;
+         ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

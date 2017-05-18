@@ -1,0 +1,5 @@
+Characters 151-168:
+  (addit / 10, num @ ((addit mod 10) )) in
+                     ^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 81-98:
+  (i-1, ((mulByDigit x l2)*(int_of_float(10**m)))::n) in
+         ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

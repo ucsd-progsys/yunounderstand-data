@@ -1,0 +1,5 @@
+Characters 21-32:
+  let c2 () = failwith (8, 65, 67);;
+                       ^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type string

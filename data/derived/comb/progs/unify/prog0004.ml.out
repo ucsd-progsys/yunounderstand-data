@@ -1,0 +1,5 @@
+Characters 64-75:
+  | (x::xs') -> x + sumList xs';;
+                    ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

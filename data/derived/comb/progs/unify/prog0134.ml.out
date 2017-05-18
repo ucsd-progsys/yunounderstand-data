@@ -1,0 +1,5 @@
+Characters 72-73:
+  | h::t -> (a h) + myFunc f 0 t;;
+                             ^
+Error: This expression has type int but an expression was expected of type
+         'a -> int

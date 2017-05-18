@@ -1,0 +1,5 @@
+Characters 132-136:
+  accu e ""
+  ^^^^
+Error: This function has type expr -> 'a -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 347-357:
+  | FunnyTimes(s, t, u) -> ("(floor "^(ex s)^"* ceil "^(ex t)^"*"^(ex u)^")")
+    ^^^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor FunnyTimes does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 60-61:
+  if ((explode w) = (explode (listReverse w))) then true
+                                          ^
+Error: This expression has type string but an expression was expected of type
+         'a list

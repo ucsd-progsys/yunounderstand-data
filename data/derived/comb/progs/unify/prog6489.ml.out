@@ -1,0 +1,5 @@
+Characters 76-85:
+  |Sine s -> "sin(pi*"+exprToString s+")"
+             ^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

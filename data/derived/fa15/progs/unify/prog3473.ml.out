@@ -1,0 +1,5 @@
+Characters 387-407:
+  | SqDist(a, b)    -> eval(a, x, y) ** 2.0 + eval(b, x, y) ** 2.0;;
+                       ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

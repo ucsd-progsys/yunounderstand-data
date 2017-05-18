@@ -1,0 +1,5 @@
+Characters 10-20:
+  let _ = f ([] (9;2));;
+            ^^^^^^^^^^
+Error: The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)

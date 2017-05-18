@@ -1,0 +1,5 @@
+Characters 265-267:
+  List.map combine (List.rev(List.combine l1 l2)) @ -1 in
+                                                    ^^
+Error: This expression has type int but an expression was expected of type
+         int list

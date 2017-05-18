@@ -1,0 +1,5 @@
+Characters 46-47:
+  let rec wwhile (f,b) = if snd f b then wwhile f fst f b else fst f b;;
+                                                ^
+Error: This expression has type 'a * ('b -> bool)
+       but an expression was expected of type ('a * ('b -> bool)) * 'b

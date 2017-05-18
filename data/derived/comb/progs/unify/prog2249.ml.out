@@ -1,0 +1,5 @@
+Characters 21-32:
+  let _ =List.combine ((clone 7 7)(List.combine [0;0;0;1;0;0;2][0;0;0;1;0;0;2]) );;
+                       ^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

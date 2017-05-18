@@ -1,0 +1,5 @@
+Characters 103-117:
+  | Sine e    -> "sin(pi*" ^ exprToString e^ ")"
+                             ^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

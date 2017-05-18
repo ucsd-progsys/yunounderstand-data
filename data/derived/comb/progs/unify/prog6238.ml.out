@@ -1,0 +1,5 @@
+Characters 636-648:
+  | Golden expr -> "cos("^exprToString expr"^2-"exprToString expr"-1)"
+                          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

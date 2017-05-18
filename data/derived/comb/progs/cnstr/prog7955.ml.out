@@ -1,0 +1,5 @@
+Characters 62-69:
+  if List.length l1 = List.length l2 then [l1, l2];;
+                                           ^^^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

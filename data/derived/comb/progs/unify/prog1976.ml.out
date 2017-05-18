@@ -1,0 +1,5 @@
+Characters 92-93:
+  | (s,i)::t -> if s = k then true else assoc (d k t);;
+                                               ^
+Error: This expression has type bool
+       This is not a function; it cannot be applied.

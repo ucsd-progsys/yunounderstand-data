@@ -1,0 +1,5 @@
+Characters 190-192:
+  List.rev (helper ([],l));;
+                    ^^
+Error: This variant expression is expected to have type bool
+       The constructor [] does not belong to type bool

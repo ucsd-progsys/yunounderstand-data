@@ -1,0 +1,5 @@
+Characters 366-370:
+  |MyExpr1(e1,e2,e3) -> sqrt(e1)*.sqrt(e2)*.e3
+                            ^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

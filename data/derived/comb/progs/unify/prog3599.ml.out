@@ -1,0 +1,5 @@
+Characters 103-104:
+  | _ -> b;;
+         ^
+Error: This expression has type bool but an expression was expected of type
+         int

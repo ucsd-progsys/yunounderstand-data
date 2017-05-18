@@ -1,0 +1,5 @@
+Characters 11-18:
+  extract 1 ("bobby" 2);;
+             ^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

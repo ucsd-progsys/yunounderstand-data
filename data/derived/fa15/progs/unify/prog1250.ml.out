@@ -1,0 +1,5 @@
+Characters 12-16:
+  let _ = add test hmm;;
+              ^^^^
+Error: This expression has type int set
+       but an expression was expected of type 'a list

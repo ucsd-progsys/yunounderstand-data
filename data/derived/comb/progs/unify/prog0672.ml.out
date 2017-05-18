@@ -1,0 +1,5 @@
+Characters 43-57:
+  "[" ^ stringOfList (List.map f l) ^ "]";;
+                     ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b -> string

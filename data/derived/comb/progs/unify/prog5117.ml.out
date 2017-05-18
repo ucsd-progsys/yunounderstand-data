@@ -1,0 +1,6 @@
+Characters 77-79:
+  | (k',d')::t -> if k=k' then d' else assoc (d,k,t);;
+                       ^^
+Error: This expression has type 'a but an expression was expected of type
+         ('a * 'b) list
+       The type variable 'a occurs inside ('a * 'b) list

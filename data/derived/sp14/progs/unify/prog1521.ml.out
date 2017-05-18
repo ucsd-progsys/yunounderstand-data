@@ -1,0 +1,6 @@
+Characters 27-53:
+  concat (listReverse ( explode w)) == w;;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type string list
+       Type char is not compatible with type string 

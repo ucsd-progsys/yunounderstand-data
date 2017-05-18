@@ -1,0 +1,5 @@
+Characters 528-541:
+  | Square ex   ->  (eval ex,x,y) *. eval(ex,x,y)
+                    ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type float

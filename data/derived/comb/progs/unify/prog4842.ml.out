@@ -1,0 +1,5 @@
+Characters 40-45:
+  let _ = List.rev (List.combine( padZero([9;9] [1;0;0;2])));;
+                                          ^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

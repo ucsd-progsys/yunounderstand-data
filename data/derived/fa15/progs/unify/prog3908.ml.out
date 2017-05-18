@@ -1,0 +1,5 @@
+Characters 102-107:
+  then false
+       ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

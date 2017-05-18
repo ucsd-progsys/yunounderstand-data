@@ -1,0 +1,5 @@
+Characters 46-51:
+  | VarX -> float*x
+            ^^^^^
+Error: This expression has type int -> float
+       but an expression was expected of type int

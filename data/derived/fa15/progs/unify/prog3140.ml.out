@@ -1,0 +1,5 @@
+Characters 448-493:
+  | SumInts expr -> (eval(expr, x, y) *. (eval(expr, x, y) +. 1.0) / 2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

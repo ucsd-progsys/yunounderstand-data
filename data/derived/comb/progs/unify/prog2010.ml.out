@@ -1,0 +1,7 @@
+Characters 91-92:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type (('a -> 'b) -> 'a -> 'b) -> 'c -> bool
+       but an expression was expected of type
+         (('a -> 'b) -> 'a -> 'b) -> 'c -> ('a -> 'b) -> 'a -> 'b
+       Type bool is not compatible with type ('a -> 'b) -> 'a -> 'b 

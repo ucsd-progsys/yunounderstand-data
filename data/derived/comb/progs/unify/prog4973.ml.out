@@ -1,0 +1,5 @@
+Characters 65-92:
+  if (List.length l1) < (List.length l2) then (clone 0 (padLength l1 l2))*l1
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

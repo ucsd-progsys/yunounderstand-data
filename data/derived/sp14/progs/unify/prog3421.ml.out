@@ -1,0 +1,5 @@
+Characters 67-71:
+  | VarX -> Format.printf "%s" VarX;;
+                               ^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

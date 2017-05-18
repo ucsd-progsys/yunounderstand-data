@@ -1,0 +1,5 @@
+Characters 65-106:
+  let (x,y) = padZero l1 l2 in List.combine ((List.rev x), (clone y (List.length y)));;
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

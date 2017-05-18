@@ -1,0 +1,5 @@
+Characters 147-153:
+  | Divide (e1,e2)	-> (eval(e1,x,y) /. (eval(e2,x,y)))
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Divide does not belong to type expr

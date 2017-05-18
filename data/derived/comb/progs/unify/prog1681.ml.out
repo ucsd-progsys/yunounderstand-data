@@ -1,0 +1,5 @@
+Characters 38-39:
+  let f a x = a +. x ** 2in
+                        ^
+Error: This expression has type int but an expression was expected of type
+         float

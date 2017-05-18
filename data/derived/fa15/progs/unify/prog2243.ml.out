@@ -1,0 +1,5 @@
+Characters 78-84:
+  | (r, s) ->((List.hd r + List.hd s) mod 10) :: a in
+    ^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c list

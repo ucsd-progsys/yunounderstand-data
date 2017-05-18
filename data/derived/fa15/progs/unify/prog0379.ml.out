@@ -1,0 +1,5 @@
+Characters 128-148:
+  if List.mem seen', seen
+     ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type bool

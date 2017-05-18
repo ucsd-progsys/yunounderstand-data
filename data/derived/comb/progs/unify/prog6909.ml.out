@@ -1,0 +1,5 @@
+Characters 104-108:
+  wwhile (fs true,b);;
+             ^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

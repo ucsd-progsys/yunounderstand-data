@@ -1,0 +1,5 @@
+Characters 98-101:
+  if not List.mem seen h then
+     ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

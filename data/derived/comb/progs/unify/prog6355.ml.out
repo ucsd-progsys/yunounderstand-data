@@ -1,0 +1,5 @@
+Characters 122-148:
+  ( (x1 + x2) / 10, sum :: ((x1 + x2 + carry) mod 10) ) in
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

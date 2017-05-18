@@ -1,0 +1,5 @@
+Characters 119-121:
+  | (h1,h2) -> ((h1+h2+lh1)/10 :: lt1, (h1+h2+lh1) mod 10 :: lt2)
+                 ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 350-351:
+  adder (h::t);;
+         ^
+Error: This expression has type int but an expression was expected of type
+         int list

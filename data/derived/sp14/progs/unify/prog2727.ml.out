@@ -1,0 +1,5 @@
+Characters 27-28:
+  let f a x = f a x in
+              ^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

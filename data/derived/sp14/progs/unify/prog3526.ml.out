@@ -1,0 +1,5 @@
+Characters 109-124:
+  List.combine (let (one,two) = a in (x::one,y::two))
+                                     ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

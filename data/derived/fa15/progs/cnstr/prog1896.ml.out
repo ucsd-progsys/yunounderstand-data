@@ -1,0 +1,5 @@
+Characters 23-30:
+  let buildExpn(b)		   = Expn(b);;
+                         ^^^^^^^
+Error: The constructor Expn expects 2 argument(s),
+       but is applied here to 1 argument(s)

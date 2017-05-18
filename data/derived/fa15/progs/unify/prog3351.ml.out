@@ -1,0 +1,5 @@
+Characters 148-159:
+  |h'::t' -> [h'*i] @ [remainder h * i];;
+                       ^^^^^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

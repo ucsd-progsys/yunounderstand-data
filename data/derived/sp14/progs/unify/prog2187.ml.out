@@ -1,0 +1,5 @@
+Characters 57-64:
+  let rec sumList xs = match xs with [] -> 0 | f::b -> f + sumList List.tl xs;;
+                                                           ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

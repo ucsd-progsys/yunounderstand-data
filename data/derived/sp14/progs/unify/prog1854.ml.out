@@ -1,0 +1,5 @@
+Characters 42-43:
+  let f a x = fun a -> x a + x in
+                             ^
+Error: This expression has type 'a -> int
+       but an expression was expected of type int

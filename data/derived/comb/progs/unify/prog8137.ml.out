@@ -1,0 +1,5 @@
+Characters 123-138:
+  else [remainder i h] :: mulByDigit i t;;
+       ^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

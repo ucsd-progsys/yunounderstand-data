@@ -1,0 +1,5 @@
+Characters 16-20:
+  let pipe = fun2 fun1;;
+                  ^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

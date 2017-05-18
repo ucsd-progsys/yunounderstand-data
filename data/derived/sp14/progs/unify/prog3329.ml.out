@@ -1,0 +1,5 @@
+Characters 260-261:
+  then (1, [(arg1 + arg2 + 1) mod 10] @ a)
+                                        ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

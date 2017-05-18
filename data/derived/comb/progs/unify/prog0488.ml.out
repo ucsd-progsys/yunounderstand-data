@@ -1,0 +1,6 @@
+Characters 71-74:
+  sum (t, y);;
+  ^^^
+Error: This expression has type ('a -> 'b -> 'c) list * int -> bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b -> 'c) list * int -> bool

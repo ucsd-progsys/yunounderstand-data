@@ -1,0 +1,5 @@
+Characters 107-109:
+  | Sine (ex)   -> let ex1 = eval(ex,x,y) in sin(pi * ex1)
+                                                 ^^
+Error: This expression has type float but an expression was expected of type
+         int

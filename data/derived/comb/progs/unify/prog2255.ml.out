@@ -1,0 +1,5 @@
+Characters 366-389:
+  -1::((sum mod 10)+1)::a
+  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * int list

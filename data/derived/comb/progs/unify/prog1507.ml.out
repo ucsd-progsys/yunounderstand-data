@@ -1,0 +1,5 @@
+Characters 144-162:
+  mulByDigit (helper i l accum);;
+             ^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 143-162:
+  let () = Printf.printf "%d"; in
+           ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int -> unit
+       but an expression was expected of type unit

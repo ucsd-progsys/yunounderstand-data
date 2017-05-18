@@ -1,0 +1,5 @@
+Characters 61-81:
+  |_-> bigAdd ((mulByDigit (i-1) l) l);;
+               ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

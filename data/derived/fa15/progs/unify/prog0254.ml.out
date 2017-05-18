@@ -1,0 +1,5 @@
+Characters 477-479:
+  | Funny(k, l, m)       -> ((eval(k,x,y) +. eval(l,x,y) +. eval(m,x,y))/.10)
+                                                                          ^^
+Error: This expression has type int but an expression was expected of type
+         float

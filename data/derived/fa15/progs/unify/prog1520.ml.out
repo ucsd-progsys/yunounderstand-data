@@ -1,0 +1,5 @@
+Characters 110-118:
+  | false ->  let quotient = n/10 in if quotient = 0 then n mod 10 else quotient::digitsOfInt quotient;;
+                                                          ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

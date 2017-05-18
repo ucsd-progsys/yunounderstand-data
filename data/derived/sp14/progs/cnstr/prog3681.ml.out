@@ -1,0 +1,5 @@
+Characters 98-100:
+  if (n / 10) <> 0 then digInt :: digitsOfInt ( n / 10);;
+                               ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

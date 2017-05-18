@@ -1,0 +1,5 @@
+Characters 614-620:
+  | Golden -> "" 
+    ^^^^^^
+Error: The constructor Golden expects 1 argument(s),
+       but is applied here to 0 argument(s)

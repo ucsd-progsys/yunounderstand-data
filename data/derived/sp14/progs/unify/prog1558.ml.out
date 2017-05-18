@@ -1,0 +1,5 @@
+Characters 25-26:
+  let _ = pipe2 [(fun x -> x + 3);(fun x-> x + x)] 3asdf;;
+                           ^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type int

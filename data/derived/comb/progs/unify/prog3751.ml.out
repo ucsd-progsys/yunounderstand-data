@@ -1,0 +1,5 @@
+Characters 140-142:
+  let tens = (x1 + x2 + h) / 10 in
+                   ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 27-30:
+  let _ = eval(Power(SumInts(Var), VarY, VarX), -0.999999, 0.99999);;
+                             ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Var does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 80-101:
+  let f a x = h^sep::sepConcat(sep t) in
+                ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

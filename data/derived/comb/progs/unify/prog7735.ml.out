@@ -1,0 +1,5 @@
+Characters 439-442:
+  | Thresh (w, x, y, z) -> exprToString w ^ "*" ^ exprToString x ^ "*" ^ exprToString y ^ "*" exprToString z;;
+                                                                                          ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

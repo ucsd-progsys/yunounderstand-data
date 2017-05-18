@@ -1,0 +1,5 @@
+Characters 31-32:
+  let _ = stringOfList (fun x -> x) ["foo"];;
+                                 ^
+Error: This expression has type string list
+       but an expression was expected of type string

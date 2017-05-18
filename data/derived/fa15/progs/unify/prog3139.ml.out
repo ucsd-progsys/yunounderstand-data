@@ -1,0 +1,5 @@
+Characters 452-458:
+  | SumInts expr -> (eval(expr) *. (eval(expr) +. 1.0) / 2)
+                         ^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

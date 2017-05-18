@@ -1,0 +1,6 @@
+Characters 31-34:
+  let fixpoint (f,b) = wwhile(f, f b);;
+                                 ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * bool

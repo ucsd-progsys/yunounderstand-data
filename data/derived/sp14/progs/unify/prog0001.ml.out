@@ -1,0 +1,5 @@
+Characters 64-66:
+  | h1::h2::t -> h1+h2 sumList t;;
+                    ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

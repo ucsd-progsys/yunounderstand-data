@@ -1,0 +1,7 @@
+Characters 62-66:
+  Format.sprintf(rv);;
+                ^^^^
+Error: This expression has type float but an expression was expected of type
+         ('a, unit, string) format =
+           ('a, unit, string, string, string, string)
+           CamlinternalFormatBasics.format6

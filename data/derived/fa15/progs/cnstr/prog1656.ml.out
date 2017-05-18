@@ -1,0 +1,5 @@
+Characters 56-60:
+  |Sine->buildSine(e)
+   ^^^^
+Error: The constructor Sine expects 1 argument(s),
+       but is applied here to 0 argument(s)

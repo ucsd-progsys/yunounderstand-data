@@ -1,0 +1,5 @@
+Characters 171-174:
+  (pad::l1)::l2;;
+   ^^^
+Error: This expression has type int list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 439-488:
+  | NewB(a, b, c) -> (eval(a, x, y) +. eval(b, x, y) +. eval(c, x, y)) exp 0;;
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

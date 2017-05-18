@@ -1,0 +1,6 @@
+Characters 71-87:
+  | true -> helper (f,x) f b
+            ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

@@ -1,0 +1,5 @@
+Characters 13-23:
+  List.combine ([1], [2]);;
+               ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

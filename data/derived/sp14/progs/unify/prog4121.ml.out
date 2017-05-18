@@ -1,0 +1,6 @@
+Characters 58-78:
+  Thresh (a,b,c,d) -> exprToString a b c d;;
+                      ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         expr -> expr -> expr -> 'a
+       The type variable 'a occurs inside expr -> expr -> expr -> 'a

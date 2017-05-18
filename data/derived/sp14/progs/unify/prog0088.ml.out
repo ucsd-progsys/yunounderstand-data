@@ -1,0 +1,5 @@
+Characters 576-592:
+  | Addition (a,b) -> "(" ^ (exprToString a) ^ "+" ^ (exprToString b) ")";;
+                                                     ^^^^^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 250-253:
+  | Times (ex1,ex2) -> ex1^"*"^ex2
+                       ^^^
+Error: This expression has type expr but an expression was expected of type
+         string

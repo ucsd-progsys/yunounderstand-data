@@ -1,0 +1,6 @@
+Characters 196-201:
+  helper (seen',rest') 
+          ^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a list list
+       The type variable 'a occurs inside 'a list

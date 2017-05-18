@@ -1,0 +1,5 @@
+Characters 33-34:
+  (clone (0 List.len l1 - l2)) @ smaller;;
+          ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

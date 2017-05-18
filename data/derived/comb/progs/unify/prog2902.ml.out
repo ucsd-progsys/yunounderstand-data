@@ -1,0 +1,5 @@
+Characters 78-79:
+  then let (f', b') = f b in wwhile (f, x)
+                      ^
+Error: This expression has type 'a * bool
+       This is not a function; it cannot be applied.

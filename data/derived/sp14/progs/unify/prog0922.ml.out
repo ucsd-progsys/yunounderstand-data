@@ -1,0 +1,5 @@
+Characters 225-258:
+  | 3 -> buildCosine(buildHelper(rand, max_depth, curr_depth + 1))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type int * int -> int

@@ -1,0 +1,6 @@
+Characters 80-93:
+  | hd::tl -> recurse tl hd::xs
+              ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

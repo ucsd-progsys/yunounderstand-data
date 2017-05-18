@@ -1,0 +1,5 @@
+Characters 83-85:
+  sin(pi *. e0)
+            ^^
+Error: This expression has type expr but an expression was expected of type
+         float

@@ -1,0 +1,6 @@
+Characters 23-32:
+  (10 / 2), (8 mod 2) :: listerine;;
+                         ^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type int list
+       Type int * int is not compatible with type int 

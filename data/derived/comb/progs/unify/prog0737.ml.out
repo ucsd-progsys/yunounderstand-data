@@ -1,0 +1,5 @@
+Characters 58-74:
+  | x :: xs -> List.fold_left x + xs;;
+               ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a -> 'b list -> 'a
+       but an expression was expected of type int

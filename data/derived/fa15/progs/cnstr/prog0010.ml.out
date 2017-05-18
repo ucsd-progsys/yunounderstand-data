@@ -1,0 +1,5 @@
+Characters 413-419:
+  | Square s -> "(" ^ exprToString s ^ ")^2"
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Square does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 66-70:
+  let halff = rand(0,2) in
+              ^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

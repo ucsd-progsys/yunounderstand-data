@@ -1,0 +1,5 @@
+Characters 216-217:
+  | TimesMod (w,t,u) -> (eval(w,x,y) *. eval(t,x,y)) /. (mod_float (eval(w,x,y) *. eval(t,x,y)) u )
+                                                                                                ^
+Error: This expression has type expr but an expression was expected of type
+         float

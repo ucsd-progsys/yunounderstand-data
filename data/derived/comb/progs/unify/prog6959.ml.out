@@ -1,0 +1,5 @@
+Characters 157-181:
+  else go ((iterate (x,r)), false)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

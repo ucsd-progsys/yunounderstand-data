@@ -1,0 +1,5 @@
+Characters 542-555:
+  sin(eval (e1,x,y) + eval (e2,x,y) + eval (e3,x,y)/.pi);;
+      ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

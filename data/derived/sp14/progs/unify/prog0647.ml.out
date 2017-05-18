@@ -1,0 +1,5 @@
+Characters 135-158:
+  (List.append (clone 0 (-diff), len1), len2)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

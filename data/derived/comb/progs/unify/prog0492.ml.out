@@ -1,0 +1,5 @@
+Characters 54-61:
+  if n <= 0 then [] else digits([], n);;
+                               ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

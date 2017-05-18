@@ -1,0 +1,5 @@
+Characters 260-314:
+  | 3 -> Times (build (rand, depth-1)), (build (rand, depth-1))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

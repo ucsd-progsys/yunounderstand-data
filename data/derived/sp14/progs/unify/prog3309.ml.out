@@ -1,0 +1,5 @@
+Characters 60-74:
+  if ((n mod 10) = n) then [] else digitsHelper n/10 ((n mod 10)::l);;
+                                   ^^^^^^^^^^^^^^
+Error: This expression has type 'a -> 'b list
+       but an expression was expected of type int

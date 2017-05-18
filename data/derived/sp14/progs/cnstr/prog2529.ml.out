@@ -1,0 +1,5 @@
+Characters 112-117:
+  in foo (Node(Node(Leaf 1, Leaf 2),Leaf3));;
+                                    ^^^^^
+Error: This variant expression is expected to have type tree
+       The constructor Leaf3 does not belong to type tree

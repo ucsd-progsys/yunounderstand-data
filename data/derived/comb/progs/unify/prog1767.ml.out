@@ -1,0 +1,5 @@
+Characters 162-167:
+  helper (seen', rest') 
+                 ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

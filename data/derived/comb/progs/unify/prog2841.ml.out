@@ -1,0 +1,6 @@
+Characters 71-93:
+  digitsOfInt (n mod 10);;
+  ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list list
+       but an expression was expected of type int list
+       Type (int * int) list is not compatible with type int 

@@ -1,0 +1,5 @@
+Characters 152-174:
+  | 1 -> buildSine(build(rand, depth - 1) * buildY())
+                   ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

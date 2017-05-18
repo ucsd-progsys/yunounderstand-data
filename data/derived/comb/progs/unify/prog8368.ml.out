@@ -1,0 +1,6 @@
+Characters 123-126:
+  (l1::pad)::l2
+       ^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list list
+       Type int is not compatible with type 'a list 

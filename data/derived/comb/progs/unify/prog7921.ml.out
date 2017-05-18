@@ -1,0 +1,6 @@
+Characters 82-88:
+  wwhile (helper,b);;
+          ^^^^^^
+Error: This expression has type 'a -> bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type bool is not compatible with type 'a * bool 

@@ -1,0 +1,5 @@
+Characters 81-87:
+  n mod 10 :: myList
+              ^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

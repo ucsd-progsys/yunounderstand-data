@@ -1,0 +1,5 @@
+Characters 147-148:
+  |2->buildSine(build(r,depth-1))
+                      ^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

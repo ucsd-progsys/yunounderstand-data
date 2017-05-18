@@ -1,0 +1,5 @@
+Characters 101-102:
+  if a = k then b else assoc t;;
+                             ^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'b * 'a * ('a * 'b) list

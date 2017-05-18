@@ -1,0 +1,5 @@
+Characters 213-220:
+  if halff = 0 then Cosine(build(newRand, depth-1)) 
+                                 ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

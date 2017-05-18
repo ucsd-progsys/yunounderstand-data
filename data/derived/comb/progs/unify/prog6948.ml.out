@@ -1,0 +1,5 @@
+Characters 111-117:
+  else (test x, false)
+        ^^^^^^
+Error: This expression has type int * bool
+       but an expression was expected of type int

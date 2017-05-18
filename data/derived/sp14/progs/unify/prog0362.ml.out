@@ -1,0 +1,5 @@
+Characters 29-30:
+  let _ = eval (Sine(VarX),0.5,0);;
+                               ^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,0 +1,5 @@
+Characters 134-148:
+  (hd*i/10)::(hd*i mod 10 + mBDhelper i tl)
+                            ^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

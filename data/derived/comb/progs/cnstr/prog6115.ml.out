@@ -1,0 +1,5 @@
+Characters 66-71:
+  | Const n          -> empty
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Const does not belong to type expr

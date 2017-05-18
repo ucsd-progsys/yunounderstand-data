@@ -1,0 +1,5 @@
+Characters 0-55:
+  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int -> int) * int
+       This is not a function; it cannot be applied.

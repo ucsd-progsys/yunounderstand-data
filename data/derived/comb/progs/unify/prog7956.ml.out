@@ -1,0 +1,5 @@
+Characters 177-186:
+  if numZeros > 0 then [l1, (listZeros@l2)]
+                             ^^^^^^^^^
+Error: This expression has type int -> (int * int) list
+       but an expression was expected of type 'a list

@@ -1,0 +1,5 @@
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type 'a list list list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

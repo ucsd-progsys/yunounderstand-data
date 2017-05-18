@@ -1,0 +1,5 @@
+Characters 398-401:
+  | Cube(a,b,c) ->     (eval(a) *. eval(b) *. eval(c))
+                            ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'b

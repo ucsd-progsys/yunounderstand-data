@@ -1,0 +1,5 @@
+Characters 15-22:
+  let _ = append([1;2;3] [4;5;6]);;
+                 ^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,4 @@
+Characters 133-139:
+  | 2 .. 4 -> buildSine(build(rand,depth-1))
+    ^^^^^^
+Error: Only character intervals are supported in patterns.

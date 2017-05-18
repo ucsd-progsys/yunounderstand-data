@@ -1,0 +1,5 @@
+Characters 104-105:
+  let base =  if t then "" else "a" in
+                 ^
+Error: This expression has type 'a list
+       but an expression was expected of type bool

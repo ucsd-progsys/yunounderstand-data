@@ -1,0 +1,5 @@
+Characters 100-102:
+  if (x = [])
+          ^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

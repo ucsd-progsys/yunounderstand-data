@@ -1,0 +1,5 @@
+Characters 17-19:
+  let _ = clone [] [];;
+                   ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

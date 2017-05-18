@@ -1,0 +1,5 @@
+Characters 57-59:
+  n mod 10 append digitsOfInt (n/10);;
+        ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

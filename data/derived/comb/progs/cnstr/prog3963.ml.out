@@ -1,0 +1,5 @@
+Characters 114-116:
+  | h::t, (x1,x2) -> if x1 + x2 + h > 9 then 1 :: (x1 + x2 + h mod 10)
+                                               ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

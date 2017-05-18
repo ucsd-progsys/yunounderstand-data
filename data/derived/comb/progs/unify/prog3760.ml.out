@@ -1,0 +1,5 @@
+Characters 32-33:
+  let rec mulByDigit i l = helper 0 i l;;
+                                  ^
+Error: This expression has type int but an expression was expected of type
+         int list

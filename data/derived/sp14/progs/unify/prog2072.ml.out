@@ -1,0 +1,5 @@
+Characters 108-121:
+  then (l1, (clone 0 lenl1-lenl2)@l2)
+             ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

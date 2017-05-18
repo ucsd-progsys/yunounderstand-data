@@ -1,0 +1,5 @@
+Characters 31-39:
+  let stringOfList f l = f (pipe List.map l);;
+                                 ^^^^^^^^
+Error: This expression has type ('a -> 'b) -> 'a list -> 'b list
+       but an expression was expected of type ('c -> 'c) list

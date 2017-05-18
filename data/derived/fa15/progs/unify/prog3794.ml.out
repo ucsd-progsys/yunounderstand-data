@@ -1,0 +1,5 @@
+Characters 168-179:
+  | [] -> if ((carry+b+c) < 10) then (0, carry::(carry+b+c))
+                                                ^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

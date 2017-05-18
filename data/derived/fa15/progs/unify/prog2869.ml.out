@@ -1,0 +1,5 @@
+Characters 298-313:
+  removeZero (add ((padZero l1 l2) l2));;
+                   ^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

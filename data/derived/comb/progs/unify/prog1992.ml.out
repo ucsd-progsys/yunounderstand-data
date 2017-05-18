@@ -1,0 +1,7 @@
+Characters 39-57:
+  wwhile((fun x -> f x  not (f x = x)),b);;
+                   ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         ((bool -> bool) -> bool -> 'a) * bool
+       The type variable 'a occurs inside
+       ((bool -> bool) -> bool -> 'a) * bool

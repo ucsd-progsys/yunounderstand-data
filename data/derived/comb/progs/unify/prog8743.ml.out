@@ -1,0 +1,5 @@
+Characters 49-59:
+  then (b, false)
+       ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

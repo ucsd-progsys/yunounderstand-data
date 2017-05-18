@@ -1,0 +1,5 @@
+Characters 80-83:
+  | Sine s -> Format.sprintf "%d" (sin (3 * 2.0));;
+                                            ^^^
+Error: This expression has type float but an expression was expected of type
+         int

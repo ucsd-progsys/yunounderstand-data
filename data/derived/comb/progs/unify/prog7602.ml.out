@@ -1,0 +1,5 @@
+Characters 381-404:
+  | NewOp1(e1, e2, e3) ->  (1/ sin(pi *. eval(e1,x,y))) * (cos(pi *. eval (e1,x,y))) * sin(pi *. eval(e1,x,y))
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

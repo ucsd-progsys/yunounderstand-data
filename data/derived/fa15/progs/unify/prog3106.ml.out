@@ -1,0 +1,5 @@
+Characters 405-420:
+  | Thresh (e1, e2, e3, e4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^ "?" ^ exprToString e3 ^ ":" ^ exprToString e4 + ")";;
+                                                                                                             ^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

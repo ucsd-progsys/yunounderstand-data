@@ -1,0 +1,6 @@
+Characters 95-96:
+  | (lk, lv)::ls -> if k = lk then lv else assoc d k ls;;
+                                                 ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type
+         ('a -> 'b -> 'c) * 'd * ('d * ('a -> 'b -> 'c)) list

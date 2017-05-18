@@ -1,0 +1,5 @@
+Characters 109-117:
+  in (func f b,b)
+      ^^^^^^^^
+Error: This expression has type ('a -> 'a) * bool
+       but an expression was expected of type 'b -> 'b * bool

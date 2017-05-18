@@ -1,0 +1,5 @@
+Characters 85-90:
+  | (s,i)::t -> if s = k then true else assoc d k t;;
+                                        ^^^^^
+Error: This function has type bool * 'a * ('a * 'b) list -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

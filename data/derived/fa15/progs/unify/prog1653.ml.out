@@ -1,0 +1,5 @@
+Characters 89-121:
+  |Sine s -> String.concat(["sin(pi*";exprToString s;")"])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

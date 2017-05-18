@@ -1,0 +1,5 @@
+Characters 128-137:
+  |h'::t' -> if h+h' > 10 then addHelper t t' @ [1 + h' + h] else addHelper t t' @ [h'+ h];;
+                               ^^^^^^^^^
+Error: This function has type int list * int list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

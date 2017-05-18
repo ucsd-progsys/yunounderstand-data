@@ -1,0 +1,5 @@
+Characters 33-34:
+  let _ = fixpoint ((fun b -> b ** 2), 0.);;
+                                   ^
+Error: This expression has type int but an expression was expected of type
+         float

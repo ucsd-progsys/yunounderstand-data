@@ -1,0 +1,5 @@
+Characters 11-37:
+  List.append([[0;0;9;9]], [[1;0;0;2]]);;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

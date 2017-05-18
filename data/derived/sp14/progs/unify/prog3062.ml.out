@@ -1,0 +1,5 @@
+Characters 11-21:
+  let test = mulByDigit 1 [1;0]
+             ^^^^^^^^^^
+Error: This function has type int -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

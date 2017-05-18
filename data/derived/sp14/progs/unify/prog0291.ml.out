@@ -1,0 +1,6 @@
+Characters 86-88:
+  else wwhile (c', b');;
+               ^^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

@@ -1,0 +1,5 @@
+Characters 114-120:
+  then x/(float_of_int 10 ** numdig -1) mod 10 :: l
+                             ^^^^^^
+Error: This expression has type int but an expression was expected of type
+         float

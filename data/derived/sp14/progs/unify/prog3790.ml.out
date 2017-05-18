@@ -1,0 +1,5 @@
+Characters 134-135:
+  | true  -> 1;;
+             ^
+Error: This expression has type int but an expression was expected of type
+         int list

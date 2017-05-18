@@ -1,0 +1,5 @@
+Characters 194-196:
+  List.rev (helper ([],l));;
+                    ^^
+Error: This variant expression is expected to have type unit
+       The constructor [] does not belong to type unit

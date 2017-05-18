@@ -1,0 +1,5 @@
+Characters 36-41:
+  let fixpoint (f,b) = wwhile ((helper(f,b)),b);;
+                                      ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c

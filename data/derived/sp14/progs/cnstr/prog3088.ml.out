@@ -1,0 +1,5 @@
+Characters 156-158:
+  | x::xs -> digitsOfInt (x) :: xs;;
+                             ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

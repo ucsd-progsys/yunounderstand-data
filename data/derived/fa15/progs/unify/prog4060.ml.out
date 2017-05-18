@@ -1,0 +1,6 @@
+Characters 55-61:
+  in helper
+     ^^^^^^
+Error: This expression has type bool -> bool
+       but an expression was expected of type bool -> bool * bool
+       Type bool is not compatible with type bool * bool 

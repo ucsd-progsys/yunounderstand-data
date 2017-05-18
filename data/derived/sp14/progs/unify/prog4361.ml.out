@@ -1,0 +1,5 @@
+Characters 363-387:
+  buildAverage(build(rand, depth - 1))
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

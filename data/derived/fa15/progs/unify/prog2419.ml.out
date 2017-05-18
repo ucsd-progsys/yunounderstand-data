@@ -1,0 +1,9 @@
+Characters 83-84:
+  List.fold_left f base xs
+                 ^
+Error: This expression has type
+         ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'g -> int
+       but an expression was expected of type
+         ('a -> 'b -> 'c -> 'd -> 'e -> 'f) ->
+         'g -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f
+       Type int is not compatible with type 'a -> 'b -> 'c -> 'd -> 'e -> 'f 

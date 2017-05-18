@@ -1,0 +1,5 @@
+Characters 215-243:
+  if (randNum = 1 && randNum2 = 4) then buildSine(buildOp2(buildX(),buildY(),buildX())) else
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type expr * expr * expr * 'd

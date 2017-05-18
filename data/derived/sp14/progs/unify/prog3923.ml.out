@@ -1,0 +1,6 @@
+Characters 31-36:
+  let f a x = a^^2 + x in
+                 ^^^^^
+Error: This expression has type int but an expression was expected of type
+         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
+           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6

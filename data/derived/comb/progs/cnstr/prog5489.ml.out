@@ -1,0 +1,5 @@
+Characters 13-19:
+  let _ = pipe ([] 3);;
+               ^^^^^^
+Error: The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)

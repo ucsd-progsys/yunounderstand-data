@@ -1,0 +1,5 @@
+Characters 43-58:
+  (g (f b),false)
+  ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

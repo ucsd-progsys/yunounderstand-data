@@ -1,0 +1,6 @@
+Characters 126-150:
+  then matchHeads (getTail(listReverse t))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       but an expression was expected of type 'a list list
+       Type string is not compatible with type 'a list 

@@ -1,0 +1,5 @@
+Characters 144-147:
+  in listReverse (xxx n);;
+                  ^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

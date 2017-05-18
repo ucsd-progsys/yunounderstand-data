@@ -1,0 +1,5 @@
+Characters 394-396:
+  | _ -> ""^ex^"";;
+            ^^
+Error: This expression has type expr but an expression was expected of type
+         string

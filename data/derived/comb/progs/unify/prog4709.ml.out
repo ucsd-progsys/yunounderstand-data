@@ -1,0 +1,6 @@
+Characters 71-84:
+  | true -> helper (f, x)
+            ^^^^^^^^^^^^^
+Error: This expression has type 'a * bool -> 'b
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a * bool -> 'b

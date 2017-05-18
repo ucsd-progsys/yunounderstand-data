@@ -1,0 +1,5 @@
+Characters 36-43:
+  if is10gte then 1 + additivePersistence (sumList(digitsOfInt(n)))
+     ^^^^^^^
+Error: This expression has type int -> bool
+       but an expression was expected of type bool

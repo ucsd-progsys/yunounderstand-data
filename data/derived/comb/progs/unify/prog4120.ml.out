@@ -1,0 +1,6 @@
+Characters 60-74:
+  (exprToString a, exprToString b,exprToString c,exprToString d);;
+   ^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b * 'c * 'd

@@ -1,0 +1,5 @@
+Characters 30-33:
+  wwhile ((not f b) b,b);;
+           ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

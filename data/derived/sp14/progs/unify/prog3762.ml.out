@@ -1,0 +1,5 @@
+Characters 500-502:
+  |_ -> build();;
+             ^^
+Error: This expression has type unit but an expression was expected of type
+         (int -> int -> int) * int

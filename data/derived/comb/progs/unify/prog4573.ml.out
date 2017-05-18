@@ -1,0 +1,5 @@
+Characters 54-79:
+  else  n=sumList (digitsOfInt n);;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

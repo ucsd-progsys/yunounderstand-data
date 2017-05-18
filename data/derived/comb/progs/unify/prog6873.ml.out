@@ -1,0 +1,5 @@
+Characters 8-21:
+  let _ = digitsOfInt 5-6;;
+          ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

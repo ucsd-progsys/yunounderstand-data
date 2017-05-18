@@ -1,0 +1,5 @@
+Characters 39-41:
+  then [];;
+       ^^
+Error: This variant expression is expected to have type unit
+       The constructor [] does not belong to type unit

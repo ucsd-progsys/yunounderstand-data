@@ -1,0 +1,5 @@
+Characters 58-69:
+  then digitsOfInt ((a mod 10)::o) (a/10)
+       ^^^^^^^^^^^
+Error: This function has type int -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

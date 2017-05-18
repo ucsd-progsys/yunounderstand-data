@@ -1,0 +1,5 @@
+Characters 447-448:
+  ((eval(a, x, y) *. eval(a, x, y)) +. (eval(b, x, y) *. eval(c, x, y)))/.2
+                                                                          ^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,0 +1,5 @@
+Characters 8-10:
+  let _ = tr[2];;
+          ^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

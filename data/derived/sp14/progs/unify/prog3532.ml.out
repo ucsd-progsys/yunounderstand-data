@@ -1,0 +1,5 @@
+Characters 160-183:
+  then ([], (fir + sec)::b2)  else (((fir + sec) / 10) + b1, (fir + sec) mod 10 ::b2)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 82-85:
+  let m a b = "[" ^ a ^ ";" b ^ "]" in
+                        ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

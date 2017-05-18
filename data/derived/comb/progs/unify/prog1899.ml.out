@@ -1,0 +1,5 @@
+Characters 146-160:
+  ( ( h1 + 1 , (mul / 10))::( mul mod 10 )::t2)
+                            ^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int * int

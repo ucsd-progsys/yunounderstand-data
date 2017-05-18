@@ -1,0 +1,5 @@
+Characters 8-27:
+  let _ = additivePersistence 9876 1;;
+          ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

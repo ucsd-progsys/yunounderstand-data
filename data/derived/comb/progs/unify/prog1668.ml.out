@@ -1,0 +1,5 @@
+Characters 441-444:
+  2.0 *.exp -(
+        ^^^
+Error: This expression has type float -> float
+       but an expression was expected of type float

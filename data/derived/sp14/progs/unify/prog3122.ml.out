@@ -1,0 +1,5 @@
+Characters 35-51:
+  let notequals x y = if x <> y then (notequals,true);;
+                                     ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

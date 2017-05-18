@@ -1,0 +1,5 @@
+Characters 327-332:
+  | Power(a, b) -> if(x < 1.0 && x > -1.0 && y < 1.0 && y > -1.0) then x *. y else eval(a, x, y) ** eval(b, x, y);;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Power does not belong to type expr

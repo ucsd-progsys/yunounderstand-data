@@ -1,0 +1,5 @@
+Characters 184-215:
+  else l1, clone 0 (List.length l1 - List.length l2 @ l2);;
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

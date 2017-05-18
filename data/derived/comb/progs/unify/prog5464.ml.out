@@ -1,0 +1,5 @@
+Characters 495-509:
+  | Op (x, y, z) -> "("^(exprToString x)^"*"^(exprToString)^"*"^(exprToString)")/("^(exprToString x)^"+"^(exprToString y)^"+"(exprToString)^")";;
+                                             ^^^^^^^^^^^^^^
+Error: This expression has type expr -> string
+       but an expression was expected of type string

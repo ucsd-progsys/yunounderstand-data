@@ -1,0 +1,5 @@
+Characters 411-421:
+  | FunckyRoot (e1,e2,e3) -> sqrt ((sqrt eval(e',x,x)) (sqrt eval(e',x,y)) (sqrt eval(e',y,y)));;
+    ^^^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor FunckyRoot does not belong to type expr

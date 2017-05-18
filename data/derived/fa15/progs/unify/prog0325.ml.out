@@ -1,0 +1,5 @@
+Characters 106-125:
+  | head :: tail -> 1 + additivePersistence sumList x;;
+                        ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

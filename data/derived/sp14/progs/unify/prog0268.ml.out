@@ -1,0 +1,5 @@
+Characters 154-160:
+  in helper [] mulByDigit i (List.rev (List.map (fun x->x*10) t )) @ h*i :: [];;
+     ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

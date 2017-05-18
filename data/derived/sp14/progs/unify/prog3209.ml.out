@@ -1,0 +1,5 @@
+Characters 86-94:
+  (List.rev List.tl (List.rev (h1::t1)), (h1+x)/10::((h1+x) mod 10)::[])
+   ^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

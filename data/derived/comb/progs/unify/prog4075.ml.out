@@ -1,0 +1,5 @@
+Characters 17-29:
+  let print130 s = print_string (prefix130^">>"^s)
+                   ^^^^^^^^^^^^
+Error: This function has type string -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

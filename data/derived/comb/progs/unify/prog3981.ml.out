@@ -1,0 +1,5 @@
+Characters 290-291:
+  | _ -> addZeroes (num-1) (List.append somelist 0)
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         'a list

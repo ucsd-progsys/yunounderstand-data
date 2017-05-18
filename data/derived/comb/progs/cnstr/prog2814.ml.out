@@ -1,0 +1,5 @@
+Characters 37-57:
+  let buildKellysOp(a,b,a_more)      = KellysOp(a,b,a_more);;
+                                       ^^^^^^^^^^^^^^^^^^^^
+Error: The constructor KellysOp expects 4 argument(s),
+       but is applied here to 3 argument(s)

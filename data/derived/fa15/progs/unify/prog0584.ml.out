@@ -1,0 +1,5 @@
+Characters 396-397:
+  | Power (m, n) -> let d = eval(n, x, y) in if d < 0 then eval(m, x, y) ** (d *. -1.0) else (eval(m, x, y) ** d)
+                                                    ^
+Error: This expression has type int but an expression was expected of type
+         float

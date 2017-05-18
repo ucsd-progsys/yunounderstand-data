@@ -1,0 +1,5 @@
+Characters 147-164:
+  | Sine (e1)          -> Printf.printf"e1"
+                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         string -> string

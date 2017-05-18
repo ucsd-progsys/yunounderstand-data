@@ -1,0 +1,5 @@
+Characters 69-73:
+  let rdm = rand(0,7) in
+            ^^^^
+Error: This expression has type 'a * 'b
+       This is not a function; it cannot be applied.

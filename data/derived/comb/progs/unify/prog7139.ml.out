@@ -1,0 +1,5 @@
+Characters 118-126:
+  if (List.mem h List.rev t = false) then h :: seen'  ;
+      ^^^^^^^^
+Error: This function has type 'a -> 'a list -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

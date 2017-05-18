@@ -1,0 +1,6 @@
+Characters 26-47:
+  (List.hd [[]; [1;2;3]]) = (List.hd [[]; ["a"]]);;
+                            ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list
+       but an expression was expected of type int list
+       Type string is not compatible with type int 

@@ -1,0 +1,5 @@
+Characters 0-1:
+  z + c;;
+  ^
+Error: This expression has type int * int
+       but an expression was expected of type int

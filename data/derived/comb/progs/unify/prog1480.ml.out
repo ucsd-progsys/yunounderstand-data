@@ -1,0 +1,5 @@
+Characters 76-88:
+  a=(t,(h+x))::a
+    ^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b list * 'c

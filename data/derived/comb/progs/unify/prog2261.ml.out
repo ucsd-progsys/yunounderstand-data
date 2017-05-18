@@ -1,0 +1,5 @@
+Characters 141-213:
+  Printf.printf "num is %d and sum is %d and count is %d\n" num sum count;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         int

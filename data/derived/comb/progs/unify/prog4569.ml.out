@@ -1,0 +1,5 @@
+Characters 46-57:
+  else int_of_char explode (string_of_int n);;
+       ^^^^^^^^^^^
+Error: This function has type char -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

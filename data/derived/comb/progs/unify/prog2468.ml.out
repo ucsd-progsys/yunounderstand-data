@@ -1,0 +1,5 @@
+Characters 64-72:
+  helper i-1 (bigAdd acc l) l
+  ^^^^^^^^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type int

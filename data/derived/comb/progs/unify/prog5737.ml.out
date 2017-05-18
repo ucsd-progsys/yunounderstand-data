@@ -1,0 +1,5 @@
+Characters 82-84:
+  let f a x = h ^ sl t in
+                  ^^
+Error: This expression has type string list
+       This is not a function; it cannot be applied.

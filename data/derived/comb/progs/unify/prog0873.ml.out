@@ -1,0 +1,5 @@
+Characters 184-186:
+  | () -> ((carry/10), (carry mod 10)::rest) in
+    ^^
+Error: This pattern matches values of type unit
+       but a pattern was expected which matches values of type 'a * 'b

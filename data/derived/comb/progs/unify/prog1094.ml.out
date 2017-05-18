@@ -1,0 +1,5 @@
+Characters 237-265:
+  else expr ^ "Cosine(" ^ buildhelper 0 (depth-1) expr ^ ")"
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

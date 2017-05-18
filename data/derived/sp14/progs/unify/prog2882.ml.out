@@ -1,0 +1,5 @@
+Characters 69-82:
+  then sumList [1;2];;
+       ^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

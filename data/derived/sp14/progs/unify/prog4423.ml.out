@@ -1,0 +1,5 @@
+Characters 187-188:
+  List.combine (List.rev l1::0) (List.rev 0::l2) in
+                             ^
+Error: This expression has type int but an expression was expected of type
+         'a list list

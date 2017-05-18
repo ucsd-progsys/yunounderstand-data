@@ -1,0 +1,5 @@
+Characters 134-135:
+  | [] -> if((n+a+b)<10) then (0, n::[n+a+b]) else (n+1, (n+1)::[(n+a+b) mod 10])
+                ^
+Error: This expression has type int * 'a list
+       but an expression was expected of type int

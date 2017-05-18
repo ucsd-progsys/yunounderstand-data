@@ -1,0 +1,5 @@
+Characters 336-339:
+  removeZero(List.rev(helpy i l 0 [0,0]));;
+                                   ^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

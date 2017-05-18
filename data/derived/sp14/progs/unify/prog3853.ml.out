@@ -1,0 +1,5 @@
+Characters 10-13:
+  let max = ref 0
+            ^^^
+Error: This function has type 'a -> 'a ref
+       It is applied to too many arguments; maybe you forgot a `;'.

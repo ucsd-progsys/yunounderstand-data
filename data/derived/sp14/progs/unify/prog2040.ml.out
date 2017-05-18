@@ -1,0 +1,5 @@
+Characters 53-57:
+  if y = true 
+         ^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

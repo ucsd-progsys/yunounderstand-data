@@ -1,0 +1,5 @@
+Characters 86-121:
+  if (diff < 0) then List.append (clone 0 (abs diff)) l1;;
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

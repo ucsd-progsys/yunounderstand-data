@@ -1,0 +1,5 @@
+Characters 302-358:
+  | 4 -> buildThresh(build(rand,depth), build(rand,depth),build(rand,depth))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type expr * expr * expr * expr

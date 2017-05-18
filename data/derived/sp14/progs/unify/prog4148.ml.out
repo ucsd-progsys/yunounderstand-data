@@ -1,0 +1,5 @@
+Characters 522-523:
+  (sin(pi*.eval(e1,x,y)) ** 3) *. ((cos(pi*.eval(e2,x,y)) ** 2.0) *. cos(eval(e3,x,y)));;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         float

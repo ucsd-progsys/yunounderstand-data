@@ -1,0 +1,5 @@
+Characters 64-65:
+  if b then wwhile f a else a;;
+                   ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type ('a -> 'b * bool) * 'a

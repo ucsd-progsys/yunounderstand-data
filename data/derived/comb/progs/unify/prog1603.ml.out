@@ -1,0 +1,5 @@
+Characters 68-74:
+  if (x < 10) then x else helper sumList digits x in
+                          ^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

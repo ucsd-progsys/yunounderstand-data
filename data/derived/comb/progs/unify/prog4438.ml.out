@@ -1,0 +1,5 @@
+Characters 105-138:
+  ((i*j+s)/10, ((i*j+s) mod 10)::t) in
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

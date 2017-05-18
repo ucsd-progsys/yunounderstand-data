@@ -1,0 +1,6 @@
+Characters 134-138:
+  then h::seen
+          ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list list
+       The type variable 'a occurs inside 'a list list

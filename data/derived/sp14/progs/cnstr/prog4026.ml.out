@@ -1,0 +1,5 @@
+Characters 186-188:
+  if x = 0 && y = 0 then []
+                         ^^
+Error: This variant expression is expected to have type unit
+       The constructor [] does not belong to type unit

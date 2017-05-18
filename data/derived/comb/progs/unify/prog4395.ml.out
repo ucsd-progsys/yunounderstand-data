@@ -1,0 +1,5 @@
+Characters 169-174:
+  | (i,j) -> if (i + j) > 9 then (1, (i + j - 10)) else (0 , i + j)
+    ^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type ('c * 'd) list

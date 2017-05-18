@@ -1,0 +1,5 @@
+Characters 127-134:
+  else if List.length l1 < List.length l2 then padZero((0::l1) l2);;
+                                                       ^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

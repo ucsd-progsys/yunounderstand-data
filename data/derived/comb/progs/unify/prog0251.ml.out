@@ -1,0 +1,6 @@
+Characters 82-86:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int -> int
+       Type int is not compatible with type int -> int 

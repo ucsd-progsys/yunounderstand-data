@@ -1,0 +1,5 @@
+Characters 13-14:
+  let _ = dupe 3 3;;
+               ^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'b

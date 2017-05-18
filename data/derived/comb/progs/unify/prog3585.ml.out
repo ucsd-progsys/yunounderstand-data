@@ -1,0 +1,5 @@
+Characters 162-167:
+  match a with (x,y) -> (new_carry, digit::y) in
+               ^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type int

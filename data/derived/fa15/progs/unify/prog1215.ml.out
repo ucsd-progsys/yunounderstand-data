@@ -1,0 +1,6 @@
+Characters 423-426:
+  let (x, res) = List.fold_left f base args in [(helper ((List.length l2)*2) (x))] @ res;;
+                                                                                     ^^^
+Error: This expression has type int list
+       but an expression was expected of type unit list
+       Type int is not compatible with type unit 

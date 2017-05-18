@@ -1,0 +1,5 @@
+Characters 488-550:
+  | 3 -> buildTimes(buildAverage(build(rand, depth - 1), build(rand, depth - 1)));;
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

@@ -1,0 +1,5 @@
+Characters 33-66:
+  n = additivePersistence(n mod 10);;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

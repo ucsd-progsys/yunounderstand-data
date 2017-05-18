@@ -1,0 +1,5 @@
+Characters 104-106:
+  | Sine e'	      -> sin(eval e' x y)
+                              ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * ('a -> 'b -> 'c) * ('a -> 'b -> 'c)

@@ -1,0 +1,5 @@
+Characters 73-75:
+  then n mod 10 :: digitsOfInt(n/10);;
+                ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

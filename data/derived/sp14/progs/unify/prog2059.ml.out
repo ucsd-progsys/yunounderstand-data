@@ -1,0 +1,5 @@
+Characters 29-58:
+  wwhile(fun b -> (f(b), f(b)=b) , b);;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

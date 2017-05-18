@@ -1,0 +1,6 @@
+Characters 211-232:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int list
+       Type int list is not compatible with type int 

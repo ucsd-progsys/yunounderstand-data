@@ -1,0 +1,5 @@
+Characters 589-593:
+  | Cube                  -> (exprToString e1)^" * "^(exprToString e1)^" * "^(exprToString e1);;
+    ^^^^
+Error: The constructor Cube expects 1 argument(s),
+       but is applied here to 0 argument(s)

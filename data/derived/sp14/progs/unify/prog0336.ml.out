@@ -1,0 +1,5 @@
+Characters 51-72:
+  if i > 0 then mulByDigit ((i-1), (bigAdd l l))
+                           ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

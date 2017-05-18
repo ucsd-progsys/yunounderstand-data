@@ -1,0 +1,5 @@
+Characters 60-61:
+  |h::t -> h::l listReverse(t);;
+              ^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

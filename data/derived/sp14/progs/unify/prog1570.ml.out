@@ -1,0 +1,5 @@
+Characters 122-153:
+  ((clone 0 (len2-len1)) @ l1),l2;;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

@@ -1,0 +1,5 @@
+Characters 24-32:
+  let _ = eval (buildSine(buildX() + buildY()), 0.5,0.5);;
+                          ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

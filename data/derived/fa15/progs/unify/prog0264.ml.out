@@ -1,0 +1,5 @@
+Characters 31-47:
+  let stringOfList f l = List.map(f, sepConcat l);;
+                                 ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'd

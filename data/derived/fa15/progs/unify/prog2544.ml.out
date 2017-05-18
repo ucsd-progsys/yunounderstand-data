@@ -1,0 +1,5 @@
+Characters 130-131:
+  ( (x1+x2+a1)/10, [s+c] @ s' @ [(x1+x2+c) mod 10] ) 
+                      ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

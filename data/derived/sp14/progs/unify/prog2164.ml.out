@@ -1,0 +1,5 @@
+Characters 64-78:
+  | hd::l' -> 1 + listReverse l';;
+                  ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

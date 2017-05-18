@@ -1,0 +1,5 @@
+Characters 455-456:
+  | Tan t -> (mod_float (tan(pi *. eval(t,x,y))) 1)
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

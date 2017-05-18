@@ -1,0 +1,5 @@
+Characters 158-159:
+  (eval (e1,x,y)) /. 7
+                     ^
+Error: This expression has type int but an expression was expected of type
+         float

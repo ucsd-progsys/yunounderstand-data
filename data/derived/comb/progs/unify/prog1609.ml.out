@@ -1,0 +1,5 @@
+Characters 137-143:
+  helper l1 l2 []
+  ^^^^^^
+Error: This function has type 'a list -> 'b -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

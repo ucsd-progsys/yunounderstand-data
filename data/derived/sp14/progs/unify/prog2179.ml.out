@@ -1,0 +1,5 @@
+Characters 35-36:
+  let f a l = a+1 l in 
+                ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

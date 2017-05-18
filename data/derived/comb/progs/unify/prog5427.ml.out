@@ -1,0 +1,5 @@
+Characters 25-28:
+  let _ = lastListElement ["1"; "2"; "3";];;
+                           ^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

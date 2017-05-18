@@ -1,0 +1,5 @@
+Characters 327-383:
+  else if y = 5 then buildTimes( build(rand, depth-1), build(rand, depth-1) );;
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

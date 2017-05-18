@@ -1,0 +1,5 @@
+Characters 578-590:
+  | Square (e1) -> "(" ^ exprToString ^ ")^2";;
+                         ^^^^^^^^^^^^
+Error: This expression has type expr -> string
+       but an expression was expected of type string

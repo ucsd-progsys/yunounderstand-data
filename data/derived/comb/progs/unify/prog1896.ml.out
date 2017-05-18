@@ -1,0 +1,5 @@
+Characters 25-31:
+  let rec mulByDigit i l = bigAdd bigAdd (l l) (mulByDigit (i - 1) l);;
+                           ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

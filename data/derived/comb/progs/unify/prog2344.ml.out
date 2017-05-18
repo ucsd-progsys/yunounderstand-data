@@ -1,0 +1,5 @@
+Characters 56-58:
+  hi temp 3;;
+  ^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

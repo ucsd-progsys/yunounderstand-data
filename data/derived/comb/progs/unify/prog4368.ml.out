@@ -1,0 +1,5 @@
+Characters 457-468:
+  (eval(f,x,y) + (eval(g,x,y) *. eval(h,x,y)));;
+   ^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

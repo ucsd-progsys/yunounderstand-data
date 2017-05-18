@@ -1,0 +1,5 @@
+Characters 80-81:
+  else count + 1 sumList(digitsOfInt n);;
+               ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

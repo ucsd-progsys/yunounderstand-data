@@ -1,0 +1,5 @@
+Characters 12-18:
+  let empty = [] set;;
+              ^^^^^^
+Error: The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)

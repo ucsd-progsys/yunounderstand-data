@@ -1,0 +1,11 @@
+Characters 149-154:
+  (Printf.printf "%s "Printf.sprintf "%8d%8d%8d\n" l1' l2' carry; ((if addit >= 10 then 1 else 0), num @ [addit mod 10])) in
+                 ^^^^^
+Error: This expression has type
+         ('a -> 'b -> 'c -> 'd -> 'e, out_channel, unit, unit, unit,
+          'a -> 'b -> 'c -> 'd -> 'e)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b -> 'c -> 'd -> 'e, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b -> 'c -> 'd -> 'e is not compatible with type unit 

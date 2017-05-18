@@ -1,0 +1,5 @@
+Characters 416-420:
+  | Half(x) -> ".5*" ^ exprToString(x);;
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Half does not belong to type expr

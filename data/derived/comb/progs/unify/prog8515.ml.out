@@ -1,0 +1,5 @@
+Characters 419-426:
+  | Circ	(circ1,circ2)       -> eval(circ1)**2+eval(circ2)
+                                    ^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

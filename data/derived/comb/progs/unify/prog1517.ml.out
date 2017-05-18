@@ -1,0 +1,5 @@
+Characters 65-66:
+  try if compare (f arg) out = 0 then Pass else Fail
+                               ^
+Error: This expression has type int but an expression was expected of type
+         bool

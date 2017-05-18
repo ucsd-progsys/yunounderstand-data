@@ -1,0 +1,5 @@
+Characters 523-524:
+  (r1 +. r2 +. r3) /. ((abs_float r1)+.(abs_float r2)+.(abs_float r3)+.1)
+                                                                       ^
+Error: This expression has type int but an expression was expected of type
+         float

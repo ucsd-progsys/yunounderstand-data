@@ -1,0 +1,5 @@
+Characters 33-34:
+  eval(Clamp(Sine(VarX),VarX,VarY),1,2);;
+                                   ^
+Error: This expression has type int but an expression was expected of type
+         float

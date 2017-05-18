@@ -1,0 +1,6 @@
+Characters 71-72:
+  if boo = true then e b;;
+                       ^
+Error: This expression has type ('a -> 'b) * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b) * bool

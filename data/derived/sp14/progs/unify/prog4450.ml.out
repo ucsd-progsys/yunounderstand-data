@@ -1,0 +1,5 @@
+Characters 156-176:
+  | y :: t -> if x = y then palindromeHelper s t
+                            ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         unit

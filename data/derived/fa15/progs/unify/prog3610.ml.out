@@ -1,0 +1,5 @@
+Characters 38-39:
+  let rec appZero x l = if x > 0 then l@0 else appZero x-1 l;;
+                                        ^
+Error: This expression has type int but an expression was expected of type
+         'a list

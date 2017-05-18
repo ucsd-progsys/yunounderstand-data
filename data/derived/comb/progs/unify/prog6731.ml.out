@@ -1,0 +1,5 @@
+Characters 14-19:
+  let _ = clone clone (-3);;
+                ^^^^^
+Error: This expression has type int -> int -> int
+       but an expression was expected of type int

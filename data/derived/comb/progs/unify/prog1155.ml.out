@@ -1,0 +1,5 @@
+Characters 84-98:
+  | hd::tl -> f (f hd hd) tl
+              ^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

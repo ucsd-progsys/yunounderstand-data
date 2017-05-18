@@ -1,0 +1,5 @@
+Characters 17-37:
+  let _ = Average (eval(VarX, 2.0, 4.0), eval(VarY, 2.0, 4.0));;
+                   ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         expr

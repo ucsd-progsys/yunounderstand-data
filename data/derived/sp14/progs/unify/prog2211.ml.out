@@ -1,0 +1,5 @@
+Characters 38-344:
+  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(buildX()),buildTimes(buildCosine (buildCosine (buildAverage(buildTimes (buildY(),buildY()),buildCosine (buildX())))),buildCosine (buildTimes (buildSine (buildCosine(buildY())),buildAverage (buildSine (buildX()), buildTimes,buildX(),buildX()))))))),buildY()));;
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

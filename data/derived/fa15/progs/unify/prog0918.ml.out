@@ -1,0 +1,5 @@
+Characters 92-126:
+  | h::t -> (res, bigAdd(mulByDigit h l1) res)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

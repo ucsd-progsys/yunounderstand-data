@@ -1,0 +1,4 @@
+Characters 105-109:
+  | Sine s -> "sin(pi*" ^ Format.sprintf "%_" s  ^ ")";;
+                                         ^^^^
+Error: invalid format "%_": at character number 2, unexpected end of format

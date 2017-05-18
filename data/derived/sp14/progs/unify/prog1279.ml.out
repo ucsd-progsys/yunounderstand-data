@@ -1,0 +1,5 @@
+Characters 68-109:
+  else sum = digitalRoot(sumList(digitsOfInt n));;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

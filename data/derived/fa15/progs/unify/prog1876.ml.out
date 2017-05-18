@@ -1,0 +1,5 @@
+Characters 87-88:
+  print_int h;;
+            ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

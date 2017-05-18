@@ -1,0 +1,5 @@
+Characters 146-147:
+  ( ((c + x' + x'') / 10), ((c + x' + x'') mod 10) ) :: a
+                                                        ^
+Error: This expression has type int * 'a
+       but an expression was expected of type (int * int) list

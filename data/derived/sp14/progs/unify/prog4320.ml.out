@@ -1,0 +1,6 @@
+Characters 46-47:
+  let fixpoint (f,b) = wwhile((fun b ->  (f, (f b) != b)), b);;
+                                                ^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

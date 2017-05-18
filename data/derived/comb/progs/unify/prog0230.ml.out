@@ -1,0 +1,5 @@
+Characters 81-137:
+  | h::t -> match (mulByDigit i (List.rev (List.map (fun x -> x*10) t) ) ) @ h*i :: [] with 
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

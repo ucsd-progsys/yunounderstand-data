@@ -1,0 +1,5 @@
+Characters 20-21:
+  Printf.sprintf" %d" g;;
+                      ^
+Error: This expression has type int * int -> int
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 0-7:
+  addList digitsOfInt 5;;
+  ^^^^^^^
+Error: This function has type 'a * int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

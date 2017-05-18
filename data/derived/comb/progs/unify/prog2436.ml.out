@@ -1,0 +1,5 @@
+Characters 207-216:
+  | 4 -> buildTimes(e,e,e,e)
+                   ^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * expr

@@ -1,0 +1,5 @@
+Characters 392-425:
+  let (x, res) = List.fold_left f base args in res @ [(helper ((List.length l2)*2) (x))];;
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         int

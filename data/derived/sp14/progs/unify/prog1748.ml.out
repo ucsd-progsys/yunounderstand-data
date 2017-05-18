@@ -1,0 +1,5 @@
+Characters 138-144:
+  (bigAdd a mulByDigit ((x * place) l1)) in
+   ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

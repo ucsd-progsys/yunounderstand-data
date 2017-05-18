@@ -1,0 +1,5 @@
+Characters 158-172:
+  | Average e1, e2  -> "(("^esprToString e1^" + "^exprToString e2^"/2)"
+    ^^^^^^^^^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type expr

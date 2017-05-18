@@ -1,0 +1,5 @@
+Characters 111-139:
+  |(a,b) -> if(fst x + snd x + a) > 9 then (1,a::((fst x + snd x + a) mod 10)) 
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,0 +1,5 @@
+Characters 40-44:
+  let sampleExpr4 = Hello2(VarX,VarY,VarX,SinX);;
+                                          ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor SinX does not belong to type expr

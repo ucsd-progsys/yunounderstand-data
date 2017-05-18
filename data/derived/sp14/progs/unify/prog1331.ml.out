@@ -1,0 +1,5 @@
+Characters 90-102:
+  | Sine s -> "sin(pi*" ^ exprToString s ")";;
+                          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

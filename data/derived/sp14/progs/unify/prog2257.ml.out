@@ -1,0 +1,5 @@
+Characters 262-279:
+  helper 1 ((num/10) mod 10)::(num mod 10)::xs' xs
+           ^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

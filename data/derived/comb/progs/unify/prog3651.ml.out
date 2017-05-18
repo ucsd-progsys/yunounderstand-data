@@ -1,0 +1,5 @@
+Characters 118-138:
+  List.append(l1, clone(l1, l2) )
+             ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

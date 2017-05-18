@@ -1,0 +1,5 @@
+Characters 53-64:
+  if List.length digitsOfInt(n) = 1 then 
+     ^^^^^^^^^^^
+Error: This function has type 'a list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

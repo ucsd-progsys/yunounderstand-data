@@ -1,0 +1,5 @@
+Characters 127-133:
+  | ([h1::t1],[h2::t2]) -> if h1 + h2 > 9 then [h1+h2]
+                                                ^^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

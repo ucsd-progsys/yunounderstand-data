@@ -1,0 +1,5 @@
+Characters 49-54:
+  List.rev (List.combine  [9;9;9;9] [0; 9;9;9]) :: (0,0);;
+                                                   ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type (int * int) list list

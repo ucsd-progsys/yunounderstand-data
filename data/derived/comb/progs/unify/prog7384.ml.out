@@ -1,0 +1,5 @@
+Characters 81-118:
+  else loop ((digitsOfInt(sumList(digitsOfInt x))) + y) in
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

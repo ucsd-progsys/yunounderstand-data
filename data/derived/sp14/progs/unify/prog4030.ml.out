@@ -1,0 +1,5 @@
+Characters 110-125:
+  digitsOfInt n2;
+  ^^^^^^^^^^^^^^^
+Error: This expression has type int -> 'a list
+       but an expression was expected of type 'a list

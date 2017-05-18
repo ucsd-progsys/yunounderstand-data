@@ -1,0 +1,5 @@
+Characters 50-66:
+  then depth = depth -1 in
+       ^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         unit

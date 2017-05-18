@@ -1,0 +1,5 @@
+Characters 76-93:
+  | Sine e -> pi*.eval(e,VarX,VarY)
+                  ^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

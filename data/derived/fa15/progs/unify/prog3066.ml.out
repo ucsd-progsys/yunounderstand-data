@@ -1,0 +1,5 @@
+Characters 84-93:
+  let fixpoint (f,b) = wwhile (let x = (f b) in match x with | b -> (x, false) | _ -> (x, true), b);;
+                                                                                      ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type bool -> bool * bool

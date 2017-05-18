@@ -1,0 +1,5 @@
+Characters 40-44:
+  let _ = eval (Sine(Neg(Divadd(VarX,VarY,Vary))),0.8,0.8);;
+                                          ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Vary does not belong to type expr

@@ -1,0 +1,4 @@
+Characters 206-210:
+  | Average (expr,expr)		    ->
+                  ^^^^
+Error: Variable expr is bound several times in this matching

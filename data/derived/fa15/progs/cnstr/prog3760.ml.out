@@ -1,0 +1,5 @@
+Characters 79-84:
+  |VaryY -> "y"
+   ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor VaryY does not belong to type expr

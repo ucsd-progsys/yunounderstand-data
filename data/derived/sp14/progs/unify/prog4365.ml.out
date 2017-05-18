@@ -1,0 +1,5 @@
+Characters 103-116:
+  | 0 -> buildSine(build(makeRand(0,6), depth - 1));;
+                         ^^^^^^^^^^^^^
+Error: This expression has type int * int -> int
+       but an expression was expected of type int

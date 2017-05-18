@@ -1,0 +1,5 @@
+Characters 113-123:
+  in listReverse (explodeNum n);;
+                  ^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

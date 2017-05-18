@@ -1,0 +1,5 @@
+Characters 92-109:
+  if place <= 0 then (place+1, res + (mulByDigit x l2))
+                                     ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

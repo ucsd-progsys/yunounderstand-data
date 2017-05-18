@@ -1,0 +1,5 @@
+Characters 67-68:
+  let f x = let xx = (f x) in (xx, xx != b) in f
+                                               ^
+Error: This function has type 'a -> 'b * bool
+       It is applied to too many arguments; maybe you forgot a `;'.

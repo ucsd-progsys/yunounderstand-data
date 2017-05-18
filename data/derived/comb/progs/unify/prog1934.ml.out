@@ -1,0 +1,5 @@
+Characters 139-140:
+  if y = 2 then 5;;
+                ^
+Error: This expression has type int but an expression was expected of type
+         unit

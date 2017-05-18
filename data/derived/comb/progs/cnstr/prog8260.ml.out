@@ -1,0 +1,5 @@
+Characters 348-354:
+  | SqDist(x,y)     -> ex(x)^"^2+"^ex(y)^"^2";;
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor SqDist does not belong to type expr

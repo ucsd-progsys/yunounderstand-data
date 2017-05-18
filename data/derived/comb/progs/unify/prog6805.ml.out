@@ -1,0 +1,6 @@
+Characters 94-95:
+  | buildSine -> sin(pi *. eval e)
+                                ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * 'b * 'b
+       The type variable 'a occurs inside 'a * 'b * 'b

@@ -1,0 +1,5 @@
+Characters 50-51:
+  | (x,true) -> f x
+                ^
+Error: This expression has type 'a * bool
+       This is not a function; it cannot be applied.

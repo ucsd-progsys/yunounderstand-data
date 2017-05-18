@@ -1,0 +1,8 @@
+Characters 148-163:
+  Printf.printf ("%d\n", addit);
+                ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type
+         ('c, out_channel, unit) format =
+           ('c, out_channel, unit, unit, unit, unit)
+           CamlinternalFormatBasics.format6

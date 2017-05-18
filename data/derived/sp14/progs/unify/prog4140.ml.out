@@ -1,0 +1,5 @@
+Characters 413-459:
+  (sin(pi*.eval(e,x,y)) +. cos(pi*.eval(e,x,y)))*cos(pi*.eval(e,x,y))
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

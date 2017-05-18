@@ -1,0 +1,5 @@
+Characters 110-124:
+  let seen' = if!(List.mem = h) then h::seen else seen in
+                 ^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a ref

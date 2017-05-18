@@ -1,0 +1,5 @@
+Characters 8-10:
+  let _ = tr.[2];;
+          ^^
+Error: This expression has type int list
+       but an expression was expected of type string

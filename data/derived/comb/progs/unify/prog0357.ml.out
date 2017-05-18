@@ -1,0 +1,5 @@
+Characters 13-49:
+  let _ = eval (Sine(Average(VarX,VarY), 0.5, 0.5));;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,5 @@
+Characters 78-110:
+  then (List.append (clone 0 (b-a)) l1);;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

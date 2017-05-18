@@ -1,0 +1,5 @@
+Characters 71-83:
+  | h::t -> if h = 0 then removeZero t;;
+                          ^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

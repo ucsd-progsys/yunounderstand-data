@@ -1,0 +1,5 @@
+Characters 22-27:
+  let _ = exprToString (Power(VarX, VarY));;
+                        ^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Power does not belong to type expr

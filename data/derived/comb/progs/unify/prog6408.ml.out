@@ -1,0 +1,6 @@
+Characters 18-25:
+  let _ = fixpoint (collatz, 9001);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)

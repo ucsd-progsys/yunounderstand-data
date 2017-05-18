@@ -1,0 +1,8 @@
+Characters 107-111:
+  | Times (a,b) -> eval (a,x,y) ( *.) eval (b,x,y)
+                                      ^^^^
+Error: This expression has type
+         expr * 'a * 'b -> (float -> float -> float) -> 'c -> 'd -> 'e
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside
+       expr * 'a * 'b -> (float -> float -> float) -> 'c -> 'd -> 'e

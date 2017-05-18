@@ -1,0 +1,5 @@
+Characters 43-50:
+  let rec sumList xs = List.hd(xs) + sumList List.tl x;;
+                                             ^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type int list

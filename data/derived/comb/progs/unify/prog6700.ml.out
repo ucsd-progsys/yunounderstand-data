@@ -1,0 +1,5 @@
+Characters 77-88:
+  print_int y;;
+  ^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         int

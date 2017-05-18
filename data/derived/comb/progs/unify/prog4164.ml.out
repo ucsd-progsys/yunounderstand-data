@@ -1,0 +1,5 @@
+Characters 147-157:
+  else if (s2<s1) then (l1, (clone 0 s1-s2)@l2)
+                             ^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

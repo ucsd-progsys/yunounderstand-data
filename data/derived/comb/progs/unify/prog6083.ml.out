@@ -1,0 +1,5 @@
+Characters 61-68:
+  h + sumList;;
+      ^^^^^^^
+Error: This expression has type int list -> 'a list
+       but an expression was expected of type int

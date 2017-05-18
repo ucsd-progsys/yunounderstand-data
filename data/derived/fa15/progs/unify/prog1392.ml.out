@@ -1,0 +1,5 @@
+Characters 463-481:
+  | Golden e'              -> cos(eval (e',x,y) *. x * y)
+                                  ^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

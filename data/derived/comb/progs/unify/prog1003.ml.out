@@ -1,0 +1,5 @@
+Characters 468-480:
+  | 6 -> buildECosSin (build (rand, depth - 1)) (build (rand, depth - 1))
+         ^^^^^^^^^^^^
+Error: This function has type expr * expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

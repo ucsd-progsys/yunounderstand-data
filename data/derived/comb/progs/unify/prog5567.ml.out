@@ -1,0 +1,5 @@
+Characters 122-123:
+  | ( 2, _ ) -> buildSine( build(rand, depth-1 ) );;
+      ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type 'a * int

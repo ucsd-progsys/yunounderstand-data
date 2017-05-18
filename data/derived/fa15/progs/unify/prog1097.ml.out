@@ -1,0 +1,5 @@
+Characters 64-65:
+  (h::t) -> if t then wwhile(f, h) else h;;
+               ^
+Error: This expression has type 'a list
+       but an expression was expected of type bool

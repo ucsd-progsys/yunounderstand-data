@@ -1,0 +1,5 @@
+Characters 21-48:
+  let _ = exprToString (NewExprA(VarX,VarY), 1, 1);;
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type expr

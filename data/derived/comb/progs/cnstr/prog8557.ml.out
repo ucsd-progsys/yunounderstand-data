@@ -1,0 +1,5 @@
+Characters 18-100:
+  let sampleExpr1 = Divide(Thresh(VarX,VarY,VarX,(Times(Sine(VarX)),Cosine(Average(VarX,VarY))),VarY));;
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Divide expects 2 argument(s),
+       but is applied here to 1 argument(s)

@@ -1,0 +1,5 @@
+Characters 25-32:
+  explode l
+  ^^^^^^^
+Error: This function has type string -> char list
+       It is applied to too many arguments; maybe you forgot a `;'.

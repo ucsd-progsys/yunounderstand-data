@@ -1,0 +1,5 @@
+Characters 17-20:
+  let _ = sumList ["a";"b"];;
+                   ^^^
+Error: This expression has type string but an expression was expected of type
+         int

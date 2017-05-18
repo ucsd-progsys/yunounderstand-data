@@ -1,0 +1,5 @@
+Characters 132-135:
+  |Boo(a) -> (eval(a,x,y) +. eval(a,x,y)) /. 100.0
+   ^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Boo does not belong to type expr

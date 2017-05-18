@@ -1,0 +1,5 @@
+Characters 555-572:
+  if(num mod 2 = 0) then buildPercent(rand, depth - 1)
+                                     ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

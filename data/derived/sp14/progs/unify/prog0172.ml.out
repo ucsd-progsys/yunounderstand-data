@@ -1,0 +1,5 @@
+Characters 73-89:
+  | h::t -> (mulByDigit i t) (h*i mod 10) :: [];;
+            ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

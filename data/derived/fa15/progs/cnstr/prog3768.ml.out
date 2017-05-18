@@ -1,0 +1,5 @@
+Characters 328-335:
+  |Tangent(a) -> ("sin(pi*"^(exp a)^")/(cos(pi*"^(exp a)^")");;
+   ^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Tangent does not belong to type expr

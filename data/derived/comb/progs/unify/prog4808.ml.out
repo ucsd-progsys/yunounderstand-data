@@ -1,0 +1,5 @@
+Characters 84-85:
+  let f a x = h^sep^t in
+                    ^
+Error: This expression has type string list
+       but an expression was expected of type string

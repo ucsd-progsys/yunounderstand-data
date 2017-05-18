@@ -1,0 +1,5 @@
+Characters 156-172:
+  else (List.length l1) > (List.length l2)
+                          ^^^^^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 123-127:
+  then additivePersistence_helper (temp, i+1)
+                                   ^^^^
+Error: This expression has type int * int
+       but an expression was expected of type int

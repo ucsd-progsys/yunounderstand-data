@@ -1,0 +1,5 @@
+Characters 165-174:
+  | 0 -> BuildSine(build(rand,depth-1))
+         ^^^^^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor BuildSine does not belong to type expr

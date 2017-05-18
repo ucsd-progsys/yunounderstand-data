@@ -1,0 +1,6 @@
+Characters 31-42:
+  let palindrome w = listCompare (explode w) (listReverse (explode w));;
+                                 ^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type 'a list list
+       Type char is not compatible with type 'a list 

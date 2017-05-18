@@ -1,0 +1,5 @@
+Characters 146-167:
+  (((h1+x) mod 10)::[])
+  ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int list * int list

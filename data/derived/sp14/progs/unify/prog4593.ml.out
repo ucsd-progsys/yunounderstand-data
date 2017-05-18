@@ -1,0 +1,5 @@
+Characters 48-75:
+  let fixpoint (f,b) = wwhile ((let (x,y)= f b in (x, x<>b && (x,y)<>f (b-1))),b);;
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

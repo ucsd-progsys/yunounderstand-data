@@ -1,0 +1,5 @@
+Characters 99-118:
+  | _ -> helper (f::acc) f x-1
+         ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 88-98:
+  else additivePersistence (digits n);;
+                           ^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

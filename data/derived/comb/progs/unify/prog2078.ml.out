@@ -1,0 +1,5 @@
+Characters 156-157:
+  let (el1, el2) = x in
+                   ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

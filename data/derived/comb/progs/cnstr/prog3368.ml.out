@@ -1,0 +1,5 @@
+Characters 93-95:
+  1::count & additivePersistence (sumList (digitsOfInt n))
+   ^^
+Error: This variant expression is expected to have type bool
+       The constructor :: does not belong to type bool

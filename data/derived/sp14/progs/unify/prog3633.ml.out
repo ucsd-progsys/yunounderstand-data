@@ -1,0 +1,5 @@
+Characters 35-51:
+  (sepConcat (List.map (f l)) l);;
+             ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string

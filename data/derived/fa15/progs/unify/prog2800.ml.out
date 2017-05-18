@@ -1,0 +1,5 @@
+Characters 31-33:
+  let _ = emitGrayscale (eval_fn g1(), 150, "sample");;
+                                 ^^
+Error: This expression has type unit -> int * int * int
+       but an expression was expected of type expr

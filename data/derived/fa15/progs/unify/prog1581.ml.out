@@ -1,0 +1,5 @@
+Characters 69-78:
+  let rec clone x n = if n < 1 then [] else if n = 1 then [x] else x:: clone x n-1;;
+                                                                       ^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

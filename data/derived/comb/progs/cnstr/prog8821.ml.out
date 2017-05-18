@@ -1,0 +1,5 @@
+Characters 52-55:
+  let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(Exp(VarX)),Cosine(Average(VarX,VarY)))));;
+                                                      ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Exp does not belong to type expr

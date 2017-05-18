@@ -1,0 +1,5 @@
+Characters 86-102:
+  | h :: t -> let (cin, res) = (mulByDigit i t) in 
+                               ^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

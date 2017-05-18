@@ -1,0 +1,5 @@
+Characters 94-117:
+  | l   -> sepConcat( " ", List.map(f, l) );;
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

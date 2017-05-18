@@ -1,0 +1,5 @@
+Characters 75-97:
+  | n -> ((digitsOfInt (n / 10))::(n mod 10)::ns);;
+          ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

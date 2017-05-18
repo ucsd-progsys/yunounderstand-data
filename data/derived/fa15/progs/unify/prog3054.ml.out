@@ -1,0 +1,5 @@
+Characters 89-103:
+  | h::t -> (h * i) mod 10 in
+            ^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

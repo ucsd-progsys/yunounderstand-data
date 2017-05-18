@@ -1,0 +1,5 @@
+Characters 31-36:
+  then false;;
+       ^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor false does not belong to type unit

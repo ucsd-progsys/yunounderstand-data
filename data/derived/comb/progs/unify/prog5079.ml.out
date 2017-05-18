@@ -1,0 +1,5 @@
+Characters 68-79:
+  | x -> [0]@ listZeros n-1;;
+              ^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

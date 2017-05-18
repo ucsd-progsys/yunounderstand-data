@@ -1,0 +1,5 @@
+Characters 93-104:
+  lr [] listReverse;;
+        ^^^^^^^^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'c list

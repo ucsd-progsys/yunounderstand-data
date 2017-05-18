@@ -1,0 +1,5 @@
+Characters 68-75:
+  | _ -> List.hd xs + (sumList List.tl xs);;
+                       ^^^^^^^
+Error: This function has type int list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

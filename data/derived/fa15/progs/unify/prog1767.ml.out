@@ -1,0 +1,5 @@
+Characters 78-89:
+  (b+1,bigAdd((mulByDigit x l2)@(clone 0 b) c)) in
+                                ^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

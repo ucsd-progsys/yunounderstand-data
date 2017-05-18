@@ -1,0 +1,5 @@
+Characters 0-7:
+  [2,3,4] append [1];;
+  ^^^^^^^
+Error: This expression has type (int * int * int) list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 293-296:
+  removeZero (add (padZero l1 l2) (if l1 > l2 then l1 else l2));;
+              ^^^
+Error: This function has type int list * int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

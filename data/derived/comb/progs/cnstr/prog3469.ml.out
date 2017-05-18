@@ -1,0 +1,5 @@
+Characters 72-74:
+  | _ -> buildCosine()
+                    ^^
+Error: This variant expression is expected to have type expr
+       The constructor () does not belong to type expr

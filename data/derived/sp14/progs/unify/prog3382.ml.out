@@ -1,0 +1,4 @@
+Characters 54-55:
+  |(h::(h::t)) -> [];;
+        ^
+Error: Variable h is bound several times in this matching

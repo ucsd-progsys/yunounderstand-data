@@ -1,0 +1,5 @@
+Characters 113-129:
+  else if List.length l1 < List.length l2 then padZero 0::l1 l2
+                                               ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b list * 'c list

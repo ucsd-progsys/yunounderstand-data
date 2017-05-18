@@ -1,0 +1,10 @@
+Characters 170-175:
+  else begin Printf.printf "bye" 1 + additivePersistence2 sum end;;
+                           ^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

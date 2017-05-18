@@ -1,0 +1,5 @@
+Characters 19-20:
+  let g2 () = build (2, 5);;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

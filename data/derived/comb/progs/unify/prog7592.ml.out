@@ -1,0 +1,5 @@
+Characters 134-136:
+  | Cosine(e1) -> buildCosine(eval e1)
+                                   ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

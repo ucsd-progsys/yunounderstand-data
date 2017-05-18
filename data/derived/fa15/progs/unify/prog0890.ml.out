@@ -1,0 +1,5 @@
+Characters 76-77:
+  let f a x = let (x1, x2) = x in a + x in
+                                      ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

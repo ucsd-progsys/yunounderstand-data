@@ -1,0 +1,5 @@
+Characters 220-221:
+  | Sigmoid a        -> 1./.(1. -. exp (-a))
+                                         ^
+Error: This expression has type expr but an expression was expected of type
+         int

@@ -1,0 +1,6 @@
+Characters 31-34:
+  let rec wwhile (f,b) = wwhile (f b, b);;
+                                 ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

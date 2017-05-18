@@ -1,0 +1,5 @@
+Characters 42-46:
+  | VarX -> ets(e, s ^ VarX)
+    ^^^^
+Error: This variant pattern is expected to have type 'a list
+       The constructor VarX does not belong to type list

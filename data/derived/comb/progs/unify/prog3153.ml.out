@@ -1,0 +1,6 @@
+Characters 68-72:
+  wwhile (let func x = fun x -> (f b,f b = b) in func,b);;
+                                                 ^^^^
+Error: This expression has type 'a -> 'b -> 'c * bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type 'b -> 'c * bool is not compatible with type 'a * bool 

@@ -1,0 +1,6 @@
+Characters 16-22:
+  let _ = del 'z' testee;;
+                  ^^^^^^
+Error: This expression has type string set
+       but an expression was expected of type char set
+       Type string is not compatible with type char 

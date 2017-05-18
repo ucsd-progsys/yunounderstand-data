@@ -1,0 +1,5 @@
+Characters 482-485:
+  | NatLog   nlog		    -> log eval(nlog,x,y);;
+                          ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

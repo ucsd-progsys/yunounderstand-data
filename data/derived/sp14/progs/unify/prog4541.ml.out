@@ -1,0 +1,5 @@
+Characters 74-75:
+  0, bigAdd x value :: snd a in 
+            ^
+Error: This expression has type int but an expression was expected of type
+         int list

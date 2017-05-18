@@ -1,0 +1,5 @@
+Characters 75-83:
+  |(0,2) -> buildX() 
+            ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

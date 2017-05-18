@@ -1,0 +1,5 @@
+Characters 148-155:
+  if numZeros = 0 then [l1, l2];;
+                        ^^^^^^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

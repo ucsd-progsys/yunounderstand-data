@@ -1,0 +1,5 @@
+Characters 78-98:
+  | Sine s -> String.concat "pi* " ^ exprToString s;;
+              ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string list -> string
+       but an expression was expected of type string

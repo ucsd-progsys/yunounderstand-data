@@ -1,0 +1,5 @@
+Characters 121-123:
+  (0.(sum % 10)::a2) in
+   ^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

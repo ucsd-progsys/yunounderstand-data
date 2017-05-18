@@ -1,0 +1,5 @@
+Characters 99-110:
+  else (int_of_char s.[i]) :: (int_of_char go (i+1)) 
+                               ^^^^^^^^^^^
+Error: This function has type char -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

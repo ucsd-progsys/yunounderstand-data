@@ -1,0 +1,6 @@
+Characters 33-38:
+  | h::h2::t::(s,i) -> s+i;;
+              ^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type
+         (int * int) list

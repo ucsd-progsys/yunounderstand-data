@@ -1,0 +1,5 @@
+Characters 430-434:
+  | Power (x, y) -> (exprToString x)^"**"(exprToString y)
+                                     ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

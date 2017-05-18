@@ -1,0 +1,7 @@
+Characters 47-121:
+  .....fun help n  ->
+  match n with
+  0  -> [] 
+  | _  -> cat (help (n/10)) (n mod 10)..
+Error: This expression should not be a function, the expected type is
+int list

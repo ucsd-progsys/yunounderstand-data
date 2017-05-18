@@ -1,0 +1,5 @@
+Characters 90-95:
+  else (int_of_string s.[i]) :: (int_of_string go (i+1)) 
+                      ^^^^^
+Error: This expression has type char but an expression was expected of type
+         string

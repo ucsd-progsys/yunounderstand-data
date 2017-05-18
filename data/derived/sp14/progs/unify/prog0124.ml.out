@@ -1,0 +1,6 @@
+Characters 19-22:
+  myFunc (fun x y -> x y )  (fun g -> g) [1;2;3];;
+                     ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

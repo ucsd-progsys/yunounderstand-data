@@ -1,0 +1,5 @@
+Characters 170-171:
+  multiplier (float_of_int i) j in
+                           ^
+Error: This expression has type float but an expression was expected of type
+         int

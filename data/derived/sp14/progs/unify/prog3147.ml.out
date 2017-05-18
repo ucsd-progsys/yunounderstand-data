@@ -1,0 +1,5 @@
+Characters 61-69:
+  wwhile (let func x y = (x, x y <> y) in func f b,b);;
+                                          ^^^^^^^^
+Error: This expression has type ('a -> 'a) * bool
+       but an expression was expected of type 'b -> 'b * bool

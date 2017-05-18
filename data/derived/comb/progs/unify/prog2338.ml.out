@@ -1,0 +1,5 @@
+Characters 48-50:
+  let sumListL = fold_l (fun temp h-> h*h + temp) "" list;;
+                                                  ^^
+Error: This expression has type string but an expression was expected of type
+         int

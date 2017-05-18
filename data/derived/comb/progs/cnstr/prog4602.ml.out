@@ -1,0 +1,5 @@
+Characters 95-101:
+  | Cosine -> exprToString e;;
+    ^^^^^^
+Error: The constructor Cosine expects 1 argument(s),
+       but is applied here to 0 argument(s)

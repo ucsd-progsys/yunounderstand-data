@@ -1,0 +1,6 @@
+Characters 21-33:
+  let _ = stringOfList float_of_int [1;2;3;4;5;6];;
+                       ^^^^^^^^^^^^
+Error: This expression has type int -> float
+       but an expression was expected of type int -> string
+       Type float is not compatible with type string 

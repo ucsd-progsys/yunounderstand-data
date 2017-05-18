@@ -1,0 +1,5 @@
+Characters 99-118:
+   if (List.mem(h, seen)) then seen' = seen else seen' = List.rev(h:: List.rev(seen)) in
+      ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

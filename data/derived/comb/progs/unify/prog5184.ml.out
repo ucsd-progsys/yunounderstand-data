@@ -1,0 +1,6 @@
+Characters 59-68:
+  | n -> x::clone (x (n-1));;
+                  ^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         int -> 'a
+       The type variable 'a occurs inside int -> 'a

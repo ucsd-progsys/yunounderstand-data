@@ -1,0 +1,5 @@
+Characters 213-214:
+  |Times(e1,e2)->buildTimes(x, y)
+                            ^
+Error: This expression has type float but an expression was expected of type
+         expr

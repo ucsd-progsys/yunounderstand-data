@@ -1,0 +1,5 @@
+Characters 43-47:
+  (n/(help n 1))::digitsOfInt (n/10)
+      ^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 13-54:
+  let _ = eval (NewExprB(VarX, VarY, VarX), -1.,-1.,-1.);;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * float * float

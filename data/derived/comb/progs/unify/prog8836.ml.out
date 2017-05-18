@@ -1,0 +1,5 @@
+Characters 133-137:
+  let seen' = if (List.mem(h, seen) = true)
+                                      ^^^^
+Error: This expression has type bool but an expression was expected of type
+         ('a * 'b) list -> bool

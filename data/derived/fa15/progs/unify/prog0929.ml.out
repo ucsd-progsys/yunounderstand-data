@@ -1,0 +1,5 @@
+Characters 75-82:
+  | h::t -> (h, t2) :: helper(t, t2);;
+                             ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

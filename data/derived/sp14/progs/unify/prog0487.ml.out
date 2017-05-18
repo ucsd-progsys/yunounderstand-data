@@ -1,0 +1,5 @@
+Characters 78-90:
+  else bigAdd ( (bigAdd l l) (mulByDigit (i-2) l) );;
+                ^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

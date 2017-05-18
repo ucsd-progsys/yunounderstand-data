@@ -1,0 +1,6 @@
+Characters 129-130:
+  List.fold_left f base xs;;
+                 ^
+Error: This expression has type 'a -> string
+       but an expression was expected of type 'a -> 'b -> 'a
+       Type string is not compatible with type 'b -> 'a 

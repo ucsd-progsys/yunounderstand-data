@@ -1,0 +1,5 @@
+Characters 28-58:
+  let fixpoint (f,b) = wwhile (fun y b ->  (f b, f b = b),b);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

@@ -1,0 +1,5 @@
+Characters 325-332:
+  | (h1::t1, h2::t2) -> pair (List.append acc (h1,h2)) t1 t2
+                                              ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

@@ -1,0 +1,5 @@
+Characters 42-45:
+  let _ = eval (Thresh(VarX,VarY,Sine(VarX),Cos(VarY)), 1.0, 2.0);;
+                                            ^^^
+Error: This variant expression is expected to have type expr
+       The constructor Cos does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 119-121:
+  |Cosine (e1) -> cos(pi * exprToString e1)
+                      ^^
+Error: This expression has type float but an expression was expected of type
+         int

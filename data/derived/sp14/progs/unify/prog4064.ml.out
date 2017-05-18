@@ -1,0 +1,7 @@
+Characters 28-81:
+  ............................(fun y -> 
+  let x = f b in
+  if x = b then (x, true)
+  ,b)..
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

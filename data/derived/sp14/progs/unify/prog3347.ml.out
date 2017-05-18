@@ -1,0 +1,5 @@
+Characters 204-213:
+  let (_, ans) = mulHelper List.rev (0::l) in
+                 ^^^^^^^^^
+Error: This function has type int list -> int * int list
+       It is applied to too many arguments; maybe you forgot a `;'.

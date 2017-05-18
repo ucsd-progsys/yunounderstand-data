@@ -1,0 +1,5 @@
+Characters 400-409:
+  | SquareCosine e'		 -> sqrt (abs_float cos( pi *. (eval(e',x,y))))
+                               ^^^^^^^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

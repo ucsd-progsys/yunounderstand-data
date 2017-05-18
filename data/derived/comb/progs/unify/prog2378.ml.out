@@ -1,0 +1,5 @@
+Characters 288-306:
+  (newIndex, newRes)
+  ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

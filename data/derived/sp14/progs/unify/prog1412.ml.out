@@ -1,0 +1,5 @@
+Characters 395-398:
+  | Foo (a,b) -> if (eval(a,x,y) < eval(b,x,y)) then 0.9*.eval(a,x,y) else eval 0.1*.(a,x,y)
+                                                                                ^^^
+Error: This expression has type float but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,7 @@
+Characters 131-132:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type (int list -> 'a) -> 'b -> 'a
+       but an expression was expected of type
+         (int list -> 'a) -> 'b -> int list -> 'a
+       The type variable 'a occurs inside int list -> 'a

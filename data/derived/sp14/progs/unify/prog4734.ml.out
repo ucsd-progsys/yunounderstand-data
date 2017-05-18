@@ -1,0 +1,6 @@
+Characters 50-51:
+  wwhile ((let f b = b in b), b);;
+                              ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

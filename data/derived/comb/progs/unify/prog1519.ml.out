@@ -1,0 +1,5 @@
+Characters 16-23:
+  let _ = concat ["1","2"];;
+                  ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type string

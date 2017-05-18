@@ -1,0 +1,5 @@
+Characters 15-20:
+  let _  = eval (Gauss (VarX, VarY, VarX), 0.5, 0.5);;
+                 ^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Gauss does not belong to type expr

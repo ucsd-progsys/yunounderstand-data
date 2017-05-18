@@ -1,0 +1,5 @@
+Characters 18-39:
+  let sampleExpr1 = (Average (VarX VarY));;
+                    ^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Average expects 2 argument(s),
+       but is applied here to 1 argument(s)

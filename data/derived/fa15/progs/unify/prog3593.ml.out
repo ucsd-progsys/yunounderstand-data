@@ -1,0 +1,5 @@
+Characters 121-133:
+  if (j+k>10) then j=1,k=j+k-10 else j=0 k=j+k-10 in 
+                   ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

@@ -1,0 +1,5 @@
+Characters 69-85:
+  let prod = (mulByDigit x l) + o in
+             ^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

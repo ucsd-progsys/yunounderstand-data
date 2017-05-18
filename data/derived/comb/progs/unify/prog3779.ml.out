@@ -1,0 +1,5 @@
+Characters 17-18:
+  let _ = f [0] (9;2);;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int * int

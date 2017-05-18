@@ -1,0 +1,5 @@
+Characters 62-63:
+  | VarX           -> ""::e
+                          ^
+Error: This expression has type expr but an expression was expected of type
+         string list

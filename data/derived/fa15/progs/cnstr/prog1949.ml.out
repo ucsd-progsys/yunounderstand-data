@@ -1,0 +1,5 @@
+Characters 228-232:
+  | Root x3                -> "sqrt(" ^ exprToString x3 ^ ")"
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Root does not belong to type expr

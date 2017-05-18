@@ -1,0 +1,5 @@
+Characters 589-624:
+  ...............( build (rand, d),
+  build (rand, d))
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

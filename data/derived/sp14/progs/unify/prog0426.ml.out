@@ -1,0 +1,5 @@
+Characters 113-114:
+  (a*10, result)
+   ^
+Error: This expression has type 'a * int list
+       but an expression was expected of type int

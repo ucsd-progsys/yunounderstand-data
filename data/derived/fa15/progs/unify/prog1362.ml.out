@@ -1,0 +1,5 @@
+Characters 46-58:
+  | [] -> print_string "empty" d
+          ^^^^^^^^^^^^
+Error: This function has type string -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

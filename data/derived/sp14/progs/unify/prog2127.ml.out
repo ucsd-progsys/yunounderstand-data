@@ -1,0 +1,5 @@
+Characters 110-111:
+  (a,b) -> if (a + b) > 9 then 1::((a+b)-10)::a else (a+b)::a in
+                                              ^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,0 +1,6 @@
+Characters 49-50:
+  let f a x = let h::t = x in (h a) t in
+                                    ^
+Error: This expression has type ('a -> 'b -> 'c) list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside ('a -> 'b -> 'c) list

@@ -1,0 +1,5 @@
+Characters 21-27:
+  let _ = makeRand (2, (1, 2));;
+                       ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

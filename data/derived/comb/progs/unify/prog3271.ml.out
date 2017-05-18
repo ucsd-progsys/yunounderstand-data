@@ -1,0 +1,5 @@
+Characters 46-47:
+  let f a x = let y = pipe x a in x y in
+                                  ^
+Error: This expression has type (('a -> 'a) -> 'a -> 'a) list
+       This is not a function; it cannot be applied.

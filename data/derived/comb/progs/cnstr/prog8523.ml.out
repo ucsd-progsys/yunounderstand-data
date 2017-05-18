@@ -1,0 +1,5 @@
+Characters 460-466:
+  | Arcsin   m4		    -> asin (eval(nlog,x,y));;
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Arcsin does not belong to type expr

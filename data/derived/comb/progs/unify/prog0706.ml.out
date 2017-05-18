@@ -1,0 +1,5 @@
+Characters 73-76:
+  | Sine a -> sin eval (a, x, y)
+              ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

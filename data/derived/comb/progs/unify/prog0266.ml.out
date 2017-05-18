@@ -1,0 +1,5 @@
+Characters 221-223:
+  in helper [] h;;
+            ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

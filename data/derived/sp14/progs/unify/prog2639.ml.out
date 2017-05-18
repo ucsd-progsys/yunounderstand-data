@@ -1,0 +1,5 @@
+Characters 109-110:
+  then c :: s
+            ^
+Error: This expression has type bool but an expression was expected of type
+         'a list

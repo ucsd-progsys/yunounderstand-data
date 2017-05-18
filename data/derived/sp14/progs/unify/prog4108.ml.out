@@ -1,0 +1,5 @@
+Characters 128-132:
+  let seen' = if List.mem h t then h@[] in
+                                   ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

@@ -1,0 +1,5 @@
+Characters 155-166:
+  length_diff;;
+  ^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         bool

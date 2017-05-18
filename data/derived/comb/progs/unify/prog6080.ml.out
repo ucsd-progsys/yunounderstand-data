@@ -1,0 +1,5 @@
+Characters 373-374:
+  let (x, res) = List.fold_left f base args in [(List.map (fun i -> i mod 10) x)]@res;;
+                                                                              ^
+Error: This expression has type int but an expression was expected of type
+         int list

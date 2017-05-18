@@ -1,0 +1,5 @@
+Characters 536-548:
+  | FiboPlus (ex1,ex2,ex3,ex4,ex5) -> "(("^exprToString ex1^")*("^exprToString ex1^"+"^exprToString ex2^")*("^exprToString ex1^"+"^exprToString ex2"+"^exprToString ex3^")*("^exprToString ex1^"+"^exprToString ex2"+"^exprToString ex3"+"^exprToString ex4^")*("^exprToString ex1^"+"^exprToString ex2"+"^exprToString ex3"+"^exprToString ex4"+"^exprToString ex5^"))";;
+                                                                                                                                   ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

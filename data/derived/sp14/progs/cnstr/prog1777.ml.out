@@ -1,0 +1,5 @@
+Characters 46-53:
+  let sampleExprTangent= Thresh(VarX,VarY,VarX,(Tangent(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+                                                ^^^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Tangent does not belong to type expr

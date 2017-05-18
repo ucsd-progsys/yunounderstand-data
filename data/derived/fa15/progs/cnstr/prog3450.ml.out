@@ -1,0 +1,5 @@
+Characters 57-61:
+  let _ = Thresh(buildSine(buildCosine(VarX)), VarX, VarY, VarZ);;
+                                                           ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor VarZ does not belong to type expr

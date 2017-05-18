@@ -1,0 +1,5 @@
+Characters 8-17:
+  let _ = sepConcat "X" ["hello"]
+          ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

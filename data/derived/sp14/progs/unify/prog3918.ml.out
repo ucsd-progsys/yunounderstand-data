@@ -1,0 +1,4 @@
+Characters 86-92:
+  | 1 .. 5 -> buildY()
+    ^^^^^^
+Error: Only character intervals are supported in patterns.

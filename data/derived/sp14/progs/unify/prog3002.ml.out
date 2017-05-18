@@ -1,0 +1,5 @@
+Characters 66-79:
+  | false -> digitsOfInt n/10 :: [n mod 10];;
+             ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

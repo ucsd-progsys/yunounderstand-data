@@ -1,0 +1,5 @@
+Characters 151-157:
+  else (x,hd)@(argmaker x tl)
+       ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

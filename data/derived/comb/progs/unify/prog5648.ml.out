@@ -1,0 +1,5 @@
+Characters 119-135:
+  	|[] -> (0,(sum / 10) :: (0,(sum mod 10)) :: a)
+                           ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 226-251:
+  then clone (length1-length2) 0;;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

@@ -1,0 +1,3 @@
+Characters 236-247:
+Error: This function has type int -> int -> 'a -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

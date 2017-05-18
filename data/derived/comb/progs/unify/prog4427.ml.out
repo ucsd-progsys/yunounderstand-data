@@ -1,0 +1,5 @@
+Characters 188-199:
+  List.combine (List.rev (0::l1)) (clone i ((List.length+1) l)) in
+                                             ^^^^^^^^^^^
+Error: This expression has type 'a list -> int
+       but an expression was expected of type int

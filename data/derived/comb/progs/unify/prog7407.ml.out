@@ -1,0 +1,6 @@
+Characters 70-71:
+  | _ -> wwhile(f, b)
+                ^
+Error: This expression has type 'a -> 'b -> 'b * bool
+       but an expression was expected of type 'a -> 'a * bool
+       Type 'b -> 'b * bool is not compatible with type 'a * bool 

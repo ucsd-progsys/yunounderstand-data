@@ -1,0 +1,5 @@
+Characters 84-109:
+  | h::t  -> reverseHelper t ( h::rl ) 
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type 'a list

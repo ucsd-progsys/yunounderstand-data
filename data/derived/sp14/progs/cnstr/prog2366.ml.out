@@ -1,0 +1,5 @@
+Characters 96-98:
+  let f a x = if x = "a" then x :: a in
+                                ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

@@ -1,0 +1,5 @@
+Characters 9-12:
+  let pi = 4.0 * atan 1.0;;
+           ^^^
+Error: This expression has type float but an expression was expected of type
+         int

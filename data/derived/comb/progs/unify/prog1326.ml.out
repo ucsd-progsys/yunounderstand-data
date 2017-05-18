@@ -1,0 +1,6 @@
+Characters 28-56:
+  ............................(
+  fun a ->
+  f a, f a != a, b)..
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

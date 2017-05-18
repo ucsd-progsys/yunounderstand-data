@@ -1,0 +1,5 @@
+Characters 116-124:
+  let l = h ^ sep :: t in
+              ^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

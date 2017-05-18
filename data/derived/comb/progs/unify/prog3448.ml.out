@@ -1,0 +1,5 @@
+Characters 22-33:
+  let _ = buildAverage ((VarX, 2.0), (VarY, 4.0));;
+                        ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

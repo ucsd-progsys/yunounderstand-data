@@ -1,0 +1,5 @@
+Characters 99-119:
+  if (diff < 0) then List.append ((clone 0 (abs diff)) l1)
+                                  ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 405-418:
+  | Wow (u,v,w) -> sqrt(abs(eval(u,x,y)) *. abs(eval(v,x,y)) *. abs(eval(w,x,y)));;
+                           ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

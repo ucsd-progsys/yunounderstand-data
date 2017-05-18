@@ -1,0 +1,6 @@
+Characters 32-33:
+  ,b);;
+   ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

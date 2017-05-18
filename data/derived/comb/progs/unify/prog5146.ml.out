@@ -1,0 +1,5 @@
+Characters 71-75:
+  | VarX   -> Printf.sprintf "%s" VarX
+                                  ^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

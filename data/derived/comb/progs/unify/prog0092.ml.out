@@ -1,0 +1,5 @@
+Characters 475-479:
+  | Addition (a,b) -> eval(a,x,y) +. eval;;
+                                     ^^^^
+Error: This expression has type expr * float * float -> float
+       but an expression was expected of type float

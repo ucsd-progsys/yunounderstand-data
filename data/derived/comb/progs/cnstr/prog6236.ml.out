@@ -1,0 +1,5 @@
+Characters 614-620:
+  | Golden -> "" 
+    ^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Golden does not belong to type expr

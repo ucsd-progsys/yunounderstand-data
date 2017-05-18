@@ -1,0 +1,6 @@
+Characters 182-253:
+  ( List.append (clone 0 ((List.length l1) - (List.length l2))) l1,  l2 )
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type
+         'c list * (int list -> int list) * 'd list

@@ -1,0 +1,5 @@
+Characters 340-390:
+  | 4 -> Thresh(build(rand, depth-1), build(rand, depth-1));;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Thresh expects 4 argument(s),
+       but is applied here to 2 argument(s)

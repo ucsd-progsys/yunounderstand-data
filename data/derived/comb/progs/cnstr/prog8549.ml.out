@@ -1,0 +1,5 @@
+Characters 47-62:
+  let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Tan(Sine(VarX)),Cosine(Average(VarX,VarY)))));;
+                                                 ^^^^^^^^^^^^^^^
+Error: The constructor Tan expects 2 argument(s),
+       but is applied here to 1 argument(s)

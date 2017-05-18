@@ -1,0 +1,5 @@
+Characters 118-120:
+  | Cosine e1            -> cos e1
+                                ^^
+Error: This expression has type expr but an expression was expected of type
+         float

@@ -1,0 +1,5 @@
+Characters 37-59:
+  let buildOp2(a,b,a_less,b_less)    = Op2(a,b,a_less,b_less);;
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Op2 expects 3 argument(s),
+       but is applied here to 4 argument(s)

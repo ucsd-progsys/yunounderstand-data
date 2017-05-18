@@ -1,0 +1,5 @@
+Characters 11-15:
+  let h::t = 1232;;
+             ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 90-125:
+  then ((1,(let (y,z) = x in (y+z) mod 10)) + a )
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

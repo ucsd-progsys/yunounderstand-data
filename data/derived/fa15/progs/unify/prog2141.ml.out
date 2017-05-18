@@ -1,0 +1,5 @@
+Characters 173-174:
+  in (go x)
+         ^
+Error: This expression has type int -> int
+       but an expression was expected of type int

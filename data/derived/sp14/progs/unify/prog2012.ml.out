@@ -1,0 +1,6 @@
+Characters 45-50:
+  let f a x = a = (fun x y -> x (a y)) in 
+                                ^^^^^
+Error: This expression has type ('a -> 'b) -> 'c
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b) -> 'c

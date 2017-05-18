@@ -1,0 +1,5 @@
+Characters 131-142:
+  ((result / 10), List.append [(result/10)] List.append [(result mod 10)] l) in
+                  ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

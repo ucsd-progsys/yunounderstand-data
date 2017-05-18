@@ -1,0 +1,5 @@
+Characters 47-53:
+  else append digitsOfInt (n/10) (n - (n/10) * 10);;
+       ^^^^^^
+Error: This function has type 'a list -> 'a -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

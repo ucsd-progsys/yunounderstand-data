@@ -1,0 +1,5 @@
+Characters 96-99:
+  | Cos u ->  cos (pi *. (eval u))
+    ^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Cos does not belong to type expr

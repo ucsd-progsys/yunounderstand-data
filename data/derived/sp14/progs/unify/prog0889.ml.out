@@ -1,0 +1,6 @@
+Characters 73-75:
+  | (lk, lv)::ls -> if k = lk then lv else assoc d k ls
+                           ^^
+Error: This expression has type 'a but an expression was expected of type
+         ('a * 'b) list
+       The type variable 'a occurs inside ('a * 'b) list

@@ -1,0 +1,5 @@
+Characters 470-474:
+  | Circ	(circ1,circ2)       -> "("^exprToString(circ1)^"^2+"^exprToString(circ2)^")"
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Circ does not belong to type expr

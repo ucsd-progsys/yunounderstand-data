@@ -1,0 +1,5 @@
+Characters 458-462:
+  |MyExpr1 (e1,e2,e3) -> "(sqrt("^exprToString e1^")*sqrt("^exprToString e2^")*"exprToString e3^")";;
+                                                                            ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

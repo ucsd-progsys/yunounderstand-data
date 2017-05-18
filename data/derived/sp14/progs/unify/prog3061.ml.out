@@ -1,0 +1,5 @@
+Characters 82-88:
+  | _   -> bigAdd List.rev(0 :: (List.rev a)) (mulByDigit x l2)
+           ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

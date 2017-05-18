@@ -1,0 +1,5 @@
+Characters 33-34:
+  let rec wwhile (f,b) = if f then f(f,b) else b;;
+                                   ^
+Error: This expression has type bool
+       This is not a function; it cannot be applied.

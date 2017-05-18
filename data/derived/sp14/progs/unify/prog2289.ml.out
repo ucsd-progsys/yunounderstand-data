@@ -1,0 +1,5 @@
+Characters 76-79:
+  | Sine(e1) -> if(1) then begin sin(pi *. eval(e1,x,y)); Printf.printf "sine is "; end
+                  ^^^
+Error: This expression has type int but an expression was expected of type
+         bool

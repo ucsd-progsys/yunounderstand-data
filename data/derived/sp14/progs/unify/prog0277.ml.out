@@ -1,0 +1,5 @@
+Characters 11-14:
+  helper [] [4.3;3;1] [1;2;3;4];;
+             ^^^
+Error: This expression has type float but an expression was expected of type
+         int

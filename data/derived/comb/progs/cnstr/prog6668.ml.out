@@ -1,0 +1,5 @@
+Characters 52-56:
+  let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(Mean(VarX,VarX,VarY)),Cosine(Average(Square(VarX),VarY)))));;
+                                                      ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Mean does not belong to type expr

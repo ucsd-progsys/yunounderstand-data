@@ -1,0 +1,5 @@
+Characters 72-76:
+  | VarX -> Format.sprintf "%float" VarX;;
+                                    ^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

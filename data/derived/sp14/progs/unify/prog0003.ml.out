@@ -1,0 +1,6 @@
+Characters 62-69:
+  | (x::xs') -> x sumList xs';;
+                  ^^^^^^^
+Error: This expression has type ('a -> 'b -> 'c) list -> 'd list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b -> 'c) list -> 'd list

@@ -1,0 +1,5 @@
+Characters 74-83:
+  if (List.length l1) < (List.length l2) then (clone 0 padLength)::l1
+                                                       ^^^^^^^^^
+Error: This expression has type 'a list -> 'b list -> int
+       but an expression was expected of type int

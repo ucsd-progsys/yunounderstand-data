@@ -1,0 +1,5 @@
+Characters 193-195:
+  let (_, res) = List.fold_left fn (0, (0, [])) (List.rev 12) in 
+                                                          ^^
+Error: This expression has type int but an expression was expected of type
+         'a list

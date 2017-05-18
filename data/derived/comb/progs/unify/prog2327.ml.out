@@ -1,0 +1,5 @@
+Characters 62-70:
+  | h :: t -> h @ concat t;;
+                  ^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

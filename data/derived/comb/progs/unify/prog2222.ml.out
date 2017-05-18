@@ -1,0 +1,5 @@
+Characters 407-421:
+  | FiboPlus (ex1,ex2,ex3,ex4,ex5) -> ((eval (ex1,x,y))*.(eval (ex1,x,y)+eval (ex2,x,y))*(eval (ex1,x,y)+eval (ex2,x,y)+eval (ex3,x,y))*(eval (ex1,x,y)+eval (ex2,x,y)+eval (ex3,x,y)+eval (ex4,x,y))*(eval (ex1,x,y)+eval (ex2,x,y)+eval (ex3,x,y)+eval (ex4,x,y)+eval (ex5,x,y)));;
+                                                          ^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

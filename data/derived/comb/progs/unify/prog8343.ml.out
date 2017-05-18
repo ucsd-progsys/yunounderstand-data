@@ -1,0 +1,5 @@
+Characters 296-300:
+  | Thresh(v,w,q,r)  -> eval (v,x,y) < eval (w,x,y) ? eval (q,x,y) eval (r,x,y);;
+                                       ^^^^
+Error: This function has type expr * float * float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

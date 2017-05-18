@@ -1,0 +1,5 @@
+Characters 80-82:
+  let f a x = a^sl^x in
+                ^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

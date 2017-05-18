@@ -1,0 +1,5 @@
+Characters 5-21:
+  eval(Clamp(VarX.VarY),1,2);;
+       ^^^^^^^^^^^^^^^^
+Error: The constructor Clamp expects 3 argument(s),
+       but is applied here to 1 argument(s)

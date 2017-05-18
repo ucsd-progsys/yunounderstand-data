@@ -1,0 +1,5 @@
+Characters 16-21:
+  let _ = padZero [9;9] [1;0;0;2];;
+                  ^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int -> (int -> int list) list

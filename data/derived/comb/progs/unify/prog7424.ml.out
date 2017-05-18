@@ -1,0 +1,5 @@
+Characters 68-70:
+  | Sine e' -> sin (pi * e')
+                    ^^
+Error: This expression has type float but an expression was expected of type
+         int

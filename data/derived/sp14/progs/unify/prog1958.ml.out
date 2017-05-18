@@ -1,0 +1,5 @@
+Characters 272-284:
+  helper (sum mod 10)::acc (sum/10) (t1, t2)
+         ^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

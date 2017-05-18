@@ -1,0 +1,5 @@
+Characters 75-77:
+  | [] -> []
+    ^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

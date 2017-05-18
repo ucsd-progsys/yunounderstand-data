@@ -1,0 +1,4 @@
+Characters 127-131:
+  |Average (expr, expr) -> "Average"
+                  ^^^^
+Error: Variable expr is bound several times in this matching

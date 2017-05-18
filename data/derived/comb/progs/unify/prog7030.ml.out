@@ -1,0 +1,6 @@
+Characters 57-61:
+  List.fold_left f base l;;
+                   ^^^^
+Error: This expression has type 'a -> 'b -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b -> 'a

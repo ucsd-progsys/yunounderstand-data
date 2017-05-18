@@ -1,0 +1,5 @@
+Characters 147-150:
+  if j+k > 9 then 1::(h + j + k - 10)::t else [0]::(h + j + k)::t in
+                                              ^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

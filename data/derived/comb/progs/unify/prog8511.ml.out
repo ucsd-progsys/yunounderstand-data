@@ -1,0 +1,5 @@
+Characters 135-141:
+  | 0 -> buildX
+         ^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

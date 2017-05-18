@@ -1,0 +1,5 @@
+Characters 84-104:
+  d::t-> ((d*10)::t,bigAdd((mulByDigit (d*x) t) c))
+                           ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

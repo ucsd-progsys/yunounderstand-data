@@ -1,0 +1,5 @@
+Characters 69-87:
+  n = n - (n mod 10);
+  ^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

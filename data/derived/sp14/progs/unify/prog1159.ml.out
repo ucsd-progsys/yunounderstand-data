@@ -1,0 +1,5 @@
+Characters 91-93:
+  let base = f 0 xs
+                 ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

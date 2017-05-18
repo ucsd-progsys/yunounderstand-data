@@ -1,0 +1,5 @@
+Characters 117-118:
+  cloneHelper 0  (-1*(diff)-1) (0 @ l1)
+                                ^
+Error: This expression has type int but an expression was expected of type
+         'a list

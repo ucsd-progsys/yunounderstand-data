@@ -1,0 +1,5 @@
+Characters 447-481:
+  | Sine_Avg (a,b,c) -> ( eval (a, sin(pi*.(x)), sin(pi*.y)) + eval (b, sin(pi*.x), sin(pi*.y)) + eval (c, sin(pi*.x), sin(pi*.y)) )/.(3.0);;
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

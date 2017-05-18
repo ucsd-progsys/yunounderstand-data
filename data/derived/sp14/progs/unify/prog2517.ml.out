@@ -1,0 +1,5 @@
+Characters 24-26:
+  then 99;;
+       ^^
+Error: This expression has type int but an expression was expected of type
+         unit

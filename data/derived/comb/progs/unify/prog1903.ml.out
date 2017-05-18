@@ -1,0 +1,5 @@
+Characters 91-94:
+  ( pos + 1, mulByDigit ( 10.0 ** pos) l2 ) in 
+                                  ^^^
+Error: This expression has type int but an expression was expected of type
+         float

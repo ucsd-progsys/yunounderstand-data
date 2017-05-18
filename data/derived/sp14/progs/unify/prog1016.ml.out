@@ -1,0 +1,5 @@
+Characters 618-621:
+  in let my_log = fun l' -> let l = (max 0.1 l') in (log l) /. (log 10.0)
+                                     ^^^
+Error: This expression has type int ref
+       This is not a function; it cannot be applied.

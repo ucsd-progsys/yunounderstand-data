@@ -1,0 +1,5 @@
+Characters 61-62:
+  wwhile(y, b);;
+         ^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

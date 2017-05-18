@@ -1,0 +1,5 @@
+Characters 22-29:
+  let reverse_Esplode = explode reverseList w;;
+                        ^^^^^^^
+Error: This function has type string -> char list
+       It is applied to too many arguments; maybe you forgot a `;'.

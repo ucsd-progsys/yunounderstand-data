@@ -1,0 +1,5 @@
+Characters 167-168:
+  let ret = mulByDigit ( i t ) in
+                         ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 132-133:
+  if List.length x = List.length l1 or List.length x = List.length l2 then
+                 ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

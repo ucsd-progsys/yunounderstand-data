@@ -1,0 +1,6 @@
+Characters 101-102:
+  if a = k then b else assoc d k t;;
+                             ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type
+         ('a -> 'b -> 'c) * 'd * ('d * ('a -> 'b -> 'c)) list

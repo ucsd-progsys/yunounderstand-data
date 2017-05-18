@@ -1,0 +1,10 @@
+Characters 126-138:
+  -> Format.sprintf "sin(pi*%s)" exprToString( e' )
+                    ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, unit, string, string, string, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, unit, string, string, string, string)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type string 

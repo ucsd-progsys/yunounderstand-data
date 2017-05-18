@@ -1,0 +1,5 @@
+Characters 140-141:
+  |h'::t' -> if h+h' > 10 then [addHelper (t t')] @ [1 + h' + h] else addHelper t t' @ [h'+ h];;
+                                           ^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,5 @@
+Characters 122-125:
+  let base =  if t=sep then sep else h^sep in
+                                       ^^^
+Error: This expression has type string list
+       but an expression was expected of type string

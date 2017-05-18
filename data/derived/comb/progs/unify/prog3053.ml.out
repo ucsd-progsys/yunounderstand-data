@@ -1,0 +1,5 @@
+Characters 65-66:
+  | [] -> (x * y) :: a 
+               ^
+Error: This expression has type ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b
+       but an expression was expected of type int

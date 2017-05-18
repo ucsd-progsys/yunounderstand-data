@@ -1,0 +1,5 @@
+Characters 0-4:
+  acos -1.0;;
+  ^^^^
+Error: This expression has type float -> float
+       but an expression was expected of type int

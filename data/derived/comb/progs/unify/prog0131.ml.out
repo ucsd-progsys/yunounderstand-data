@@ -1,0 +1,5 @@
+Characters 32-44:
+  let _ = myFunc (fun x y -> x y) (fun x -> x) [1;2;3;4];;
+                                  ^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+int

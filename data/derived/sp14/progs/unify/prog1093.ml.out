@@ -1,0 +1,5 @@
+Characters 773-784:
+  buildhelper rand(1,4) depth "";;
+  ^^^^^^^^^^^
+Error: This function has type int -> int -> string -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

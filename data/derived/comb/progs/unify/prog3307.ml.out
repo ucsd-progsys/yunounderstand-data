@@ -1,0 +1,6 @@
+Characters 94-96:
+  let base = List.fold_left f (fun b -> List.fold_left f b fs) fs in
+                                                               ^^
+Error: This expression has type ('a -> 'a) list
+       but an expression was expected of type (('a -> 'a) -> 'a -> 'a) list
+       The type variable 'a occurs inside 'a -> 'a

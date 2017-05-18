@@ -1,0 +1,5 @@
+Characters 221-232:
+  in helper [] n;;
+     ^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

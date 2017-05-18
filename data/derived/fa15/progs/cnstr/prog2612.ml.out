@@ -1,0 +1,5 @@
+Characters 108-115:
+  | Average -> (e' + e')
+    ^^^^^^^
+Error: The constructor Average expects 2 argument(s),
+       but is applied here to 0 argument(s)

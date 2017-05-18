@@ -1,0 +1,5 @@
+Characters 18-19:
+  let _ = wwhile (f,b);;
+                    ^
+Error: This expression has type bool but an expression was expected of type
+         int

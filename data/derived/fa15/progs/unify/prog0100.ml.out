@@ -1,0 +1,5 @@
+Characters 78-98:
+  if d < 0 then ((clone 0 (0-d))@l1) * l2 else l1 * (clone 0 d)@l2;;
+                ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

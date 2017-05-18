@@ -1,0 +1,7 @@
+Characters 199-200:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int list -> int * int list -> int list * 'a
+       but an expression was expected of type
+         int list -> int * int list -> int list
+       Type int list * 'a is not compatible with type int list 

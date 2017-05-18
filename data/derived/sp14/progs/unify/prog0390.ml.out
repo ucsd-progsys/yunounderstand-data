@@ -1,0 +1,5 @@
+Characters 5-19:
+  foo [(fun x -> x+1); (fun y -> y-1)];;
+       ^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+'a list

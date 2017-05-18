@@ -1,0 +1,5 @@
+Characters 36-37:
+  List.fold_left crack base [fun x -> x * x, fun x -> x + 2] 3;;
+                                      ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

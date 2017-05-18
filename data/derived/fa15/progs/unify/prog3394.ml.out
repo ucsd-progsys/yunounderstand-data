@@ -1,0 +1,5 @@
+Characters 0-12:
+  List.combine x y
+  ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

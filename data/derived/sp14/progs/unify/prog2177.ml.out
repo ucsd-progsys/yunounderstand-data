@@ -1,0 +1,5 @@
+Characters 55-58:
+  let stringOfList f l = let mid = List.map f l in "[" ^ mid "]";;
+                                                         ^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

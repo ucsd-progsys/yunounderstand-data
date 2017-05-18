@@ -1,0 +1,5 @@
+Characters 22-28:
+  let sampleExpr3 = Neg(Divadd(VarX,VaryX,VarY));;
+                        ^^^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Divadd does not belong to type expr

@@ -1,0 +1,5 @@
+Characters 50-56:
+  let (x,y) = f b in (x!=b)),b);;
+                     ^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

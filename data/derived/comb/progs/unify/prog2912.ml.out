@@ -1,0 +1,5 @@
+Characters 82-86:
+  | Sine(a) -> sin(pi*.VarX)
+                       ^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

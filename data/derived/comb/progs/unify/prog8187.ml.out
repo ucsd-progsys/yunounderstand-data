@@ -1,0 +1,6 @@
+Characters 306-326:
+  else (car+1, [carry (h+x1+x2)]@[remain (h+x1+x2)]@t) in
+                                 ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type (int -> int) list
+       Type int is not compatible with type int -> int 

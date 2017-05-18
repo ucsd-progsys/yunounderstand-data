@@ -1,0 +1,5 @@
+Characters 212-228:
+  let args = List.rev(List.combine [0]@l1 [0]@l2) in
+                      ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> (int * 'a) list
+       but an expression was expected of type 'b list

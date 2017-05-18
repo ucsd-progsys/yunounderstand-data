@@ -1,0 +1,5 @@
+Characters 124-136:
+  else if r=3 then buildSine(build(r,d))
+                            ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

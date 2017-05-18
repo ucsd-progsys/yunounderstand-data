@@ -1,0 +1,5 @@
+Characters 420-425:
+  | Tresh (ex1, ex2, ex3, ex4) -> "(" ^ exprToString expr1 ^ "<" ^ exprToString expr2 ^ " ? " ^ exprToString expr3 ^ " : " ^ exprToString expr4 ^ ")";;
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Tresh does not belong to type expr

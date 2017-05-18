@@ -1,0 +1,5 @@
+Characters 327-335:
+  | SquareAv(a,b) -> (a*.a +. b*.b) / 2.0
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor SquareAv does not belong to type expr

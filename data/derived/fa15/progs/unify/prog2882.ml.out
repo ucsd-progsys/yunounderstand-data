@@ -1,0 +1,5 @@
+Characters 56-61:
+  let (x,y) = padZero l1 l2 in (x, (clone y list.length y));;
+                                    ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

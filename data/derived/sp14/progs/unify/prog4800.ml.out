@@ -1,0 +1,5 @@
+Characters 10-25:
+  let foo = (fun x -> x +1) o (fun y -> 2 *y);;
+            ^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,0 +1,5 @@
+Characters 251-265:
+  | Times (x,y) -> exprToString x + "*" ^ exprToString y
+                   ^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int

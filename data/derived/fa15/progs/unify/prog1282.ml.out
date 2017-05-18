@@ -1,0 +1,5 @@
+Characters 79-91:
+  | Sine e -> "sin(pi*%s)" exprToString e
+              ^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

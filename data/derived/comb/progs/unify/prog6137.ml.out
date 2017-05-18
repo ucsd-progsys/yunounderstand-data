@@ -1,0 +1,5 @@
+Characters 107-130:
+  | Sine e -> Printf.printf "sin(pi*" ^ exprToString e ^ ")"
+              ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         string

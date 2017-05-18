@@ -1,0 +1,5 @@
+Characters 208-215:
+  (0,listy @ initsum) in
+             ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,0 +1,5 @@
+Characters 69-70:
+  | Sine(N) -> sin(N);;
+         ^
+Error: This variant pattern is expected to have type expr
+       The constructor N does not belong to type expr

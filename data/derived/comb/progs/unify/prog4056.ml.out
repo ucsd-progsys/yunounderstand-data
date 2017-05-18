@@ -1,0 +1,6 @@
+Characters 28-76:
+  ............................(fun y b-> 
+  if f b = b then (b,true)
+  else y b,b)..
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

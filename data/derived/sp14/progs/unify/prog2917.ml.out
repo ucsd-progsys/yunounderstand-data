@@ -1,0 +1,5 @@
+Characters 108-109:
+  | Cosine(a) -> cos(pi*.a);;
+                         ^
+Error: This expression has type expr but an expression was expected of type
+         float

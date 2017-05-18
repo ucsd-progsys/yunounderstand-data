@@ -1,0 +1,5 @@
+Characters 34-51:
+  let rec clone x n = if n > 1 then x@(clone x (n-1));;
+                                    ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

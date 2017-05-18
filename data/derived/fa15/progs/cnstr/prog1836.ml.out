@@ -1,0 +1,5 @@
+Characters 40-92:
+  let sampleExpr1 = Thresh(VarX,VarY,VarX,(Cube(Times(Sine(VarX),Cosine(Average(VarX,VarY))))));;
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor Cube expects 2 argument(s),
+       but is applied here to 1 argument(s)

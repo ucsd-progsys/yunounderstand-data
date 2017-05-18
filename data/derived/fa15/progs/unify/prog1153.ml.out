@@ -1,0 +1,5 @@
+Characters 100-106:
+  (h::t) -> ((sum / 10)::(sum mod 10)::t) in
+  ^^^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int * 'b

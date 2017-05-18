@@ -1,0 +1,5 @@
+Characters 429-444:
+  | Negate(e1) -> eval (e1, x, y) * (-1)
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,0 +1,5 @@
+Characters 168-176:
+  | Averages -> "((" ^ exprToString e  ^ "*" ^ exprToString e ^ ")/2)"
+    ^^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Averages does not belong to type expr

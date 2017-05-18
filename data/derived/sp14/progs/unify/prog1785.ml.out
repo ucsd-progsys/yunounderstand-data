@@ -1,0 +1,5 @@
+Characters 27-29:
+  let _ = fixpoint (collatz, 93rew001);;
+                             ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

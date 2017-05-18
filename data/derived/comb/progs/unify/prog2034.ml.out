@@ -1,0 +1,5 @@
+Characters 104-108:
+  incr count
+  ^^^^
+Error: This function has type int ref -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

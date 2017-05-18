@@ -1,0 +1,5 @@
+Characters 79-82:
+  | Sine ex -> sin exprToString ex;;
+               ^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

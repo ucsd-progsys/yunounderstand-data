@@ -1,0 +1,5 @@
+Characters 417-428:
+  | Tanh (x,y,z)     -> "tanh(pi*(" exprToString x ^"+" ^ exprToString y ^
+                        ^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

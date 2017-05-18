@@ -1,0 +1,4 @@
+Characters 62-69:
+  | VarX -> Format.printf "%VarX" VarX;;
+                          ^^^^^^^
+Error: invalid format "%VarX": at character number 1, invalid conversion "%V"

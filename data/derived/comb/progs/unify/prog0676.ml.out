@@ -1,0 +1,6 @@
+Characters 23-36:
+  List.map (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+                         ^^^^^^^^^^^^^
+Error: This expression has type int -> string
+       but an expression was expected of type string -> string
+       Type int is not compatible with type string 

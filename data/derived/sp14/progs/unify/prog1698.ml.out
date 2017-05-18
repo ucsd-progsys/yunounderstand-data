@@ -1,0 +1,5 @@
+Characters 263-275:
+  (if addit > 10 then addit mod 10
+                      ^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int * int list

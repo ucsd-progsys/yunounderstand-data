@@ -1,0 +1,5 @@
+Characters 167-171:
+  (asd3,padZero(asd3 asd2))
+                ^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,0 +1,6 @@
+Characters 69-70:
+  | h::t  -> if k = h then v else assoc (d,k,t);;
+                    ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

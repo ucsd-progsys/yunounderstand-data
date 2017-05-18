@@ -1,0 +1,5 @@
+Characters 80-93:
+  | hd::tl -> lengthOfList(tl, count+1);;
+                          ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

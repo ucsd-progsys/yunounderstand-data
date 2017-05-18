@@ -1,0 +1,5 @@
+Characters 72-81:
+  | h::t -> cin(h, i) @ mulByDigit i t in
+            ^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

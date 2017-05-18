@@ -1,0 +1,5 @@
+Characters 100-158:
+  n -> let x_ = digitsOfInt n in sumList x_ = let xx = sumList x_ in additivePersistence xx;;
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         int

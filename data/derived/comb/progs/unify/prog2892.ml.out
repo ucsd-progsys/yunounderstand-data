@@ -1,0 +1,5 @@
+Characters 58-62:
+  then digitalRoot(sumList( n))
+                          ^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

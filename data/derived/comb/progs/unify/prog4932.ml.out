@@ -1,0 +1,6 @@
+Characters 82-93:
+  | h::t -> helper(h*i) :: acc 
+            ^^^^^^^^^^^
+Error: This expression has type int list -> 'a list -> 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside int list -> 'a list -> 'a list

@@ -1,0 +1,6 @@
+Characters 89-97:
+  | (h::t) -> h (pipe t);;
+                ^^^^^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b

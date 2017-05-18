@@ -1,0 +1,6 @@
+Characters 46-100:
+  ..............................................fun n ->
+  let d = digitsOfInt (n / 10) in
+  (n mod 10)::d..
+Error: This expression should not be a function, the expected type is
+'a list

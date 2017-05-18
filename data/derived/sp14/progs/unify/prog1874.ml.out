@@ -1,0 +1,5 @@
+Characters 24-25:
+  let _ = pipe [(fun x -> x ^ ", " ^ x); (fun x -> x ^ ", " ^ x ^ "!")] "corn";;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type string

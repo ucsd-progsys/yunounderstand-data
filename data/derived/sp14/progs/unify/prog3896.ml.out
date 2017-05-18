@@ -1,0 +1,5 @@
+Characters 137-147:
+  | Times (a,b) -> exprToString buildTimes(a,b)
+                                ^^^^^^^^^^
+Error: This expression has type expr * expr -> expr
+       but an expression was expected of type expr

@@ -1,0 +1,6 @@
+Characters 81-85:
+  wwhile ((f'),b);;
+          ^^^^
+Error: This expression has type ('a -> 'a) -> 'a -> 'a
+       but an expression was expected of type ('a -> 'a) -> ('a -> 'a) * bool
+       Type 'a -> 'a is not compatible with type ('a -> 'a) * bool 

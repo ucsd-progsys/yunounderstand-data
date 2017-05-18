@@ -1,0 +1,5 @@
+Characters 131-134:
+  |Neg(e) -> -1.0 *. eval(e,x,y)
+   ^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Neg does not belong to type expr

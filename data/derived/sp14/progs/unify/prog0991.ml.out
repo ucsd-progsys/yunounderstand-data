@@ -1,0 +1,5 @@
+Characters 46-58:
+  wwhile ((if f b = b then (f b, false) else failwith "asd") ,b);;
+                           ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

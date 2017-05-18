@@ -1,0 +1,5 @@
+Characters 67-68:
+  | (_,y) -> (0, bigAdd a x) in
+                        ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

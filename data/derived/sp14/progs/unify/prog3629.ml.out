@@ -1,0 +1,5 @@
+Characters 33-49:
+  List.map (sepConcat "" l) l;;
+           ^^^^^^^^^^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         'a -> 'b

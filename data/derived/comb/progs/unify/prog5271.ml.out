@@ -1,0 +1,5 @@
+Characters 187-189:
+  | Average (e',e1)      -> (eval e' + eval e1)/2
+                                  ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,5 @@
+Characters 133-137:
+   let x = List.mem(h, seen) in if (x = true) then seen' = seen else seen' = List.rev(h:: List.rev(seen)) in
+                                        ^^^^
+Error: This expression has type bool but an expression was expected of type
+         ('a * 'b) list -> bool

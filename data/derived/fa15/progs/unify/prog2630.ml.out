@@ -1,0 +1,5 @@
+Characters 84-99:
+  | Sine e' -> sin (3 * exprToString e')
+                        ^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         int

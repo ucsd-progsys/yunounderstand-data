@@ -1,0 +1,5 @@
+Characters 438-461:
+  |MyExpr2(e) -> Sine(eval (e,x,y)*.0.5);;
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

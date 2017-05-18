@@ -1,0 +1,5 @@
+Characters 83-84:
+  ([],[])::a
+           ^
+Error: This expression has type 'a list * 'b
+       but an expression was expected of type ('c list * 'd list) list

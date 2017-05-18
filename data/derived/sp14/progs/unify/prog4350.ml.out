@@ -1,0 +1,5 @@
+Characters 82-84:
+  sin(eval e0)
+           ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

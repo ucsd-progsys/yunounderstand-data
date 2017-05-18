@@ -1,0 +1,5 @@
+Characters 95-114:
+  | Average (a1,a2) -> buildAverage(a1,a2);;
+                       ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

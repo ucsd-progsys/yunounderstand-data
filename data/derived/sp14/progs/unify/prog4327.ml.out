@@ -1,0 +1,4 @@
+Characters 172-173:
+  | Average (e,e)     -> "%s" e
+               ^
+Error: Variable e is bound several times in this matching

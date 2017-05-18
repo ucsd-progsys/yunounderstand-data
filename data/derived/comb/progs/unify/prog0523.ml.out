@@ -1,0 +1,5 @@
+Characters 88-107:
+  else additivePersAndRoot digits(sumList(xs)) (pers + 1);;
+       ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int list -> 'a -> 'a * int
+       It is applied to too many arguments; maybe you forgot a `;'.

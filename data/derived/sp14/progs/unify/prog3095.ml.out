@@ -1,0 +1,5 @@
+Characters 60-71:
+  | a :: b -> listReverse [a] b;;
+              ^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

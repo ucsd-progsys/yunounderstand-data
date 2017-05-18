@@ -1,0 +1,5 @@
+Characters 46-47:
+  10*a b;;
+     ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

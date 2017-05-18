@@ -1,0 +1,5 @@
+Characters 72-74:
+  if l :: lr then true
+       ^^
+Error: This variant expression is expected to have type bool
+       The constructor :: does not belong to type bool

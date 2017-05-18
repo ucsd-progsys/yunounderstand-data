@@ -1,0 +1,5 @@
+Characters 561-564:
+  then (log ((eval (a, x, y)) *. 100)) ** (sin ((eval (b, x, y)) *. 100)) -. 1.0
+                                 ^^^
+Error: This expression has type int but an expression was expected of type
+         float

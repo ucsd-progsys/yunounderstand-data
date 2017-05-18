@@ -1,0 +1,5 @@
+Characters 32-65:
+  let bigMul l1 l2 = mulByDigit  ((List.length l1 + List.length l2) (bigAdd l1 l2));;
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

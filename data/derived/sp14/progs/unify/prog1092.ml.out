@@ -1,0 +1,5 @@
+Characters 179-204:
+  buildSine(buildhelper 0 (depth-1))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a -> expr
+       but an expression was expected of type expr

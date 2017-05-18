@@ -1,0 +1,6 @@
+Characters 78-95:
+  | head::tail -> head :: (append_new tail) :: xs2;;
+                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list -> 'a list

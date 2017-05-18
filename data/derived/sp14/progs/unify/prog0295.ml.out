@@ -1,0 +1,5 @@
+Characters 85-86:
+  match rand 0 2 with
+             ^
+Error: This expression has type int but an expression was expected of type
+         int * int

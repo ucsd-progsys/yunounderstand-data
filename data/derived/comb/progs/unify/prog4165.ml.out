@@ -1,0 +1,5 @@
+Characters 52-53:
+  h   -> if (h != 0) then []
+                  ^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 165-191:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (unit * unit) list
+       but an expression was expected of type 'a * 'b

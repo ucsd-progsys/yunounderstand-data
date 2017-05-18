@@ -1,0 +1,5 @@
+Characters 82-95:
+  (clone 0 leng1-leng2 @ l1 , clone 0 leng2-leng1 @ l2);;
+   ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

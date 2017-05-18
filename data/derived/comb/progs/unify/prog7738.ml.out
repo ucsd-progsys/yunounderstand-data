@@ -1,0 +1,6 @@
+Characters 53-56:
+  fixpoint (f,f(b))
+               ^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a

@@ -1,0 +1,5 @@
+Characters 516-568:
+  buildTimmy1(build(rand, depth-depth) ,build(rand, depth-depth))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr * expr * 'c

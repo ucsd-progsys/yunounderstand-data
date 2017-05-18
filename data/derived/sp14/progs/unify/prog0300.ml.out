@@ -1,0 +1,5 @@
+Characters 78-89:
+  | _ -> digitsOfInt (n/10) [];;
+         ^^^^^^^^^^^
+Error: This function has type int -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

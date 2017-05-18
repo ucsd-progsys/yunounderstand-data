@@ -1,0 +1,5 @@
+Characters 118-150:
+  then (clone (0::l1) (List.length l2))
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list list list
+       but an expression was expected of type int list * 'a list

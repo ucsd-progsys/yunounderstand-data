@@ -1,0 +1,5 @@
+Characters 272-273:
+  | x::y -> x;;
+            ^
+Error: This expression has type int list
+       but an expression was expected of type int list list

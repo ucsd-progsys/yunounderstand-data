@@ -1,0 +1,5 @@
+Characters 85-87:
+  | Sine ex -> sin(pi*.eval (ex x y) );;
+                             ^^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

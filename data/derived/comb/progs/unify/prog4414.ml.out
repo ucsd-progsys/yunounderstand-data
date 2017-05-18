@@ -1,0 +1,5 @@
+Characters 104-116:
+  (((i+j)/10), t::(i+j) mod 10) in
+                  ^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

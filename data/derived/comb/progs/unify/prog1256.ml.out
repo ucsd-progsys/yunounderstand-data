@@ -1,0 +1,5 @@
+Characters 16-17:
+  let _ = change [1;9;4;5;2;3;7;4;8;1;2;9;5;8;1;0;0;5;4;6;7;9;1;2;0;3;9];;
+                  ^
+Error: This expression has type int but an expression was expected of type
+         string

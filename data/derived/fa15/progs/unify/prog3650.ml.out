@@ -1,0 +1,5 @@
+Characters 90-99:
+  |(y,z) -> (y+1, bigAdd ((mulByDigit x l1) @ [clone 0 y]) z) in
+                                               ^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int

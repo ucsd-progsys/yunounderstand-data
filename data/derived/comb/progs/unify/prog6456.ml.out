@@ -1,0 +1,5 @@
+Characters 123-124:
+  | h::t -> let x=List.mem(h,seen) in if x then helper(seen',t)
+                                         ^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

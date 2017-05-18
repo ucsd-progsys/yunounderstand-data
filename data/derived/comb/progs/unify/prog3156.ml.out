@@ -1,0 +1,5 @@
+Characters 426-431:
+  "(" ^ expr0 ^ "<" ^ expr1 ^ "?" ^ expr2 ^ ":" ^ expr3 ^ ")";;
+        ^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

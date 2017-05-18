@@ -1,0 +1,5 @@
+Characters 163-175:
+  | TimesThree e -> (exprToString e) ^  "*" ^ (exprToString f) ^ "*" ^ (exprToString f)
+    ^^^^^^^^^^^^
+Error: The constructor TimesThree expects 3 argument(s),
+       but is applied here to 1 argument(s)

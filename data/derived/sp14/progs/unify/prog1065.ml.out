@@ -1,0 +1,5 @@
+Characters 159-170:
+  | Cosine(p1) -> evalhelper buildCosine(p1) x y
+                             ^^^^^^^^^^^
+Error: This expression has type expr -> expr
+       but an expression was expected of type expr

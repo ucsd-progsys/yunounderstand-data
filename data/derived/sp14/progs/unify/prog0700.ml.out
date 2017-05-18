@@ -1,0 +1,7 @@
+Characters 153-154:
+  else assoc (d, k, t);;
+              ^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'c -> 'a * 'd * ('d * 'a) list
+       The type variable 'a occurs inside
+       'b -> 'c -> 'a * 'd * ('d * 'a) list

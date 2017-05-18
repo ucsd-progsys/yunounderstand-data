@@ -1,0 +1,5 @@
+Characters 239-254:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'b * 'c

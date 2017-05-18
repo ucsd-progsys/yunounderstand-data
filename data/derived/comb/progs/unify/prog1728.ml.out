@@ -1,0 +1,8 @@
+Characters 149-163:
+  (Printf.printf Printf.sprintf "%8d%8d%8d\n"; l1'; l2'; carry; ((if addit >= 10 then 1 else 0), num @ [addit mod 10])) in
+                 ^^^^^^^^^^^^^^
+Error: This expression has type ('a, unit, string) format -> 'a
+       but an expression was expected of type
+         ('b -> 'c, out_channel, unit) format =
+           ('b -> 'c, out_channel, unit, unit, unit, unit)
+           CamlinternalFormatBasics.format6

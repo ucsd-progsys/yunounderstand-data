@@ -1,0 +1,5 @@
+Characters 63-127:
+  (l1, List.append (clone 0 (List.length l1 - List.length l2)) l2);;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

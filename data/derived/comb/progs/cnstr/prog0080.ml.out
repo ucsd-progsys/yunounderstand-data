@@ -1,0 +1,5 @@
+Characters 20-44:
+  let _ = exprToString(MyExpr(VarX,VarY,VarX));;
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor MyExpr expects 4 argument(s),
+       but is applied here to 3 argument(s)

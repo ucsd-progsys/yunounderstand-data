@@ -1,0 +1,6 @@
+Characters 91-97:
+  | x :: xs -> get xs :: [x]
+               ^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

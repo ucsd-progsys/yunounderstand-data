@@ -1,0 +1,5 @@
+Characters 369-374:
+  | Extra(s, t, u) -> ( "sin(pi*"^(ex s)^") * cos ("^(ex t)^") * sin(" ^(ex u)^":"^(ex v)^")")
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Extra does not belong to type expr

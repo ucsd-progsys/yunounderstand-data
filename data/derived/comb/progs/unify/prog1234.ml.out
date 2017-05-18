@@ -1,0 +1,5 @@
+Characters 297-302:
+  | (x,[]) -> (new_carry, new_carry::digit) 
+                                     ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

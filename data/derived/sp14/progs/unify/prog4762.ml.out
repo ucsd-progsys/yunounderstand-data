@@ -1,0 +1,10 @@
+Characters 120-129:
+  | Sine e -> Format.printf "sin(%s)" to_string e
+                            ^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, Format.formatter, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, Format.formatter, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

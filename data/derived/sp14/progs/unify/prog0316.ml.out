@@ -1,0 +1,5 @@
+Characters 86-97:
+  else if ((List.hd l) - (List.hd k)) != 0 then false
+           ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 129-164:
+  multiplier (float_of_int ((List.length l1)-1)) j in
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

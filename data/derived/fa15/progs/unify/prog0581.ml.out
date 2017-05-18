@@ -1,0 +1,5 @@
+Characters 14-36:
+  let _ =  eval (Op(VarX, VarY, VarY));;
+                ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

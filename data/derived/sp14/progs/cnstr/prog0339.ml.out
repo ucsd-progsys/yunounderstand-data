@@ -1,0 +1,5 @@
+Characters 78-81:
+  | Sin e'    -> "sin (pi*"^expr e'^")"
+    ^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Sin does not belong to type expr

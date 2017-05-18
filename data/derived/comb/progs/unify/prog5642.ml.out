@@ -1,0 +1,5 @@
+Characters 187-198:
+  |(h1::t1, y) -> ( match x with
+   ^^^^^^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c list

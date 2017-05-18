@@ -1,0 +1,5 @@
+Characters 100-116:
+  n -> let x_ = digitsOfInt n in sumList x_ :: [];;
+                                 ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

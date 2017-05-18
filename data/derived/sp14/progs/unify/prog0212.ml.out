@@ -1,0 +1,5 @@
+Characters 319-324:
+  let args = List.append (List.rev (List.combine l1 l2))  (0,0) in
+                                                          ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type ('c * 'd) list

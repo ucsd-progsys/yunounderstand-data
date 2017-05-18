@@ -1,0 +1,5 @@
+Characters 128-130:
+  let seen' = if List.mem h t then [] in
+                                   ^^
+Error: This variant expression is expected to have type unit
+       The constructor [] does not belong to type unit

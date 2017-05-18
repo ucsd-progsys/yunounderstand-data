@@ -1,0 +1,7 @@
+Characters 29-37:
+  let fixpoint (f,b) = wwhile (intboolf,b);;
+                               ^^^^^^^^
+Error: This expression has type ('a -> int) -> 'a -> int * bool
+       but an expression was expected of type
+         ('a -> int) -> ('a -> int) * bool
+       Type 'a -> int * bool is not compatible with type ('a -> int) * bool 

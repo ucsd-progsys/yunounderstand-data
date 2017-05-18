@@ -1,0 +1,6 @@
+Characters 233-242:
+  | h1::t1 -> helper t1 :: h1 mod 10 :: []
+              ^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

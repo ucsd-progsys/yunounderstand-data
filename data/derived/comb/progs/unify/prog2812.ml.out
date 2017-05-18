@@ -1,0 +1,5 @@
+Characters 187-202:
+  (t,updateTotal) in
+  ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

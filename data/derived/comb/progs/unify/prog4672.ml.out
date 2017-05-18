@@ -1,0 +1,5 @@
+Characters 56-64:
+  let f a x = (+) List. hd (List.combine a x)in
+                  ^^^^^^^^
+Error: This expression has type 'a list -> 'a
+       but an expression was expected of type int

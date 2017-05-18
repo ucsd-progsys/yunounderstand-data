@@ -1,0 +1,5 @@
+Characters 59-67:
+  else (n / 10) additiveDestructor (n / 10);;
+       ^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

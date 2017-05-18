@@ -1,0 +1,5 @@
+Characters 92-93:
+  then x
+       ^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,0 +1,5 @@
+Characters 396-417:
+  | KellysOp (a,b,a_more) -> if (eval(a,x,y)>eval(b,x,y)) then eval (a_more,x,y) else 0.0;;
+    ^^^^^^^^^^^^^^^^^^^^^
+Error: The constructor KellysOp expects 4 argument(s),
+       but is applied here to 3 argument(s)

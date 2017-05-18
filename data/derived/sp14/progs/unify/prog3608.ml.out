@@ -1,0 +1,5 @@
+Characters 301-304:
+  | Times (t1, t2) -> "(" ^ (exprToString t1) ^ "*" (exprToString t2) ^ ")"
+                                                ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

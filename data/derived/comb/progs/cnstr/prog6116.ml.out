@@ -1,0 +1,5 @@
+Characters 45-49:
+  Fun ("y", Plus (Var "y", Plus, Var "z"))),Var "z");;
+            ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Plus does not belong to type expr

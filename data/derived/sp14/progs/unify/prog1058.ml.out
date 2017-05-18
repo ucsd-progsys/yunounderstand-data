@@ -1,0 +1,5 @@
+Characters 126-127:
+  if (List.mem tl 2 = true) then seen
+                  ^
+Error: This expression has type int but an expression was expected of type
+         'a list list

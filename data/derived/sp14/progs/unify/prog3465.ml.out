@@ -1,0 +1,5 @@
+Characters 282-290:
+  | 5 -> buildAverage ( if (depth = 0) then buildX() else build(rand, depth - 1), if (depth = 0) then buildY() else build(rand, depth - 1))
+                                            ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

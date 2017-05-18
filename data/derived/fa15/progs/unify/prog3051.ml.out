@@ -1,0 +1,6 @@
+Characters 92-94:
+  | hd::tl -> [((hd * i) mod 10) + ((retHead tl)*i)/10] @ mulByDigit i tl;;
+                                             ^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list list
+       Type int is not compatible with type 'a list 

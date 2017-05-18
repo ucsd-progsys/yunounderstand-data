@@ -1,0 +1,5 @@
+Characters 0-11:
+  digitsOfInt -2;;
+  ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

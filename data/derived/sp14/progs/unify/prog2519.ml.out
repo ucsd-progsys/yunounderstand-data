@@ -1,0 +1,5 @@
+Characters 2-9:
+  f collatz;;
+    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

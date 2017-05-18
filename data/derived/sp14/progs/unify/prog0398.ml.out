@@ -1,0 +1,6 @@
+Characters 60-63:
+  | _  -> x a 
+          ^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b list -> 'a
+       The type variable 'a occurs inside 'b list -> 'a

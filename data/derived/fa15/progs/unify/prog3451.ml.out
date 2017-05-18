@@ -1,0 +1,5 @@
+Characters 90-96:
+  | 1 -> if(rand mod 2 = 0) then buildX else buildY
+                                 ^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type unit

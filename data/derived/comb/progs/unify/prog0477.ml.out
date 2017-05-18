@@ -1,0 +1,5 @@
+Characters 154-168:
+  if length1 < length2 then padZero(0::l1)
+                            ^^^^^^^^^^^^^^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type int list * 'c list

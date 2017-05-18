@@ -1,0 +1,5 @@
+Characters 141-146:
+  let zeros = clone 0 abs(diff) in
+              ^^^^^
+Error: This function has type 'a -> int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

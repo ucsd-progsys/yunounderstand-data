@@ -1,0 +1,5 @@
+Characters 66-67:
+  let movedList=l@0 in (bit+1,bigAdd movedList x) in 
+                  ^
+Error: This expression has type int but an expression was expected of type
+         'a list

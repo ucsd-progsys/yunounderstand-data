@@ -1,0 +1,5 @@
+Characters 58-59:
+  x a
+  ^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

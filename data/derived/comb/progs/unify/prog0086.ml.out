@@ -1,0 +1,5 @@
+Characters 178-185:
+  in helper (d,k,l) acc;;
+            ^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type ('d * 'e) list

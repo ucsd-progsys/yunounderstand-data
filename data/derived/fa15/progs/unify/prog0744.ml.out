@@ -1,0 +1,5 @@
+Characters 36-47:
+  if explode w == listReverse explode w 
+                  ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

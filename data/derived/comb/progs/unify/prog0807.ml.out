@@ -1,0 +1,5 @@
+Characters 658-661:
+  | NewExprB (e1,e2,e3) -> "(" exprToString e1 ^ "+" ^ exprToString e2 ^ "+" ^ exprToString ex ^ ")";;
+                           ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

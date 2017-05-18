@@ -1,0 +1,6 @@
+Characters 70-78:
+  else helper x :: acc (n'-1) in 
+       ^^^^^^^^
+Error: This expression has type 'a -> 'b list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a -> 'b list

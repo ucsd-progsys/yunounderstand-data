@@ -1,0 +1,5 @@
+Characters 91-101:
+  else if n > 0 then myAppend [digitsOfInt(n/10)] (n mod 10)
+                                                  ^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

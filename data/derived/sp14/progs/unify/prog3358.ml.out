@@ -1,0 +1,5 @@
+Characters 95-106:
+  (n mod 10 :: myList) :: digitsOfInt
+                          ^^^^^^^^^^^
+Error: This expression has type int -> int list list
+       but an expression was expected of type int list list

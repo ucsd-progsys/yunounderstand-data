@@ -1,0 +1,10 @@
+Characters 313-320:
+  | Times (e1, e2) -> Printf.sprintf "%s*%s"
+                                     ^^^^^^^
+Error: This expression has type
+         ('a -> 'b -> 'c, unit, string, string, string, 'a -> 'b -> 'c)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b -> 'c, unit, string, string, string, string)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b -> 'c is not compatible with type string 

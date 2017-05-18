@@ -1,0 +1,5 @@
+Characters 37-50:
+  let buildTimmy2(e1,e2)             = Timmy2(e1,e2);;
+                                       ^^^^^^^^^^^^^
+Error: The constructor Timmy2 expects 3 argument(s),
+       but is applied here to 2 argument(s)

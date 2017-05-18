@@ -1,0 +1,6 @@
+Characters 75-89:
+  | h::t -> lr (List.hd l)::l' (List.tl l) in
+            ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

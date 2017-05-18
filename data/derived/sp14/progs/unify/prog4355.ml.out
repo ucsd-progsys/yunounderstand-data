@@ -1,0 +1,5 @@
+Characters 163-165:
+  ((eval e2)+(eval e3))/2
+         ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

@@ -1,0 +1,5 @@
+Characters 113-114:
+  (place*10, (bigAdd (mulByDigit (place *l) l1) l))
+                                                ^
+Error: This expression has type int but an expression was expected of type
+         int list

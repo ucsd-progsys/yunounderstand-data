@@ -1,0 +1,5 @@
+Characters 90-91:
+  let l4=l3@clone(0 b) in
+                  ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

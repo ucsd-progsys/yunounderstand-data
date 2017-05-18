@@ -1,0 +1,5 @@
+Characters 67-80:
+  | false ->  [digitsOfInt n/10]::[];;
+               ^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type int

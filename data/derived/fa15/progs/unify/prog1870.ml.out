@@ -1,0 +1,5 @@
+Characters 28-35:
+  if is10gte then
+     ^^^^^^^
+Error: This expression has type int -> bool
+       but an expression was expected of type bool

@@ -1,0 +1,5 @@
+Characters 74-80:
+  | h::t -> rev (h::x) t in
+                ^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b -> 'c

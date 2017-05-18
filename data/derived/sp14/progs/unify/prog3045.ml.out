@@ -1,0 +1,5 @@
+Characters 75-82:
+  | true  -> x :: (clone (x n-1));;
+                         ^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int -> int

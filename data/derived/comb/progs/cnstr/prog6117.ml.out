@@ -1,0 +1,5 @@
+Characters 44-48:
+  App (Fun ("y", Plus (Var "x", Plus, Var "y"))
+                 ^^^^
+Error: This variant expression is expected to have type expr
+       The constructor Plus does not belong to type expr

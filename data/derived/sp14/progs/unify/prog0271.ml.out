@@ -1,0 +1,5 @@
+Characters 338-355:
+  ( (v/10) mod 10 ) :: (v mod 10 :: acc) :: acc
+                       ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

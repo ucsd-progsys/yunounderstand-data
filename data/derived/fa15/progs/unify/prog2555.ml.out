@@ -1,0 +1,5 @@
+Characters 44-61:
+  let f a x = (0, bigAdd( (mulByDigit x l2) a)) in
+                          ^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

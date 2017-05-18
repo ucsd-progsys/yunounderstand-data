@@ -1,0 +1,6 @@
+Characters 248-263:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type int list * int list
+       but an expression was expected of type int list * 'a list list
+       Type int is not compatible with type 'a list 

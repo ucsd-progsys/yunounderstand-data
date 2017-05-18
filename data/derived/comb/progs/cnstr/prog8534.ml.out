@@ -1,0 +1,5 @@
+Characters 387-399:
+  | Circ	(circ1)       -> sqrt(abs_float (1.0-.eval(circ1,x,y)**2.0))
+    ^^^^^^^^^^^^
+Error: The constructor Circ expects 2 argument(s),
+       but is applied here to 1 argument(s)

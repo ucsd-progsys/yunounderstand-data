@@ -1,0 +1,5 @@
+Characters 100-119:
+  n -> let x_ = digitsOfInt n in sumList x_, incre i;;
+                                 ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 213-278:
+  ((add1 + add2 + carry)/ 10, ((add1 + add2 + carry) mod 10)::rest) in
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

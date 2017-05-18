@@ -1,0 +1,5 @@
+Characters 461-466:
+  | Expwn e        -> "phi^" ^ exprToString e 
+    ^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Expwn does not belong to type expr

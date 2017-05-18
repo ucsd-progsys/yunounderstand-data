@@ -1,0 +1,5 @@
+Characters 417-421:
+  | Comp (e1,e2,e3) -> -1 * eval (e1,x,y) * eval (e2,x,y) * eval (e3,x,y);;
+    ^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Comp does not belong to type expr

@@ -1,0 +1,7 @@
+Characters 91-92:
+  assoc d k tl
+        ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * 'b * ('b * ('c -> 'd -> 'e)) list
+       The type variable 'a occurs inside
+       'a * 'b * ('b * ('c -> 'd -> 'e)) list

@@ -1,0 +1,5 @@
+Characters 146-154:
+  (h,t::c) in
+  ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

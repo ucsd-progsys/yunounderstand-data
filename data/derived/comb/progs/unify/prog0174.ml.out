@@ -1,0 +1,5 @@
+Characters 62-65:
+  | h::t -> h*i;;
+            ^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

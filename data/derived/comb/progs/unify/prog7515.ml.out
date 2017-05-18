@@ -1,0 +1,5 @@
+Characters 184-196:
+  if value > 9 then (1,value-10)::a
+                    ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

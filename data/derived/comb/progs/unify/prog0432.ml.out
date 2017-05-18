@@ -1,0 +1,5 @@
+Characters 29-38:
+  let fixpoint (f,b) = wwhile ((       ),b);;
+                               ^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         'a -> 'a * bool

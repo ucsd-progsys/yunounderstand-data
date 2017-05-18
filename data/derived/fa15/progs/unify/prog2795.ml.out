@@ -1,0 +1,5 @@
+Characters 237-239:
+  | Times(e1, e2) -> buildTimes(eval e1, eval e2)
+                                     ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

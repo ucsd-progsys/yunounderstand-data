@@ -1,0 +1,5 @@
+Characters 402-405:
+  | ECosSin (a,b) -> max -1.0 (min 1.0 (2.71 ** ((sin (pi *. eval (a, x, y))) +. (cos (pi *. eval(b, x, y))) -. 1.0) -. 1.0))
+                     ^^^
+Error: This expression has type int ref
+       but an expression was expected of type int

@@ -1,0 +1,5 @@
+Characters 9-11:
+  let _ = (1. p);;
+           ^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

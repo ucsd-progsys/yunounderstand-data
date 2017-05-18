@@ -1,0 +1,5 @@
+Characters 6-7:
+  let _=1+.5;;
+        ^
+Error: This expression has type int but an expression was expected of type
+         float

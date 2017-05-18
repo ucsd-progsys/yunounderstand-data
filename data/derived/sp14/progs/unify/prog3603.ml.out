@@ -1,0 +1,6 @@
+Characters 83-84:
+  else wwhile f b;;
+              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * (('b -> 'c) * bool)
+       The type variable 'a occurs inside 'a * (('b -> 'c) * bool)

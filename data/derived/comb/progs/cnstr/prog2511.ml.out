@@ -1,0 +1,5 @@
+Characters 26-28:
+  then 4 :: seal;;
+         ^^
+Error: This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit

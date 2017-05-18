@@ -1,0 +1,5 @@
+Characters 106-108:
+  | Average (a1,a2) -> (eval(VarX,a1,a2) + eval(VarY,a1,a2));;
+                                  ^^
+Error: This expression has type expr but an expression was expected of type
+         float

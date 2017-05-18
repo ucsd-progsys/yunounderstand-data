@@ -1,0 +1,5 @@
+Characters 123-124:
+  if (j+k>10) then j=1 k=j+k-10 else j=0 k=j+k-10 in 
+                     ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

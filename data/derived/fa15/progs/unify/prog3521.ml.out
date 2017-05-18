@@ -1,0 +1,5 @@
+Characters 107-124:
+  let f a x = match (a, x) with ((w, b), (y, z)) ->  b @ w mod 10 :: ((y + z), w / 10) in
+                                                                     ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

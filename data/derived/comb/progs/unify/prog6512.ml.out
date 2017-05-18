@@ -1,0 +1,5 @@
+Characters 64-66:
+  assert (-1.0 <= rv && rv <= 1.0);
+                  ^^
+Error: This expression has type expr but an expression was expected of type
+         float

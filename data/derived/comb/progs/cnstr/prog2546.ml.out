@@ -1,0 +1,5 @@
+Characters 9-13:
+  let hi = [] 3;;
+           ^^^^
+Error: The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)

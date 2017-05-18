@@ -1,0 +1,5 @@
+Characters 91-99:
+  else bigAdd [l] [(mulByDigit(i-1, l))];;
+                              ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

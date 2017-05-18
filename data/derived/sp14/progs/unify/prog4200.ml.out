@@ -1,0 +1,5 @@
+Characters 42-58:
+  [5]@ digitsOfInt n/10
+       ^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

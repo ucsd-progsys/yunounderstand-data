@@ -1,0 +1,6 @@
+Characters 8-17:
+  [1,0] @ clone 0 1;;
+          ^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type (int * int) list
+       Type int is not compatible with type int * int 

@@ -1,0 +1,6 @@
+Characters 99-103:
+  | head::tail::t::s::l -> s::t::tail::head;;
+                                       ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

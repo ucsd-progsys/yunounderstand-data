@@ -1,0 +1,5 @@
+Characters 73-75:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type 'a -> int
+       but an expression was expected of type 'a list

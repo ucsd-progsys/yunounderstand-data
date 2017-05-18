@@ -1,0 +1,5 @@
+Characters 110-112:
+  let c = s2.[i] in
+          ^^
+Error: This expression has type int but an expression was expected of type
+         string

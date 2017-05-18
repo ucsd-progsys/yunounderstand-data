@@ -1,0 +1,5 @@
+Characters 188-190:
+  | 3 -> buildSine()
+                  ^^
+Error: This variant expression is expected to have type expr
+       The constructor () does not belong to type expr

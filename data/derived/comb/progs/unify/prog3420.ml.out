@@ -1,0 +1,5 @@
+Characters 69-70:
+  | Sine s -> Format.printf "%s" s;;
+                                 ^
+Error: This expression has type expr but an expression was expected of type
+         string

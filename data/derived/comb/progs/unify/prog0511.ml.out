@@ -1,0 +1,5 @@
+Characters 619-622:
+  | NewB(a, b, c) -> s ^ "(" ^ exprToString(a) ^ "+" ^ exprToString(b) ^ "+" + exprToString(c) ^ ")^0";;
+                                                                         ^^^
+Error: This expression has type string but an expression was expected of type
+         int
