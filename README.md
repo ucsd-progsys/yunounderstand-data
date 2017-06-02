@@ -42,10 +42,10 @@ NOT valid JSON, each line must be parsed individually as a JSON object.
 ```
 
 The `"file"` field is the name of the file and should be one of
-`"hw1.ml"`, `"hw2.ml"`, or `"hw3.ml"`. The `"time"` field is current
-UNIX timestamp. The `"body"` field is the contents of the file. The
-`"cursor"` field tracks the location of the cursor as an offset into
-the body. 
+`"hw1.ml"`, `"hw2.ml"`, or `"hw3.ml"`. The `"time"` field is the UNIX
+timestamp of the event. The `"body"` field is the contents of the file
+at that point. The `"cursor"` field tracks the location of the cursor as
+an offset into the body.
 
 The `"event"` field describes what type of event occurred. The
 possibilities for the `"type"` field are:
@@ -63,17 +63,24 @@ In the case of an `"eval"` event, the object will also contain an
 to the OCaml top-level. Each item in the list is an object containing:
 
 - `"in"`: a single definition sent to OCaml.
-- `"out"`: OCaml's response.
+- `"out"`: OCaml's response. We only captured the error responses, so
+  this field will often be empty.
 - `"type"`: a classification of the response. `"scope"` indicates an
   unbound variable error, `"syntax"` a syntax error, and `"type"` a type
   error. The empty string implies there was no error.
-- `"min"`: in the case of a type error, this field will contain a
-  **minimal** program that produces the same error. We were not always
-  able to produce such a program, so this field will sometimes be empty.
+- `"min"`: a self-contained program with the **minimal** set of definitions. 
+  This is extremely useful because the students were interacting with the OCaml
+  **interpreter** rather than the compiler, and would send individual (groups of)
+  definitions to the interpreter rather than compiling the entire file. Thus,
+  we cannot expect the contents of the `"in"` field to constitute a complete,
+  **closed** program.
+
+  We were not always able to produce such a minimal program, so this field 
+  will sometimes be empty.
   
-**NOTE:** the offsets into the body (`"cursor"`, `"start"`, and
-  `"stop"`) are not always reliable, we have observed cases where they
-  do not match up with the actual text that was sent to OCaml.
+**NOTE:** the offsets into the body (`"cursor"`, `"start"`, and `"stop"`)
+are not always reliable, we have observed cases where they do not match up 
+with the actual text that was sent to OCaml.
   
 
 Derived Data
@@ -89,6 +96,9 @@ We include two derived datasets.
    (e.g. "This constructor takes 3 arguments but only 2 were supplied").
    The `unify` folder contains more general unification errors, which is
    the vast majority.
+   
+   These programs are produced by the python3 script `scripts/extract_programs.py`.
+   We provide Makefile targets `progs{-fa15,-sp14,-comb}` for convenience.
 
 2. A collection of ill-typed programs paired with their subsequent
    **fixes**, located in `data/derived{sp14,fa15}/pairs.json`. These
@@ -104,4 +114,23 @@ We include two derived datasets.
        "fix": string
    }
    ```
+   
+   The `"hw"` and `"problem"` fields specify which homework and problem
+   the student was working on. The `"bad"` field contains the ill-typed
+   program, and the `"fix"` field contains the student's fix. We define
+   a "fix" to an ill-typed program as the first subsequent program in
+   the time-series that we can determine to be solving the same homework
+   problem, and that has the correct type. Both `"bad"` and `"fix"` 
+   contain the minimal programs from the `"min"` field above.
+   
+   We determine which homework problem a program is solving by looking
+   at the names of the defined functions (this works because the
+   programs are already minimized). We determine whether a fix is valid
+   by checking that it has the expected type (we, of course, know the
+   expected types of all homework programs).
 
+   These programs are produced by the python3 script `scripts/extract_pairs.py`.
+   We provide Makefile targets `pairs{-fa15,-sp14}` for convenience.
+   **NOTE:** `extract_pairs.py` expects `ocaml` to be on your `PATH` as it will
+   check that the "fixes" typecheck against the expected type for each homework
+   problem.
