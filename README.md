@@ -123,10 +123,11 @@ We include two derived datasets.
    The `"hw"` and `"problem"` fields specify which homework and problem
    the student was working on. The `"bad"` field contains the ill-typed
    program, and the `"fix"` field contains the student's fix. We define
-   a "fix" to an ill-typed program as the first subsequent program in
-   the time-series that we can determine to be solving the same homework
-   problem, and that has the correct type. Both `"bad"` and `"fix"` 
-   contain the minimal programs from the `"min"` field above.
+   a "fix" to an ill-typed program as the first subsequent program the 
+   student submitted to the interpreter that 
+   (1) we can determine to be solving the same homework problem, and 
+   (2) has the correct type. 
+   Both `"bad"` and `"fix"` contain the minimal programs from the `"min"` field above.
    
    We determine which homework problem a program is solving by looking
    at the names of the defined functions (this works because the
