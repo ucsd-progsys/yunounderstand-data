@@ -88,7 +88,8 @@ Derived Data
 
 We include two derived datasets.
 
-1. A collection of distinct, ill-typed programs, located in
+1. A collection of distinct, minimal (i.e. derived from the `"min"`
+   field above), ill-typed programs, located in
    `data/derived/{sp14,fa15,comb}/prog`, extracted from the SP14
    (resp. FA15 and combined) dataset. The programs are further grouped
    into `cnstr` and `unify` folders. The `cnstr` folder contains
@@ -96,6 +97,10 @@ We include two derived datasets.
    (e.g. "This constructor takes 3 arguments but only 2 were supplied").
    The `unify` folder contains more general unification errors, which is
    the vast majority.
+   
+   For convenience, each `.ml` file is paired with a `.ml.out` file
+   containing the OCaml compiler's error message, and a `.orig.ml` file
+   containing the unminimized program (i.e. the `"body"` field above).
    
    These programs are produced by the python3 script `scripts/extract_programs.py`.
    We provide Makefile targets `progs{-fa15,-sp14,-comb}` for convenience.
