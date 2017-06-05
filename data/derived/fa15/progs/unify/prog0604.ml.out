@@ -1,6 +1,5 @@
-Characters 88-89:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'c) -> 'c
+Characters 29-30:
+  let abs x = if x < 0.0 then -x else x;;
+                               ^
+Error: This expression has type float but an expression was expected of type
+         int

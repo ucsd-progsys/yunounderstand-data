@@ -1,5 +1,6 @@
-Characters 29-43:
-  wwhile ((f, (f b) = b) , b);;
-          ^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 57-58:
+  | h :: t -> assoc d k t;;
+                    ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * 'b * 'c list
+       The type variable 'a occurs inside 'a * 'b * 'c list

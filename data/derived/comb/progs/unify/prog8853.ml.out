@@ -1,5 +1,5 @@
-Characters 8-9:
-  let _ = 1 && 1;;
-          ^
-Error: This expression has type int but an expression was expected of type
-         bool
+Characters 13-21:
+  let _ = eval (Neg(1));;
+               ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

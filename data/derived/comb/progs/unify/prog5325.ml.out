@@ -1,5 +1,5 @@
-Characters 49-59:
-  else mulByDigit (i-1) bigAdd l l;;
-       ^^^^^^^^^^
-Error: This function has type int -> 'a -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 182-191:
+  then (0, x::l)
+       ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

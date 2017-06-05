@@ -1,5 +1,7 @@
-Characters 160-162:
-  | 0 -> build (rand(), d-1)
-                    ^^
-Error: This expression has type unit but an expression was expected of type
-         int * int
+Characters 174-176:
+  in wwhile(gs, b);;
+            ^^
+Error: This expression has type (int -> int) -> int -> int
+       but an expression was expected of type
+         (int -> int) -> (int -> int) * bool
+       Type int -> int is not compatible with type (int -> int) * bool 

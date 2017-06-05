@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                          ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type int
+Characters 159-184:
+  then (1, 1::(((i+j+m)-10)::t))
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

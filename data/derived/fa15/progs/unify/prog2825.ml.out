@@ -1,5 +1,6 @@
-Characters 82-90:
-  let f a x = x ^ sep :: a in
-                  ^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 54-55:
+  let fixpoint (f,b) = wwhile (let g x=  (f,x = f x) in g,b);;
+                                                        ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

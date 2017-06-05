@@ -1,5 +1,5 @@
-Characters 47-82:
-  if n > 0 then n mod 10 + additivePersistence n/10;;
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 172-185:
+  if (sum + r) > 9 then ( int_of_float ((sum+r) /10),((sum+r) mod 10)::v) 
+                                       ^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         unit
+         float

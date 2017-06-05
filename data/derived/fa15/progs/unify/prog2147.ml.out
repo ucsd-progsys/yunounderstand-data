@@ -1,5 +1,5 @@
-Characters 156-166:
-  in wwhile((go, true), b);;
-            ^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 90-93:
+  | (x, y) when y = true -> wwhile (f b, x)
+                                    ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'a * bool

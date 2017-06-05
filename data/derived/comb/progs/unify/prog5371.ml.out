@@ -1,5 +1,5 @@
-Characters 8-15:
-  let _ = sumList digits 8888888888888888;;
-          ^^^^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 47-60:
+  else digitsOfInt n / 1;;
+       ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

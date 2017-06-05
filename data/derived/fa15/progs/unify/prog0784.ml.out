@@ -1,5 +1,5 @@
-Characters 75-76:
-  | h::t -> h n + sumList(n + h) xs;;
-                              ^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 421-447:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

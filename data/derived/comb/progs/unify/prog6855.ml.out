@@ -1,6 +1,5 @@
-Characters 124-125:
-  List.fold_left f base args;;
-                 ^
-Error: This expression has type int -> int -> int list list list
-       but an expression was expected of type int -> int -> int
-       Type int list list list is not compatible with type int 
+Characters 99-100:
+  (0, a * 10 + num1 + num2) in
+      ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

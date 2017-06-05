@@ -1,6 +1,5 @@
-Characters 90-91:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'c -> 'a -> 'd -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
-       The type variable 'b occurs inside 'd -> 'b
+Characters 177-178:
+  | Average(x, y)     -> ((eval(e, x, y) +. eval(e,x,y))/2.0)
+                                   ^
+Error: This expression has type expr but an expression was expected of type
+         float

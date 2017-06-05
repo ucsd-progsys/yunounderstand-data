@@ -1,5 +1,8 @@
-Characters 87-92:
-  let listZeros = clone 0 abs(numZeros) in
-                  ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 230-231:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type
+         int * int list -> int * int -> int list * int list
+       but an expression was expected of type
+         int * int list -> int * int -> int * int list
+       Type int list is not compatible with type int 

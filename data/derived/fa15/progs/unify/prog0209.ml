@@ -1,5 +1,5 @@
 
 let rec assoc (d,k,l) =
-  match k with
+  match (k, d) with
   | [] -> d
-  | (k',d')::t -> if k = k' then d' else assoc (d, k, t);;
+  | h::t -> if (k, d) = l then d else assoc (d, k, t);;

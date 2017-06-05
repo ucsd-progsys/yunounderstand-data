@@ -1,5 +1,5 @@
-Characters 47-82:
-  if n > 0 then n mod 10 + additivePersistence n/10;;
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         unit
+Characters 28-37:
+  let stringOfList f l = "["^(sepConcat ";" List.map f l)^"]";;
+                              ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

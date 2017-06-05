@@ -1,7 +1,5 @@
-Characters 84-85:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type (('a -> 'b) -> 'c) -> ('a -> 'b) -> 'c
-       but an expression was expected of type
-         (('a -> 'b) -> 'c) -> ('a -> 'b) -> ('a -> 'b) -> 'c
-       The type variable 'c occurs inside ('a -> 'b) -> 'c
+Characters 8-12:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+          ^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

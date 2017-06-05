@@ -1,2 +1,4 @@
 
-let rec clone x n = match n with | 0 -> [] | _ -> [x; clone x (n - 1)];;
+let sqsum xs =
+  let f a x = match x with | [] -> 0 | h::t -> a * a in
+  let base = List.hd xs in List.fold_left f base xs;;

@@ -93,7 +93,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = let f' = (f, f b = b) in wwhile (f',b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -124,6 +124,7 @@ type expr =
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
     | ThreshRev   of expr * expr * expr * expr	
+    | Square of expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -140,6 +141,7 @@ let rec exprToString e =
                               "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
     | ThreshRev (e1,e2,e3,e4) -> "(" ^ exprToString e1 ^ ">" ^ exprToString e2 ^
                                  "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
+    | Square (e1) -> "(" ^ exprToString ^ ")^2"
 ;;
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
@@ -161,6 +163,7 @@ let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
 let buildThreshRev(a,b,a_less,b_less) = ThreshRev(a,b,a_less,b_less)
+let buildSquare(e1) = Square(e1)
 
 
 let pi = 4.0 *. atan 1.0
@@ -188,6 +191,7 @@ let rec eval (e,x,y) =
           eval(e3,x,y)
         else 
           eval(e4,x,y)
+    | Square(e1) -> e1 *. e1
 ;;
 
 
@@ -232,6 +236,7 @@ let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
 let buildThreshRev(a,b,a_less,b_less) = ThreshRev(a,b,a_less,b_less)
+let buildSquare(e1) = Square(e1)
 
 
 let rec build (rand, depth) =
@@ -241,7 +246,7 @@ let rec build (rand, depth) =
       | 1 -> buildY()
 
   else 
-    match rand(0,6) with 
+    match rand(0,7) with 
       | 0 -> buildSine(build(rand, depth-1))
       | 1 -> buildCosine(build(rand, depth-1))
       | 2 -> buildAverage(build(rand, depth-1),build(rand, depth-1))
@@ -251,6 +256,7 @@ let rec build (rand, depth) =
 
       | 5 -> buildThreshRev(build(rand, depth-1),build(rand, depth-1),
                             build(rand, depth-1),build(rand, depth-1))
+      | 6 -> buildSquare(build(rand, depth-1))
 ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

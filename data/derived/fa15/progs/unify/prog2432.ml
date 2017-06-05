@@ -1,4 +1,10 @@
 
-let pipe fs = let f a x = x a in let base g y = y in List.fold_left f base fs;;
+let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
 
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let padZero l1 l2 =
+  let difference1 = (List.length l1) - (List.length l2) in
+  let difference2 = (List.length l2) - (List.length l1) in
+  if difference2 > 0
+  then ((l1 :: (clone 0 difference2)), l2)
+  else
+    if difference1 > 0 then (l1, (l2 :: (clone 0 difference1))) else (l1, l2);;

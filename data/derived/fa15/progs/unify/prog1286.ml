@@ -1,24 +1,10 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+type 'a set =
+  | Set of 'a list;;
 
-let pi = 4.0 *. (atan 1.0);;
+let del x s =
+  match s with | Set l -> Set (List.filter (fun z  -> z != "z") l);;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine e -> sin (pi * e)
-  | Cosine e -> cos (pi * (eval (e, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) + (eval (e2, x, y))) / 2
-  | Times (e1,e2) -> (eval (e1, x, y)) * (eval (e2, x, y))
-  | Thresh (e1,e2,e3,e4) ->
-      if (eval (e1, x, y)) < (eval (e2, x, y))
-      then eval (e3, x, y)
-      else eval (e4, x, y);;
+let testee = Set [2131; 123123; 4];;
+
+let _ = del 4 testee;;

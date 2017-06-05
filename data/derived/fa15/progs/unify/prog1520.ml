@@ -1,7 +1,9 @@
 
-let rec digitsOfInt n =
-  match n < 0 with
-  | true  -> []
-  | false  ->
-      let quotient = n / 10 in
-      if quotient = 0 then n mod 10 else quotient :: (digitsOfInt quotient);;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (x ^ ", ") in
+      let base = "" in let l = h in List.fold_left f base l;;
+
+let _ = sepConcat ", " ["foo"; "bar"; "baz"];;

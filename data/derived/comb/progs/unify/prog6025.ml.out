@@ -1,6 +1,5 @@
-Characters 77-121:
-  then padZero (clone l1 (List.length l2 - List.length l1)) l2
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list
+Characters 159-160:
+  List.fold_left f base l;;
+                        ^
+Error: This expression has type string but an expression was expected of type
+         'a list

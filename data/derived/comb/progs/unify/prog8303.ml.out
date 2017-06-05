@@ -1,5 +1,5 @@
-Characters 124-132:
-  let args = List.combine(l1, l2) in
-                         ^^^^^^^^
+Characters 29-38:
+  let fixpoint (f,b) = wwhile ((f, true),b);;
+                               ^^^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+       but an expression was expected of type 'c -> 'c * bool

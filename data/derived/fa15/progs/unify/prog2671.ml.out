@@ -1,7 +1,5 @@
-Characters 98-99:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> int) list -> 'a -> int
-       but an expression was expected of type
-         ('a -> int) list -> 'a -> ('a -> int) list
-       Type int is not compatible with type ('a -> int) list 
+Characters 68-73:
+  | Sine e' -> sin (3.142 * e')
+                    ^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

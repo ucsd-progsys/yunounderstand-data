@@ -1,6 +1,5 @@
-Characters 66-67:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'c -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'c -> 'a -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 361-366:
+  |Tangent(a) -> ("sin(pi*"^(exp a)^")/("("cos(pi*"^(exp a)^")")")");;
+                                    ^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

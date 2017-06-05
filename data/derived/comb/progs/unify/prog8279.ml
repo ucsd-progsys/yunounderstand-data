@@ -1,7 +1,10 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ (sepConcat sep x) in
-      let base = "" in let l = t in List.fold_left f base l;;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let _ = listReverse (explode w) true;;

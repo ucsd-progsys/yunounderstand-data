@@ -1,6 +1,5 @@
-Characters 85-86:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'c) -> 'c
+Characters 62-74:
+  |_-> bigAdd ((mulByDigit i-1 l) l);;
+                ^^^^^^^^^^^^
+Error: This expression has type 'a -> 'b list
+       but an expression was expected of type int

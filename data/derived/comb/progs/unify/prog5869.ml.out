@@ -1,0 +1,5 @@
+Characters 71-76:
+  | Sine e1              -> sin (3.142*(exprToString e1))
+                                 ^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

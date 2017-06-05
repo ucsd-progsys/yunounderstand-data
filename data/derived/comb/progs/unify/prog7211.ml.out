@@ -1,5 +1,4 @@
-Characters 64-66:
-  | [] -> []
-    ^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 18-19:
+  let rec eval (e,y,y) = 
+                    ^
+Error: Variable y is bound several times in this matching

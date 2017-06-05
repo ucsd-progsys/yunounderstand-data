@@ -1,4 +1,4 @@
-Characters 223-227:
+Characters 177-181:
   let (_, res) = List.fold_left f base args in
                                   ^^^^
 Error: This expression has type int * 'a list

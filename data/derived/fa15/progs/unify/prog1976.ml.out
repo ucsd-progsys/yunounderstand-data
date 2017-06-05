@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 3);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 499-500:
+  if eval(x12,x,y) < 0
+                     ^
+Error: This expression has type int but an expression was expected of type
+         float

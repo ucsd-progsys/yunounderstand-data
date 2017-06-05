@@ -1,5 +1,5 @@
-Characters 72-73:
-  (if (n mod 10) = 0 then n
-                          ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 65-99:
+  | h::t -> bigAdd((mulByDigit h l2), bigMul(t, l2));;
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

@@ -1,4 +1,6 @@
-Characters 49-60:
-  .........................(a, b) 
-  | _............
-Error: Variable a must occur on both sides of this | pattern
+Characters 37-38:
+  wwhile (f,f b = b);;
+                  ^
+Error: This expression has type 'a but an expression was expected of type
+         'a * bool
+       The type variable 'a occurs inside 'a * bool

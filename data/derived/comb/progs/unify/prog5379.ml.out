@@ -1,6 +1,5 @@
-Characters 82-84:
-  | (f, (h1, h2)) -> if h2 then wwhile (f, h1) else h1;;
-                                           ^^
-Error: This expression has type 'a but an expression was expected of type
-         'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 78-87:
+  else (acc + 1) (sumList (digits n)) in
+       ^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

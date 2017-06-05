@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> int
+Characters 359-364:
+  |Hoi(a,b) -> ("sin(pi*"^(exp a)^")/("("cos(pi*"^(exp b)^")")")");;
+                                  ^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

@@ -1,21 +1,7 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec assoc (d,k,l) =
+  let (h1,h2)::t = l in
+  match k with | h2 -> h1 | _ -> if l = [] then d else assoc (d, k, t);;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine e' -> "sin (pi * " ^ ((exprToString e') ^ ")")
-  | Cosine e' -> "cos (pi * " ^ ((exprToString e') ^ ")")
-  | Average (a,b) ->
-      "((" ^ ((exprToString a) ^ (" + " ^ ((exprToString b) ^ ")/2)")))
-  | Times (a,b) -> (exprToString a) ^ (" * " ^ (exprToString b))
-  | Thresh (a,b,c,d) ->
-      "(" ^ (a ^ ("< " ^ (b ^ (" ? " ^ (c ^ (" : " ^ (d ^ ")")))))));;
+let _ =
+  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;

@@ -1,6 +1,6 @@
-Characters 89-93:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 76-77:
+  |h::t -> [t] @ listReverse h;;
+                             ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

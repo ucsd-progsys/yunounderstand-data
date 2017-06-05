@@ -1,5 +1,5 @@
 
-let rec wwhile (f,b) =
-  let (x,y) = f b in match y with | false  -> x | true  -> wwhile (f, x);;
-
-let fixpoint (f,b) = wwhile ((), b);;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | h::t -> let f::e = h in if f = k then e else assoc d k t;;

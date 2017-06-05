@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 3);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type bool -> bool
-       Type int is not compatible with type bool 
+Characters 70-81:
+  else digitsOfInt (-1)  (n mod 10) :: return;;
+       ^^^^^^^^^^^
+Error: This function has type int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

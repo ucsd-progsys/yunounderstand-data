@@ -1,5 +1,6 @@
-Characters 166-167:
-  in (go x)
-         ^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 81-82:
+  wwhile (funt b, b);;
+                  ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

@@ -1,6 +1,5 @@
-Characters 184-189:
-  helper (seen',rest')
-          ^^^^^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 193-194:
+  | Average (e1,e2) -> ((eval (e1,x,y) +. eval (e2,x,y))/.2)
+                                                          ^
+Error: This expression has type int but an expression was expected of type
+         float

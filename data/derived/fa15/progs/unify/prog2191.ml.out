@@ -1,5 +1,4 @@
-Characters 382-402:
-  | Trip(t,r,s)     -> (sin(pi*.eval(r,x,y)) * tan(pi*.eval(s,x,y))) 
-                        ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 49-60:
+  .........................(a, b) 
+  | _............
+Error: Variable a must occur on both sides of this | pattern

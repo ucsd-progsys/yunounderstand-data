@@ -1,5 +1,5 @@
-Characters 69-85:
-  let prod = (mulByDigit l x) + o in
-             ^^^^^^^^^^^^^^^^
-Error: This expression has type int list
+Characters 21-30:
+  let _ = mulByDigit 9 [9;9;9;9];;
+                       ^^^^^^^^^
+Error: This expression has type 'a list
        but an expression was expected of type int

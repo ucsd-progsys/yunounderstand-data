@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 2);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type bool -> bool list
-       Type int is not compatible with type bool 
+Characters 18-19:
+  1@x;;
+  ^
+Error: This expression has type int but an expression was expected of type
+         'a list

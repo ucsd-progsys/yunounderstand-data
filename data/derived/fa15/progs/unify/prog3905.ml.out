@@ -1,5 +1,5 @@
-Characters 62-64:
-  else (n mod 10)::[]::digitsOfInt n/10;;
-                   ^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 29-51:
+  let fixpoint (f,b) = wwhile ((fixpointHelper(f, b)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

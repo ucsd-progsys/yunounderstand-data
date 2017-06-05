@@ -1,5 +1,5 @@
-Characters 54-70:
-  | h::t -> ((helper x) * h) @ tenEx (helper (x + 1)) t;;
-            ^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 76-77:
+  let f a x = let (x1, x2) = x in a + x in
+                                      ^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

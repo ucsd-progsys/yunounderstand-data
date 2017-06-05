@@ -1,5 +1,5 @@
-Characters 273-274:
-  (1,9) 
-     ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 30-39:
+  let stringOfList f l = "[" ^ (sepConcat "; " List.map f l) ^ "]";;
+                                ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

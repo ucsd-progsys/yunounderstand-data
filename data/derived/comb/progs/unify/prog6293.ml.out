@@ -1,5 +1,5 @@
-Characters 68-76:
-  wwhile (helper b,b);;
-          ^^^^^^^^
-Error: This expression has type bool * 'a
-       but an expression was expected of type 'b -> 'b * bool
+Characters 54-64:
+  x :: clone(n-1);;
+       ^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int list

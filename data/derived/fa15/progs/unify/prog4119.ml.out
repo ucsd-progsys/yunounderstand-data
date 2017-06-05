@@ -1,5 +1,5 @@
-Characters 97-98:
-  else mulByDigit (i-1) (bigAdd l l);;
-                                ^
+Characters 236-237:
+  | Cube e'		 -> (eval(e', x, y))**3
+                                   ^
 Error: This expression has type int but an expression was expected of type
-         int list
+         float

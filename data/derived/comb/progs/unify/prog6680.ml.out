@@ -1,5 +1,6 @@
-Characters 21-28:
-  let _ =mulByDigit 8 [4,3,2,7];;
-                       ^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd
-       but an expression was expected of type int
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type bool -> bool
+       Type int is not compatible with type bool 

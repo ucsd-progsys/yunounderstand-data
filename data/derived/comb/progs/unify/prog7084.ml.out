@@ -1,5 +1,5 @@
-Characters 107-108:
-  if place <= 0 then (place+1, res + (mulByDigit l2 a))
-                                                    ^
-Error: This expression has type int * int
-       but an expression was expected of type int list
+Characters 36-37:
+  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+                                      ^
+Error: This expression has type int but an expression was expected of type
+         'a list

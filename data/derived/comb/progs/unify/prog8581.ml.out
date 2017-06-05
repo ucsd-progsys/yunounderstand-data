@@ -1,5 +1,5 @@
-Characters 299-311:
-  else ((carry+1),[(h+b+c)/10]::[(h+b+c) mod 10]::t) in
-                  ^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 140-162:
+  | 2 -> buildSine(build(rand, depth-1))
+                  ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

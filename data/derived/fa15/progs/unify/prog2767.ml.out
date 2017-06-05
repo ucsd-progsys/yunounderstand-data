@@ -1,5 +1,5 @@
-Characters 51-52:
-  let fixpoint (f,b) = wwhile (let g= (f,b = f b) in g,b);;
-                                                     ^
-Error: This expression has type ('a -> 'a) * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 121-123:
+  | [] -> if a1 = 0 then [] else [(0.a1)]
+                                   ^^
+Error: This expression has type float
+       This is not a function; it cannot be applied.

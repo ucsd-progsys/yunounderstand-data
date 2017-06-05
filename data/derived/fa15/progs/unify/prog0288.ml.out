@@ -1,5 +1,5 @@
-Characters 94-116:
-  | l   -> sepConcat( ";", List.map(f, l));;
-                    ^^^^^^^^^^^^^^^^^^^^^^
+Characters 105-127:
+  | n -> if( n < 0 ) then ((clone 0 n) @ l1), l2;;
+                          ^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+       but an expression was expected of type unit

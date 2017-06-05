@@ -1,0 +1,5 @@
+Characters 43-51:
+  let fixpoint (f,b) = let newFunc b = (f b, notEqual b f b ) in wwhile (newFunc, b);;
+                                             ^^^^^^^^
+Error: This function has type 'a -> 'a -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,5 +1,6 @@
-Characters 188-218:
-  | Average(a, b)       -> ((eval(a, x, y) +. eval(b,x,y))/2.0)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 55-92:
+  digitsOfIntHelper (n - (n mod 10)/10) :: n mod 10;;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -65,7 +65,7 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = match f b with
-  | (b',c') -> if (c' = true) then wwhile(f,b') else b'
+  | (h,t) -> if t = true then f h else f h
 
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -115,13 +115,11 @@ type expr =
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec exprToString e = match e with 
-  | VarX                -> "x"
-  | VarY                -> "y"
-  | Sine(a)             -> "sin(pi*"^exprToString a^")"
-  | Cosine(b)           -> "cos(pi*"^exprToString b^")"
-  | Average(c, d)       -> "(("^exprToString c^"+"^exprToString d^")/2)"
-  | Times(e, f)         -> exprToString e^"*"^exprToString f
-  | Thresh(g, h, i, j)  -> "("^exprToString g^"<"^exprToString h^"?"^exprToString i^":"^exprToString j^")"
+  | VarX   -> Printf.sprintf "%s" VarX
+  | VarY   -> Printf.sprintf "%s" VarY
+
+
+
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
@@ -149,18 +147,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match (e,x,y) with
-  | x -> buildX()
+let rec eval (e,x,y) = failwith "to be written"
 
 
-  | (a,b,c) -> exprToString(a) 
-
-
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 

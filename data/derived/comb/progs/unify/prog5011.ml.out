@@ -1,6 +1,5 @@
-Characters 44-51:
-  let rec clone x n = if n = 1 then []@x else clone x::[x] n-1;;
-                                              ^^^^^^^
-Error: This expression has type int -> 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside int -> 'a list
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

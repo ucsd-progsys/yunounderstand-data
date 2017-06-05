@@ -1,5 +1,5 @@
-Characters 113-129:
-  else if List.length l1 < List.length l2 then padZero 0::l1 l2
-                                               ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b list * 'c list
+Characters 178-208:
+  | Average(v, w) -> (eval (v,x,y) +. eval (w,x,y))/2
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

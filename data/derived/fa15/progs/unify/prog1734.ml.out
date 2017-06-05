@@ -1,5 +1,6 @@
-Characters 115-131:
-  |x when x>=10->(x/10)::((x mod 10)+(mulByDigit i t))
-                                     ^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 29-30:
+  let f a x = x x a in
+                ^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'b -> 'c

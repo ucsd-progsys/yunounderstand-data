@@ -1,5 +1,5 @@
-Characters 44-48:
-  in wwhile ((fx),b);;
-             ^^^^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'a * bool
+Characters 60-68:
+  else digits n;;
+       ^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

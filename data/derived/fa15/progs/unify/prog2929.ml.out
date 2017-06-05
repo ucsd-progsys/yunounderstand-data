@@ -1,5 +1,5 @@
-Characters 91-100:
-  | Sine e    -> "sin(pi*"exprToString e")"
-                 ^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 291-303:
+  let args = List.combine List.rev l1 l2 in
+             ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

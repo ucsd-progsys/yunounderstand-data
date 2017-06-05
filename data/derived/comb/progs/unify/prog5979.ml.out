@@ -1,5 +1,6 @@
-Characters 213-225:
-  |Average(i1, i2) -> "((" ^ exprToString i1 ^ " + " ^ exprToString i2 ")/2)" 
-                                                       ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 97-98:
+  | (x,y) :: l -> if k = x then y else assoc (d,k,y);;
+                                                  ^
+Error: This expression has type 'a but an expression was expected of type
+         ('b * 'a) list
+       The type variable 'a occurs inside ('b * 'a) list

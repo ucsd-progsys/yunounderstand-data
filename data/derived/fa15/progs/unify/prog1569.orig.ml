@@ -1,581 +1,294 @@
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
+*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec sumList xs = match xs with
+  | [] -> 0 
+  | xf:: xb -> xf + sumList xb;;
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = sumList [1; 2; 3; 4]
+let _ = sumList [1; -2; 3; 5]
+let _ = sumList [1; 3; 5; 7; 9; 11]
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let rec add current next =
+  match current with
+      [] -> [next]
+    | front :: back -> front :: (add back next)
+let rec digitsOfInt n = 
+  if n <= 0 then [] else  add (digitsOfInt (n/10)) (n mod 10);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = digitsOfInt 3124
+let _ = digitsOfInt 352663
+
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = match l with 
-    [] -> d
-  | head:: tail -> let (name, number) = head in
-        if name = k
-        then number
-        else assoc(d, k, tail);;
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
-
-let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
+let digits n = digitsOfInt (abs n)
 
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-
-let removeDuplicates l = 
-  let rec helper (seen,rest) = 
-    match rest with 
-        [] -> seen
-      | h::t -> let seen' = if List.mem h seen
-                  then
-                    seen 
-                  else h::seen in
-          let rest' =  t in
-            helper (seen',rest') 
-  in
-    List.rev (helper ([],l))
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let rec wwhile (f,b) = let (b', c') = f b  in 
-    if c'
-    then wwhile (f, b')
-    else b'
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
-
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = let foo b =
-                       let result = f b in 
-                         if result = b
-                         then (result, false)
-                         else (result, true) in
-    wwhile (foo, b)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec additivePersistence n = 
+  let x = sumList (digits n) in
+    if x > 9 then 1 + additivePersistence x
+    else 1;;
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
-
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
+let _ = additivePersistence 9876
 
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec digitalRoot n = 
+  let x = sumList (digits n) in
+    if x > 9 then digitalRoot x
+    else x;;
 
-type expr = 
-      VarX
-    | VarY
-    | Sine     of expr
-    | Cosine   of expr
-    | Average  of expr * expr
-    | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr	
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = digitalRoot 9876
+
+
+
+
+let rec listReverse l = match l with
+    [] -> []
+  | front::back -> (listReverse back) ::front;;
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = listReverse [1; 2; 3; 4]
+let _ = listReverse ["a"; "b"; "c"; "d"]
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-    VarX		      -> "x"
-  | VarY			-> "y"
-  | Sine(e) 		-> "sin(pi*" ^ exprToString(e) ^ ")"
-  | Cosine(e)		-> "cos(pi*" ^ exprToString(e) ^ ")"
-  | Average(e1, e2)       -> "(("^exprToString(e1)^"+"^exprToString(e2)^")/2)"
-  | Times  (e1,e2)	->  exprToString(e1)^"*"^exprToString(e2)
-  | Thresh (e1,e2,e3,e4)	->  "("^exprToString(e1)^"<"^exprToString(e2)^"?"^exprToString(e3)^":"^exprToString(e4)^")"
+let explode s = 
+  let rec go i = 
+    if i >= String.length s 
+    then [] 
+    else (s.[i]) :: (go (i+1)) 
+  in
+    go 0
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
-
-let _ = exprToString sampleExpr1 
+let palindrome w = match with
+  |
 
 
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-(*XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let buildX()                       = VarX
-let buildY()                       = VarY
-let buildSine(e)                   = Sine(e)
-let buildCosine(e)                 = Cosine(e)
-let buildAverage(e1,e2)            = Average(e1,e2)
-let buildTimes(e1,e2)              = Times(e1,e2)
-let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-
-
-let pi = 4.0 *. atan 1.0
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let rec eval (e,x,y) = match e with
-    VarX		      -> x
-  | VarY			-> y
-  | Sine(e) 		-> sin(pi *. eval(e,x,y))
-  | Cosine(e)		-> cos(pi*. eval(e,x,y))
-  | Average(e1, e2)       -> (eval(e1,x,y) +. eval(e2,x,y))/. 2)
-| Times  (e1,e2)	->  eval(e1,x,y) *. eval(e2,x,y)
-| Thresh (e1,e2,e3,e4)	->  (eval(e1,x,y) < eval(e2,x,y)? eval(e3,x,y):eval(e4,x,y)
-
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-                            let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-                            let _ = eval (sampleExpr,0.5,0.2);;
-
-
-
-                            let eval_fn e (x,y) = 
-                              let rv = eval (e,x,y) in
-                                assert (-1.0 <= rv && rv <= 1.0);
-                                rv
-
-                            let sampleExpr =
-                              buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
-                                                                                          buildX()),buildTimes(buildCosine (buildCosine (buildAverage
-                                                                                                                                           (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
-                                                                                                               buildCosine (buildTimes (buildSine (buildCosine
-                                                                                                                                                     (buildY())),buildAverage (buildSine (buildX()), buildTimes
-                                                                                                                                                                                                       (buildX(),buildX()))))))),buildY())))
-
-                            let sampleExpr2 =
-                              buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
-
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            let rec build (rand, depth) = failwith "to be implemented"
-
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            let g1 () = failwith "to be implemented"  
-                            let g2 () = failwith "to be implemented"  
-                            let g3 () = failwith "to be implemented"  
-
-                            let c1 () = failwith "to be implemented"
-                            let c2 () = failwith "to be implemented" 
-                            let c3 () = failwith "to be implemented" 
-
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            *)
 
-                            let makeRand (seed1, seed2) = 
-                              let seed = (Array.of_list [seed1;seed2]) in
-                              let s = Random.State.make seed in
-                                (fun (x,y) -> (x + (Random.State.int s (y-x))))
+XXXX*)
 
 
-                            let rec rseq g r n =
-                              if n <= 0 then [] else (g r)::(rseq g r (n-1))
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            (*X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let toReal (i,n) = (float_of_int i) /. (float_of_int n)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let toIntensity z = int_of_float (127.5 +. (127.5 *. z))
 
 
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            let rec ffor (low,high,f) = 
-                              if low > high then () else 
-                                let _ = f low in 
-                                  ffor (low+1,high,f)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            let emitGrayscale (f,n,name) =
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let fname  = ("art_g_"^name) in
-                              let chan = open_out (fname^".pgm") in
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let n2p1 = n*2+1 in   
-                              let _ = output_string chan (Format.sprintf "P5 %d %d 255\n" n2p1 n2p1) in
-                              let _ = 
-                                ffor (-n, n, 
-                                      fun ix ->
-                                        ffor (-n, n, 
-                                              fun iy ->
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let x = toReal(ix,n) in
-                                                let y = toReal(iy,n) in
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let z = f (x,y) in
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let iz = toIntensity(z) in
-                                                  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                  output_char chan (char_of_int iz))) in 
-                                close_out chan;
-                                ignore(Sys.command ("convert "^fname^".pgm "^fname^".jpg"));
-                                ignore(Sys.command ("rm "^fname^".pgm"))
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-                            let doRandomGray (depth,seed1,seed2) =
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let g = makeRand(seed1,seed2) in
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let e = build (g,depth) in
-                              let _ = print_string (exprToString e) in
-                              let f = eval_fn e in
-                              (*XXXXXXXXXXXXXXXXXX*)
-                              let n = 150 in
-                              (*XXXXXXXXXXXXXXXXXX*)
-                              let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
-                                emitGrayscale (f,n,name)
-
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let emitColor (f1,f2,f3,n,name) =
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let fname  = ("art_c_"^name) in
-                              let chan = open_out (fname^".ppm") in
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let n2p1 = n*2+1 in   
-                              let _ = output_string chan (Format.sprintf "P6 %d %d 255\n" n2p1 n2p1) in
-                              let _ = 
-                                ffor (-n, n, 
-                                      fun ix ->
-                                        ffor (-n, n, 
-                                              fun iy ->
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let x = toReal(ix,n) in
-                                                let y = toReal(iy,n) in
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let z1 = f1 (x,y) in
-                                                let z2 = f2 (x,y) in
-                                                let z3 = f3 (x,y) in
 
-                                                (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                let iz1 = toIntensity(z1) in
-                                                let iz2 = toIntensity(z2) in
-                                                let iz3 = toIntensity(z3) in
 
-                                                  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                                                  output_char chan (char_of_int iz1);
-                                                  output_char chan (char_of_int iz2);
-                                                  output_char chan (char_of_int iz3);
-                                             )) in  
-                                close_out chan;
-                                ignore(Sys.command ("convert "^fname^".ppm  "^fname^".jpg"));
-                                ignore(Sys.command ("rm "^fname^".ppm")) 
 
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let doRandomColor (depth,seed1,seed2) =
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let g = makeRand (seed1,seed2) in
-                              (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                              let e1 = build (g, depth) in
-                              let e2 = build (g, depth) in
-                              let e3 = build (g, depth) in
 
-                              let _ = Format.printf "red   = %s \n" (exprToString e1) in
-                              let _ = Format.printf "green = %s \n" (exprToString e2) in
-                              let _ = Format.printf "blue  = %s \n" (exprToString e3) in
 
-                              let f1 = eval_fn e1 in
-                              let f2 = eval_fn e2 in
-                              let f3 = eval_fn e3 in
 
-                              (*XXXXXXXXXXXXXXXXXX*)
-                              let n = 150 in
-                              (*XXXXXXXXXXXXXXXXXX*)
-                              let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
-                                emitColor (f1,f2,f3,n,name)
 
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-                            type test = unit -> string
 
-                            let key = "" (*XXXXXXXX*)
-                            let prefix130 = "130" (*XXXXXXXX*)
-                            let print130 s = print_string (prefix130^">>"^s)
 
-                            exception ErrorCode of string
 
-                            exception TestException
 
-                            type result = Pass | Fail | ErrorCode of string
 
-                            let score = ref 0
-                            let max = ref 0
-                            let timeout = 300
 
-                            let runWTimeout (f,arg,out,time) = 
-                              try if compare (f arg) out = 0 then Pass else Fail
-                              with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)); ErrorCode "exception") 
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-                            let testTest () =
-                              let testGood x = 1 in
-                              let testBad x = 0 in 
-                              let testException x = raise TestException in
-                              let rec testTimeout x = testTimeout x in
-                                runWTimeout(testGood,0,1,5) = Pass &&  
-                                runWTimeout(testBad,0,1,5) = Fail &&  
-                                runWTimeout(testException,0,1,5) = ErrorCode "exception" && 
-                                runWTimeout(testTimeout,0,1,5) = ErrorCode "timeout"
+type test = unit -> string
 
-                            let runTest ((f,arg,out),points,name) =
-                              let _   = max := !max + points in
-                              let outs = 
-                                match runWTimeout(f,arg,out,timeout) with 
-                                    Pass -> (score := !score + points; "[pass]")
-                                  | Fail -> "[fail]"
-                                  | ErrorCode e -> "[error: "^e^"]"  in
-                                name^" "^outs^" ("^(string_of_int points)^")\n"
+let key        = ""     (*XXXXXXXX*)
+let prefix130  = "130"  (*XXXXXXXX*)
 
-                            (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-                            let explode s = 
-                              let rec _exp i = 
-                                if i >= String.length s then [] else (s.[i])::(_exp (i+1)) in
-                                _exp 0
+let print130 s = print_string (prefix130^">>"^s)
 
-                            let implode cs = 
-                              String.concat "" (List.map (String.make 1) cs)
+exception ErrorCode of string
 
-                            let drop_paren s = 
-                              implode (List.filter (fun c -> not (List.mem c ['(';' ';')'])) (explode s))
+exception TestException
 
-                            let eq_real p (r1,r2) = 
-                              (r1 -. r2) < p || (r2 -. r1) < p
+type result = Pass | Fail | ErrorCode of string
 
-                            let mkTest f x y name = runTest ((f, x, y), 1, name)
+let score = ref 0
+let max = ref 0
+let timeout = 300
 
-                            let badTest () = "WARNING: Your tests are not valid!!\n"
+let runWTimeout (f,arg,out,time) = 
+  try if compare (f arg) out = 0 then Pass else Fail
+  with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)); ErrorCode "exception") 
 
-                            let scoreMsg () = 
-                              Format.sprintf "Results: Score/Max = %d / %d \n" !score !max 
+let testTest () =
+  let testGood x = 1 in
+  let testBad x = 0 in 
+  let testException x = raise TestException in
+  let rec testTimeout x = testTimeout x in
+    runWTimeout(testGood,0,1,5) = Pass &&  
+    runWTimeout(testBad,0,1,5) = Fail &&  
+    runWTimeout(testException,0,1,5) = ErrorCode "exception" && 
+    runWTimeout(testTimeout,0,1,5) = ErrorCode "timeout"
 
-                            let sampleTests =
-                              [
-                                (fun () -> mkTest
-                                             assoc
-                                             (-1, "william", [("ranjit",85);("william",23);("moose",44)])
-                                             23
-                                             "sample: assoc 1"
-                                );
-                                (fun () -> mkTest 
-                                             assoc
-                                             (-1, "bob", [("ranjit",85);("william",23);("moose",44)])
-                                             (-1)
-                                             "sample: assoc 2"
-                                ); 
-                                (fun () -> mkTest 
-                                             removeDuplicates
-                                             [1;6;2;4;12;2;13;6;9]
-                                             [1;6;2;4;12;13;9]
-                                             "sample: removeDuplicates 2"
-                                );
-                                (fun () -> mkTest 
-                                             removeDuplicates
-                                             [1;1;1]
-                                             [1]
-                                             "sample: removeDuplicates 2"
-                                );
+let runTest ((f,arg,out),points,name) =
+  let _   = max := !max + points in
+  let outs = 
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
+      | Fail -> "[fail]"
+      | ErrorCode e -> "[error: "^e^"]"  in
+    name^" "^outs^" ("^(string_of_int points)^")\n"
 
-                                (fun () -> mkTest 
-                                             wwhile 
-                                             ((fun x -> let xx = x*x*x in (xx, xx < 100)), 2) 
-                                             512 
-                                             "sample: wwhile 1"
-                                ); 
-                                (fun () -> mkTest 
-                                             fixpoint
-                                             ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
-                                             739085
-                                             "sample: fixpoint 1"
-                                ); 
+let mkTest f x y name = runTest ((f, x, y), 1, name)
 
-                                (fun () -> mkTest 
-                                             emitGrayscale
-                                             (eval_fn sampleExpr, 150,"sample")
-                                             ()
-                                             "sample: eval_fn 1: manual"
-                                ); 
-                                (fun () -> mkTest 
-                                             emitGrayscale
-                                             (eval_fn sampleExpr2, 150,"sample2")
-                                             ()
-                                             "sample: eval_fn 2: manual"
-                                );
+let badTest () = "WARNING: Your tests are not valid!!\n"
 
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomGray (g1 ()))
-                                             ()
-                                             ()
-                                             "sample: gray 1 : manual"
-                                );
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomGray (g2 ()))
-                                             ()
-                                             ()
-                                             "sample: gray 2 : manual"
-                                );
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomGray (g3 ()))
-                                             ()
-                                             ()
-                                             "sample: gray 3 : manual"
-                                );
+let scoreMsg () = 
+  Printf.sprintf "Results: Score/Max = %d / %d \n" !score !max 
 
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomColor (c1 ()))
-                                             ()
-                                             ()
-                                             "sample: color 1 : manual"
-                                );
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomColor (c2 ()))
-                                             ()
-                                             ()
-                                             "sample: color 2 : manual"
-                                );
-                                (fun () -> mkTest 
-                                             (fun () -> doRandomColor (c3 ()))
-                                             ()
-                                             ()
-                                             "sample: color 3 : manual"
-                                )] 
+let doTest f = 
+  try f () with ex -> 
+    Printf.sprintf "WARNING: INVALID TEST THROWS EXCEPTION!!: %s \n\n"
+      (Printexc.to_string ex)
 
-                            let doTest f = 
-                              try f () with ex -> 
-                                Format.sprintf "WARNING: INVALID TEST THROWS EXCEPTION!!: %s \n\n"
-                                  (Printexc.to_string ex)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-                            let _ =
-                              let report = List.map doTest sampleTests                in
-                              let _      = List.iter print130 (report@([scoreMsg()])) in
-                              let _      = print130 ("Compiled\n")                    in
-                                (!score, !max)
+let sampleTests =
+  [
+    (fun () -> mkTest
+                 sumList
+                 [1;2;3;4]
+                 10
+                 "sample: sumList 1"
+    );
+    (fun () -> mkTest 
+                 sumList 
+                 [1;-2;3;5] 
+                 7 
+                 "sample: sumList 2"
+    ); 
+    (fun () -> mkTest 
+                 sumList 
+                 [1;3;5;7;9;11]
+                 36 
+                 "sample: sumList 3"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 3124 
+                 [3;1;2;4] 
+                 "sample: digitsOfInt 1"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 352663 
+                 [3;5;2;6;6;3] 
+                 "sample: digitsOfInt 2"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 31243
+                 [3;1;2;4;3] 
+                 "sample: digits 1"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 (-23422)
+                 [2;3;4;2;2]
+                 "sample: digits 2"
+    ); 
+    (fun () -> mkTest 
+                 additivePersistence 
+                 9876 
+                 2 
+                 "sample: additivePersistence1"
+    ); 
+    (fun () -> mkTest 
+                 digitalRoot 
+                 9876 
+                 3 
+                 "sample: digitalRoot"
+    ); 
+    (fun () -> mkTest 
+                 listReverse
+                 [1;2;3;4] 
+                 [4;3;2;1]
+                 "sample: reverse 1"
+    ); 
+    (fun () -> mkTest 
+                 listReverse 
+                 ["a";"b";"c";"d"]
+                 ["d";"c";"b";"a"] 
+                 "sample: rev 2"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "malayalam" 
+                 true
+                 "sample: palindrome 1"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "myxomatosis" 
+                 false
+                 "sample: palindrome 2"
+    )] 
 
+let _ =
+  let report = List.map doTest (sampleTests) in
+  let _ = List.iter print130 (report@([scoreMsg()])) in
+  let _ = print130 ("Compiled\n") in
+    (!score, !max)

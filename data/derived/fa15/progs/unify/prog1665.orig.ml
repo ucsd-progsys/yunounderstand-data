@@ -97,14 +97,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec helper(f,b)=
-  let x = f b in 
+let helper(f,b)=
+  let x = f b in
     match x with
       |b->(x,false)
-      |_->helper(f,x);;
+      |_->(x,true);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
+let fixpoint (f,b) = wwhile ((helper f b),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -138,23 +138,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine s -> String.concat "" ["sin(pi*";exprToString s;")"]
-    |Cosine s-> String.concat "" ["cos(pi*";exprToString s;")"]
-    |Average(s,p)-> String.concat "" ["((";exprToString s;"+";exprToString p;")/2"]
-    |Times(s,p)-> String.concat "" [exprToString s;"*";exprToString p]
-    |Thresh(s,p,r,d)-> String.concat "" ["(";exprToString s;"<";exprToString p;"?";exprToString r;":";exprToString d;")"]
+let rec exprToString e = failwith "to be written"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -176,40 +168,32 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with
-    |VarX->buildX()
-    |VarY->y
-    |Sine(e)->buildSine(e)
-    |Cosine(e)->cos(pi*.eval(e,x,y))
-    |Average(e1,e2)->((eval(e1,x,y)+.eval(e2,x,y))/.2.0)
-    |Times(e1,e2)->eval(e1,x,y)*.eval(e2,x,y)
-    |Thresh(a,b,a_less,b_less)->buildThresh(a,b,a_less,b_less)
+let rec eval (e,x,y) = failwith "to be written"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
-
-XXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXX
-
-XXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+
+
+let eval_fn e (x,y) = 
+  let rv = eval (e,x,y) in
+    assert (-1.0 <= rv && rv <= 1.0);
+    rv
+
+let sampleExpr =
+  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
+                                                              buildX()),buildTimes(buildCosine (buildCosine (buildAverage
+                                                                                                               (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
+                                                                                   buildCosine (buildTimes (buildSine (buildCosine
+                                                                                                                         (buildY())),buildAverage (buildSine (buildX()), buildTimes
+                                                                                                                                                                           (buildX(),buildX()))))))),buildY())))
+
+let sampleExpr2 =
+  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 

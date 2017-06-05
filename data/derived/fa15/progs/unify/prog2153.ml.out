@@ -1,0 +1,5 @@
+Characters 46-50:
+  let rec funt = fun x -> (funt f b, f b = b) in
+                           ^^^^
+Error: This function has type 'a -> 'b * 'c
+       It is applied to too many arguments; maybe you forgot a `;'.

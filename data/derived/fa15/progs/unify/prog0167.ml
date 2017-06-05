@@ -26,11 +26,4 @@ let bigAdd l1 l2 =
   removeZero (add (padZero l1 l2));;
 
 let rec mulByDigit i l =
-  match i with | 0 -> [] | 1 -> l | n -> bigAdd l (mulByDigit (i - 1) l);;
-
-let bigMul l1 l2 =
-  let f a x =
-    let (pow,total) = a in
-    ((pow + 1), (((bigAdd total) + (mulByDigit x l2)) @ (listZeros pow))) in
-  let base = (0, []) in
-  let args = List.rev l1 in let (_,res) = List.fold_left f base args in res;;
+  if i = 0 then [] else bigAdd (mulByDigit ((i - 1) l) l);;

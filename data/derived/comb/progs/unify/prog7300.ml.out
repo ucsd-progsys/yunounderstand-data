@@ -1,5 +1,6 @@
-Characters 132-146:
-  else [x*i/10] @ [(x*i) mod 10]+mulByDigit i x';;
-                  ^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 87-88:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type 'a -> 'b -> 'c -> ('a -> 'd) -> 'd
+       but an expression was expected of type 'a -> 'b -> 'a
+       The type variable 'a occurs inside 'c -> ('a -> 'd) -> 'd

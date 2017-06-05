@@ -1,5 +1,5 @@
-Characters 166-168:
-  mulByDigit i [let [h2]::t2 = t in [(h2+(h*i mod 10))]@[t2]];;
-                                                         ^^
-Error: This expression has type int list list
-       but an expression was expected of type int
+Characters 19-20:
+  let _ = eval (Poly(3,5,2,6),1,1);;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         expr

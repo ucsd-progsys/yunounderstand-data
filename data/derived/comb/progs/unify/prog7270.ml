@@ -1,5 +1,8 @@
 
-let rec removeZero l =
-  let h::t = l in match h with | [] -> [] | 0::[] -> removeZero t | _ -> t;;
+let rec wwhile (f,b) =
+  let (x,y) = f b in if y = false then x else wwhile (f, x);;
 
-let _ = removeZero [0; 0; 0; 1; 0; 0; 2];;
+let fixpoint (f,b) = wwhile ((f b), b);;
+
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

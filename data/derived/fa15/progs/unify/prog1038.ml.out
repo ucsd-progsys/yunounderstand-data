@@ -1,7 +1,5 @@
-Characters 101-106:
-  assoc (d,k,l');;
-  ^^^^^
-Error: This expression has type 'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a
-       but an expression was expected of type 'c
-       The type variable 'c occurs inside
-       'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a
+Characters 229-255:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

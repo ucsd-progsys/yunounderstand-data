@@ -97,15 +97,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let fixpoint (f,b) = wwhile (
-                       (let func input = 
-                          ((f input),((f input) != input)) 
-                        in func) 
+                       (let func input = ((f input),(not (f input) = input)) in func) 
                      ,b)
 ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+
+
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
 
@@ -135,23 +135,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    | VarX                 -> "x"
-    | VarY                 -> "y"
-    | Sine e1              -> "sin (pi*"^(exprToString e1)^")"
-    | Cosine e1            -> "cos (pi*"^(exprToString e1)^")"
-    | Average (e1,e2)      -> "(("^(exprToString e1)^" + "^(exprToString e2)^")/2)"
-    | Times (e1,e2)        -> (exprToString e1)^" * "^(exprToString e2)
-    | Thresh (e1,e2,e3,e4) -> "("^(exprToString e1)^"<"^(exprToString e2)^" ? "^(exprToString e3)^" : "^(exprToString e4)^")"
-;;
+let rec exprToString e = failwith "to be written"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -173,16 +165,7 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with
-    | VarX                 -> x
-    | VarY                 -> x
-    | Sine e1              -> sin (pi *. (eval e1))
-    | Cosine e1            -> cos (pi *. (eval e2))
-    | Average (e1,e2)      -> ((eval e1) +. (eval e2)) /. 2
-    | Times (e1,e2)        -> (eval e1) *. (eval e2)
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -47,7 +47,7 @@ let removeDuplicates l =
       | h::t -> 
           let seen' =  if List.mem h seen then seen else h :: seen in
           let rest' =  t in 
-            helper (seen',rest') 
+            	  helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
@@ -86,7 +86,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = let f' b = let b' = f b in (b',b <> b') in wwhile (f',b)
+let fixpoint (f,b) = wwhile (f,b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
 
@@ -115,42 +115,20 @@ type expr =
     | Cosine   of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr
-    | Golden   of expr
-    | MeanPi   of expr * expr * expr	
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with 
-  | VarX                               -> "x"
-  | VarY                               -> "y"
-  | Sine expr                          -> "sin(pi*"^exprToString expr^")"
-  | Cosine expr                        -> "cos(pi*"^exprToString expr^")"
-  | Average(expr1, expr2)              -> 
-      "("^exprToString expr1 ^ "+" ^ exprToString expr2 ^ ")/2"
-  | Times(expr1, expr2)                -> 
-      exprToString expr1 ^ "*" ^ exprToString expr2
-  | Thresh   (expr1,expr2,expr3,expr4) -> 
-      "("
-      ^ exprToString expr1 ^ "<"
-      ^ exprToString expr2 ^ "?"
-      ^ exprToString expr3 ^ ":" 
-      ^ exprToString expr4 ^ ")" 
-  | Golden expr -> "cos("^exprToString expr^"^2-"^exprToString expr^"-1)"
-  | MeanPi (expr1,expr2,expr3) -> 
-      "sin("
-      ^exprToString expr1^"+"
-      ^exprToString expr2^"+"
-      ^exprToString expr3^")";;
+let rec exprToString e = failwith "to be written"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString Golden(VarX)
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -172,15 +150,15 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX                   -> x
-  | VarY                   -> y
-  | Sine e'                -> sin pi *. eval (e',x,y)
-  | Cosine e'              -> cos pi *. eval (e',x,y)
-  | Average(e1, e2)        -> (eval (e1,x,y) +. eval (e2,x,y)) /. 2.0
-  | Times(e1, e2)          -> eval (e1,x,y) *. eval (e2,x,y)
-  | Thresh(e1,e2,e3,e4)    -> 
-      if eval (e1,x,y) < eval (e2,x,y) then eval (e3,x,y) else eval (e4,x,y);;
+let rec eval (e,x,y) = failwith "to be written"
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
 
 let eval_fn e (x,y) = 
   let rv = eval (e,x,y) in
@@ -198,10 +176,6 @@ let sampleExpr =
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr1,0.5,0.2);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -223,13 +197,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (18,0,1) ;;
-let g2 () = (18,3,2) ;;
-let g3 () = (18,9,7) ;; 
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (18,0,1);;
-let c2 () = (18,1,1);; 
-let c3 () = (18,2,2);; 
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -450,10 +424,10 @@ let testTest () =
 let runTest ((f,arg,out),points,name) =
   let _   = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -512,7 +486,7 @@ let sampleTests =
                  "sample: wwhile 1"
     ); 
     (fun () -> mkTest 
-                 fixpoint
+                 	fixpoint
                  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
                  739085
                  "sample: fixpoint 1"

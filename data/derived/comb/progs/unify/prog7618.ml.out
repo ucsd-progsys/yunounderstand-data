@@ -1,6 +1,6 @@
-Characters 91-92:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'b -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'b -> 'c) -> 'c
+Characters 29-33:
+  let fixpoint (f,b) = wwhile (fu f ,b);;
+                               ^^^^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

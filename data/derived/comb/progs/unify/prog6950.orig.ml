@@ -71,7 +71,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec wwhile (f,b) = 
   let res = f b in
     match res with
-      | (x, y) when y = true -> wwhile (f, x)
+      | (x, y) when y = true  -> wwhile (f, x)
       | (x, y) -> x
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -85,13 +85,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
+let dupe f = fun x -> (f x, f x)
+let _ = dupe 3 3
 let fixpoint (f,b) =
-  let isFPoint x = ((f x) - x) < 0 in
-  let rec test x =  
-    if isFPoint x then (x, true)
-    else (test (f b), false)
-  in wwhile(isFPoint, b)
+  let funt = match (f, b) with
+    | (f, f b) -> b
+    | _ -> 
+        wwhile (funt, b);;
 
 
 

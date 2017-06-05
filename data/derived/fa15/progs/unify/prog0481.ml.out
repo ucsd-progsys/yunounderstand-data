@@ -1,6 +1,6 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int -> int * bool
-       Type int is not compatible with type int -> int * bool 
+Characters 89-91:
+  | (f, (h1, h2)) -> if h2 then f h1 else wwhile (h1, h2);;
+                                                  ^^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'b
+       The type variable 'a occurs inside 'a -> 'b

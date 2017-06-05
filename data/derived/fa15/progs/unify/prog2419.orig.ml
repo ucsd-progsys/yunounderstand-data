@@ -28,11 +28,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = let a::x = xs in a*a in
+  let f a x = 
+    a + x*x in
   let base = 0 in
     List.fold_left f base xs
 
-      UNCOMMENT AFTER IMPLEMENTING THE ABOVE
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let _ = sqsum []
 let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
@@ -40,50 +41,50 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = failwith "to be implemented" in
-  let base = failwith "to be implemented" in
-    List.fold_left f base fs
+  let f a x = x a in
+  let base = ()  in
+    List.fold_left f base fs 
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXX
+let _ = pipe [] 2
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 2 
 
-*)
+
 
 
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = failwith "to be implemented" in
-      let base = failwith "to be implemented" in
-      let l = failwith "to be implemented" in
+      let f a x = a ^ sep ^ x  in
+      let base = h in
+      let l =  t in
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
+let _ = sepConcat ", " ["foo";"bar";"baz"]
+let _ = sepConcat "--" []
+let _ = sepConcat "" ["a";"b";"c";"d";"f"]
+let _ = sepConcat "X" ["hullo"]
 
 
-let stringOfList f l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let stringOfList f l = "[" ^  sepConcat "; " (List.map f l) ^ "]"
 
-*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+let _ = stringOfList (fun x -> x) ["foo"];;
+let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+
+
 
 
 
@@ -226,10 +227,10 @@ let testTest () =
 let runTest (f,arg,out,points,name) =
   let _ = max := !max + points in
   let outs = 
-    	match runWTimeout(f,arg,out,timeout) with 
-        	    Pass -> (score := !score + points; "[pass]")
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      	  | ErrorCode e -> "[error: "^e^"]"  in
+      | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

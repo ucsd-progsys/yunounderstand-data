@@ -1,5 +1,5 @@
-Characters 191-205:
-  let args = let (ar1, ar2) = padZero(l1 l2) in
-                              ^^^^^^^^^^^^^^
-Error: This expression has type int list -> int list * int list
+Characters 168-194:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
        but an expression was expected of type 'a * 'b

@@ -1,5 +1,5 @@
-Characters 218-233:
-  removeZero (add ((padZero l1 l2) (if l1 > l2 then l1 else l2)));;
-                   ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       This is not a function; it cannot be applied.
+Characters 378-379:
+  | NewOp1(e1, e2, e3) ->  (1/. sin(pi *. eval(e1,x,y))) *. (cos(pi *. eval (e1,x,y))) *. sin(pi *. eval(e1,x,y))
+                            ^
+Error: This expression has type int but an expression was expected of type
+         float

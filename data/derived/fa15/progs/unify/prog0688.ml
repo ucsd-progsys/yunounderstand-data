@@ -1,26 +1,5 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Mirana of expr
-  | Darius of expr* expr* expr;;
+let rec wwhile (f,b) =
+  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
 
-let buildCosine e = Cosine e;;
-
-let buildSine e = Sine e;;
-
-let buildThresh (e1,e2,e3) = Darius (e1, e2, e3);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let sampleExpr2 =
-  buildThresh
-    ((buildX ()), (buildY ()), (buildSine (buildX ())),
-      (buildCosine (buildY ())));;
+let fixpoint (f,b) = wwhile ((let f2 x = f x in ((f x), (3 < 4))), b);;

@@ -1,5 +1,5 @@
-Characters 223-248:
-  |_ -> if(fst x + snd x) > 9 then (1,(((fst x + snd x)mod 10)))
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+Characters 124-136:
+  (h::t) -> let sum = fst x + snd x + fst h in ((sum / 10)::(sum mod 10))::t in
+                                                            ^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
          int list

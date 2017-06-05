@@ -1,5 +1,5 @@
-Characters 284-286:
-  removeZero (add ( (if l1 > l2 then l1 else l2) (padZero l1 l2)));;
-                                                          ^^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type int list
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type (int -> int) list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

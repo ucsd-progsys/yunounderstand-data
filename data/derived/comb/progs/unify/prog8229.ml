@@ -1,2 +1,2 @@
 
-let rec wwhile (f,b) = match f b with | (b',c') -> if c' then f b' else b';;
+let pipe fs = let f a x = a x in let base f a = a in List.fold_left f base fs;;

@@ -1,4 +1,4 @@
-Characters 255-281:
+Characters 257-283:
   let (_, res) = List.fold_left f base args in
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type int list

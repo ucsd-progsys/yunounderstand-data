@@ -1,5 +1,4 @@
 
-let rec listReverse l =
-  match l with | [] -> [] | x::xs' -> (listReverse xs') @ x;;
+let stringOfList f l = "[" ^ ((List.fold_left f "" l) ^ "]");;
 
-let _ = listReverse ["a"; "b"; "c"; "d"];;
+let _ = stringOfList (fun x  -> x) ["foo"];;

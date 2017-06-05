@@ -1,5 +1,5 @@
-Characters 54-55:
-  let fixpoint (f,b) = wwhile(if f b = true then b else f f b, b);;
-                                                        ^
-Error: This function has type ('a -> 'a * bool) * 'a -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 47-48:
+  let _ = eval(Power(VarX, VarY, VarY), 0.001, -.5);;
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

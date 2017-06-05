@@ -1,5 +1,5 @@
-Characters 23-32:
-  let stringOfList f l = sepConcat ";" List.map f l;;
-                         ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 76-78:
+  | Sine e -> sin(pi*eva;(e,x,y))
+                  ^^
+Error: This expression has type float but an expression was expected of type
+         int

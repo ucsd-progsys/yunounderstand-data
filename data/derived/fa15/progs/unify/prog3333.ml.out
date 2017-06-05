@@ -1,6 +1,5 @@
-Characters 78-79:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'c) -> 'c
+Characters 55-73:
+  |h::t -> (h*h)::sumHelper t;;
+           ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

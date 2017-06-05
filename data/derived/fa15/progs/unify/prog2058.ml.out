@@ -1,5 +1,5 @@
-Characters 60-68:
-  else digits n;;
-       ^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 32-38:
+  let f a x = bigAdd (a::[0]) mulByDigit x l1 in
+              ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

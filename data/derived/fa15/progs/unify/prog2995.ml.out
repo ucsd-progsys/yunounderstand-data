@@ -1,5 +1,6 @@
-Characters 14-15:
-  let _ = clone 3 5;;
-                ^
-Error: This expression has type int but an expression was expected of type
-         (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd
+Characters 32-36:
+  let fixpoint (f,b) = if not(f = f(b)) then
+                                  ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

@@ -52,33 +52,31 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-(*X
+(*XXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX*)
-
+XXX*)
 
 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = match digits(n) with
-  | x :: [] -> 0
-  | h::t -> digitalRoot(digits(sumList(n)))
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 let rec listReverse l = match l with 
-  | [] -> []
-  | h::t -> listReverse t @ [h]  
+  | h::t -> [h] @ listReverse[t] 
 
 let _ = listReverse [1; 2; 3; 4]
 let _ = listReverse ["a"; "b"; "c"; "d"]
@@ -98,16 +96,15 @@ let explode s =
   in
     go 0
 
-let palindrome w = 
-  if (explode w = listReverse(explode w)) then
-    true
-  else 
-    false 
+let palindrome w = failwith "TBD"
 
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 

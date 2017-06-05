@@ -1,6 +1,5 @@
-Characters 87-88:
-  | h :: t -> assoc d k 
-                    ^
-Error: This expression has type 'a but an expression was expected of type
-         'a * 'b * ('b * ('c -> 'd)) list
-       The type variable 'a occurs inside 'a * 'b * ('b * ('c -> 'd)) list
+Characters 40-43:
+  let f a x = bigAdd ([a]::[0]) (mulByDigit x l1) in
+                      ^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

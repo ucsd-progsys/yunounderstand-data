@@ -227,9 +227,8 @@ Output:
 def runForEachJsonObject(item, hw_num, dic):
   if item['event']['type'] != 'eval': return
   for v in item['ocaml']:
-    if 'Syntax error' in v['out']: continue
     if v['in'].startswith('let _ ='): continue
-    if v['type'] != 'type' and v['out']: continue
+    if v['type'] not in ['', 'type']: continue
     if 'MINIMAL' in v['out']: continue
 
     label = find_function_name(hw_num, v['in'])
@@ -287,19 +286,19 @@ def build_dict(hw_num, problem):
   new_dict['fix'] = ''
   return new_dict
 
-# whether the program in an event has a type error (syntax error is already excluded)
+# whether the program in an event has a type error
 def is_bad(event):
-  return event['out'] != ''
+  return event['type'] == 'type'
 
 # whether the program in an event is an actual fix
 def is_true_fix(event, problem, hw_num):
   if 'failwith' in event['min']: return False         # if the student uses a 'failwith' to avoid type errors, skip it
-  ret = annotate_and_compile(event, problem, hw_num)
-  return False if 'rror' in ret else True
   # TODO: maybe we DO want to use the ERSP folks type_annotate_and_compile check?
   # would restrict to programs that not only type-check, but have the CORRECT type.
   # better training source?
   #return True
+  ret = annotate_and_compile(event, problem, hw_num)
+  return False if 'rror' in ret else True
 
 # given a list of problems, find all bad-fix pairs and write to the output file
 def pair_up(hw_num, problem, list_of_events, outputFile):

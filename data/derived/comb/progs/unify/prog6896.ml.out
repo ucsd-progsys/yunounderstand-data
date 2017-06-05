@@ -1,6 +1,5 @@
-Characters 96-100:
-  in wwhile ((fx), f);;
-             ^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 66-77:
+  else let n2 = n / 10 in digitsOfInt n2 append [n2];;
+                          ^^^^^^^^^^^
+Error: This function has type int -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

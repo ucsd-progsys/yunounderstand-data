@@ -91,7 +91,7 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 
 let rec clone x n = if ( n < 1 ) then [] else
     match n with
-      | _ -> x :: clone x (n-1)
+      | _ -> [x] @ clone x (n-1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -131,31 +131,27 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (x1,x2) = x in 
-      let (a1,a2) = a in
-        if List.length a1 = 0 then
-          ( ((x1+x2) / 10) :: [0], (x1+x2) mod 10 )
-        else
-          let c::c' = a1 in
-            ( a1 @ [(x1+x2+c) / 10], a2 @ (x1+x2+c) mod 10 )
-    in 
-    let base  = ([],[]) in
-    let args = List.combine l1 l2 in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let rec mulByDigit i l = match l with
+  | []    -> []
+  | x::x'::x'' -> [(x*i)/10] @ [((x*i) mod 10) + x']@ mulByDigit i x' @ x''
 
 
-let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

@@ -1,5 +1,6 @@
-Characters 492-495:
-  | NewOp1(e1, e2, e3)     -> "(" "1/sin(pi*" ^ exprToString e1 ^ ")" ^ "cos(pi*" ^ exprToString e1 ^ ")" ^ "sin(pi*" ^ exprToString e1 ^ ")" ^")"
-                              ^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 135-136:
+  let seen' = if List.mem h t then h else h::t in
+                                          ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,5 +1,7 @@
-Characters 45-51:
-  let fixpoint (f,b) = wwhile ( let g = f b in (f, g),b);;
-                                               ^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 296-297:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int list -> int list -> int * int list
+       but an expression was expected of type
+         int list -> int list -> int list
+       Type int * int list is not compatible with type int list 

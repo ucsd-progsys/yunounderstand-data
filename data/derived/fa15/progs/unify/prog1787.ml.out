@@ -1,5 +1,5 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 146-154:
+  (h,t::c) in
+  ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

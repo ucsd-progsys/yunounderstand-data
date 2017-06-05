@@ -1,5 +1,6 @@
-Characters 66-67:
-  | 0  -> removeZero t
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type 'a list
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int -> int * bool
+       Type int is not compatible with type int -> int * bool 

@@ -1,5 +1,7 @@
 
-let f a x = a * a;;
+let helper (f,b) = let x = f b in (x, (x != b));;
 
-let sqsum xs =
-  let f a x = (a * a) + (f a) in let base = x in List.fold_left f base xs;;
+let rec wwhile (f,b) =
+  let (x,y) = f b in match y with | false  -> x | true  -> wwhile (f, x);;
+
+let fixpoint (f,b) = wwhile ((helper (f, b)), b);;

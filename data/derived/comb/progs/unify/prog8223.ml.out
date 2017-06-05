@@ -1,5 +1,5 @@
-Characters 51-57:
-  else append digitsOfInt(n/10) [n];;
-       ^^^^^^
-Error: This function has type 'a list -> 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 140-144:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

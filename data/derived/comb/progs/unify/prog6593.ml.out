@@ -1,5 +1,5 @@
-Characters 70-98:
-  let r=(mulByDigit o (List.rev l2))+b in
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 94-113:
+  |x when x>=10->((x/10),(x mod 10))@(multiHelper i t)
+                 ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

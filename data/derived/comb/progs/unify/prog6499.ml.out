@@ -1,5 +1,6 @@
-Characters 69-71:
-  |Sine(e)->sin(pi*e)
-                ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 52-54:
+  let fixpoint (f,b) = wwhile (( f b = let rr=f b in (rr, rr=b)),b);;
+                                                      ^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

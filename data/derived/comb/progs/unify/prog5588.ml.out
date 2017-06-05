@@ -1,6 +1,5 @@
-Characters 47-65:
-  if n < 0 then [] else digitsOfInt (n/10)::([]@[(n mod 10)]);;
-                        ^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 478-493:
+  | Darius( e1, e2, e3 )     -> (eval (e1, x, y) + eval (e2, x, y)) mod eval (e3, x, y);;
+                                 ^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

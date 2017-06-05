@@ -1,5 +1,5 @@
-Characters 16-19:
-  let _ = bigMul [1,2] [1,2];;
-                  ^^^
-Error: This expression has type 'a * 'b
+Characters 69-81:
+  let prod = mulByDigit x + o in
+             ^^^^^^^^^^^^
+Error: This expression has type int list -> int list
        but an expression was expected of type int

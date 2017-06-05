@@ -1,5 +1,5 @@
-Characters 82-86:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type int but an expression was expected of type
-         ('a -> 'b) -> 'a -> 'b
+Characters 139-150:
+  | 2 -> buildCosine build(rand,depth-1)
+         ^^^^^^^^^^^
+Error: This function has type expr -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

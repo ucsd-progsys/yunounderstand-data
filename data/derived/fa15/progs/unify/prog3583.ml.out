@@ -1,5 +1,5 @@
-Characters 171-174:
-  (pad::l1)::l2;;
-   ^^^
-Error: This expression has type int list
+Characters 67-76:
+  | false -> x :: clone x n-1;;
+                  ^^^^^^^^^
+Error: This expression has type 'a list
        but an expression was expected of type int

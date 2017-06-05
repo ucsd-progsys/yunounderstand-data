@@ -1,5 +1,5 @@
-Characters 161-174:
-  in makeString l';;
-     ^^^^^^^^^^^^^
-Error: This expression has type string but an expression was expected of type
+Characters 303-304:
+  let args = List.rev(List.combine 0::l1 0::l2) in
+                                   ^
+Error: This expression has type int but an expression was expected of type
          'a list

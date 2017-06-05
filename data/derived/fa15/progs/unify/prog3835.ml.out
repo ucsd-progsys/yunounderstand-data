@@ -1,5 +1,3 @@
-Characters 29-49:
-  let fixpoint (f,b) = wwhile ((fixpointHelper f b),b);;
-                               ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 526-544:
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

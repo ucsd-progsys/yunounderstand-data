@@ -1,6 +1,5 @@
-Characters 151-152:
-  let seen' = (if (List.mem h seen) then [] else (seen) @ h) in
-                                                          ^
-Error: This expression has type 'a but an expression was expected of type
+Characters 15-16:
+  let _ = helper 6;;
+                 ^
+Error: This expression has type int but an expression was expected of type
          'a list
-       The type variable 'a occurs inside 'a list

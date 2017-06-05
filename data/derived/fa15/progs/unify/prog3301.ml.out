@@ -1,5 +1,5 @@
-Characters 23-26:
-  let stringOfList f l = "[" sepConcat "" (List.map f l) ^ "]";;
-                         ^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 107-110:
+  |Cosine(e) -> cos*(pi*. eval (e,x,y))
+                ^^^
+Error: This expression has type float -> float
+       but an expression was expected of type int

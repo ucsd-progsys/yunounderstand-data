@@ -1,5 +1,5 @@
-Characters 28-29:
-  let _ = bigMul [9;9;9;9;9] [9;9;9;9;9];;
-                              ^
-Error: This expression has type int but an expression was expected of type
-         int * int
+Characters 93-99:
+  | 1 -> buildY
+         ^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

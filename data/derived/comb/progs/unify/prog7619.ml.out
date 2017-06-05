@@ -1,6 +1,6 @@
-Characters 147-148:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string list list
-       but an expression was expected of type string list
-       Type string list is not compatible with type string 
+Characters 20-25:
+  let fu x =  (fu, x< fu(x));;
+                      ^^^^^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a
+       The type variable 'a occurs inside ('a -> 'a) * bool

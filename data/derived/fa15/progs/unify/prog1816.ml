@@ -1,12 +1,7 @@
 
-let helper f b = if (f b) = b then (true, b) else (false, (f b));;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | (name,age)::l' -> if k = name then age else assoc (d, k, l');;
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
-
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) = wwhile ((helper f), b);;
-
-let _ = fixpoint (collatz, 1);;
+let _ = assoc ([(1, 1)], "a", [("ca", [(1, 2)]); ("a", [(2, 2, 3)])]);;

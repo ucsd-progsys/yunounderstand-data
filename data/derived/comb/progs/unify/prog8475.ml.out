@@ -1,5 +1,6 @@
-Characters 139-151:
-  | Sine sin -> Printf.printf ("sin(pi*%s)" sin);
-                               ^^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 28-81:
+  ............................(
+  fun input -> let b = (f input) in (b, b!=input)
+  ,b)..
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

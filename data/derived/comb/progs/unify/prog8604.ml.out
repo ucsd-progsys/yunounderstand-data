@@ -1,5 +1,5 @@
-Characters 99-113:
-  | h::t -> if!(List.mem h t) then h::rest in (
-               ^^^^^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a ref
+Characters 487-489:
+  | Oscillate   m4	    -> sin(pi*1.0/.eval(m4,x,y));;
+                              ^^
+Error: This expression has type float but an expression was expected of type
+         int

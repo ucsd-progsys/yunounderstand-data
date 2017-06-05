@@ -1,10 +1,9 @@
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in match c' with | true  -> wwhile (f, b') | false  -> b';;
+let rec mulByDigit i l =
+  let f a x =
+    let (carry,accList) = a in
+    (((carry + (x * i)) / 10), (((carry + (x * i)) mod 10) :: accList)) in
+  let base = (0, []) in
+  let newlist = List.rev (0 :: l) in List.fold_left f base newlist;;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) = wwhile ((f b), b);;
-
-let _ = fixpoint (collatz, 1);;
+let _ = mulByDigit 8 [(4, 3, 2, 7)];;

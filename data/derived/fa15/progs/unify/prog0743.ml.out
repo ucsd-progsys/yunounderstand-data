@@ -1,5 +1,5 @@
-Characters 8-19:
-  let _ = digitsOfInt -10;;
-          ^^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int
+Characters 45-54:
+  let fixpoint (f,b) = wwhile ((let b = f b in (b, b!=b)), b);;
+                                               ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

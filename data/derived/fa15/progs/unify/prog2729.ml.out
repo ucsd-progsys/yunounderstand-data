@@ -1,5 +1,5 @@
-Characters 48-56:
-  else n mod 10 @ digitofInt n/10;;
-       ^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 8-12:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+          ^^^^
+Error: This function has type ('a list -> 'a list) list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

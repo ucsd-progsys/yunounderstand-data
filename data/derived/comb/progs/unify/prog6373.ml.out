@@ -1,5 +1,6 @@
-Characters 125-138:
-  if n = 0 then [remainder] else digitsOfInt n/10 @ [remainder];;
-                                 ^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 172-186:
+  in fst(padZeroLists) snd(padZeroLists)
+        ^^^^^^^^^^^^^^
+Error: This expression has type int list * int list
+       but an expression was expected of type ('a -> 'b -> 'c) * 'd
+       Type int list is not compatible with type 'a -> 'b -> 'c 

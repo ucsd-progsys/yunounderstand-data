@@ -1,11 +1,4 @@
 
-let rec addHelper (t,u) =
-  match List.rev t with
-  | [] -> []
-  | h::t ->
-      (match List.rev u with
-       | [] -> []
-       | h'::t' ->
-           if (h + h') > 10
-           then (addHelper t t') @ [(1 + h') + h]
-           else (addHelper t t') @ [h' + h]);;
+let pipe fs = let f a x a = x in let base f = f in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

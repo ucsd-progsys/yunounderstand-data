@@ -38,42 +38,48 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = (fun n -> x (a n)) in
-  let base = (fun f -> f) in
+  let f a x = (fun result -> a x) in
+  let base = f 0 in
     List.fold_left f base fs
 
+
 let _ = pipe [] 3
+
 let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+
 let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+
+
 
 
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = a ^ sep ^ x in
-      let base = h in
-      let l = t in
+      let f a x = failwith "to be implemented" in
+      let base = failwith "to be implemented" in
+      let l = failwith "to be implemented" in
         List.fold_left f base l
 
 
-let _ = sepConcat ", " ["foo";"bar";"baz"]
-let _ = sepConcat "---" []
-let _ = sepConcat "" ["a";"b";"c";"d";"e"]
-let _ = sepConcat "X" ["hello"]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let stringOfList f l = failwith "to be implemented"
 
-let stringOfList f l = match l with 
-  | [] -> "]"
-  | h :: t -> 
-      let f a x = a ^ ";" ^ x in
-      let base = h in
-      let l = t in
-        "[" ^ List.fold_left f base l
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-let _ = stringOfList (fun x -> x) ["foo"];;
-let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 

@@ -1,5 +1,5 @@
-Characters 69-78:
-  let rec clone x n = if n < 1 then [] else if n = 1 then [x] else x:: clone x n-1;;
-                                                                       ^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 109-112:
+  | h::t -> let seen' = if not List.mem h seen
+                           ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

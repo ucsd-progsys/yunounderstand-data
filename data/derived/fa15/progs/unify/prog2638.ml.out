@@ -1,5 +1,6 @@
-Characters 46-47:
-  | VarX -> 1 *. x
-            ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 134-138:
+  then h::seen
+          ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list list
+       The type variable 'a occurs inside 'a list list

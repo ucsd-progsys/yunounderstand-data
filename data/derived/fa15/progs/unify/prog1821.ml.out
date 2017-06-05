@@ -1,6 +1,5 @@
-Characters 76-80:
-  let fixpoint (f,b) = let f1 f2 x= if f2 x=x then false else true in wwhile (f1 f,b);;
-                                                                              ^^^^
-Error: This expression has type 'a -> bool
-       but an expression was expected of type 'a -> 'a * bool
-       Type bool is not compatible with type 'a * bool 
+Characters 26-27:
+  let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
+                            ^
+Error: This expression has type int but an expression was expected of type
+         'a list list

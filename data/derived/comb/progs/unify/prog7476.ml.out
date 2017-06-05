@@ -1,5 +1,0 @@
-Characters 88-92:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type int but an expression was expected of type
-         bool

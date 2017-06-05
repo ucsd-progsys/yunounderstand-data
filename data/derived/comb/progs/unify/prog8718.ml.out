@@ -1,5 +1,6 @@
-Characters 66-76:
-  | h::t -> matchHeads explode w;;
-            ^^^^^^^^^^
-Error: This function has type 'a list list -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 122-124:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

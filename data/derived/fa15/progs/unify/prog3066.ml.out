@@ -1,5 +1,8 @@
-Characters 84-93:
-  let fixpoint (f,b) = wwhile (let x = (f b) in match x with | b -> (x, false) | _ -> (x, true), b);;
-                                                                                      ^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type bool -> bool * bool
+Characters 31-32:
+  let rec clone x n = x List.map x n;;
+                                 ^
+Error: This expression has type
+         (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd -> 'e
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside
+       (('a -> 'b) -> 'a list -> 'b list) -> 'c -> 'd -> 'e

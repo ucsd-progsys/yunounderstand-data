@@ -1,5 +1,5 @@
-Characters 14-15:
-  let _ = build(1, 0);;
-                ^
-Error: This expression has type int but an expression was expected of type
-         int * int -> int
+Characters 29-47:
+  let fixpoint (f,b) = wwhile ((fpHelper (f,b,b)), b);;
+                               ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -4,16 +4,12 @@ XXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
 let rec sumList xs = match xs with
-  | [] -> 0
-  | (h::t) -> h + sumList t
-;;
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+  | [] -> 0 
+  | h::t -> h + sumList t
 
 let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -22,18 +18,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let rec digitsOfInt n = 
-  if n <= 0
-  then []
-  else digitsOfInt(n/10) @ [n mod 10]
+  if n <= 0 
+  then  []
+  else (digitsOfInt (n/10))@((n mod 10)::[]);; 
 
-;;
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = digitsOfInt (44)
+let _ = digitsOfInt 3124
 let _ = digitsOfInt 352663
-
 
 
 
@@ -44,7 +34,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let digits n = digitsOfInt (abs n) 
+let digits n = digitsOfInt (abs n)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -61,36 +51,46 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX*)
+
+let rec helper n x = match digits n with 
+  | [] -> 0 
+  | h::t -> if sumList(digits n) >= 10 
+      then helper (sumList(digits n)) (x+1)
+      else x
+
 let rec additivePersistence n = 
   if n < 10 
-  then 1
-  else additivePersistence sumList digitsOfInt n
-;;
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+  then helper n 0
+  else helper n 1
 
 let _ = additivePersistence 9876
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = failwith "TBD"
+let rec digitalRoot n = 
+  if (sumList(digits n)) >= 10 
+  then digitalRoot (sumList(digits n))
+  else (sumList(digits n))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
+let _ = digitalRoot 9876
 
 
-let rec listReverse l = failwith "TBD"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let rec listReverse l = match l with 
+  | [] -> [] 
+  | h::t -> (listReverse t) @ (h::[]) 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let _ = listReverse [1; 2; 3; 4]
+let _ = listReverse ["a"; "b"; "c"; "d"]
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -105,15 +105,29 @@ let explode s =
   in
     go 0
 
-let palindrome w = failwith "TBD"
+let getHead h = match h with 
+  | [] -> []
+  | h::t -> h
+
+let getTail t = match t with 
+  | [] -> []
+  | h::t -> t
+
+let rec matchHeads x = match x with 
+  | [] -> true 
+  | h::t -> if (h) = (getHead (listReverse x))
+      then matchHeads (getTail(listReverse t))
+      else false 
+
+let palindrome w = match (explode w) with 
+  | [] -> true
+  | h::t -> matchHeads (explode w)
+
+let _ = palindrome "bob"
+let _ = palindrome "malayalam"
+let _ = palindrome "myxomatosis"
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
 
 
 

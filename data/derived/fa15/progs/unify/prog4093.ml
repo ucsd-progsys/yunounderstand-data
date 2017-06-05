@@ -1,3 +1,3 @@
 
-let rec clone x n =
-  if n <= 0 then [] else if n = 1 then [x] else x :: ((clone x n) - 1);;
+let rec assoc (d,k,l) =
+  match k with | [] -> d | h::t -> if k = h then h else assoc d k t;;

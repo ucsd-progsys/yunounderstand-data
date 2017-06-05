@@ -1,5 +1,5 @@
-Characters 29-41:
-  let fixpoint (f,b) = wwhile ((f, f < 100),b);;
-                               ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 176-182:
+  |h'::t' -> if h+h' > 10 then addHelper t t' @ [1 + h' + h] else addHelper t t'@[h'+h]
+                                                                                 ^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

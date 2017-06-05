@@ -1,0 +1,5 @@
+Characters 468-475:
+  | Squares e         -> exprToString e  "*" exprToString e
+    ^^^^^^^
+Error: This variant pattern is expected to have type expr
+       The constructor Squares does not belong to type expr

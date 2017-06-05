@@ -1,5 +1,5 @@
-Characters 121-133:
-  if (j+k>10) then j=1,k=j+k-10 else j=0 k=j+k-10 in 
-                   ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 225-229:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int * int list

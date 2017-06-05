@@ -1,10 +1,19 @@
 
-let rec wwhile (f,b) =
-  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
+let rec endChar l =
+  match l with | [] -> [] | h::[] -> [h] | h::t -> endChar t;;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let fixpoint (f,b) = wwhile (f, b);;
+let rec removeLast l =
+  match l with | [] -> [] | h::[] -> [] | h::t -> h :: (removeLast t);;
 
-let _ = fixpoint (collatz, 1);;
+let palindrome w =
+  let rec palin ls =
+    match ls with
+    | [] -> true
+    | h::[] -> true
+    | h::t -> if h = (endChar t) then palin (removeLast t) else false in
+  palin (explode w);;

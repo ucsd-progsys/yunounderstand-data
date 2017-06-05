@@ -1,5 +1,6 @@
-Characters 359-363:
-  | Thresh(a, b, c, d)  -> eval(a, x, y) *. eval(b, x, y) *. eval(c, x, y) *. eval(d, x, y)
-                                                                              ^^^^
-Error: This function has type expr * float * float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 55-92:
+  digitsOfIntHelper (n - (n mod 10)/10) :: [n mod 10];;
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

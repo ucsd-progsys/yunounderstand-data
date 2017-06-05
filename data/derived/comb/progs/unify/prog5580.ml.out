@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)];;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 103-117:
+  | Sine e    -> "sin(pi*" ^ exprToString e^ ")"
+                             ^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

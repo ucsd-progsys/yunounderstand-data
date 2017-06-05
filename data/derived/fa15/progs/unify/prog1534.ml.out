@@ -1,5 +1,5 @@
-Characters 528-541:
-  | Square ex   ->  (eval ex,x,y) *. eval(ex,x,y)
-                    ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type float
+Characters 121-147:
+  ( (x1 + x2) / 10, sum @ ((x1 + x2 + carry) mod 10) ) in
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

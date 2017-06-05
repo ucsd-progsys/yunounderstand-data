@@ -1,5 +1,5 @@
-Characters 39-48:
-  let fixpoint (f,b) = wwhile ((fun y -> (b = f b)),b);;
-                                         ^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a * bool
+Characters 109-156:
+  (fun (x,y) -> (x + (Random.State.int s (y-x))))
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This function has type int * int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

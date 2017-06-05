@@ -1,0 +1,6 @@
+Characters 158-217:
+  else if  List.length l1 < List.length l2 then [clone 0 ((List.length l2) - (List.length l1)) @ l1] @ [l2]
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int list
+       Type int list is not compatible with type int 

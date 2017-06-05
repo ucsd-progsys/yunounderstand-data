@@ -1,5 +1,5 @@
-Characters 54-55:
-  let base = 0 "to be implemented" in
-             ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 96-119:
+  | Sine sine		    -> ""^sin(pi*.eval(sine,x,y))
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         string

@@ -1,5 +1,5 @@
-Characters 82-85:
-  | 0 -> if (rand(0.0,2.0) = 0.0) then Varx else Vary
-                             ^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 264-267:
+  | Average(c, d)       -> "(("^exprToString c^"+"^exprToString d^")""/2)"
+                                                                  ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

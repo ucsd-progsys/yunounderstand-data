@@ -1,5 +1,5 @@
-Characters 66-67:
-  | 0  -> removeZero t
-    ^
-Error: This pattern matches values of type int
-       but a pattern was expected which matches values of type 'a list
+Characters 76-77:
+  let (x,y) = h in if(x = k) then y else assoc(d,k,t);;
+              ^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

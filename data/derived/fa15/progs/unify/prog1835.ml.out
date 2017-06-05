@@ -1,5 +1,5 @@
-Characters 346-447:
-  |6->buildThresh(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1));;
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd * 'e
-       but an expression was expected of type expr * expr * expr * expr
+Characters 36-41:
+  let fixpoint (f,b) = wwhile (helper (f,b),b);;
+                                      ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c

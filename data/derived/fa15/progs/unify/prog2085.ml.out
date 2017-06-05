@@ -1,6 +1,5 @@
-Characters 49-53:
-  in wwhile ((fx),b);;
-             ^^^^
-Error: This expression has type 'a -> bool
-       but an expression was expected of type 'a -> 'a * bool
-       Type bool is not compatible with type 'a * bool 
+Characters 8-21:
+  let _ = digitsOfInt 5-6;;
+          ^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

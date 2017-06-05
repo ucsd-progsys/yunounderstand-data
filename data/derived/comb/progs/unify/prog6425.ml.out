@@ -1,5 +1,6 @@
-Characters 86-101:
-  | h::t -> (0, (x+h) :: a)
-            ^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 76-77:
+  else wwhile (f,result);;
+               ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a * bool

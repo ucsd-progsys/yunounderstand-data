@@ -1,5 +1,5 @@
-Characters 20-21:
-  addHelper (padZero (x y));;
-                      ^
-Error: This expression has type int list
-       This is not a function; it cannot be applied.
+Characters 48-49:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         int -> int

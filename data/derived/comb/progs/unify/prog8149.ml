@@ -1,18 +1,9 @@
 
-let carry x y = (x * y) / 10;;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
 
-let remainder x y = (x * y) mod 10;;
-
-let rec mulByDigit i l =
-  if (i = 0) || (i > 9)
-  then []
-  else
-    (match List.rev l with
-     | [] -> []
-     | h::t ->
-         (match t with
-          | [] -> []
-          | h'::t' ->
-              if (List.length t') > 0
-              then mulByDigit @ [(carry h i) + (remainder h' i)]
-              else [remainder h i]));;
+let stringOfList f l = ("[" sepConcat "" (List.map f l)) ^ "]";;

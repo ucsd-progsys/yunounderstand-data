@@ -1,5 +1,5 @@
-Characters 140-151:
-  | Sine sin -> Printf.sprintf ("sin( %s )" sin);
-                                ^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 31-42:
+  explode w = listReverse explode w;;
+              ^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

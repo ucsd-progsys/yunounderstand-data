@@ -1,5 +1,5 @@
-Characters 8-18:
-  let _ = palindrome "myxomatosis"
-          ^^^^^^^^^^
-Error: This function has type string -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 117-118:
+  (r/10,(r mod 10)::b) in
+   ^
+Error: This expression has type int list
+       but an expression was expected of type int

@@ -1,6 +1,7 @@
-Characters 135-136:
-  let seen' = if List.mem h t then h else t in
-                                          ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 292-293:
+  let (_, res) = List.fold_left f base args in
+                                ^
+Error: This expression has type int list -> int list -> int * int list
+       but an expression was expected of type
+         int list -> int list -> int list
+       Type int * int list is not compatible with type int list 

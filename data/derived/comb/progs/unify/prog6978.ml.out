@@ -1,5 +1,6 @@
-Characters 20-21:
-  let _ = eval(VarX , 3, 2);;
-                      ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 110-112:
+  in wwhile (gs, b);;
+             ^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 107);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 589-640:
+  ...................Printf.sprintf"(%s*(%s+1)/2)" 
+  (exprToString expr1).
+Error: This expression has type string -> string
+       but an expression was expected of type string

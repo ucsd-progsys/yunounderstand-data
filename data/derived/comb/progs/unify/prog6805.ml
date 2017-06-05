@@ -1,12 +1,9 @@
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
-  match e with
-  | buildX -> x
-  | buildY -> y
-  | buildSine -> sin (pi *. (eval e))
-  | buildCosine -> cos (pi *. e)
-  | buildAverage -> (e1 +. e2) /. 2
-  | buildTimes -> e1 *. e2
-  | buildThresh -> if a < b then a_less else b_less;;
+let stringOfList f l =
+  let l' = List.map f l in
+  match l' with
+  | [] -> []
+  | _ ->
+      let rec makeString res =
+        match res with | [] -> "" | h::t -> h ^ (makeString t) in
+      makeString l';;

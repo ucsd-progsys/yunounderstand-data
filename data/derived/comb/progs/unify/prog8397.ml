@@ -1,2 +1,2 @@
 
-let rec appZero x l = if x > 0 then l @ [] else (appZero x) - (1 l);;
+let rec wwhile (f,b) = let temp = f b in wwhile (temp, b);;

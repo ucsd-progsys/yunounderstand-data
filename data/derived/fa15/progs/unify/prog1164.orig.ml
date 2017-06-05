@@ -75,7 +75,7 @@ let _ = sepConcat "X" ["hello"]
 
 
 
-let stringOfList f l = "[" ^ (sepConcat ";" (List.map f l)) ^ "]"
+let stringOfList f l = List.map sepConcat l
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -91,63 +91,43 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = if n < 1 then [] else x::(clone x (n-1))
+let rec clone x n = failwith "to be implemented" 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = clone 3 5;;
-let _ = clone "foo" 2;; 
-let _ = clone clone (-3);;
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-
-let rec padZero l1 l2 = if (List.length l1) < (List.length l2) 
-  then padZero 0::l1 l2
-  else if (List.length l1) > (List.length l2) 
-  then padZero l1 0::l2
-  else (l1,l2)
-
-
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = padZero [9;9] [1;0;0;2]
-let _ = padZero [1;0;0;2] [9;9] 
-
-
-
-let rec removeZero l = match l with 
-  |[] -> []
-  |(h::t) -> if h = 0 then removeZero t else l
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
-(*
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+
+let padZero l1 l2 = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+let rec removeZero l = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match a with 
-      | h::t -> let sum = fst x + snd x + fst h in (sum / 10)::(sum mod 10)::t 
-    in
-    let base = [] in
-    let args = List.rev (List.combine l1 l2) in 
-      (*XXXXXXXXXXXXXXXX*)List.fold_left f base args in
-    (*XXX
-XXXXXXXXX*)
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
+      res
+  in 
     removeZero (add (padZero l1 l2))
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

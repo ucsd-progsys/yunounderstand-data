@@ -1,6 +1,6 @@
-Characters 86-87:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'd -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'd -> 'a
+Characters 57-58:
+  fixpoint(f b, b)
+                ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a

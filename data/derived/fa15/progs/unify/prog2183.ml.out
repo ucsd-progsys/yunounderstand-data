@@ -1,5 +1,5 @@
-Characters 8-20:
-  let _ = exprToString Trip(Varx, Varx, VarY);;
-          ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 173-174:
+  in (go x)w
+         ^
+Error: This expression has type int -> int
+       but an expression was expected of type int

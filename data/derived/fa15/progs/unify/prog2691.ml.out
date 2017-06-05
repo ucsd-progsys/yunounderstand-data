@@ -1,6 +1,5 @@
-Characters 20-35:
-  let rec clone x n = (clone x (n-1))::[x];;
-                      ^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 46-47:
+  | VarX -> 1 *. x
+            ^
+Error: This expression has type int but an expression was expected of type
+         float

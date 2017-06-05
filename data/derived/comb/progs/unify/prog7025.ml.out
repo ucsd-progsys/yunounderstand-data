@@ -1,6 +1,5 @@
-Characters 193-194:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string list
-       but an expression was expected of type string list list
-       Type string is not compatible with type string list 
+Characters 36-42:
+  buildTimes (buildX, buildY);;
+              ^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

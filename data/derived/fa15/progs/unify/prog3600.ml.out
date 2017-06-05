@@ -1,5 +1,5 @@
-Characters 254-275:
-  removeZero (add (padZero l1 l2));;
-             ^^^^^^^^^^^^^^^^^^^^^
+Characters 76-77:
+  let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit(i - 1)(l)) else 0;;
+                                                                              ^
 Error: This expression has type int but an expression was expected of type
          int list

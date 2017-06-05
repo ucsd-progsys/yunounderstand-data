@@ -1,5 +1,5 @@
-Characters 183-187:
-  if (List.mem h r = false) then seen' := h :: seen in
-                                               ^^^^
-Error: This expression has type 'a list ref
-       but an expression was expected of type 'a list
+Characters 94-95:
+  else returnList :: 1;;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         'a list list

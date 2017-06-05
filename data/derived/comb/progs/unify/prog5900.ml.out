@@ -1,5 +1,5 @@
-Characters 106-109:
-  | h::t -> [h*i] @ mulByDigit (t);;
-                               ^^^
-Error: This expression has type int list
+Characters 112-114:
+  then (((clone 0 (List.length l2 - List.length l1)) @ [l1]),l2)
+                                                        ^^
+Error: This expression has type 'a list
        but an expression was expected of type int

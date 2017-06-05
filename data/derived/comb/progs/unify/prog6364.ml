@@ -1,7 +1,4 @@
 
-let rec digitsOfInt n =
-  match n < 0 with
-  | true  -> []
-  | false  ->
-      let quotient = n / 10 in
-      if quotient = 0 then n mod 10 else quotient :: (digitsOfInt quotient);;
+let pipe fs = let f a x n = a x in let base f = 0 in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

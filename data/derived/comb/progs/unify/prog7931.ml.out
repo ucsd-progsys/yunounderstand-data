@@ -1,5 +1,7 @@
-Characters 589-640:
-  ...................Printf.sprintf"(%s*(%s+1)/2)" 
-  (exprToString expr1).
-Error: This expression has type string -> string
-       but an expression was expected of type string
+Characters 29-37:
+  let fixpoint (f,b) = wwhile ((helper), b);;
+                               ^^^^^^^^
+Error: This expression has type ('a -> 'b) * 'a * 'b -> 'b * bool
+       but an expression was expected of type
+         ('a -> 'b) * 'a * 'b -> (('a -> 'b) * 'a * 'b) * bool
+       The type variable 'b occurs inside ('a -> 'b) * 'a * 'b

@@ -1,5 +1,5 @@
-Characters 48-54:
-  let stringOfList f l = sepConcat "; ", List.map (f, l);;
-                                                  ^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'd
+Characters 229-255:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

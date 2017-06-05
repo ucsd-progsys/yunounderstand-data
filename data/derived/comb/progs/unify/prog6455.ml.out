@@ -1,5 +1,5 @@
-Characters 114-118:
-  | h::t -> if List.mem(h,seen)=true then helper(seen',t)
-                                ^^^^
-Error: This expression has type bool but an expression was expected of type
-         ('a * 'b) list -> bool
+Characters 77-86:
+  | (h::t) -> let h::t =xs in h+sumList t;;
+                                ^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 28-31:
-  let neg = fun f -> fun x -> not f x;;
-                              ^^^
-Error: This function has type bool -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 424-429:
+  in List.rev( [(x/10000) mod 10]@[(x/1000) mod 10]@[(x/100) mod 10]@[(x/10) mod 10]@[(x/1) x mod 10])@res;;
+                                                                                      ^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

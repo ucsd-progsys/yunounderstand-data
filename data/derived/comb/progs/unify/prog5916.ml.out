@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                          ^
-Error: This expression has type 'a list -> 'a
-       but an expression was expected of type int
+Characters 260-261:
+  else let (carry,ans) = a in (0,(let (y,z) = x in ([(y+z+carry)] @ a )))
+                                                                    ^
+Error: This expression has type int * int list
+       but an expression was expected of type int list

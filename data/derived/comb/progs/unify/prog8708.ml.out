@@ -1,6 +1,5 @@
-Characters 77-102:
-  | h::t -> matchHeads (listReverse (explode w)) (listReverse (explode w));;
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type 'a list list
-       Type char is not compatible with type 'a list 
+Characters 72-76:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> int
+       but an expression was expected of type int

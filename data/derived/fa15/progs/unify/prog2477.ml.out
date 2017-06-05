@@ -1,6 +1,5 @@
-Characters 162-164:
-  [mulByDigit i ([h2+(h mod 10)]@t2)];;
-                                 ^^
-Error: This expression has type int list list
-       but an expression was expected of type int list
-       Type int list is not compatible with type int 
+Characters 15-16:
+  let _ = sqsum [1;2;3;4];;
+                 ^
+Error: This expression has type int but an expression was expected of type
+         int list

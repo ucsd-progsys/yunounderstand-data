@@ -1,5 +1,5 @@
-Characters 44-49:
-  let _ = assoc([1,1],"a",[("ca",[1,2]);("a",[2,2,3])]);;
-                                              ^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type int * int
+Characters 84-85:
+  (b+1,bigAdd((mulByDigit x l2)@clone(0 b) c)) in
+                                      ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

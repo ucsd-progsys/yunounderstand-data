@@ -15,12 +15,14 @@ let rec removeZero l =
 let bigAdd l1 l2 =
   let add (l1,l2) =
     let f a x =
-      match a with
-      | (c,d) ->
-          if (((fst x) + (snd x)) + c) > 9
-          then (1, ((((fst x) + (snd x)) + c) mod 10))
-          else (0, ((((fst x) + (snd x)) + c) mod 10)) in
-    let base = (0, []) in
+      match x with
+      | h::t ->
+          (match h with
+           | (fir,sec) ->
+               (match a with
+                | h::t -> ((fir + sec) + (h / 10)) ::
+                    (((fir + sec) + h) mod 10) :: t)) in
+    let base = [] in
     let args = List.rev (List.combine l1 l2) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;

@@ -45,7 +45,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec revReppend(x,y) =
   match y with
     |[]->x
-    |h::t -> let z=h::x in revReppend(z,t);;
+    |h::t -> let z=h::x in append(z,t);;
 
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
@@ -75,19 +75,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-
 let rec wwhile (f,b) = 
-  let (x,y)=f b in
-    match y with
-      |false->x
-      |true->wwhile(f,x);;
+  let x=wwhile(f,b) in
+  let h::t=x in
+    match t with
+      |false->h
+      |true->wwhile(f,h);;
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -97,14 +96,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec helper(f,b)=
-  let x = f b in 
-    match x with
-      |b->(x,false)
-      |_->helper(f,x);;
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((helper(f,b)),b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -138,16 +131,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine -> "sin(pi*"+exprToString+")"
-    |Cosine-> "cos(pi*"+exprToString+")"
-    |Average-> "(("+exprToString+"+"+exprToString+")/2"
-    |Times-> exprToString+"*"+exprToString
-    |Thresh-> "("+exprToString+"?"+exprToString+":"+exprToString+")"
-    |_->0;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

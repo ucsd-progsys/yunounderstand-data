@@ -1,5 +1,5 @@
-Characters 141-146:
-  let zeros = clone 0 abs(diff) in
-              ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 28-44:
+  let fixpoint (f,b) = wwhile ( fun x -> f, b);;
+                              ^^^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+('a -> 'a * bool) * 'a

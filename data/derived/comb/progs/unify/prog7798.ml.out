@@ -1,5 +1,5 @@
-Characters 26-40:
-  let rec clone x n = "[" ^ sepConcat "; " ^ (List.append x n) ^ "]";;
-                            ^^^^^^^^^^^^^^
-Error: This expression has type string list -> string
-       but an expression was expected of type string
+Characters 91-104:
+  | Sine e	  -> Sine(pi *. eval(e, x, y))
+                           ^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

@@ -1,5 +1,5 @@
-Characters 72-82:
-  else mulByDigit (i-1) bigAdd l l;;
-       ^^^^^^^^^^
-Error: This function has type int -> int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 218-234:
+  | Cube e'		 -> (eval(e', x, y))^3
+                 ^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         string

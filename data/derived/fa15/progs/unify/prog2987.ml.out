@@ -1,5 +1,5 @@
-Characters 29-41:
-  let stringOfList f l = "[" ^ List.map f l ^ "]";;
-                               ^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 219-231:
+  | Average (x, y) -> "(("^ exprToString e ^ "+" ^ exprToString e ")"/2")"
+                                                   ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

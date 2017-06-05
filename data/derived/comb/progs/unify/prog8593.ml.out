@@ -1,5 +1,5 @@
-Characters 94-101:
-  else additivePersistenceHelper(sumList digitsOfInt n, nc+1);;
-                                 ^^^^^^^
-Error: This function has type int list -> int
+Characters 415-418:
+  | Circ	(circ1,circ2)       -> exp eval(circ1,x,y) 2.0+ exp eval(circ2,x,y) 2.0
+                                ^^^
+Error: This function has type float -> float
        It is applied to too many arguments; maybe you forgot a `;'.

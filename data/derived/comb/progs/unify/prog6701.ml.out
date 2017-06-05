@@ -1,6 +1,5 @@
-Characters 137-141:
-  | true -> seen@[h]
-    ^^^^
-Error: This pattern matches values of type bool
-       but a pattern was expected which matches values of type
-         ('a * 'b) list -> bool
+Characters 23-28:
+  let _ =bigAdd [0;1] [1;2,7,8];;
+                         ^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type int

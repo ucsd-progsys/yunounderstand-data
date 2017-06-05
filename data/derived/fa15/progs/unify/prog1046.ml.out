@@ -1,5 +1,5 @@
-Characters 480-492:
-  exprToString e1^"+"^exprToString e2")"
-                      ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 260-261:
+  else let (carry,ans) = a in (0,(let (y,z) = x in ([(y+z+carry)] @ a )))
+                                                                    ^
+Error: This expression has type int * int list
+       but an expression was expected of type int list

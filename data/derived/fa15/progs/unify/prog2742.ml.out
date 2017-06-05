@@ -1,5 +1,6 @@
-Characters 45-58:
-  | (str, num)::t -> if str = k then num else assoc (d, k, t) 
-    ^^^^^^^^^^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type 'b * 'c * 'd
+Characters 52-65:
+  | n' -> clone x (n-1) :: [];;
+          ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,8 +1,5 @@
-Characters 61-68:
-  | h::t -> h n sumList t n;;
-                ^^^^^^^
-Error: This expression has type
-         'a -> ('a -> 'b -> 'c -> 'd -> 'e) list -> int
-       but an expression was expected of type 'b
-       The type variable 'b occurs inside
-       'a -> ('a -> 'b -> 'c -> 'd -> 'e) list -> int
+Characters 274-300:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

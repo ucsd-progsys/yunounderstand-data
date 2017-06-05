@@ -1,5 +1,5 @@
-Characters 72-74:
-  |Neg (e1) -> (e1 *. (-1.0))
-                ^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 77-88:
+  | h::t -> matchHeads (explode w);;
+                       ^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type string

@@ -1,6 +1,8 @@
 
 let rec listReverse l =
+  let newList = [] in
   match l with
-  | [] -> []
-  | head::[] -> [head]
-  | head::tail -> (listReverse [tail]) @ [head];;
+  | [] -> newList
+  | head::tail -> (listReverse tail) @ (newList :: head);;
+
+let _ = listReverse [1; 2; 3; 4];;

@@ -1,5 +1,5 @@
-Characters 125-138:
-  if n = 0 then [remainder] else digitsOfInt n/10 @ [remainder];;
-                                 ^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 131-143:
+  let args = List.combine padZero l1 l2 in
+             ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

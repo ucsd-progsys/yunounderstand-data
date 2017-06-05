@@ -145,16 +145,11 @@ type expr =
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine(e1) -> "sin(pi*" ^ exprToString (e1) ^ ")"
-  | Cosine (e1) -> "cos(pi*" ^ exprToString (e1) ^ ")"
-  | Average (e1, e2) -> "((" ^ exprToString (e1) ^ "+" ^ exprToString (e2) ^ ")/2)"
-  | Times (e1, e2) -> exprToString (e1) ^ "*" ^ exprToString (e2)
-  | Thresh (e1, e2, e3, e4) -> "(" ^ exprToString (e1) ^ "<" ^ exprToString (e2) ^ "?" ^ exprToString (e3) ^ ":" ^ exprToString (e4) ^ ")"
+  | VarX -> "VarX"
+  | VarY -> "VarY"
+  | Sine (e1) -> sin (exprToString e1)
+
 ;;
-
-
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -184,16 +179,7 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x
-  | VarY -> y
-  | Sine(e1) -> sin (eval (e1, x, y))
-  | Cosine(e1) -> cos (eval (e1, x, y))
-  | Average (e1, e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1, e2) -> (eval (e1, x, y)) * (eval (e2, x, y))
-  | Thresh (e1, e2, e3, e4) -> if (eval (e1, x, y)) < (eval (e2, x, y)) then (eval (e3, x, y)) else (eval (e4, x, y))
-
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

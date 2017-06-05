@@ -1,6 +1,6 @@
-Characters 79-81:
-  wwhile (f',b);;
-          ^^
-Error: This expression has type 'a -> int
-       but an expression was expected of type 'a -> 'a * bool
-       Type int is not compatible with type 'a * bool 
+Characters 56-92:
+  | h::t -> catLists t ((lastListElement x)::[]) :: y;;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

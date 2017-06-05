@@ -1,5 +1,5 @@
-Characters 68-79:
-  | h::t ->  (explode w);;
-             ^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type bool
+Characters 71-90:
+  let fixpointHelper f b = let c = f b in ( if c = b then (c, true) else fixpointHelper(f c));;
+                                                                         ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type ('a -> 'a) * bool

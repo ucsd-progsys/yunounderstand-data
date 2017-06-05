@@ -1,5 +1,5 @@
-Characters 65-71:
-  | _ -> bigAdd l mulByDigit (i-1) l;;
-         ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 73-80:
+  if n/10 != 0 then 1+additivePersistence sumList digitsOfInt n
+                                          ^^^^^^^
+Error: This expression has type int list -> int
+       but an expression was expected of type int

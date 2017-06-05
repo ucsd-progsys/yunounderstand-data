@@ -1,5 +1,4 @@
 
-let rec digitsOfInt n =
-  match n <= 0 with
-  | true  -> []
-  | false  -> [[digitsOfInt (n / 10)]; n mod 10];;
+let rec wwhile (f,b) = let (b',c') = f b in if c' then wwhile (f, b') else b';;
+
+let fixpoint (f,b) = wwhile ((fun f'  -> fun x  -> (f, ((f x) = x))), b);;

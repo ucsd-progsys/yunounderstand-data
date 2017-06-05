@@ -1,5 +1,5 @@
-Characters 45-50:
-  | (k,_) -> k
-    ^^^^^
-Error: This pattern matches values of type 'a * 'b
-       but a pattern was expected which matches values of type 'c * 'd * 'e
+Characters 33-47:
+  let stringOfList f l = sepConcat (List.map f l) l;;
+                                   ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

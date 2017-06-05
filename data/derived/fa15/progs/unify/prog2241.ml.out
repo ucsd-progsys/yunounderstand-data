@@ -1,5 +1,5 @@
-Characters 120-128:
-  let args = List.rev List.combine l1 l2 in
-             ^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 386-388:
+  | Trip(t,r,s)     -> (sin(pi*eval(r,x,y)) + tan(pi*eval(s,x,y))) 
+                            ^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 82-84:
-  let f a x = a ^ sl t in
-                  ^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 84-85:
+  | Sine(e1) -> sin (eval x y);;
+                          ^
+Error: This expression has type 'a -> 'b
+       but an expression was expected of type expr * ('a -> 'b) * ('a -> 'b)

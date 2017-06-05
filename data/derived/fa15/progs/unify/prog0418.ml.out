@@ -1,5 +1,5 @@
-Characters 265-269:
-  removeZero (mult i l);;
-              ^^^^
-Error: This function has type 'a * int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 129-130:
+  else (1, l::x mod 10)
+           ^
+Error: This expression has type int list
+       but an expression was expected of type int

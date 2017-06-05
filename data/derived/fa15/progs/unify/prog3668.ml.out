@@ -1,6 +1,5 @@
-Characters 141-145:
-  | true -> [] 
-    ^^^^
-Error: This pattern matches values of type bool
-       but a pattern was expected which matches values of type
-         ('a * 'b) list -> bool
+Characters 77-91:
+  | h::t -> 10*h*i + mulByDigit i t;;
+                     ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

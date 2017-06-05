@@ -1,25 +1,35 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr
+  | Power of expr* expr
+  | TowerNeg of expr* expr* expr;;
 
-let padZero l1 l2 =
-  let len1 = List.length l1 in
-  let len2 = List.length l2 in
-  if len1 > len2
-  then (l1, ((clone 0 (len1 - len2)) @ l2))
-  else (((clone 0 (len2 - len1)) @ l1), l2);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine x -> "sin(pi*" ^ ((exprToString x) ^ ")")
+  | Cosine x -> "cos(pi*" ^ ((exprToString x) ^ ")")
+  | Average (x,y) ->
+      "((" ^ ((exprToString x) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
+  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
+  | Thresh (w,x,y,z) ->
+      "(" ^
+        ((exprToString w) ^
+           ("<" ^
+              ((exprToString x) ^
+                 ("?" ^ ((exprToString y) ^ (":" ^ ((exprToString z) ^ ")")))))))
+  | Power (x,y) -> (exprToString x) ^ ("^" ^ (exprToString y))
+  | TowerNeg (x,y,z) ->
+      (exprToString x) ^
+        ("^" ^ ((exprToString y) ^ ("^" ^ ((exprToString z) ^ "^(-1)"))));;
 
-let rec removeZero l =
-  match l with | [] -> [] | h::t when h == 0 -> removeZero t | h::t -> h :: t;;
+let sampleExpr5 = TowerNeg (VarX, VarY, VarY);;
 
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      match (a, x) with
-      | ((w,b),(y,z)) ->
-          ((((w + y) + z) / 10), ((((w + y) + z) mod 10) :: b)) in
-    let base = (0, []) in
-    let args = List.rev (List.combine (0 :: l1) (0 :: l2)) in
-    let (_,res) = List.fold_left f base args in res in
-  removeZero (add (padZero l1 l2));;
-
-let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit (i - 1) l) else 0;;
+let _ = exprToString Power (sampleExpr5, sampleExpr5);;

@@ -20,7 +20,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec assoc (d,k,l) = 
   match l with
     |[] -> d
-    |(k',d')::t -> if k = k' then d'  else assoc(d,k,t)
+    |(d',k')::t -> if k = k' then d'  else assoc(d,k,t)
 
 
 
@@ -46,17 +46,17 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = if List.mem h seen then seen else [h] @ seen in
-          let rest' = t in 
-            helper (seen',rest') 
+          let seen' = failwith "to be written" in
+          let rest' = failwith "to be written" in 
+            	  helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -68,15 +68,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = 
-  match f b with
-    |(h,t) -> if t = true then wwhile(f,h) else h 
+let rec wwhile (f,b) = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -87,23 +85,21 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile((let g b = let t = f b in 
-                                 if b = t then (b, false) 
-                                 else (t, true) in g), b);;
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
-
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -123,27 +119,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let rec exprToString e = failwith "to be written"
 
-let rec exprToString e = 
-  match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine e -> "sin (pi*" exprToString e ")"
-    |Cosine e -> "cos (pi*" exprToString e ")"  
-    |Average (e,ex) -> "((" exprToString e "+" exprToString ex ")/2)"
-    |Times (e, ex) -> exprToString e "*" exprToString ex
-    |Thresh (e1, e2, e3, e4) -> "(" exprToString e1 "<" 
-                                  exprToString e2 "?"
-                                  exprToString e3 ":"
-                                  exprToString e4 ")"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
-
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -439,10 +423,10 @@ let testTest () =
 let runTest ((f,arg,out),points,name) =
   let _   = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -501,7 +485,7 @@ let sampleTests =
                  "sample: wwhile 1"
     ); 
     (fun () -> mkTest 
-                 fixpoint
+                 	fixpoint
                  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
                  739085
                  "sample: fixpoint 1"

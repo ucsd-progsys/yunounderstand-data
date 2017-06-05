@@ -1,5 +1,5 @@
-Characters 111-119:
-  | [] -> [(b/10)]::[b mod 10]
-                     ^^^^^^^^
+Characters 210-211:
+  | Average(v, w) -> (eval (v,x,y) +. eval (w,x,y))/.2
+                                                     ^
 Error: This expression has type int but an expression was expected of type
-         int list
+         float

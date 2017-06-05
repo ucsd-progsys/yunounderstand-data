@@ -1,5 +1,5 @@
-Characters 121-123:
-  | Cosine(e1) -> cos(pi * eval (e1,x,y))
-                      ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 8-14:
+  let _ = digits -54;;
+          ^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

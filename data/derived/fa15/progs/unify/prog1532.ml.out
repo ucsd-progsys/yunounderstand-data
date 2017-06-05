@@ -1,3 +1,6 @@
-Characters 1008-1021:
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type float
+Characters 239-243:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list * 'b list
+       but an expression was expected of type int * int
+       Type 'a list is not compatible with type int 

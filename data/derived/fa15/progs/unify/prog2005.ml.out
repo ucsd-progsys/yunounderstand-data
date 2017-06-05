@@ -1,6 +1,6 @@
-Characters 38-39:
-  let f a x = fun a -> x x a in
-                         ^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'b -> 'c
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

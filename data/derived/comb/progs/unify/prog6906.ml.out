@@ -1,6 +1,5 @@
-Characters 48-49:
-  in wwhile (b,b);;
-               ^
-Error: This expression has type 'a -> 'a * bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'a * bool
+Characters 21-22:
+  let _ = listReverse [1; 2; 3; 4];;
+                       ^
+Error: This expression has type int but an expression was expected of type
+         'a list

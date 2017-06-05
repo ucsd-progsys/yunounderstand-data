@@ -1,5 +1,5 @@
-Characters 67-71:
-  |VarX -> Printf.printf "%s" VarX;;
-                              ^^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 202-211:
+  let list2 = listZeros@l2 in 
+              ^^^^^^^^^
+Error: This expression has type int -> (int * int) list
+       but an expression was expected of type 'a list

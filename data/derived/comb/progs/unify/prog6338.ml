@@ -1,3 +1,4 @@
 
 let pipe fs =
-  let f a x n = n a (a x) in let base f = f in List.fold_left f base fs;;
+  let f a x = (fun result  -> fun x  -> a + x) 0 in
+  let base = 1 in List.fold_left f base fs;;

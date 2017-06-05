@@ -93,21 +93,21 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
+let fixpoint (f,b) = 
+  wwhile (f,b)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
 
-*)
+let _ = fixpoint (collatz, 1) ;;
+let _ = fixpoint (collatz, 3) ;;
+let _ = fixpoint (collatz, 48) ;;
+let _ = fixpoint (collatz, 107) ;;
+let _ = fixpoint (collatz, 9001) ;;
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -127,19 +127,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-      VarX		    -> "x"
-    | VarY		      -> "y"
-    | Sine e	      -> "sin" ^ exprToString e
-    | Cosine e	      -> "cos" ^ exprToString e
-    | Average (e,e1)	      -> 
-        "(" ^exprToString e ^ "+" ^ exprToString e1 ^ ")" ^ "/2"
-    | Times	(e,e1)	      -> exprToString e ^ "*" ^ exprToString e1
-    | Thresh (e1,e2,e3,e4)  -> 
-        "(" ^ exprToString e1 ^ "<" ^ exprToString e2 "?" ^ exprToString e3 ^
-        ":" ^ exprToString e4 ^ ")"
-;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

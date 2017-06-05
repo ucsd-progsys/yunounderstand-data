@@ -2,40 +2,37 @@
 XXXXXXXXXX
 *)
 
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
-let rec sumList xs = match xs with
-  | [] -> 0 
-  | xf:: xb -> xf + sumList xb;;
+let rec sumList xs =
+  match xs with
+    | [] -> 0
+    | (x::xs') -> x + sumList xs';;
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = sumList [1; 2; 3; 4]
-let _ = sumList [1; -2; 3; 5]
-let _ = sumList [1; 3; 5; 7; 9; 11]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let rec add current next =
-  match current with
-      [] -> [next]
-    | front :: back -> front (add back next)
-let rec digitsOfInt n = 
-  if n <= 0 then [] else  add (digitsOfInt (n/10)) ([n mod 10]));;
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
+let rec digitsOfInt n =
+  match n < 0 with
+    | true -> []
+    | false ->  let quotient = n/10 in if quotient = 0 then [n mod 10] else quotient::digitsOfInt quotient;;
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,5 +1,5 @@
-Characters 101-107:
-  | Sine sine		    -> sin(eval(sine))
-                              ^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 61-84:
+  let f a x = ((mulByDigit x l1)@[clone 0 (List.length a)])::a in
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int

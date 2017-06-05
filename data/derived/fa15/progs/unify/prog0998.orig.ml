@@ -97,15 +97,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let fixpoint (f,b) = wwhile (
-                       (let func input = 
-                          ((f input),((f input) != input)) 
-                        in func) 
+                       (let func input = ((f input),((f input) != input)) in func) 
                      ,b)
 ;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let _ = let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
 
@@ -126,38 +124,33 @@ let _ = fixpoint (collatz, 9001) ;;
 type expr = 
       VarX
     | VarY
-    | Sine         of expr
-    | Cosine       of expr
-    | Average      of expr * expr
-    | Times        of expr * expr
-    | Thresh       of expr * expr * expr * expr
-    | TimesTimes   of expr * expr * expr
-    | Cube         of expr
-    | MultDivBy6   of expr * expr
+    | Sine     of expr
+    | Cosine   of expr
+    | Average  of expr * expr
+    | Times    of expr * expr
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec exprToString e = 
   match e with
-    | VarX                  -> "x"
-    | VarY                  -> "y"
-    | Sine e1               -> "sin (pi*"^(exprToString e1)^")"
-    | Cosine e1             -> "cos (pi*"^(exprToString e1)^")"
-    | Average (e1,e2)       -> "(("^(exprToString e1)^" + "^(exprToString e2)^")/2)"
-    | Times (e1,e2)         -> (exprToString e1)^" * "^(exprToString e2)
-    | Thresh (e1,e2,e3,e4)  -> "("^(exprToString e1)^"<"^(exprToString e2)^" ? "^(exprToString e3)^" : "^(exprToString e4)^")"
-    | TimesTimes (e1,e2,e3) -> (exprToString e1)^" * "^(exprToString e2)^" * "^(exprToString e3)
-    | Cube (e1)             -> (exprToString e1)^" * "^(exprToString e1)^" * "^(exprToString e1)
-    | MultDivBy6            -> "(("(exprToString e1)^" * "^(exprToString e2)^") /6)"
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    | Sine e1              -> sin (3.142*.(exprToString e1))
+    | Cosine e1            -> cos (exprToString e1)
+    | Average (e1,e2)      -> (((exprToString e1) +. (exprToString e2)) /. (exprToString 2))
+    | Times (e1,e2)        -> (exprToString e1) *. (exprToString e2)
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
 ;;
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -172,9 +165,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildTimesTimes(e1,e2,e3)      = TimesTimes(e1,e2,e3)
-let buildCube(e)                   = Cube(e)
-let buildMultDivBy6(e1,e2)         = MultDivBy6(e1,e2)
 
 
 let pi = 4.0 *. atan 1.0
@@ -182,41 +172,14 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with
-    | VarX                  -> x
-    | VarY                  -> y
-    | Sine e1               -> sin (pi *. (eval (e1,x,y)))
-    | Cosine e1             -> cos (pi *. (eval (e1,x,y)))
-    | Average (e1,e2)       -> ((eval (e1,x,y)) +. (eval (e2,x,y))) /. 2.0
-    | Times (e1,e2)         -> (eval (e1,x,y)) *. (eval (e2,x,y))
-    | Thresh (e1,e2,e3,e4)  -> if (eval (e1,x,y) < eval (e2,x,y)) 
-        then (eval (e3,x,y)) 
-        else (eval (e4,x,y))
-    | TimesTimes (e1,e2,e3) -> (eval (e1,x,y)) *. (eval (e2,x,y)) *. (eval (e3,x,y))
-    | Cube (e1)             -> (eval (e1,x,y)) *. (eval (e1,x,y)) *. (eval (e1,x,y))
-    | MultDivBy6 (e1,e2)    -> ((eval (e1,x,y)) *. (eval (e2,x,y))) /.6
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let sampleExpr =
-  buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
-                                                              buildX()),buildTimes(buildCosine (buildCosine (buildAverage
-                                                                                                               (buildTimes (buildY(),buildY()),buildCosine (buildX())))),
-                                                                                   buildCosine (buildTimes (buildSine (buildCosine
-                                                                                                                         (buildY())),buildAverage (buildSine (buildX()), buildTimes
-                                                                                                                                                                           (buildX(),buildX()))))))),buildY())))
-
-let sampleExpr2 =
-  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
-
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -247,20 +210,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  if (depth = 0)
-  then (if (rand(0,2) = 0) 
-        then buildX() 
-        else buildY())
-  else match rand(0,7) with
-    | 0 -> buildSine(build (rand, depth - 1) )
-    | 1 -> buildCosine(build (rand, depth - 1) )
-    | 2 -> buildAverage((build (rand, depth - 1)), (build (rand, depth - 1)) )
-    | 3 -> buildTimes((build (rand, depth - 1)), (build (rand, depth - 1)) )
-    | 4 -> buildThresh((build (rand, depth - 1)), (build (rand, depth -1)), (build (rand, depth - 1)), (build (rand, depth - 1)) )
-    | 5 -> buildTimesTimes((build (rand, depth - 1)), (build (rand, depth - 1)), (build (rand, depth - 1)) )
-    | _ -> buildCube((build (rand, depth - 1)))
-;;
+let rec build (rand, depth) = failwith "to be implemented"
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -268,13 +219,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (7,9275,24);;
-let g2 () = (6,6323,1494);; 
-let g3 () = (9,1108,12);;
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (5,36,2450);;
-let c2 () = (8,3120,5100);;
-let c3 () = (6,9238,1478);;
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -377,11 +328,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

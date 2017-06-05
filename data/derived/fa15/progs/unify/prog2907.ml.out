@@ -1,6 +1,5 @@
-Characters 73-110:
-  digitsOfIntHelper (n - (n mod 10)/10) :: (n mod 10) 
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 8-11:
+  let _ = not padZero [9;9] [1;0;0;2];;
+          ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

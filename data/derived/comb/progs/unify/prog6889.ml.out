@@ -1,6 +1,5 @@
-Characters 57-58:
-  | h :: t -> assoc d k t;;
+Characters 38-39:
+  let f a x = [a]::[0] in
                     ^
-Error: This expression has type 'a but an expression was expected of type
-         'a * 'b * 'c list
-       The type variable 'a occurs inside 'a * 'b * 'c list
+Error: This expression has type int but an expression was expected of type
+         'a list

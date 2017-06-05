@@ -1,5 +1,6 @@
-Characters 249-261:
-  | Average(c, d)       -> "(("^exprToString c^"+"^exprToString d")""/2)"
-                                                   ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int -> unit * bool
+       Type int is not compatible with type unit 

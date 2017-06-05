@@ -1,5 +1,4 @@
 
-let rec wwhile (f,b) =
-  match f b with | (a,b) -> if not b then a else wwhile (f, a);;
+let test = [1; 6; 2; 4; 12; 2; 13; 6; 9];;
 
-let fixpoint (f,b) = wwhile ((let f2 x = f x in ((f x), ((f x) = b))), b);;
+let _ = List.mem (3 test);;

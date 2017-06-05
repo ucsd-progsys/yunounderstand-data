@@ -1,6 +1,6 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 125-129:
+  | head :: tail -> ((listReverse [tail]) :: [head]);;
+                                   ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

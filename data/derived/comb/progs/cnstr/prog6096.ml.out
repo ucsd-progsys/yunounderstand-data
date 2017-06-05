@@ -1,5 +1,0 @@
-Characters 73-77:
-  | [] -> if( y = []) then true;;
-                           ^^^^
-Error: This variant expression is expected to have type unit
-       The constructor true does not belong to type unit

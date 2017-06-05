@@ -1,5 +1,5 @@
-Characters 15-20:
-  let _ =bigAdd [1,0,1] [1,2];;
-                 ^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type int
+Characters 131-137:
+  let rest' = (filter t h) in 
+               ^^^^^^
+Error: This function has type 'a list * 'a -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

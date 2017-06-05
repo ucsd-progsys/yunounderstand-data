@@ -1,5 +1,5 @@
-Characters 188-192:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
+Characters 100-101:
+  | _  -> [h*i/10];;
+           ^
 Error: This expression has type 'a list
-       but an expression was expected of type int * int list
+       but an expression was expected of type int

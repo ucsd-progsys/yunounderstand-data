@@ -144,22 +144,52 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
+(*
+XXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXX
+XXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXX
+
+*)
+
+let addTuple (l1, l2) = failwith "TB"
+
+;;
+
+(*
+XXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXXXX
+XXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXX
+*)
+
+
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = let (x1, x2) = x in 
-      let (carry, res) = a in
-        ((x1 + x2 + carry)/10, ((x1 + x2 + carry)mod 10) :: res) in
-    let base = (0,[]) in (*XXXXXXXXXXXXXXXXXXXXXXXXX*)
+    let f a x = let (x1, x2) = x in a + x in
+    let base = x1 + x2 in (*XXXXXXXXXXXXXXXXXXXXXXXXX*)
     let args = (List.rev (List.combine l1 l2)) in (*XXXXXXXXX*)
-    let (carry, res) = List.fold_left f base args in (*XXXXXXXXXXXXXXXXXXXX*)
-      [carry] @ res
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
 
 ;;
 
-
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -168,38 +198,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec helper x =
-  if x = 0 then 1
-  else 10 * helper (x - 1)
 
-;;
-
-let _ = helper 0;;
-
-let rec tenEx x y = match y with
-  | [] -> []
-  | h::t -> ((helper x) * h) @ tenEx (helper (x + 1)) t
-
-;;
-
-let _ = tenEx 0 [4; 5; 6];;
-
-
-
-let rec mulByDigit i l =
-  let f a x = let carry = i * x in
-      match a with
-        | h::t -> ((h + carry)/10)::((h + carry) mod 10)::t
-        | _ -> (carry / 10)::[carry mod 10]
-  in
-  let base = [] in
-    removeZero(List.fold_left f base (List.rev l))
-
-;;
-
-
-let _ = mulByDigit 9 [6;7;8;9]
-
+let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -207,17 +207,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
+
+
 let bigMul l1 l2 = 
-  let f a x = let (x1, x2) = x in
-    let (carry, res) = a in
-
-    let base = (0, []) in
-    let args = (List.rev (List.combine l1 l2)) in
-    let (carry, res) = List.fold_left f base args in
-      [carry] @ res
-
-;;
-
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,2 +1,6 @@
 
-let remainder x y = if (x * y) > 10 then (x * y) mod 10 else x y;;
+let x l = List.map l;;
+
+let y = [("h", "d", "c")];;
+
+let y = [("h", "d", "c")] x y;;

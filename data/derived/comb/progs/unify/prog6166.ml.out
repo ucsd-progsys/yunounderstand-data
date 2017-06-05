@@ -1,5 +1,10 @@
-Characters 110-122:
-  let args = failwith List.combine(l1,l2) in
-                      ^^^^^^^^^^^^
-Error: This expression has type 'a list -> 'b list -> ('a * 'b) list
-       but an expression was expected of type string
+Characters 134-146:
+  | Cosine e -> Printf.printf "cos(pi*%s)" !exprToString e
+                              ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

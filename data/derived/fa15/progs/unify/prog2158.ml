@@ -1,17 +1,6 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec wwhile (f,b) =
+  let res = f b in
+  match res with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
 
-let buildTimes (e1,e2) = Times (e1, e2);;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec eval (e,x,y) = buildTimes (buildX, buildY);;
+let fixpoint (f,b) = let rec fs x = ((fs x), ((f b) = b)) in wwhile (fs, b);;

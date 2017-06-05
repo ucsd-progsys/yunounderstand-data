@@ -1,5 +1,5 @@
-Characters 47-93:
-  let sampleExpr1 = Divide(Thresh(VarX,VarY,VarX,(Times(Sine(VarX)),Cosine(Average(VarX,VarY)))),VarY);;
-                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 109-112:
+  | Sine sin		    -> "sin(pi*"^ (eval sin) ^")" 
+                                      ^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

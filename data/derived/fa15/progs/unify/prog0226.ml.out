@@ -1,6 +1,6 @@
-Characters 76-79:
-  else f t;;
-       ^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * bool
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type 'a * bool -> 'a * bool
+       Type int is not compatible with type 'a * bool 

@@ -1,5 +1,5 @@
-Characters 69-73:
-  | VarX			    -> Printf.sprintf ("%s" x);
-                                  ^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 47-60:
+  else (digitsOfInt n/10) @ (n mod 10);;
+        ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

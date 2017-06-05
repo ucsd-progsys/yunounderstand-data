@@ -1,5 +1,5 @@
-Characters 122-137:
-  match rand(makeRand(0,4)) with
-            ^^^^^^^^^^^^^^^
-Error: This expression has type int * int -> int
-       but an expression was expected of type int * int
+Characters 24-25:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

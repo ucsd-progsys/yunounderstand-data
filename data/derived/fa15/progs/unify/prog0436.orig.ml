@@ -158,15 +158,14 @@ let _ = bigAdd [9;9;9;9] [9;9;9];;
 
 
 let rec mulByDigit i l = 
-  if i = 0
-  then [0]
-  else if i = 1
-  then l
-  else mulByDigit (i-1 bigAdd l l))
-
+  if i >= 0
+  then bigAdd l l
+  else mulByDigit i-1 l
 ;;
 
-let _ = mulByDigit 0 [9;9;9;9]
+
+
+let _ = mulByDigit 9 [9;9;9;9]
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in
@@ -248,10 +247,10 @@ let testTest () =
 let runTest (f,arg,out,points,name) =
   let _ = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

@@ -1,5 +1,5 @@
-Characters 92-97:
-  l1 @ clone 0  (-1*(diff)-1) 
-       ^^^^^
-Error: This function has type 'a -> int -> 'a list
+Characters 575-587:
+  | Volume (j, k, l)    -> exprToString e ^ "*" ^ exprToString e "*" exprToString e;;
+                                                  ^^^^^^^^^^^^
+Error: This function has type expr -> string
        It is applied to too many arguments; maybe you forgot a `;'.

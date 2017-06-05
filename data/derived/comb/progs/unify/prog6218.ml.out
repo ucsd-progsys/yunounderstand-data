@@ -1,5 +1,5 @@
-Characters 71-73:
-  let fixpoint (f,b) = let b' = f b in let f' = (b', b == b') in wwhile (f' ,b);;
-                                                                         ^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 130-132:
+  ((sum/10)::a1,(sum mod 10)::a2) in
+             ^^
+Error: This expression has type int list -> int
+       but an expression was expected of type int list

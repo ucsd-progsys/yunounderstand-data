@@ -1,5 +1,5 @@
-Characters 81-98:
-  else digitsOfIntHelper (num/10) ((num mod 10)::numList) 
-       ^^^^^^^^^^^^^^^^^
-Error: This function has type int * int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 432-433:
+  | Circ	(circ1,circ2)       -> eval(circ1,x,y)**2+eval(circ2,x,y)**2
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

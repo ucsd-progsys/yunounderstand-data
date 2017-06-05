@@ -1,6 +1,5 @@
-Characters 93-94:
-  in wwhile ((funt),f);;
-                    ^
-Error: This expression has type ('a -> 'a * bool) -> 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside ('a -> 'a * bool) -> 'b
+Characters 8-19:
+  let _ = digitsOfInt -2;;
+          ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

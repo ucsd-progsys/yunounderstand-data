@@ -1,5 +1,6 @@
-Characters 155-181:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type 'c * 'd
+Characters 91-92:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type 'a -> 'b -> 'c -> ('a -> 'd) -> 'd
+       but an expression was expected of type 'a -> 'b -> 'a
+       The type variable 'a occurs inside 'c -> ('a -> 'd) -> 'd

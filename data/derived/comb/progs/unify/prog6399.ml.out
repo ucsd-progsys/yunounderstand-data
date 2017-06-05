@@ -1,5 +1,3 @@
-Characters 71-72:
-  then (wwhile f b')
-               ^
-Error: This expression has type 'a -> 'b * bool
-       but an expression was expected of type ('a -> 'b * bool) * 'a
+Characters 1008-1021:
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type float

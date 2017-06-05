@@ -1,5 +1,5 @@
-Characters 20-23:
-  let _ = digitsOfInt 1.5;;
-                      ^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 93-95:
+  if x = () then (0, l::m) else
+         ^^
+Error: This expression has type unit but an expression was expected of type
+         'a * 'b

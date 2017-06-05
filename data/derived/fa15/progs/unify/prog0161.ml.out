@@ -1,5 +1,5 @@
-Characters 66-71:
-  bigAdd (mulByDigit((i-1) l) l);;
-                     ^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 132-133:
+  if k = 0 then k + mulByDigit t else [x]@ k + mulByDigit t;;
+                               ^
+Error: This expression has type int list
+       but an expression was expected of type int

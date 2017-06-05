@@ -168,24 +168,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec helper x =
-  if x = 0 then 1
-  else 10 * helper (x - 1)
-
-;;
-
-let _ = helper 6;;
-
-let rec tenEx x y = match y with
-  | [] -> []
-  | h::t -> tenEx (x + 1) t @ [(helper x) * h]
-
-;;
-
-let _ = tenEx 0 (List.rev([4; 5; 6]));;
-
-
-
 let rec mulByDigit i l =
   let f a x = let carry = i * x in
       match a with
@@ -208,14 +190,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let bigMul l1 l2 = 
-  let f a x = 
-    let (carry, res) = a in
-      match x with 
-        | [] -> []
-        | h::t -> bigAdd(mulByDigit h l1) res
-  in
-  let base = (0, []) in
-  let args = (tenEx 0 l2) in
+  let f a x = failwith "to be implemented" in
+  let base = [] in
+  let args = List.rev l2 in
   let (carry, res) = List.fold_left f base args in
     [carry] @ res
 

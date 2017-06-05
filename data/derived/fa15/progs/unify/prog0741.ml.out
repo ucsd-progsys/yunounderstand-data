@@ -1,5 +1,5 @@
-Characters 57-64:
-  |h::t -> h + sumList ;;
-               ^^^^^^^
-Error: This expression has type int list -> int
-       but an expression was expected of type int
+Characters 44-53:
+  let fixpoint (f,b) = wwhile (let b = f b in (b, b!=b) ,b);;
+                                              ^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

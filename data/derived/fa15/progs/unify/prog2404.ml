@@ -1,10 +1,6 @@
 
-let rec wwhile (f,b) =
-  let (x,y) = f b in if y = false then x else wwhile (f, x);;
+let sqsum xs =
+  let f a x = match x with | [] -> a | x::t -> x * x in
+  let base = 0 in List.fold_left f base xs;;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) = wwhile ((f b), b);;
-
-let _ = fixpoint (collatz, 1);;
+let _ = sqsum [(-1); (-2); (-3); (-4)];;

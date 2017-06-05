@@ -1,5 +1,5 @@
-Characters 66-76:
-  | h::t -> matchHeads (listReverse (explode w)) (listReverse (explode w));;
-            ^^^^^^^^^^
-Error: This function has type 'a list list * 'a list list -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         (int -> int) -> int

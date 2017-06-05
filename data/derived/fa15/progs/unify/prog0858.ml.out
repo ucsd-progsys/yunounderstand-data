@@ -1,6 +1,5 @@
-Characters 83-84:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> ('a -> 'c) -> 'c
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside ('a -> 'c) -> 'c
+Characters 216-219:
+  | Average(e1, e2) -> "((" ^ exprToString (e1) ^ "+" exprToString (e2) ^ ")/2)"
+                                                  ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

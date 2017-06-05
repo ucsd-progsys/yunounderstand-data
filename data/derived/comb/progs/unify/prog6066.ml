@@ -15,38 +15,16 @@ let rec removeZero l =
 let bigAdd l1 l2 =
   let add (l1,l2) =
     let f a x =
-      let (i,j) = x in
       match a with
-      | (c,d) ->
-          if ((i + j) + c) > 9
-          then (1, ((((i + j) + c) mod 10) :: d))
-          else (0, ((((i + j) + c) mod 10) :: d)) in
+      | h::t ->
+          if (((fst x) + (snd x)) + h) > 9
+          then (1, (((((fst x) + (snd x)) + h) mod 10) :: t))
+          else (0, (((((fst x) + (snd x)) + h) mod 10) :: t))
+      | _ ->
+          if ((fst x) + (snd x)) > 9
+          then (1, [((fst x) + (snd x)) mod 10])
+          else (0, [((fst x) + (snd x)) mod 10]) in
     let base = (0, []) in
-    let args = (List.rev (List.combine l1 l2)) @ [(0, 0)] in
+    let args = List.rev (List.combine l1 l2) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
-
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = a ^ (sep ^ x) in
-      let base = h in let l = t in List.fold_left f base l;;
-
-let intListToInt l = int_of_string (sepConcat "" (List.map string_of_int l));;
-
-let rec mulByDigit i l =
-  if i > 0 then bigAdd l (mulByDigit (i - 1) l) else [];;
-
-let bigMul l1 l2 =
-  let f a x =
-    let (s,t) = x in
-    match a with
-    | (r,v) ->
-        let sum = intListToInt (mulByDigit (intListToInt l1) [s]) in
-        if (sum + r) > 9
-        then ((int_of_float (sum + r)), (((sum + r) mod 10) :: v))
-        else (0, (((sum + r) mod 10) :: v)) in
-  let base = (0, []) in
-  let args = List.rev (List.combine l2 l2) in
-  let (_,res) = List.fold_left f base args in res;;

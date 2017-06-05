@@ -1,27 +1,20 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Neg of expr
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Smallest of expr* expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let pi = 4.0 *. (atan 1.0);;
+let getHeads y = match listReverse y with | [] -> [] | h::t -> [h];;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Neg e1 -> e1 *. (-1.0)
-  | Sine e1 -> sin (pi *. (eval (e1, x, y)))
-  | Cosine e1 -> cos (pi *. (eval (e1, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
-  | Thresh (e1,e2,e3,e4) ->
-      if (eval (e1, x, y)) < (eval (e2, x, y))
-      then eval (e3, x, y)
-      else eval (e4, x, y);;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
+
+let rec matchHeads x =
+  match explode x with
+  | h::t ->
+      if (getHeads (explode x)) = []
+      then true
+      else if [h] = (getHeads t) then true else false;;
+
+let palindrome w =
+  match explode w with | [] -> true | h::t -> matchHeads (explode w);;

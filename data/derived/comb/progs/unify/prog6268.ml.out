@@ -1,5 +1,6 @@
-Characters 21-34:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                       ^^^^^^^^^^^^^
-Error: This expression has type int -> string
-       but an expression was expected of type 'a list
+Characters 79-80:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'b) -> 'a -> 'b
+       but an expression was expected of type ('a -> 'b) -> 'a -> 'a -> 'b
+       The type variable 'b occurs inside 'a -> 'b

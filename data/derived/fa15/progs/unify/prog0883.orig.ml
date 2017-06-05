@@ -76,11 +76,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let stringOfList f l = 
-  "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
-;;
+let stringOfList f l = match l with
+  | [] -> ""
+  | h::t -> string_of_int h ^ stringOfList f t
 
+let _ = stringOfList string_of_int [1;2;3;4;5;6];;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -95,13 +96,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXX*)
-let rec clone x n = 
-  if n <= 0 then []
-  else x :: clone x (n - 1)
 
-;;
-
+let rec clone x n = failwith "to be implemented" 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -111,13 +107,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let padZero l1 l2 = 
-  if List.length l1 > List.length l2 then (l1 , clone 0 ((List.length l1) - (List.length l2)) @ l2)
-  else if  List.length l1 < List.length l2 then (clone 0 ((List.length l2) - (List.length l1)) @ l1 , l2)
-  else (l1, l2)
-
-;;
-
+let padZero l1 l2 = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -126,14 +116,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec removeZero l = match l with 
-  | [] -> []
-  | h::t ->
-      if h = 0 then removeZero t
-      else h::t
-
-;;
-
+let rec removeZero l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -143,32 +126,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-
-(*
-XXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXX
-
-*)
-
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
     let f a x = failwith "to be implemented" in
     let base = failwith "to be implemented" in
-    let args l1 l2= match l1 with
-      | [] -> []
-      | h1::t1 -> t1 in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 

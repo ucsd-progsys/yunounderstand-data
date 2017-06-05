@@ -1,4 +1,10 @@
 
-let rec clone x n = if n = 0 then x else (clone x n) - 1;;
+let rec wwhile (f,b) =
+  let (b',c') = f b in match c' with | true  -> wwhile (f, b') | false  -> b';;
 
-let _ = clone "foo" 2;;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) = wwhile ((f b), b);;
+
+let _ = fixpoint (collatz, 48);;

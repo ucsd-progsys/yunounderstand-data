@@ -28,7 +28,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sqsum xs = 
-  let f a x = a + (x * x) in
+  let f a x = 
+    a + x*x in
   let base = 0 in
     List.fold_left f base xs
 
@@ -38,20 +39,20 @@ let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
+(*
+XXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
 
-let pipe fs = 
-  let f a x = fun c -> a x in
-  let base = fun g x -> x in
-    List.fold_left f base fs
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = pipe [] 3
+let _ = pipe [] 2
 
 let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 2 *)
 
 
 
@@ -59,31 +60,31 @@ let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = failwith "to be implemented" in
-      let base = failwith "to be implemented" in
-      let l = failwith "to be implemented" in
+      let f a x = a ^ sep ^ x  in
+      let base = h in
+      let l =  t in
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-*)
+let _ = sepConcat ", " ["foo";"bar";"baz"]
+let _ = sepConcat "--" []
+let _ = sepConcat "" ["a";"b";"c";"d";"f"]
+let _ = sepConcat "X" ["hullo"]
 
 
-let stringOfList f l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let stringOfList f l = "[" ^  sepConcat "; " (List.map f l) ^ "]"
 
-*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+let _ = stringOfList (fun x -> x) ["foo"];;
+let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+
+
 
 
 
@@ -91,51 +92,88 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = failwith "to be implemented" 
+let rec clone x n = 
+  if n < 1 then []
+  else x :: clone x (n - 1)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = clone 3 5 ;;
+let _ = clone "foo" 3;; 
+let _ = clone clone (-3);;
 
+
+
+let padZero l1 l2 = 
+  let difference1 = List.length l1 - List.length l2 in
+  let difference2 = List.length l2 - List.length l1 in
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    if(difference2 > 0) then 
+      (clone 0 difference2 @ l1,l2)
+    else if(difference1 > 0) then
+      (l1, clone 0 difference1 @ l2)
+    else
+      (l1,l2)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+(*
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+else 
+let retTup = (l1, l2)
+
+returnTuple l1 l2 d1 d2
 *)
 
-let padZero l1 l2 = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec removeZero l = failwith "to be implemented"
+let _ = padZero [9;9] [1;0;0;2]
+let _ = padZero [1;0;0;2] [9;9] 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-*)
+let rec removeZero l =
+  match l with
+    | [] -> []
+    | h:: t -> 
+        if (h = 0) then
+          removeZero t
+        else
+          h :: removeZero t
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let _ = removeZero [0;0;0;1;0;0;2]
+let _ = removeZero [9;9]
+let _ = removeZero [0;0;0;0]
+
+
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = failwith "to be implemented" in
-    let base = failwith "to be implemented" in
-    let args = failwith "to be implemented" in
+    let f a x = x + a in
+    let base = (0,0) in
+    let args = List.combine l1 l2 in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = bigAdd [9;9] [1;0;0;2];;
+let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
-*)
+
 
 
 let rec mulByDigit i l = failwith "to be implemented"

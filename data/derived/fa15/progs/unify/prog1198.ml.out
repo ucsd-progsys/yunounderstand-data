@@ -1,6 +1,5 @@
-Characters 15-28:
-  let _ = helper int_of_string [9;9;9;9;];;
-                 ^^^^^^^^^^^^^
-Error: This expression has type string -> int
-       but an expression was expected of type string -> string
-       Type int is not compatible with type string 
+Characters 94-95:
+  (hd::tl) -> ((a + b + hd )/10)::((a + b + hd )mod 10)::tl
+                ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

@@ -1,5 +1,5 @@
-Characters 87-94:
-  | h::t -> (mulByDigit h l2) :: [bigMul(t, l2)];;
-                                        ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+Characters 74-79:
+  | h::t -> ((helper x) * h) :: tenEx helper (x + 1) t;;
+                                ^^^^^
+Error: This function has type int -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

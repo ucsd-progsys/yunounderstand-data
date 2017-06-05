@@ -91,7 +91,7 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 
 let rec clone x n = if ( n < 1 ) then [] else
     match n with
-      | _ -> x :: clone x (n-1)
+      | _ -> [x] @ clone x (n-1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -131,31 +131,23 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (x1,x2) = x in 
-      let (c,a2) = a in
-      let v = x1+x2+c in
-        ( c+1, a2 @ [c+1] )
-
-    in 
-    let base  = (0,[5]) in
-    let args = List.combine l1 l2 in
-    let (duh, res) = List.fold_left f base args in
-      (duh,res)
+    let f a x = let (b::b',c::c') = x in (b+c, b+c) @ a in
+    let base  = ([],[]) in
+    let args  = padZero l1 l2 in
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
-
-let rec mulByDigit i l = match i with
-  | 0 -> []
-  | 1 -> l
-  | _ -> bigAdd l (mulByDigit (i-1) l)
+let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

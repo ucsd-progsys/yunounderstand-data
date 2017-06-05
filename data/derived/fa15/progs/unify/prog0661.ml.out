@@ -1,5 +1,5 @@
-Characters 50-71:
-  let fixpoint (f,b) = wwhile ( let func x = f x in (f, not (f b = b), b));;
-                                                    ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type ('d -> 'd * bool) * 'd
+Characters 67-86:
+  additivePersistence sumList digitsOfInt(n);;
+  ^^^^^^^^^^^^^^^^^^^
+Error: This function has type int -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

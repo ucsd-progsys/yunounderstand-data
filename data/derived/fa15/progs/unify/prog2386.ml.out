@@ -1,6 +1,6 @@
-Characters 137-138:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type int -> int -> int * int
-       but an expression was expected of type int -> int -> int
-       Type int * int is not compatible with type int 
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int -> bool
+       Type int * bool is not compatible with type bool 

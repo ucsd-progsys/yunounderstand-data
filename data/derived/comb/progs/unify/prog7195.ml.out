@@ -1,5 +1,5 @@
-Characters 130-134:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
+Characters 202-223:
+  helper (seen', rest')
+  ^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type 'a list
-       but an expression was expected of type int
+       but an expression was expected of type unit

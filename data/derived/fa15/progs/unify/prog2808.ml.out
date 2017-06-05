@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type (int -> int) list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 45-51:
+  let fixpoint (f,b) = wwhile ( let g = f b in (f, g),b);;
+                                               ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

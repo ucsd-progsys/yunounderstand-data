@@ -1,5 +1,6 @@
-Characters 35-40:
-  let _ = stringOfList (fun x -> x) ["foo"];;
-                                     ^^^^^
-Error: This expression has type string but an expression was expected of type
-         string list
+Characters 142-151:
+  if r = 0 then buildSine
+                ^^^^^^^^^
+Error: This expression has type expr -> expr
+       but an expression was expected of type unit -> expr
+       Type expr is not compatible with type unit 

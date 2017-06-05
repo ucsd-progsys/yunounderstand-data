@@ -37,19 +37,22 @@ let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
-let pipe fs = 
-  let f a x = fun f -> (x(a f)) in
-  let base = fun fs -> fs in
-    List.fold_left f base fs
+(*XXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
+XXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 let rec sepConcat sep sl = match sl with 
@@ -70,7 +73,8 @@ let _ = sepConcat "X" ["hello"]
 
 let stringOfList f l = match l with 
   | []  -> "[]"
-  | l   -> "[" ^ sepConcat ";" (List.map f l) ^ "]"
+  | [x] -> "[" ^ x ^ "]"  
+  | l   -> sepConcat "" List.map f l
 
 let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
 let _ = stringOfList (fun x -> x) ["foo"];;
@@ -115,22 +119,22 @@ let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
 
-let bigAdd l1 l2 =  
+let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match x with
-      | (b, c) -> if (b + c > 9) then (b+c-10, 1) else (b + c, 0) in
-    let base = (0,[]) in
-    let args = List.rev(List.combine l1 l2) in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 let rec mulByDigit i l = failwith "to be implemented"

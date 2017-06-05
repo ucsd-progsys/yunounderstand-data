@@ -1,5 +1,6 @@
-Characters 514-515:
-  | Flip (a, b, c) -> if eval(a, x, y) > eval(b, x, y) then eval((c *. -1), x, y) else eval (c, x ,y);;
-                                                                  ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 66-86:
+  | false -> digitsOfInt (n / 10) :: n mod 10 :: [];;
+             ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

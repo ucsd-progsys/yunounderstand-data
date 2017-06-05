@@ -16,9 +16,12 @@ XXXXXXXXXXXXXXXXX
 *)
 
 
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -37,13 +40,12 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = let c y = x (a y) in c in
-  let base = let g y = y in g in
+  let f a x = fun h x -> x a in
+  let base = fun g x -> x in
     List.fold_left f base fs
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = pipe [] 3
 
@@ -57,31 +59,31 @@ let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = a^sep^x in
-      let base = h in
-      let l = t in
+      let f a x = failwith "to be implemented" in
+      let base = failwith "to be implemented" in
+      let l = failwith "to be implemented" in
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = sepConcat ", " ["foo";"bar";"baz"]
-let _ = sepConcat "---" []
-let _ = sepConcat "" ["a";"b";"c";"d";"e"]
-let _ = sepConcat "X" ["hello"]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-
-
-let stringOfList f l = "["^sepConcat "; " (List.map f l)^"]"
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-let _ = stringOfList (fun x -> x) ["foo"];;
-let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+*)
 
 
+let stringOfList f l = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 
@@ -89,45 +91,34 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = if ( n < 1 ) then [] else
-    match n with
-      | _ -> [x] @ clone x (n-1)
+let rec clone x n = failwith "to be implemented" 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = clone 3 5;;
-let _ = clone "foo" 2;; 
-let _ = clone clone (-3);;
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
-let padZero l1 l2 = 
-  let s1 = List.length l1 in
-  let s2 = List.length l2 in
-    if s1 = s2 then (l1, l2) else
-    if s1 > s2 then (l1, clone 0 (s1-s2) @ l2) else
-      (clone 0 (s2-s1) @ l1, l2)
+let padZero l1 l2 = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = padZero [9;9] [1;0;0;2]
-let _ = padZero [1;0;0;2] [9;9] 
-let _ = padZero [1;1;1;1] [2;2;2;2]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
-let rec removeZero l = 
-  if l = [] then [] else
-    let h::t = l in
-      match h with
-        | 0  -> removeZero t
-        | _  -> l
+let rec removeZero l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
@@ -147,17 +138,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec mulByDigit i l = match l with
-  | []	     -> []
-  | x::x'      -> 
-      if (x*i < 9) then [x*i/10] @ mulByDigit i x'
-      else [x*i/10] @ [(x*i) mod 10]+mulByDigit i x'
+let rec mulByDigit i l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = mulByDigit 9 [9;9;9;9]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

@@ -7,6 +7,7 @@ let rec sumList xs = match xs with
   |[] -> 0
   |h::t -> h + sumList t
 
+
 let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
@@ -22,10 +23,10 @@ let rec digitsOfInt n =
   if n <= 0 then
     []
   else 
-    digitsOfInt(n / 10) @ [n mod 10]  
+    n mod 10 :: [] @ digitsOfInt(n / 10)
 
 let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
+let _ = digitsOfInt 352663(*XXX*)
 
 
 
@@ -52,24 +53,19 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-(*X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+let rec additivePersistence n = 
+  fun n -> additivePersistence(n mod 10)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = match digits (n) with 
-  | []    -> 0
-  | h::t  -> digitalRoot(sumList(n))
+let rec digitalRoot n = failwith "TBD"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -78,14 +74,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec listReverse l = match l with 
-  | [] -> []
-  | h::t -> listReverse t @ [h]  
+let rec listReverse l = failwith "TBD"
 
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -100,16 +96,15 @@ let explode s =
   in
     go 0
 
-let palindrome w = 
-  if (explode w = listReverse(explode w)) then
-    true
-  else 
-    false 
+let palindrome w = failwith "TBD"
 
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 

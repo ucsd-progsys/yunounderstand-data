@@ -1,5 +1,6 @@
-Characters 17-22:
-  let _ = sumList [33, 6];;
-                   ^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 244-248:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int * 'a list
+       but an expression was expected of type int * int
+       Type 'a list is not compatible with type int 

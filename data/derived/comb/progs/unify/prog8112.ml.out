@@ -1,6 +1,5 @@
-Characters 83-84:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'd -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'd -> 'a
+Characters 13-42:
+  let _ = eval (Neg(Divadd(VarX,VarY,VarY))),0.1,0.2;;
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

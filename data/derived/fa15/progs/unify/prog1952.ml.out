@@ -1,5 +1,5 @@
-Characters 148-151:
-  | [] ->  if sum > 9 then [1,sum-1] else [sum]
-                                           ^^^
-Error: This expression has type int but an expression was expected of type
-         int * int
+Characters 91-99:
+  else bigAdd [l] [(mulByDigit(i-1, l))];;
+                              ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

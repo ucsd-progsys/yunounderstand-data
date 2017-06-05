@@ -1,5 +1,5 @@
-Characters 33-34:
-  let rec wwhile (f,b) = if f then f(f,b) else b;;
-                                   ^
-Error: This expression has type bool
-       This is not a function; it cannot be applied.
+Characters 529-530:
+  | Oscillate   m4	    -> let x = eval(m4,x,y) in x/.sqrt(eval(m4,x,y)**2+.x**2);;
+                                                                        ^
+Error: This expression has type int but an expression was expected of type
+         float

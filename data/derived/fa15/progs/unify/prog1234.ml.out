@@ -1,6 +1,5 @@
-Characters 60-73:
-  | h::tl -> listReverse l::h;;
-             ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 37-43:
+  let helper x res n =  if n > 0 then (helper (x) res (n-1))@res else [];;
+                                       ^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

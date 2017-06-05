@@ -1,6 +1,4 @@
 
-let pipe fs =
-  let f a x = match x with | [] -> [] | h::t -> h in
-  let base = [] in List.fold_left f base fs;;
+let isFPoint f x = ((f x) - x) < 0;;
 
-let _ = pipe [] 3;;
+let _ = (isFPoint 1) = 1;;

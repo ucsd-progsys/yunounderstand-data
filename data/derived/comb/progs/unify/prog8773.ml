@@ -1,26 +1,13 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let buildAverage (e1,e2) = Average (e1, e2);;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let buildCosine e = Cosine e;;
+let getHeads y = match listReverse y with | [] -> [] | h::t -> [h];;
 
-let buildSine e = Sine e;;
-
-let rec build (rand,depth) =
-  if depth > 0
-  then
-    match rand with
-    | 0 -> buildSine (build (rand, (depth - 1)))
-    | 1 -> buildCosine (build (rand, (depth - 1)))
-    | 2 ->
-        buildAverage
-          ((build (rand, (depth - 1))), (build (rand, (depth - 1))))
-    | _ -> false;;
+let rec matchHeads x =
+  match explode x with | h::t -> if [getHeads x] = [] then true else false;;

@@ -1,5 +1,5 @@
-Characters 87-97:
-  (value * not result)
-           ^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
+Characters 76-78:
+  |Sine (e1) -> sin(pi * eval (e1, x, y))
+                    ^^
+Error: This expression has type float but an expression was expected of type
          int

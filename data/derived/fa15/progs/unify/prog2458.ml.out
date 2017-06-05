@@ -1,5 +1,6 @@
-Characters 27-65:
-  let stringOfList f l = "["^List.map (fun t -> sepConcat "; " l) l^"]";;
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type string list
-       but an expression was expected of type string
+Characters 18-25:
+  let _ = fixpoint (collatz, 3);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int -> int * bool
+       Type int is not compatible with type int -> int * bool 

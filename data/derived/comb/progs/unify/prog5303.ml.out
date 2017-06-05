@@ -1,5 +1,7 @@
-Characters 24-33:
-  sepConcat "; " map f l;;
-  ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 87-88:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type ('a -> 'a -> 'b) -> 'a -> 'a -> 'b
+       but an expression was expected of type
+         ('a -> 'a -> 'b) -> 'a -> 'a -> 'a -> 'b
+       The type variable 'b occurs inside 'a -> 'b

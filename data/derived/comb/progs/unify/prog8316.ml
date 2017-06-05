@@ -1,4 +1,20 @@
 
-let rec mulByDigit i l = if i > 0 then l + (mulByDigit (i - 1) l) else l;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let _ = mulByDigit 9 [9; 9; 9; 9];;
+let buildSine e = Sine e;;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec build (rand,depth) =
+  match depth with
+  | 0 -> if rand mod 2 then buildX () else buildY ()
+  | n -> buildSine (build (rand, (depth - 1)));;

@@ -77,22 +77,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((let f' b = 
-                                if f b = b 
-                                then (b, false) 
-                                else (f b, true) 
-                              in f'), b)
-;;
+let fixpoint (f,b) = wwhile ((let f' b = if (f b) = b then b else f b in f' b),b)
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -113,19 +108,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine e' -> "sin(pi*" ^ exprToString e' ^ ")"
-  | Cosine e' -> "cos(pi*" ^ exprToString e' ^ ")"
-  | Average (e',e'') -> "((" ^ exprToString e' ^ "+" ^ exprToString e'' ^ ")/2)"
-  | Times (e',e'') -> exprToString e' ^ "*" ^ exprToString e''
-  | Thresh (e1,e2,e3,e4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^ "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
+let rec exprToString e = failwith "tdb"
 ;;
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+(*
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+*)
+
 
 (*XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -146,15 +137,7 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x
-  | VarY -> y
-  | Sine e' -> sin(pi *. eval e')
-  | Cosine e' -> cos(pi *. eval e')
-  | Average (e1, e2) -> ((eval e1 + eval e2) / 2)
-  | Times (e1, e2) -> (eval e1 * eval e2)
-  | Thresh (e1,e2,e3,e4) -> (eval e1 < eval e2 ? eval e3 : eval e4)
-;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

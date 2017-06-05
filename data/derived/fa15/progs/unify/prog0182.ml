@@ -1,2 +1,2 @@
 
-let rec additivePersistence n = n = (additivePersistence (n mod 10));;
+let rec digitsOfInt n = if n <= 0 then [] else [digitsOfInt (n mod 10)];;

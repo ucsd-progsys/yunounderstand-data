@@ -1,5 +1,4 @@
 
-let rec mulByDigit i l =
-  match l with | [] -> [] | hd::tl -> (mulByDigit i tl) @ ([hd] :: i);;
+let rec clone x n = x n;;
 
-let _ = mulByDigit 9 [9; 9; 9; 9];;
+let _ = clone 3 5;;

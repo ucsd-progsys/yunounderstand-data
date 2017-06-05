@@ -1,6 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type
-         (('a -> 'a) -> 'a -> 'a) list -> ('a -> 'a) list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 61-66:
+  let fixpoint (f,b) = wwhile (let fin bt = (bt, f bt = bt) in fin b ,b);;
+                                                               ^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

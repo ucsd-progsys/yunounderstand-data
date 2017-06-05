@@ -1,6 +1,0 @@
-Characters 23-30:
-  let _ = emitGrayscale (eval_fn, 150, "sample");;
-                         ^^^^^^^
-Error: This expression has type expr -> float * float -> float
-       but an expression was expected of type float * float -> float
-       Type expr is not compatible with type float * float 

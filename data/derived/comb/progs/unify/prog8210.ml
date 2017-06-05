@@ -1,5 +1,2 @@
 
-let rec append l r = match l with | [] -> r | h::t -> h :: (append t r);;
-
-let rec digitsOfInt n =
-  if n <= 0 then n else (append n) mod (10 digitsOfInt (n / 10));;
+let remainder x y = if (x * y) > 10 then (x * y) mod 10 else x y;;

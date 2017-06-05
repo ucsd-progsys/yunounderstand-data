@@ -1,5 +1,5 @@
-Characters 364-394:
-  |6 -> buildSquare (build(rand,d), build(rand,d))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 84-85:
+  |Sine i -> "sin" ^ i;;
+                     ^
+Error: This expression has type expr but an expression was expected of type
+         string

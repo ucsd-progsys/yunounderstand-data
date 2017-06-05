@@ -1,4 +1,2 @@
 
-let rec removeZero l = match l with | [] -> [] | hd::t -> (removeZero l) @ hd;;
-
-let _ = removeZero [9; 9];;
+let pipe fs = let f a x = a fs in let base = [] in List.fold_left f base fs;;

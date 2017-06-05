@@ -1,6 +1,7 @@
 
-let rec wwhile (f,b) =
-  let res = f b in
-  match res with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
+let rec append xs ys = match xs with | [] -> ys | h::t -> h :: (append t ys);;
 
-let fixpoint (f,b) = let fx x = x in wwhile (b, b);;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> append (listReverse t) h;;
+
+let _ = listReverse [1; 2; 3; 4];;

@@ -1,5 +1,5 @@
-Characters 102-105:
-  | _ -> additivePersistence(sumList(n));;
-                                    ^^^
+Characters 96-99:
+  | h::t -> digitalRoot(digits(sumList(n)));;
+                                      ^^^
 Error: This expression has type int but an expression was expected of type
          int list

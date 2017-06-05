@@ -1,6 +1,6 @@
-Characters 264-268:
-  let (_, res) = List.fold_left f base args in
-                                       ^^^^
-Error: This expression has type (int list * int list) list
-       but an expression was expected of type (int * int) list
-       Type int list is not compatible with type int 
+Characters 61-76:
+  | (h::t) -> (listReverse t)::[h];;
+              ^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

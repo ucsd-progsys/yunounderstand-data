@@ -1,5 +1,5 @@
-Characters 92-94:
-  | Sine(e1)  -> sin(pi *. eval e1 x y)
-                                ^^
-Error: This expression has type expr but an expression was expected of type
-         expr * ('a -> 'b -> 'c) * ('a -> 'b -> 'c)
+Characters 8-14:
+  let _ = digits -54;;
+          ^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

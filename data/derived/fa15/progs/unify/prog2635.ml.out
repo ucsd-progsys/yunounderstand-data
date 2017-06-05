@@ -1,5 +1,5 @@
-Characters 78-80:
-  | Sine e' -> sin (pi * eval (e',x,y))
-                    ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 27-30:
+  if not f b then b 
+     ^^^
+Error: This function has type bool -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

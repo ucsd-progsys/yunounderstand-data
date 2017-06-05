@@ -1,7 +1,10 @@
 
-let rec digitsOfInt n =
-  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
+let pipe fs =
+  let rec f a x = let h::t = x in h a in
+  let base = [] in List.fold_left f base fs;;
 
-let digits n = digitsOfInt (abs n);;
+let pipe fs =
+  let f a x = let h::t = x in pipe t in
+  let base = [] in List.fold_left f base fs;;
 
-let _ = digits - 54;;
+let _ = pipe [] 3;;

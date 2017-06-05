@@ -1,5 +1,5 @@
-Characters 64-74:
-  | x::x' -> [(x*i)/10]::[((x*i) mod 10) + mulByDigit i x'];;
-             ^^^^^^^^^^
+Characters 44-53:
+  let f a x = let a::x = x in [(a * a)] + sqsum [x] in
+                              ^^^^^^^^^
 Error: This expression has type 'a list
        but an expression was expected of type int

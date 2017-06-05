@@ -39,19 +39,20 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = fun x' -> (x a) x' in
+  let f a x = fun x' -> x' a in
   let base = fun x -> x in
     List.fold_left f base fs
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
-
+*)
 
 
 let rec sepConcat sep sl = match sl with 

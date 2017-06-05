@@ -1,5 +1,5 @@
-Characters 135-152:
-  ([(x1+x2+a1)/10],[a2 :: (x1+x2+a1) mod 10]) in 
-                          ^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 116-117:
+  | _  -> [h*i/10]@
+           ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

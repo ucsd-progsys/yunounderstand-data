@@ -1,5 +1,5 @@
-Characters 95-101:
-  let base = ([0, 0] List.combine l1 l2) in 
-              ^^^^^^
-Error: This expression has type (int * int) list
-       This is not a function; it cannot be applied.
+Characters 59-78:
+  | h::t -> h @ clone t (n - 1);;
+            ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

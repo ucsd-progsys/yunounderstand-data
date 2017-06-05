@@ -1,5 +1,6 @@
-Characters 135-141:
-  | 0 -> buildX
-         ^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 73-84:
+  let sum = padZero((mulByDigit x l1)@(clone 0 i)) a in
+                                      ^^^^^^^^^^^
+Error: This expression has type int list list
+       but an expression was expected of type int list
+       Type int list is not compatible with type int 

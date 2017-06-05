@@ -1,9 +1,5 @@
 
-let rec mulByDigit i l =
-  if (List.length l) = 1
-  then [l * i]
-  else
-    (match l with
-     | [] -> []
-     | z::x::x' ->
-         [(z * i) / 10] @ ((mulByDigit i [((z * i) mod 10) + x]) @ x'));;
+let pipe fs =
+  let f a x c = a x in let base g x = x in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

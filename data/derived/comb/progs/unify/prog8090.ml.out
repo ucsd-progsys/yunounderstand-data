@@ -1,5 +1,5 @@
-Characters 23-26:
-  List.map string_of_int 123;;
-                         ^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 75-77:
+  |Sine(e) -> sin(pi*eval e)
+                  ^^
+Error: This expression has type float but an expression was expected of type
+         int

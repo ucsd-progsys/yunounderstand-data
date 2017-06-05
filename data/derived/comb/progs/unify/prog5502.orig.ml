@@ -42,22 +42,21 @@ let _ = sqsum [-1]
 
 
 let pipe fs = 
-  let f a x = x in
-  let base = (fun y -> y) in 
-    List.fold_right f base fs
-
-let fn = pipe [(fun x -> x+x)]
-
-let _ = fn 3
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = pipe [] 3
-
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
-
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
+  let f a x = match fs with
+    | x::y -> x in
+  let base = f in
+    List.fold_left f base fs
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 let rec sepConcat sep sl = match sl with 

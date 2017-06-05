@@ -1,5 +1,5 @@
-Characters 55-65:
-  (n mod 10) @ digitsOfIntHelper ((n%10)/10);;
-  ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 58-71:
+  let stringOfList f l =  sepConcat ";" (List.map (fun t -> ((f t) ^ "]") l));;
+                                                            ^^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

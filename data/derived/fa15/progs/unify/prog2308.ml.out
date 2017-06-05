@@ -1,5 +1,6 @@
-Characters 21-22:
-  let _ = listReverse [1; 2; 3; 5];;
-                       ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 155-159:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'c list list
+       Type 'a * 'b is not compatible with type 'c list 

@@ -1,5 +1,5 @@
-Characters 84-88:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 314-328:
+  else ((carry+1),[(h+b+c)/10]::[(h+b+c) mod 10]@t) in
+                                 ^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

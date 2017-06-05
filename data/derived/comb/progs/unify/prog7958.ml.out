@@ -1,5 +1,5 @@
-Characters 92-100:
-  if numZeros = 0 then (l1, l2);;
-                       ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type unit
+Characters 192-193:
+  | Average (e1, e2) -> ((eval(e,x,y) +. eval(e2,x,y)) /. 2)
+                                                          ^
+Error: This expression has type int but an expression was expected of type
+         float

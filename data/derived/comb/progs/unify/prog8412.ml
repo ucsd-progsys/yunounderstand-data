@@ -1,49 +1,39 @@
 
-let padZero l1 l2 = failwith "to be implemented";;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine v -> "sin(pi*" ^ ((exprToString v) ^ ")")
+  | Cosine v -> "sin(pi*" ^ ((exprToString v) ^ ")")
+  | Average (v,w) ->
+      "(" ^ ((exprToString v) ^ ("+" ^ ((exprToString w) ^ ")/2")))
+  | Times (v,w) -> (exprToString v) ^ ("*" ^ (exprToString w))
+  | Thresh (v,w,x,y) ->
+      (exprToString v) ^
+        ("<" ^
+           ((exprToString w) ^
+              ("?" ^ ((exprToString x) ^ (":" ^ (exprToString y))))));;
 
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
-
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
-
-let padZero l1 l2 =
-  if (List.length l1) = (List.length l2)
-  then (l1, l2)
-  else
-    if (List.length l1) < (List.length l2)
-    then padZero (0 :: l1) l2
-    else padZero l1 (0 :: l2);;
-
-let rec removeZero l =
-  match l with | h::t -> if h = 0 then removeZero t else l | [] -> [];;
-
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      let b = (fst x) + (snd x) in
-      match a with
-      | [] -> [[b / 10]; b mod 10]
-      | h::t -> [(h + b) / 10] :: [(h + b) mod 10] :: t in
-    let base = [] in
-    let args = List.rev (List.combine l1 l2) in
-    let (_,res) = List.fold_left f base args in res in
-  removeZero (add (padZero l1 l2));;
+let rec eval (e,x,y) =
+  let pi = 3.142 in
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine v -> sin (pi *. (eval (v, x, y)))
+  | Cosine v -> cos (pi *. (eval (v, x, y)))
+  | Average (v,w) -> ((eval (v, x, y)) +. (eval (w, x, y))) /. 2
+  | Times (v,w) -> (eval (v, x, y)) *. (eval (w, x, y))
+  | Thresh (v,w,x,y) ->
+      (exprToString v) ^
+        ("<" ^
+           ((exprToString w) ^
+              ("?" ^ ((exprToString x) ^ (":" ^ (exprToString y))))));;

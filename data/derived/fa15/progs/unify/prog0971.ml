@@ -1,17 +1,9 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t -> let seen' = h in let rest' = t in helper (seen', rest') in
+  List.rev (helper ([], l));;
 
-let rec exprToString e =
-  match e with
-  | Sine e1 -> sin expr e1
-  | Cosine e1 -> cos e1
-  | Average (e1,e2) -> (e1 + e2) / 2
-  | Times (e1,e2) -> e1 * e2
-  | Thresh (e1,e2,e3,e4) -> ((e1 * e2) * e3) * e4;;
+let _ = removeDuplicates [1; 6; 2; 4; 12; 2; 13; 6; 9];;

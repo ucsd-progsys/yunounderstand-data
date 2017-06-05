@@ -1,5 +1,5 @@
-Characters 48-61:
-  if n < 0 then [] else [digitsOfInt n/10]@[(n mod 10)];;
-                         ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 249-250:
+  | Times (e1, e2)	  -> eval e *. eval e
+                             ^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

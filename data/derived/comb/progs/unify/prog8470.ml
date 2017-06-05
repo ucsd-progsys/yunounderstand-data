@@ -1,20 +1,12 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec digitsOfInt n =
+  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> Printf.printf "%s"
-  | VarY  -> Printf.printf "%s"
-  | Sine sin -> Printf.printf "sin(%s)" sin
-  | Cosine cos -> Printf.printf "cos(%s)" cos
-  | Average (e1,e2) -> Printf.printf "((%s+%s)/2)" e1 e2
-  | Times (t1,t2) -> Printf.printf "%s*%s" t1 t2
-  | Thresh (th1,th2,th3,th4) ->
-      Printf.printf "(%s<*%s?%s:%s)" th1 th2 th3 th4;;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+
+let rec additivePersistence n =
+  let rec recCounter n count =
+    if n < 10
+    then count
+    else recCounter ((sumList (digitsOfInt n)) (count + 1)) in
+  recCounter n 0;;

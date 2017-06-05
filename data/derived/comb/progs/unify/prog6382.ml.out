@@ -1,5 +1,5 @@
-Characters 48-61:
-  if n < 0 then [] else  digitsOfInt n/10 @ n%10;;
-                         ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 145-157:
+  (sum / 10, acc@(sum mod 10))
+                 ^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,5 +1,5 @@
-Characters 64-66:
-  assert (-1.0 <= rv && rv <= 1.0);
-                  ^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 29-42:
+  let fixpoint (f,b) = wwhile ((helper(f,b)),b);;
+                               ^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

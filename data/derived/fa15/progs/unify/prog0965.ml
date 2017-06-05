@@ -1,11 +1,10 @@
 
-let rec wwhile (f,b) =
-  let (value,result) = f b in if not result then value else wwhile (f, value);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+let digits n = digitsOfInt (abs n);;
 
-let fixpoint (f,b) =
-  wwhile ((let func (output,result) = ((f b), ((f b) = b)) in func), b);;
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let _ = fixpoint (collatz, 9001);;
+let rec additivePersistence n =
+  if n < 10 then 0 else 1 + (additivePersistence sumList (digits n));;

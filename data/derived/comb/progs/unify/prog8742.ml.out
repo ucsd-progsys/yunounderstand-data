@@ -1,5 +1,5 @@
-Characters 29-51:
-  let fixpoint (f,b) = wwhile ((f b, not ((f b) = b)),b);;
-                               ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 18-20:
+  let _ = sepConcat "" ["a";"b";"c";"d";"e"];;
+                    ^^
+Error: This expression has type string but an expression was expected of type
+         string list

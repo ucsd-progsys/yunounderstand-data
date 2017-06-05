@@ -1,6 +1,5 @@
-Characters 93-94:
-  in wwhile ((funt),b);;
-                    ^
-Error: This expression has type 'a -> 'a * bool
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'a * bool
+Characters 66-72:
+  else let n2 = n / 10 in append digitsOfInt n2 [n2];;
+                          ^^^^^^
+Error: This function has type 'a list -> 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

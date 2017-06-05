@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 61-65:
+  h::t -> h + digitsO;;
+  ^^^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

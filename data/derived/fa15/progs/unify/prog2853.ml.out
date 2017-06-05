@@ -1,5 +1,6 @@
-Characters 8-11:
-  let _ = not padZero [9;9] [1;0;0;2];;
-          ^^^
-Error: This function has type bool -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 23-30:
+  let _ = emitGrayscale (eval_fn, 150, "sample");;
+                         ^^^^^^^
+Error: This expression has type expr -> float * float -> float
+       but an expression was expected of type float * float -> float
+       Type expr is not compatible with type float * float 

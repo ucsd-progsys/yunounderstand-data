@@ -1,5 +1,5 @@
-Characters 88-89:
-  let f a x = a ^ sep ^ t in
-                        ^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 187-200:
+  |Average(i1, i2)	  -> eval (i1,x,y) +. eval (i2,x,y)  / 2
+                                         ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

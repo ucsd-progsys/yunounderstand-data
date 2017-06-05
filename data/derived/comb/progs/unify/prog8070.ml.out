@@ -1,5 +1,4 @@
-Characters 70-74:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a list -> 'a -> 'a list
-       but an expression was expected of type 'b list
+Characters 123-124:
+  |Average (e,e) -> "Average"
+              ^
+Error: Variable e is bound several times in this matching

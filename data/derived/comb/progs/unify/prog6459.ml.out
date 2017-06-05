@@ -1,6 +1,5 @@
-Characters 167-168:
-  let seen' = seen@h in
+Characters 57-58:
+  else if n=0 then 0
                    ^
-Error: This expression has type 'a but an expression was expected of type
+Error: This expression has type int but an expression was expected of type
          'a list
-       The type variable 'a occurs inside 'a list

@@ -1,8 +1,7 @@
 
-let rec wwhile (f,b) =
-  let res = f b in
-  match res with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let fixpoint (f,b) =
-  let fs bs = if bs = 0 then 0 else if bs > 1 then bs - 1 else bs + 1 in
-  wwhile ((fs b), b);;
+let _ = explode [123];;

@@ -1,2 +1,3 @@
 
-let pipe fs = let f a x = a x in let base = fs in List.fold_left f base fs;;
+let rec assoc (d,k,l) =
+  match l with | [] -> (-1) | h::l' -> let (x,y) = h in Printf.printf (x, h);;

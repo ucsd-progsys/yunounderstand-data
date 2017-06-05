@@ -162,32 +162,26 @@ let rec mulByDigit i l =
   then [0]
   else if i = 1
   then l
-  else bigAdd l (mulByDigit (i-1) l)
+  else (mulByDigit (i-1) bigAdd l l)
+
 ;;
 
-let _ = mulByDigit 1 [1;1;1;1]
+let _ = mulByDigit 0 [9;9;9;9]
 
 let bigMul l1 l2 = 
-  let f a x = 
-    match a with
-      | (o, l) ->
-          let prod = (mulByDigit x l) + o in
-            if prod < 10 
-            then (0, prod::l)
-            else (prod/10, (prod mod 10)::l)
-  in
-  let base = (0, []) in
-  let args = let combine (a,b) = a + b in
-      List.map combine (List.rev(List.combine l1 l2)) @ [0] in 
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

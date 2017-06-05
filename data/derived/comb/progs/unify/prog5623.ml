@@ -1,11 +1,5 @@
 
-let removeDuplicates l =
-  let rec helper (seen,rest) =
-    match rest with
-    | [] -> seen
-    | h::t ->
-        let seen' = match h with | true  -> seen | false  -> h :: seen in
-        let rest' = t in helper (seen', rest') in
-  List.rev (helper ([], l));;
+let rec wwhile (f,b) =
+  match f b with | (b',c) -> if c = true then wwhile (f, b') else b';;
 
-let _ = removeDuplicates [1; 6; 2; 4; 12; 2; 13; 6; 9];;
+let fixpoint (f,b) = wwhile (fun x  -> let b = f b in ((b, (b != b)), b));;

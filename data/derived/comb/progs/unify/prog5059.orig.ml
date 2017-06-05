@@ -88,10 +88,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile (let g x = 
-                               let calcfx = f x in
-                                 (calcfx, calcfx != x)
-                             in g, b)
+let fixpoint (f,b) = wwhile ((let g b = (f b, b) in g),b)
+
 
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
@@ -123,21 +121,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  |VarX -> "x"
-  | VarY -> "y"
-  | Sine a -> "sin(pi*" exprToString a ")"
-  | Cosine a -> "cos(pi*" exprToString a ")"
-  | Average (a, b) -> "((" exprToString a "+" exprToString b ")/2)"
-  | Times  (a, b) -> exprToString a "*" exprToString b
-  | Thresh (a, b, c, d) -> "(" exprToString a "<" exprToString b "?" exprToString c ":" exprToString d ")" ;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX

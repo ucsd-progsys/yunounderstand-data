@@ -1,5 +1,5 @@
-Characters 128-148:
-  if List.mem seen', seen
-     ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type bool
+Characters 278-281:
+  | Times (e1,e2) -> exprToString e1 ^ "*" exprToString e2
+                                       ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

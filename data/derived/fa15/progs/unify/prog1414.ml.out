@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 4;;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 542-546:
+  sin(eval (e1,x,y)eval + (e2,x,y) + eval (e3,x,y)/.pi);;
+      ^^^^
+Error: This function has type expr * float * float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

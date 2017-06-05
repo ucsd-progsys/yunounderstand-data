@@ -1,6 +1,6 @@
-Characters 58-76:
-  if n > 9 then digitsOfInt (n/10)::x else n;;
-                ^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
+Characters 58-75:
+  | h::t -> [listReverse t]@h;;
+            ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
        The type variable 'a occurs inside 'a list

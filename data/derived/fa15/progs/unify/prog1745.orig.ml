@@ -41,7 +41,7 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x =fun z -> x(a(z)) in
+  let f a x = x in
   let base = fun x->x in
     List.fold_left f base fs
 
@@ -141,43 +141,32 @@ let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
 
+
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (y,z)=a in 
-      let (r,s)=x in
-      let m=r+s+y in
-        (m/10,(m mod 10)::z) in
-    let base = (0,[]) in
-    let args = (List.combine (List.rev l1) (List.rev l2))@(0,0) in
+    let f a x = x[0]+x[1] in
+    let base = 0 in
+    let args = List.combine l1 l2 in
     let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-
-let rec multHelper i l =
-  match l with
-    |[]->[]
-    |h::t->
-        match t with
-          |[]->(i*t) mod 10@[]
-          |
-
-            let rec mulByDigit i l = 
-;;
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = mulByDigit 9 [9;9;9;9]
+*)
 
 
+let rec mulByDigit i l = failwith "to be implemented"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

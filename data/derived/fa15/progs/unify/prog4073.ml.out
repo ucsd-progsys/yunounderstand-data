@@ -1,5 +1,5 @@
-Characters 200-232:
-  then buildCosine(build(rand,depth-1));;
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         unit
+Characters 47-48:
+  let _ = eval (Smallest(VarX, VarY, Neg(VarX)), 1, 2);;
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

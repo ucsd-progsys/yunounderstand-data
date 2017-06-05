@@ -40,8 +40,8 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 let pipe fs = 
-  let f a x = fun b e -> x a in
-  let base = fun c -> c in
+  let f a x = fun a x -> x a in
+  let base = fun x -> x in
     List.fold_left f base fs
 
 

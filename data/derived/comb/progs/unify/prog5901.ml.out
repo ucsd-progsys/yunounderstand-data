@@ -1,5 +1,5 @@
-Characters 70-81:
-  | (h::xs')  -> h + sumList xs';;
-                     ^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 71-74:
+  let f a x = let (y,z) = x in ( y+z @ a) in
+                                 ^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

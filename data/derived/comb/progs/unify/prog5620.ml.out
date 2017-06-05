@@ -1,5 +1,5 @@
-Characters 250-276:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 71-79:
+  if n <= 0 then [] else digitsOfInt (n/10)::[]@ n mod 10::[];;
+                                                 ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

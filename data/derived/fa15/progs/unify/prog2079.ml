@@ -1,5 +1,5 @@
 
-let rec wwhile (f,b) =
-  match (f, b) with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
+let rec append xs ys = match xs with | [] -> ys | h::t -> h :: (append t ys);;
 
-let _ = let f x = let xx = (x * x) * x in (xx, (xx < 100)) in wwhile (f, 2);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else (let n2 = n div 10 in digitsOfInt n2 append [n2]);;

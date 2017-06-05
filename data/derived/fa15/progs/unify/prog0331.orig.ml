@@ -60,9 +60,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec additivePersistence n = 
   let x = digitsOfInt n in 
     match x with
-      | [] -> 0
-      | head :: [] -> 0
-      | head :: tail -> 1 + additivePersistence (sumList x)
+      | head -> 0
+      | head :: tail -> 1 + additivePersistence sumList n
 ;;
 
 let _ = additivePersistence 9876
@@ -71,32 +70,23 @@ let _ = additivePersistence 9876
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n =
-  let x = digitsOfInt n in 
-    match x with
-      | [] -> 0
-      | head :: [] -> head
-      | head :: tail -> digitalRoot (sumList x)
-;;
+let rec digitalRoot n = failwith "TBD"
 
-let _ = digitalRoot 9876
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let rec listReverse l = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec listReverse l = 
-  let newList = [] in
-    match l with
-      | [] -> [];
-      | head :: [] -> head
-      | head :: tail -> listReverse tail :: head
-;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

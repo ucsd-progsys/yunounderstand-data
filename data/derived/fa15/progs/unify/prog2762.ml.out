@@ -1,5 +1,5 @@
-Characters 64-68:
-  let fixpoint (fr,b) = wwhile ((let n z = let xx = f in (xx, b = f(b))  in n),b);;
-                                                                  ^^^^
-Error: This expression has type int * bool
+Characters 181-193:
+  if value > 9 then (1,value-10)::a 
+                    ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
        but an expression was expected of type int

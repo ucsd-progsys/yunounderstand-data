@@ -1,5 +1,6 @@
-Characters 68-73:
-  (h::t) -> if t = false then h else wwhile(f, h);;
-                   ^^^^^
-Error: This variant expression is expected to have type 'a list
-       The constructor false does not belong to type list
+Characters 87-96:
+  ...................................................................false 
+  
+  c..
+Error: The constructor false expects 0 argument(s),
+       but is applied here to 1 argument(s)

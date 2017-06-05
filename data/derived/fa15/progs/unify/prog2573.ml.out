@@ -1,5 +1,5 @@
-Characters 85-96:
-  else ((sumList(digitsOfInt loop x)) + y) in
-                 ^^^^^^^^^^^
-Error: This function has type int -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 166-170:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b * 'c

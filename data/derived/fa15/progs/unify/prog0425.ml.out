@@ -1,5 +1,5 @@
-Characters 49-55:
-  else bigAdd l multByDigit i-1 l;;
-       ^^^^^^
-Error: This function has type int list -> int list -> int list
+Characters 265-269:
+  removeZero (mult i l);;
+              ^^^^
+Error: This function has type 'a * int list -> int list
        It is applied to too many arguments; maybe you forgot a `;'.

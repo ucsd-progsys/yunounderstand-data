@@ -1,0 +1,5 @@
+Characters 30-33:
+  let _ = lift1  string_of_int Non;;
+                               ^^^
+Error: This variant expression is expected to have type int option
+       The constructor Non does not belong to type option

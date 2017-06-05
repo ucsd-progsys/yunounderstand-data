@@ -1,3 +1,2 @@
 
-let rec clone x n =
-  if n > 0 then match x with | h::t -> h @ (clone t (n - 1));;
+let pipe fs = let f a x = a ^ x in let base = [] in List.fold_left f base fs;;

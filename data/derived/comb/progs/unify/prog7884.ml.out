@@ -1,5 +1,5 @@
-Characters 160-186:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b * 'c
+Characters 20-21:
+  let _ = removeZero [9;9];;
+                      ^
+Error: This expression has type int but an expression was expected of type
+         'a list

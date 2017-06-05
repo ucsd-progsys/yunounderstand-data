@@ -1,5 +1,5 @@
-Characters 60-68:
-  filter t
-  ^^^^^^^^
-Error: This expression has type 'a -> 'b list
-       but an expression was expected of type 'b list
+Characters 85-86:
+  (b+1,bigAdd(((mulByDigit x l2)@clone(0 b)) c)) in
+                                       ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

@@ -1,5 +1,5 @@
-Characters 25-37:
-  let _ = assoc([1,1],"a",[([1,2],"cc"),([1,1,1],"a")]);;
-                           ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 141-152:
+  |h::t->(h,(List.hd t)::c)) in
+            ^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

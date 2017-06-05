@@ -1,5 +1,5 @@
-Characters 8-9:
-  let _ = 2 ** 3;;
-          ^
+Characters 188-189:
+  | (x, n) when n mod 5 = 0 -> buildSine(build(x, n - 1))
+                                               ^
 Error: This expression has type int but an expression was expected of type
-         float
+         int * int -> int

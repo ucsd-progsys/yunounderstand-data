@@ -1,5 +1,5 @@
-Characters 274-293:
-  | h::t -> if((n+c+d)<10) then (0, 0::[c+d+h]@t) else (n+1, ((h+c+d)/10)::[((h+c+d) mod 10)::t]) in
-                                                                            ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 33-34:
+  let rec wwhile (f,b) = if f then f(f,b) else b;;
+                                   ^
+Error: This expression has type bool
+       This is not a function; it cannot be applied.

@@ -1,10 +1,8 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let fixpointHelper f b =
+  let c = f b in if c = b then (c, true) else (c, false);;
 
-let rec matchHeads y = match y with | [] -> [] | h::t -> t;;
+let rec wwhile (f,b) =
+  match f b with | (num,expr) -> if expr then wwhile (f, num) else num;;
 
-let palindrome w =
-  match explode w with | [] -> true | h::t -> matchHeads (explode w);;
+let fixpoint (f,b) = wwhile ((fixpointHelper f b), b);;

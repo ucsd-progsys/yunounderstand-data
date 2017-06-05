@@ -1,5 +1,5 @@
-Characters 38-40:
-  | [] -> 0
-    ^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 8-12:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+          ^^^^
+Error: This function has type (int -> int) list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

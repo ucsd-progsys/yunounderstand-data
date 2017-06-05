@@ -1,4 +1,5 @@
 
-let rec wwhile (f,b) = match b with | b -> wwhile (b, b);;
-
-let _ = let f x = let xx = (x * x) * x in (xx, (xx < 100)) in wwhile (f, 2);;
+let rec assoc (d,k,l) =
+  match k with
+  | [] -> d
+  | (k',d')::t -> if k = k' then d' else assoc (d, k, t);;

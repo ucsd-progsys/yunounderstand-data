@@ -1,5 +1,5 @@
-Characters 76-78:
-  let f a x = a^sl^x in
-                ^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 23-32:
+  let stringOfList f l = sepConcat "; " List.map(f, l);;
+                         ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

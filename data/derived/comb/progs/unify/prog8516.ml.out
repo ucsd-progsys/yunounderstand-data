@@ -1,5 +1,5 @@
-Characters 419-426:
-  | Circ	(circ1,circ2)       -> eval(circ1)**2+eval(circ2)**2
-                                    ^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 120-124:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int * 'a list
+       but an expression was expected of type 'b list

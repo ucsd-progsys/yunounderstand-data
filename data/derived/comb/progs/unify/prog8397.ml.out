@@ -1,5 +1,6 @@
-Characters 46-55:
-  let rec appZero x l = if x > 0 then l@[] else appZero x-1 l;;
-                                                ^^^^^^^^^
-Error: This expression has type 'a list -> 'a list
-       but an expression was expected of type int
+Characters 49-53:
+  let rec wwhile (f,b) = let temp = f b in wwhile (temp, b);;
+                                                   ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

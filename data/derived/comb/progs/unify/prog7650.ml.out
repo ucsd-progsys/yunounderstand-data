@@ -1,5 +1,5 @@
-Characters 94-95:
-  else a :: [x] in
-       ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 282-309:
+  | Thresh(e1, e2, e3, e4) -> buildThresh(e1, e2, e3, e4);;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         float

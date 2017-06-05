@@ -1,6 +1,6 @@
-Characters 78-79:
-  | h :: t -> t :: listReverse h;;
-                               ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 189-193:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'c list list list
+       Type 'a * 'b is not compatible with type 'c list list 

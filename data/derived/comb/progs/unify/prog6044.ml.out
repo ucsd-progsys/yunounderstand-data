@@ -1,7 +1,6 @@
-Characters 387-388:
-  List.fold_left f base args in res 
-                 ^
-Error: This expression has type int list -> int * int -> int * int list
-       but an expression was expected of type
-         int list -> int * int -> int list
-       Type int * int list is not compatible with type int list 
+Characters 137-138:
+  | h::t -> let sum = fst x + snd x + fst h in (sum / 10)::(sum mod 10)::t 
+                                                                         ^
+Error: This expression has type (int * 'a) list
+       but an expression was expected of type int list
+       Type int * 'a is not compatible with type int 

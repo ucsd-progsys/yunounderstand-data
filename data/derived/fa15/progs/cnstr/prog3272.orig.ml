@@ -74,8 +74,8 @@ let rec wwhile (f,b) =
 
 
 
-
-
+let f x = let xx = x*x*x in (xx, xx < 100) in
+  wwhile (f, 2);;
 
 
 
@@ -114,13 +114,11 @@ let _ = fixpoint (collatz, 9001) ;;
 type expr = 
       VarX
     | VarY
-    | Sine      of expr
-    | Cosine    of expr
-    | Neg    of expr
-    | Average   of expr * expr
-    | Times     of expr * expr
-    | AddMul    of expr * expr * expr
-    | Thresh    of expr * expr * expr * expr	
+    | Sine     of expr
+    | Cosine   of expr
+    | Average  of expr * expr
+    | Times    of expr * expr
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -128,30 +126,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 let rec exprToString e = 
   match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine e -> "sin(pi*"^ exprToString e ^")"
-    |Cosine e -> "cos(pi*"^exprToString e^")" 
-    |Neg e -> exprToString e^" * -1.0"
-    |Average (e,ex) -> "(("^exprToString e^"+"^exprToString ex^")/2)"
-    |Times (e, ex) -> exprToString e^"*"^exprToString ex
-    |AveThree(e1,e2,e3) -> "(("^exprToString e1^"+"^exprToString e2^"+"^exprToString e3^")/3"
-    |Thresh (e1, e2, e3, e4) -> "("^exprToString e1^"<"^ 
-                                exprToString e2^"?"^
-                                exprToString e3^":"^
-                                exprToString e4^")"
+    |VarX s -> printf "%s" s
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
-let sampleExpr2 = Neg(Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY))))));;
-let sampleExpr3 = Neg(AddMul(VarX,VarY,VarY));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 ;;
-let _ = exprToString sampleExpr2;;
-let _ = exprToString sampleExpr3;;
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -166,35 +149,21 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildAveThree(e1,e2,e3)          = AveThree(e1,e2,e3)
-let buildNeg(e)                    = Neg(e)
+
 
 let pi = 4.0 *. atan 1.0
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  match e with
-    |VarX -> x
-    |VarY -> y
-    |Sine(e) -> sin(pi*.eval (e,x,y))
-    |Cosine(e) -> cos(pi*. eval (e,x,y))
-    |Neg(e) -> -1.0 *. eval(e,x,y)
-    |AveThree(e1,e2,e3) -> (eval(e1,x,y) + eval(e2,x,y)) + eval(e3,x,y))/. 3.0
-                                                                      |Average(e1,e2)->(eval (e1,x,y) +. eval (e2,x,y)) /. 2.0
-                                                                      |Times(e1,e2)-> (eval (e1,x,y) *. eval(e2,x,y))
-                                                                      |Thresh(e1, e2, e3, e4)-> if eval (e1,x,y) < eval (e2,x,y) then eval (e3,x,y) 
-                                                                        else eval (e4,x,y)
+let rec eval (e,x,y) = failwith "to be written"
 
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (Neg(AddMul(VarX,VarY,VarY)),0.1,0.2);;
-let _ = eval (sampleExpr1,0.5,0.2);;
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 let eval_fn e (x,y) = 
@@ -213,6 +182,7 @@ let sampleExpr =
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -224,23 +194,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  if depth > 0 then 
-    match rand(0,7) with
-      |0 -> buildSine(build(rand, depth-1))
-      |1 -> buildCosine(build(rand,depth-1))
-      |2 -> buildAverage(build(rand,depth-1),build(rand,depth-1))
-      |3 -> buildTimes(build(rand,depth-1), build(rand,depth-1))
-      |4 -> buildThresh(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-      |5 -> buildNeg(build(rand,depth-1))
-      |_ -> buildAddMul(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-  else
-    match rand(0,2) with
-      |0 -> buildX()
-      |_ -> buildY()
-
-
-
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -249,13 +203,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (12,7000,8000) 
-let g2 () = (10,10,-11)
-let g3 () = (8,12,8)
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (6,7,8)
-let c2 () = (9,10,11)
-let c3 () = (7,19,20)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -358,11 +312,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

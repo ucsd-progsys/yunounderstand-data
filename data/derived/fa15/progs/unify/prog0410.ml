@@ -15,17 +15,10 @@ let rec removeZero l =
 
 let bigAdd l1 l2 =
   let add (l1,l2) =
-    let f a x =
-      match a with
-      | (0,[]) -> if x < 10 then (0, x) else (1, (x mod 10))
-      | (0,l) -> if x < 10 then (0, (x :: l)) else (1, ((x mod 10) :: l))
-      | (1,l) ->
-          if (x + 1) < 10
-          then (0, ((x + 1) :: l))
-          else (1, ((x + (1 mod 10)) :: l)) in
-    let base = (0, []) in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
     let args =
       let combine (a,b) = a + b in
-      List.map combine (List.rev (List.combine l1 l2)) in
+      List.map f (List.rev (List.combine (l1 l2))) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;

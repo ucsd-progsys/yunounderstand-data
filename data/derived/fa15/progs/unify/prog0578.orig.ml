@@ -118,8 +118,6 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | Power    of expr * expr
-    | Op	   of expr * expr * expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -132,19 +130,12 @@ let rec exprToString e = match e with
   | Average (x, y) -> "(("^(exprToString x)^"+"^(exprToString y)^")/2)"
   | Times (x, y) -> (exprToString x)^"*"^(exprToString y)
   | Thresh (x, y, z, w) -> "("^(exprToString x)^"<"^(exprToString y)^"?"^(exprToString z)^":"^(exprToString w)^")"
-  | Power (x, y) -> (exprToString x)^"**"^(exprToString y)
-  | Op (x, y, z) -> "("^(exprToString x)^"*"^(exprToString y)^"*"^(exprToString z)^")/("^(exprToString x)^"+"^(exprToString y)^"+"^(exprToString z)^")"
-
-
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
 let _ = exprToString sampleExpr1 
-
-let _ = exprToString (Power(VarX, VarY))
-
 
 
 
@@ -161,8 +152,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildPower(a,b)	           = Power(a,b)
-let buildOp(a,b,c)	           = Op(a,b,c)
 
 
 let pi = 4.0 *. atan 1.0
@@ -181,11 +170,6 @@ let rec eval (e,x,y) = match e with
       if eval(m, x, y) < eval(n, x, y)
       then eval(o, x, y)
       else eval(p, x, y)
-  | Power (m, n) -> (eval(m, x, y)**eval(n, x, y))
-  | Op (m, n, o) -> 
-      let d = (eval(m, x ,y)+.eval(n, x, y)+.eval(o, x, y)) in (sqrt(sqrt(d*d))/.(3.0))
-
-
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -212,50 +196,6 @@ let eval_fn e (x,y) =
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXX
-*)
-
-
-
-let rec build (rand, depth) = 
-  if depth = 0 
-  then
-    let g = rand(0,1) in match g with
-      | 0 -> buildX()
-      | 1 -> buildY()
-  else let g = rand(0, 6) in match g with
-      | 0 -> buildSine(build(rand, depth-1))
-      | 1 -> buildCosine(build(rand, depth-1))
-      | 2 -> buildAverage(build(rand, depth-1), build(rand, depth-1))
-      | 3 -> buildTimes(build(rand, depth-1), build(rand, depth-1))
-      | 4 -> buildThresh(build(rand, depth-1), build(rand, depth-1), build(rand, depth-1), build(rand, depth-1))
-      | 5 -> buildPower(build(rand, depth-1), build(rand, depth-1))
-      | 6 -> buildOp(build(rand, depth-1), build(rand, depth-1), build(rand, depth-1))
-
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
-let g1 () = (1, 12, 43)
-let g2 () = (1, -14, 4)
-let g3 () = (1, 63, 234)  
-
-let c1 () = (1, 2, 24)
-let c2 () = (1, 54, 98)
-let c3 () = (1, 100, 102)
-
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -275,8 +215,51 @@ let makeRand (seed1, seed2) =
   let s = Random.State.make seed in
     (fun (x,y) -> (x + (Random.State.int s (y-x))))
 
+
 let rec rseq g r n =
   if n <= 0 then [] else (g r)::(rseq g r (n-1))
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
+
+
+
+let rec build (rand, depth) = if depth = 0 
+  then
+    let g = makeRand(0,1) in match g with
+      | 0 -> VarX
+      | 1 -> VarY
+  else let g = makeRand(0, 4) in match g with
+      | 0 -> Sine(build(rand, depth-1))
+      | 1 -> Cosine(build(rand, depth-1))
+      | 2 -> Average(build(rand, depth-1))
+      | 3 -> Times(build(rand, depth-1))
+      | 4 -> Thresh(build(rand, depth-1))
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
+
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
+
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -355,11 +338,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

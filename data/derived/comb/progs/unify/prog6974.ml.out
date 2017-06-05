@@ -1,5 +1,6 @@
-Characters 36-42:
-  buildTimes (buildX, buildY);;
-              ^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 37-41:
+  let rec fs x = (fs x, (f b) = b)
+                  ^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

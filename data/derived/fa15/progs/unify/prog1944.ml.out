@@ -1,5 +1,5 @@
-Characters 46-49:
-  let fixpoint (f,b) = wwhile ((let f' x = (f x,not f x = x) in f'),b);;
-                                                ^^^
-Error: This function has type bool -> bool
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 17-18:
+  let _ = padZero [1;0;0;2] [9;9];;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int list

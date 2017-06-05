@@ -153,28 +153,29 @@ let bigAdd l1 l2 =
   in 
     removeZero (add (padZero l1 l2))
 
-let _ = bigAdd [1;2;0] [1;2];;
+let _ = bigAdd [] [1];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 
 let rec mulByDigit i l = 
   if i = 0
-  then []
+  then [0]
   else if i = 1
   then l
   else bigAdd l (mulByDigit (i-1) l)
 ;;
 
-let _ = mulByDigit 0 [1;2]
+let _ = mulByDigit 1 [1;1;1;1]
 
 let bigMul l1 l2 = 
-  let f a digit = 
+  let f a x = 
     match a with
-      | (place, l) -> 
-          (place+1, bigAdd mulByDigit l l1)
+      | (o, l) ->
+          (10*o, bigAdd(mulByDigit (o*m, l1)) l)
+
   in
   let base = (1, []) in
-  let args = List.rev l2 in 
+  let args = l2 in 
   let (_, res) = List.fold_left f base args in
     res
 

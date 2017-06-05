@@ -1,7 +1,17 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = match x with | [] -> "none" | hea::tail -> a ^ (sep ^ hea) in
-      let base = h in let l = t in List.fold_left f base l;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
+
+let buildTimes (e1,e2) = Times (e1, e2);;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec eval (e,x,y) = buildTimes (buildX, buildY);;

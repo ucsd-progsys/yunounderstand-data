@@ -40,9 +40,13 @@ let _ = sqsum [2;3;4;5]
 let _ = sqsum [-1]
 
 
+
 let pipe fs = 
-  let f a x = x a in
-    List.fold_left f (fun x -> x) fs
+  let f a x = match fs with
+    | h::t -> h in
+  let base = 0 in
+    List.fold_left f base fs
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 

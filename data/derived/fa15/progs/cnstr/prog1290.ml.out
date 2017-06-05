@@ -1,5 +1,5 @@
-Characters 424-430:
-  | Square(e) -> "%s*%s" exprToString e exprToString e;;
-    ^^^^^^
-Error: This variant pattern is expected to have type expr
-       The constructor Square does not belong to type expr
+Characters 38-44:
+  VarX e -> Printf.printf "x" exprToString e
+  ^^^^^^
+Error: The constructor VarX expects 0 argument(s),
+       but is applied here to 1 argument(s)

@@ -1,5 +1,5 @@
-Characters 155-156:
-  let (toSum1, toSum2) = x in
-                         ^
-Error: This expression has type unit but an expression was expected of type
-         'a * 'b
+Characters 151-152:
+  (carry, a @ [sum % 10])
+          ^
+Error: This expression has type int * 'a
+       but an expression was expected of type 'b list

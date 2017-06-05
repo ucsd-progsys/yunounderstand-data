@@ -1,5 +1,10 @@
 
-let rec assoc (d,k,l) =
-  match (d, k, l) with
-  | (str,num)::t -> if str = k then num else assoc (d, k, t)
-  | [] -> d;;
+let pipe fs =
+  let rec f a x = let h::t = x in h a in
+  let base = [] in List.fold_left f base fs;;
+
+let pipe fs =
+  let f a x = let h::t = x in pipe t in
+  let base = [] in List.fold_left f base fs;;
+
+let _ = pipe [] 3;;

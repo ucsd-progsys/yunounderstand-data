@@ -1,5 +1,6 @@
-Characters 149-175:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 76-77:
+  else wwhile (f,b);;
+               ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a * bool

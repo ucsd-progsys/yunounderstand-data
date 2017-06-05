@@ -1,5 +1,5 @@
-Characters 182-203:
-  helper (seen', rest')
-  ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type unit
+Characters 93-98:
+  else returnList @ ("1") 
+                    ^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

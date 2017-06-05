@@ -1,5 +1,5 @@
-Characters 206-232:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a * 'b
+Characters 24-33:
+  sepConcat "; " List.map f l;;
+  ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

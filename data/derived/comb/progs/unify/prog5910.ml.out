@@ -1,5 +1,5 @@
-Characters 156-168:
-  | Average (e1,e2) -> ((eval(e1,x,y)+eval(e2,x,y))/.2)
-                         ^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 90-127:
+  then ((1,(let (y,z) = x in [(y+z) mod 10])) @ a )
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

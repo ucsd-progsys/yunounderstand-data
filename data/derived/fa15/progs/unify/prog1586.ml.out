@@ -1,5 +1,6 @@
-Characters 86-103:
-  | h::t -> (0, ((x+h) :: a))
-            ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)

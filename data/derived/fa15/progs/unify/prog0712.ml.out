@@ -1,5 +1,5 @@
-Characters 46-59:
-  if n < 0 then [] else digitsOfInt n/10 :: [n mod 10];;
-                        ^^^^^^^^^^^^^
-Error: This expression has type 'a list
+Characters 24-25:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
        but an expression was expected of type int

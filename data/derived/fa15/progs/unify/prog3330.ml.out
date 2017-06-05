@@ -1,6 +1,5 @@
-Characters 81-82:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'a
+Characters 185-197:
+  |AveThree(e1,e2,e3) -> (eval(e1,x,y) + eval(e2,x,y)) + eval(e3,x,y);;
+                          ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

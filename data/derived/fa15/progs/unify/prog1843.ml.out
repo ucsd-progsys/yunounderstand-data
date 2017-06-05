@@ -1,5 +1,6 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+Characters 18-25:
+  let _ = fixpoint (collatz, 9001);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type bool -> bool
+       Type int is not compatible with type bool 

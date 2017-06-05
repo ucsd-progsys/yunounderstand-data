@@ -1,17 +1,7 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec assoc (d,k,l) =
+  match l with
+  | [] -> d
+  | (s,i)::t -> (match k with | (s,i) -> i | _ -> assoc (d, k, t));;
 
-let rec exprToString e =
-  match e with
-  | Sine e1 -> sin e1
-  | Cosine e1 -> cos e1
-  | Average (e1,e2) -> (e1 + e2) / 2
-  | Times (e1,e2) -> e1 * e2
-  | Thresh (e1,e2,e3,e4) -> ((e1 * e2) * e3) * e4;;
+let _ = assoc ((-1), "bob", [("ranjit", 85); ("william", 23); ("moose", 44)]);;

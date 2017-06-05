@@ -1,6 +1,5 @@
-Characters 21-34:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                       ^^^^^^^^^^^^^
-Error: This expression has type int -> string
-       but an expression was expected of type int -> 'a -> 'b
-       Type string is not compatible with type 'a -> 'b 
+Characters 88-105:
+  | h::t -> listReverseHelper (h::l) t in 
+            ^^^^^^^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

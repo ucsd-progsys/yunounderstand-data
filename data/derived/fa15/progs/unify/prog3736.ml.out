@@ -1,5 +1,5 @@
-Characters 482-485:
-  | NatLog   nlog		    -> log eval(nlog,x,y);;
-                          ^^^
-Error: This function has type float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 17-18:
+  let _ = padZero [9;9] [1;0;0;2];;
+                   ^
+Error: This expression has type int but an expression was expected of type
+         int list

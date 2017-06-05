@@ -1,5 +1,5 @@
-Characters 180-184:
-  List.fold_left f base l;;
-                   ^^^^
-Error: This expression has type string list
-       but an expression was expected of type string
+Characters 157-174:
+  | Average (e1, e2) -> ((eval (e1, x, y)) + (eval (e2, x, y)))/2;;
+                         ^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,11 +1,13 @@
 
-let rec wwhile (f,b) =
-  let i = b in
-  match f i with | (v_n,false ) -> v_n | (v_n,true ) -> wwhile (f, v_n);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else (digitsOfInt (n / 10)) @ [n mod 10];;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+let rec sumList xs =
+  match xs with | [] -> 0 | head::tail -> head + (sumList tail);;
 
-let fixpoint (f,b) = wwhile (f, b);;
-
-let _ = fixpoint (collatz, 107);;
+let rec additivePersistence n =
+  let x = digitsOfInt in
+  match x with
+  | [] -> 0
+  | head::[] -> 0
+  | head::tail -> 1 + (additivePersistence (sumList x));;

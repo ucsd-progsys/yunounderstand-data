@@ -1,5 +1,6 @@
-Characters 78-87:
-  else [x] @ (clone x n-1);;
-              ^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 94-95:
+  if k = f then s h else assoc d k t;;
+                  ^
+Error: This expression has type 'a * ('b -> 'c)
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a * ('b -> 'c)

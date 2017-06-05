@@ -1,5 +1,5 @@
-Characters 93-115:
-  |3 -> buildSine (build (rand,depth-1))
-                  ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type unit -> expr
-       but an expression was expected of type expr
+Characters 239-254:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'b * 'c

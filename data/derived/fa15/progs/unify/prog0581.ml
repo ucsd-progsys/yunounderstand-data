@@ -1,6 +1,4 @@
 
-let pi = 4.0 *. (atan 1.0);;
-
 type expr =
   | VarX
   | VarY
@@ -10,23 +8,24 @@ type expr =
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr
   | Power of expr* expr
-  | Op of expr* expr* expr;;
+  | Log of expr;;
 
-let rec eval (e,x,y) =
+let rec exprToString e =
   match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine n -> sin (pi *. (eval (n, x, y)))
-  | Cosine n -> cos (pi *. (eval (n, x, y)))
-  | Average (m,n) -> ((eval (m, x, y)) +. (eval (n, x, y))) /. 2.0
-  | Times (m,n) -> (eval (m, x, y)) *. (eval (n, x, y))
-  | Thresh (m,n,o,p) ->
-      if (eval (m, x, y)) < (eval (n, x, y))
-      then eval (o, x, y)
-      else eval (p, x, y)
-  | Power (m,n) -> (eval (m, x, y)) ** (eval (n, x, y))
-  | Op (m,n,o) ->
-      let d = ((eval (m, x, y)) +. (eval (n, x, y))) +. (eval (o, x, y)) in
-      (sqrt (sqrt (d *. d))) /. 3.0;;
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine n -> "sin(pi*" ^ ((exprToString n) ^ ")")
+  | Cosine n -> "cos(pi*" ^ ((exprToString n) ^ ")")
+  | Average (x,y) ->
+      "((" ^ ((exprToString x) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
+  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
+  | Thresh (x,y,z,w) ->
+      "(" ^
+        ((exprToString x) ^
+           ("<" ^
+              ((exprToString y) ^
+                 ("?" ^ ((exprToString z) ^ (":" ^ ((exprToString w) ^ ")")))))))
+  | Power (x,y) -> (exprToString x) ^ ("**" ^ (exprToString y))
+  | Log n -> "log(" ^ ((exprToString n) ^ ")");;
 
-let _ = eval (Op (VarX, VarY, VarY));;
+let _ = exprToString Log VarX;;

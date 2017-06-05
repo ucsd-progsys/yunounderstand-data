@@ -1,5 +1,5 @@
-Characters 81-104:
-  |h::t->bigAdd (mulByDigit h l4) (multHelper t l4 (x+1));;
-                                  ^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 115-131:
+  |x when x>=10->(x/10)::((x mod 10)+(mulByDigit i t))
+                                     ^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

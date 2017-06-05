@@ -1,5 +1,5 @@
-Characters 58-71:
-  let rec digitsOfInt n = if n < 0 then [] else n mod 10 :: digitsOfInt n / 10;;
-                                                            ^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 157-183:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

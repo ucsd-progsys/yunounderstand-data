@@ -1,6 +1,6 @@
-Characters 114-115:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> ('b -> 'a) list -> 'b -> 'a
-       but an expression was expected of type 'a -> ('b -> 'a) list -> 'a
-       The type variable 'a occurs inside 'b -> 'a
+Characters 63-64:
+  let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);;
+                                                                 ^
+Error: This expression has type int -> int
+       but an expression was expected of type unit -> unit
+       Type int is not compatible with type unit 

@@ -1,5 +1,5 @@
-Characters 68-79:
-  | x -> [0]@ listZeros n-1;;
-              ^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 47-53:
+  bigAdd mulByDigit( (i-1) l) l;;
+  ^^^^^^
+Error: This function has type int list -> int list -> int list
+       It is applied to too many arguments; maybe you forgot a `;'.

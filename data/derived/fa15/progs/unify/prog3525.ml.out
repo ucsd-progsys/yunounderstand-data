@@ -1,5 +1,5 @@
-Characters 144-152:
-  let args = List.rev List.combine l1 l2 in
-             ^^^^^^^^
-Error: This function has type 'a list -> 'a list
+Characters 79-85:
+  0 -> if(rand mod 2 == 0) then buildX()() else buildY()();
+                                ^^^^^^
+Error: This function has type unit -> expr
        It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,4 +1,3 @@
 
-let rec wwhile (f,b) = match f b with | false  -> b;;
-
-let _ = let f x = let xx = (x * x) * x in (xx, (xx < 100)) in wwhile (f, 2);;
+let rec digitsOfInt n =
+  if n < 0 then [] else if n < 10 then [n] else (digitsOfInt n) / 10;;

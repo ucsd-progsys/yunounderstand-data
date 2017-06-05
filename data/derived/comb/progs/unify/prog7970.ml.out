@@ -1,5 +1,5 @@
-Characters 118-133:
-  let toSum = intermediateSum * (10 ** padCount) in
-              ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 231-232:
+  let args = List.combine (List.rev 0::l1) (List.rev 0::l2) in
+                                    ^
+Error: This expression has type int but an expression was expected of type
+         'a list

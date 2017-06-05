@@ -1,5 +1,5 @@
-Characters 66-72:
-  filter tl a 
-  ^^^^^^
-Error: This function has type 'a list * 'a -> 'b list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 21-24:
+  let _ = listReverse ["a"; "b"; "c"; "d"];;
+                       ^^^
+Error: This expression has type string but an expression was expected of type
+         'a list

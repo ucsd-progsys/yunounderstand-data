@@ -1,8 +1,4 @@
 
-let pipe fs =
-  let f a x = let x = x in x a in let base y = y in List.fold_left f base fs;;
+let abs x = if x < 0.0 then x *. (-1.0) else x;;
 
-let pipe fs =
-  let f a x = x (pipe fs) in let base y = y in List.fold_left f base fs;;
-
-let fn = pipe [(fun x  -> x + x)];;
+let _ = abs - 1.0;;

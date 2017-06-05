@@ -18,12 +18,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let rec assoc (d,k,l) = match l with
-  |[] -> d
-  |(h1,h2)::t -> match (h1=k) with
-    |true -> h2
-    |false -> assoc (d,k,t);;
+  | []	            -> d
+  | (name, num)::rest -> if k = name 
+      then num else assoc (d,k,rest);;
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
@@ -45,19 +45,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | []   -> seen
       | h::t -> 
-          let seen' = match (List.mem h seen) with 
-            |true -> seen
-            |false -> h::seen in
+          let seen' = if (List.mem h seen) = true then seen else [h]@seen in
           let rest' = t in 
-            	  helper (seen',rest') 
+            helper (seen',rest') 
   in
-    List.rev (helper ([],l))
+    List.rev (helper ([],l));;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -70,14 +68,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = match (f b) with
-  |(h,true) -> wwhile (f,h)
-  |(h,false) -> h;;
+let rec wwhile (f,b) = match f b with
+  | (b', c) -> if c = true then wwhile (f, b') else b';;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -88,10 +85,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile (let func a = match (f b) with
-                               |b -> (b,false)
-                               |x -> (x,true) in func f,b);;
+let fixpoint (f,b) = wwhile ((fun fixb -> 
+                               let b = (f fixb) in (b, b <> fixb)), b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
@@ -119,19 +116,35 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
+    | OneOver  of expr
+    | OneOverAvg of expr * expr * expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = failwith "to be written"
+let rec exprToString e = 
+  match e with
+    | VarX		    -> "x"
+    | VarY		    -> "y"
+    | Sine e1	    -> "sin(pi *" ^ exprToString e1 ^ ")"
+    | Cosine e1	    -> "cos(pi *" ^ exprToString e1 ^ ")"
+    | Average (e1, e2)  -> "((" ^ exprToString e1 ^ "+"^ exprToString e2 ^")/2)"
+    | Times (e1, e2)    -> "(" ^ exprToString e1 ^ "*" ^ exprToString e2^")"
+    | Thresh (e1, e2, e3, e4) -> "("^ exprToString e1 ^"<"^ exprToString e2 ^
+                                 "?"^ exprToString e3 ^":"^ exprToString e4 ^ ")"
+    | OneOver e1	    -> "(1/" ^ exprToString e1 ^ ")"
+    | OneOverAvg (e1,e2,e3) -> "(1/((" ^ exprToString e1 ^ " + " ^ 
+                               exprToString e2 ^ " + " 
+                               ^ exprToString e3 ^ ")/2))"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
-*)
+let _ = exprToString sampleExpr1 
+
+
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -146,6 +159,8 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
+let buildOneOver(e)		   = OneOver(e)
+let buildOneOverAvg(e1,e2,e3)      = OneOverAvg(e1,e2,e3)
 
 
 let pi = 4.0 *. atan 1.0
@@ -153,14 +168,25 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = failwith "to be written"
+let rec eval (e,x,y) = 
+  match e with
+    | VarX		      -> x
+    | VarY		      -> y
+    | Sine e1	      -> sin(pi *. (eval(e1,x,y)))
+    | Cosine e1	      -> cos(pi *. (eval(e1,x,y)))
+    | Average (e1,e2)     -> (eval(e1,x,y) +. eval(e2,x,y)) /. 2.0
+    | Times (e1, e2)      -> (eval(e1,x,y) *. eval(e2,x,y))
+    | Thresh (e1,e2,e3,e4) -> if (eval(e1,x,y) < eval(e2,x,y)) then eval(e3,x,y)				      else eval(e4,x,y);
+    | OneOver(e)	      -> if eval(e,x,y) > 1.0 then 1.0/eval(e,x,y) else 1/3;
+    | OneOverAvg(e1,e2,e3) -> if (eval(e1,x,y) +. eval(e2,x,y) +. eval(e3,x,y)) > 1.0
+        then 1.0/.(eval(e1,x,y) +. eval(e2,x,y) +. eval(e3,x,y)) else -1.0/3.0;;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
 
 
 let eval_fn e (x,y) = 
@@ -191,7 +217,26 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = failwith "to be implemented"
+let rec build (rand, depth) = 
+  if depth <= 0 then
+    let randNum = rand(0,2) in
+      match randNum with
+        | 0   -> buildX()
+        | 1   -> buildY()
+  else
+    let randNum = rand(0,9) in
+      match randNum with
+        | 0   -> build(rand, depth - 1)
+        | 1   -> build(rand, depth - 1)
+        | 2   -> buildSine(build(rand, depth - 1))
+        | 3   -> buildCosine(build(rand, depth - 1))
+        | 4   -> buildAverage(build(rand, depth - 1), build(rand, depth - 1))
+        | 5   -> buildTimes(build(rand, depth - 1), build(rand, depth - 1))
+        | 6   -> buildThresh(build(rand, depth - 1), build(rand, depth - 1),
+                             build(rand, depth - 1), build(rand, depth - 1))
+        | 7   -> buildOneOver(build(rand, depth - 1))
+        | 8   -> buildOneOverAvg(build(rand, depth - 1), build(rand, depth - 1),
+                                 build(rand, depth - 1));;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -200,13 +245,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = failwith "to be implemented"  
-let g2 () = failwith "to be implemented"  
-let g3 () = failwith "to be implemented"  
+let g1 () = (1,2,3)  
+let g2 () = (4,5,6)  
+let g3 () = (7,8,9)  
 
-let c1 () = failwith "to be implemented"
-let c2 () = failwith "to be implemented" 
-let c3 () = failwith "to be implemented" 
+let c1 () = (7, 4, 3)
+let c2 () = (2, 8, 6) 
+let c3 () = (5, 7, 9) 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -427,10 +472,10 @@ let testTest () =
 let runTest ((f,arg,out),points,name) =
   let _   = max := !max + points in
   let outs = 
-    	match runWTimeout(f,arg,out,timeout) with 
-        	    Pass -> (score := !score + points; "[pass]")
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      	  | ErrorCode e -> "[error: "^e^"]"  in
+      | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -489,7 +534,7 @@ let sampleTests =
                  "sample: wwhile 1"
     ); 
     (fun () -> mkTest 
-                 	fixpoint
+                 fixpoint
                  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
                  739085
                  "sample: fixpoint 1"

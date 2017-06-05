@@ -67,9 +67,8 @@ XX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = match digits(n) with
-  | x :: [] -> x
-  | h::t -> t + digitalRoot(sumList(h));;
+let rec digitalRoot n =
+  digitalRoot(digits(sumList(n)))
 
 let _ = digitalRoot 9876
 

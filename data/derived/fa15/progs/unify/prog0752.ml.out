@@ -1,5 +1,5 @@
-Characters 139-173:
-  |Average (e,f) -> (((eval (e,x,y)) +. (eval (f,x,y)))/2)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 23-31:
+  let stringOfList f l = List.map sepConcat f l;;
+                         ^^^^^^^^
+Error: This function has type ('a -> 'b) -> 'a list -> 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,5 +1,5 @@
-Characters 68-74:
-  else bigAdd l mulByDigit( i-1, l);;
-       ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 29-42:
+  let stringOfList f l = "[" ^ List.map(f l) ^ sepConcat(";" l) ^ "]";;
+                               ^^^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string

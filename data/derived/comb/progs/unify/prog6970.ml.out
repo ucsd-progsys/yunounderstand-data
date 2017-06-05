@@ -1,5 +1,6 @@
-Characters 24-30:
-  buildX(2)
-  ^^^^^^
-Error: This function has type unit -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 46-56:
+  let rec funt = fun x -> (funt (f b), f b = b) in
+                           ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b

@@ -1,5 +1,6 @@
-Characters 160-161:
-  |Average(e1,e2)->buildAverage(x, y)
-                                ^
-Error: This expression has type float but an expression was expected of type
-         expr
+Characters 43-44:
+  let fixpoint (f,b) = wwhile ((wwhile(f,b)),b);;
+                                             ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

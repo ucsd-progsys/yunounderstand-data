@@ -1,5 +1,5 @@
-Characters 214-224:
-  | (carry, digits),(fst,sec) -> if (sec = 1) then (1, digits @ (fst, sec)) else (0, digits @ (fst, sec)) in
-                                                                ^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 71-85:
+  | l   -> sepConcat  (List.map f l);;
+                      ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

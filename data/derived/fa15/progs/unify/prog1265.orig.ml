@@ -1,18 +1,30 @@
-let rec split l =
-  let base = (0,[],[]) in
-  let fold_fn(i,l1,l2) elmt =
-    if (i < l/2) then (i+1,[elmt]@l1,l2)
-    else (i,l1,[elmt]@l2) in
-  let (_,l1,l2) = List.fold_left fold_fn base l in (l1,l2)
+type 'a tree = Leaf | Node of 'a * 'a tree * 'a tree
+let ans0 = Node (2, Node (1, Leaf, Leaf)
+                , Node (3, Leaf, Leaf))
+
+let rec flerb xs = match xs with
+  | [] -> Leaf
+  | x::xs' -> Node (x, Leaf, flerb xs')
 
 
-let rec merge l1 l2 = 
-  match (l1,l2) with
-    | ([],l) -> l
-    | (l,[]) -> l
-    | (h1::tl1,h2::tl2) -> if (h1 < h2) then h1::(merge tl1 l2)
-        else h2::(merge l1 tl2)
+let rec glub f t = match t with
+  | Leaf -> Leaf
+  | Node (x,l,r) -> Node (f x, glub f l, glub f r)
+let ans = glub (fun x -> 2 * x) ans0
 
-let _ = merge [2;4;6;8] [1;3;5];;
 
-let _ = merge [2;10;20] [1;2;3;4;5;8;10;12]
+
+type 'a option = None | Some of 'a
+
+let safeDiv num den = match den with
+  | 0 -> None
+  | _ -> Some (num / den)
+
+let rec lookup k kvs = match kvs with
+  | [] -> None
+  | (c,v)::tl -> if (c = k) then Some v else lookup k tl
+
+
+let _ = lookup "a" [("a", 1); ("b", 2), ("a", 10)]
+          
+let _ = lookup "z" [("a", 1); ("b", 2), ("a", 10)]

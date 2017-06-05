@@ -1,5 +1,5 @@
-Characters 27-31:
-  let _ = fixpoint (collatz, 9001);;
-                             ^^^^
-Error: This expression has type int but an expression was expected of type
-         bool
+Characters 47-51:
+  |VarX ->"%s" s;;
+          ^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

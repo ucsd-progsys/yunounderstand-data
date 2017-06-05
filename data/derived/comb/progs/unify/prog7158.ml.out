@@ -1,5 +1,5 @@
-Characters 210-211:
-  | Average(ex1,ex2) -> (eval(ex1,x,y) +. eval(ex2,x,y)) /. 2
-                                                            ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 73-79:
+  if n <> 0 then (n mod 10) :: return
+                               ^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

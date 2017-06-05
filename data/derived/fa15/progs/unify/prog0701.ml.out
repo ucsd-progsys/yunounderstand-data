@@ -1,5 +1,5 @@
-Characters 69-79:
-  if n < 0 then [] else [digitsOfInt (n/10)]@[(n mod 10)];;
-                                              ^^^^^^^^^^
+Characters 17-21:
+  let _ = abs_float(-3);;
+                   ^^^^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         float

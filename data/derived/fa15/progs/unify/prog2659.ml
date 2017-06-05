@@ -1,6 +1,10 @@
 
-let pipe fs =
-  let f a x = let h::t = fs in h a in
-  let base = 0 in List.fold_left f base fs;;
+let rec wwhile (f,b) =
+  let (b',c) = f b in if not c then b' else wwhile (f, b');;
 
-let _ = pipe [] 3;;
+let collatz n =
+  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
+
+let fixpoint (f,b) = wwhile ((let inc f = f (f b) in f), b);;
+
+let _ = fixpoint (collatz, 1);;

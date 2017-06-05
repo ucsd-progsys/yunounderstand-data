@@ -1,6 +1,5 @@
-Characters 41-42:
-  let rec clone x n = if n = 0 then x else x::clone x (n-1);;
-                                           ^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 272-273:
+  |Thresh(e1, e2, e3, e4)->buildThresh(x, y, x, y);;
+                                       ^
+Error: This expression has type float but an expression was expected of type
+         expr

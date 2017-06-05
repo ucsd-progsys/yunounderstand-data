@@ -1,5 +1,5 @@
-Characters 101-104:
-  cloneHelper 0 abs(diff) @ l1
-                ^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 532-547:
+  | 5      -> buildCotanget(rand, depth-1)
+                           ^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

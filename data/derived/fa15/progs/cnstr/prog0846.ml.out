@@ -1,0 +1,5 @@
+Characters 74-78:
+  | Sine -> sin(e1);;
+    ^^^^
+Error: The constructor Sine expects 1 argument(s),
+       but is applied here to 0 argument(s)

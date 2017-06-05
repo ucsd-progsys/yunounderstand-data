@@ -1,6 +1,5 @@
-Characters 58-75:
-  | h::t -> [listReverse t]@h;;
-            ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list
+Characters 52-53:
+  | h -> h
+         ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

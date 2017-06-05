@@ -1,5 +1,5 @@
-Characters 36-37:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                                      ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 147-165:
+  if r = 0 then buildSine (build(rand, d-1))
+                          ^^^^^^^^^^^^^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

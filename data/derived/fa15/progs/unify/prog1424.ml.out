@@ -1,6 +1,5 @@
-Characters 60-61:
-  x :: clone(x, n-1);;
-             ^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b
+Characters 81-85:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

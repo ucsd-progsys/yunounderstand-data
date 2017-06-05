@@ -14,7 +14,7 @@ let rec eval (e,x,y) =
   match e with
   | VarX  -> x
   | VarY  -> y
-  | Sine e' -> sin (eval (e' x y))
+  | Sine e -> sin (pi * (eval e))
   | Cosine e -> cos (pi * (eval e))
   | Average (e,e1) -> ((eval e) + (eval e1)) / 2
   | Times (e,e1) -> (eval e) * (eval e2)

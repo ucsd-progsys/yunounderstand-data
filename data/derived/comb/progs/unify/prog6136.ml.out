@@ -1,10 +1,5 @@
-Characters 121-125:
-  | Sine e -> Printf.printf "%s" exprToString e
-                            ^^^^
-Error: This expression has type
-         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
-         CamlinternalFormatBasics.fmt
-       but an expression was expected of type
-         ('a -> 'b, out_channel, unit, unit, unit, unit)
-         CamlinternalFormatBasics.fmt
-       Type 'a -> 'b is not compatible with type unit 
+Characters 89-94:
+  Set(meh);;
+     ^^^^^
+Error: This expression has type 'a set but an expression was expected of type
+         'b list

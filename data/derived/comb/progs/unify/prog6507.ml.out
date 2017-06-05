@@ -1,5 +1,5 @@
-Characters 77-78:
-  |Sine(e)->sin(pi*.e)
-                    ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 29-42:
+  let fixpoint (f,b) = wwhile ((helper(f,b)),b);;
+                               ^^^^^^^^^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

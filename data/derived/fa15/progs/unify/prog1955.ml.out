@@ -1,5 +1,5 @@
-Characters 267-293:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 75-76:
+  else bigAdd l (mulByDigit((i-1) l));;
+              ^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,5 +1,5 @@
-Characters 354-416:
-  | 4 -> buildThresh(build(rand, depth - 1),buildX(),buildY()),buildX();;
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 33-40:
+  sumList digitsOfInt n;;
+  ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -115,8 +115,6 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | SquareAv of expr * expr
-    | MultHalf of expr * expr * expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -128,9 +126,7 @@ let rec exprToString e = match e with
   | Cosine(a) -> "cos(pi*" ^ exprToString a ^ ")"
   | Average(a,b) -> "((" ^ exprToString a ^ "+" ^ exprToString b ^ ")/2)"
   | Times(a,b) -> exprToString a ^ "*" ^ exprToString b
-  | Thresh(a,b,c,d) -> "(" ^ exprToString a ^ "<" ^ exprToString b ^ "?" ^ exprToString c ^ ":" ^ exprToString d ^ ")"
-  | SquareAv(a,b) -> "(" ^ exprToString a ^ "^2 + " ^ exprToString b ^ "^2)/2"
-  | MultHalf(a,b,c) -> "(" ^ exprToString a ^ "*" ^ exprToString b ^ "*" ^ exprToString c ^ ")/2";;
+  | Thresh(a,b,c,d) -> "(" ^ exprToString a ^ "<" ^ exprToString b ^ "?" ^ exprToString c ^ ":" ^ exprToString d ^ ")";;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -153,8 +149,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildSquareAv(a,b)		   = SquareAv(a,b)
-let buildMultHalf(a,b,c)	   = MultHalf(a,b,c)
 
 
 let pi = 4.0 *. atan 1.0
@@ -165,19 +159,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let rec eval (e,x,y) = match e with
   | VarX -> x
   | VarY -> y
-  | Sine(a) -> sin (pi *. eval (a,x,y))
-  | Cosine(a) -> cos (pi *. eval (a,x,y))
-  | Average(a,b) -> (eval (a,x,y) +. eval (b,x,y))/.2.0
-  | Times(a,b) -> eval (a,x,y) *. eval (b,x,y)
-  | Thresh(a,b,c,d) -> if eval (a,x,y) < eval (b,x,y) then eval (c,x,y) else eval (d,x,y)
-  | SquareAv(a,b) -> (a*.a +. b*.b) / 2.0
-  | MultHalf(a,b,c) -> (a*.b*.c)/2.0;;
+  | Sine(a) -> sin (eval (a,x,y) * pi)
+  | Cosine(a) -> cos (pi * eval (a,x,y))
+  | Average(a,b) -> (eval (a,x,y) + eval (b,x,y))/2
+  | Times(a,b) -> eval (a,x,y) * eval (b,x,y)
+  | Thresh(a,b,c,d) -> if eval (a,x,y) < eval (b,x,y) then eval (c,x,y) else eval (d,x,y);;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
 let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-
+let _ = eval (sampleExpr,0.5,0.2);;
 
 
 
@@ -197,7 +189,6 @@ let sampleExpr =
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
-let _ = eval (sampleExpr,0.5,0.2);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -210,18 +201,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = match depth with
-  | 0 -> if rand (1,3) = 1 then buildX() else buildY()
-  | d -> let r = rand (1,8) in
-      let b = build (rand, depth - 1) in
-        match r with
-          | 1 -> buildSine(b)
-          | 2 -> buildCosine(b)
-          | 3 -> buildAverage(b, b)
-          | 4 -> buildTimes(b, b)
-          | 5 -> buildThresh(b, b, b, b)
-          | 6 -> buildSquareAv(b, b)
-          | 7 -> buildMultHalf(b, b, b);;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -230,13 +210,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (8, 16, 64)  
-let g2 () = (9, 18, 81)
-let g3 () = (12, 24, 144)
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (10, 20, 100)
-let c2 () = (11, 40, 80)
-let c3 () = (12, 100, 175)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -339,11 +319,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

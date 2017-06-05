@@ -1,5 +1,6 @@
-Characters 15-19:
-  let _ = sqsum [(-1); (-2); (-3); (-4)];;
-                 ^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 88-89:
+  | h :: t -> t @ listReverse h;;
+                              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

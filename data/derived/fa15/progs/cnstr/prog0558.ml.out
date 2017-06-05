@@ -1,5 +1,5 @@
-Characters 102-109:
-  | Consine n -> cos (3.14 *. eval(n, x, y))
-    ^^^^^^^
-Error: This variant pattern is expected to have type expr
-       The constructor Consine does not belong to type expr
+Characters 35-37:
+  if not x = [] then
+             ^^
+Error: This variant expression is expected to have type bool
+       The constructor [] does not belong to type bool

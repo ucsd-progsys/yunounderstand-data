@@ -1,6 +1,5 @@
-Characters 53-54:
-  let fixpoint (f,b) = wwhile(if true then b else f b, b);;
-                                                       ^
-Error: This expression has type ('a -> 'a * bool) * 'a
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside ('a -> 'a * bool) * 'a
+Characters 541-548:
+  (eval(expr1) ** (abs(eval(expr1, x, y) +. eval(expr2, x, y))));;
+       ^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

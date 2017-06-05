@@ -1,5 +1,5 @@
-Characters 63-67:
-  | VarY -> "y"
-    ^^^^
-Error: This pattern matches values of type expr
-       but a pattern was expected which matches values of type string
+Characters 59-69:
+  if n != 0 then (n mod 10)
+                 ^^^^^^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

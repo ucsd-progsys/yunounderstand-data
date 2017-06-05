@@ -1,6 +1,5 @@
-Characters 28-33:
-  let fixpoint (f,b) = wwhile(fix b, b);;
-                              ^^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 448-493:
+  | SumInts expr -> (eval(expr, x, y) *. (eval(expr, x, y) +. 1.0) / 2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 29-35:
-  let fixpoint (f,b) = wwhile ((true),b);;
-                               ^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a -> 'a * bool
+Characters 148-151:
+  | [] ->  if sum > 9 then [1,sum-1] else [sum]
+                                           ^^^
+Error: This expression has type int but an expression was expected of type
+         int * int

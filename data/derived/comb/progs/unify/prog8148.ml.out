@@ -1,5 +1,5 @@
-Characters 253-260:
-  |h'::t' -> mulByDigit i t' @ [carry i h + remainder h' i] @ [remainder h i + carry i ];;
-                                                                               ^^^^^^^
-Error: This expression has type int -> int
+Characters 24-31:
+  List.map string_of_int [123,456];;
+                          ^^^^^^^
+Error: This expression has type 'a * 'b
        but an expression was expected of type int

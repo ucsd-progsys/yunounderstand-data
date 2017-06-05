@@ -1,6 +1,5 @@
-Characters 21-34:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                       ^^^^^^^^^^^^^
-Error: This expression has type int -> string
-       but an expression was expected of type string -> 'a -> string
-       Type int is not compatible with type string 
+Characters 131-137:
+  let rest' = (filter t h) in 
+               ^^^^^^
+Error: This function has type 'a list * 'a -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

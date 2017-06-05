@@ -1,5 +1,5 @@
-Characters 111-128:
-  let seen' = (if List.mem (h seen) then [] else (seen) @ h) in
-                  ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list -> bool
-       but an expression was expected of type bool
+Characters 27-38:
+  let _ = bigMul [9;9;9;9;9] [9;9;9;9;9];;
+                             ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

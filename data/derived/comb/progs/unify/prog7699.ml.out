@@ -1,5 +1,5 @@
-Characters 42-50:
-  let rec digitsOfInt n = digitsOfIntHelper [n > 10];;
-                                            ^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 84-85:
+  List.fold_left (fun l -> match l with h::t -> if h = 0 then t else l) [] l;;
+                                                              ^
+Error: This expression has type int list
+       but an expression was expected of type 'a -> int list

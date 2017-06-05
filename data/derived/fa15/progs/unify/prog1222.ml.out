@@ -1,5 +1,5 @@
-Characters 61-68:
-  h + sumList;;
-      ^^^^^^^
-Error: This expression has type int list -> 'a list
-       but an expression was expected of type int
+Characters 15-26:
+  let _ = helper [9;9;9;9;9];;
+                 ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'b -> string

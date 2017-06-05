@@ -1,5 +1,5 @@
-Characters 164-166:
-  | Average (e1,e2)      -> ((e1+e2)/2)
-                              ^^
-Error: This expression has type expr but an expression was expected of type
-         int
+Characters 111-128:
+  let seen' = (if List.mem (h,seen) then [] else (seen) @ h) in
+                  ^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

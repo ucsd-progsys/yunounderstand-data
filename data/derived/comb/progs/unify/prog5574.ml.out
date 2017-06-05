@@ -1,5 +1,5 @@
-Characters 29-90:
-  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()));;
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd
-       but an expression was expected of type expr * expr * expr
+Characters 49-61:
+  let fixpoint (f,b) = wwhile ( (let f2 x = f x in (f x, 3 < 4)), b);;
+                                                   ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

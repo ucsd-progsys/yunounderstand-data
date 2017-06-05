@@ -1,5 +1,5 @@
-Characters 53-59:
-  let rec digitsOfInt n = if n < 0 then Printf.fprintf "%d\n" 0 else Print.fprintf "%d " digitsOfInt (n / 10);;
-                                                       ^^^^^^
-Error: This expression has type string but an expression was expected of type
-         out_channel
+Characters 166-192:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'c * 'd

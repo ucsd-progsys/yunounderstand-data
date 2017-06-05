@@ -1,5 +1,9 @@
 
-let pipe fs =
-  let f a x = x a in let base x = x + 0 in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let seen' = if not List.mem h seen then seen else h :: seen in
+        let rest' = t in helper (seen', rest') in
+  List.rev (helper ([], l));;

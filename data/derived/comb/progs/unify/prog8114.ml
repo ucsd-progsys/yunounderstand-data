@@ -1,2 +1,4 @@
 
-let pipe fs = let f a x x = x a in let base f = f in List.fold_left f base fs;;
+let rec wwhile (f,b) = if b = true then wwhile (f, b) else b;;
+
+let _ = let f x = let xx = (x * x) * x in (xx, (xx < 100)) in wwhile (f, 2);;

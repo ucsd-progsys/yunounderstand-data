@@ -1,6 +1,5 @@
-Characters 145-148:
-  | Sine sin -> Printf.printf ("sin(pi*%s"^^ sin ^^")" );
-                                             ^^^
+Characters 435-437:
+  | Op2 (e1, e2, e3) -> 1.0 /. (eval e1 +. eval e2 +. eval e3);;
+                                     ^^
 Error: This expression has type expr but an expression was expected of type
-         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
-           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6
+         expr * float * float

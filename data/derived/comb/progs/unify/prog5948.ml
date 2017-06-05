@@ -1,5 +1,5 @@
 
-let rec assoc (d,k,l) = if l = (k, d) then d;;
-
-let _ =
-  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let rec digitsOfInt n =
+  if n <= 0
+  then []
+  else (match n with | n_ -> (digitsOfInt (n / 10)) :: (n_ mod 10));;

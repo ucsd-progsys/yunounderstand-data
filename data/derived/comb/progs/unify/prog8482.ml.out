@@ -1,5 +1,5 @@
-Characters 109-112:
-  | Sine sin		    -> "sin(pi*"^ (eval sin) ^")" 
-                                      ^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 434-491:
+  | 5 -> buildOp2(build(rand,d),build(rand,d),build(rand,d),build(rand,d))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * expr * expr

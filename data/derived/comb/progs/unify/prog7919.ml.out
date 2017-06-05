@@ -1,6 +1,5 @@
-Characters 65-67:
-  if c' then wwhile b' c'
-                    ^^
-Error: This expression has type 'a but an expression was expected of type
-         ('b -> 'a * bool) * 'b
-       The type variable 'a occurs inside ('b -> 'a * bool) * 'b
+Characters 65-75:
+  | b -> (y, false)
+         ^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

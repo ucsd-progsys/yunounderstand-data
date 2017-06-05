@@ -1,6 +1,5 @@
-Characters 46-50:
-  in wwhile ((fx),b);;
-             ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a * bool
+Characters 60-67:
+  else sumList digits n;;
+       ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

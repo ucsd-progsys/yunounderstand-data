@@ -1,0 +1,5 @@
+Characters 39-40:
+  if String.length = 0 then true
+                     ^
+Error: This expression has type int but an expression was expected of type
+         string -> int

@@ -1,6 +1,5 @@
-Characters 85-89:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'b -> 'a
+Characters 27-28:
+  let _ = fixpoint (collatz, 3);;
+                             ^
+Error: This expression has type int but an expression was expected of type
+         bool

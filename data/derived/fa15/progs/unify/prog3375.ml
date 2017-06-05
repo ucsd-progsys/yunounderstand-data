@@ -1,15 +1,4 @@
 
-let x = [1; 2];;
+let pipe fs = let f a x = x a in let base f = f in List.fold_left f base fs;;
 
-let y = [2; 2];;
-
-let rec addHelper t u =
-  match List.rev t with
-  | [] -> []
-  | h::t ->
-      (match List.rev u with
-       | [] -> []
-       | h'::t' ->
-           if (h + h') > 10
-           then (addHelper t t') @ [(1 + h') + h]
-           else (addHelper t t') @ ([h' + h] aaddHelper x y));;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

@@ -1,5 +1,5 @@
-Characters 30-49:
-  let fixpoint (f,b) = wwhile ( (f, not (f x = b )), b);;
-                                ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 57-59:
+  n mod 10 append digitsOfInt (n/10);;
+        ^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

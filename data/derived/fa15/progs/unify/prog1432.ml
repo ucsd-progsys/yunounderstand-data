@@ -1,7 +1,5 @@
 
-let rec mulByDigit i l =
-  match l with
-  | [] -> [0]
-  | h::t ->
-      let (cin,res) = mulByDigit i t in
-      let sum = (i * h) + cin in ((sum / 10), ((sum mod 10) :: res));;
+let pipe fs =
+  let f a x f' a x = x a in let base y = y in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;

@@ -27,11 +27,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXX*)
-
 let sqsum xs = 
   let f a x = a + (x * x) in
   let base = 0 in
@@ -41,17 +36,11 @@ let sqsum xs =
 let _ = sqsum []
 let _ = sqsum [1;2;3;4]
 let _ = sqsum [(-1); (-2); (-3); (-4)]
-let _ = sqsum [0]
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXX*)
 
 let pipe fs = 
-  let f a x = fun y -> x (a y) in 
-  let base = fun x -> x in
+  let f a x = fun i -> x (a i) in
+  let base = fun i -> i in
     List.fold_left f base fs
 
 
@@ -61,7 +50,7 @@ let _ = pipe [] 3
 
 let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3 
+let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 
 
 let rec sepConcat sep sl = match sl with 
@@ -82,7 +71,7 @@ let _ = sepConcat "X" ["hello"]
 
 
 
-let stringOfList f l =  "[" ^ (sepConcat "; " (List.map f l)) ^ "]"
+let stringOfList f l = "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -93,21 +82,15 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 
 
 
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
 let rec clone x n = 
-  if n <= 0 then []
-  else x::clone x (n-1)
-
+  if n <= 0 then
+    []
+  else
+    x :: clone x (n - 1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -117,12 +100,12 @@ let _ = clone clone (-3);;
 
 
 let padZero l1 l2 = 
-  let numZeros = List.length l1 - List.length l2 in
-  let absNumZeros = abs numZeros in 
-    if numZeros = 0 then (l1, l2) 
-    else let listZeros = clone 0 absNumZeros in 
-        if numZeros > 0 then (l1, listZeros@l2) else (listZeros@l1, l2) 
-
+  let length1 = List.length l1 in
+  let length2 = List.length l2 in
+    if length1 > length2 then
+      (l1, (clone 0 (length1 - length2)) @ l2)
+    else
+      ((clone 0 (length2 - length1)) @ l1, l2 )
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -131,59 +114,43 @@ let _ = padZero [9;9] [1;0;0;2]
 let _ = padZero [1;0;0;2] [9;9] 
 
 
-
-let rec removeZero l = match l with 
+let rec removeZero l = match l with
   | [] -> []
-  | 0::t -> removeZero t
-  | h::t -> l
+  | h::t ->
+      if h = 0 then
+        removeZero t
+      else
+        l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
 
-
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x =  
+    let f a x = 
+      let (x1, x2) = x in
+      let (a1, a2) = a in
+      let sum = x1 + x2 + a1 in
+      let carry = sum / 10 in
+        (carry, a @ [sum % 10])
 
-      let (carry, currentSum) = a in 
-        if x = () then (0, carry::currentSum) (*XXXX*)
-        else 
-          let (toSum1, toSum2) = x in
-          (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-          let intermediateValue = toSum1 + toSum2 + carry in
-          let valueToAddToArray = intermediateValue mod 10 in
-          let carry = intermediateValue / 10 in
-            (carry, valueToAddToArray::currentSum) in
-
-    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXX
-XXXX*)
+    in
     let base = (0, []) in
-    let args = List.rev (List.combine l1 l2) in
+    let args = List.combine l1 l2 in
     let (_, res) = List.fold_left f base args in
-      res (*XXXXXXXXXXXXXXXXXX*)
+      res
   in 
     removeZero (add (padZero l1 l2))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigAdd [3] [0]
-let _ = bigAdd [3] [3]
-let _ = bigAdd [9] [9]
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 

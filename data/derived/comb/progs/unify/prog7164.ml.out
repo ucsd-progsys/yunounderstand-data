@@ -1,5 +1,6 @@
-Characters 109-113:
-  List.fold_left f base xs;;
-                   ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 72-73:
+  | h :: t -> h :: listReverse [t];;
+              ^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

@@ -1,5 +1,5 @@
-Characters 232-246:
-  | Average(e1, e2)        -> (eval(e1, x, y) + eval(e2, x, y)) /2
+Characters 29-43:
+  let fixpoint (f,b) = wwhile ((f b, f b = b), b);;
                                ^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

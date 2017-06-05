@@ -1,5 +1,5 @@
-Characters 66-70:
-  |Sine -> "sin(pi*"+exprToString+")"
-   ^^^^
-Error: The constructor Sine expects 1 argument(s),
-       but is applied here to 0 argument(s)
+Characters 73-78:
+  |false->h
+   ^^^^^
+Error: This variant pattern is expected to have type 'a list
+       The constructor false does not belong to type list

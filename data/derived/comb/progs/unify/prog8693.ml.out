@@ -1,5 +1,5 @@
-Characters 67-89:
-  | h::t -> matchHeads (explode w);;
-            ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type bool
+Characters 29-49:
+  let fixpoint (f,b) = wwhile ((fixpointHelper f b),b);;
+                               ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

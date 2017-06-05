@@ -1,5 +1,6 @@
-Characters 89-121:
-  |Sine s -> String.concat(["sin(pi*";exprToString s;")"])
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type bool -> bool list
+       Type int is not compatible with type bool 

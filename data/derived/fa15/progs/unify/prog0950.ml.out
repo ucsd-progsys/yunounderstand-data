@@ -1,5 +1,5 @@
-Characters 64-69:
-  if (k,x) then x
-     ^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type bool
+Characters 70-81:
+  | h::t -> (h, l2) :: [helper t l2];;
+                        ^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'a * 'b

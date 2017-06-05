@@ -1,5 +1,5 @@
-Characters 265-267:
-  List.map combine (List.rev(List.combine l1 l2)) @ -1 in
-                                                    ^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 70-75:
+  a@(0,x)
+    ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

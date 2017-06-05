@@ -1,5 +1,5 @@
-Characters 84-93:
-  let fixpoint (f,b) = wwhile (let x = (f b) in match x with | b -> (x, false) | _ -> (x, true), b);;
-                                                                                      ^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type bool -> bool * bool
+Characters 20-32:
+  let rec clone x n = stringOfList x n List.map x n;;
+                      ^^^^^^^^^^^^
+Error: This function has type ('a -> string) -> 'a list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

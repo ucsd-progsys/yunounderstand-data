@@ -1,5 +1,5 @@
-Characters 62-66:
-  | h::t  -> [h; digitsOfInt t];;
-    ^^^^
-Error: This pattern matches values of type 'a list
-       but a pattern was expected which matches values of type int
+Characters 218-219:
+  | Average (e1, e2)	  -> ((eval (e, x, y) +. eval (e, x, y)) /. 2)
+                                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

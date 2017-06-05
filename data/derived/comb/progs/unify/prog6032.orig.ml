@@ -99,61 +99,39 @@ let _ = clone 3 5;;
 let _ = clone "foo" 2;; 
 let _ = clone clone (-3);;
 
-(*
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
+
+let padZero l1 l2 = 
+  if (List.length l1) = (List.length l2) 
+  then (l1, l2)
+  else if (List.length l1 < List.length l2)
+  then padZero 0::l1 l2
+  else padZero l1 0::l2
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 *)
 
-let padZero l1 l2 = if (List.length l1) < (List.length l2) 
-  then ((clone 0 (List.length l2 - List.length l1))@l1, l2)
-  else if (List.length l1) > (List.length l2) 
-  then (l1, (clone 0 (List.length l1 - List.length l2))@l2)
-  else (l1,l2)
+let rec removeZero l = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = padZero [9;9] [1;0;0;2]
-let _ = padZero [1;0;0;2] [9;9] 
-let _ = padZero [1;0] [0;1]
-
-
-
-let rec removeZero l = match l with 
-  |[] -> []
-  |(h::t) -> if h = 0 then removeZero t else l
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
-(*
-XXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXX
-XX
-XXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match x with 
-        (h::t) -> match h with 
-          (fir, sec) -> match a with 
-          |(h::t) -> (fir + sec + h / 10 ) :: (fir + sec + h) mod 10 :: t
-    in
-    let base = [] in
-    let args = List.combine l1 l2 in 
-    let (_, res)  = List.fold_left f base args in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
       res
   in 
     removeZero (add (padZero l1 l2))

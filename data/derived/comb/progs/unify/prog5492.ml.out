@@ -1,5 +1,5 @@
-Characters 80-84:
-  List.fold_left f base fs;;
-                   ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b -> 'c
+Characters 14-36:
+  let _ =  eval (Op(VarX, VarY, VarY));;
+                ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

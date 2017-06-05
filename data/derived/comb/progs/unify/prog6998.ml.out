@@ -1,5 +1,5 @@
-Characters 512-524:
-  | Trip(x,y,z)      -> "(("^ exprToString x ^ "%30.0)" ^ exprToString ^
-                                                          ^^^^^^^^^^^^
-Error: This expression has type expr -> string
-       but an expression was expected of type string
+Characters 178-179:
+  in wwhile(gs, b);;
+                ^
+Error: This expression has type (int -> int) * bool
+       but an expression was expected of type int -> int

@@ -1,7 +1,26 @@
 
-let rec assoc (d,k,l) =
-  let (h1,h2)::t = l in
-  match k with | h2 -> h1 | _ -> if l = [] then d else assoc (d, k, t);;
+let rec clone x n =
+  if n < 1 then [] else (match n with | _ -> x :: (clone x (n - 1)));;
 
-let _ =
-  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;
+let padZero l1 l2 =
+  let s1 = List.length l1 in
+  let s2 = List.length l2 in
+  if s1 = s2
+  then (l1, l2)
+  else
+    if s1 > s2
+    then (l1, ((clone 0 (s1 - s2)) @ l2))
+    else (((clone 0 (s2 - s1)) @ l1), l2);;
+
+let rec removeZero l =
+  if l = []
+  then []
+  else (let h::t = l in match h with | 0 -> removeZero t | _ -> l);;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = let (x1,x2) = x in (((x1 + x2) mod 10), [(x1 + x2) / 10]) in
+    let base = [] in
+    let args = List.combine l1 l2 in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

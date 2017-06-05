@@ -45,7 +45,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec revReppend(x,y) =
   match y with
     |[]->x
-    |h::t -> let z=h::x in revReppend(z,t);;
+    |h::t -> let z=h::x in append(z,t);;
 
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
@@ -75,13 +75,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-
 let rec wwhile (f,b) = 
-  let (x,y)=f b in
-    match y with
-      |false->x
-      |true->wwhile(f,x);;
+  let x=f b in
+  let h::t=x in
+  let r::l=t in
+    match r with
+      |false->h
+      |true->wwhile(f,h);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -97,14 +97,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec helper(f,b)=
-  let x = f b in 
-    match x with
-      |b->(x,false)
-      |_->helper(f,x);;
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((helper(f,b)),b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -138,16 +132,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine s -> String.concat("sin(pi*",exprToString s)
-    |Cosine s-> "cos(pi*"+exprToString s+")"
-    |Average(s,p)-> "(("+exprToString s+"+"+exprToString p+")/2"
-    |Times(s,p)-> exprToString s+"*"+exprToString p
-    |Thresh(s,p,r,d)-> "("+exprToString s+"<"+exprToString p+"?"+exprToString r+":"+exprToString d+")"
-    |_->0;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

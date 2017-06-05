@@ -1,5 +1,6 @@
-Characters 79-88:
-  let f a x = match x with (x1,x2) -> (0,(x1 + x2) @ a) in
-                                         ^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

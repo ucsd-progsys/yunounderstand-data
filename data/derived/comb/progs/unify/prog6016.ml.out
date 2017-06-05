@@ -1,6 +1,0 @@
-Characters 138-139:
-  (h::t) -> let sum = fst x + snd x + fst h in ((sum / 10)::(sum mod 10)::t) in
-                                                                          ^
-Error: This expression has type (int * 'a) list
-       but an expression was expected of type int list
-       Type int * 'a is not compatible with type int 

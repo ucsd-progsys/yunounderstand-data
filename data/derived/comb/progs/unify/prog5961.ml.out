@@ -1,6 +1,5 @@
-Characters 144-145:
-  let seen' = if not (List.mem seen h) then seen@[h] else seen in
-                                                  ^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list list
+Characters 100-116:
+  n -> let x_ = digitsOfInt n in sumList x_ :: [];;
+                                 ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

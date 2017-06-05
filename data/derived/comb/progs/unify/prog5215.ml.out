@@ -1,5 +1,5 @@
-Characters 85-87:
-  List.fold_left f base fs;;
-                        ^^
-Error: This expression has type 'a -> 'b
-       but an expression was expected of type ('b -> 'b) list
+Characters 97-99:
+  | l   -> sepConcat ( "" List.map(f l));;
+                       ^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

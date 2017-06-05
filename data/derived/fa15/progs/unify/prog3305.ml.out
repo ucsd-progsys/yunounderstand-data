@@ -1,6 +1,5 @@
-Characters 48-61:
-  |_ -> clone x (n-1) :: x;;
-        ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 272-273:
+  |Thresh(e1, e2, e3, e4)->buildThresh(x, y, x, y);;
+                                       ^
+Error: This expression has type float but an expression was expected of type
+         expr

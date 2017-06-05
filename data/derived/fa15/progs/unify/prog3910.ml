@@ -1,7 +1,6 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let fixpointHelper f b =
+  let c = f b in if c = b then (c, true) else (c, false);;
 
-let palindrome w = match explode w with | [] -> true | h::t -> explode w;;
+let fixpointHelper f b =
+  let c = f b in if c = b then (c, true) else fixpointHelper (f c);;

@@ -1,5 +1,5 @@
-Characters 430-434:
-  | Power (x, y) -> (exprToString x)^"**"(exprToString y)
-                                     ^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 155-160:
+  	  helper (seen',rest')   
+             ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a list

@@ -1,6 +1,6 @@
-Characters 138-139:
-  | h::t -> [((h + b)/10)]::[((h + b) mod 10)]::t
-                                                ^
-Error: This expression has type int list
-       but an expression was expected of type int list list
-       Type int is not compatible with type int list 
+Characters 139-140:
+  | 0 -> buildSine(build (rand, depth-1))
+    ^
+Error: This pattern matches values of type int
+       but a pattern was expected which matches values of type
+         int * int -> int

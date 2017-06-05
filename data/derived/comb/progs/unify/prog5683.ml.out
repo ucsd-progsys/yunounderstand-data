@@ -1,5 +1,6 @@
-Characters 107-117:
-  else (digitsOfInt (n / 10)) @ (n mod 10);;
-                                ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 71-72:
+  | h::t -> h n + sumList t n;;
+                          ^
+Error: This expression has type ('a -> int) list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> int) list

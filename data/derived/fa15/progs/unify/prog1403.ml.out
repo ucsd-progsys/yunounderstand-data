@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type (unit -> unit) list -> unit
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 213-219:
+  | 3 -> buildTimes (build(rand,depth-1), buildY)
+                                          ^^^^^^
+Error: This expression has type unit -> expr
+       but an expression was expected of type expr

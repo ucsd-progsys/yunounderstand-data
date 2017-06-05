@@ -1,5 +1,6 @@
-Characters 4-5:
-  abs y;;
-      ^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 70-74:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside 'a -> 'b -> 'c

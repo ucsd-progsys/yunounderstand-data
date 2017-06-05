@@ -1,5 +1,5 @@
-Characters 44-46:
-  let r = rand(0.depth) in
-               ^^
-Error: This expression has type float
-       This is not a function; it cannot be applied.
+Characters 111-121:
+  else (test (f x), false)
+        ^^^^^^^^^^
+Error: This expression has type int * bool
+       but an expression was expected of type int

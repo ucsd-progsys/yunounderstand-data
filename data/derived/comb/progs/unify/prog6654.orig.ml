@@ -36,25 +36,26 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-
-let rec filter l h=
+let rec filter l a=
   match l with
-      []->[]
-    |hd::tl -> if hd=h then (filter tl h)
-        else hd::(filter tl h)
-;;
+    |[]->[]
+    |h::t->if h=a then
+          filter t a
+        else h::filter t a
+
+
 
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      |[] -> seen
       | h::t -> 
-          let seen' = h::seen in
-          let rest' = (filter t h) in 
-            helper (seen',rest') 
+          let seen' = seen@h in
+          let rest' = filter t h in 
+            helper (seen',rest')
   in
-    List.rev (helper ([],l))
-
+    List.rev(helper([], l))
+;;
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
@@ -68,15 +69,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = 
-  let (b',c')=f b in 
-    if c'=true then wwhile(f,b')
-    else b'
-;;
+let rec wwhile (f,b) = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -86,18 +85,22 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let fixpoint (f,b) = let f1 f2 x= if (f2 x)=x then (false,x) else (true, f2 x) in wwhile ((f1 f),b)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;;
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)

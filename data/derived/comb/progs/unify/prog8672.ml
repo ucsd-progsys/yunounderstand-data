@@ -1,4 +1,9 @@
 
-let stringOfList f l = List.map (f l);;
+let rec listReverse l =
+  let rec listReverseHelper l =
+    function | [] -> l | h::t -> listReverseHelper (h :: l) t in
+  listReverseHelper [] l;;
 
-let _ = stringOfList (fun x  -> x) ["foo"];;
+let palindrome w = if w = (listReverse w) then true else false;;
+
+let _ = palindrome "malayalam";;

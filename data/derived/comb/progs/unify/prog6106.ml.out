@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = lift1 (!) (Some 2);;
-                          ^
-Error: This expression has type int but an expression was expected of type
-         'a ref
+Characters 61-72:
+  h + sumList(xs);;
+      ^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

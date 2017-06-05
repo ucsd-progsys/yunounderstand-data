@@ -1,7 +1,5 @@
-Characters 86-87:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'a list -> 'b list
-       but an expression was expected of type
-         ('a -> 'b) -> 'a list -> 'a -> 'b
-       Type 'b list is not compatible with type 'a -> 'b 
+Characters 86-94:
+  let fixpoint (f,b) = wwhile (let fin (f', b') = let nfb = f' b' in (nfb, nfb = b') in fin(f,b),b);;
+                                                                                        ^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

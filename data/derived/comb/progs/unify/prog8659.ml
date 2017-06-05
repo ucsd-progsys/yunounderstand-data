@@ -1,5 +1,2 @@
 
-let pipe fs =
-  let f a x x a = x a in let base fs = fs in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;
+let sumlist xs = match 1 with | [] -> 0 | h::t -> h + (sumlist t);;

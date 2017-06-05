@@ -1,5 +1,5 @@
-Characters 28-31:
-  let _ = exprToString (Power(2.4, 5.3));;
-                              ^^^
-Error: This expression has type float but an expression was expected of type
-         expr
+Characters 151-154:
+  helper (f b, f b);;
+          ^^^
+Error: This expression has type bool but an expression was expected of type
+         int

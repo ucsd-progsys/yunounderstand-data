@@ -43,11 +43,11 @@ let removeDuplicates l =
     match rest with 
       |[] -> seen
       | (hd::tl) -> 
-          let seen' = if (List.mem hd seen) then seen else hd::seen in
+          let seen' = if (List.mem hd seen) then seen else seen@[hd] in
           let rest' = tl in 
             helper (seen',rest') in 
-    List. rev(helper ([],l))
-
+    helper ([],l)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
@@ -82,10 +82,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let notEqual x y = (x = y = false)
-let fixpoint (f,b) = wwhile ( (let newFunc b = (f b, notEqual b (f b )) in newFunc), b)
-
-
+let fixpoint (f,b) = let newFunc = (f b, b = f b = false ) in wwhile (newFunc, b)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 
@@ -113,32 +110,19 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | Square of expr * expr
-    | Exponential of expr * expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with 
-  |VarX			  -> "x"
-  |VarY			  -> "y"
-  |Sine (i)		  -> "sin(pi*"^ exprToString i^")"
-  |Cosine (i)		  -> "cos(pi*" ^exprToString i^")" 
-  |Average(i1, i2)	  -> "((" ^ exprToString i1 ^ " + " ^ exprToString i2 ^")/2)" 
-  |Times (i1,i2)		  -> exprToString i1 ^ "*" ^ exprToString i2
-  |Thresh (i1, i2, i3, i4)  -> "(" ^ exprToString i1 ^ "<" ^ exprToString i2 ^ " ? " ^ exprToString i3 ^ ":" ^ exprToString i4 ^ ")"
-  |Square (i1,i2)		  -> exprToString i1 "*" exprToString i2
-  |Exponential (i1,i2)      -> exprToString i1 "^" exprToString i2
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));; 
-
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -153,23 +137,27 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildSquare (e)		   = Square(e)
-let buildExponential (e1, e2)	   = Exponential (e1,e2)
+
+
 let pi = 4.0 *. atan 1.0
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  |VarX			  -> x
-  |VarY			  -> y
-  |Sine (i)		  -> sin(pi *. eval (i,x,y))
-  |Cosine (i)		  -> cos(pi *. eval (i,x,y))
-  |Average(i1, i2)	  -> (eval (i1,x,y)+.eval (i2,x,y))  /. 2.0
-  |Times (i1,i2)		  -> eval (i1,x,y) *. eval (i2,x,y)
-  |Thresh (i1,i2,i3,i4)     -> if( eval (i1,x,y) < eval (i2,x,y) ) then eval (i3,x,y) else eval (i4,x,y)
-  |Square (i)		  -> eval(i,x,y) *. eval(i,x,y) 
-  |Exponential (i1,i2)      -> eval(i1,x,y) **. eval(i2,x,y)
+let rec eval (e,x,y) = failwith "to be written"
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
+
+let eval_fn e (x,y) = 
+  let rv = eval (e,x,y) in
+    assert (-1.0 <= rv && rv <= 1.0);
+    rv
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -183,21 +171,6 @@ let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
-
-
-
-let eval_fn e (x,y) = 
-  let rv = eval (e,x,y) in
-    assert (-1.0 <= rv && rv <= 1.0);
-    rv
-
-
-
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -209,22 +182,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  let r = rand(1,5) in
-  let d = (depth - 1) in
-    if d !=0 then match r with 
-      |1 -> buildSine (build(rand,d))
-      |2 -> buildCosine (build(rand, d))
-      |3 -> buildAverage (build(rand,d),build(rand,d))
-      |4 -> buildTimes (build(rand,d),build(rand,d))
-      |_ -> buildThresh (build(rand, d), build(rand,d),build(rand, d), build(rand,d))
+let rec build (rand, depth) = failwith "to be implemented"
 
-    else 
-      let rr = rand(1,8) in
-        match rr with
-          |6 -> buildX()
-          |8 -> buildY()
-          |_ -> buildX()
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -232,13 +191,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (11,2,5)  
-let g2 () = (8,7,9)  
-let g3 () = (8, 2, 3)
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (12,6 ,12)
-let c2 () = (9,5 , 8)
-let c3 () = (11,1 ,9)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -341,11 +300,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

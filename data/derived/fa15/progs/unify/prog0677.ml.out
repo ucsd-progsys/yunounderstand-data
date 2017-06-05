@@ -1,5 +1,5 @@
-Characters 89-109:
-  | Sine e		  -> sin(pi *. eval e, x, y)
-                    ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type float
+Characters 30-49:
+  let fixpoint (f,b) = wwhile ( (f, not (f x = b )), b);;
+                                ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

@@ -1,10 +1,3 @@
 
-let removeDuplicates l =
-  let rec helper (seen,rest) =
-    match rest with
-    | [] -> seen
-    | h::t ->
-        if (List.mem (h, seen)) = true
-        then helper (seen', t)
-        else (let seen' = [] @ h in let rest' = t in helper (seen', rest')) in
-  List.rev (helper ([], l));;
+let rec sumList xs =
+  match xs with | [] -> [] | h::t -> let h::t = xs in h + (sumList t);;

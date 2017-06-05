@@ -1,5 +1,5 @@
-Characters 29-40:
-  let fixpoint (f,b) = wwhile (helper(f,b),b);;
-                               ^^^^^^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 89-121:
+  |Sine s -> String.concat(["sin(pi*";exprToString s;")"])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

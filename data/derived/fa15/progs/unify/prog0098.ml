@@ -1,2 +1,2 @@
 
-let rec clone x n = if n <= 0 then [] else x :: ((clone x n) - 1);;
+let rec clone x n = if n = 1 then [] @ x else (clone x) :: ((x n) - 1);;

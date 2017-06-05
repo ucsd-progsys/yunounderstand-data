@@ -1,6 +1,5 @@
-Characters 141-145:
-  | true -> [] 
-    ^^^^
-Error: This pattern matches values of type bool
-       but a pattern was expected which matches values of type
-         ('a * 'b) list -> bool
+Characters 121-132:
+  if (j+k>10) then (1, j+k-10) else (0, j+k) in 
+                   ^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

@@ -1,6 +1,5 @@
-Characters 59-72:
-  | h::t -> listReverse l :: h;;
-            ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 8-12:
+  let _ = pipe [] 3;;
+          ^^^^
+Error: This function has type ('a list -> 'a list) list list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

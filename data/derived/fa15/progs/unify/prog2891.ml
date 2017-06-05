@@ -1,19 +1,12 @@
 
-let rec sumListHelper total xs =
-  match xs with | [] -> total | hd::tail -> sumListHelper (total + hd) tail;;
+let sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
 
-let rec digitsOfIntHelper n =
-  if n < 1
-  then []
-  else (digitsOfIntHelper ((n - (n mod 10)) / 10)) @ [n mod 10];;
+let stringOfList f l =
+  sepConcat ";" (List.map f (List.map (fun f  -> "[" :: f) l));;
 
-let rec digitsOfInt n = digitsOfIntHelper n;;
-
-let rec sumList xs = sumListHelper 0 xs;;
-
-let rec aPHelper n = if n >= 10 then sumList (digitsOfInt n) else n;;
-
-let rec additivePersistence n =
-  if (aPHelper n) >= 10 then additivePersistence (aPHelper n) else aPHelper n;;
-
-let _ = additivePersistence - 1;;
+let _ = stringOfList string_of_int [1; 2; 3; 4; 5; 6];;

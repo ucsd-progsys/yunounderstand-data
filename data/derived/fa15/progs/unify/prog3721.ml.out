@@ -1,5 +1,5 @@
-Characters 131-140:
-  | 2 -> buildSine build(rand, depth-1)
-         ^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 32-54:
+  bigAdd ([List.map l*i l], []);;
+         ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

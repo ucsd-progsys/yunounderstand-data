@@ -1,5 +1,5 @@
-Characters 232-239:
-  let args = List.rev(List.combine(l1,l2)) in
-                                  ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 65-71:
+  |hd::tl -> if hd=h then hd::(filter tl h)
+                               ^^^^^^
+Error: This function has type 'a list * 'a -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

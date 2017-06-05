@@ -1,5 +1,6 @@
-Characters 159-160:
-  let num = (l1e + l2e + carry) in (num mod 9, 7 @ list) in
-                                               ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 73-74:
+  List.fold_left f base fs;;
+                 ^
+Error: This expression has type (int -> 'a) -> int -> 'a
+       but an expression was expected of type (int -> 'a) -> int -> int -> 'a
+       The type variable 'a occurs inside int -> 'a

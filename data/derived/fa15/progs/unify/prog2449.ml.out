@@ -1,6 +1,5 @@
-Characters 81-82:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'a
+Characters 64-66:
+  | [] -> []
+    ^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

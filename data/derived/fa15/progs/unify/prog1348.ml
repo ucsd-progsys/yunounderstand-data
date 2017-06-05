@@ -16,25 +16,8 @@ let rec removeZero l =
 
 let bigAdd l1 l2 =
   let add (l1,l2) =
-    let f a x =
-      let (l1x,l2x) = x in
-      let (a1,a2) = a in
-      let test = match a1 with | [] -> 0 | h::t -> h in
-      let sum = (l1x + l2x) + test in
-      if (List.length a2) = ((List.length l1) - 1)
-      then (((sum / 10) :: a1), ((sum / 10) :: (sum mod 10) :: a2))
-      else (((sum / 10) :: a1), ((sum mod 10) :: a2)) in
-    let base = ([], []) in
-    let args = List.rev (List.combine l1 l2) in
+    let f a x = let (l1x,l2x) = x in (0, (l1x + l2x)) @ a in
+    let base = [(0, 0)] in
+    let args = List.combine l1 l2 in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
-
-let rec mulByDigit i l =
-  if i < 1 then [] else bigAdd l (mulByDigit (i - 1) l);;
-
-let bigMul l1 l2 =
-  let f a x =
-    let test = match a with | [] -> 1 | h::t -> 10 * h in
-    let multi = mulByDigit (test * x) l1 in ((test :: a), (bigAdd multi a)) in
-  let base = ([], []) in
-  let args = List.rev l2 in let (_,res) = List.fold_left f base args in res;;

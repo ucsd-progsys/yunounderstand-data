@@ -1,7 +1,5 @@
-Characters 82-83:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'a -> 'a) -> 'a list -> 'a -> 'a
-       but an expression was expected of type
-         ('a -> 'a -> 'a) -> 'a list -> 'a -> 'a -> 'a
-       The type variable 'a occurs inside 'a -> 'a
+Characters 63-68:
+  | _ -> (f,b)
+         ^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

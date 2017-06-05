@@ -1,6 +1,5 @@
-Characters 105-109:
-  List.fold_left f base xs;;
-                   ^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int -> int
-       Type int is not compatible with type int -> int 
+Characters 48-49:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         int -> 'a

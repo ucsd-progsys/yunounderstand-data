@@ -1,5 +1,5 @@
-Characters 58-59:
-  if (explode w) = (explode (listReverse w))
-                                         ^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 76-77:
+  | h::t -> (h, l2) :: helper(t l2);;
+                              ^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

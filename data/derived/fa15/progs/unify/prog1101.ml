@@ -1,16 +1,15 @@
 
-let rec wwhile (f,b) = failwith "to be written";;
+let checkSame (x,y) = x == y;;
 
-let fixpoint (f,b) = wwhile ((failwith "to be written"), b);;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let rec wwhile (f,b) =
-  let z = f b in
-  match z with | (x,y) -> if y = false then x else wwhile (f, x);;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
 
-let collatz n =
-  match n with | 1 -> 1 | _ when (n mod 2) = 0 -> n / 2 | _ -> (3 * n) + 1;;
-
-let fixpoint (f,b) =
-  let x = wwhile (f b) in if x = b then fixpoint (f, x) else x;;
-
-let _ = fixpoint (collatz, 1);;
+let palindrome w =
+  if checkSame ((listReverse (explode w)), (explode w))
+  then true
+  else explode w;;

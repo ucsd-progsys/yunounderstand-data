@@ -2,25 +2,29 @@
 type expr =
   | VarX
   | VarY
+  | Neg of expr
   | Sine of expr
   | Cosine of expr
   | Average of expr* expr
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let buildCosine e = Cosine e;;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Neg e1 -> "(" ^ ((exprToString e1) ^ " * -1)")
+  | Sine e1 -> "sin(pi*" ^ ((exprToString e1) ^ ")")
+  | Cosine e1 -> "cos(pi*" ^ ((exprToString e1) ^ ")")
+  | Average (e1,e2) ->
+      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
+  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
+  | Thresh (e1,e2,e3,e4) ->
+      "(" ^
+        ((exprToString e1) ^
+           ("<" ^
+              ((exprToString e2) ^
+                 ("?" ^
+                    ((exprToString e3) ^ (":" ^ ((exprToString e4) ^ ")")))))));;
 
-let buildSine e = Sine e;;
-
-let buildX () = VarX;;
-
-let buildY () = VarY;;
-
-let rec build (rand,depth) =
-  if depth = 0
-  then (if (rand (0, 1)) = 0 then buildX () else buildY ())
-  else
-    (let num = rand (0, 4) in
-     if num = 0
-     then buildSine (build (rand, (depth - 1)))
-     else if num = 1 then buildCosine (build (rand, (depth - 1))));;
+let _ = exprToString Neg VarX;;

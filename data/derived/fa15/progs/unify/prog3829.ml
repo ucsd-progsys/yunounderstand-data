@@ -1,10 +1,6 @@
 
-let fixpointHelper (f,b) = f;;
+let pipe fs =
+  let f a x = List.map x a in
+  let base = [(fun x  -> x)] in List.fold_left f base fs;;
 
-let rec wwhile (f,b) =
-  match f b with | (num,expr) -> if expr then wwhile (f, num) else num;;
-
-let fixpoint (f,b) = wwhile ((fixpointHelper (f, b)), b);;
-
-let _ =
-  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;
+let _ = pipe [] 3;;

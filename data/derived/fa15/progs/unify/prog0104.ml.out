@@ -1,5 +1,5 @@
-Characters 197-209:
-  let args = List.combine List.rev l1 List.rev l2 in
-             ^^^^^^^^^^^^
-Error: This function has type 'a list -> 'b list -> ('a * 'b) list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 94-96:
+  if d < 0 then (clone 0 (0-d))@l1 * l2 else l1 * (clone 0 d)@l2;;
+                                ^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

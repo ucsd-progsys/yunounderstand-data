@@ -6,23 +6,17 @@ type expr =
   | Cosine of expr
   | Average of expr* expr
   | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Square of expr
-  | Quarter of expr;;
+  | Thresh of expr* expr* expr* expr;;
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
+let rec exprToString e =
   match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine e -> sin (pi *. (eval (e, x, y)))
-  | Cosine e -> cos (pi *. (eval (e, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
+  | VarX  -> Printf.printf "x"
+  | VarY  -> Printf.printf "y"
+  | Sine e -> Printf.printf "sin(pi*%s)" (!exprToString) e
+  | Cosine e -> Printf.printf "cos(pi*%s)" (!exprToString) e
+  | Average (e1,e2) ->
+      Printf.printf "((%s + %s)/2)" exprToString e1 exprToString e2
+  | Times (e1,e2) -> Printf.printf "%s * %s" exprToString e1 exprToString e2
   | Thresh (e1,e2,e3,e4) ->
-      if (eval (e1, x, y)) < (eval (e2, x, y))
-      then eval (e3, x, y)
-      else eval (e4, x, y)
-  | Square e -> e *. e
-  | Quarter e -> e /. 4.0;;
+      Printf.printf "(%s<%s ? %s : %s)" exprToString e1 exprToString e2
+        exprToString e3 exprToString e4;;

@@ -1,6 +1,5 @@
-Characters 29-33:
-  let fixpoint (f,b) = wwhile (fu f ,b);;
-                               ^^^^
-Error: This expression has type 'a -> ('a -> 'a) * bool
-       but an expression was expected of type 'a -> 'a * bool
-       The type variable 'a occurs inside 'a -> 'a
+Characters 184-196:
+  if value > 9 then (1,value-10)::a
+                    ^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

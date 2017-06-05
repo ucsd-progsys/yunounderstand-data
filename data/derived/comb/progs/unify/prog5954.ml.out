@@ -1,5 +1,5 @@
-Characters 29-42:
-  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
-                               ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string list
+Characters 76-80:
+  n_ -> incr i 
+        ^^^^
+Error: This function has type int ref -> unit
+       It is applied to too many arguments; maybe you forgot a `;'.

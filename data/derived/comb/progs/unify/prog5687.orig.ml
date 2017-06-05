@@ -3,7 +3,13 @@ XXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec fact n =
+  if n == 1 then
+    1
 
+  else n * fact ( n - 1)
+;;
+fact(4);;
 
 (*XXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXX*)
@@ -29,18 +35,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n: int list = 
-  if n < 0 then []
-  else if n < 10 then [n]
-  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-  else (digitsOfInt (n / 10)) @ [(n mod 10)]
-
+let rec digitsOfInt xs n: int list = match n with
+  | 0 -> xs
+  | h::t -> xs::n%10 digitsOfInt n / 10
 ;;
 
-let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX
@@ -66,36 +72,24 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec additiveDestructor n : int =
-  if n < 10 then n
-  else (n / 10) additiveDestructor (n / 10)
-;;
 
-let _ = additiveDestructor 9876
+let rec additivePersistence n = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec additivePersistence n : int =
-
-;;
-
-let _ = additivePersistence 9876
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec digitalRoot n = failwith "TBD"
 
-let rec digitalRoot n : int =
-  if (n / 10) < 10 then 1
-  else 1 + digitalRoot (n / 10)
-;;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = digitalRoot 9876
-
-
+*)
 
 
 let rec listReverse l = failwith "TBD"

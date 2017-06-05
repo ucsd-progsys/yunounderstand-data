@@ -1,5 +1,5 @@
-Characters 359-372:
-  let args = List.combine((List.rev l1) (List.rev l2)) in  
-                          ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 29-40:
+  let stringOfList f l = "[" ^ List.map(f) ^ sepConcat(";" l) ^ "]";;
+                               ^^^^^^^^^^^
+Error: This expression has type 'a list -> 'b list
+       but an expression was expected of type string

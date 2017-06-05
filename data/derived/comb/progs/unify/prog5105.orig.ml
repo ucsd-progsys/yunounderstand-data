@@ -52,13 +52,14 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
+(*X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec additivePersistence n = match digits(n) with
-  | x :: [] -> 0
-  | _ -> additivePersistence(sumList(n))
 
-
-let _ = additivePersistence 9876 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX*)
 
 
 
@@ -66,14 +67,11 @@ let _ = additivePersistence 9876
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = 
-  if n < 10 then
-    n
-  else
-    digitalRoot(sumList(digits(n)))
+let rec digitalRoot n = match digits(n) with
+  | x :: [] -> 0
+  | h::t -> digitalRoot(digits(sumList(n)))
 
 let _ = digitalRoot 9876
-let _ = digitalRoot 1111
 
 
 

@@ -1,5 +1,5 @@
-Characters 177-179:
-  let args = l1 (tenEx 0 l2) in
-             ^^
-Error: This expression has type int list
-       This is not a function; it cannot be applied.
+Characters 71-85:
+  | h::t -> [h*i] @ 0 * mulByDigit i t;;
+                        ^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

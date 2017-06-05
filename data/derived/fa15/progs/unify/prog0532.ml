@@ -1,11 +1,4 @@
 
-let rec lastListElement n =
-  match n with
-  | [] -> []
-  | x::[] -> x :: (lastListElement [])
-  | x::y -> lastListElement y;;
+let pipe fs = let f a x = a + x in let base = 0 in List.fold_left f base fs;;
 
-let rec catLists x y =
-  match x with | [] -> [] | h::t -> catLists t ((lastListElement x) :: y);;
-
-let _ = catLists [1] [2; 3; 4];;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

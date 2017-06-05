@@ -1,5 +1,5 @@
-Characters 60-73:
-  if n < 0 then [] else digitsOfInt m/10::[(n mod 10)];;
-                        ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 477-486:
+  | Darius( e1, e2, e3 )     -> mod_float ((eval (e1, x, y) +. eval (e2, x, y))) eval (e3, x, y);;
+                                ^^^^^^^^^
+Error: This function has type float -> float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

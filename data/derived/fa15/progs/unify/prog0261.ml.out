@@ -1,5 +1,5 @@
-Characters 88-89:
-  let f a x = h ^ sep ^ t in
-                        ^
-Error: This expression has type string list
-       but an expression was expected of type string
+Characters 477-479:
+  | Funny(k, l, m)       -> ((eval(k,x,y) +. eval(l,x,y) +. eval(m,x,y))/.10)
+                                                                          ^^
+Error: This expression has type int but an expression was expected of type
+         float

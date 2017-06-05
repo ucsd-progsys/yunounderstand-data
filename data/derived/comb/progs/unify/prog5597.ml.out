@@ -1,5 +1,5 @@
-Characters 71-81:
-  if n < 0 then [] else []::digitsOfInt (n/10) @ (n mod 10);;
-                                                 ^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list list
+Characters 119-130:
+  in helper i [];;
+     ^^^^^^^^^^^
+Error: This expression has type int list -> 'a
+       but an expression was expected of type 'b list

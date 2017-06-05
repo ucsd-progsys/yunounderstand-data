@@ -1,9 +1,13 @@
 
-let rec sepConcat sep sl =
-  match sl with
-  | [] -> ""
-  | h::t ->
-      let f a x = x ^ a in
-      let base = if (List.length t) <> 0 then "" else sep in
-      let l = if (List.length t) <> 0 then t else h in
-      List.fold_left f base l;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
+
+let buildX () = VarX;;
+
+let rec eval (e,x,y) = (buildX 2 let_) = (eval (VarX, 3, 2));;

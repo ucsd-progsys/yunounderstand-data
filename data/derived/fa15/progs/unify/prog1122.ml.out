@@ -1,5 +1,7 @@
-Characters 31-38:
-  let _ = emitGrayscale (eval_fn (g1 ()), 150, "sample");;
-                                 ^^^^^^^
-Error: This expression has type int * int * int
-       but an expression was expected of type expr
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         int -> (int -> int * bool) * int
+       Type int is not compatible with type (int -> int * bool) * int 

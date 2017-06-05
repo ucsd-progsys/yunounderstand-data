@@ -1,5 +1,5 @@
-Characters 134-148:
-  | Sine e -> Printf.printf ("sin(pi*" ^ exprToString e ^ ")")
-                                         ^^^^^^^^^^^^^^
-Error: This expression has type unit but an expression was expected of type
-         string
+Characters 321-323:
+  union f1 (del x e2)
+                  ^^
+Error: This expression has type expr but an expression was expected of type
+         string set

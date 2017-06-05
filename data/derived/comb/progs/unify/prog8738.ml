@@ -1,9 +1,5 @@
 
-let removeDuplicates l =
-  let rec helper (seen,rest) =
-    match rest with
-    | [] -> seen
-    | h::t ->
-        let seen' = if List.mem (h t) then true else false in
-        let rest' = failwith "to be written" in helper (seen', rest') in
-  List.rev (helper ([], l));;
+let pipe fs =
+  let f a x fs = x a in let base fs = fs in List.fold_left f base fs;;
+
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

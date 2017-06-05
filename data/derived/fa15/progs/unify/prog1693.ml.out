@@ -1,5 +1,5 @@
-Characters 49-50:
-  aa + f in
-       ^
-Error: This expression has type int -> 'a -> int
-       but an expression was expected of type int
+Characters 46-52:
+  |buildX->buildX()
+           ^^^^^^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

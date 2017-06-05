@@ -17,11 +17,14 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec assoc (d,k,l) = 
-  match l with
-    |[] -> d
-    |(k',d')::t -> if k = k' then d'  else assoc(d,k,t)
+let rec assoc (d,k,l) = match l with | 
+  [] -> d | 
+  (sameTypeAsK, sameTypeAsD)::t -> 
+    if k = sameTypeAsK then sameTypeAsD
+    else assoc(d, k, t)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXX*)
 
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
@@ -46,17 +49,17 @@ let removeDuplicates l =
     match rest with 
         [] -> seen
       | h::t -> 
-          let seen' = if List.mem seen h then seen else seen @ h in
+          let seen' = if not List.mem(h, seen) then h::seen else seen in 
           let rest' = t in 
-            helper (seen',rest') 
+            	  helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = removeDuplicates [1];;
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
 
-*)
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -423,10 +426,10 @@ let testTest () =
 let runTest ((f,arg,out),points,name) =
   let _   = max := !max + points in
   let outs = 
-    match runWTimeout(f,arg,out,timeout) with 
-        Pass -> (score := !score + points; "[pass]")
+    	match runWTimeout(f,arg,out,timeout) with 
+        	    Pass -> (score := !score + points; "[pass]")
       | Fail -> "[fail]"
-      | ErrorCode e -> "[error: "^e^"]"  in
+      	  | ErrorCode e -> "[error: "^e^"]"  in
     name^" "^outs^" ("^(string_of_int points)^")\n"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -485,7 +488,7 @@ let sampleTests =
                  "sample: wwhile 1"
     ); 
     (fun () -> mkTest 
-                 fixpoint
+                 	fixpoint
                  ((fun x -> truncate (1e6 *. cos (1e-6 *. float x))), 0)
                  739085
                  "sample: fixpoint 1"
@@ -552,4 +555,5 @@ let _ =
   let _      = List.iter print130 (report@([scoreMsg()])) in
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
+
 

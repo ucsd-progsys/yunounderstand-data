@@ -1,21 +1,36 @@
 
-let rec helper (c,rand,depth) =
-  match depth with
-  | 0 -> let x = rand (0, 1) in (match x with | 0 -> c ^ "0" | _ -> c ^ "1")
-  | _ ->
-      let y = rand (0, 6) in
-      (match y with
-       | 0 -> helper ("0", rand, (depth - 1))
-       | 1 -> helper ("1", rand, (depth - 1))
-       | 2 -> helper ("2", rand, (depth - 1))
-       | 3 -> helper ("3", rand, (depth - 1))
-       | 4 -> helper ("4", rand, (depth - 1))
-       | 5 -> helper ("5", rand, (depth - 1))
-       | _ -> helper ("6", rand, (depth - 1)));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let makeRand (seed1,seed2) =
-  let seed = Array.of_list [seed1; seed2] in
-  let s = Random.State.make seed in
-  fun (x,y)  -> x + (Random.State.int s (y - x));;
+let buildAverage (e1,e2) = Average (e1, e2);;
 
-let _ = helper ("0", makeRand, 5);;
+let buildCosine e = Cosine e;;
+
+let buildSine e = Sine e;;
+
+let buildThresh (a,b,a_less,b_less) = Thresh (a, b, a_less, b_less);;
+
+let buildTimes (e1,e2) = Times (e1, e2);;
+
+let buildX () = VarX;;
+
+let buildY () = VarY;;
+
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> buildX ()
+  | VarY  -> buildY ()
+  | Sine e -> buildSine e
+  | Cosine e -> buildCosine e
+  | Average (e1,e2) -> buildAverage (e1, e2)
+  | Times (e1,e2) -> buildTimes (e1, e2)
+  | Thresh (a,b,a_less,b_less) -> buildThresh (a, b, a_less, b_less);;
+
+let eval_fn e (x,y) =
+  let rv = eval (e, x, y) in assert (((-1.0) <= rv) && (rv <= 1.0)); rv;;

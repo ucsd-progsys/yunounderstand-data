@@ -1,5 +1,5 @@
-Characters 152-178:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a * 'b
+Characters 234-236:
+  | Average (e1,e2)      -> ((eval e1) +. (eval e2)) /. 2
+                                   ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * 'a

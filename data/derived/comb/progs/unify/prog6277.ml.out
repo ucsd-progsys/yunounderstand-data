@@ -1,5 +1,5 @@
-Characters 137-138:
-  ( (cin + d1 + d2) mod 10 ,(cin + d1 + d2) :: a) in
-                                               ^
-Error: This expression has type int * 'a
-       but an expression was expected of type int list
+Characters 81-85:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> ('b -> 'c) -> 'b -> 'c

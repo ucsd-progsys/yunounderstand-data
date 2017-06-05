@@ -126,10 +126,12 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = let j = 1 in let k = 2 in
-        match a with
-          | [] -> []
-          | h::t -> if j+k > 9 then 1::(h + j + k - 10)::t else 0::(h + j + k)::t in
+    let f a x = match a with
+      | [] -> []
+      | h::t -> let z = [] in
+          let (j,k) = x in
+            if j+k > 9 then z@1::(h + j + k - 10)::t 
+            else z@0::(h + j + k)::t in
     let base = [0] in
     let args = List.combine (List.rev l1) (List.rev l2) in
     let (_, res) = List.fold_left f base args in

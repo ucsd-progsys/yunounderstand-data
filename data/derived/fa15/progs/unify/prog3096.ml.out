@@ -1,5 +1,5 @@
-Characters 250-254:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * int
-       but an expression was expected of type int list
+Characters 110-132:
+  ((addition(m,n)/10), (addition(m,n) mod 10) @ [res]) 
+                       ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

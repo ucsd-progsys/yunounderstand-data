@@ -1,5 +1,6 @@
-Characters 121-144:
-  List.fold_left f base l;;
-  ^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type string list
-       but an expression was expected of type string
+Characters 75-76:
+  let fixpoint (f,b) = wwhile (let n x = let ff = f in (ff , b = ff(b)) in n,b);;
+                                                                             ^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

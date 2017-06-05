@@ -89,9 +89,10 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = if ( n < 1 ) then [] else
+let rec clone x n = if ( n < 0 ) then [] else
     match n with
-      | _ -> x :: clone x (n-1)
+      | 0 -> []
+      | _ -> [x] @ clone x (n-1)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -100,26 +101,20 @@ let _ = clone "foo" 2;;
 let _ = clone clone (-3);;
 
 
-let padZero l1 l2 = 
-  let s1 = List.length l1 in
-  let s2 = List.length l2 in
-    if s1 = s2 then (l1, l2) else
-    if s1 > s2 then (l1, clone 0 (s1-s2) :: l2) else
-      (clone 0 (s2-s1) :: l1, l2)
+let padZero l1 l2 = (l1,l2)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = padZero [9;9] [1;0;0;2]
 let _ = padZero [1;0;0;2] [9;9] 
-let _ = padZero [1;1;1;1] [2;2;2;2]
 
 
 let rec removeZero l = 
-  if l = [] then [] else
-    let h::t = l in
-      match h with
-        | 0  -> removeZero t
-        | _  -> l
+  let h::t = l in
+    match h with
+      | [] -> []
+      | 0  -> removeZero t
+      | _  -> t
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -131,9 +126,9 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = l2 in 
-    let base  = [] in
-    let args  = l1 in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
@@ -149,11 +144,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 let rec mulByDigit i l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

@@ -1,11 +1,13 @@
 
-let rec digitsOfInt n =
-  let rec helper n l = if n = 0 then l else helper (n / 10) ((n mod 10) :: l) in
-  match n with | 0 -> [0] | _ -> helper n [];;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
 
-let digits n = digitsOfInt (abs n);;
+let stringOfList f l = "[" ^ ((sepConcat "; " (List.map f l)) ^ "]");;
 
-let rec additivePersistence n =
-  if (List.length (digits n)) = 1
-  then List.hd (digits n)
-  else additivePersistence (digits n);;
+let rec clone x n = stringOfList x n;;
+
+let _ = clone "foo" 2;;

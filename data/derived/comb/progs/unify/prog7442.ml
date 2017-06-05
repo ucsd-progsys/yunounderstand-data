@@ -1,24 +1,7 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec assoc (d,k,l) =
+  let (h1,h2)::t = l in
+  match k with | h2 -> h1 | _ -> if l = [] then d else assoc (d, k, t);;
 
-let pi = 4.0 *. (atan 1.0);;
-
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine e' -> sin (pi * (eval (e', x, y)))
-  | Cosine e' -> cos (pi * (eval (e', x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) + (eval (e2, x, y))) / 2
-  | Times (e1,e2) -> (eval (e1, x, y)) * (eval (e2, x, y))
-  | Thresh (a,b,c,d) ->
-      if (eval (a, x, y)) < (eval (b, x, y))
-      then eval (c, x, y)
-      else eval (d, x, y);;
+let _ =
+  assoc ((-1), "william", [("ranjit", 85); ("william", 23); ("moose", 44)]);;

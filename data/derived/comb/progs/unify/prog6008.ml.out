@@ -1,5 +1,5 @@
-Characters 34-51:
-  let rec clone x n = if n > 1 then x@(clone x (n-1));;
-                                    ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type unit
+Characters 17-25:
+  let g1 () = build(11,0,1);;
+                   ^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type (int * int -> int) * int

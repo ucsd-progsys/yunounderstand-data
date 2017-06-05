@@ -76,6 +76,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
+(*XXXXXXXXXXXXXXX*)
 let stringOfList f l = 
   "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
@@ -114,9 +115,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let padZero l1 l2 = 
   if List.length l1 > List.length l2 then (l1 , clone 0 ((List.length l1) - (List.length l2)) @ l2)
   else if  List.length l1 < List.length l2 then (clone 0 ((List.length l2) - (List.length l1)) @ l1 , l2)
-  else (l1, l2)
+  else []
 
 ;;
+
+let _ = padZero [9;9] [1;0;0;2];;
+
+
+let _ = padZero [1;0;0;2] [9;9];;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -126,14 +132,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec removeZero l = match l with 
-  | [] -> []
-  | h::t ->
-      if h = 0 then removeZero t
-      else h::t
-
-;;
-
+let rec removeZero l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -143,23 +142,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = let (x1, x2) = x in 
-      let (carry, res) = a in
-        ((x1 + x2 + carry)/10, ((x1 + x2 + carry)mod 10) :: res) in
-    let base = (0,[]) in (*XXXXXXXXXXXXXXXXXXXXXXXXX*)
-    let args = (List.rev (List.combine l1 l2)) in (*XXXXXXXXX*)
-    let (carry, res) = List.fold_left f base args in (*XXXXXXXXXXXXXXXXXXXX*)
-      [carry] @ res
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
-
-;;
-
-
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -168,30 +159,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let rec tenEx x y = match y with
-  | [] -> []
-  | h::t -> ((10.0 ** x) * h) @ tenEx (x + 1) t
 
-;;
-
-let _ = [4; 5; 6];;
-
-
-
-let rec mulByDigit i l =
-  let f a x = let carry = i * x in
-      match a with
-        | h::t -> ((h + carry)/10)::((h + carry) mod 10)::t
-        | _ -> (carry / 10)::[carry mod 10]
-  in
-  let base = [] in
-    removeZero(List.fold_left f base (List.rev l))
-
-;;
-
-
-let _ = mulByDigit 9 [6;7;8;9]
-
+let rec mulByDigit i l = failwith "to be implemented"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -200,16 +169,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let bigMul l1 l2 = 
-  let f a x = let (x1, x2) = x in
-    let (carry, res) = a in
-
-    let base = (0, []) in
-    let args = (List.rev (List.combine l1 l2)) in
-    let (carry, res) = List.fold_left f base args in
-      [carry] @ res
-
-;;
-
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

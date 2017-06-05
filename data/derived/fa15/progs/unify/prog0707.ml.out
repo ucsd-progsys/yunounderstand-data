@@ -1,6 +1,5 @@
-Characters 61-79:
-  if n < 0 then [] else [digitsOfInt (m/10)]::[(n mod 10)];;
-                         ^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list list
+Characters 29-90:
+  buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()));;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b * 'c * 'd
+       but an expression was expected of type expr * expr * expr

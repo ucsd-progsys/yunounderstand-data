@@ -1,5 +1,5 @@
-Characters 139-150:
-  | 2 -> buildCosine build(rand,depth-1)
-         ^^^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 55-66:
+  let rec digitsOfInt n = if n < 0 then print_int 0 else print_int n / 10; digitsOfInt (n / 10);;
+                                                         ^^^^^^^^^^^
+Error: This expression has type unit but an expression was expected of type
+         int

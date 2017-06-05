@@ -69,9 +69,10 @@ XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec wwhile (f,b) = 
-  match (f b) with
-    | (x, y) when y = true -> wwhile (f, x)
-    | (x, y) -> x
+  let res = f b in
+    match res with
+      | (x, y) when y = true -> wwhile (f, x)
+      | (x, y) -> x
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
@@ -85,34 +86,19 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-
 let fixpoint (f,b) =
-  let gs x = 
-    let isFPoint s = ((f s) = s) in
-    let rec go = fun r -> 
-      match isFPoint r with
-        | true  -> r
-        | false -> go (f r)
-    in (go x, isFPoint x <> true)
-  in wwhile(gs, b)
+  wwhile (fun x -> (b, (f b) = b) ,b);;
 
+let fs x = 
+  if x = 0 then 0
+  else if x > 1 then x - 1
+  else x + 1
+
+let _ = fixpoint (fs, 100)
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
-let collatz n = 
-  match n with 
-      1 -> 1
-    | _ when n mod 2 = 0 -> n/2 
-    | _ -> 3*n + 1;;
-
-(*
-XXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXX
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-*)
+let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
 
 let _ = fixpoint (collatz, 1) ;;
 let _ = fixpoint (collatz, 3) ;;
@@ -139,20 +125,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with 
-    | VarX             -> "x"
-    | VarY             -> "y"
-    | Sine x           -> "sin(pi*" ^ exprToString x ^ ")"
-    | Cosine x         -> "cos(pi*" ^ exprToString x ^ ")"
-    | Average (x,y)    -> "(("^ exprToString x ^ "+" ^ exprToString y ^ ")/2)"
-    | Times (x,y)      -> exprToString x ^ "*" ^ exprToString y
-    | Thresh (x,y,z,s) -> "(" ^ exprToString x ^ "<" ^ exprToString y ^ 
-                          "?" ^ exprToString z ^ ":" ^ exprToString s ^ ")"
+let rec exprToString e = failwith "to be written"
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -174,10 +155,9 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = 
-  buildTimes x y
+let rec eval (e,x,y) = failwith "to be written"
 
-let _ = eval(VarX , 3, 2)
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

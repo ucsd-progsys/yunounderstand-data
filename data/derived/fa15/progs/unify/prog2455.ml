@@ -1,6 +1,6 @@
 
-let pipe fs =
-  let f a x = let b y = x a in b in
-  let base = let c y = y in c in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let rec assoc (d,k,l) =
+  let h::t = l in
+  if h = []
+  then d
+  else (let (x,y) = h in if x = k then y else assoc (d, k, t));;

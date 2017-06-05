@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 3);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type bool -> bool
-       Type int is not compatible with type bool 
+Characters 94-95:
+  (n /. 10) :: return;;
+   ^
+Error: This expression has type int but an expression was expected of type
+         float

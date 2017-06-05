@@ -1,6 +1,5 @@
-Characters 70-73:
-  | h::t -> h n + sumList(t);;
-                         ^^^
-Error: This expression has type ('a -> int) list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside ('a -> int) list
+Characters 24-25:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

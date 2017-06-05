@@ -1,5 +1,5 @@
-Characters 503-533:
-  | Funny1(n)            -> (sqrt(abs_float(eval(n,x,y))))/1000.0;;
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 157-158:
+  | Average(c,d) -> ((c +. d)/.2)
+                      ^
+Error: This expression has type expr but an expression was expected of type
+         float

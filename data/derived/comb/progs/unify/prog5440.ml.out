@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 2);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type int -> bool
-       Type int * bool is not compatible with type bool 
+Characters 21-22:
+  let _ = listReverse [1; 2; 3; 4];;
+                       ^
+Error: This expression has type int but an expression was expected of type
+         'a list

@@ -1,6 +1,5 @@
-Characters 68-85:
-  | h::t -> if h = ((listReverse x))
-                   ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         'a -> (int -> int) list

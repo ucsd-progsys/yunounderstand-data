@@ -1,5 +1,7 @@
-Characters 193-236:
-  else buildCirc(build(rand, depth-1),build(rand, depth-1))
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 62-65:
+  let fixpoint (f,b) = wwhile (let fin (f, b) = (b, f b = b) in fin,b);;
+                                                                ^^^
+Error: This expression has type ('a -> 'a) * 'a -> 'a * bool
+       but an expression was expected of type
+         ('a -> 'a) * 'a -> (('a -> 'a) * 'a) * bool
+       The type variable 'a occurs inside ('a -> 'a) * 'a

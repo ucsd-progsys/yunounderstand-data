@@ -1,5 +1,5 @@
-Characters 105-127:
-  | n -> if( n < 0 ) then ((clone 0 n) @ l1), l2;;
-                          ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type unit
+Characters 22-23:
+  let _ = sepConcat "" [1;2;3;4];;
+                        ^
+Error: This expression has type int but an expression was expected of type
+         string

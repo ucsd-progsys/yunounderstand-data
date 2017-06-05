@@ -1,5 +1,5 @@
-Characters 159-160:
-  List.fold_left f base l;;
-                        ^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 17-25:
+  let g1 () = build(11,0,1);;
+                   ^^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type 'd * 'e

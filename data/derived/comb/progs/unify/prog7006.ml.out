@@ -1,5 +1,5 @@
-Characters 386-388:
-  | Trip(t,r,s)     -> (sin(pi*eval(r,x,y)) + tan(pi*eval(s,x,y))) 
-                            ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 72-73:
+  if b = true then wwhile (f, x)
+                              ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type bool

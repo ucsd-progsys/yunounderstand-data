@@ -1,5 +1,5 @@
-Characters 264-268:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * 'a list
-       but an expression was expected of type (int * int) list
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         int -> int

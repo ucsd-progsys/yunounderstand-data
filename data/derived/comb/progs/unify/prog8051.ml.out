@@ -1,0 +1,5 @@
+Characters 54-55:
+  let fixpoint (f,b) = wwhile(if f b = true then b else f f b, b);;
+                                                        ^
+Error: This function has type ('a -> 'a * bool) * 'a -> bool
+       It is applied to too many arguments; maybe you forgot a `;'.

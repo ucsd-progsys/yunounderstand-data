@@ -1,5 +1,0 @@
-Characters 80-92:
-  | Sine(e1) -> sin (1.0000)
-                ^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         string

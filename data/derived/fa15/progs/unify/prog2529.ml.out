@@ -1,5 +1,5 @@
-Characters 109-110:
-  ([(x1+x2+a1)/10],a @ [(x1+x2+a1) mod 10]) in 
-                   ^
-Error: This expression has type int * 'a
-       but an expression was expected of type 'b list
+Characters 146-159:
+  [mulByDigit i [h2+(h mod 10)]@t2];;
+                 ^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

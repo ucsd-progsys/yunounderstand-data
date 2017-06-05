@@ -1,5 +1,6 @@
-Characters 170-203:
-  |Average(i1, i2)	  -> (eval (i1,x,y) +. eval (i2,x,y) ) / 2
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 87-89:
+  | (x,y) :: ly -> if k = x then y else ly;;
+                                        ^^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside ('a * 'b) list

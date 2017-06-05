@@ -1,8 +1,5 @@
-Characters 254-255:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type
-         int * int list -> int * int -> int list * int list
-       but an expression was expected of type
-         int * int list -> int * int -> int * int list
-       Type int list is not compatible with type int 
+Characters 53-54:
+  if List.length l = 1 then [l*i] else
+                             ^
+Error: This expression has type 'a list
+       but an expression was expected of type int

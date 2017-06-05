@@ -1,5 +1,5 @@
-Characters 14-18:
-  let _ = assoc ([]);;
-                ^^^^
+Characters 80-81:
+  let separated = explode w in
+                          ^
 Error: This expression has type 'a list
-       but an expression was expected of type 'b * 'c * ('c * 'b) list
+       but an expression was expected of type string

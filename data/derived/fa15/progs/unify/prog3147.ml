@@ -1,34 +1,21 @@
 
-let pi = 4.0 *. (atan 1.0);;
+let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | SumInts of expr
-  | Power of expr* expr* expr;;
+let rec padZero l1 l2 =
+  let diff = (List.length l1) - (List.length l2) in
+  match diff with
+  | diff when diff > 0 -> (l1, (List.append (clone 0 diff) l2))
+  | diff when diff < 0 -> ((List.append (clone 0 (0 - diff)) l1), l2)
+  | 0 -> (l1, l2)
+  | _ -> ([], []);;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine expr -> sin (pi *. (eval (expr, x, y)))
-  | Cosine expr -> cos (pi *. (eval (expr, x, y)))
-  | Average (expr1,expr2) ->
-      ((eval (expr1, x, y)) +. (eval (expr2, x, y))) /. 2.0
-  | Times (expr1,expr2) -> (eval (expr1, x, y)) *. (eval (expr2, x, y))
-  | Thresh (expr1,expr2,expr3,expr4) ->
-      if (eval (expr1, x, y)) < (eval (expr2, x, y))
-      then eval (expr3, x, y)
-      else eval (expr4, x, y)
-  | SumInts expr ->
-      ((eval (expr, x, y)) *. ((eval (expr, x, y)) +. 1.0)) /. 2.0
-  | Power (expr1,expr2,expr3) ->
-      (eval (expr1, x, y)) **
-        (abs_float ((eval (expr2, x, y)) +. (eval (expr3, x, y))));;
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
 
-let _ = eval ((Power (VarX, VarY, VarY)), 0.25, 0);;
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x = failwith "to be implemented" in
+    let base = [] in
+    let args = failwith "to be implemented" in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

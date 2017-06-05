@@ -1,7 +1,5 @@
-Characters 29-37:
-  let fixpoint (f,b) = wwhile (intboolf,b);;
-                               ^^^^^^^^
-Error: This expression has type ('a -> int) -> 'a -> int * bool
-       but an expression was expected of type
-         ('a -> int) -> ('a -> int) * bool
-       Type 'a -> int * bool is not compatible with type ('a -> int) * bool 
+Characters 176-182:
+  |h'::t' -> if h+h' > 10 then addHelper t t' @ [1 + h' + h] else addHelper t t'@[h'+h]
+                                                                                 ^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

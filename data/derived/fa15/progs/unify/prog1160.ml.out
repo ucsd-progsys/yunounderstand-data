@@ -1,6 +1,5 @@
-Characters 137-138:
-  | h::t -> let sum = fst x + snd x + fst h in (sum / 10)::(sum mod 10)::t 
-                                                                         ^
-Error: This expression has type (int * 'a) list
-       but an expression was expected of type int list
-       Type int * 'a is not compatible with type int 
+Characters 8-12:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+          ^^^^
+Error: This function has type (int -> int) list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

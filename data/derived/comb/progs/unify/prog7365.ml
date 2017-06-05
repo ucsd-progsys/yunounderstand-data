@@ -1,6 +1,8 @@
 
 let rec clone x n =
-  if n < 1 then [] else (match n with | _ -> x :: (clone x (n - 1)));;
+  if n < 1 then [] else (match n with | _ -> [x] @ (clone x (n - 1)));;
+
+let c y = y;;
 
 let padZero l1 l2 =
   let s1 = List.length l1 in
@@ -20,20 +22,8 @@ let rec removeZero l =
 let bigAdd l1 l2 =
   let add (l1,l2) =
     let f a x =
-      let (x1,x2) = x in
-      let (c,a1::a2) = a in
-      let v = (x1 + x2) + c in ((v / 10), ([v / 10] @ ([v mod 10] @ a2))) in
-    let base = (0, [0]) in
-    let args = List.rev (List.combine l1 l2) in
+      let (y,z) = x in let b::b' = y in let c::c' = z in [b + c] @ a in
+    let base = ([], []) in
+    let args = padZero l1 l2 in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
-
-let rec mulByDigit i l =
-  if i < 1
-  then []
-  else (match i with | 1 -> l | _ -> bigAdd l (mulByDigit (i - 1) l));;
-
-let bigMul l1 l2 =
-  let f a x = (0, (bigAdd ((mulByDigit x l2) a))) in
-  let base = (0, [0]) in
-  let args = l1 in let (_,res) = List.fold_left f base args in res;;

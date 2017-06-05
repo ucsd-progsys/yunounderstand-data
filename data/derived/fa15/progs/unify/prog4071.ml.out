@@ -1,5 +1,5 @@
-Characters 163-177:
-  | Average (e1, e2) -> (eval(e1, x, y) + eval(e2, x, y)) / 2;;
-                         ^^^^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 13-21:
+  let _ = eval (Neg(1));;
+               ^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

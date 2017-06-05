@@ -1,5 +1,5 @@
-Characters 79-80:
-  |h::t -> [remainder i t] @ mulByDigit i t;;
-                        ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 22-25:
+  let _ = sepConcat "" ["a";"b";"c";"d";"e"];;
+                        ^^^
+Error: This expression has type string but an expression was expected of type
+         string list

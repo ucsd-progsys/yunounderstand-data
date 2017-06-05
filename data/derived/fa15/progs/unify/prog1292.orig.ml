@@ -116,22 +116,18 @@ type expr =
     | Average  of expr * expr
     | Times    of expr * expr
     | Thresh   of expr * expr * expr * expr	
-    | Square   of expr
-    | Quarter  of expr
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 let rec exprToString e = match e with
-  | VarX -> "x" 
-  | VarY -> "y"
-  | Sine e -> "sin(pi*" ^ exprToString e ^ ")"
-  | Cosine e -> "cos(pi*" ^ exprToString e ^ ")"
-  | Average (e1,e2) ->  "((" ^ exprToString e1 ^ "+" ^ exprToString e2 ^ ")/2)"
-  | Times (e1,e2) -> exprToString e1 ^ "*" ^ exprToString e2
-  | Thresh (e1,e2,e3,e4) -> "(" ^ exprToString e1 ^ "<" ^ exprToString e2 ^ "?" ^ exprToString e3 ^ ":" ^ exprToString e4 ^ ")"
-  | Square(e) -> exprToString e ^ "*" ^ exprToString e
-  | Quarter(e) -> exprToString e ^ "/4"
+  | VarX -> Printf.printf "x" 
+  | VarY -> Printf.printf "y"
+  | Sine e -> Printf.printf "sin(pi*%s)" !exprToString e
+  | Cosine e -> Printf.printf "cos(pi*%s)" !exprToString e
+  | Average (e1,e2) -> Printf.printf "((%s + %s)/2)" exprToString e1 exprToString e2
+  | Times (e1,e2) -> Printf.printf "%s * %s" exprToString e1 exprToString e2
+  | Thresh (e1,e2,e3,e4) -> Printf.printf "(%s<%s ? %s : %s)" exprToString e1 exprToString e2 exprToString e3 exprToString e4
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
@@ -152,8 +148,6 @@ let buildCosine(e)                 = Cosine(e)
 let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
-let buildSquare(e)                 = Square(e)
-let buildQuarter(e)                = Quarter(e)
 
 
 let pi = 4.0 *. atan 1.0
@@ -161,18 +155,20 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x
-  | VarY -> y
-  | Sine e -> sin(pi*.eval(e,x,y))
-  | Cosine e -> cos(pi*.eval(e,x,y))
-  | Average (e1,e2) -> ((eval(e1,x,y)+.eval(e2,x,y))/. 2.0)
-  | Times (e1,e2) -> eval(e1,x,y) *. eval(e2,x,y)
-  | Thresh (e1,e2,e3,e4) -> if (eval(e1,x,y) < eval(e2,x,y)) then eval(e3,x,y)
-      else eval(e4,x,y)
-  | Square(e) -> e*.e
-  | Quarter(e) -> e/. 4.0
+let rec eval (e,x,y) = failwith "to be written"
 
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
+
+let eval_fn e (x,y) = 
+  let rv = eval (e,x,y) in
+    assert (-1.0 <= rv && rv <= 1.0);
+    rv
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -182,19 +178,7 @@ let sampleExpr =
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
 
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
-
-
-let eval_fn e (x,y) = 
-  let rv = eval (e,x,y) in
-    assert (-1.0 <= rv && rv <= 1.0);
-    rv
-
-
 let sampleExpr2 =
-
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
 
 
@@ -209,21 +193,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = 
-  if(depth = 0) then let num = rand(0,1) in
-      if(num = 0) then buildX() else buildY()
-  else
-    let num = rand(2,8) in 
-      match num with 
-        | 2 -> buildSine(build(rand,depth-1))
-        | 3 -> buildCosine(build(rand,depth-1))
-        | 4 -> buildAverage(build(rand,depth-1),build(rand,depth-1))
-        | 5 -> buildTimes(build(rand,depth-1),build(rand,depth-1))
-        | 6 -> buildThresh(build(rand,depth-1),build(rand,depth-1),build(rand,depth-1),build(rand,depth-1))
-        | 7 -> buildSquare(build(rand,depth-1))
-        | 8 -> buildQuarter(build(rand,depth-1))
-        | _ -> buildSine(build(rand,depth-1))
-
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -341,14 +311,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = doRandomGray(9,107,56)
-let _ = doRandomGray(10,150,77)
-let _ = doRandomGray(11,45,31)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,8 +1,11 @@
 
-let rec split l =
-  let base = (0, [], []) in
-  let fold_fn (i,l1,l2) elmt =
-    if i < (l / 2)
-    then ((i + 1), ([elmt] @ l1), l2)
-    else (i, l1, ([elmt] @ l2)) in
-  let (_,l1,l2) = List.fold_left fold_fn base l in (l1, l2);;
+type 'a option =
+  | None
+  | Some of 'a;;
+
+let rec lookup k kvs =
+  match kvs with
+  | [] -> None
+  | (c,v)::tl -> if c = k then Some v else lookup k tl;;
+
+let _ = lookup "a" [("a", 1); (("b", 2), ("a", 10))];;

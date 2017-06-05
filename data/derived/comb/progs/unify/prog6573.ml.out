@@ -1,6 +1,6 @@
-Characters 94-110:
-  |x when x>=10->(multHelper i t)::((x/10),(x mod 10))
-                 ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
+Characters 54-55:
+  |_-> (clone (x,n-1))::x;;
+               ^
+Error: This expression has type 'a * 'b
        but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+       The type variable 'a occurs inside 'a * 'b

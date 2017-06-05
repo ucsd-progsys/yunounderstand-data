@@ -1,5 +1,5 @@
-Characters 123-136:
-  else remainder i h @ mulByDigit i t;;
-       ^^^^^^^^^^^^^
+Characters 36-37:
+  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
+                                      ^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         string

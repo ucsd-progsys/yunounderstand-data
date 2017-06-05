@@ -1,5 +1,7 @@
-Characters 124-125:
-  | _  -> [(h*i)/10]@mulByDigit i ([t.hd+((i*t.hd) mod 10)]@t.tl);;
-            ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 18-25:
+  let _ = fixpoint (collatz, 48);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type
+         (bool -> bool * bool) -> bool -> bool * bool
+       Type int is not compatible with type bool -> bool * bool 

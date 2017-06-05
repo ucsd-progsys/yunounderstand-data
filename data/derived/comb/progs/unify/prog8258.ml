@@ -1,26 +1,41 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Power of expr* expr;;
+let rec clone x n = if n > 0 then [x] @ (clone x (n - 1)) else [];;
 
-let pi = 4.0 *. (atan 1.0);;
+let carry x y = (x * y) / 10;;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine a -> sin (pi *. (eval (a, x, y)))
-  | Cosine a -> cos (pi *. (eval (a, x, y)))
-  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) /. 2.0
-  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
-  | Thresh (a,b,c,d) ->
-      if (eval (a, x, y)) < (eval (b, x, y))
-      then eval (c, x, y)
-      else eval (d, x, y)
-  | Power (a,b) -> x + y;;
+let padZero l1 l2 =
+  let len1 = List.length l1 in
+  let len2 = List.length l2 in
+  if len1 > len2
+  then (l1, ((clone 0 (len1 - len2)) @ l2))
+  else (((clone 0 (len2 - len1)) @ l1), l2);;
+
+let remain x = x mod 10;;
+
+let rec removeZero l =
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      match x with
+      | (x1,x2) ->
+          (match a with
+           | (car,cur) ->
+               (match cur with
+                | [] ->
+                    if ((car + x1) + x2) > 10
+                    then
+                      ((car + 1), ([car + 1] @ [remain ((car + x1) + x2)]))
+                    else (0, ([car] @ [(car + x1) + x2]))
+                | h::t ->
+                    if ((x1 + x2) + h) < 10
+                    then (0, ([0] @ ([(x1 + x2) + h] @ t)))
+                    else
+                      ((car + 1),
+                        ([carry ((h + x1) + x2)] @
+                           ([((h + x1) + x2) mod 10] @ t))))) in
+    let base = (0, []) in
+    let args = List.rev (List.combine l1 l2) in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

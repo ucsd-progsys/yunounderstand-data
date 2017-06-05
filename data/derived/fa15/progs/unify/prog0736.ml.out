@@ -1,5 +1,5 @@
-Characters 239-254:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'b * 'c
+Characters 86-104:
+  else digitsOfInt (n/10)::[];;
+       ^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

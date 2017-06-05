@@ -1,5 +1,5 @@
-Characters 39-42:
-  let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-                                         ^^^
-Error: This expression has type float but an expression was expected of type
-         string
+Characters 80-100:
+  | _ -> [bigAdd [l] [(mulByDigit (i-1) l)]];;
+                      ^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int

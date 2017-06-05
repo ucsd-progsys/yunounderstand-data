@@ -1,6 +1,5 @@
-Characters 157-158:
-  else ([seen @ h])) in
-                ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list
-       The type variable 'a occurs inside 'a list
+Characters 8-19:
+  let _ = digitsOfInt -293;;
+          ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

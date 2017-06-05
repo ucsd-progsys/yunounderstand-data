@@ -1,5 +1,5 @@
-Characters 417-421:
-  | Arctan (e1)		  -> 2 * (atan eval(e1,x,y)) / pi
-                           ^^^^
-Error: This function has type float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 137-138:
+  ( (cin + d1 + d2) mod 10 ,(cin + d1 + d2) :: a) in
+                                               ^
+Error: This expression has type int * 'a
+       but an expression was expected of type int list

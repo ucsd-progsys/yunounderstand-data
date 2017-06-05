@@ -1,99 +1,288 @@
-type 'a set = Set of 'a list
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX
+*)
 
-let empty = Set []
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+let rec sumList xs = 
+  match xs with
+    | [] -> 0
+    | h::t ->
+        h + sumList t;;
 
-let rec member x s = match s with
-  | Set [] -> false
-  | Set l -> let (h::tl) = l in if(h = x) then true else member x (Set tl)
-
-
-let add x s = match s with
-  | Set l -> Set (x::l)
-
-let union s1 s2 = match s2 with
-  | Set x2s -> List.fold_left (fun s x -> add x s) s1 x2s
-
-let del x s = match s with
-  | Set l -> Set(List.filter (fun z -> (not x)) l)
+let _ = sumList [1; 2; 3; 4]
+let _ = sumList [1; -2; 3; 5]
+let _ = sumList [1; 3; 5; 7; 9; 11]
 
 
-let testee = Set ["z";"a"]
 
-let _ = del "z" testee
-
-let omg = ["z"]
-let _ = match omg with 
-  | [] -> false
-  | h::tl -> "z" != h
-
-type binop = Plus
-
-type expr = Const of int
-          | Var of string
-          | Bin of expr * binop * expr
-          | Let of string * expr * expr
-          | App of expr * expr
-          | Fun of string * expr
-
-let rec free e = match e with
-  | Var x            -> Set[x]
-  | Const n          -> Set[]
-  | Bin (e1, op, e2) ->
-      (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-      let f1 = free e1 in
-      let f2 = free e2 in
-        union f1 f2
-  | App (e1, e2)     ->
-      (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-      let f1 = free e1 in
-      let f2 = free e2 in
-        union f1 f2
-  | Let (x, e1, e2)  ->
-      (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-      let f1 = free e1 in
-      let f2 = free e2 in
-        union f1 f2
-  | Fun (x, e1)      ->
-      (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-      del x (free e1)
 
-let isWellFormed e = free e 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec digitsOfInt n = 
+  if (n > 0) then digitsOfInt(n/10)@[n mod 10] 
+  else [];;
 
-let e1 = Bin (Const 1, Plus, Const 2)
 
-let e2 = Let ("x", Const 1,
-              Let ("y", Const 2,
-                   Bin (Var "x", Plus, Var "y")))
-(*XXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXX*)
-let e3 = Let ("x", Const 10,
-              App (Fun ("y", Bin (Var "x", Plus, Var "y"))
-                  ,Var "x"))
-(*XXXXXXXXXXXXXXX*)
+let _ = digitsOfInt 3124
+let _ = digitsOfInt 352663
 
-let e4 = Let("x", Const 10, Bin(Const 2, Plus, Var "x"))
-let _ = List.map isWellFormed [e4; e2; e3];;
 
-let testeeee = Set["x"]
+(*XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
-let _ = del "x" testeeee
-(*XXXXXXXXXXXXXX*)
+let digits n = digitsOfInt (abs n)
 
-(*XXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXX
-XXXXXXXXX*)
 
-let e1' = Bin (Const 1, Plus, Var "x")
-(*XXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXX*)
-let e2' = Let ("y", Const 2,
-               Bin (Var "x", Plus, Var "y"))
-(*XXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXX*)
-let e3' = App (Let ("z", Const 10,
-                    Fun ("y", Bin (Var "y", Plus, Var "z"))),Var "z")
-         
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
+
+
+
+let rec additivePersistence n = 
+  let x = sumList (digits n) in
+    if (x > 10) then 1 + additivePersistence x
+    else 1
+
+let _ = additivePersistence 9876
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let rec digitalRoot n = 
+  let x = sumList (digits n) in
+    if (x > 10) then digitalRoot x
+    else x
+
+let _ = digitalRoot 9876
+
+
+let rec listReverse l = 
+  match l with
+    | [] -> []
+    | h::tl -> listReverse tl@[h]
+
+let _ = listReverse [1; 2; 3; 4]
+let _ = listReverse ["a"; "b"; "c"; "d"]
+
+
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+let explode s = 
+  let rec go i = 
+    if i >= String.length s 
+    then [] 
+    else (s.[i]) :: (go (i+1)) 
+  in
+    go 0
+
+let rec equiv =
+  fun x -> fun y ->
+    match x with 
+      | [] -> (List.hd y = [])
+      | h::tl -> ( List.hd y = h)
+
+let test = equiv [1;2]
+let meh = test [1;2]
+
+
+let palindrome w =
+  let y = listReverse w in
+  let r = explode y in
+  let o = explode w in
+
+
+
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXX*)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+type test = unit -> string
+
+let key        = ""     (*XXXXXXXX*)
+let prefix130  = "130"  (*XXXXXXXX*)
+
+let print130 s = print_string (prefix130^">>"^s)
+
+exception ErrorCode of string
+
+exception TestException
+
+type result = Pass | Fail | ErrorCode of string
+
+let score = ref 0
+let max = ref 0
+let timeout = 300
+
+let runWTimeout (f,arg,out,time) = 
+  try if compare (f arg) out = 0 then Pass else Fail
+  with e -> (print130 ("Uncaught Exception: "^(Printexc.to_string e)); ErrorCode "exception") 
+
+let testTest () =
+  let testGood x = 1 in
+  let testBad x = 0 in 
+  let testException x = raise TestException in
+  let rec testTimeout x = testTimeout x in
+    runWTimeout(testGood,0,1,5) = Pass &&  
+    runWTimeout(testBad,0,1,5) = Fail &&  
+    runWTimeout(testException,0,1,5) = ErrorCode "exception" && 
+    runWTimeout(testTimeout,0,1,5) = ErrorCode "timeout"
+
+let runTest ((f,arg,out),points,name) =
+  let _   = max := !max + points in
+  let outs = 
+    match runWTimeout(f,arg,out,timeout) with 
+        Pass -> (score := !score + points; "[pass]")
+      | Fail -> "[fail]"
+      | ErrorCode e -> "[error: "^e^"]"  in
+    name^" "^outs^" ("^(string_of_int points)^")\n"
+
+let mkTest f x y name = runTest ((f, x, y), 1, name)
+
+let badTest () = "WARNING: Your tests are not valid!!\n"
+
+let scoreMsg () = 
+  Printf.sprintf "Results: Score/Max = %d / %d \n" !score !max 
+
+let doTest f = 
+  try f () with ex -> 
+    Printf.sprintf "WARNING: INVALID TEST THROWS EXCEPTION!!: %s \n\n"
+      (Printexc.to_string ex)
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
+let sampleTests =
+  [
+    (fun () -> mkTest
+                 sumList
+                 [1;2;3;4]
+                 10
+                 "sample: sumList 1"
+    );
+    (fun () -> mkTest 
+                 sumList 
+                 [1;-2;3;5] 
+                 7 
+                 "sample: sumList 2"
+    ); 
+    (fun () -> mkTest 
+                 sumList 
+                 [1;3;5;7;9;11]
+                 36 
+                 "sample: sumList 3"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 3124 
+                 [3;1;2;4] 
+                 "sample: digitsOfInt 1"
+    ); 
+    (fun () -> mkTest 
+                 digitsOfInt 
+                 352663 
+                 [3;5;2;6;6;3] 
+                 "sample: digitsOfInt 2"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 31243
+                 [3;1;2;4;3] 
+                 "sample: digits 1"
+    ); 
+    (fun () -> mkTest 
+                 digits
+                 (-23422)
+                 [2;3;4;2;2]
+                 "sample: digits 2"
+    ); 
+    (fun () -> mkTest 
+                 additivePersistence 
+                 9876 
+                 2 
+                 "sample: additivePersistence1"
+    ); 
+    (fun () -> mkTest 
+                 digitalRoot 
+                 9876 
+                 3 
+                 "sample: digitalRoot"
+    ); 
+    (fun () -> mkTest 
+                 listReverse
+                 [1;2;3;4] 
+                 [4;3;2;1]
+                 "sample: reverse 1"
+    ); 
+    (fun () -> mkTest 
+                 listReverse 
+                 ["a";"b";"c";"d"]
+                 ["d";"c";"b";"a"] 
+                 "sample: rev 2"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "malayalam" 
+                 true
+                 "sample: palindrome 1"
+    ); 
+    (fun () -> mkTest 
+                 palindrome 
+                 "myxomatosis" 
+                 false
+                 "sample: palindrome 2"
+    )] 
+
+let _ =
+  let report = List.map doTest (sampleTests) in
+  let _ = List.iter print130 (report@([scoreMsg()])) in
+  let _ = print130 ("Compiled\n") in
+    (!score, !max)

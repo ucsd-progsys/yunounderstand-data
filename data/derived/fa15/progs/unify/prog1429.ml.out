@@ -1,5 +1,5 @@
-Characters 133-134:
-  (clone(0 (ll2-ll1)) @ l1, l2);;
-         ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 81-85:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> ('b -> 'c) -> 'b -> 'c

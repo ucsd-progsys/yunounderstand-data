@@ -18,12 +18,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let rec assoc (d,k,l) = match l with
-  |[] -> d
-  |(h1,h2)::t -> match (h1=k) with
-    |true -> h2
-    |false -> assoc (d,k,t);;
+  | []	            -> d
+  | (name, num)::rest -> if k = name then num else assoc (d,k,rest);;
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
@@ -45,19 +44,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | []   -> seen
       | h::t -> 
-          let seen' = match (List.mem h seen) with 
-            |true -> seen
-            |false -> h::seen in
+          let seen' = if (List.mem h seen) = true then seen else [h]@seen in
           let rest' = t in 
             helper (seen',rest') 
   in
-    List.rev (helper ([],l))
+    List.rev (helper ([],l));;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -70,14 +67,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = match (f b) with
-  |(h,true) -> wwhile (f,h)
-  |(h,false) -> h;;
+let rec wwhile (f,b) = match f b with
+  | (b', c) -> if c = true then wwhile (f, b') else b';;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
   wwhile (f, 2);;
-
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -88,9 +84,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let fixpoint (f,b) = wwhile ((fun fixb -> 
+                               let b = (f fixb) in (b, b <> fixb)), b)
 
-let fixpoint (f,b) = wwhile (let g x = match (f x) with |x when x = (f x)-> (x,false) |_ -> ((f x), true) in g,b);;
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
@@ -121,15 +119,18 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine e-> "sin(pi*" ^ (exprToString e) ^ ")"
-  | Cosine e -> "cos(pi*" ^ (exprToString e) ^ ")"
-  | Average (e,f) -> "((" ^ (exprToString e) ^ "+" ^ (exprToString f) ^ ")/2)"
-  | Times (e,f) -> (exprToString e) ^  "*" ^ (exprToString f)
-  | Thresh (e,f,g,h) -> "(" ^ (exprToString e) ^ "<" ^ (exprToString f) ^ "?" ^ (exprToString g) ^ ":" ^ (exprToString h) ^ ")"
-;;
+let rec exprToString e = 
+  match e with
+    | VarX		    -> "x"
+    | VarY		    -> "y"
+    | Sine e1	    -> "sin(pi *" ^ exprToString e1 ^ ")"
+    | Cosine e1	    -> "cos(pi *" ^ exprToString e1 ^ ")"
+    | Average (e1, e2)  -> "((" ^ exprToString e1 ^ "+"^ exprToString e2 ^")/2)"
+    | Times (e1, e2)    -> "(" ^ exprToString e1 ^ "*" ^ exprToString e2^")"
+    | Thresh (e1, e2, e3, e4) -> "("^ exprToString e1 ^"<"^ exprToString e2 ^
+                                 "?"^ exprToString e3 ^":"^ exprToString e4 ^ ")";;
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
 
@@ -157,19 +158,17 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  |VarX -> x
-  |VarY -> y
-  |Sine e -> sin (eval (e,x,y))
-  |Cosine e -> cos (eval (e,x,y))
-  |Average (e,f) -> (((eval (e,x,y)) + (eval (f,x,y)))/2)
-  |Times (e,f) -> (eval (e,x,y)) * (eval (f,x,y))
-  |Thresh (e,f,g,h) -> match ((eval (e,x,y)) < (eval (f,x,y))) with
-    |true -> (eval (g,x,y))
-    |false -> (eval (h,x,y));;
+let rec eval (e,x,y) = 
+  match e with
+    | VarX		      -> x
+    | VarY		      -> y
+    | Sine e1 -> sin(pi *. (eval(e1,x,y)))
+    | Cosine e1 -> cos(pi *. (eval(e1,x,y)))
+    | Average (e1,e2) -> (eval(e1,x,y) + eval(e2,x,y)) /. 2.0
+    | Thresh (e1,e2,e3,e4) -> if (eval(e1,x,y) < eval(e2,x,y)) then eval(e3,x,y)				      else eval(e4,x,y);;
 
 
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
 let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
 let _ = eval (sampleExpr,0.5,0.2);;

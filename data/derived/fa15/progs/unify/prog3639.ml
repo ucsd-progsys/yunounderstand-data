@@ -1,2 +1,3 @@
 
-let rec mulByDigit i l = let x = List.map (l * i) l in big Add x [];;
+let sqsum xs =
+  let f a x a x = a + (x * x) in let base = "" in List.fold_left f base xs;;

@@ -2,39 +2,23 @@
 let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
 let padZero l1 l2 =
-  let numZeros = (List.length l1) - (List.length l2) in
-  let absNumZeros = abs numZeros in
-  if numZeros = 0
-  then (l1, l2)
-  else
-    (let listZeros = clone 0 absNumZeros in
-     if numZeros > 0 then (l1, (listZeros @ l2)) else ((listZeros @ l1), l2));;
+  let length1 = List.length l1 in
+  let length2 = List.length l2 in
+  if length1 > length2
+  then (l1, ((clone 0 (length1 - length2)) @ l2))
+  else (((clone 0 (length2 - length1)) @ l1), l2);;
 
 let rec removeZero l =
-  match l with | [] -> [] | 0::t -> removeZero t | h::t -> l;;
+  match l with | [] -> [] | h::t -> if h = 0 then removeZero t else l;;
 
 let bigAdd l1 l2 =
   let add (l1,l2) =
     let f a x =
-      let (_,currentCarry::currentSum) = a in
-      let (toSum1,toSum2) = x in
-      let intermediateValue = (toSum1 + toSum2) + currentCarry in
-      let valueToAddToArray = intermediateValue mod 10 in
-      let carry = intermediateValue / 10 in
-      (carry, (carry :: valueToAddToArray :: currentSum)) in
-    let base = (0, [0]) in
-    let args = List.rev (List.combine l1 l2) in
+      let (x1,x2) = x in
+      let (a1,a2) = a in
+      let sum = (x1 + x2) + a1 in
+      let carry = sum / 10 in (carry, ((sum mod 10) :: a2)) in
+    let base = (0, []) in
+    let args = List.combine ((List.rev 0) :: l1) ((List.rev 0) :: l2) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
-
-let rec mulByDigit i l =
-  if i <= 0 then [] else bigAdd l (mulByDigit (i - 1) l);;
-
-let bigMul l1 l2 =
-  let f a x =
-    let (padCount,currList) = a in
-    let intermediateSum = mulByDigit x l2 in
-    let toSum = intermediateSum * (10 ** padCount) in
-    ((padCount - 1), (bigAdd currList toSum)) in
-  let base = (0, []) in
-  let args = l1 in let (_,res) = List.fold_left f base args in res;;

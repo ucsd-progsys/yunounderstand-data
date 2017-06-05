@@ -1,6 +1,5 @@
-Characters 77-78:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
-       but an expression was expected of type ('a -> 'b) -> 'a -> 'a -> 'b
-       The type variable 'b occurs inside 'a -> 'b
+Characters 14-36:
+  let _ =  eval (Op(VarX, VarY, VarY));;
+                ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * float * float

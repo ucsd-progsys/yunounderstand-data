@@ -1,5 +1,5 @@
-Characters 35-37:
-  let rec clone x n = if n > 1 then x::(clone x (n-1));;
-                                     ^^
-Error: This variant expression is expected to have type unit
-       The constructor :: does not belong to type unit
+Characters 441-452:
+  |Square (i1)		  -> exprToString i1 "*" exprToString i1
+   ^^^^^^^^^^^
+Error: The constructor Square expects 2 argument(s),
+       but is applied here to 1 argument(s)

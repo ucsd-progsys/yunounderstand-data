@@ -1,5 +1,6 @@
-Characters 146-150:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type int * int
-       but an expression was expected of type int
+Characters 43-44:
+  if ( f b ) then f (f,b)
+                     ^
+Error: This expression has type 'a * 'b -> bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * 'b -> bool

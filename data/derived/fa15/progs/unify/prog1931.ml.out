@@ -1,5 +1,5 @@
-Characters 75-76:
-  else bigAdd l (mulByDigit((i-1) l));;
-              ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 20-29:
+  let rec clone x n = sepConcat ";" clone(x n-1);;
+                      ^^^^^^^^^
+Error: This function has type string -> string list -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

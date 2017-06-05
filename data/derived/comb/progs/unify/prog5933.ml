@@ -1,18 +1,39 @@
 
-let modulus ss = ss mod 10;;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr
+  | Harmonic of expr* expr
+  | Log of expr* expr* expr;;
 
-let rec digitsOfInt n =
-  if n <= 0
-  then []
-  else (match n with | x -> (digitsOfInt (n / 10)) @ [modulus x]);;
-
-let lt10 q = q < 10;;
-
-let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
-
-let rec additivePersistence n =
-  if lt10 n
-  then n
-  else
-    (match n with
-     | n_ -> incr i additivePersistence (sumList (digitsOfInt n)));;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine e1 -> "sin(pi*" ^ ((exprToString e1) ^ ")")
+  | Cosine e1 -> "cos(pi*" ^ ((exprToString e1) ^ ")")
+  | Average (e1,e2) ->
+      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
+  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
+  | Thresh (e1,e2,e3,e4) ->
+      "(" ^
+        ((exprToString e1) ^
+           ("<" ^
+              ((exprToString e2) ^
+                 ("?" ^
+                    ((exprToString e3) ^ (":" ^ ((exprToString e4) ^ ")")))))))
+  | Harmonic (e1,e2) ->
+      "((" ^
+        ((exprToString e1) ^
+           ("*" ^
+              ((exprToString e2) ^
+                 (")/(" ^ ((exprToString e1) ^ ("+" ^ (exprToString e2 ")")))))))
+  | Log (e1,e2,e3) ->
+      "(log(" ^
+        ((exprToString e1) ^
+           ("/" ^
+              ((exprToString e2 ")/") ^ ("log(" ^ ((exprToString e3) ^ "))")))));;

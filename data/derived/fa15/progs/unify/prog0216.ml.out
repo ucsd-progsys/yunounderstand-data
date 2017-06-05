@@ -1,5 +1,6 @@
-Characters 57-58:
-  wwhile (f, 2);;
-             ^
-Error: This expression has type int but an expression was expected of type
-         int -> int * bool
+Characters 77-79:
+  | (k',d')::t -> if k=k' then d' else assoc (d,k,t);;
+                       ^^
+Error: This expression has type 'a but an expression was expected of type
+         ('a * 'b) list
+       The type variable 'a occurs inside ('a * 'b) list

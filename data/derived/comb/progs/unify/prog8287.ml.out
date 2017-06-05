@@ -1,8 +1,5 @@
-Characters 89-90:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type
-         (('a -> 'b) -> 'a) -> 'c -> ('a -> 'b) -> ('a -> 'b) -> 'b
-       but an expression was expected of type
-         (('a -> 'b) -> 'a) -> 'c -> ('a -> 'b) -> 'a
-       The type variable 'a occurs inside ('a -> 'b) -> 'b
+Characters 51-89:
+  else append digitsOfInt(n/10), [(n mod 10)];;
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

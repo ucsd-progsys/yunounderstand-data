@@ -1,5 +1,5 @@
-Characters 81-82:
-  | h::t -> addNumbs n;;
-                     ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 29-51:
+  let fixpoint (f,b) = wwhile ((fixpointHelper(f, b)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

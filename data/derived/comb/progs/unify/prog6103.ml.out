@@ -1,5 +1,5 @@
-Characters 30-38:
-  let _ = lookup "a" [("a", 1); ("b", 2), ("a", 10)];;
-                                ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 424-429:
+  in List.rev( [(x/10000) mod 10]@[(x/1000) mod 10]@[(x/100) mod 10]@[(x/10) mod 10]@[(x/1) x mod 10])@res;;
+                                                                                      ^^^^^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

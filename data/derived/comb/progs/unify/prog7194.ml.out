@@ -1,6 +1,5 @@
-Characters 161-180:
-  (l1 :: clone 0 difference2,l2)
-         ^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type 'a list list
-       Type int is not compatible with type 'a list 
+Characters 182-203:
+  helper (seen', rest')
+  ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type unit

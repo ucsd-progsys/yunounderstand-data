@@ -125,14 +125,13 @@ let rec mulByDigit i l = if i <= 0 then [] else bigAdd l (mulByDigit (i - 1) l)
 
 let _ = mulByDigit 9 [9;9;9;9]
 
-let f a x = bigAdd (a::[0]) (mulByDigit x [1;0]);;
 
 let bigMul l1 l2 = 
-  let f a x = a::0 in
-  (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-  let base = [] in
+  let f a x = bigAdd [a::0] (mulByDigit x l1) in
+  let base = (0, []) in
   let args = l2 in
-    List.fold_left f base args;;
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

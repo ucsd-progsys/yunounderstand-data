@@ -1,5 +1,0 @@
-Characters 124-136:
-  (h::t) -> let sum = fst x + snd x + fst h in ((sum / 10)::(sum mod 10))::t in
-                                                            ^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list

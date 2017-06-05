@@ -1,5 +1,6 @@
-Characters 78-80:
-  | Sine(a) -> sin (pi * eval (a,x,y))
-                    ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 53-54:
+  let fixpoint (f,b) = wwhile ((fun x -> (f, b = f b)),b);;
+                                                       ^
+Error: This expression has type 'a but an expression was expected of type
+         'a -> 'a
+       The type variable 'a occurs inside 'a -> 'a

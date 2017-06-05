@@ -1,5 +1,5 @@
-Characters 8-17:
-  let _ = (pipe []) 3;;
-          ^^^^^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 88-90:
+  | Sine e' -> sin(pi *. eval e')
+                              ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * 'a * 'a

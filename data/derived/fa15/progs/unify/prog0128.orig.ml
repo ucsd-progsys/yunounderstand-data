@@ -1,7 +1,5 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
@@ -34,7 +32,7 @@ let rec digitsOfInt n =
 
 
 
-let _ = digitsOfInt (-3124)
+let _ = digitsOfInt -3124
 let _ = digitsOfInt 352663
 let _ = digitsOfInt 0
 
@@ -64,46 +62,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = 
-  if n<10 then 0 else
-    let intList = digits n in
-    let sum = sumList intList in
-      additivePersistence sum + 1;;
+let rec additivePersistence n = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = additivePersistence 9876
-let _ = additivePersistence 9
-let _ = additivePersistence 10
-let _ = additivePersistence 99
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n = 
-  if n<10 then n else
-    let intList = digits n in
-    let sum = sumList intList in
-      digitalRoot sum;;
+let rec digitalRoot n = failwith "TBD"
+
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
-let _ = digitalRoot 10
-let _ = digitalRoot 02911
-let _ = digitalRoot 9876
+let rec listReverse l = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec listReverse l = match l with
-  | [] -> []
-  | h::t -> listReverse t@[h];;
-
-
-
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -118,12 +103,7 @@ let explode s =
   in
     go 0
 
-let palindrome w = match w with
-  | [] -> true
-  | h::t -> 
-      let separated = explode w in
-      let reversed = listReverse separated in
-        if w == reversed then true else false;;
+let palindrome w = failwith "TBD"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

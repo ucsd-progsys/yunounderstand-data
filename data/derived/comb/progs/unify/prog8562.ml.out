@@ -1,5 +1,5 @@
-Characters 359-362:
-  |Hoi(a,b) -> ("sin(pi*"^(exp a)^")"/"("("cos(pi*"^(exp b)^")")")");;
-                                  ^^^
-Error: This expression has type string but an expression was expected of type
-         int
+Characters 39-42:
+  let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
+                                         ^^^
+Error: This expression has type float but an expression was expected of type
+         string

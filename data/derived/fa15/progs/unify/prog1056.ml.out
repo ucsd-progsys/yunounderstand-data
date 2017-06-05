@@ -1,5 +1,5 @@
-Characters 84-96:
-  if len <= 0 then ((clone 0 (-1)*len)@l1,l2)
-                     ^^^^^^^^^^^^
-Error: This expression has type int list
+Characters 73-80:
+  if n/10 != 0 then 1+additivePersistence sumList (digitsOfInt n)
+                                          ^^^^^^^
+Error: This expression has type int list -> int
        but an expression was expected of type int

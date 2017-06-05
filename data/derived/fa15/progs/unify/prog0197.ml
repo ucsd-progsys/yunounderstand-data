@@ -6,5 +6,5 @@ let digits n = digitsOfInt (abs n);;
 
 let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
 
-let rec additivePersistence n =
-  match digits n with | x::[] -> 0 | _ -> additivePersistence (sumList n);;
+let rec digitalRoot n =
+  match digits n with | x::[] -> 0 | h::t -> digitalRoot (digits (sumList n));;

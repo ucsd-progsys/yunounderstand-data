@@ -1,5 +1,5 @@
-Characters 17-18:
-  let _ = padZero [9;9] [1;0;0;2];;
-                   ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 184-211:
+  let args = List.combine( List.rev l1, List.rev l2) in
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list

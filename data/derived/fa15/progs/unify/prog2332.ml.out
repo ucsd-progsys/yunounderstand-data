@@ -1,5 +1,5 @@
-Characters 169-174:
-  if (1 = 2) then seen' := h :: seen' ;
-                                ^^^^^
-Error: This expression has type 'a list ref
-       but an expression was expected of type 'a list
+Characters 84-90:
+  else (n mod 10) :: return
+                     ^^^^^^
+Error: This expression has type 'a list
+       This is not a function; it cannot be applied.

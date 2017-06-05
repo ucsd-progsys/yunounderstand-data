@@ -1,5 +1,0 @@
-Characters 20-32:
-  let rec clone x n = stringOfList x n List.map x n;;
-                      ^^^^^^^^^^^^
-Error: This function has type ('a -> string) -> 'a list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.

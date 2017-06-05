@@ -1,5 +1,5 @@
-Characters 225-233:
-  else (l1, l2);;
-       ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+Characters 413-416:
+  | Logx (a)	    -> (log(0))
+                        ^^^
+Error: This expression has type int but an expression was expected of type
+         float

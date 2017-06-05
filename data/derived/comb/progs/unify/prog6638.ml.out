@@ -1,5 +1,5 @@
-Characters 70-71:
-  in if c'= false then wwhile f b' 
-                              ^
-Error: This expression has type 'a -> 'b * bool
-       but an expression was expected of type ('a -> 'b * bool) * 'a
+Characters 8-19:
+  let _ = digitsOfInt -1229;;
+          ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

@@ -42,17 +42,19 @@ let _ = sqsum [(-1); (-2); (-3); (-4)]
 
 
 
+
 let pipe fs = 
-  let f a x = x a in
-  let base = fun f a -> a in
+  let f a x = a x in
+  let base =  x in
     List.fold_left f base fs
 
+(*
+XXXXXXXXXXXXXXXXX
 
-let _ = pipe [] 3
-let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = pipe [(fun x -> x + 3);(fun x-> x + 3)] 3
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 
 
@@ -70,6 +72,11 @@ let _ = sepConcat "---" []
 let _ = sepConcat "" ["a";"b";"c";"d";"e"]
 let _ = sepConcat "X" ["hello"]
 
+;;
+
+
+List.map string_of_int [123; 456]
+
 
 let stringOfList f l = "[" ^ sepConcat "; " (List.map f l) ^ "]"
 
@@ -86,6 +93,9 @@ let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+let abs x = if x < 0 then x * -1 else x;;
+
+abs y;;
 
 let rec clone x n = if n > 0 then [x] @ clone x (n-1) else [] 
 
@@ -99,9 +109,7 @@ List.length(y)
 
 
 let padZero l1 l2 = let len1 = List.length(l1) in let len2 = List.length(l2) 
-  in if len1 > len2 
-    then (l1,clone 0 (len1-len2) @ l2) 
-    else (clone 0 (len2-len1) @ l1,l2)
+  in if len1 > len2 then (l1,clone 0 (len1-len2) @ l2) else (clone 0 (len2-len1) @ l1,l2)
 
 let _ = padZero [9;9] [1;0;0;2]
 let _ = padZero [1;0;0;2] [9;9] 
@@ -120,11 +128,9 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = match a with 
-      |[] -> []
-      |h::t -> if h + x > 10 then [h+x mod 10]@a else [h+x]@a in
-    let base =  [] in
-    let args = l1 in
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
     let (_, res) = List.fold_left f base args in
       res
   in 
@@ -137,21 +143,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 *)
 
-let remainder x y  = (x*y) mod 10;;
-let carry x y = x * y / 10;;
 
-let rec mulByDigit i l = if i = 0 || i > 9 then [] else match List.rev l with
-    | [] -> []
-    | h::t -> match t with
-      |[] -> [carry h i] @ [remainder h i + carry h i]
-      |h'::t' -> if List.length t' > 1 then 
-            mulByDigit i t @ [remainder h i] 
-          else mulByDigit i t @ [remainder h' i + carry h' i]
+let rec mulByDigit i l = failwith "to be implemented"
 
-let _ = mulByDigit 4 [2;3]
-let _ = mulByDigit 4 [3;2;1]
-let _ = mulByDigit 9 [9;9;9;9]
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

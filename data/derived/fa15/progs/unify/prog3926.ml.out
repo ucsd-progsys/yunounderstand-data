@@ -1,6 +1,5 @@
-Characters 77-102:
-  | h::t -> matchHeads (listReverse (explode w)) (listReverse (explode w));;
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type 'a list list
-       Type char is not compatible with type 'a list 
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         (int -> int) -> int

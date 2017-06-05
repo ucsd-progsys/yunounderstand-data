@@ -97,11 +97,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let rec helper(f,b)=
-  let x = f b in 
-    match x with
-      |b->(x,false)
-      |_->helper(f,x);;
+let helper x r=
+  let m = x r in
+    match m with
+      |r->(r,false)
+      |_->(r,true);;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let fixpoint (f,b) = wwhile ((helper(f,b)),b)
@@ -138,16 +138,7 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = 
-  match e with
-    |VarX -> "x"
-    |VarY -> "y"
-    |Sine s -> String.concat "" ["sin(pi*";exprToString s;")"]
-    |Cosine s-> "cos(pi*"+exprToString s+")"
-    |Average(s,p)-> "(("+exprToString s+"+"+exprToString p+")/2"
-    |Times(s,p)-> exprToString s+"*"+exprToString p
-    |Thresh(s,p,r,d)-> "("+exprToString s+"<"+exprToString p+"?"+exprToString r+":"+exprToString d+")"
-    |_->0;;
+let rec exprToString e = failwith "to be written"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

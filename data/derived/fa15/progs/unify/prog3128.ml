@@ -1,5 +1,21 @@
 
-let rec wwhile (f,b) = let (b',c') = f b in if c' then wwhile (f, b') else b';;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let fixpoint (f,b) =
-  let helper b = if (f b) = b then false else true in wwhile (helper, b);;
+let pi = 4.0 *. (atan 1.0);;
+
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine e1 -> sin (pi *. (eval e1))
+  | Cosine e1 -> cos (pi *. (eval e1))
+  | Average (e1,e2) -> (e1 +. e2) / 2
+  | Times (e1,e2) -> (eval e1) *. (eval e2)
+  | Thresh (e1,e2,e3,e4) -> (e1 < (e2 ?e3) : e4);;

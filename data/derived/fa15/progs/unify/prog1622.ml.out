@@ -1,6 +1,5 @@
-Characters 168-169:
-  let seen' = seen::h in
-                    ^
-Error: This expression has type 'a but an expression was expected of type
-         'a list list
-       The type variable 'a occurs inside 'a list list
+Characters 76-77:
+  if n>=10 then let n = digitsOfInt n and f= sumList n in digitalRoot n
+                                                     ^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -70,16 +70,13 @@ let _ = sepConcat "" ["a";"b";"c";"d";"e"]
 let _ = sepConcat "X" ["hello"]
 
 
+(*X
+XXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let stringOfList f l = match l with 
-  | []  -> "[]"
-  | [x] -> "[" ^ x ^ "]"  
-  | l   -> sepConcat( ";", List.map(f, l))
-
-let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
-let _ = stringOfList (fun x -> x) ["foo"];;
-let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX*)
 
 
 
@@ -101,23 +98,22 @@ let _ = clone clone (-3);;
 
 let padZero l1 l2 = match (List.length l1 - List.length l2) with
   | 0 -> (l1, l2)
-  | n -> if( n < 0 ) then (clone 0 (n * -1) @ l1, l2)  else (clone 0 n @ l2, l1)
+  | n -> if( n < 0 ) then ((clone 0 n) @ l1), l2)  else ((clone 0 n) @ l2, l1)
 
 
 let _ = padZero [9;9] [1;0;0;2]
 let _ = padZero [1;0;0;2] [9;9] 
 
 
-let rec removeZero l = match l with 
-  | []    -> l
-  | h::t  -> if(h = 0) then removeZero t else l  
+let rec removeZero l = failwith "to be implemented"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = removeZero [0;0;0;1;0;0;2]
-let _ = removeZero [9;9]
-let _ = removeZero [0;0;0;0]
-
+*)
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 

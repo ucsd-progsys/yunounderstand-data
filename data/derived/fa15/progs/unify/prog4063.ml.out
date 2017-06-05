@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 76-78:
+  |Sine (e1) -> sin(pi * eval (e1, x, y))
+                    ^^
+Error: This expression has type float but an expression was expected of type
+         int

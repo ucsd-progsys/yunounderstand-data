@@ -1,12 +1,11 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let rec digitsOfInt n =
+  let rec helper n l = if n = 0 then l else helper (n / 10) ((n mod 10) :: l) in
+  match n with | 0 -> [0] | _ -> helper n [];;
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+let digits n = digitsOfInt (abs n);;
 
-let palindrome w = (explode w) = (listReverse (explode w));;
-
-let _ = palindrome 1;;
+let rec additivePersistence n =
+  if (List.length (digits n)) = 1
+  then List.hd (digits n)
+  else additivePersistence (digits n);;

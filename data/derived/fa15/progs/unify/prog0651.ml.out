@@ -1,6 +1,5 @@
-Characters 27-31:
-  let _ = List.mem( 4, test) test;;
-                             ^^^^
-Error: This expression has type int list
-       but an expression was expected of type (int * int list) list
-       Type int is not compatible with type int * int list 
+Characters 137-141:
+  let (_, res) = List.fold_left f base args in
+                                       ^^^^
+Error: This expression has type int * int list list
+       but an expression was expected of type 'a list

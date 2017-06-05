@@ -1,5 +1,5 @@
-Characters 77-79:
-  | Sine e' -> sin (3.142 *. e')
-                             ^^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 94-95:
+  else dig ((d mod 10)::acc) (d div 10) in
+                              ^
+Error: This expression has type int
+       This is not a function; it cannot be applied.

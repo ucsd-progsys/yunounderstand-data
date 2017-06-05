@@ -1,5 +1,5 @@
-Characters 120-121:
-  | _  -> [h*i/10];;
-           ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 19-20:
+  let _ = eval (Poly(3,5,2,6),1,1);;
+                     ^
+Error: This expression has type int but an expression was expected of type
+         expr

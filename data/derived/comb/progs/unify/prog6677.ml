@@ -1,12 +1,10 @@
 
-let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
+let rec wwhile (f,b) =
+  let (b',c') = f b in if c' = true then wwhile (f, b') else b';;
 
-let l1 = [(9, 9)];;
+let fixpoint (f,b) =
+  let f1 f2 x = if (f2 x) = x then (false, x) else (true, (f2 x)) in
+  wwhile ((f1 f), b);;
 
-let l2 = [(9, 9, 9, 9, 9)];;
-
-let padZero l1 l2 =
-  let n = (List.length l1) - (List.length l2) in
-  if n > 0 then (l1, ((clone 0 n) @ l2)) else (((clone 0 (0 - n)) @ l1), l2);;
-
-let _ = let (b,a) = padZero l1 l2 in List.combine b a;;
+let _ =
+  let g x = truncate (1e6 *. (cos (1e-6 *. (float x)))) in fixpoint (g, 0);;

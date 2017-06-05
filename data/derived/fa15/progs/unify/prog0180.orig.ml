@@ -23,10 +23,12 @@ let rec digitsOfInt n =
   if n <= 0 then
     []
   else 
-    n mod 10 :: [] @ digitsOfInt(n / 10)
+    n mod 10 @ digitsOfInt(n/10) 
+
+
 
 let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663(*XXX*)
+let _ = digitsOfInt 352663
 
 
 
@@ -54,8 +56,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = 
-  n = additivePersistence(n/10)
+let rec additivePersistence n = failwith "TBD"
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 

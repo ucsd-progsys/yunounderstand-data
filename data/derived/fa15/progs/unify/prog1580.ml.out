@@ -1,5 +1,6 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
+Characters 76-77:
+  else wwhile (f,b)
+               ^
 Error: This expression has type 'a -> 'a
-       but an expression was expected of type int
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a * bool

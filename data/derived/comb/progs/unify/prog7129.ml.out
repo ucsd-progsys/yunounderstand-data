@@ -1,5 +1,5 @@
-Characters 29-42:
-  let _ = assoc (-1,"william",[("ranjit",84);("william",23);("moose",44)]);;
-                               ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 130-134:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int * 'a list
+       but an expression was expected of type int list

@@ -1,2 +1,4 @@
 
-let pipe fs = let f a x = x x in let base x = x in List.fold_left f base fs;;
+let sqsum xs =
+  let f a x = match x with | [] -> 0 | x::xs' -> x * x in
+  let base = List.hd xs in List.fold_left f base xs;;

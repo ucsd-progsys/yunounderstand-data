@@ -4,6 +4,11 @@
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+let rec append l1 l2 = match l1 with
+  | [] -> l2
+  | h::t -> h::(append t l2);;
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -16,21 +21,19 @@ XXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
+let getKey (x, y) = x
+let getValue (x, y) = y
 
-let rec assoc (d,k,l) = match l with | 
-  [] -> d | 
-  (sameTypeAsK, sameTypeAsD)::t -> 
-    if k = sameTypeAsK then sameTypeAsD
-    else assoc(d, k, t)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXX*)
+let rec assoc (d,k,l) = match l with
+  | [] -> d
+  | h::t -> (if (getKey h) = k then getValue(h) else assoc (d,k,t))
 
 
 let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;    
 
 let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
 
+let _ = assoc (0, "",[])
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -47,18 +50,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let removeDuplicates l = 
   let rec helper (seen,rest) = 
     match rest with 
-        [] -> seen
+      | [] -> seen
       | h::t -> 
-          let seen' = if not List.mem(h, seen) then h::seen else seen in 
+          let seen' = (if (List.mem h seen) then seen else h::seen) in
           let rest' = t in 
             	  helper (seen',rest') 
   in
     List.rev (helper ([],l))
 
-let _ = removeDuplicates [1];;
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
-
+let _ = removeDuplicates [0;0;0;-1;-1;-1;0;0];;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -71,13 +73,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = failwith "to be written"
+let rec wwhile (f,b) = let (b', c') = (f b) in match c' with
+    | false -> (b', c')
+    | true -> wwhile (f, b')
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXX
-*)
+let f x = let xx = x*x*x in (xx, xx < 100) in
+  wwhile (f, 2);;
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -88,7 +90,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
+let fixpoint (f,b) = wwhile ((let x = (f b) in 
+                                match x with 
+                                  | b -> (x, false) 
+                                  | _ -> (x, true))
+                            , b)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
@@ -555,5 +561,4 @@ let _ =
   let _      = List.iter print130 (report@([scoreMsg()])) in
   let _      = print130 ("Compiled\n")                    in
     (!score, !max)
-
 

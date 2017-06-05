@@ -1,5 +1,5 @@
-Characters 185-189:
-  let (_, res) = List.fold_left f base args in
-                                  ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 386-388:
+  | Trip(t,r,s)     -> (sin(pi*eval(r,x,y)) + tan(pi*eval(s,x,y))) 
+                            ^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 64-67:
-  else let (b', c) = f b in
-                     ^^^
-Error: This expression has type bool but an expression was expected of type
-         'a * 'b
+Characters 115-132:
+  ([(x1+x2+a1)/10],[a :: (x1+x2+a1) mod 10]) in 
+                         ^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         (int * 'a) list

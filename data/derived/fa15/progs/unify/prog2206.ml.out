@@ -1,5 +1,5 @@
-Characters 23-36:
-  let _ = sepConcat "X" ["hello", "yo"];;
-                         ^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 24-30:
+  buildX()
+  ^^^^^^
+Error: This function has type unit -> expr
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -1,5 +1,5 @@
-Characters 111-121:
-  else (test (f x), false)
-        ^^^^^^^^^^
-Error: This expression has type int * bool
-       but an expression was expected of type int
+Characters 13-14:
+  let _ = dupe 3;;
+               ^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'b

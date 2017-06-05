@@ -1,6 +1,5 @@
-Characters 54-55:
-  wwhile (f, 2);;
-          ^
-Error: This expression has type int -> int * bool
-       but an expression was expected of type int -> bool
-       Type int * bool is not compatible with type bool 
+Characters 732-754:
+  | 17| 18  |19 | 23 | 25  -> buildCirc(build(rand, depth-1))
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr

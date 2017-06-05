@@ -1,5 +1,5 @@
-Characters 64-65:
-  if c' then wwhile f b else b';;
-                    ^
-Error: This expression has type 'a -> 'b * bool
-       but an expression was expected of type ('a -> 'b * bool) * 'a
+Characters 130-132:
+  ((sum/10)::a1,(sum mod 10)::a2) in
+             ^^
+Error: This expression has type int list -> int
+       but an expression was expected of type int list

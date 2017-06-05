@@ -1,5 +1,5 @@
-Characters 14-31:
-  let _ = append([1;2;3],[4;5;6]);;
-                ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 173-178:
+  |[] -> if i * h > 10 then [carry i h] @ [remainder i h] else i * h
+                                                               ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

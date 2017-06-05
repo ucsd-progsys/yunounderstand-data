@@ -1,0 +1,5 @@
+Characters 166-169:
+  if num < 10 then (0, num @ list) 
+                       ^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

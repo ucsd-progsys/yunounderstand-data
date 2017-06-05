@@ -1,5 +1,5 @@
-Characters 66-110:
-  (((mult(m,n)+y)/10), [(mult(m,n)+y) mod 10]) @ z
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c list
+Characters 86-88:
+  let f a x = a ^ x ^ sl in
+                      ^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

@@ -1,5 +1,5 @@
-Characters 33-36:
-  let f a x = a*a+ f a in
-                   ^^^
-Error: This expression has type 'a -> int
-       but an expression was expected of type int
+Characters 29-40:
+  let fixpoint (f,b) = wwhile (helper(f,b),b);;
+                               ^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

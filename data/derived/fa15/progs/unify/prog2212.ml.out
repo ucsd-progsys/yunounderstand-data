@@ -1,6 +1,5 @@
-Characters 123-146:
-  f base l
-  
-  foo, bar, baz..
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type string
+Characters 203-204:
+  | Average(t,s) -> ((eval(t,x,y)+.eval(s,x,y))/.2);;
+                                                 ^
+Error: This expression has type int but an expression was expected of type
+         float

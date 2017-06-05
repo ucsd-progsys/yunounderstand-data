@@ -1,6 +1,6 @@
 
-let rec wwhile (f,b) =
-  let temp = f b in
-  match temp with | (a,boolean) -> if boolean then wwhile (f, a) else a;;
+let pipe fs =
+  let f a x = let f1::f2::t = x in f2 (f1 a) in
+  let base k = k in List.fold_left f base fs;;
 
-let fixpoint (f,b) = wwhile (let n x = (f, (x = (f x))) in (n, b));;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

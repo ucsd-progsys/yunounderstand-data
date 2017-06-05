@@ -1,5 +1,3 @@
 
-let pipe fs =
-  let f a x x a = x a in let base y = y in List.fold_left f base fs;;
-
-let _ = pipe [] 3;;
+let sqsum xs =
+  let f a x = (a ** 2) + (x ** 2) in let base = 0 in List.fold_left f base xs;;

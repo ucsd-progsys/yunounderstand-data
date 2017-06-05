@@ -1,4 +1,5 @@
-Characters 121-123:
-  | Average (e', e')-> (e' + e' )/2
-                 ^^
-Error: Variable e' is bound several times in this matching
+Characters 94-95:
+  let s = bigAdd( m a' ) in
+                  ^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

@@ -1,5 +1,6 @@
-Characters 225-226:
-  let args = List.rev(List.combine 0::l1 0::l2) in
-                                   ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 47-48:
+  let f a x = let h::t = x in h a t in
+                                  ^
+Error: This expression has type ('a -> 'b -> 'c) list
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside ('a -> 'b -> 'c) list

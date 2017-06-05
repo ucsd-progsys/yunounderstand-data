@@ -1,10 +1,5 @@
-Characters 121-130:
-  | Sine e -> Printf.printf "sin(pi*" exprToString e
-                            ^^^^^^^^^
-Error: This expression has type
-         ('a -> 'b -> 'c, out_channel, unit, unit, unit, 'a -> 'b -> 'c)
-         CamlinternalFormatBasics.fmt
-       but an expression was expected of type
-         ('a -> 'b -> 'c, out_channel, unit, unit, unit, unit)
-         CamlinternalFormatBasics.fmt
-       Type 'a -> 'b -> 'c is not compatible with type unit 
+Characters 23-25:
+  let _, _ = (List.mem 1 s0, List.mem 2 s0);;
+                         ^^
+Error: This expression has type 'a set but an expression was expected of type
+         int list

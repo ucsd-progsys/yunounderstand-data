@@ -1,5 +1,5 @@
-Characters 215-227:
-  let args = List.combine List.rev l1 List.rev l2 in
-             ^^^^^^^^^^^^
-Error: This function has type 'a list -> 'b list -> ('a * 'b) list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 92-100:
+  |x -> (x,true) in (func b) ,b);;
+                    ^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

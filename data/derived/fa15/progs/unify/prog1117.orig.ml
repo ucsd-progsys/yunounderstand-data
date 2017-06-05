@@ -42,12 +42,12 @@ let removeDuplicates l =
   let rec helper (seen,rest) = 
     match rest with 
       |[] -> seen
-      | (hd::tl) -> 
-          let seen' = if (List.mem hd seen) then seen else seen@[hd] in
-          let rest' = tl in 
+      | h::t -> 
+          let seen' = if (List.mem seen h) = false then seen@[h] else seen in
+          let rest' = t in 
             helper (seen',rest') in 
-    helper ([],l)
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+    List.rev (helper ([],l))
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = removeDuplicates [1;6;2;4;12;2;13;6;9];;
@@ -64,14 +64,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec wwhile (f,b) = let z = f b in match z with
-      (x,y) -> if y = false then x else wwhile(f, x) 
+let rec wwhile (f,b) = failwith "to be written"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let f x = let xx = x*x*x in (xx, xx < 100) in
-  wwhile (f, 2);;
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -82,22 +81,21 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let notEqual x y = (x = y = false)
-let fixpont (f,b) = wwhile ( (let newFunc b = (f b, notEqual b (f b )) in newFunc), b)
+let fixpoint (f,b) = wwhile ((failwith "to be written"),b)
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
-
-let _ = fixpoint (collatz, 1) ;;
-let _ = fixpoint (collatz, 3) ;;
-let _ = fixpoint (collatz, 48) ;;
-let _ = fixpoint (collatz, 107) ;;
-let _ = fixpoint (collatz, 9001) ;; 
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -117,25 +115,15 @@ type expr =
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with 
-  |VarX			  -> "x"
-  |VarY			  -> "y"
-  |Sine (i)		  -> "sin(pi*"^ exprToString i^")"
-  |Cosine (i)		  -> "cos(pi*" ^exprToString i^")" 
-  |Average(i1, i2)	  -> "((" ^ exprToString i1 ^ " + " ^ exprToString i2 ^")/2)" 
-  |Times (i1,i2)		  -> exprToString i1 ^ "*" ^ exprToString i2
-  |Thresh (i1, i2, i3, i4)  -> "(" ^ exprToString i1 ^ "<" ^ exprToString i2 ^ " ? " ^ exprToString i3 ^ ":" ^ exprToString i4 ^ ")"
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));; 
-
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -157,15 +145,7 @@ let pi = 4.0 *. atan 1.0
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  |VarX			  -> x
-  |VarY			  -> y
-  |Sine (i)		  -> sin(pi *. eval (i,x,y))
-  |Cosine (i)		  -> cos(pi *. eval (i,x,y))
-  |Average(i1, i2)	  -> (eval (i1,x,y) +. eval (i2,x,y))  / 2.0
-  |Times (i1,i2)		  -> eval (i1,x,y) *. eval (i2,x,y)
-
-
+let rec eval (e,x,y) = failwith "to be written"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

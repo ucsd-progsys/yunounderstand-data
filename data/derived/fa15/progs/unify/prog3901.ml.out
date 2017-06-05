@@ -1,5 +1,5 @@
-Characters 435-450:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int list * int list
+Characters 29-47:
+  let fixpoint (f,b) = wwhile ((fixpointHelper f),b);;
+                               ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

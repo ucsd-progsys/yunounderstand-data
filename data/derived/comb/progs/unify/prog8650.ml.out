@@ -1,5 +1,5 @@
-Characters 16-17:
-  let _ = pipe [] 3;;
-                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 1-10:
+   [9;9;9;9] [9;9;9];;
+   ^^^^^^^^^
+Error: This expression has type int list
+       This is not a function; it cannot be applied.

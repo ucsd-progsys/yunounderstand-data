@@ -1,5 +1,5 @@
-Characters 25-36:
-  let _ = assoc([1,1],"a",[([1,2],"c"),([1,1,1],"a")]);;
-                           ^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 16-17:
+  let _ = bigMul [9;9;9;9] [9;9;9;9];;
+                  ^
+Error: This expression has type int but an expression was expected of type
+         int * 'a

@@ -1,2 +1,2 @@
 
-let rec clone x n = if n = 1 then [] @ x else (clone x) :: ((x n) - 1);;
+let pipe fs = let f a x x = x a in let base c = c in List.fold_left f base fs;;

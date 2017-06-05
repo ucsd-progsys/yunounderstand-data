@@ -12,14 +12,13 @@ let bigAdd l1 l2 =
   let add (l1,l2) =
     let f a x =
       let (j,k) = x in
-      let (l,m) = a in
-      if x = ()
-      then (0, (l :: m))
-      else
-        if ((j + k) + l) > 9
-        then (1, ((((j + k) + l) - 10) :: m))
-        else (0, (((j + k) + l) :: m)) in
-    let base = (0, []) in
+      match a with
+      | [] -> []
+      | h::t ->
+          if (j + k) > 9
+          then 1 :: (((h + j) + k) - 10) :: t
+          else 0 :: ((h + j) + k) :: t in
+    let base = [0] in
     let args = List.combine (List.rev l1) (List.rev l2) in
-    let (_,res) = List.fold_left f base args in res in
+    let (_,res) = List.fold_left f base [(1, 2); (2, 2)] in res in
   removeZero (add (padZero l1 l2));;

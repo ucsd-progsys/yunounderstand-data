@@ -1,5 +1,5 @@
-Characters 0-3:
-  abs -10
-  ^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int
+Characters 75-103:
+  |(0,2) -> buildX(build(rand, depth-1)) 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

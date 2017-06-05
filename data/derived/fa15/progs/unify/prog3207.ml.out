@@ -1,6 +1,5 @@
-Characters 59-60:
-  let fixpoint (f,b) = wwhile(match f b with false -> wwhile(f,b) |b -> b, b);;
-                                                             ^
-Error: This expression has type 'a -> bool
-       but an expression was expected of type 'a -> 'a * bool
-       Type bool is not compatible with type 'a * bool 
+Characters 24-25:
+  let _ = pipe [(fun x -> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

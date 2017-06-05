@@ -1,6 +1,5 @@
-Characters 70-71:
-  | _ -> wwhile(f, b)
-                ^
-Error: This expression has type 'a -> 'b -> 'b * bool
-       but an expression was expected of type 'a -> 'a * bool
-       Type 'b -> 'b * bool is not compatible with type 'a * bool 
+Characters 263-284:
+  removeZero (add (padZero l1 l2));;
+             ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int * int list
+       but an expression was expected of type int list

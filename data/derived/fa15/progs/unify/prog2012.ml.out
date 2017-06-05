@@ -1,5 +1,0 @@
-Characters 259-280:
-  removeZero (add (padZero l1 l2));;
-             ^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         int list

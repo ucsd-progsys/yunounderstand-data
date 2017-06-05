@@ -1,5 +1,5 @@
-Characters 132-133:
-  if k = 0 then k + mulByDigit t else [x]@ k + mulByDigit t;;
-                               ^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 101-102:
+  if a = k then b else assoc t;;
+                             ^
+Error: This expression has type ('a * 'b) list
+       but an expression was expected of type 'b * 'a * ('a * 'b) list

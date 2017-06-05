@@ -1,9 +1,20 @@
 
-let rec clone x n = if n > 0 then [x] @ (clone x (n - 1)) else [];;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  let len1 = List.length l1 in
-  let len2 = List.length l2 in
-  if len1 > len2
-  then (clone 0 (len1 - l2)) @ l2
-  else (clone 0 (len2 - len1)) @ l1;;
+let buildCosine e = Cosine e;;
+
+let buildSine e = Sine e;;
+
+let rec build (rand,depth) =
+  if depth > 0
+  then
+    match rand (0, 4) with
+    | 0 -> buildSine (build (rand, (depth - 1)))
+    | 1 -> buildCosine (build (rand, (depth - 1)));;

@@ -1,5 +1,5 @@
-Characters 19-20:
-  let _ = eval (Poly(3,5,2,6),1,1);;
-                     ^
-Error: This expression has type int but an expression was expected of type
-         expr
+Characters 33-41:
+  let stringOfList f l = sepConcat List.map l;;
+                                   ^^^^^^^^
+Error: This expression has type ('a -> 'b) -> 'a list -> 'b list
+       but an expression was expected of type string

@@ -2,47 +2,12 @@
 XXXXXXXXXX
 *)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let rec lastListElement n =
-  match n with
-      [] -> failwith "ERROR: List must be of size 1 or greater"
-    | x::[] -> x
-    | x::y -> lastListElement y
-
-let _ = lastListElement [1; 2; 3;]
-let _ = []
-
-let rec popOffLast n = 
-  match n with 
-      [] -> []
-    | x::[] -> []
-    | x::y -> x:: (popOffLast y)
-
-let _ = popOffLast [1; 2; 3; 4; 5; 6;]
-let _ = popOffLast []
-let _ = popOffLast [1]
-let _ = popOffLast [1; 2]
-
-let rec catLists x y = 
-  if y = [] then x
-  else
-    match x with
-        [] -> y
-      | x::[] -> x::y
-      | h::t -> catLists (popOffLast x) ((lastListElement x) :: y)
-
-let _ = catLists [1; 2; 3;] [2; 3; 4;]
-let _ = catLists [2] [1]
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*) 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 let rec sumList xs = 
   match xs with
-      [] -> 0 
-    | x :: y -> x + sumList y
+    | [] -> 0
+    | x :: y -> x + sumList y;;
+val sumList : int list -> int = <fun>
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -50,24 +15,22 @@ let _ = sumList [1; 2; 3; 4]
 let _ = sumList [1; -2; 3; 5]
 let _ = sumList [1; 3; 5; 7; 9; 11]
 
+
+
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let rec digitsOfInt n =
-  if n < 0 then []
-  else if n < 10 then [n;]
-  else
-    catLists (digitsOfInt (n/10)) [(n mod 10);]
+let rec digitsOfInt n = failwith "TBD:digitsOfInt"
 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = digitsOfInt (-10000)
-let _ = digitsOfInt 3124
-let _ = digitsOfInt 352663
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXX
@@ -78,9 +41,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 let digits n = digitsOfInt (abs n)
-
-(*XXXXXXXXXXXX*)
-let _ = digits 123456789
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -97,47 +57,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 
-let rec additivePersistence n = 
-  if n < 10 then 0
-  else 
-    1 + additivePersistence (sumList (digitsOfInt n))
+let rec additivePersistence n = failwith "TBD"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = additivePersistence 9876
-let _ = additivePersistence 1234567
-let _ = additivePersistence -123
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec digitalRoot n =
-  if n < 10  then n
-  else
-    digitalRoot (sumList (digitsOfInt n))
+let rec digitalRoot n = failwith "TBD"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = digitalRoot 9876
-let _ = digitalRoot 1234567
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
+let rec listReverse l = failwith "TBD"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let rec listReverse l = 
-  match l with 
-      [] -> []
-    | x::y -> catLists (listReverse y) [x]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
-let _ = listReverse []
-let _ = listReverse [1;]
-let _ = listReverse [1; 2; 3; 4]
-let _ = listReverse ["a"; "b"; "c"; "d"]
-
-
+*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -152,23 +98,15 @@ let explode s =
   in
     go 0
 
-let _ = explode "Hello"
-
-let palindrome w = 
-  if listReverse (explode w) = explode w then true
-  else false
+let palindrome w = failwith "TBD"
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = palindrome "malayalam"
-let _ = palindrome "myxomatosis"
-let _ = palindrome "qwerrewq"
-let _ = palindrome "qwerewq"
-let _ = palindrome "qwerewa"
-let _ = palindrome "h h h"
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

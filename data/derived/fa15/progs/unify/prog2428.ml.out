@@ -1,6 +1,5 @@
-Characters 45-46:
-  let f a x = let rec a c y = c a x in a::x = fs in
-                                ^
-Error: This expression has type ('a -> 'b -> 'c) -> 'd -> 'e
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside ('a -> 'b -> 'c) -> 'd -> 'e
+Characters 153-161:
+  (l1, l2);;
+  ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

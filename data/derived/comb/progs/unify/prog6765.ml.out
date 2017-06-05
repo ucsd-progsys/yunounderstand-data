@@ -1,5 +1,5 @@
-Characters 270-296:
-  | Thresh (x7,x8,x9,x0) -> eval(buildThresh(x7,x8,x9,x0));;
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 368-369:
+  let args = List.rev(List.combine 0::l1 0::l2) in  
+                                   ^
+Error: This expression has type int but an expression was expected of type
+         'a list

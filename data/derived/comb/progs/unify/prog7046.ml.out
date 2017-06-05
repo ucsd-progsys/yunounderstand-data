@@ -1,5 +1,5 @@
-Characters 52-53:
-  let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
-                                                      ^
-Error: This expression has type int but an expression was expected of type
-         string
+Characters 442-444:
+  | 6 -> 0.
+         ^^
+Error: This expression has type float but an expression was expected of type
+         expr

@@ -1,5 +1,5 @@
-Characters 136-149:
-  |Average i1,i2 -> ((exprToString i1) + (exprToString i2))/2;;
-   ^^^^^^^^^^^^^
-Error: This pattern matches values of type 'a * 'b
-       but a pattern was expected which matches values of type expr
+Characters 15-17:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                 ^^
+Error: This expression has type int but an expression was expected of type
+         ('a * 'b) list

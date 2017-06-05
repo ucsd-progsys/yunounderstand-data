@@ -1,5 +1,5 @@
-Characters 36-37:
-  let _ = stringOfList string_of_int [1;2;3;4;5;6];;
-                                      ^
-Error: This expression has type int but an expression was expected of type
-         string
+Characters 157-174:
+  | Average (e1, e2) -> ((eval (e1, x, y)) + (eval (e2, x, y)))/2;;
+                         ^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,5 @@
-Characters 109-112:
-  | Sine sin		    -> "sin(pi*"^ (eval sin) ^")" 
-                                      ^^^
+Characters 546-561:
+  | 8 -> buildX(build(rand,d))
+               ^^^^^^^^^^^^^^^
 Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+         unit

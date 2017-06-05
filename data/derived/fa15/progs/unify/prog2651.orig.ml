@@ -90,10 +90,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-let fixpoint (f,b) = wwhile((let f' b = ( (f b), (f b) != b) in f'), b);;
+let fixpoint (f,b) = wwhile ((f b),b)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 
 
 let collatz n = match n with 1 -> 1 | _ when n mod 2 = 0 -> n/2 | _ -> 3*n + 1;;
@@ -119,34 +119,20 @@ type expr =
     | Cosine   of expr
     | Average  of expr * expr
     | Times    of expr * expr
-    | Thresh   of expr * expr * expr * expr
-    (*XXXXXXXXXXXXXXXXXXXXXXXX*)
-    | Ceiling  of expr
-    | LT       of expr * expr * expr
+    | Thresh   of expr * expr * expr * expr	
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
-let rec exprToString e = match e with
-  | VarX -> "x"
-  | VarY -> "y"
-  | Sine e' -> "sin(pi*" ^ exprToString e' ^ ")"
-  | Cosine e' -> "cos(pi*" ^ exprToString e' ^ ")"
-  | Average (a,b)-> "((" ^ (exprToString a) ^ "+" ^ (exprToString b) ^ ")/2)"
-  | Times (a,b) -> (exprToString a) ^ "*" ^ (exprToString b)
-  | Thresh (a,b,c,d) -> 
-      "(" ^ exprToString a ^ "<" ^ exprToString b ^ "?" ^ exprToString c ^ ":" ^ exprToString d ^ ")" 
-  (*XXXXXXXXXXXXXXXXXXXXXXXX*)
-  | Ceiling e' -> "ceil" ^ exprToString e'
-  | LT (a,b,c) -> "((" ^ exprToString a ^ "+" ^ exprToString b ^ ")<" ^ exprToString c ^ "?(" ^ exprToString a ^ "+" ^ exprToString b ^ "):" ^ exprToString c ^ ")" ;;
+let rec exprToString e = failwith "to be written"
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,VarY)))));;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = exprToString sampleExpr1 
-
-
+*)
 
 
 (*XXXXXXXXXXXXXXXXX
@@ -162,31 +148,26 @@ let buildAverage(e1,e2)            = Average(e1,e2)
 let buildTimes(e1,e2)              = Times(e1,e2)
 let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXX*)
-let buildCeiling(e)		   = Ceiling(e)
-let buildLT(a,b,c)		   = LT(a,b,c)
 
 let pi = 4.0 *. atan 1.0
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec eval (e,x,y) = match e with
-  | VarX -> x
-  | VarY -> y
-  | Sine e' -> sin (pi *. eval (e',x,y))
-  | Cosine e' -> cos (pi *. eval (e',x,y))
-  | Average (e1, e2) -> (eval (e1,x,y) +. eval (e2,x,y)) /. 2.0
-  | Times (e1,e2) -> eval (e1,x,y) *. eval (e2,x,y)
-  | Thresh (a,b,c,d) -> if eval (a,x,y) < eval (b,x,y)
-      then eval (c,x,y) else eval (d,x,y)
-  (*XXXXXXXXXXXXXXXXXXXXXXXX*)
-  | Ceiling e' -> ceil(e')
-  | LT (a,b,c) -> if (eval (a,x,y) +. eval (b,x,y)) < eval (c,x,y)
-      then (eval (a,x,y) +. eval (b,x,y)) else eval (c,x,y) ;;
+let rec eval (e,x,y) = failwith "to be written"
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
+
+
+let eval_fn e (x,y) = 
+  let rv = eval (e,x,y) in
+    assert (-1.0 <= rv && rv <= 1.0);
+    rv
 
 let sampleExpr =
   buildCosine(buildSine(buildTimes(buildCosine(buildAverage(buildCosine(
@@ -195,20 +176,6 @@ let sampleExpr =
                                                                                    buildCosine (buildTimes (buildSine (buildCosine
                                                                                                                          (buildY())),buildAverage (buildSine (buildX()), buildTimes
                                                                                                                                                                            (buildX(),buildX()))))))),buildY())))
-
-
-let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
-let _ = eval (Sine(Average(VarX,VarY)),0.3,0.3);;
-let _ = eval (sampleExpr,0.5,0.2);;
-
-
-
-let eval_fn e (x,y) = 
-  let rv = eval (e,x,y) in
-    assert (-1.0 <= rv && rv <= 1.0);
-    rv
-
-(*XXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let sampleExpr2 =
   buildThresh(buildX(),buildY(),buildSine(buildX()),buildCosine(buildY()))
@@ -225,14 +192,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
 
-let rec build (rand, depth) = match depth with
-  | 0 -> if rand(0,5) mod 2 = 0 then buildX() else buildY()
-  | _ -> match rand (0,4) with
-    | 0 -> buildSine(build (rand, depth-1)) 
-    | 1 -> buildCosine(build (rand, depth-1)) 
-    | 2 -> buildAverage(build (rand, depth-1), build (rand, depth-1))
-    | 3 -> buildTimes(build (rand, depth-1), build (rand, depth-1))
-    | _ -> buildThresh(build (rand, depth-1), build (rand, depth-1), build (rand, depth-1), build (rand, depth-1)) ;;
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -241,13 +201,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
-let g1 () = (7,3,5)
-let g2 () = (9,100,109)  
-let g3 () = (12,0,3) 
+let g1 () = failwith "to be implemented"  
+let g2 () = failwith "to be implemented"  
+let g3 () = failwith "to be implemented"  
 
-let c1 () = (10,1,5)
-let c2 () = (7,101,105)
-let c3 () = (8,101,105)
+let c1 () = failwith "to be implemented"
+let c2 () = failwith "to be implemented" 
+let c3 () = failwith "to be implemented" 
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
@@ -350,10 +310,11 @@ let doRandomGray (depth,seed1,seed2) =
   let name = Format.sprintf "%d_%d_%d" depth seed1 seed2 in
     emitGrayscale (f,n,name)
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = emitGrayscale (eval_fn sampleExpr, 150, "sample") ;;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+*)
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

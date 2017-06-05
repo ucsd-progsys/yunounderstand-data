@@ -1,5 +1,5 @@
-Characters 54-64:
-  x :: clone(n-1);;
-       ^^^^^^^^^^
-Error: This expression has type int -> int list
-       but an expression was expected of type int list
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         int -> int

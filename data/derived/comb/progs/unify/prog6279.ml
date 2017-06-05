@@ -1,9 +1,5 @@
 
-let rec mulByDigit i l =
-  let (cout,res) =
-    match l with
-    | [] -> (0, [])
-    | h::t ->
-        let (cin,acc) = mulByDigit i t in
-        let sum = (i * h) + cin in ((sum / 10), ((sum mod 10) :: acc)) in
-  if cout > 0 then cout :: res else res;;
+let pipe fs =
+  let f a x f' a x = x a in let base y = y in List.fold_left f base fs;;
+
+let _ = pipe [] 3;;

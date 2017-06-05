@@ -1,5 +1,5 @@
-Characters 93-99:
-  digitsOfInt (catLists (n/10) [(n mod 10);]);;
-                        ^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 14-28:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                ^^^^^^^^^^^^^^
+Error: This expression should not be a function, the expected type is
+int

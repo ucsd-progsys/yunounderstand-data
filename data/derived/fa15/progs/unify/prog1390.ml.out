@@ -1,5 +1,6 @@
-Characters 542-546:
-  sin(eval (e1,x,y)eval + (e2,x,y) + eval (e3,x,y)/.pi);;
-      ^^^^
-Error: This function has type expr * float * float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

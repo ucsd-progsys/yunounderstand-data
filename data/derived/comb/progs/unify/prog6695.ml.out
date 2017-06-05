@@ -1,5 +1,5 @@
-Characters 21-24:
-  let _ = listReverse ["a"; "b"; "c"; "d"];;
-                       ^^^
+Characters 31-32:
+  let _ = stringOfList (fun x -> x) ["foo"];;
+                                 ^
 Error: This expression has type string but an expression was expected of type
-         'a list
+         'a -> string

@@ -1,5 +1,5 @@
-Characters 8-12:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-          ^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 340-363:
+  |Hoi(a,b) -> ("sin(pi*"^(exp a)^")")"/("("cos(pi*"^(exp b)")");;
+               ^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

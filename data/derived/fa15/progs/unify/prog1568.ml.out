@@ -1,5 +1,5 @@
-Characters 96-99:
-  | Sine(e) 		-> sin(pi *. eval(e))
-                               ^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 41-48:
+  let x = sumList digits n in
+          ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

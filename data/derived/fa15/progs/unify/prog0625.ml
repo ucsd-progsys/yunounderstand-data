@@ -1,8 +1,4 @@
 
-let rec clone x n =
-  if n <= 0 then [] else (let y = clone x (n - 1) in x :: y);;
+let pipe fs = let f a x y = x a in let base y = y in List.fold_left f base fs;;
 
-let padZero l1 l2 =
-  let x = List.length l1 in
-  let y = List.length l2 in
-  if x < y then ((clone 0 (y - x)), y) else (x, (clone 0 (x - y)));;
+let _ = pipe [(fun x  -> x + 3); (fun x  -> x + x)] 3;;

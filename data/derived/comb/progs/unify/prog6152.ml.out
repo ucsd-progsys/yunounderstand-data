@@ -1,5 +1,10 @@
-Characters 8-12:
-  let _ = pipe [] 3;;
-          ^^^^
-Error: This function has type int list -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 121-133:
+  | Sine e -> Printf.printf "sin(pi*%s)" !exprToString e
+                            ^^^^^^^^^^^^
+Error: This expression has type
+         ('a -> 'b, out_channel, unit, unit, unit, 'a -> 'b)
+         CamlinternalFormatBasics.fmt
+       but an expression was expected of type
+         ('a -> 'b, out_channel, unit, unit, unit, unit)
+         CamlinternalFormatBasics.fmt
+       Type 'a -> 'b is not compatible with type unit 

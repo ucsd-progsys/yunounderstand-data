@@ -1,2 +1,2 @@
 
-let pipe fs = let f a x a = a x in let base = fs in List.fold_left f base fs;;
+let rec sumHelper xs = match xs with | [] -> 0 | h::t -> (h *. h) :: t;;

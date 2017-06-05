@@ -146,6 +146,8 @@ let sampleExpr1 = Thresh(VarX,VarY,VarX,(Times(Sine(VarX),Cosine(Average(VarX,Va
 let _ = exprToString sampleExpr1 
 
 
+
+
 (*XXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -169,14 +171,11 @@ let rec eval (e,x,y) =
   match e with
     | VarX		      -> x
     | VarY		      -> y 
-    | Sine e'	      -> sin (pi*.eval (e',x,y))
-    | Cosine e'	      -> cos(pi*.eval (e',x,y))
-    | Average (e',e1)      -> (eval (e',x,y) +. eval (e1,x,y))/.2.0
-    | Times	(e',e1)	      -> eval (e',x,y) *. eval (e1,x,y)
-    | Thresh (e',e2,e3,e4) -> 
-        if((eval (e',x,y))<(eval(e2,x,y)))
-        then(eval (e3,x,y)) 
-        else(eval (e4,x,y))
+    | Sine e'	      -> sin (eval (e',x,y))
+    | Cosine e	      -> cos(pi * eval e)
+    | Average (e,e1)      -> (eval e + eval e1)/2
+    | Times	(e,e1)	      -> eval e * eval e2
+    | Thresh (e,e2,e3,e4) -> (e<e2 ? e3:e4)
 ;;
 
 let _ = eval (Sine(Average(VarX,VarY)),0.5,-0.5);;
@@ -212,28 +211,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXX
 *)
-let buildX()                       = VarX
-let buildY()                       = VarY
-let buildSine(e)                   = Sine(e)
-let buildCosine(e)                 = Cosine(e)
-let buildAverage(e1,e2)            = Average(e1,e2)
-let buildTimes(e1,e2)              = Times(e1,e2)
-let buildThresh(a,b,a_less,b_less) = Thresh(a,b,a_less,b_less)
 
-let rec build (rand, depth) = 
-  if depth = 0 then
-    match rand(0,1) with
-      | 0	 -> buildX()
-      | 1	 -> buildY() 
-  else
-    match rand(2,6) with
-      | 2	 -> buildSine(build(rand, depth-1))
-      | 3	 -> buildCosine(build(rand, depth-1))
-      | 4      -> buildAverage(build(rand, depth-1), build(rand, depth-1))
-      | 5      -> buildTimes(build(rand, depth-1), build(rand, depth-1))
-      | 6      -> 
-          buildTimes(build(rand, depth-1), build(rand, depth-1),
-                     build(rand, depth-1), build(rand, depth-1))
+let rec build (rand, depth) = failwith "to be implemented"
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

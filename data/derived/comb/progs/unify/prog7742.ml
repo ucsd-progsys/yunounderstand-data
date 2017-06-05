@@ -1,6 +1,14 @@
 
-let rec fixpoint (f,b) = if not (b = (f b)) then fixpoint (f, (f b)) else f b;;
+let rec sumListHelper total xs =
+  match xs with | [] -> total | hd::tail -> sumListHelper (total + hd) tail;;
 
-let fixpoint (f,b) = if not (b = (f b)) then fixpoint (f, (f b)) else f b;;
+let rec digitsOfIntHelper n =
+  if n < 1
+  then []
+  else (digitsOfIntHelper ((n - (n mod 10)) / 10)) @ [n mod 10];;
 
-let fixpoint (f,b) = if not (b = (f b)) then fixpoint ((f b), b) else f b;;
+let rec digitsOfInt n = digitsOfIntHelper n;;
+
+let rec sumList xs = sumListHelper 0 xs;;
+
+let rec additivePersistence n = if n >= 10 then sumList (digitsOfInt n);;

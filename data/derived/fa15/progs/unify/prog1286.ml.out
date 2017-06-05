@@ -1,5 +1,6 @@
-Characters 76-78:
-  | Sine e -> sin(pi*e)
-                  ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 14-20:
+  let _ = del 4 testee;;
+                ^^^^^^
+Error: This expression has type int set
+       but an expression was expected of type string set
+       Type int is not compatible with type string 

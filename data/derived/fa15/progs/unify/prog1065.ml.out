@@ -1,6 +1,5 @@
-Characters 69-86:
-  n'  ->  digitsOfInt(n/10) :: [n' mod 10];;
-          ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 185-186:
+  | Average (e1,e2) -> ((eval(e1,x,y)+.eval(e2,x,y))/.2)
+                                                      ^
+Error: This expression has type int but an expression was expected of type
+         float

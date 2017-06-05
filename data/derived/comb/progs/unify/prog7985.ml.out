@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 14-15:
+  let _ = build(1, 0);;
+                ^
+Error: This expression has type int but an expression was expected of type
+         int * int -> int

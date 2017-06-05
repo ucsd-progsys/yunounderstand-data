@@ -1,5 +1,5 @@
-Characters 153-156:
-  | Sine sin		    -> Printf.printf "sin(%s)" sin
-                                             ^^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 31-32:
+  explode w = w;;
+              ^
+Error: This expression has type string but an expression was expected of type
+         char list

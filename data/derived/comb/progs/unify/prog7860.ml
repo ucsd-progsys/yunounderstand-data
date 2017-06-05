@@ -1,8 +1,11 @@
 
-let rec wwhile (f,b) =
-  let (b',c') = f b in
-  match c' with | false  -> (b', c') | true  -> wwhile (f, b');;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ x) in
+      let base = h in let l = t in List.fold_left f base l;;
 
-let fixpoint (f,b) =
-  wwhile
-    (let x = f b in match x with | b -> (x, false) | _ -> ((x, true), b));;
+let stringOfList f l = "[" ^ ((sepConcat "; " (List.map f l)) ^ "]");;
+
+let rec clone x n = stringOfList x n List.map x n;;

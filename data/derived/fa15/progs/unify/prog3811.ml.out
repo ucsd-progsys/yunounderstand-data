@@ -1,5 +1,0 @@
-Characters 65-82:
-  | (h::t) -> listReverseHelper (h::l) t in listReverseHelper [] listReverse;;
-              ^^^^^^^^^^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.

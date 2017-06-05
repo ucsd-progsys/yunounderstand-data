@@ -1,5 +1,5 @@
-Characters 54-56:
-  let fixpoint (f,b) = let f' = (f, f b = b) in wwhile (f',b);;
-                                                        ^^
-Error: This expression has type ('a -> 'a) * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 578-590:
+  | Square (e1) -> "(" ^ exprToString ^ ")^2";;
+                         ^^^^^^^^^^^^
+Error: This expression has type expr -> string
+       but an expression was expected of type string

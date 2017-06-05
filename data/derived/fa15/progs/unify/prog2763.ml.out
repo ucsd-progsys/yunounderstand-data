@@ -1,5 +1,5 @@
-Characters 29-35:
-  let fixpoint (f,b) = wwhile (fu f b,b);;
-                               ^^^^^^
-Error: This expression has type ('a -> 'a) * bool
-       but an expression was expected of type 'b -> 'b * bool
+Characters 196-197:
+  if value > 9 then [(1,value-10)]@a 
+                                   ^
+Error: This expression has type int * 'a
+       but an expression was expected of type (int * int) list

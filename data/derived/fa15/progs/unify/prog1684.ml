@@ -1,14 +1,23 @@
 
-let rec helper (rand,depth) =
-  let x = rand (0, 6) in
-  match depth with
-  | 0 -> (match x with | (0,1,2,3) -> "0" | _ -> "1")
-  | _ ->
-      (match x with
-       | 0 -> "0" ^ (helper (rand, (depth - 1)))
-       | 1 -> "1" ^ (helper (rand, (depth - 1)))
-       | 2 -> "2" ^ (helper (rand, (depth - 1)))
-       | 3 -> "3" ^ (helper (rand, (depth - 1)))
-       | 4 -> "4" ^ (helper (rand, (depth - 1)))
-       | 5 -> "5" ^ (helper (rand, (depth - 1)))
-       | _ -> "6" ^ (helper (rand, (depth - 1))));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
+
+let buildSine e = Sine e;;
+
+let pi = 4.0 *. (atan 1.0);;
+
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine e -> sin (pi *. (buildSine e))
+  | Cosine e -> cos (pi *. e)
+  | Average (e1,e2) -> (e1 +. e2) /. 2
+  | Times (e1,e2) -> e1 *. e2
+  | Thresh (a,b,a_less,b_less) -> a < (b ?a_less:b_less);;

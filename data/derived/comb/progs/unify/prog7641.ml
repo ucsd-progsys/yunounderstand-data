@@ -1,9 +1,11 @@
 
-let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  if (List.length l1) < (List.length l2)
-  then (clone "0" ((List.length l2) - (List.length l1))) :: l1
-  else (clone "0" ((List.length l1) - (List.length l2))) :: l2;;
-
-let _ = padZero [9; 9] [1; 0; 0; 2];;
+let rec eval (e,x,y) = match (e, x, y) with | VarX  -> x | VarY  -> y;;

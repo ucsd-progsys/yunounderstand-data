@@ -1,5 +1,4 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type 'a -> ('a -> 'b) -> 'b
-       but an expression was expected of type int
+Characters 123-124:
+  |Average (e,e) -> "Average"
+              ^
+Error: Variable e is bound several times in this matching

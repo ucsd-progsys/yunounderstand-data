@@ -1,5 +1,5 @@
-Characters 105-108:
-  | h::t  -> if (k,d) = l then d else assoc (d,k,[t]);;
-                                                 ^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b * 'c
+Characters 102-105:
+  | _ -> additivePersistence(sumList(n));;
+                                    ^^^
+Error: This expression has type int but an expression was expected of type
+         int list

@@ -1,5 +1,5 @@
-Characters 276-279:
-  res + carry
-  ^^^
+Characters 239-254:
+  removeZero (add (padZero l1 l2));;
+                  ^^^^^^^^^^^^^^^
 Error: This expression has type int list
-       but an expression was expected of type int
+       but an expression was expected of type 'a * 'b

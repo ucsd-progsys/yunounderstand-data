@@ -1,5 +1,5 @@
-Characters 137-146:
-  if r = 0 then buildSine build(r, d-1)
-                ^^^^^^^^^
-Error: This function has type expr -> expr
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 86-87:
+  in wwhile(gs, b);;
+                ^
+Error: This expression has type bool but an expression was expected of type
+         int

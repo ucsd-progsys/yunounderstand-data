@@ -1,5 +1,6 @@
-Characters 110-124:
-  let seen' = if!(List.mem = h) then h::seen else seen in
-                 ^^^^^^^^^^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a ref
+Characters 262-266:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int list * 'a list
+       but an expression was expected of type int * int list
+       Type int list is not compatible with type int 

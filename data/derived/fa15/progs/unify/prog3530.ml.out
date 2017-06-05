@@ -1,5 +1,5 @@
-Characters 76-77:
-  let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit(i - 1)(l)) else 0;;
-                                                                              ^
-Error: This expression has type int but an expression was expected of type
-         int list
+Characters 8-20:
+  let _ = exprToString Power(sampleExpr5, sampleExpr5);;
+          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

@@ -10,13 +10,8 @@ let rec removeZero l =
 
 let bigAdd l1 l2 =
   let add (l1,l2) =
-    let f a x =
-      let (j,k) = x in
-      let (l,m) = a in
-      if ((j + k) + l) > 9
-      then (1, (((j + k) + l) - 10))
-      else (0, ((j + k) + l)) in
-    let base = (0, []) in
+    let f a x = match a with | [] -> [] | h::t -> let (j,k) = x in [0] in
+    let base = [0] in
     let args = List.combine (List.rev l1) (List.rev l2) in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;

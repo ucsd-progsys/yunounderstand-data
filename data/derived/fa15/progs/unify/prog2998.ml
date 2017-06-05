@@ -1,2 +1,6 @@
 
-let pipe fs = let f a x n = a in let base n = n in List.fold_left f base fs;;
+let rec fixpoint (f,b) = if not (b = (f b)) then fixpoint (f, (f b)) else f b;;
+
+let fixpoint (f,b) = if not (b = (f b)) then fixpoint (f, (f b)) else f b;;
+
+let fixpoint (f,b) = if not (b = (f b)) then fixpoint ((f b), b) else f b;;

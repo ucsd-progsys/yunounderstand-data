@@ -1,5 +1,5 @@
-Characters 94-117:
-  | l   -> sepConcat( " ", List.map(f, l) );;
-                    ^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 106-113:
+  | n -> if( n < 0 ) then (clone 0 -n @ l1, l2)  else (clone 0 n @ l2, l1);;
+                           ^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type int

@@ -1,7 +1,10 @@
 
-let rec clone x n = if n < 1 then [] else x :: (clone x (n - 1));;
-
-let padZero l1 l2 =
-  let difference1 = (List.length l1) - (List.length l2) in
-  let difference2 = (List.length l2) - (List.length l1) in
-  if difference1 > 0 then (((clone 0 difference1) :: l1), l2);;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let rest' = List.rev t in
+        let seen' = seen in
+        if (List.mem h rest') = false then seen' helper (seen', rest') in
+  List.rev (helper ([], l));;

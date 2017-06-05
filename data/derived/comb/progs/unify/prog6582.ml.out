@@ -1,5 +1,5 @@
-Characters 182-183:
-  let args = List.combine (List.rev (l1@0)) (List.rev (l2@0)) in
-                                        ^
+Characters 139-165:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         'a * 'b

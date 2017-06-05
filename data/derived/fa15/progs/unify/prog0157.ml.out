@@ -1,5 +1,5 @@
-Characters 72-77:
-  total + mulByDigit i-1 l;;
-  ^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 29-51:
+  let fixpoint (f,b) = wwhile ((fun f x -> (x = f x)),b);;
+                               ^^^^^^^^^^^^^^^^^^^^^^
+Error: This function expects too many arguments, it should have type
+'a -> 'a * bool

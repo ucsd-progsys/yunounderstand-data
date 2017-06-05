@@ -1,5 +1,5 @@
-Characters 29-38:
-  let stringOfList f l = "[" ^ sepConcat List.map f l ^ "]";;
-                               ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 236-239:
+  | Average (x, y) -> "(("^ exprToString e ^ "+" ^ exprToString e ^ ")"/2")"
+                                                                    ^^^
+Error: This expression has type string but an expression was expected of type
+         int

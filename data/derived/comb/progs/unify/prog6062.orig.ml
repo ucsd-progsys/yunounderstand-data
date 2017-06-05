@@ -133,52 +133,56 @@ let _ = removeZero [0;0;0;1;0;0;2]
 let _ = removeZero [9;9]
 let _ = removeZero [0;0;0;0]
 
-
-
+(*
+XXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XX
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*)
 
 let bigAdd l1 l2 = 
   let add(l1,l2) =
-    let f a x =  let (i,j) = x in match a with 
-        |(c,d) ->  if(i + j + c) > 9 then (1,((i + j + c)mod 10)::d)
-            else (0,((i + j + c)mod 10)::d)
+    let f a x =  match a with 
+      |(hd::tl) -> ((fst x + snd x + hd )/10)::((fst x + snd x + hd )mod 10)::tl
+      |_ -> ((fst x + snd x )/10)::((fst x + snd x) mod 10) 
     in
-    let base = (0,[])
+    let base = []
     in
-    let args = ( List.rev (List.combine l1 l2)) @ [(0,0)]
+    let args = List.combine l1 l2
     in
-    let (_,res) = 
-      List.fold_left f base args in res 
+      List.fold_left f base args
   in 
     removeZero(add(padZero l1 l2 ))
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = bigAdd [9;9] [1;0;0;2];;
 let _ = bigAdd [9;9;9;9] [9;9;9];; 
-let _ = bigAdd [9;9] [1;0] 
 
 
 
 
-let rec mulByDigit i l = if i > 0 then bigAdd l (mulByDigit (i-1) l) else []
+let rec mulByDigit i l = failwith "to be implemented"
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = mulByDigit 9 [9;9;9;9]
-let _ = mulByDigit 3 [9;9]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let helper l = int_ofString (sepConcat "" (List.map string_of_int l))
-
-let _ = helper [9;9;9;9;9]
-
+*)
 
 let bigMul l1 l2 = 
-  let f a x = let (s,t) = x in match a with 
-      |(r,v) -> let sum = mulByDigit (l1 int list to int) s in if (sum + r) > 9 then ((sum + r) / 10,((sum+r) mod 10)::v) else  (0, ((sum+r) mod 10)::v)
-in
-let base = (0,[]) in
-let args = List.rev(List.combine l2 l2) in
-let (_, res) = List.fold_left f base args in res
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
+  let (_, res) = List.fold_left f base args in
+    res
 
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

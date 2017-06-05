@@ -1,5 +1,5 @@
-Characters 29-38:
-  let stringOfList f l = "[" ^ sepConcat"; " List.map (f, l) ^ "]";;
-                               ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 250-254:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int * int
+       but an expression was expected of type int list

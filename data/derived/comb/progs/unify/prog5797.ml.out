@@ -1,6 +1,5 @@
-Characters 184-188:
-  let (carry, res) = List.fold_left f base args in
-                                           ^^^^
-Error: This expression has type int list
-       but an expression was expected of type int list list
-       Type int is not compatible with type int list 
+Characters 55-63:
+  | h::t -> ((10 * x) *. h) @ tenEx (x + 1) t;;
+             ^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         float

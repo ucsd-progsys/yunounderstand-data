@@ -1,5 +1,6 @@
-Characters 69-72:
-  | (h,t) -> if t = false then f h;;
-                               ^^^
+Characters 76-79:
+  else f b;;
+       ^^^
 Error: This expression has type 'a * bool
-       but an expression was expected of type unit
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * bool

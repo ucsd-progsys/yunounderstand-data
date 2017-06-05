@@ -1,6 +1,5 @@
-Characters 98-102:
-  wwhile ((f'),b);;
-          ^^^^
-Error: This expression has type ('a -> 'a) -> 'a -> 'a * bool
-       but an expression was expected of type ('a -> 'a) -> ('a -> 'a) * bool
-       Type 'a -> 'a * bool is not compatible with type ('a -> 'a) * bool 
+Characters 112-129:
+  let seen' = if List.mem (h;seen)
+                 ^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list -> bool
+       but an expression was expected of type bool

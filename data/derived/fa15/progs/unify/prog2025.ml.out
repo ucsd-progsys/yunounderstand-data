@@ -1,5 +1,5 @@
-Characters 42-45:
-  let f a x = bigAdd a::[0] (mulByDigit x l1) in
-                        ^^^
-Error: This expression has type int list
-       This is not a function; it cannot be applied.
+Characters 35-36:
+  let f a x = a + x**2 in
+                     ^
+Error: This expression has type int but an expression was expected of type
+         float

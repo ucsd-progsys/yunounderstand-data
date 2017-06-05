@@ -1,5 +1,0 @@
-Characters 122-138:
-  then padZero 0::l1 l2
-       ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'b list * 'c list

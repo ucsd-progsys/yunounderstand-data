@@ -1,5 +1,0 @@
-Characters 251-252:
-  |Thresh(a,b,a_less,b_less)->(a<b ? a_less );;
-                                 ^
-Error: This expression has type expr
-       This is not a function; it cannot be applied.

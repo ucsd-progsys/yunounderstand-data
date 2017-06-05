@@ -1,0 +1,5 @@
+Characters 92-100:
+  if numZeros = 0 then (l1, l2);;
+                       ^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type unit

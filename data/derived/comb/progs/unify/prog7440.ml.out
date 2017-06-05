@@ -1,5 +1,6 @@
-Characters 145-160:
-  | Cosine e' -> cos (3.142 *. exprToString e')
-                               ^^^^^^^^^^^^^^^
-Error: This expression has type string but an expression was expected of type
-         float
+Characters 60-62:
+  | (h1,h2)::t -> if k = h2 then h1
+                         ^^
+Error: This expression has type 'a but an expression was expected of type
+         ('b * 'a) list
+       The type variable 'a occurs inside ('b * 'a) list

@@ -1,5 +1,5 @@
-Characters 62-69:
-  | x :: y -> x + sumList ;;
-                  ^^^^^^^
-Error: This expression has type int list -> int
-       but an expression was expected of type int
+Characters 77-79:
+  | Sine e' -> sin(pi * eval e')
+                   ^^
+Error: This expression has type float but an expression was expected of type
+         int

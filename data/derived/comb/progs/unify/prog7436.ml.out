@@ -1,5 +1,5 @@
-Characters 80-85:
-  | Sine e' -> sin (3.142 * exprToString e')
-                    ^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 103-109:
+  else ((sumList(digitsOfInt x)) + loop y) in
+                                   ^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int

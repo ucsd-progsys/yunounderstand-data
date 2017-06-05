@@ -1,5 +1,5 @@
-Characters 133-135:
-  then (clone (0::l1) l2)
-                      ^^
+Characters 118-120:
+  l1^ "],[" ^ (pad@l2)
+  ^^
 Error: This expression has type 'a list
-       but an expression was expected of type int
+       but an expression was expected of type string

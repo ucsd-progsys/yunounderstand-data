@@ -7,7 +7,23 @@ type expr =
   | Average of expr* expr
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr
-  | Sqrt of expr
-  | Op of expr* expr* expr;;
+  | Power of expr* expr
+  | Log of expr;;
 
-let buildSqrt (a,b) = Sqrt (a, b);;
+let rec exprToString e =
+  match e with
+  | VarX  -> "x"
+  | VarY  -> "y"
+  | Sine n -> "sin(pi*" ^ ((exprToString n) ^ ")")
+  | Cosine n -> "cos(pi*" ^ ((exprToString n) ^ ")")
+  | Average (x,y) ->
+      "((" ^ ((exprToString x) ^ ("+" ^ ((exprToString y) ^ ")/2)")))
+  | Times (x,y) -> (exprToString x) ^ ("*" ^ (exprToString y))
+  | Thresh (x,y,z,w) ->
+      "(" ^
+        ((exprToString x) ^
+           ("<" ^
+              ((exprToString y) ^
+                 ("?" ^ ((exprToString z) ^ (":" ^ ((exprToString w) ^ ")")))))))
+  | Power (x,y) -> (exprToString x) ^ ("**" (exprToString y))
+  | Log n -> "log " ^ (exprToString n);;

@@ -1,5 +1,5 @@
-Characters 532-547:
-  | 5      -> buildCotanget(rand, depth-1)
-                           ^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 73-83:
+  (n mod 10) @ digitsOfIntHelper (n - (n mod 10)/10)
+  ^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

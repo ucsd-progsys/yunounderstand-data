@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 48);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 71-104:
+  |0 -> buildSine(build(rand, depth - 1))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         unit

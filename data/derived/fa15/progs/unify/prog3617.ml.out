@@ -1,6 +1,0 @@
-Characters 143-147:
-  let seen' = if List.mem h seen then seen else h@seen in
-                                                  ^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type 'a list
-       The type variable 'a occurs inside 'a list

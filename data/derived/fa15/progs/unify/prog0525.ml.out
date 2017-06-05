@@ -1,5 +1,5 @@
-Characters 62-69:
-  | x :: y -> x + sumList ;;
-                  ^^^^^^^
-Error: This expression has type int list -> int
-       but an expression was expected of type int
+Characters 12-13:
+  let _ = tan 1;;
+              ^
+Error: This expression has type int but an expression was expected of type
+         float

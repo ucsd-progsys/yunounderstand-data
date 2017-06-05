@@ -1,5 +1,5 @@
-Characters 84-90:
-  else (n mod 10) :: return
-                     ^^^^^^
-Error: This expression has type 'a list
-       This is not a function; it cannot be applied.
+Characters 23-31:
+  let stringOfList f l = List.map sepConcat ";" l;;
+                         ^^^^^^^^
+Error: This function has type ('a -> 'b) -> 'a list -> 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

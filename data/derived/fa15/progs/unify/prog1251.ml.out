@@ -1,5 +1,5 @@
-Characters 13-15:
-  (List.mem 1 s0, List.mem 2 s0);;
-              ^^
-Error: This expression has type (bool * bool) set
-       but an expression was expected of type int list
+Characters 47-82:
+  if n > 0 then n mod 10 + additivePersistence n/10;;
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         unit

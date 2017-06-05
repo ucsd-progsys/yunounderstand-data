@@ -1,4 +1,22 @@
 
-let rec sumList n =
-  let len = Array.length in
-  if len == 1 then hd n else (hd n) + (sumList (tl n));;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
+
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine e -> sin (eval (e, x, y))
+  | Cosine e -> cos (eval (e, x, y))
+  | Average (e,f) -> ((eval (e, x, y)) +. (eval (f, x, y))) /. 2.0
+  | Times (e,f) -> (eval (e, x, y)) * (eval (f, x, y))
+  | Thresh (e,f,g,h) ->
+      (match (eval (e, x, y)) < (eval (f, x, y)) with
+       | true  -> eval (g, x, y)
+       | false  -> eval (h, x, y));;

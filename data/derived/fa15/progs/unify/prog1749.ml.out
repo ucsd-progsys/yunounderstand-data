@@ -1,5 +1,5 @@
-Characters 184-185:
-  let args = List.combine ((List.rev l1)::0) ((List.rev l2)::0) in
-                                          ^
-Error: This expression has type int but an expression was expected of type
-         'a list list
+Characters 138-164:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type 'a * 'b

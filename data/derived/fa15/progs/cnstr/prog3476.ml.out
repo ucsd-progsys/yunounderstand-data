@@ -1,5 +1,0 @@
-Characters 368-374:
-  | SqDist(a, b)    -> (eval(a, x, y) ** 2.0) +. (eval(b, x, y) ** 2.0);;
-    ^^^^^^
-Error: This variant pattern is expected to have type expr
-       The constructor SqDist does not belong to type expr

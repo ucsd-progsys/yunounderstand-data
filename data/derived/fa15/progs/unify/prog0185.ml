@@ -1,7 +1,3 @@
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
-
-let palindrome w = if w = (listReverse w) then true else false;;
-
-let _ = palindrome "malayalam";;
+let rec additivePersistence n =
+  n = ((n mod 10) + (additivePersistence (n / 10)));;

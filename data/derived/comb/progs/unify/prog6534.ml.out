@@ -1,6 +1,5 @@
-Characters 63-64:
-  |h::t->(h*h) + helper(a,x);;
-                        ^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a * 'b
+Characters 62-68:
+  |buildY->buildY()
+           ^^^^^^
+Error: This expression has type expr
+       This is not a function; it cannot be applied.

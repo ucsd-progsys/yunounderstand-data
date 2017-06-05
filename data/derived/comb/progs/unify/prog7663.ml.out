@@ -1,5 +1,5 @@
-Characters 297-315:
-  removeZero (add ((padZero l1 l2) ));;
-                  ^^^^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int list * int list
+Characters 79-81:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type int -> 'a
+       but an expression was expected of type ('a -> 'a) list

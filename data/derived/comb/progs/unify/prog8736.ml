@@ -1,2 +1,3 @@
 
-let getTail i = match i with | [] -> "o" | h::t -> t;;
+let pipe fs =
+  let f a x x = x a in let base fs = fs in List.fold_left f base fs;;

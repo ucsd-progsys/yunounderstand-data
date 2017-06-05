@@ -70,13 +70,14 @@ let _ = sepConcat "" ["a";"b";"c";"d";"e"]
 let _ = sepConcat "X" ["hello"]
 
 
-(*X
-XXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XX*)
+
+let stringOfList f l = List.map(sepConcat(f, l), l)
+
+let _ = stringOfList string_of_int [1;2;3;4;5;6];; 
+let _ = stringOfList (fun x -> x) ["foo"];;
+let _ = stringOfList (stringOfList string_of_int) [[1;2;3];[4;5];[6];[]];;
+
 
 
 
@@ -85,16 +86,15 @@ XX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
-let rec clone x n = match n with
-  | 0 -> []
-  | n -> x::clone (x (n-1))
+let rec clone x n = failwith "to be implemented" 
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = clone 3 5;;
-let _ = clone "foo" 2;; 
-let _ = clone clone (-3);;
+XXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 let padZero l1 l2 = failwith "to be implemented"
 

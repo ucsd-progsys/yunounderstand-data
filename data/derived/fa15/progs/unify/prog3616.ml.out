@@ -1,5 +1,6 @@
-Characters 31-42:
-  explode w = listReverse explode w;;
-              ^^^^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 46-49:
+  let fixpoint (f,b) = wwhile ((fun x -> if b  f(b) then b else f(b)),b);;
+                                                ^^^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'b
+       The type variable 'b occurs inside 'a -> 'b -> 'c

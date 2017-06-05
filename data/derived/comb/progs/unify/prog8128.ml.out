@@ -1,5 +1,6 @@
-Characters 79-80:
-  |h::t -> [remainder i t] @ mulByDigit i t;;
-                        ^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 70-74:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type 'a -> 'b -> 'c
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside 'a -> 'b -> 'c

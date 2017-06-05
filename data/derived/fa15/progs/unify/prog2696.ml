@@ -1,24 +1,24 @@
 
-let rec clone x n = if n > 0 then List.append [x] (clone x (n - 1)) else [];;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let padZero l1 l2 =
-  ((List.append (clone 0 ((List.length l2) - (List.length l1))) l1),
-    (List.append (clone 0 ((List.length l1) - (List.length l2))) l2));;
+let pi = 4.0 *. (atan 1.0);;
 
-let rec removeZero l =
-  match l with
-  | [] -> []
-  | _ -> let h::t = l in (match h with | 0 -> removeZero t | _ -> l);;
-
-let bigAdd l1 l2 =
-  let add (l1,l2) =
-    let f a x =
-      let lr1 = List.rev l1 in
-      let lr2 = List.rev x in
-      let h1::t1 = lr1 in
-      let h2::t2 = lr2 in
-      if (h1 + h2) > 9 then (1, [(h1 + h2) - 10]) else (0, [h1 + h2]) in
-    let base = (0, []) in
-    let args = List.rev (List.combine l1 l2) in
-    let (_,res) = List.fold_left f base args in res in
-  removeZero (add (padZero l1 l2));;
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> 1.0 *. x
+  | VarY  -> 1.0 *. y
+  | Sine e' -> sin (pi *. (eval (e', x, y)))
+  | Cosine e' -> cos (pi *. (eval (e', x, y)))
+  | Average (e1,e2) -> ((eval (e1, x, y)) + (eval (e2, x, y))) / 2.0
+  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
+  | Thresh (a,b,c,d) ->
+      if (eval (a, x, y)) < (eval (b, x, y))
+      then eval (c, x, y)
+      else eval (d, x, y);;

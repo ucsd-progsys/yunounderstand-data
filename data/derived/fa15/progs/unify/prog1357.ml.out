@@ -1,5 +1,5 @@
-Characters 133-138:
-  | _ when n > 0 -> digitsOfInt r @ digit;;
-                                    ^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 168-194:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type (int * int) list
+       but an expression was expected of type 'a * 'b

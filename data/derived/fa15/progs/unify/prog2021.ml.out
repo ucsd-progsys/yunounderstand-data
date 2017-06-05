@@ -1,5 +1,5 @@
-Characters 42-43:
-  let f a x = bigAdd a::0 (mulByDigit x l1) in
-                        ^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 426-428:
+  | Abs v -> if eval(v, x, y) < 0.0 then eval(v, x, y) *. -1 else eval(v, x, y)
+                                                          ^^
+Error: This expression has type int but an expression was expected of type
+         float

@@ -1,10 +1,12 @@
 
-let rec mulByDigit i l =
-  if l = []
-  then []
-  else
-    (let (h::[])::t = l in
-     let (h2::[])::t2 = t in
-     match t with
-     | [] -> [h]
-     | _ -> [(h * i) / 10] @ [(mulByDigit i [h2 + (h mod 10)]) @ t2]);;
+let sqsum xs =
+  let f a x = let a::xs = xs in a * a in
+  let base = 0 in List.fold_left f base xs;;
+
+let sqsum xs =
+  let f a x = let a::x = x in (a * a) + (sqsum x) in
+  let base = 0 in List.fold_left f base xs;;
+
+let sqsum xs =
+  let f a x = let a::x = x in (a * a) + (sqsum x) in
+  let base = 0 in List.fold_left f base xs;;

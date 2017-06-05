@@ -1,8 +1,7 @@
 
-let rec padZero l1 l2 =
-  if (List.length l1) < (List.length l2)
-  then (padZero 0) :: (l1 l2)
-  else
-    if (List.length l1) > (List.length l2)
-    then (padZero l1 0) :: l2
-    else (l1, l2);;
+let rec sepConcat sep sl =
+  match sl with
+  | [] -> ""
+  | h::t ->
+      let f a x = a ^ (sep ^ t) in
+      let base = "" in let l = sl in List.fold_left f base l;;

@@ -1,5 +1,0 @@
-Characters 68-73:
-  | Sine e' -> sin (3.142 * e')
-                    ^^^^^
-Error: This expression has type float but an expression was expected of type
-         int

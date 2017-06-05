@@ -1,5 +1,5 @@
-Characters 160-170:
-  |h'::t' -> if List.length t' > 0 then mulByDigit @ [carry h i + remainder h' i] else [remainder h i];;
-                                        ^^^^^^^^^^
-Error: This expression has type int -> 'a list -> 'b list
-       but an expression was expected of type 'c list
+Characters 23-26:
+  let stringOfList f l = "[" sepConcat "" (List.map f l) ^ "]";;
+                         ^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

@@ -1,5 +1,5 @@
-Characters 109-156:
-  (fun (x,y) -> (x + (Random.State.int s (y-x))))
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This function has type int * int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 85-88:
+  in (g b,b));;
+      ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -1,5 +1,5 @@
-Characters 333-338:
-  if i * h > 10 then mulByDigit i t' @ [carry i h' + remainder h' i] @ [remainder h i] else i * h;;
-                                                                                            ^^^^^
+Characters 23-26:
+  List.map string_of_int 123;;
+                         ^^^
 Error: This expression has type int but an expression was expected of type
          int list

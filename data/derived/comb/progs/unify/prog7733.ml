@@ -1,19 +1,15 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine e -> "sin(pi*" ^ ((exprToString e) ^ ")")
-  | Cosine e -> "cos(pi*" ^ ((exprToString e) ^ ")")
-  | Average (x,y) ->
-      "((" ^ ((exprToString e) ^ ("+" ^ ((exprToString e) ^ ")/2)")))
-  | Times (x,y) -> exprToString e "*" exprToString e;;
+let padZero l1 l2 =
+  if (List.length l1) < (List.length l2)
+  then (clone 0 ((List.length l2) - (List.length l1))) @ l1
+  else (clone 0 ((List.length l1) - (List.length l2))) @ l2;;
+
+let bigMul l1 l2 =
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args =
+    ((padZero l1 l2),
+      (if (List.length l1) >= (List.length l2) then l1 else l2)) in
+  let (_,res) = List.fold_left f base args in res;;

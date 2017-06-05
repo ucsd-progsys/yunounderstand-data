@@ -1,6 +1,5 @@
-Characters 62-78:
-  | hd:: tail -> listReverse tail :: hd;;
-                 ^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 51-60:
+  else [x] :: clone x n-1;;
+              ^^^^^^^^^
+Error: This expression has type 'a list list
+       but an expression was expected of type int

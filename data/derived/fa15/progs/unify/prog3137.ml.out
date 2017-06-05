@@ -1,5 +1,7 @@
-Characters 580-594:
-  | SumInts (expr1, expr2) -> Printf.sprintf"(%s*(%s+1)/2)" 
-            ^^^^^^^^^^^^^^
-Error: This pattern matches values of type 'a * 'b
-       but a pattern was expected which matches values of type expr
+Characters 29-37:
+  let fixpoint (f,b) = wwhile ((helper), b);;
+                               ^^^^^^^^
+Error: This expression has type ('a -> 'b) * 'a * 'b -> 'b * bool
+       but an expression was expected of type
+         ('a -> 'b) * 'a * 'b -> (('a -> 'b) * 'a * 'b) * bool
+       The type variable 'b occurs inside ('a -> 'b) * 'a * 'b

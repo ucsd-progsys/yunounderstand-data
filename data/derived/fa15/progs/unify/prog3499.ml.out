@@ -1,5 +1,5 @@
-Characters 93-100:
-  let f a x = a^sep^sepConcat(sep,x) in
-                             ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 58-69:
+  else append digitsOfInt(n/10);;
+              ^^^^^^^^^^^
+Error: This expression has type int -> int list
+       but an expression was expected of type 'a list

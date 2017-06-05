@@ -1,5 +1,5 @@
-Characters 88-89:
-  let f a x = a ^ sep ^ t in
-                        ^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 241-281:
+  |4 -> buildAverage build(rand,d),build(rand,d)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type expr

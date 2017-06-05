@@ -1,6 +1,4 @@
 
-let rec assoc (d,k,l) =
-  let h::t = l in
-  if h = []
-  then d
-  else (let (x,y) = h in if x = k then y else assoc (d, k, t));;
+let sqsum xs =
+  let f a x = match x with | [] -> a | x::t -> x * x in
+  let base = [] in List.fold_left f base xs;;

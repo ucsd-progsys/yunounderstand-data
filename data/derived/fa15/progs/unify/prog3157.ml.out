@@ -1,5 +1,5 @@
-Characters 140-149:
-  if numZeros > 0 then [l1, listZeros@l2]
-                            ^^^^^^^^^
-Error: This expression has type int -> (int * int) list
-       but an expression was expected of type 'a list
+Characters 167-171:
+  let (carry, res) = List.fold_left f base args in
+                                      ^^^^
+Error: This expression has type int * 'a list
+       but an expression was expected of type int list list

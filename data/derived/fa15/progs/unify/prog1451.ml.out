@@ -1,5 +1,5 @@
-Characters 234-235:
-  | Average (e1, e2)        -> ( eval(e1,x,y) +. eval(e2,x,y) ) /. 2
-                                                                   ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 95-111:
+  (l1,clone(0,ll1-ll2) @ l2)
+      ^^^^^^^^^^^^^^^^
+Error: This expression has type int -> (int * int) list
+       but an expression was expected of type 'a list

@@ -133,35 +133,33 @@ let _ = removeZero [0;0;0;0]
 
 let bigAdd l1 l2 = 
   let add (l1, l2) = 
-    let f a x = 
-      let (j,k) = x in
-      let (carry, rest) = a in
-        ( (j+k+carry)/10, [(j+k+carry)mod 10]@rest)in
-    let base = (0,[]) in
-    let args = List.combine (List.rev l1) (List.rev l2) in
-    let (car, res) = List.fold_left f base args in
-      [car]@res
+    let f a x = failwith "to be implemented" in
+    let base = failwith "to be implemented" in
+    let args = failwith "to be implemented" in
+    let (_, res) = List.fold_left f base args in
+      res
   in 
     removeZero (add (padZero l1 l2))
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+*)
 
 
-let _ = bigAdd [9;9] [1;0;0;2];;
-let _ = bigAdd [9;9;9;9] [9;9;9];; 
+let rec mulByDigit i l = match l with
+  | [] -> []
+  | h::t -> let x = (h*i) mod 10 in
+      let k = (h*i)/10 in
+        if k = 0 then k + mulByDigit i t else [x]@ k + mulByDigit i t;;
 
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
-let rec mulByDigit i l = if i = 0 then [] else
-    bigAdd l mulByDigit((i-1) l);;
-
-
-
-let _ = mulByDigit 3[2;2]
-
-let _ = mulByDigit 9 [9;9;9;9]
-
-
+*)
 
 let bigMul l1 l2 = 
   let f a x = failwith "to be implemented" in

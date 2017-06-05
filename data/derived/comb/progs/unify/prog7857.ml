@@ -1,2 +1,2 @@
 
-let rec digitsOfInt n = if n > 0 then (digitsOfInt (n / 10)) @ [];;
+let rec clone x n = "[" ^ ((fun a  -> b) ^ ((List.combine x n) ^ "]"));;

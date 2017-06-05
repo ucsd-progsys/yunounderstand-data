@@ -1,5 +1,5 @@
-Characters 30-38:
-  let _ = lookup "z" [("a", 1); ("b", 2), ("a", 10)];;
-                                ^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 61-68:
+  h + sumList;;
+      ^^^^^^^
+Error: This expression has type int list -> 'a list
+       but an expression was expected of type int

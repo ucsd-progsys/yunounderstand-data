@@ -1,0 +1,5 @@
+Characters 145-160:
+  | Cosine cos		    -> "cos(pi*"^ (eval(cos,x,y)) ^")" 
+                                  ^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         string

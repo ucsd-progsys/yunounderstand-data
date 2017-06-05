@@ -23,8 +23,6 @@ let bigAdd l1 l2 =
     let base = (0, []) in
     let args =
       let combine (a,b) = a + b in
-      (List.map combine (List.rev (List.combine l1 l2))) @ [0] in
+      (List.map combine (List.rev (List.combine l1 l2))) @ [(0, 0)] in
     let (_,res) = List.fold_left f base args in res in
   removeZero (add (padZero l1 l2));;
-
-let rec mulByDigit i l = if i = 0 then [0] else bigAdd (l, l);;

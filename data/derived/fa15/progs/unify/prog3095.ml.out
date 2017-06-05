@@ -1,5 +1,5 @@
-Characters 202-223:
-  removeZero (add (padZero l1 l2));;
-             ^^^^^^^^^^^^^^^^^^^^^
+Characters 110-132:
+  ((addition(m,n)/10), (addition(m,n) mod 10) @ res) 
+                       ^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         int list
+         'a list

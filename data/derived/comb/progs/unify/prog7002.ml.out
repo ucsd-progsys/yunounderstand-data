@@ -1,5 +1,6 @@
-Characters 382-393:
-  | Trip(t,r,s)     -> (eval(t,x,y) mod 30.0) +. eval(r,x,y) mod eval(s,x,y);;
-                        ^^^^^^^^^^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 156-158:
+  in wwhile(go, b);;
+            ^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

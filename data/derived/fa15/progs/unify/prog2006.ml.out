@@ -1,5 +1,6 @@
-Characters 51-60:
-  let rec clone x n =  if n = 0 then [] else [x] :: (clone x n - 1);;
-                                                     ^^^^^^^^^
-Error: This expression has type 'a list list
-       but an expression was expected of type int
+Characters 18-25:
+  let _ = fixpoint (collatz, 107);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

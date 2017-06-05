@@ -40,10 +40,12 @@ let _ = sqsum [2;3;4;5]
 let _ = sqsum [-1]
 
 
+
 let pipe fs = 
-  let f a x = fun y -> x (a y) in
-  let base = (fun z -> z) in 
+  let f a x = (fun a -> x a) in
+  let base = [] in 
     List.fold_left f base fs
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
@@ -59,20 +61,20 @@ let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 let rec sepConcat sep sl = match sl with 
   | [] -> ""
   | h :: t -> 
-      let f a x = a^sep^x in
-      let base = match h with | h::[] -> h in
-      let l = t in
+      let f a x = failwith "to be implemented" in
+      let base = failwith "to be implemented" in
+      let l = failwith "to be implemented" in
         List.fold_left f base l
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = sepConcat ", " ["foo";"bar";"baz"]
-let _ = sepConcat "---" []
-let _ = sepConcat " " ["a";"b";"c";"d";"e"]
-let _ = sepConcat "X" ["hello"]
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 let stringOfList f l = failwith "to be implemented"

@@ -1,5 +1,5 @@
-Characters 148-174:
-  let (_, res) = List.fold_left f base args in
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a * 'b
+Characters 52-64:
+  let f a x = List.combine padZero l1 l2 in
+              ^^^^^^^^^^^^
+Error: This function has type 'a list -> 'b list -> ('a * 'b) list
+       It is applied to too many arguments; maybe you forgot a `;'.

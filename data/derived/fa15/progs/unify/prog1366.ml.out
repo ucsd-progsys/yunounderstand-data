@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 1);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type int -> int * bool
-       Type int is not compatible with type int * bool 
+Characters 196-198:
+  | []-> (sum/10)::(sum mod 10)
+    ^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

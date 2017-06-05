@@ -40,16 +40,18 @@ let _ = sqsum [2;3;4;5]
 let _ = sqsum [-1]
 
 
+
 let pipe fs = 
-  let f a x = x a in
+  let f a x = (fun x -> x a) in
   let base = (fun y -> y) in 
     List.fold_left f base fs
+
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = pipe [] 3
 
-let _ = pipe [(fun x -> x+x); (fun x -> x + x)]
+let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3
 
 let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3
 

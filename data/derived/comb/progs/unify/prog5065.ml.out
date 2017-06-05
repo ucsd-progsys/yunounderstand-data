@@ -1,5 +1,5 @@
-Characters 29-51:
-  let fixpoint (f,b) = wwhile ((fun f x -> (x = f x)),b);;
-                               ^^^^^^^^^^^^^^^^^^^^^^
-Error: This function expects too many arguments, it should have type
-'a -> 'a * bool
+Characters 120-129:
+  | Cosine a -> "cos(pi*" exprToString a ")"
+                ^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

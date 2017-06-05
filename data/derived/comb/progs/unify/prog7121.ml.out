@@ -1,6 +1,5 @@
-Characters 141-152:
-  digitalRoot end
-  ^^^^^^^^^^^
-Error: This expression has type int -> 'a
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside int -> 'a
+Characters 164-168:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

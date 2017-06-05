@@ -1,5 +1,5 @@
-Characters 51-54:
-  let fixpoint (f,b) = wwhile(if f b = b then b else f b, b);;
-                                                     ^^^
-Error: This expression has type ('a -> 'a * bool) * 'a
-       but an expression was expected of type 'a -> 'a * bool
+Characters 24-25:
+  let _ = pipe [(fun x -> x + x)] 3;;
+                          ^
+Error: This expression has type 'a -> 'a
+       but an expression was expected of type int

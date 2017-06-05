@@ -1,5 +1,5 @@
-Characters 119-143:
-  | h::t -> bigAdd((mulByDigit h l1), res)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+Characters 284-289:
+  res :: [carry]
+          ^^^^^
+Error: This expression has type int but an expression was expected of type
+         int list

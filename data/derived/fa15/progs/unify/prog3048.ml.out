@@ -1,5 +1,5 @@
-Characters 61-69:
-  | hd::tl -> (hd * i) @ [mulByDigit i tl];;
-              ^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 21-31:
+  let rec clone x n =  List.split x n;;
+                       ^^^^^^^^^^
+Error: This function has type ('a * 'b) list -> 'a list * 'b list
+       It is applied to too many arguments; maybe you forgot a `;'.

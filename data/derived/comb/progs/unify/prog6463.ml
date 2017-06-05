@@ -1,3 +1,4 @@
 
-let _ =
-  let rec append x y = match y with | [] -> x | h::t -> x :: h in append x t;;
+let rec listReverse l = match l with | [] -> [] | h::t -> h @ [];;
+
+let _ = listReverse [1; 2; 3; 4];;

@@ -1,9 +1,6 @@
-Characters 51-363:
-  ..................................(buildTimes(buildCosine(buildAverage(buildCosine(
-  buildX()),buildTimes(buildCosine (buildCosine (buildAverage
-  (buildTimes (buildY(),buildY()),buildCosine (buildX()))))),
-  buildCosine (buildTimes (buildSine (buildCosine
-  (buildY())),buildAverage (buildSine (buildX()), buildTimes
-  (buildX(),buildX()))))))),buildY())....
-Error: This expression has type 'a * 'b
-       but an expression was expected of type expr
+Characters 145-148:
+  | Sine sin -> Printf.printf ("sin(pi*%s"^^ sin ^^")" );
+                                             ^^^
+Error: This expression has type expr but an expression was expected of type
+         ('a, 'b, 'c, 'd, 'e, 'f) format6 =
+           ('a, 'b, 'c, 'd, 'e, 'f) CamlinternalFormatBasics.format6

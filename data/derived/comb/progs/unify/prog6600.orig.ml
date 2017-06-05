@@ -1,4 +1,3 @@
-
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -150,7 +149,7 @@ let bigAdd l1 l2 =
       let m=r+s+y in
         (m/10,(m mod 10)::z) in
     let base = (0,[]) in
-    let args = List.combine (List.rev (0::l1)) (List.rev (0::l2)) in
+    let args = (List.combine (List.rev l1) (List.rev l2))@(0,0) in
     let (_, res) = List.fold_left f base args in
       res
   in 
@@ -163,33 +162,37 @@ let _ = bigAdd [9;9;9;9] [9;9;9];;
 
 
 
+let rec multHelper i l =
+  match l with
+    |[]->[]
+    |h::t->
+        match t with
+          |[]->(i*t) mod 10@[]
+          |
 
-let rec mulByDigit i l = 
-  match i with
-    |0->[0]
-    |_->bigAdd l (mulByDigit (i-1) l)
+            let rec mulByDigit i l = 
+;;
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
 
 let _ = mulByDigit 9 [9;9;9;9]
 
 
+
 let bigMul l1 l2 = 
-  let f a x = 
-    let (b,c)=a in
-      (b+1,bigAdd((mulByDigit x l2)::(clone 0 b) c)) in
-  let base = (0,[]) in
-  let args =  l1 in
+  let f a x = failwith "to be implemented" in
+  let base = failwith "to be implemented" in
+  let args = failwith "to be implemented" in
   let (_, res) = List.fold_left f base args in
     res
 
 
-(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
+(*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-let _ = bigMul [9;9;9;9] [9;9;9;9]
-let _ = bigMul [9;9;9;9;9] [9;9;9;9;9] 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+*)
 
 
 

@@ -1,5 +1,5 @@
-Characters 340-363:
-  |Hoi(a,b) -> ("sin(pi*"^(exp a)^")")"/"("cos(pi*"^(exp b)")");;
-               ^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 105-124:
+  | Sine sin		    -> "sin(pi*"^ (exprToString(sin)) ^")" 
+                                ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type expr but an expression was expected of type
+         string

@@ -1,5 +1,6 @@
-Characters 307-315:
-  let args = List.combine (List.rev padZero (l1)) (List.rev l2) in
-                           ^^^^^^^^
-Error: This function has type 'a list -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 148-149:
+  List.fold_left f base l;;
+                        ^
+Error: This expression has type string list list
+       but an expression was expected of type string list
+       Type string list is not compatible with type string 

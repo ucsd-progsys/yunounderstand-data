@@ -4,23 +4,25 @@ type expr =
   | VarY
   | Sine of expr
   | Cosine of expr
-  | Hoi of expr
   | Average of expr* expr
   | Times of expr* expr
   | Thresh of expr* expr* expr* expr;;
 
-let rec exprToString e =
-  let exp = exprToString in
+let rec eval (e,x,y) =
   match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine a -> "sin(pi*" ^ ((exp a) ^ ")")
-  | Cosine a -> "cos(pi*" ^ ((exp a) ^ ")")
-  | Average (a,b) -> "((" ^ ((exp a) ^ ("+" ^ ((exp b) ^ ")/2)")))
-  | Times (a,b) -> (exp a) ^ ("*" ^ (exp b))
-  | Thresh (a,b,c,d) ->
+  | VarX  -> x
+  | VarY  -> y
+  | Sine sin -> "sin(pi*" ^ ((eval (sin, x, y)) ^ ")")
+  | Cosine cos -> "cos(pi*" ^ ((eval (cos, x, y)) ^ ")")
+  | Average (e1,e2) ->
+      "((" ^ ((eval (e1, x, y)) ^ ("+" ^ ((eval (e2, x, y)) ^ ")/2)")))
+  | Times (t1,t2) -> (eval (t1, x, y)) ^ ("*" ^ (eval (t2, x, y)))
+  | Thresh (th1,th2,th3,th4) ->
       "(" ^
-        ((exp a) ^
-           ("<" ^ ((exp b) ^ ("?" ^ ((exp c) ^ (":" ^ ((exp d) ^ ")")))))))
-  | Hoi (a,b) ->
-      "sin(pi*" ^ ((exp a) ^ (")/(" ("cos(pi*" ^ ((exp b) ^ ")")) ")"));;
+        ((eval (th1, x, y)) ^
+           ("<*" ^
+              ((eval (th2, x, y)) ^
+                 ("?" ^
+                    ((eval (th3, x, y)) ^ (":" ^ ((eval (th4, x, y)) ^ ")")))))));;
+
+let _ = eval ((Sine (Average (VarX, VarY))), 0.5, (-0.5));;

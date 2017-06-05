@@ -1,6 +1,5 @@
-Characters 14-17:
-  let _ = lift2 (+) (Some 1) (Some 10);;
-                ^^^
-Error: This expression has type int -> int -> int
-       but an expression was expected of type 'a option -> 'b option -> 'c
-       Type int is not compatible with type 'a option 
+Characters 61-68:
+  h + sumList;;
+      ^^^^^^^
+Error: This expression has type int list -> 'a list
+       but an expression was expected of type int

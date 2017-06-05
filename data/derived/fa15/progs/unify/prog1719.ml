@@ -1,5 +1,2 @@
 
-let rec removeZero l =
-  match l with
-  | [] -> []
-  | h::t -> (match h with | 0 -> removeZero t | _ -> h @ t);;
+let sqsum xs = let f a x = a * a in let base = f in List.fold_left f base xs;;

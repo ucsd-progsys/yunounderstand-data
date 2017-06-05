@@ -1,5 +1,5 @@
-Characters 161-165:
-  List.fold_left f base l;;
-                   ^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type string
+Characters 138-147:
+  | Cosine e  -> "cos(pi*"exprToString e")"
+                 ^^^^^^^^^
+Error: This expression has type string
+       This is not a function; it cannot be applied.

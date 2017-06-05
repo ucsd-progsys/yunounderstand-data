@@ -1,5 +1,10 @@
 
-let rec append l r = match l with | [] -> r | h::t -> h :: (append t r);;
+let x l = List.map string_of_int;;
 
-let rec digitsOfInt n =
-  if n <= 0 then [n] else ((append digitsOfInt (n / 10)), [n mod 10]);;
+let y = [1; 2; 3];;
+
+let rec mulByDigit i l =
+  if (i = 0) || (i > 9)
+  then []
+  else
+    (match List.rev l with | [] -> [] | h::t -> (mulByDigit i t) @ [x * y]);;

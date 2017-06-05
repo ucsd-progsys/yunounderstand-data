@@ -1,45 +1,38 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let rec rmzhelp l =
+  match l with | [] -> [] | x::xs' -> if x = 0 then rmzhelp xs' else x :: xs';;
 
-let rec exprToString e =
-  match e with
-  | VarX  -> "x"
-  | VarY  -> "y"
-  | Sine e1 -> "sin(pi*" ^ ((exprToString e1) ^ ")")
-  | Cosine e1 -> "cos(pi*" ^ ((exprToString e1) ^ ")")
-  | Average (e1,e2) ->
-      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
-  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
-  | Thresh (e1,e2,e3,e4) ->
-      "(" ^
-        ((exprToString e1) ^
-           ("<" ^
-              ((exprToString e2) ^
-                 ("?" ^
-                    ((exprToString e3) ^ (":" ^ ((exprToString e4) ^ ")")))))));;
+let rec foldr f b x n = if n > 0 then f x (foldr f b x (n - 1)) else b;;
 
-let pi = 4.0 *. (atan 1.0);;
+let rec clone x n = foldr (fun y  -> fun m  -> y :: m) [] x n;;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine e1 -> sin (pi * (exprToString e1))
-  | Cosine e1 -> cos (pi * (exprToString e1))
-  | Average (e1,e2) ->
-      "((" ^ ((exprToString e1) ^ ("+" ^ ((exprToString e2) ^ ")/2)")))
-  | Times (e1,e2) -> (exprToString e1) ^ ("*" ^ (exprToString e2))
-  | Thresh (e1,e2,e3,e4) ->
-      "(" ^
-        ((exprToString e1) ^
-           ("<" ^
-              ((exprToString e2) ^
-                 ("?" ^
-                    ((exprToString e3) ^ (":" ^ ((exprToString e4) ^ ")")))))));;
+let padZero l1 l2 =
+  if (List.length l1) > (List.length l2)
+  then (clone 0 ((List.length l1) - (List.length l2))) @ l2
+  else (clone 0 ((List.length l2) - (List.length l1))) @ l1;;
+
+let rec removeZero l =
+  match l with | [] -> [] | x::xs' -> if x = 0 then rmzhelp xs' else x :: xs';;
+
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      match x with
+      | (c,d) ->
+          (match a with
+           | (n,listSum) ->
+               (match listSum with
+                | [] ->
+                    if ((n + c) + d) < 10
+                    then (0, [n; (n + c) + d])
+                    else ((n + 1), [n + 1; ((n + c) + d) mod 10])
+                | h::t ->
+                    if ((n + c) + d) < 10
+                    then (0, ([0; (c + d) + h] @ t))
+                    else
+                      ((n + 1),
+                        ([((h + c) + d) / 10] @ ([((h + c) + d) mod 10] @ t))))) in
+    let base = (0, []) in
+    let args = List.rev (List.combine l1 l2) in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;

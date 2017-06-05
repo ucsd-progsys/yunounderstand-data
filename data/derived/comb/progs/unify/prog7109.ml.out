@@ -1,5 +1,5 @@
-Characters 118-129:
-  print_int n end
-  ^^^^^^^^^^^
-Error: This expression has type unit but an expression was expected of type
-         'a list
+Characters 78-84:
+  | (r, s) ->((List.hd r + List.hd s) mod 10) :: a in
+    ^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type 'c list

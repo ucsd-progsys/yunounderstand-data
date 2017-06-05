@@ -1,20 +1,10 @@
 
-type expr =
-  | VarX
-  | VarY
-  | Sine of expr
-  | Cosine of expr
-  | Average of expr* expr
-  | Times of expr* expr
-  | Thresh of expr* expr* expr* expr;;
+let explode s =
+  let rec go i =
+    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
+  go 0;;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> Printf.printf "%s"
-  | VarY  -> Printf.printf "%s"
-  | Sine sin -> Printf.printf ("sin( %s )" sin)
-  | Cosine cos -> Printf.printf "cos(%s)" cos
-  | Average (e1,e2) -> Printf.printf "((%s+%s)/2)" e1 e2
-  | Times (t1,t2) -> Printf.printf "%s*%s" t1 t2
-  | Thresh (th1,th2,th3,th4) ->
-      Printf.printf "(%s<*%s?%s:%s)" th1 th2 th3 th4;;
+let rec listReverse l =
+  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+
+let palindrome w = (explode w) = (listReverse explode w);;

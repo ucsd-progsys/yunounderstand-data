@@ -1,5 +1,6 @@
-Characters 84-85:
-  |Sine(e) -> sin(pi*.eval e)
-                           ^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 148-152:
+  let seen' = if List.mem seen h then seen else [h] @ [seen] in
+                                                       ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

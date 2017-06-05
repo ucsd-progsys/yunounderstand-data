@@ -1,5 +1,5 @@
-Characters 200-232:
-  then buildCosine(build(rand,depth-1));;
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type expr but an expression was expected of type
-         unit
+Characters 8-20:
+  let _ = exprToString Neg(VarX);;
+          ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

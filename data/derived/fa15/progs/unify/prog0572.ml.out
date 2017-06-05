@@ -1,5 +1,5 @@
-Characters 495-509:
-  | Op (x, y, z) -> "("^(exprToString x)^"*"^(exprToString)^"*"^(exprToString)")/("^(exprToString x)^"+"^(exprToString y)^"+"(exprToString)^")";;
-                                             ^^^^^^^^^^^^^^
-Error: This expression has type expr -> string
-       but an expression was expected of type string
+Characters 49-65:
+  wwhile ((let g x = (f b) in (f b, (f b) = b)), b);;
+                              ^^^^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c -> 'c * bool

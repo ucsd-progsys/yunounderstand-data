@@ -1,5 +1,5 @@
-Characters 100-110:
-  h = getHeads t
-      ^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type char
+Characters 21-28:
+  let c2 () = failwith (4,2,7);;
+                       ^^^^^^^
+Error: This expression has type 'a * 'b * 'c
+       but an expression was expected of type string

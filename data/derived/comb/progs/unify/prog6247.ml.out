@@ -1,5 +1,5 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
-                                                  ^
+Characters 264-265:
+  | Average(e1, e2)        -> (eval (e1,x,y) +. eval (e2,x,y)) /. 2
+                                                                  ^
 Error: This expression has type int but an expression was expected of type
-         ('a -> 'b) -> 'a -> 'b
+         float

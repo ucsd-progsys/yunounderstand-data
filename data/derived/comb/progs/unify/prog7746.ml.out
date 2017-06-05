@@ -1,5 +1,6 @@
-Characters 177-178:
-  | Average(x, y)     -> ((eval(e, x, y) +. eval(e,x,y))/2.0)
-                                   ^
-Error: This expression has type expr but an expression was expected of type
-         float
+Characters 83-85:
+  | hd:: tail -> (listReverse tail) @ hd;;
+                                      ^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

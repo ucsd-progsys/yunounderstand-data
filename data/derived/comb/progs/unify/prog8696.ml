@@ -1,7 +1,5 @@
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let rec wwhile (f,b) =
+  match f b with | (num,expr) -> if expr then wwhile (f, num) else num;;
 
-let palindrome w = match explode w with | [] -> [] | h::t -> w @ [];;
+let fixpoint (f,b) = wwhile (0, b);;

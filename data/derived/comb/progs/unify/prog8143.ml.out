@@ -1,5 +1,5 @@
-Characters 22-27:
-  let _ = mulByDigit 4 [3,2,1];;
-                        ^^^^^
-Error: This expression has type 'a * 'b * 'c
-       but an expression was expected of type int
+Characters 8-25:
+  let y = ["h", "d" , "c" ]
+          ^^^^^^^^^^^^^^^^^
+Error: This expression has type (string * string * string) list
+       This is not a function; it cannot be applied.

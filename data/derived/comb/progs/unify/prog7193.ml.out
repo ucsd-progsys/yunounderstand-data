@@ -1,5 +1,5 @@
-Characters 218-225:
-  (l1,l2);;
-  ^^^^^^^
-Error: This expression has type 'a * 'b
+Characters 215-236:
+  helper (seen', rest')
+  ^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
        but an expression was expected of type unit

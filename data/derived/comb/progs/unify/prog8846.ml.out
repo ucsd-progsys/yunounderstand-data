@@ -1,5 +1,5 @@
-Characters 8-20:
-  let _ = exprToString Sine(VarX);;
-          ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 14-16:
+  let _ = build(10, 0);;
+                ^^
+Error: This expression has type int but an expression was expected of type
+         int * int -> 'a

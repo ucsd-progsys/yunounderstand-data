@@ -1,5 +1,5 @@
-Characters 130-131:
-  ( (x1+x2+a1)/10, [s+c] @ s' @ [(x1+x2+c) mod 10] ) 
-                      ^
-Error: This expression has type 'a -> 'a
+Characters 106-108:
+  | z::x::x' -> [x*i/10] @ mulByDigit i [(x*i) mod 10 + z;x'];;
+                                                          ^^
+Error: This expression has type int list
        but an expression was expected of type int

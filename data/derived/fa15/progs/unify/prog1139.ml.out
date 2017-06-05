@@ -1,5 +1,5 @@
-Characters 128-129:
-  let l = sepConcat t in
-                    ^
-Error: This expression has type string list
-       but an expression was expected of type string
+Characters 170-202:
+  |Average(i1, i2)	  -> (eval (i1,x,y) +. eval (i2,x,y))  / 2.0
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

@@ -1,5 +1,6 @@
-Characters 56-75:
-  else additivePersistence sumList digitsOfInt n;;
-       ^^^^^^^^^^^^^^^^^^^
-Error: This function has type int -> int
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 77-88:
+  | h::t -> matchHeads (explode w);;
+                       ^^^^^^^^^^^
+Error: This expression has type char list
+       but an expression was expected of type 'a list list
+       Type char is not compatible with type 'a list 

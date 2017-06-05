@@ -1,5 +1,5 @@
-Characters 189-190:
-  else (0,a::((fst x + snd x + a) mod 10)::t::t)
-                                           ^
-Error: This expression has type int list
-       but an expression was expected of type int
+Characters 210-217:
+  else (l1,l2);;
+       ^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type 'c list list

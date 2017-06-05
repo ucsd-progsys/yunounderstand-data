@@ -1,5 +1,5 @@
-Characters 92-98:
-  | true -> wwhile (f b');;
-                   ^^^^^^
-Error: This expression has type 'a * bool
-       but an expression was expected of type ('a -> 'a * bool) * 'a
+Characters 23-24:
+  let _ = catLists [1;] [2; 3; 4];;
+                         ^
+Error: This expression has type int but an expression was expected of type
+         int list

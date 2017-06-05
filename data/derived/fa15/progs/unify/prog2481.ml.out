@@ -1,5 +1,6 @@
-Characters 93-110:
-  | x::x' -> [(x*i)/10]::[((x*i) mod 10) + [mulByDigit i x']];;
-                                           ^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int
+Characters 45-46:
+  let f a x = let rec a c y = c a x in a::x = fs in
+                                ^
+Error: This expression has type ('a -> 'b -> 'c) -> 'd -> 'e
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside ('a -> 'b -> 'c) -> 'd -> 'e

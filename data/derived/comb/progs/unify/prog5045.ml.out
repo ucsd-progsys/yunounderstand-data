@@ -1,5 +1,5 @@
-Characters 88-89:
-  if n > 9 then (digitsOfInt (n/10))@[x] else n;;
-                                              ^
+Characters 66-67:
+  let summed = sumList n in
+                       ^
 Error: This expression has type int but an expression was expected of type
          int list

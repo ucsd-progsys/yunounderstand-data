@@ -1,5 +1,6 @@
-Characters 335-336:
-  | Thresh (a,b,c,d) -> "(" ^ a ^ "< " ^ b ^ " ? " ^ c ^ " : " ^ d ^ ")";;
-                              ^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 73-75:
+  if k = h2 then h1
+         ^^
+Error: This expression has type 'a but an expression was expected of type
+         ('b * 'a) list
+       The type variable 'a occurs inside ('b * 'a) list

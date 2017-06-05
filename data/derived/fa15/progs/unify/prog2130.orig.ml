@@ -71,7 +71,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 let rec wwhile (f,b) = 
   let res = f b in
     match res with
-      | (x, y) when y = true -> wwhile (f, x)
+      | (x, y) when y = true  -> wwhile (f, x)
       | (x, y) -> x
 
 let f x = let xx = x*x*x in (xx, xx < 100) in
@@ -85,14 +85,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 *)
 
 (*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*)
-
 let fixpoint (f,b) =
-  let gs x = let xx = f x in
-      match xx with
-        | xx when xx - x > 0 -> (x, b)
-        | _ -> f x
-  in wwhile (gs, b);;
-
+  wwhile ((f, (f b)), b);;
 
 
 let g x = truncate (1e6 *. cos (1e-6 *. float x)) in fixpoint (g, 0);; 

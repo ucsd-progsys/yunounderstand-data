@@ -1,5 +1,5 @@
-Characters 24-25:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                          ^
-Error: This expression has type ('a -> 'b) -> 'a -> 'b
+Characters 30-44:
+  let bigMul l1 l2 = mulByDigit (bigAdd l1 l2);;
+                                ^^^^^^^^^^^^^^
+Error: This expression has type int list
        but an expression was expected of type int

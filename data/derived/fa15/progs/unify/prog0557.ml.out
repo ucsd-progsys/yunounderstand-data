@@ -1,5 +1,6 @@
-Characters 88-100:
-  | Sine n -> "sin("^(exprToString Times(pi,x))^")"
-                      ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 70-89:
+  | h::t -> catLists t ((lastListElement x) :: y);;
+                        ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'a list
+       The type variable 'a occurs inside 'a list

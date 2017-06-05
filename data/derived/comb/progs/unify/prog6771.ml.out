@@ -1,5 +1,5 @@
-Characters 148-151:
-  | [] ->  if sum > 9 then [1,sum-1] else [sum]
-                                           ^^^
+Characters 75-76:
+  else bigAdd l (mulByDigit(i-1, l));;
+              ^
 Error: This expression has type int but an expression was expected of type
-         int * int
+         int list

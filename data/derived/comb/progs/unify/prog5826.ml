@@ -1,9 +1,9 @@
 
-let removeDuplicates l =
-  let rec helper (seen,rest) =
-    match rest with
-    | [] -> seen
-    | h::t -> let seen' = seen @ h in let rest' = t in helper (seen', rest') in
-  List.rev (helper ([], l));;
+let rec helper l1 l2 =
+  match l1 with | [] -> [] | h::t -> (h, l2) :: (helper t l2);;
 
-let _ = removeDuplicates [1; 6; 2; 4; 12; 2; 13; 6; 9];;
+let bigMul l1 l2 =
+  let f a x = let (x1,x2) = x in let (carry,res) = a in carry @ a in
+  let base = [] in
+  let args = List.rev (helper l1 l2) in
+  let (carry,res) = List.fold_left f base args in res;;

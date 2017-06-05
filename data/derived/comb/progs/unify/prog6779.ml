@@ -1,5 +1,2 @@
 
-let rec digitsOfInt n =
-  match n <= 0 with
-  | true  -> []
-  | false  -> ((digitsOfInt n) / 10) @ (n mod 10);;
+let rec additivePersistence n = if n < 10 then n else ();;

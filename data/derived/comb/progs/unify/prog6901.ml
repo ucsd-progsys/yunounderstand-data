@@ -1,6 +1,7 @@
 
-let rec wwhile (f,b) =
-  let res = f b in
-  match res with | (x,y) when y = true -> wwhile (f, x) | (x,y) -> x;;
+let rec append xs ys = match xs with | [] -> ys | h::t -> h :: (append t ys);;
 
-let fixpoint (f,b) = let fx a = true in wwhile (fx, b);;
+let rec digitsOfInt n =
+  if n <= 0 then [] else append (digitsOfInt (n / 10)) [n mod 10];;
+
+let _ = (digitsOfInt 5) - 6;;

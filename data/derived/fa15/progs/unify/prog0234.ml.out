@@ -1,5 +1,5 @@
-Characters 66-67:
-  | (_,t) -> if t = true then 5;;
-                              ^
-Error: This expression has type int but an expression was expected of type
-         unit
+Characters 69-72:
+  | (h,t) -> if t = false then f b;;
+                               ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type unit

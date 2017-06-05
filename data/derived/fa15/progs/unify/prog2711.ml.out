@@ -1,5 +1,6 @@
-Characters 185-197:
-  if value > 9 then (1,value-10)::a
-                    ^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int
+Characters 93-95:
+  List.fold_left f base fs;;
+                        ^^
+Error: This expression has type (int list -> 'a -> int list) list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside int list -> 'a -> int list

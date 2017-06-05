@@ -1,2 +1,5 @@
 
-let pipe fs = let f a x x = a in let base y = y in List.fold_left f base fs;;
+let rec digitsOfInt n =
+  if n < 0
+  then []
+  else (match n with | [] -> [] | h::t -> h @ [digitsOfInt t]);;

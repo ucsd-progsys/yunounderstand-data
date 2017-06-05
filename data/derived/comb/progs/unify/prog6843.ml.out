@@ -1,6 +1,5 @@
-Characters 118-119:
-  List.fold_left f base args;;
-                 ^
-Error: This expression has type int -> int -> int list
-       but an expression was expected of type int -> int -> int
-       Type int list is not compatible with type int 
+Characters 48-49:
+  let _ = pipe [(fun x -> x+x); (fun x -> x + 3)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'a

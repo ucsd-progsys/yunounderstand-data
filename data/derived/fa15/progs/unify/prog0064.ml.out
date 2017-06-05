@@ -1,5 +1,6 @@
-Characters 100-102:
-  | Cosine(a) -> cos (pi*eval(a))
-                      ^^
-Error: This expression has type float but an expression was expected of type
-         int
+Characters 58-61:
+  let fixpoint (f,b) = wwhile ((fun x -> (wwhile (f,b), b = f b)),b);;
+                                                            ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a * bool

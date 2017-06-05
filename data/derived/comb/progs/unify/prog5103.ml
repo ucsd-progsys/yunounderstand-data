@@ -4,5 +4,7 @@ let rec digitsOfInt n =
 
 let digits n = digitsOfInt (abs n);;
 
+let rec sumList xs = match xs with | [] -> 0 | h::t -> h + (sumList t);;
+
 let rec digitalRoot n =
-  match n with | x::[] -> x | h::t -> h + (digitalRoot (digits t));;
+  match digits n with | [] -> 0 | h::t -> digitalRoot (digits (sumList n));;

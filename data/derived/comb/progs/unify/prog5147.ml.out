@@ -1,10 +1,5 @@
-Characters 210-217:
-  | Sine(a)                      -> Printf.sprintf "%expr" "(pi*" a ")"
-                                                   ^^^^^^^
-Error: This expression has type
-         ('a -> 'b -> 'c, unit, string, string, string, 'a -> 'b -> 'c)
-         CamlinternalFormatBasics.fmt
-       but an expression was expected of type
-         ('a -> 'b -> 'c, unit, string, string, string, string)
-         CamlinternalFormatBasics.fmt
-       Type 'a -> 'b -> 'c is not compatible with type string 
+Characters 69-72:
+  | (h,t) -> if t = false then f h;;
+                               ^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type unit

@@ -1,5 +1,5 @@
-Characters 548-560:
-  | Log (e1,e2,e3) -> "(log("^exprToString e1^"/"^exprToString e2")/"^
-                                                  ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 152-204:
+  ........(1,(let (y,z) = x in
+  ([(y+z+carry) mod 10] @ ans )))
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int

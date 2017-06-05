@@ -1,5 +1,5 @@
-Characters 64-65:
-  | h::t -> w@[];;
-            ^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 29-32:
+  let fixpoint (f,b) = wwhile ((0),b);;
+                               ^^^
+Error: This expression has type int but an expression was expected of type
+         'a -> 'a * bool

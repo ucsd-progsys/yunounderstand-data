@@ -1,5 +1,5 @@
-Characters 68-69:
-  let base = f 0 in
-               ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 417-421:
+  | Arctan (e1)		  -> 2 * (atan eval(e1,x,y)) / pi
+                           ^^^^
+Error: This function has type float -> float
+       It is applied to too many arguments; maybe you forgot a `;'.

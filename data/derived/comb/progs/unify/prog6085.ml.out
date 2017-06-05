@@ -1,6 +1,5 @@
-Characters 25-38:
-  digitsOfInt n::n mod 10::[];;
-  ^^^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+Characters 121-124:
+  |(r,v) -> let sum = mulByDigit (intListToInt l1) s in if (sum + r) > 9 then ((sum + r) / 10,((sum+r) mod 10)::v) else  (0, ((sum+r) mod 10)::v)
+                                                            ^^^
+Error: This expression has type int list
+       but an expression was expected of type int

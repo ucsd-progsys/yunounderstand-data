@@ -1,8 +1,5 @@
-Characters 230-231:
-  let (_, res) = List.fold_left f base args in
-                                ^
-Error: This expression has type
-         int * int list -> int * int -> int list * int list
-       but an expression was expected of type
-         int * int list -> int * int -> int * int list
-       Type int list is not compatible with type int 
+Characters 90-112:
+  (((addition(m,n)+y)/10)@z, [(addition(m,n)+y) mod 10]@z) 
+   ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int but an expression was expected of type
+         'a list

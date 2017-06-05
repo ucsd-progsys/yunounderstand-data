@@ -1,5 +1,5 @@
 
-let rec mulByDigit i l =
-  if l = []
-  then []
-  else (let (h::[])::t = l in match t with | [] -> h | _ -> [(h * i) / 10]);;
+let sqsum xs =
+  let f a x = a * a in
+  let base = 0 in
+  List.fold_left f base xs UNCOMMENT AFTER IMPLEMENTING THE ABOVE;;

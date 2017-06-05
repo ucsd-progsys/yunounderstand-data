@@ -1,5 +1,6 @@
-Characters 477-486:
-  | Darius( e1, e2, e3 )     -> mod_float ((eval (e1, x, y) +. eval (e2, x, y))) eval (e3, x, y);;
-                                ^^^^^^^^^
-Error: This function has type float -> float -> float
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 18-25:
+  let _ = fixpoint (collatz, 9001);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

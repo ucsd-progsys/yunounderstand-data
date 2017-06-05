@@ -1,6 +1,6 @@
 
-let rec add current next =
-  match current with | [] -> [next] | front::back -> front (add back next);;
-
-let rec digitsOfInt n =
-  if n <= 0 then [] else digitsOfInt ((n / 10) add [n mod 10]);;
+let rec mulByDigit i l =
+  let f a x =
+    let (carry,acc) = a in
+    let res = (x * i) + carry in ((res / 10), ((res mod 10) :: acc)) in
+  let base = (0, []) in let args = List.rev in List.fold_left f base args;;

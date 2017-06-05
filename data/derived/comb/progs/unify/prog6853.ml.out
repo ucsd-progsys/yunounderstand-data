@@ -1,5 +1,5 @@
-Characters 50-51:
-  let afactor = a::0 in
-                   ^
+Characters 164-190:
+  let (_, res) = List.fold_left f base args in
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Error: This expression has type int but an expression was expected of type
-         'a list
+         'a * 'b

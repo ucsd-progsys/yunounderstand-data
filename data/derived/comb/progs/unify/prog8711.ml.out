@@ -1,5 +1,5 @@
-Characters 77-88:
-  | h::t -> matchHeads (explode w);;
-                       ^^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type 'a list list * 'a list list
+Characters 48-49:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+                                                  ^
+Error: This expression has type int but an expression was expected of type
+         (int -> int) -> int

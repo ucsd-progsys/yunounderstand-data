@@ -1,5 +1,5 @@
-Characters 48-49:
-  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
-                                                  ^
-Error: This expression has type int but an expression was expected of type
-         'a -> 'b
+Characters 38-40:
+  let sumlist = fun xs ->  match 1 with []->0 | h::t -> h+ (sumlist t);;
+                                        ^^
+Error: This pattern matches values of type 'a list
+       but a pattern was expected which matches values of type int

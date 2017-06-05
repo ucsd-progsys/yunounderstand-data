@@ -1,5 +1,5 @@
-Characters 87-92:
-  clone 0 abs(diff) @ l1
-  ^^^^^
-Error: This function has type 'a -> int -> 'a list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 458-471:
+  | Volume(l, w, h)     -> (eval(l, x, y) * eval(w, x, y) * eval(h, x , y));;
+                            ^^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

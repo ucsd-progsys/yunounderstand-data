@@ -1,5 +1,5 @@
-Characters 47-48:
-  let palindrome w = if (explode w = listReverse w)
-                                                 ^
-Error: This expression has type string but an expression was expected of type
-         'a list
+Characters 297-315:
+  removeZero (add ((padZero l1 l2) ));;
+                  ^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type int list * int list

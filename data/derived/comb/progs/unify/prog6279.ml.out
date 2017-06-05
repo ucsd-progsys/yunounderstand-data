@@ -1,5 +1,5 @@
-Characters 208-219:
-  then cout :: res
-       ^^^^^^^^^^^
-Error: This expression has type 'a list
-       but an expression was expected of type int * int list
+Characters 16-17:
+  let _ = pipe [] 3;;
+                  ^
+Error: This expression has type int but an expression was expected of type
+         'a -> ('a -> 'b) -> 'b

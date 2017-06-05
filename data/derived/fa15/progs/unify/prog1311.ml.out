@@ -1,5 +1,5 @@
-Characters 65-72:
-  let stringOfList f l = sepConcat (sepConcat ";" (List.map f l)) ["[","]"];;
-                                                                   ^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type string
+Characters 151-163:
+  | Average (e1,e2) -> ((eval(e1,x,y)+eval(e2,x,y))/2)
+                         ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

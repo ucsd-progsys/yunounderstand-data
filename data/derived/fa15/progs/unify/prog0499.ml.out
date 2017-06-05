@@ -1,5 +1,6 @@
-Characters 88-90:
-  | Sine e' -> sin(pi *. eval e')
-                              ^^
-Error: This expression has type expr but an expression was expected of type
-         expr * 'a * 'a
+Characters 79-80:
+  let fixpoint (f,b) = wwhile ((let f' b = if (f b) = b then b else f b in f' b),b);;
+                                                                                 ^
+Error: This expression has type 'a -> 'a * bool
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a -> 'a * bool

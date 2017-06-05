@@ -1,5 +1,5 @@
-Characters 16-34:
-  let _ = List.map((+), [1;2;3;4;4]);;
-                  ^^^^^^^^^^^^^^^^^^
+Characters 31-37:
+  let stringOfList f l = List.map(f, l);;
+                                 ^^^^^^
 Error: This expression has type 'a * 'b
        but an expression was expected of type 'c -> 'd

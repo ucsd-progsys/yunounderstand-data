@@ -1,6 +1,11 @@
 
-let padZero l1 l2 =
-  let difference1 = (List.length l1) - (List.length l2) in
-  let difference2 = (List.length l2) - (List.length l1) in
-  let retTuple = (l1, l2) in
-  if difference1 > 0 then (l1, l2) else if difference2 > 0 then (l1, l2);;
+let removeDuplicates l =
+  let rec helper (seen,rest) =
+    match rest with
+    | [] -> seen
+    | h::t ->
+        let r = List.rev t in
+        let seen' = h :: seen in
+        if (List.mem h r) = false
+        then let seen' = h :: seen in let rest' = t in helper (seen', rest') in
+  List.rev (helper ([], l));;

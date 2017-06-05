@@ -1,5 +1,5 @@
-Characters 84-86:
-  |Neg (e1) -> "(" ^ e1 ^" * -1)" 
-                     ^^
-Error: This expression has type expr but an expression was expected of type
-         string
+Characters 99-100:
+  h = getHeads t
+               ^
+Error: This expression has type char list
+       but an expression was expected of type string

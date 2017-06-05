@@ -1,5 +1,5 @@
 
-let pipe fs =
-  let f a x y = x a in let base x' = x' in List.fold_left f base fs;;
-
-let _ = pipe [(fun x  -> x + x); (fun x  -> x + 3)] 3;;
+let rec mulByDigit i l =
+  let f a x = match x with | [] -> [] | h::t -> (i * h) / 10 in
+  let base = i * h in
+  let args = List.rev l in let res = List.fold_left base args in res;;

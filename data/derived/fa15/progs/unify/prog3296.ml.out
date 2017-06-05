@@ -1,5 +1,5 @@
-Characters 8-25:
-  let y = ["h", "d" , "c" ]
-          ^^^^^^^^^^^^^^^^^
-Error: This expression has type (string * string * string) list
-       This is not a function; it cannot be applied.
+Characters 168-170:
+  |Average(e1,e2)->buildAverage(eval e1, eval e2)
+                                     ^^
+Error: This expression has type expr but an expression was expected of type
+         expr * expr * expr

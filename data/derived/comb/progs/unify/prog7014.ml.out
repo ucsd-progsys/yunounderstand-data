@@ -1,6 +1,6 @@
-Characters 119-120:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> ('b -> 'a) list -> 'b -> 'a
-       but an expression was expected of type 'a -> ('b -> 'a) list -> 'a
-       The type variable 'a occurs inside 'b -> 'a
+Characters 18-25:
+  let _ = fixpoint (collatz, 1);;
+                    ^^^^^^^
+Error: This expression has type int -> int
+       but an expression was expected of type unit -> unit
+       Type int is not compatible with type unit 

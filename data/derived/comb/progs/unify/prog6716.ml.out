@@ -1,5 +1,5 @@
-Characters 418-421:
-  | Logx (a)	    -> (log(eval(a)))
-                             ^^^
-Error: This expression has type expr but an expression was expected of type
-         expr * float * float
+Characters 15-22:
+  let digitSum = sumList digitList
+                 ^^^^^^^
+Error: This function has type int list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

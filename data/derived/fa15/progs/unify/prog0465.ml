@@ -1,15 +1,38 @@
 
-let rec digitsOfIntHelper n =
-  if n <= 0 then [] else (n mod 10) :: (digitsOfIntHelper (n / 10));;
+let rec clone x n = if n <= 0 then [] else x :: (clone x (n - 1));;
 
-let rec digitsOfInt n = List.rev (digitsOfIntHelper n);;
+let padZero l1 l2 =
+  let difference = (List.length l1) - (List.length l2) in
+  if difference > 0
+  then (l1, ((clone 0 difference) @ l2))
+  else
+    if difference < 0
+    then (((clone 0 ((-1) * difference)) @ l1), l2)
+    else (l1, l2);;
 
-let digits n = digitsOfInt (abs n);;
+let rec removeZero l =
+  match l with | [] -> l | h::t -> if h = 0 then removeZero t else h :: t;;
 
-let rec sumList xs =
-  match xs with | [] -> 0 | head::tail -> head + (sumList tail);;
+let bigAdd l1 l2 =
+  let add (l1,l2) =
+    let f a x =
+      match a with
+      | (o,l) ->
+          let sum = x + o in
+          if sum < 10 then (0, (sum :: l)) else (1, ((sum - 10) :: l)) in
+    let base = (0, []) in
+    let args =
+      let combine (a,b) = a + b in
+      (List.map combine (List.rev (List.combine l1 l2))) @ [0] in
+    let (_,res) = List.fold_left f base args in res in
+  removeZero (add (padZero l1 l2));;
 
-let rec additivePersistence n =
-  if ((sumList digits n) / 10) = 0
-  then sumList digits n
-  else additivePersiste;;
+let rec mulByDigit i l =
+  if i = 0 then [] else if i = 1 then l else bigAdd l (mulByDigit (i - 1) l);;
+
+let bigMul l1 l2 =
+  let f a digit =
+    match a with
+    | (place,l) -> ((place * 10), (bigAdd (mulByDigit (place * l) l1) l)) in
+  let base = (1, []) in
+  let args = List.rev l2 in let (_,res) = List.fold_left f base args in res;;

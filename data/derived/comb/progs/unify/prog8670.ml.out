@@ -1,5 +1,5 @@
-Characters 38-55:
-  let stringOfList f l = "[" ^ List.map((sepConcat ";" l) l) ^ "]";;
-                                        ^^^^^^^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 65-82:
+  | (h::t) -> listReverseHelper (h::l) t in listReverseHelper [];;
+              ^^^^^^^^^^^^^^^^^
+Error: This function has type 'a list -> 'a list
+       It is applied to too many arguments; maybe you forgot a `;'.

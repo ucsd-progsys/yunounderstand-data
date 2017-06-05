@@ -1,5 +1,6 @@
-Characters 432-447:
-  removeZero (add (padZero l1 l2));;
-                  ^^^^^^^^^^^^^^^
-Error: This expression has type int list
-       but an expression was expected of type int list * int list
+Characters 54-55:
+  wwhile (f, 2);;
+          ^
+Error: This expression has type int -> int * bool
+       but an expression was expected of type int -> bool
+       Type int * bool is not compatible with type bool 

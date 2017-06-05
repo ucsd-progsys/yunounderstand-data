@@ -1,5 +1,6 @@
-Characters 121-131:
-  |Cosine e -> "cos (pi*" exprToString e ")"  
-               ^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 148-149:
+  let seen' = if List.mem seen h then seen else seen @ h in
+                                                       ^
+Error: This expression has type 'a list list
+       but an expression was expected of type 'a list
+       The type variable 'a occurs inside 'a list

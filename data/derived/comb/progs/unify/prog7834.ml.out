@@ -1,5 +1,5 @@
-Characters 110-132:
-  ((addition(m,n)/10), (addition(m,n) mod 10) @ [res]) 
-                       ^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 8-12:
+  let _ = pipe [(fun x -> x + 3);(fun x-> x + x)] 3;;
+          ^^^^
+Error: This function has type 'a list -> int
+       It is applied to too many arguments; maybe you forgot a `;'.

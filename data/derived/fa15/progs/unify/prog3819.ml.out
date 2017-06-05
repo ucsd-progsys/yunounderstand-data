@@ -1,5 +1,5 @@
-Characters 26-34:
-  let _ = assoc (-1,"bob",[("ranjit",85);("william",23);("moose",44)]);;
-                            ^^^^^^^^
-Error: This expression has type string but an expression was expected of type
+Characters 487-489:
+  | Oscillate   m4	    -> sin(pi*1.0/.eval(m4,x,y));;
+                              ^^
+Error: This expression has type float but an expression was expected of type
          int

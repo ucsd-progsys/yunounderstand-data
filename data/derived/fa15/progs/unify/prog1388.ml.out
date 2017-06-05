@@ -1,5 +1,5 @@
-Characters 8-20:
-  let _ = exprToString Golden(VarX);;
-          ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 64-65:
+  if c' then wwhile f b else b';;
+                    ^
+Error: This expression has type 'a -> 'b * bool
+       but an expression was expected of type ('a -> 'b * bool) * 'a

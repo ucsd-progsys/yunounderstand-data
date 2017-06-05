@@ -6,25 +6,21 @@ type expr =
   | Cosine of expr
   | Average of expr* expr
   | Times of expr* expr
-  | Thresh of expr* expr* expr* expr
-  | Power of expr* expr
-  | Op of expr* expr* expr;;
+  | Thresh of expr* expr* expr* expr;;
 
-let pi = 4.0 *. (atan 1.0);;
+let makeRand (seed1,seed2) =
+  let seed = Array.of_list [seed1; seed2] in
+  let s = Random.State.make seed in
+  fun (x,y)  -> x + (Random.State.int s (y - x));;
 
-let rec eval (e,x,y) =
-  match e with
-  | VarX  -> x
-  | VarY  -> y
-  | Sine n -> sin (pi *. (eval (n, x, y)))
-  | Cosine n -> cos (pi *. (eval (n, x, y)))
-  | Average (m,n) -> ((eval (m, x, y)) +. (eval (n, x, y))) /. 2.0
-  | Times (m,n) -> (eval (m, x, y)) *. (eval (n, x, y))
-  | Thresh (m,n,o,p) ->
-      if (eval (m, x, y)) < (eval (n, x, y))
-      then eval (o, x, y)
-      else eval (p, x, y)
-  | Power (m,n) -> (eval (m, x, y)) ** (eval (n, x, y))
-  | Op (m,n,o) ->
-      let d = ((eval (m, x, y)) +. (eval (n, x, y))) +. (eval (o, x, y)) in
-      (sqrt (sqrt (d * d))) /. 3.0;;
+let rec build (rand,depth) =
+  if depth = 0
+  then let g = makeRand (0, 1) in match g with | 0 -> VarX | 1 -> VarY
+  else
+    (let g = makeRand (0, 4) in
+     match g with
+     | 0 -> Sine (build (rand, (depth - 1)))
+     | 1 -> Cosine (build (rand, (depth - 1)))
+     | 2 -> Average (build (rand, (depth - 1)))
+     | 3 -> Times (build (rand, (depth - 1)))
+     | 4 -> Thresh (build (rand, (depth - 1))));;

@@ -1,6 +1,5 @@
-Characters 18-25:
-  let _ = fixpoint (collatz, 3);;
-                    ^^^^^^^
-Error: This expression has type int -> int
-       but an expression was expected of type
-         (('a -> 'b) -> ('a -> 'b) * bool) * ('a -> 'b)
+Characters 48-61:
+  if n < 0 then [] else  digitsOfInt n/10 @ n%10;;
+                         ^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type int

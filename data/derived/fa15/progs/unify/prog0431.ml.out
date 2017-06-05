@@ -1,5 +1,5 @@
-Characters 69-74:
-  else mulByDigit ((i-1) l);;
-                   ^^^^^
-Error: This expression has type int
-       This is not a function; it cannot be applied.
+Characters 56-62:
+  else bigAdd (l, l);;
+              ^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int list

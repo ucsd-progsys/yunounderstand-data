@@ -1,5 +1,6 @@
-Characters 501-513:
-  | Uncreative (e1, e2, e3)-> "("^exprToString(e1)^"/2*"^exprToString(e2)^"/3*"^exprToString(e3)"/4)"
-                                                                                ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 63-81:
+  | front::back -> (listReverse back) ::front;;
+                   ^^^^^^^^^^^^^^^^^^
+Error: This expression has type 'a list
+       but an expression was expected of type 'a
+       The type variable 'a occurs inside 'a list

@@ -1,6 +1,6 @@
-Characters 155-159:
-  List.fold_left f base args 
-                        ^^^^
-Error: This expression has type ('a * 'b) list
-       but an expression was expected of type int list list
-       Type 'a * 'b is not compatible with type int list 
+Characters 85-89:
+  List.fold_left f base fs;;
+                   ^^^^
+Error: This expression has type ('a -> 'b) -> 'a -> 'b
+       but an expression was expected of type ('a -> 'b) -> 'b
+       The type variable 'b occurs inside 'a -> 'b

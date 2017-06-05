@@ -1,5 +1,5 @@
-Characters 32-52:
-  bigAdd (List.map l*i l, []);;
-         ^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type int list
+Characters 76-78:
+  let f a x = a^sl^x in
+                ^^
+Error: This expression has type 'a list
+       but an expression was expected of type string

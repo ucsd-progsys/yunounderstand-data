@@ -1,6 +1,6 @@
-Characters 29-30:
-  let f a x = x x a in
-                ^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'b -> 'c
+Characters 115-117:
+  List.fold_left f base xs;;
+                        ^^
+Error: This expression has type int list
+       but an expression was expected of type 'a list list
+       Type int is not compatible with type 'a list 

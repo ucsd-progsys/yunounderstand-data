@@ -1,5 +1,5 @@
-Characters 100-110:
-  h = getHeads t
-      ^^^^^^^^^^
-Error: This expression has type char list
-       but an expression was expected of type char
+Characters 151-163:
+  | Average(e1,e2) -> (eval(e1,x,y)+eval(e2,x,y))/2
+                       ^^^^^^^^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

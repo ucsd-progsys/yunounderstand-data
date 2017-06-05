@@ -1,5 +1,5 @@
-Characters 57-58:
-  else if n=0 then 0
-                   ^
-Error: This expression has type int but an expression was expected of type
-         'a list
+Characters 501-513:
+  | Uncreative (e1, e2, e3)-> "("^exprToString(e1)^"/2*"^exprToString(e2)^"/3*"^exprToString(e3)"/4)"
+                                                                                ^^^^^^^^^^^^
+Error: This function has type expr -> string
+       It is applied to too many arguments; maybe you forgot a `;'.

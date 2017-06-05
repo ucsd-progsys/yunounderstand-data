@@ -1,6 +1,5 @@
-Characters 66-67:
-  | h::t -> [h] @ listReverse[t];;
-                              ^
+Characters 61-63:
+  n mod 10 :: [] :: digitsOfInt(n mod 10);;
+              ^^
 Error: This expression has type 'a list
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a list
+       but an expression was expected of type int

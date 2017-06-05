@@ -1,7 +1,5 @@
-Characters 29-37:
-  let fixpoint (f,b) = wwhile ((helper), b);;
-                               ^^^^^^^^
-Error: This expression has type ('a -> 'b) * 'a * 'b -> 'b * bool
-       but an expression was expected of type
-         ('a -> 'b) * 'a * 'b -> (('a -> 'b) * 'a * 'b) * bool
-       The type variable 'b occurs inside ('a -> 'b) * 'a * 'b
+Characters 144-166:
+  cloneHelper 0 diff  l2;;
+  ^^^^^^^^^^^^^^^^^^^^^^
+Error: This expression has type int list
+       but an expression was expected of type unit

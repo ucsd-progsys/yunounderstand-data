@@ -1,7 +1,5 @@
-Characters 84-85:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type ('a -> 'b -> 'b) -> 'b -> 'b
-       but an expression was expected of type
-         ('a -> 'b -> 'b) -> 'b -> 'a -> 'b -> 'b
-       The type variable 'b occurs inside 'a -> 'b -> 'b
+Characters 68-73:
+  | Sine e' -> sin (3.142 * a)
+                    ^^^^^
+Error: This expression has type float but an expression was expected of type
+         int

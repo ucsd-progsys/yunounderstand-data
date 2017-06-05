@@ -1,5 +1,5 @@
-Characters 32-41:
-  let stringOfList f l = fun l -> sepConcat "; " List.map(f, l);;
-                                  ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 109-128:
+  let seen' = if(List.mem(h, seen)) then seen else h :: seen in
+                ^^^^^^^^^^^^^^^^^^^
+Error: This expression has type ('a * 'b) list -> bool
+       but an expression was expected of type bool

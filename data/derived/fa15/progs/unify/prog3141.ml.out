@@ -1,5 +1,5 @@
-Characters 497-498:
-  | SumInts expr -> (eval(expr, x, y) *. (eval(expr, x, y) +. 1.0) /. 2)
-                                                                      ^
-Error: This expression has type int but an expression was expected of type
-         float
+Characters 29-45:
+  let fixpoint (f,b) = wwhile ((helper (f,b,b)), b);;
+                               ^^^^^^^^^^^^^^^^
+Error: This expression has type (('a -> 'a) * 'a * 'a) * bool
+       but an expression was expected of type 'b -> 'b * bool

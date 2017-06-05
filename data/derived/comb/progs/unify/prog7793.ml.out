@@ -1,6 +1,6 @@
-Characters 85-86:
-  List.fold_left f base fs;;
-                 ^
-Error: This expression has type 'a -> 'b -> 'c -> 'a
-       but an expression was expected of type 'a -> 'b -> 'a
-       The type variable 'a occurs inside 'c -> 'a
+Characters 32-36:
+  let fixpoint (f,b) = if not(f = f(b)) then
+                                  ^^^^
+Error: This expression has type 'a but an expression was expected of type
+         'b -> 'a
+       The type variable 'a occurs inside 'b -> 'a

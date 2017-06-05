@@ -1,5 +1,5 @@
-Characters 29-44:
-  let fixpoint (f,b) = wwhile ((f x , x = f x) ,b);;
-                               ^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b
-       but an expression was expected of type 'c -> 'c * bool
+Characters 225-226:
+  let args = List.rev(List.combine 0::l1 0::l2) in
+                                   ^
+Error: This expression has type int but an expression was expected of type
+         'a list

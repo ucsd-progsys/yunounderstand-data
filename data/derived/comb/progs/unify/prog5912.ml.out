@@ -1,5 +1,5 @@
-Characters 480-492:
-  exprToString e1^"+"^exprToString e2")"
-                      ^^^^^^^^^^^^
-Error: This function has type expr -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 264-268:
+  let (_, res) = List.fold_left f base args in
+                                  ^^^^
+Error: This expression has type int * 'a list
+       but an expression was expected of type (int * int) list

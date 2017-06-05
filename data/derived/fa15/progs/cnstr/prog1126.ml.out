@@ -1,5 +1,0 @@
-Characters 441-452:
-  |Square (i1)		  -> exprToString i1 "*" exprToString i1
-   ^^^^^^^^^^^
-Error: The constructor Square expects 2 argument(s),
-       but is applied here to 1 argument(s)

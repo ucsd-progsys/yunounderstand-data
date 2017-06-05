@@ -1,5 +1,5 @@
-Characters 434-491:
-  | 5 -> buildOp2(build(rand,d),build(rand,d),build(rand,d),build(rand,d))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error: This expression has type 'a * 'b * 'c * 'd
-       but an expression was expected of type expr * expr * expr
+Characters 103-105:
+  | Sine(v) -> sin(pi*eval (v,x,y))
+                   ^^
+Error: This expression has type float but an expression was expected of type
+         int

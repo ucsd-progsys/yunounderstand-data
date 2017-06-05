@@ -1,5 +1,7 @@
-Characters 65-71:
-  | _ -> bigAdd l mulByDigit (i-1) l;;
-         ^^^^^^
-Error: This function has type int list -> int list -> int list
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 101-106:
+  assoc (d,k,l');;
+  ^^^^^
+Error: This expression has type 'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a
+       but an expression was expected of type 'c
+       The type variable 'c occurs inside
+       'a * 'b * ('b * ('c -> 'd -> 'e)) list -> 'a

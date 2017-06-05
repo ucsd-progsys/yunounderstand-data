@@ -1,6 +1,6 @@
-Characters 45-46:
-  let funt x = let xx = f f (f (f b)) in (xx, f b = b)
-                          ^
-Error: This expression has type 'a -> 'b -> 'c
-       but an expression was expected of type 'a
-       The type variable 'a occurs inside 'a -> 'b -> 'c
+Characters 101-103:
+  wwhile (fs,b);;
+          ^^
+Error: This expression has type int -> int
+       but an expression was expected of type int -> int * bool
+       Type int is not compatible with type int * bool 

@@ -1,17 +1,24 @@
 
-let rec listReverse l =
-  match l with | [] -> [] | h::t -> (listReverse t) @ [h];;
+type expr =
+  | VarX
+  | VarY
+  | Sine of expr
+  | Cosine of expr
+  | Average of expr* expr
+  | Times of expr* expr
+  | Thresh of expr* expr* expr* expr;;
 
-let explode s =
-  let rec go i =
-    if i >= (String.length s) then [] else (s.[i]) :: (go (i + 1)) in
-  go 0;;
+let pi = 4.0 *. (atan 1.0);;
 
-let getHeads y = match listReverse (explode y) with | [] -> [] | h::t -> [h];;
-
-let rec matchHeads x =
-  match explode x with
-  | h::t ->
-      if (getHeads x) = []
-      then (if h = (getHeads t) then true else false)
-      else false;;
+let rec eval (e,x,y) =
+  match e with
+  | VarX  -> x
+  | VarY  -> y
+  | Sine e -> sin (pi *. (eval (e, x, y)))
+  | Cosine e -> cos (pi *. (eval (e, x, y)))
+  | Average (e1,e2) -> ((eval (e1, x, y)) +. (eval (e2, x, y))) / 2
+  | Times (e1,e2) -> (eval (e1, x, y)) *. (eval (e2, x, y))
+  | Thresh (e1,e2,e1less,e2less) ->
+      if (eval (e1, x, y)) < (eval (e2, x, y))
+      then eval (e1less, x, y)
+      else eval (e2less, x, y);;

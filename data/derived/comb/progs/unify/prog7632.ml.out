@@ -1,5 +1,6 @@
-Characters 58-71:
-  let stringOfList f l =  sepConcat ";" (List.map (fun t -> ((f t) ^ "]") l));;
-                                                            ^^^^^^^^^^^^^
-Error: This expression has type string
-       This is not a function; it cannot be applied.
+Characters 72-73:
+  let fixpoint (f,b) = wwhile (let n x = let ff = f  in (ff , x = f x) in n,b);;
+                                                                          ^
+Error: This expression has type 'a -> ('a -> 'a) * bool
+       but an expression was expected of type 'a -> 'a * bool
+       The type variable 'a occurs inside 'a -> 'a

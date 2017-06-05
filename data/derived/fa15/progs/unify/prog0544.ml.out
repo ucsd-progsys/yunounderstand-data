@@ -1,5 +1,0 @@
-Characters 155-160:
-  	  helper (seen',rest')   
-             ^^^^^
-Error: This expression has type bool but an expression was expected of type
-         'a list

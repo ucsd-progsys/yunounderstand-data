@@ -1,5 +1,5 @@
-Characters 23-32:
-  let stringOfList f l = sepConcat ";" List.map l;;
-                         ^^^^^^^^^
-Error: This function has type string -> string list -> string
-       It is applied to too many arguments; maybe you forgot a `;'.
+Characters 29-42:
+  let _ = assoc (-1,"william",[("ranjit",85);("william",23);("moose",44)]);;
+                               ^^^^^^^^^^^^^
+Error: This expression has type 'a * 'b
+       but an expression was expected of type int
