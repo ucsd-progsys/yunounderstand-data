@@ -1,7 +1,5 @@
-yunounderstand
+A Collection of Novice Interactions with the OCaml Top-Level System [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.806813.svg)](https://doi.org/10.5281/zenodo.806813)
 ==============
-
-This is a collection of novice interactions with the OCaml top-level. 
 
 We recruited around 50 students each across two instances of the CSE 130
 (Undergraduate Programming Languages) course at UC San Diego (IRB #140608) 
@@ -10,6 +8,23 @@ each of their interactions with the top-level system while they worked
 on the first three homework assignments.
 
 [ocaml-top]: https://www.typerex.org/ocaml-top.html
+
+We have released this data as a [CC0] work, you are free to use it
+for your own research or however else you please. We just ask that if
+your use leads to a publication, please cite the dataset as follows.
+
+[CC0]: https://creativecommons.org/publicdomain/zero/1.0/
+
+``` bibtex
+@misc{yunounderstand,
+  author       = {Eric L Seidel and Ranjit Jhala},
+  title        = {A Collection of Novice Interactions with the {OCaml} {Top-Level} System},
+  month        = jun,
+  year         = 2017,
+  doi          = {10.5281/zenodo.806814},
+  url          = {https://doi.org/10.5281/zenodo.806814}
+}
+```
 
 
 Raw Data
